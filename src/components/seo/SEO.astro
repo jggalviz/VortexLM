@@ -1,0 +1,69 @@
+---
+export interface Props {
+  title: string;
+  description: string;
+  image?: string;
+  canonicalURL?: string;
+  type?: 'website' | 'article';
+  isLocalBusiness?: boolean;
+}
+
+const {
+  title,
+  description,
+  image = '/images/og-default.jpg',
+  canonicalURL = Astro.url.href,
+  type = 'website',
+  isLocalBusiness = false,
+} = Astro.props;
+
+const siteName = "VortexLM";
+const siteUrl = "https://vortexlm.com";
+const fullTitle = `${title} | Agencia de Desarrollo Web y Apps en Caracas`;
+
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "VortexLM",
+  "image": `${siteUrl}/images/logo.png`,
+  "@id": `${siteUrl}`,
+  "url": `${siteUrl}`,
+  "telephone": "+58-000-0000000", 
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Zona Empresarial", 
+    "addressLocality": "Caracas",
+    "addressRegion": "Miranda",
+    "postalCode": "1060",
+    "addressCountry": "VE"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 10.4806, 
+    "longitude": -66.9036
+  },
+  "priceRange": "$$$",
+  "description": description
+};
+---
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="canonical" href={canonicalURL} />
+<title>{fullTitle}</title>
+<meta name="title" content={fullTitle} />
+<meta name="description" content={description} />
+<meta property="og:type" content={type} />
+<meta property="og:url" content={canonicalURL} />
+<meta property="og:title" content={fullTitle} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={new URL(image, Astro.url)} />
+<meta property="og:site_name" content={siteName} />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:url" content={canonicalURL} />
+<meta property="twitter:title" content={fullTitle} />
+<meta property="twitter:description" content={description} />
+<meta property="twitter:image" content={new URL(image, Astro.url)} />
+{isLocalBusiness && (
+  <script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} />
+)}

@@ -1,0 +1,21 @@
+---
+import SEO from '../components/seo/SEO.astro';
+
+export interface Props {
+  title: string;
+  description: string;
+  isLocalBusiness?: boolean;
+}
+
+const { title, description, isLocalBusiness } = Astro.props;
+---
+<html lang="es" class="scroll-smooth">
+  <head>
+    <SEO title={title} description={description} isLocalBusiness={isLocalBusiness} />
+  </head>
+  <body class="bg-slate-950 text-slate-300 font-sans antialiased overflow-x-hidden">
+    <main>
+      <slot />
+    </main>
+  </body>
+</html>

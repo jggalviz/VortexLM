@@ -1,10 +1,9 @@
 import { config, fields, collection } from '@keystatic/core';
 
 export default config({
-  storage: {
-    kind: 'github',
-    repo: 'jggalviz/VortexLM',
-  },
+  storage: process.env.NODE_ENV === 'development'
+    ? { kind: 'local' }
+    : { kind: 'github', repo: 'jggalviz/VortexLM' },
   collections: {
     blog: collection({
       label: 'Blog',

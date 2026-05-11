@@ -12,3 +12,5 @@ dist/
 
 # macos
 .DS_Store
+
+.vercel

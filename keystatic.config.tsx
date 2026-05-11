@@ -1,7 +1,7 @@
 import { config, fields, collection } from '@keystatic/core';
 
 export default config({
-  storage: process.env.NODE_ENV === 'development'
+  storage: (import.meta.env?.DEV || process.env.NODE_ENV === 'development')
     ? { kind: 'local' }
     : { kind: 'github', repo: 'jggalviz/VortexLM' },
   collections: {

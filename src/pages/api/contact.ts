@@ -20,7 +20,7 @@ export const POST: APIRoute = async ({ request, redirect }) => {
     }
 
     // Aquí integramos con nuestro CRM o servicio de email (SendGrid, Resend, etc.)
-    console.log(`🚀 [Nuevo Lead Anti-Gravity] ${name} (${email}) - Interés: ${service}`);
+    console.log(`🚀 [Nuevo Lead VortexLM] ${name} (${email}) - Interés: ${service}`);
 
     // Redirección nativa 303: El navegador es redirigido a la página de agradecimiento
     // Sin necesidad de usar fetch() desde el lado del cliente ni cargar librerías extra.

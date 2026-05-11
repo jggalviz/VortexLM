@@ -1,4 +1,4 @@
-# VortexLM - Infraestructura Anti-Gravity 🚀
+# VortexLM - Desarrollo de Sistemas a Medida 🚀
 
 > **Dominando el mercado tecnológico de Caracas con velocidad luz y peso mínimo.**
 

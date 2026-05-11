@@ -13,7 +13,7 @@ const POST = async ({ request, redirect }) => {
         headers: { "Content-Type": "application/json" }
       });
     }
-    console.log(`🚀 [Nuevo Lead Anti-Gravity] ${name} (${email}) - Interés: ${service}`);
+    console.log(`🚀 [Nuevo Lead VortexLM] ${name} (${email}) - Interés: ${service}`);
     return redirect("/gracias?success=true", 303);
   } catch (error) {
     console.error("Error procesando el formulario de contacto:", error);

@@ -24,6 +24,30 @@
 			"dest": "_render"
 		},
 		{
+			"src": "^\\/api\\/keystatic(?:\\/(.*?))?\\/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^\\/blog\\/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^\\/keystatic(?:\\/(.*?))?\\/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^\\/servicios\\/desarrollo-de-apps-caracas\\/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^\\/servicios\\/diseno-web-caracas\\/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^\\/servicios\\/sistemas-gestion-medida\\/?$",
+			"dest": "_render"
+		},
+		{
 			"src": "^\\/$",
 			"dest": "_render"
 		}

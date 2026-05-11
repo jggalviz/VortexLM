@@ -1,0 +1,14 @@
+# dependencias
+node_modules/
+
+# builds de astro
+dist/
+.astro/
+
+# env
+.env
+.env.*
+!.env.example
+
+# macos
+.DS_Store

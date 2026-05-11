@@ -1,0 +1,54 @@
+---
+// src/components/ui/ContactForm.astro
+---
+<form action="/api/contact" method="POST" class="space-y-4">
+  <div>
+    <label for="name" class="block text-sm font-medium text-slate-300 mb-1">Nombre Completo</label>
+    <input 
+      type="text" 
+      id="name" 
+      name="name" 
+      required 
+      class="w-full px-4 py-3 bg-slate-900 border border-slate-700 rounded-lg text-white focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-colors"
+      placeholder="Ej. Carlos Mendoza"
+    />
+  </div>
+  
+  <div>
+    <label for="email" class="block text-sm font-medium text-slate-300 mb-1">Correo Corporativo</label>
+    <input 
+      type="email" 
+      id="email" 
+      name="email" 
+      required 
+      class="w-full px-4 py-3 bg-slate-900 border border-slate-700 rounded-lg text-white focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-colors"
+      placeholder="carlos@tuempresa.com"
+    />
+  </div>
+
+  <div>
+    <label for="service" class="block text-sm font-medium text-slate-300 mb-1">Servicio de Interés</label>
+    <select 
+      id="service" 
+      name="service" 
+      required
+      class="w-full px-4 py-3 bg-slate-900 border border-slate-700 rounded-lg text-white focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-colors appearance-none"
+    >
+      <option value="" disabled selected>Selecciona un servicio</option>
+      <option value="desarrollo-web">Diseño y Desarrollo Web</option>
+      <option value="app-movil">Desarrollo de App Móvil</option>
+      <option value="software">Software a Medida</option>
+    </select>
+  </div>
+
+  <button 
+    type="submit" 
+    class="w-full py-4 mt-2 bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 text-white font-bold rounded-lg transition-all shadow-lg shadow-cyan-600/30"
+  >
+    Solicitar Propuesta Gratuita
+  </button>
+  
+  <p class="text-xs text-slate-500 text-center mt-4">
+    Tus datos están protegidos. Sin spam, garantizado.
+  </p>
+</form>

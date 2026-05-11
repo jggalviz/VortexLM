@@ -11,6 +11,25 @@
     
     <nav class="hidden md:flex items-center space-x-8">
       <a href="/" class="text-sm font-semibold text-slate-300 hover:text-white transition-colors">Inicio</a>
+      
+      <div class="relative group py-2">
+        <button class="text-sm font-semibold text-slate-300 hover:text-white transition-colors flex items-center gap-1 cursor-pointer">
+          Servicios
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" /></svg>
+        </button>
+        <div class="absolute top-full left-1/2 -translate-x-1/2 mt-0 w-64 bg-slate-900 border border-slate-800 rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 flex flex-col z-50 overflow-hidden">
+          <a href="/servicios/diseno-web-caracas" class="px-5 py-4 text-sm font-medium text-slate-300 hover:bg-slate-800 hover:text-white border-b border-slate-800">
+            Diseño Web de Alta Velocidad
+          </a>
+          <a href="/servicios/desarrollo-de-apps-caracas" class="px-5 py-4 text-sm font-medium text-slate-300 hover:bg-slate-800 hover:text-white border-b border-slate-800">
+            Desarrollo de Apps Móviles
+          </a>
+          <a href="/servicios/sistemas-gestion-medida" class="px-5 py-4 text-sm font-medium text-slate-300 hover:bg-slate-800 hover:text-white">
+            Software a Medida y Sistemas
+          </a>
+        </div>
+      </div>
+
       <a href="/blog" class="text-sm font-semibold text-slate-300 hover:text-white transition-colors">Blog</a>
       <a href="/#contacto" class="px-5 py-2.5 text-sm font-bold bg-blue-600 hover:bg-blue-500 text-white rounded-full transition-all shadow-lg shadow-blue-600/20">
         Contactar
@@ -24,8 +43,12 @@
           <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
         </svg>
       </summary>
-      <div class="absolute right-0 top-full mt-4 w-56 bg-slate-900 border border-slate-800 rounded-xl shadow-2xl overflow-hidden flex flex-col z-50">
+      <div class="absolute right-0 top-full mt-4 w-64 bg-slate-900 border border-slate-800 rounded-xl shadow-2xl overflow-hidden flex flex-col z-50 max-h-[80vh] overflow-y-auto">
         <a href="/" class="px-5 py-4 text-sm font-medium text-slate-300 hover:bg-slate-800 hover:text-white border-b border-slate-800">Inicio</a>
+        <div class="px-5 py-2 text-xs font-bold text-slate-500 uppercase tracking-wider bg-slate-950/50">Servicios</div>
+        <a href="/servicios/diseno-web-caracas" class="px-5 py-4 pl-8 text-sm font-medium text-slate-300 hover:bg-slate-800 hover:text-white border-b border-slate-800">↳ Diseño Web</a>
+        <a href="/servicios/desarrollo-de-apps-caracas" class="px-5 py-4 pl-8 text-sm font-medium text-slate-300 hover:bg-slate-800 hover:text-white border-b border-slate-800">↳ Apps Móviles</a>
+        <a href="/servicios/sistemas-gestion-medida" class="px-5 py-4 pl-8 text-sm font-medium text-slate-300 hover:bg-slate-800 hover:text-white border-b border-slate-800">↳ Software a Medida</a>
         <a href="/blog" class="px-5 py-4 text-sm font-medium text-slate-300 hover:bg-slate-800 hover:text-white border-b border-slate-800">Blog Técnico</a>
         <a href="/#contacto" class="px-5 py-4 text-sm font-bold text-blue-400 hover:bg-slate-800">Contactar a Ventas</a>
       </div>

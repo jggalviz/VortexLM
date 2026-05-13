@@ -1,11 +1,126 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import Hero from '../components/ui/Hero.astro';
 ---
 <BaseLayout 
   title="Inicio" 
   description="Dominamos el mercado tecnológico con soluciones de velocidad luz y peso mínimo. Posiciona tu negocio como el #1 en Google."
   isLocalBusiness={true}
 >
-  <Hero />
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="relative min-h-[921px] flex items-center justify-center overflow-hidden px-margin-mobile md:px-margin-desktop">
+<!-- Background Elements -->
+<div class="absolute inset-0 -z-10 vortex-gradient"></div>
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary-container/10 blur-[120px] rounded-full"></div>
+<div class="max-w-container-max mx-auto text-center relative z-10">
+<h1 class="font-display-lg text-4xl md:text-display-lg mb-6 leading-tight max-w-4xl mx-auto">
+                    Desarrollamos el <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-primary-fixed">Futuro Digital</span> de Venezuela.
+                </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-12 max-w-2xl mx-auto opacity-80">Creamos aplicaciones web y móviles con velocidad extrema, SEO dominante y seguridad impenetrable.</p>
+<div class="flex flex-col md:flex-row items-center justify-center gap-6">
+<a href="#contacto" class="w-full md:w-auto px-10 py-4 bg-primary text-on-primary font-label-md text-label-md rounded-none border border-primary glow-hover transition-all shadow-[0_0_15px_rgba(138,43,226,0.3)] text-center">
+                        Iniciar Proyecto
+                    </a>
+<a href="/portafolio" class="w-full md:w-auto px-10 py-4 bg-transparent border border-outline text-on-surface font-label-md text-label-md rounded-none hover:bg-surface-container-high transition-all text-center">
+                        Ver Portafolio
+                    </a>
+</div>
+</div>
+<!-- Abstract Monofilament Lines -->
+<div class="absolute bottom-0 left-0 w-full opacity-30">
+<div class="glow-line mb-4 w-3/4 mx-auto"></div>
+<div class="glow-line w-1/2 mx-auto"></div>
+</div>
+</section>
+
+<!-- Trusted By Section -->
+<section class="py-12 border-y border-outline-variant/20 bg-surface-container-lowest/50">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<p class="text-center font-label-sm text-label-sm text-outline mb-8 uppercase tracking-widest">Stack Tecnológico de Élite</p>
+<div class="flex flex-wrap justify-center items-center gap-12 md:gap-24 opacity-50 grayscale hover:grayscale-0 transition-all">
+<div class="flex items-center gap-2 font-display-lg text-xl">
+<span class="material-symbols-outlined text-primary">rocket_launch</span> Astro
+                    </div>
+<div class="flex items-center gap-2 font-display-lg text-xl">
+<span class="material-symbols-outlined text-primary">deployed_code</span> React
+                    </div>
+<div class="flex items-center gap-2 font-display-lg text-xl">
+<span class="material-symbols-outlined text-primary">cloud</span> Vercel
+                    </div>
+<div class="flex items-center gap-2 font-display-lg text-xl">
+<span class="material-symbols-outlined text-primary">terminal</span> TypeScript
+                    </div>
+</div>
+</div>
+</section>
+
+<!-- Services Section -->
+<section class="py-24 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="mb-16">
+<h2 class="font-headline-lg text-headline-lg mb-4">Servicios Especializados</h2>
+<div class="h-1 w-20 bg-primary"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Card 1 -->
+<div class="glass-card p-10 flex flex-col group hover:border-primary/50 transition-colors">
+<span class="material-symbols-outlined text-primary text-4xl mb-6 group-hover:scale-110 transition-transform">language</span>
+<h3 class="font-headline-md text-2xl mb-4">Diseño Web</h3>
+<p class="font-body-md text-on-surface-variant flex-grow">
+                        Páginas web que cargan en milisegundos. Optimizadas para convertir visitantes en clientes en todo el territorio nacional.
+                    </p>
+<a href="/servicios/diseno-web-caracas" class="mt-8 flex items-center text-primary font-label-md text-label-md gap-2 cursor-pointer group/link">
+                        SABER MÁS <span class="material-symbols-outlined text-sm group-hover/link:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+<!-- Card 2 -->
+<div class="glass-card p-10 flex flex-col group hover:border-primary/50 transition-colors">
+<span class="material-symbols-outlined text-primary text-4xl mb-6 group-hover:scale-110 transition-transform">phone_iphone</span>
+<h3 class="font-headline-md text-2xl mb-4">Apps Móviles</h3>
+<p class="font-body-md text-on-surface-variant flex-grow">
+                        Desarrollo nativo e híbrido para iOS y Android. Llevamos tu negocio al bolsillo de tus usuarios de forma eficiente.
+                    </p>
+<a href="/servicios/desarrollo-de-apps-caracas" class="mt-8 flex items-center text-primary font-label-md text-label-md gap-2 cursor-pointer group/link">
+                        SABER MÁS <span class="material-symbols-outlined text-sm group-hover/link:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+<!-- Card 3 -->
+<div class="glass-card p-10 flex flex-col group hover:border-primary/50 transition-colors">
+<span class="material-symbols-outlined text-primary text-4xl mb-6 group-hover:scale-110 transition-transform">settings_suggest</span>
+<h3 class="font-headline-md text-2xl mb-4">Sistemas Pro</h3>
+<p class="font-body-md text-on-surface-variant flex-grow">
+                        Software a medida que automatiza tu empresa. Escalabilidad garantizada bajo los más altos estándares internacionales.
+                    </p>
+<a href="/servicios/sistemas-gestion-medida" class="mt-8 flex items-center text-primary font-label-md text-label-md gap-2 cursor-pointer group/link">
+                        SABER MÁS <span class="material-symbols-outlined text-sm group-hover/link:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+</div>
+</section>
+
+<!-- Technology Detail Section -->
+<section class="py-24 bg-surface-container-low/30 overflow-hidden">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+<div class="relative">
+<h2 class="font-headline-lg text-headline-lg mb-8 leading-tight">Tecnología de <span class="text-primary">Alto Rendimiento.</span></h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-8">
+                        Mientras otros usan herramientas del pasado, nosotros utilizamos Astro, TypeScript y Edge Computing. Tu web no solo se verá bien; será la más rápida de Caracas y de toda la región.
+                    </p>
+<div class="grid grid-cols-2 gap-6">
+<div class="border-l-2 border-primary pl-4">
+<div class="font-display-lg text-3xl text-primary">100%</div>
+<p class="font-label-sm text-label-sm text-outline uppercase">Lighthouse SEO</p>
+</div>
+<div class="border-l-2 border-primary pl-4">
+<div class="font-display-lg text-3xl text-primary">&lt;500ms</div>
+<p class="font-label-sm text-label-sm text-outline uppercase">Time to Interactive</p>
+</div>
+</div>
+</div>
+<!-- Abstract Performance Graphic -->
+<div class="relative glass-card aspect-square max-w-md mx-auto flex items-center justify-center">
+  <img alt="Abstract Wave Graphic" class="w-full h-full object-cover opacity-80 mix-blend-lighten" src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80" />
+</div>
+</div>
+</section>
+</main>
 </BaseLayout>

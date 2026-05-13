@@ -1,43 +1,38 @@
 ---
 ---
-<footer class="w-full py-16 px-4 md:px-8 bg-slate-950 border-t border-slate-900 mt-20 relative overflow-hidden">
-  <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-px bg-gradient-to-r from-transparent via-blue-900 to-transparent opacity-50"></div>
-  
-  <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8 mb-12">
+<footer class="w-full py-16 px-margin-mobile md:px-margin-desktop bg-surface-container-lowest border-t border-outline-variant/30 relative overflow-hidden mt-0">
+  <div class="max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8 mb-12 relative z-10">
     <div class="col-span-1 md:col-span-5">
-      <a href="/" class="text-2xl font-black tracking-tighter text-white flex items-center gap-2 mb-6">
-        <div class="w-7 h-7 bg-blue-600 rounded-md flex items-center justify-center">
-          <svg class="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
-        </div>
-        VORTEX<span class="text-blue-500">LM</span>
+      <a href="/" class="font-display-lg text-headline-md tracking-tighter text-on-surface hover:text-primary transition-colors flex items-center gap-2 mb-6">
+        Vortex<span class="text-primary">LM</span>
       </a>
-      <p class="text-slate-400 text-sm leading-relaxed max-w-sm">
+      <p class="font-body-md text-on-surface-variant text-sm leading-relaxed max-w-sm">
         Arquitectura de software de rendimiento extremo y estrategias de posicionamiento SEO para dominar el mercado tecnológico en Caracas y toda Venezuela.
       </p>
     </div>
     
     <div class="col-span-1 md:col-span-4 md:col-start-6">
-      <h3 class="text-white font-bold mb-6 tracking-wide">Soluciones y Servicios</h3>
-      <ul class="space-y-3 text-sm text-slate-400">
-        <li><a href="/servicios/diseno-web-caracas" class="hover:text-blue-400 transition-colors">Diseño Web de Alta Velocidad en Caracas</a></li>
-        <li><a href="/servicios/desarrollo-de-apps-caracas" class="hover:text-blue-400 transition-colors">Desarrollo de Apps Móviles iOS/Android</a></li>
-        <li><a href="/servicios/sistemas-gestion-medida" class="hover:text-blue-400 transition-colors">Sistemas ERP y Software a Medida</a></li>
+      <h3 class="text-on-surface font-label-md tracking-wider mb-6">Soluciones y Servicios</h3>
+      <ul class="space-y-3 font-body-md text-sm text-on-surface-variant">
+        <li><a href="/servicios/diseno-web-caracas" class="hover:text-primary transition-colors">Diseño Web de Alta Velocidad en Caracas</a></li>
+        <li><a href="/servicios/desarrollo-de-apps-caracas" class="hover:text-primary transition-colors">Desarrollo de Apps Móviles iOS/Android</a></li>
+        <li><a href="/servicios/sistemas-gestion-medida" class="hover:text-primary transition-colors">Sistemas ERP y Software a Medida</a></li>
       </ul>
     </div>
     
     <div class="col-span-1 md:col-span-2 md:col-start-11">
-      <h3 class="text-white font-bold mb-6 tracking-wide">Empresa</h3>
-      <ul class="space-y-3 text-sm text-slate-400">
-        <li><a href="/blog" class="hover:text-blue-400 transition-colors">Blog Técnico</a></li>
-        <li><a href="/#contacto" class="hover:text-blue-400 transition-colors">Contactar</a></li>
+      <h3 class="text-on-surface font-label-md tracking-wider mb-6">Empresa</h3>
+      <ul class="space-y-3 font-body-md text-sm text-on-surface-variant">
+        <li><a href="/blog" class="hover:text-primary transition-colors">Blog Técnico</a></li>
+        <li><a href="/#contacto" class="hover:text-primary transition-colors">Contactar</a></li>
       </ul>
     </div>
   </div>
   
-  <div class="max-w-7xl mx-auto pt-8 border-t border-slate-900/80 flex flex-col md:flex-row items-center justify-between text-xs text-slate-500">
+  <div class="max-w-container-max mx-auto pt-8 border-t border-outline-variant/20 flex flex-col md:flex-row items-center justify-between font-label-sm text-xs text-outline relative z-10">
     <p>&copy; {new Date().getFullYear()} VortexLM. Todos los derechos reservados.</p>
     <p class="mt-4 md:mt-0 flex items-center gap-1">
-      Diseñado con <span class="text-blue-500">&hearts;</span> en Caracas, Venezuela.
+      Diseñado con <span class="text-primary">&hearts;</span> en Caracas, Venezuela.
     </p>
   </div>
 </footer>

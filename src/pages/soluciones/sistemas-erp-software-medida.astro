@@ -2,10 +2,285 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 ---
 <BaseLayout title="Desarrollo de Sistemas ERP y Software Empresarial a Medida | Vortex" description="Automatiza las operaciones de tu empresa con software diseñado exactamente a tu medida.">
-  <main class="py-36 px-6 md:px-12 bg-black min-h-screen">
-    <div class="max-w-4xl mx-auto">
-      <p class="font-mono text-[10px] uppercase tracking-widest text-[#94a3b8] mb-6">SOLUCIONES</p>
-      <h1 class="font-extralight text-4xl md:text-5xl lg:text-6xl tracking-tight text-white mb-6">Automatiza las operaciones de tu empresa con software diseñado exactamente a tu medida.</h1>
+  <!-- Section 1: Hero with ERP dashboard mockup -->
+  <section class="relative py-36 px-6 md:px-12 bg-black border-b border-[#1f1f24] overflow-hidden">
+    <div class="absolute inset-0 linear-gradient-bg"></div>
+    <div class="absolute inset-0 linear-grid"></div>
+    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-white/[0.03] rounded-full blur-3xl pointer-events-none"></div>
+    
+    <div class="max-w-6xl mx-auto relative z-10">
+      <p class="font-mono text-[10px] uppercase tracking-widest text-[#94a3b8] mb-6">SISTEMAS ERP Y SOFTWARE A MEDIDA</p>
+      
+      <div class="max-w-4xl">
+        <h1 class="font-extralight text-4xl md:text-5xl lg:text-6xl tracking-tight text-white mb-6 leading-[1.1]">
+          Automatiza las operaciones de tu empresa con software diseñado exactamente a tu medida.
+        </h1>
+        <p class="font-light text-[#94a3b8] text-lg md:text-xl leading-relaxed max-w-2xl mb-10">
+          Deja atrás las hojas de cálculo caóticas y los sistemas genéricos rígidos. Desarrollamos soluciones ERP, CRM y plataformas de gestión interna modulares, seguras y adaptadas con precisión quirúrgica a la lógica y flujos reales de tu negocio.
+        </p>
+      </div>
+      
+      <div class="flex flex-wrap gap-4 items-center">
+        <a href="#contacto" class="bg-white text-black font-semibold text-xs rounded-full hover:bg-neutral-200 transition-all px-6 py-3 shadow-[0_0_15px_rgba(255,255,255,0.1)]">
+          Solicitar consultoría de procesos
+        </a>
+        <a href="#arquitectura" class="text-[#94a3b8] hover:text-white text-xs font-light transition-colors flex items-center gap-1.5">
+          Ver arquitectura de datos
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+      
+      <!-- ERP Dashboard Mockup -->
+      <div class="mt-20 linear-card rounded-xl border border-[#1f1f24] bg-[#08080c]/40 p-6 max-w-5xl overflow-hidden">
+        <!-- Dashboard header -->
+        <div class="flex items-center justify-between mb-6 pb-4 border-b border-[#1f1f24]">
+          <div class="flex items-center gap-3">
+            <div class="w-8 h-8 rounded-lg bg-white/5 border border-[#1f1f24]"></div>
+            <div>
+              <p class="text-xs text-white font-light">ERP Vortex</p>
+              <p class="text-[10px] text-[#94a3b8] font-mono">Panel de Control</p>
+            </div>
+          </div>
+          <div class="flex gap-2">
+            <div class="w-2 h-2 rounded-full bg-[#22c55e]"></div>
+            <div class="w-2 h-2 rounded-full bg-[#eab308]"></div>
+            <div class="w-2 h-2 rounded-full bg-[#ef4444]"></div>
+          </div>
+        </div>
+        
+        <!-- Dashboard 3-column grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <!-- Left: Inventory table -->
+          <div class="p-4 rounded-lg border border-[#1f1f24] bg-black/50">
+            <p class="font-mono text-[10px] text-[#94a3b8] mb-3 uppercase tracking-widest">INVENTARIO</p>
+            <div class="space-y-2">
+              <div class="flex justify-between items-center">
+                <span class="text-[10px] text-[#94a3b8]">Prod. A</span>
+                <span class="text-[10px] text-white">142</span>
+              </div>
+              <div class="flex justify-between items-center">
+                <span class="text-[10px] text-[#94a3b8]">Prod. B</span>
+                <span class="text-[10px] text-white">89</span>
+              </div>
+              <div class="flex justify-between items-center">
+                <span class="text-[10px] text-[#94a3b8]">Prod. C</span>
+                <span class="text-[10px] text-[#22c55e]">203</span>
+              </div>
+              <div class="flex justify-between items-center">
+                <span class="text-[10px] text-[#94a3b8]">Prod. D</span>
+                <span class="text-[10px] text-[#ef4444]">12</span>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Center: Chart -->
+          <div class="p-4 rounded-lg border border-[#1f1f24] bg-black/50">
+            <p class="font-mono text-[10px] text-[#94a3b8] mb-3 uppercase tracking-widest">EFICIENCIA</p>
+            <div class="h-16 flex items-end gap-1">
+              <div class="w-3 bg-[#22c55e]/40 rounded-t-sm h-8"></div>
+              <div class="w-3 bg-[#22c55e]/60 rounded-t-sm h-12"></div>
+              <div class="w-3 bg-[#22c55e]/80 rounded-t-sm h-16"></div>
+              <div class="w-3 bg-[#22c55e]/60 rounded-t-sm h-10"></div>
+              <div class="w-3 bg-[#22c55e]/40 rounded-t-sm h-6"></div>
+              <div class="w-3 bg-[#22c55e]/70 rounded-t-sm h-14"></div>
+              <div class="w-3 bg-[#22c55e]/50 rounded-t-sm h-9"></div>
+              <div class="w-3 bg-[#22c55e]/80 rounded-t-sm h-15"></div>
+            </div>
+          </div>
+          
+          <!-- Right: Roles -->
+          <div class="p-4 rounded-lg border border-[#1f1f24] bg-black/50">
+            <p class="font-mono text-[10px] text-[#94a3b8] mb-3 uppercase tracking-widest">USUARIOS</p>
+            <div class="space-y-2">
+              <div class="flex items-center gap-2">
+                <div class="w-2 h-2 rounded-full bg-[#22c55e]"></div>
+                <span class="text-[10px] text-[#94a3b8]">Admin</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <div class="w-2 h-2 rounded-full bg-[#eab308]"></div>
+                <span class="text-[10px] text-[#94a3b8]">Editor</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <div class="w-2 h-2 rounded-full bg-[#eab308]"></div>
+                <span class="text-[10px] text-[#94a3b8]">Operador</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <div class="w-2 h-2 rounded-full bg-[#94a3b8]"></div>
+                <span class="text-[10px] text-[#94a3b8]">Visor</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-  </main>
+  </section>
+
+  <!-- Section 2: B2B Infrastructure (3-column grid) -->
+  <section class="py-36 px-6 md:px-12 bg-black border-b border-[#1f1f24]">
+    <div class="max-w-6xl mx-auto">
+      <p class="font-mono text-[10px] uppercase tracking-widest text-[#94a3b8] mb-4">INFRAESTRUCTURA B2B</p>
+      <h2 class="font-light text-3xl md:text-4xl tracking-tight text-white mb-6">Software empresarial de nivel de ingeniería.</h2>
+      <p class="font-light text-[#94a3b8] text-sm md:text-base leading-relaxed max-w-2xl mb-16">
+        Diseñamos herramientas e infraestructuras centralizadas que eliminan las tareas manuales repetitivas y aseguran el control total de tus activos.
+      </p>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Card 1: Workflows -->
+        <div class="linear-card rounded-lg border border-[#1f1f24] bg-[#08080c]/30 p-8 glow-hover transition-all group">
+          <div class="w-10 h-10 rounded-lg bg-white/5 border border-[#1f1f24] flex items-center justify-center mb-5">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+            </svg>
+          </div>
+          <h3 class="font-light text-lg text-white mb-3">Automatización de Flujos (Workflows)</h3>
+          <p class="font-light text-[#94a3b8] text-sm leading-relaxed">
+            Modelamos tus reglas de negocio para automatizar facturación, control de inventarios, asignación de tareas y reportes financieros directos, reduciendo drásticamente el error humano.
+          </p>
+        </div>
+        
+        <!-- Card 2: RBAC -->
+        <div class="linear-card rounded-lg border border-[#1f1f24] bg-[#08080c]/30 p-8 glow-hover transition-all group">
+          <div class="w-10 h-10 rounded-lg bg-white/5 border border-[#1f1f24] flex items-center justify-center mb-5">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+          </div>
+          <h3 class="font-light text-lg text-white mb-3">Gestión de Roles y Permisos (RBAC)</h3>
+          <p class="font-light text-[#94a3b8] text-sm leading-relaxed">
+            Implementamos sistemas estrictos de Control de Acceso Basado en Roles. Define con precisión milimétrica qué información puede ver, editar o eliminar cada miembro de tu organización.
+          </p>
+        </div>
+        
+        <!-- Card 3: Real-time Data -->
+        <div class="linear-card rounded-lg border border-[#1f1f24] bg-[#08080c]/30 p-8 glow-hover transition-all group">
+          <div class="w-10 h-10 rounded-lg bg-white/5 border border-[#1f1f24] flex items-center justify-center mb-5">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/>
+            </svg>
+          </div>
+          <h3 class="font-light text-lg text-white mb-3">Datos Centralizados en Tiempo Real</h3>
+          <p class="font-light text-[#94a3b8] text-sm leading-relaxed">
+            Toda tu información operativa consolidada en una base de datos relacional robusta con Supabase y PostgreSQL. Olvídate de los datos duplicados; accede a métricas cruciales al instante desde cualquier lugar.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3: Scalable Investment (2-column alternating) -->
+  <section class="py-36 px-6 md:px-12 bg-black border-b border-[#1f1f24]">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+        <div>
+          <p class="font-mono text-[10px] uppercase tracking-widest text-[#94a3b8] mb-4">INVERSIÓN TECNOLÓGICA</p>
+          <h2 class="font-light text-3xl md:text-4xl tracking-tight text-white mb-6">Una inversión tecnológica escalable, sin licencias abusivas.</h2>
+          <p class="font-light text-[#94a3b8] text-sm md:text-base leading-relaxed">
+            Los softwares comerciales tradicionales te atan a contratos de alquiler mensuales costosos y a cobros adicionales por cada usuario nuevo que agregues a tu equipo. Con la ingeniería a medida de Vortex, el software es un activo de tu propiedad. Desarrollamos sistemas modulares basados en código limpio que te permiten expandir la plataforma, conectar nuevas APIs y añadir usuarios ilimitados a medida que tu empresa crezca, sin costes ocultos ni tarifas de suscripción restrictivas.
+          </p>
+        </div>
+        
+        <!-- Modular system mockup -->
+        <div class="linear-card rounded-xl border border-[#1f1f24] bg-[#08080c]/40 p-8">
+          <!-- Central core -->
+          <div class="p-4 rounded-lg border border-[#1f1f24] bg-black/50 mb-4 text-center">
+            <p class="font-mono text-[10px] text-[#94a3b8] uppercase tracking-widest">NÚCLEO CENTRAL</p>
+            <p class="text-[11px] text-white font-light mt-1">Infraestructura Base</p>
+          </div>
+          <!-- Connected modules -->
+          <div class="grid grid-cols-3 gap-3">
+            <div class="p-3 rounded-lg border border-[#1f1f24] bg-black/30 text-center">
+              <p class="font-mono text-[8px] text-[#94a3b8] uppercase">Ventas</p>
+            </div>
+            <div class="p-3 rounded-lg border border-[#22c55e]/30 bg-[#22c55e]/5 text-center">
+              <p class="font-mono text-[8px] text-[#22c55e] uppercase">Compras</p>
+            </div>
+            <div class="p-3 rounded-lg border border-[#1f1f24] bg-black/30 text-center">
+              <p class="font-mono text-[8px] text-[#94a3b8] uppercase">RR.HH.</p>
+            </div>
+            <div class="p-3 rounded-lg border border-[#818cf8]/30 bg-[#818cf8]/5 text-center">
+              <p class="font-mono text-[8px] text-[#818cf8] uppercase">Finanzas</p>
+            </div>
+            <div class="p-3 rounded-lg border border-[#1f1f24] bg-black/30 text-center">
+              <p class="font-mono text-[8px] text-[#94a3b8] uppercase">CRM</p>
+            </div>
+            <div class="p-3 rounded-lg border border-[#eab308]/30 bg-[#eab308]/5 text-center">
+              <p class="font-mono text-[8px] text-[#eab308] uppercase">API</p>
+            </div>
+          </div>
+          <p class="text-[10px] text-[#94a3b8] font-mono text-center mt-4">Módulos desmontables — Expansión ilimitada</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4: Technical Standards (3-column numbered) -->
+  <section id="arquitectura" class="py-36 px-6 md:px-12 bg-black border-b border-[#1f1f24]">
+    <div class="max-w-6xl mx-auto">
+      <p class="font-mono text-[10px] uppercase tracking-widest text-[#94a3b8] mb-4">ESTÁNDARES TÉCNICOS</p>
+      <h2 class="font-light text-3xl md:text-4xl tracking-tight text-white mb-16">Arquitectura robusta para misiones críticas</h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-x-12 gap-y-12">
+        <!-- Step 1 -->
+        <div class="flex flex-col">
+          <span class="font-mono text-5xl text-[#1f1f24] font-light mb-6">01</span>
+          <h3 class="font-light text-lg text-white mb-3">Modelado de Datos Relacional Estricto</h3>
+          <p class="font-light text-[#94a3b8] text-sm leading-relaxed">Diseñamos diagramas de bases de datos PostgreSQL optimizados, garantizando la integridad referencial de tu información financiera y operativa mediante restricciones lógicas a nivel de servidor.</p>
+        </div>
+        
+        <!-- Step 2 -->
+        <div class="flex flex-col">
+          <span class="font-mono text-5xl text-[#1f1f24] font-light mb-6">02</span>
+          <h3 class="font-light text-lg text-white mb-3">APIs Rest y Webhooks de Alta Disponibilidad</h3>
+          <p class="font-light text-[#94a3b8] text-sm leading-relaxed">Desarrollamos puntos de conexión (endpoints) seguros con Next.js para integrar tu ERP con software de terceros, pasarelas de pago bancarias, plataformas de envíos o herramientas de marketing.</p>
+        </div>
+        
+        <!-- Step 3 -->
+        <div class="flex flex-col">
+          <span class="font-mono text-5xl text-[#1f1f24] font-light mb-6">03</span>
+          <h3 class="font-light text-lg text-white mb-3">Logs de Auditoría Inmutables</h3>
+          <p class="font-light text-[#94a3b8] text-sm leading-relaxed">Cada acción crítica dentro del sistema (modificaciones de inventario, aprobaciones de pagos, cambios de roles) queda registrada automáticamente con sello de tiempo e identidad del usuario, protegiendo a tu empresa de fraudes internos.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 5: Contact Form -->
+  <section id="contacto" class="py-36 px-6 md:px-12 bg-black">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
+        <div>
+          <p class="font-mono text-[10px] uppercase tracking-widest text-[#94a3b8] mb-4">CONTACTO</p>
+          <h2 class="font-light text-3xl md:text-4xl tracking-tight text-white mb-6">Transforma la eficiencia operativa de tu organización.</h2>
+          <p class="font-light text-[#94a3b8] text-sm md:text-base leading-relaxed">
+            Hablemos de los cuellos de botella actuales de tu empresa. Evaluaremos tus procesos manuales y te propondremos una infraestructura de software a medida que centralice y automatice tu negocio.
+          </p>
+        </div>
+        
+        <div class="linear-card p-8 rounded-lg border border-[#1f1f24] bg-[#08080c]/40">
+          <form action="/api/contact" method="POST" class="space-y-5">
+            <div>
+              <label class="block text-xs text-[#94a3b8] font-light mb-2">Nombre y Cargo del Contacto</label>
+              <input type="text" name="name" placeholder="Ej. Guillermo Vega — Director de Operaciones" required autocomplete="name" class="bg-black border border-[#1f1f24] rounded-lg px-4 py-3 w-full text-white placeholder-[#52525b] outline-none focus:border-[#444] transition-all text-sm" />
+            </div>
+            <div>
+              <label class="block text-xs text-[#94a3b8] font-light mb-2">Correo Electrónico Corporativo</label>
+              <input type="email" name="email" placeholder="gvega@empresa.com" required autocomplete="email" class="bg-black border border-[#1f1f24] rounded-lg px-4 py-3 w-full text-white placeholder-[#52525b] outline-none focus:border-[#444] transition-all text-sm" />
+            </div>
+            <div>
+              <label class="block text-xs text-[#94a3b8] font-light mb-2">Tamaño de la Organización</label>
+              <input type="text" name="org_size" placeholder="Ej. Menos de 20 empleados, 20-100 empleados, más de 100..." class="bg-black border border-[#1f1f24] rounded-lg px-4 py-3 w-full text-white placeholder-[#52525b] outline-none focus:border-[#444] transition-all text-sm" />
+            </div>
+            <div>
+              <label class="block text-xs text-[#94a3b8] font-light mb-2">Describe las áreas críticas a automatizar</label>
+              <textarea name="message" rows="4" placeholder="Cuéntanos brevemente qué procesos necesitas optimizar o centralizar (ej. ventas, inventario, facturación)..." required class="bg-black border border-[#1f1f24] rounded-lg px-4 py-3 w-full text-white placeholder-[#52525b] outline-none focus:border-[#444] transition-all text-sm resize-none"></textarea>
+            </div>
+            <button type="submit" class="bg-white text-black font-semibold text-xs rounded-full hover:bg-neutral-200 transition-all px-6 py-3 w-full flex items-center justify-center gap-2 shadow-[0_0_15px_rgba(255,255,255,0.1)]">
+              Diseñar nuestro sistema a medida
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
 </BaseLayout>

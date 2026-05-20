@@ -1,0 +1,88 @@
+---
+interface Props {
+  isLanding?: boolean;
+}
+const { isLanding = false } = Astro.props;
+---
+<header class="fixed top-0 left-0 w-full z-50 bg-black/80 backdrop-blur-md border-b border-[#171717]">
+  <nav class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+    <!-- Logo -->
+    {
+      isLanding ? (
+        <span class="font-body-md text-lg tracking-tight flex items-center gap-2.5 cursor-default">
+          <svg class="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 3C16.97 3 21 7.03 21 12C21 15.5 19 18.5 16 20" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M12 21C7.03 21 3 16.97 3 12C3 8.5 5 5.5 8 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M12 7C14.76 7 17 9.24 17 12C17 14 15.7 15.7 14 16.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M12 17C9.24 17 7 14.76 7 12C7 10 8.3 8.3 10 7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M12 10C13.1 10 14 10.9 14 12C14 12.6 13.5 13.1 13 13.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M12 14C10.9 14 10 13.1 10 12C10 11.4 10.5 10.9 11 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span class="font-bold text-white">VORTEX</span><span class="text-neutral-500">LM</span>
+        </span>
+      ) : (
+        <a href="/" class="font-body-md text-lg tracking-tight flex items-center gap-2.5 hover:opacity-85 transition-opacity">
+          <svg class="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 3C16.97 3 21 7.03 21 12C21 15.5 19 18.5 16 20" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M12 21C7.03 21 3 16.97 3 12C3 8.5 5 5.5 8 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M12 7C14.76 7 17 9.24 17 12C17 14 15.7 15.7 14 16.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M12 17C9.24 17 7 14.76 7 12C7 10 8.3 8.3 10 7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M12 10C13.1 10 14 10.9 14 12C14 12.6 13.5 13.1 13 13.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M12 14C10.9 14 10 13.1 10 12C10 11.4 10.5 10.9 11 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span class="font-bold text-white">VORTEX</span><span class="text-neutral-500">LM</span>
+        </a>
+      )
+    }
+
+    <!-- Desktop Nav Links (hidden on landing pages) -->
+    {
+      !isLanding && (
+        <div class="hidden md:flex items-center gap-7">
+          <a href="/" class="text-xs font-normal text-[#a3a3a3] hover:text-white transition-colors duration-300">Inicio</a>
+          <a href="/servicios" class="text-xs font-normal text-[#a3a3a3] hover:text-white transition-colors duration-300">Servicios</a>
+          <a href="/servicios/desarrollo-web-astro-react-nextjs" class="text-xs font-normal text-[#a3a3a3] hover:text-white transition-colors duration-300">Stack Moderno</a>
+          <a href="/contacto" class="text-xs font-normal text-[#a3a3a3] hover:text-white transition-colors duration-300">Contacto</a>
+        </div>
+      )
+    }
+
+    <!-- CTA Button -->
+    <div class="hidden md:flex items-center">
+      {
+        isLanding ? (
+          <a href="#contacto-form" class="bg-white text-black text-xs font-medium px-4 py-2 rounded-md hover:bg-neutral-200 transition-all shadow-[0_0_15px_rgba(255,255,255,0.1)]">
+            Cotizar Proyecto
+          </a>
+        ) : (
+          <a href="/contacto" class="bg-white text-black text-xs font-medium px-4 py-2 rounded-md hover:bg-neutral-200 transition-all">
+            Hablemos
+          </a>
+        )
+      }
+    </div>
+
+    <!-- Mobile Menu (only for non-landing pages) -->
+    {
+      !isLanding && (
+        <details class="md:hidden group relative">
+          <summary class="list-none cursor-pointer text-[#a3a3a3] hover:text-white p-2">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+            </svg>
+          </summary>
+          <div class="absolute right-0 top-full mt-3 w-56 rounded-md shadow-2xl overflow-hidden flex flex-col z-50 bg-[#08080c]/95 border border-[#1f1f24]">
+            <a href="/" class="px-5 py-3.5 text-xs text-[#a3a3a3] hover:bg-[#121216] hover:text-white border-b border-[#1f1f24] transition-colors">Inicio</a>
+            <a href="/servicios" class="px-5 py-3.5 text-xs text-[#a3a3a3] hover:bg-[#121216] hover:text-white border-b border-[#1f1f24] transition-colors">Servicios</a>
+            <a href="/servicios/desarrollo-web-astro-react-nextjs" class="px-5 py-3.5 text-xs text-[#a3a3a3] hover:bg-[#121216] hover:text-white border-b border-[#1f1f24] transition-colors">Stack Moderno</a>
+            <a href="/contacto" class="px-5 py-3.5 text-xs text-[#a3a3a3] hover:bg-[#121216] hover:text-white border-b border-[#1f1f24] transition-colors">Contacto</a>
+            <a href="/contacto" class="px-5 py-3.5 text-xs text-white bg-white/10 hover:bg-white/20 text-center font-medium transition-colors">Hablemos</a>
+          </div>
+        </details>
+      )
+    }
+  </nav>
+</header>
+
+<!-- Spacer to prevent content from hiding behind fixed header -->
+<div class="h-[68px]"></div>

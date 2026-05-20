@@ -482,7 +482,12 @@ import ContactForm from '../../components/ui/ContactForm.astro';
             <div class="absolute top-0 right-0 w-64 h-64 bg-cyan-500/[0.01] rounded-full blur-[80px] pointer-events-none"></div>
             
             <h3 class="text-lg font-light text-white mb-6">Iniciar mi Consultoría Técnica</h3>
-            <ContactForm />
+            <ContactForm 
+              buttonText="Agendar Consultoría Técnica" 
+              buttonClass="w-full py-4 mt-2 bg-white text-black font-semibold text-xs rounded-lg hover:bg-neutral-200 transition-all duration-200 active:scale-[0.98] shadow-[0_0_20px_rgba(255,255,255,0.15)] text-center cursor-pointer"
+              inputBgClass="bg-black"
+              inputBorderClass="border-[#1f1f24] focus:border-white focus:ring-white/20"
+            />
           </div>
         </div>
 

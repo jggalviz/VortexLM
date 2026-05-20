@@ -1,0 +1,493 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ContactForm from '../../components/ui/ContactForm.astro';
+---
+
+<BaseLayout 
+  title="Servicios Tecnológicos de Alto Rendimiento | VortexLM" 
+  description="Soluciones tecnológicas a medida: Aplicaciones SaaS escalables con React/Next.js, WordPress de nivel de ingeniería a código puro, bases de datos PostgreSQL/Supabase y SEO técnico de rendimiento extremo."
+>
+  <!-- Hero Section (Sección Superior) -->
+  <section class="relative pt-36 pb-32 overflow-hidden linear-gradient-bg border-b border-[#1f1f24] px-6 md:px-12 bg-black">
+    <!-- Rejilla de fondo sutil -->
+    <div class="absolute inset-0 linear-grid opacity-30 pointer-events-none"></div>
+    
+    <div class="max-w-[1200px] mx-auto text-center relative z-10">
+      <!-- Glow de fondo detrás del título -->
+      <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-white/[0.01] blur-[120px] rounded-full pointer-events-none"></div>
+
+      <!-- Título Principal (H1) -->
+      <h1 class="text-4xl md:text-7xl font-extralight tracking-tight text-white mb-8 leading-[1.08] max-w-5xl mx-auto opacity-95">
+        Soluciones tecnológicas a medida: Desde WordPress optimizado hasta Web Apps escalables.
+      </h1>
+      
+      <!-- Subtítulo (Soporte en gris de alto contraste) -->
+      <p class="text-base md:text-lg text-[#94a3b8] font-light mb-12 max-w-3xl mx-auto leading-relaxed">
+        No creemos en soluciones genéricas ni en plataformas pesadas. Diseñamos e implementamos infraestructura digital de alto rendimiento, adaptada exactamente a los objetivos de tu negocio y con los estándares más exigentes del mercado.
+      </p>
+
+      <!-- Botones de Acción (CTAs) -->
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-6 mb-24">
+        <a href="#contacto" class="w-full sm:w-auto px-8 py-3 bg-white text-black font-semibold text-xs rounded-full hover:bg-neutral-200 transition-all duration-200 active:scale-95 shadow-[0_0_25px_rgba(255,255,255,0.15)] text-center">
+          Solicitar presupuesto
+        </a>
+        <a href="#catalogo" class="w-full sm:w-auto px-6 py-3 text-white/80 font-medium text-xs rounded-full hover:text-white flex items-center justify-center gap-1.5 group transition-colors">
+          Ver tecnologías <span class="group-hover:translate-x-1 transition-transform">➔</span>
+        </a>
+      </div>
+
+      <!-- Elemento Gráfico Central (Mockup de arquitectura modular de tres paneles superpuestos) -->
+      <div class="relative max-w-5xl mx-auto mt-16 min-h-[380px] md:min-h-[460px] flex items-center justify-center">
+        <!-- Resplandor sutil debajo del Mockup -->
+        <div class="absolute inset-0 bg-cyan-500/[0.015] blur-[150px] rounded-full pointer-events-none"></div>
+
+        <div class="relative w-full max-w-4xl grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
+          
+          <!-- Panel 1: API JSON (Izquierda - Detrás) -->
+          <div class="col-span-1 md:col-span-4 linear-card rounded-lg border border-[#1f1f24] bg-[#08080c]/80 p-5 font-mono text-[10px] text-left text-[#94a3b8] shadow-2xl relative md:-mr-6 md:translate-y-6 md:hover:translate-y-4 md:hover:z-30 transition-all duration-300 md:opacity-85 md:hover:opacity-100">
+            <div class="flex items-center justify-between border-b border-[#1f1f24] pb-3 mb-4">
+              <div class="flex items-center gap-1.5">
+                <span class="w-2 h-2 rounded-full bg-[#ff5f56]/40"></span>
+                <span class="w-2 h-2 rounded-full bg-[#ffbd2e]/40"></span>
+                <span class="w-2 h-2 rounded-full bg-[#27c93f]/40"></span>
+              </div>
+              <span class="text-[9px] text-[#8a8a93] uppercase font-semibold tracking-wider font-mono">api_endpoint.json</span>
+            </div>
+            <div class="space-y-1 text-slate-300/90 leading-normal">
+              <div><span class="text-cyan-400">GET</span> <span class="text-green-400">/api/v1/performance</span></div>
+              <div class="text-[#8a8a93]">{</div>
+              <div class="pl-4">"<span class="text-yellow-200">status</span>": "<span class="text-green-300">success</span>",</div>
+              <div class="pl-4">"<span class="text-yellow-200">framework</span>": "<span class="text-green-300">Astro/React</span>",</div>
+              <div class="pl-4">"<span class="text-yellow-200">metrics</span>": {</div>
+              <div class="pl-8">"<span class="text-yellow-200">firstContentfulPaint</span>": "<span class="text-cyan-300">0.3s</span>",</div>
+              <div class="pl-8">"<span class="text-yellow-200">performanceScore</span>": <span class="text-yellow-400">100</span>,</div>
+              <div class="pl-8">"<span class="text-yellow-200">serverResponseTime</span>": "<span class="text-cyan-300">42ms</span>"</div>
+              <div class="pl-4">},</div>
+              <div class="pl-4">"<span class="text-yellow-200">deployment</span>": "<span class="text-green-300">Edge Network</span>"</div>
+              <div class="text-[#8a8a93]">}</div>
+            </div>
+          </div>
+
+          <!-- Panel 2: Componente React/Astro (Centro - Elevado) -->
+          <div class="col-span-1 md:col-span-5 linear-card rounded-lg border border-[#2e2e34] bg-[#050507] p-6 font-mono text-[10px] text-left shadow-[0_40px_80px_rgba(0,0,0,0.8)] relative z-20 md:scale-105 transition-all duration-300">
+            <div class="flex items-center justify-between border-b border-[#1f1f24] pb-3.5 mb-4">
+              <div class="flex items-center gap-1.5">
+                <span class="w-2.5 h-2.5 rounded-full bg-[#ff5f56]"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-[#ffbd2e]"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-[#27c93f]"></span>
+              </div>
+              <span class="text-[9px] text-white/60 font-semibold tracking-wider font-mono">ServiceCard.tsx</span>
+            </div>
+            <div class="space-y-1.5 text-[#94a3b8]/95 leading-relaxed">
+              <div><span class="text-purple-400">import</span> React <span class="text-purple-400">from</span> <span class="text-green-300">'react'</span>;</div>
+              <div><span class="text-purple-400">import</span> &#123; <span class="text-yellow-200">IconVortex</span> &#125; <span class="text-purple-400">from</span> <span class="text-green-300">'./icons'</span>;</div>
+              <br />
+              <div><span class="text-blue-400">interface</span> <span class="text-yellow-300">Props</span> &#123;</div>
+              <div class="pl-4"><span class="text-slate-300">title</span>: <span class="text-cyan-400">string</span>;</div>
+              <div class="pl-4"><span class="text-slate-300">description</span>: <span class="text-cyan-400">string</span>;</div>
+              <div>&#125;</div>
+              <br />
+              <div><span class="text-blue-400">export const</span> <span class="text-yellow-200">ServiceCard</span> = (&#123; <span class="text-slate-200">title, description</span> &#125;: <span class="text-yellow-300">Props</span>) => &#123;</div>
+              <div class="pl-4"><span class="text-purple-400">return</span> (</div>
+              <div class="pl-8">&lt;<span class="text-blue-300">div</span> className=<span class="text-green-300">"linear-card hover:glow"</span>&gt;</div>
+              <div class="pl-12">&lt;<span class="text-blue-300">IconVortex</span> className=<span class="text-green-300">"w-5 h-5 text-cyan-400"</span> /&gt;</div>
+              <div class="pl-12">&lt;<span class="text-blue-300">h3</span> className=<span class="text-green-300">"font-light mt-4"</span>&gt;&#123;<span class="text-slate-200">title</span>&#125;&lt;/<span class="text-blue-300">h3</span>&gt;</div>
+              <div class="pl-12">&lt;<span class="text-blue-300">p</span> className=<span class="text-green-300">"text-[#8a8a93] text-xs"</span>&gt;&#123;<span class="text-slate-200">description</span>&#125;&lt;/<span class="text-blue-300">p</span>&gt;</div>
+              <div class="pl-8">&lt;/<span class="text-blue-300">div</span>&gt;</div>
+              <div class="pl-4">);</div>
+              <div>&#125;;</div>
+            </div>
+          </div>
+
+          <!-- Panel 3: Base de Datos Relacional (Derecha - Detrás) -->
+          <div class="col-span-1 md:col-span-3 linear-card rounded-lg border border-[#1f1f24] bg-[#08080c]/80 p-5 font-mono text-[9px] text-left text-[#94a3b8] shadow-2xl relative md:-ml-6 md:-translate-y-6 md:hover:-translate-y-8 md:hover:z-30 transition-all duration-300 md:opacity-85 md:hover:opacity-100">
+            <div class="flex items-center justify-between border-b border-[#1f1f24] pb-3 mb-4">
+              <div class="flex items-center gap-1.5">
+                <span class="w-2 h-2 rounded-full bg-[#ff5f56]/40"></span>
+                <span class="w-2 h-2 rounded-full bg-[#ffbd2e]/40"></span>
+                <span class="w-2 h-2 rounded-full bg-[#27c93f]/40"></span>
+              </div>
+              <span class="text-[9px] text-[#8a8a93] uppercase font-semibold tracking-wider font-mono">relational_schema</span>
+            </div>
+            <div class="space-y-4 text-slate-300/80 leading-snug">
+              <div>
+                <div class="text-white font-bold border-b border-[#1f1f24] pb-1 mb-1.5 text-[10px]">Table: clients_saas</div>
+                <div class="flex justify-between"><span class="text-purple-400">id</span> <span class="text-slate-500">uuid [PK]</span></div>
+                <div class="flex justify-between"><span>project_name</span> <span class="text-slate-500">varchar</span></div>
+                <div class="flex justify-between"><span>metrics_ref</span> <span class="text-slate-500">uuid [FK]</span></div>
+                <div class="flex justify-between"><span>api_status</span> <span class="text-slate-500">boolean</span></div>
+              </div>
+              <div>
+                <div class="text-white font-bold border-b border-[#1f1f24] pb-1 mb-1.5 text-[10px]">Table: performance_stats</div>
+                <div class="flex justify-between"><span class="text-purple-400">id</span> <span class="text-slate-500">uuid [PK]</span></div>
+                <div class="flex justify-between"><span>latency_ms</span> <span class="text-slate-500">integer</span></div>
+                <div class="flex justify-between"><span>edge_hits</span> <span class="text-slate-500">bigint</span></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- El Catálogo Core de Servicios (Estructura de cuadrícula / Grid) -->
+  <section id="catalogo" class="py-36 px-6 md:px-12 bg-black relative border-b border-[#1f1f24]">
+    <div class="max-w-[1200px] mx-auto relative z-10">
+      
+      <!-- Texto Introductorio -->
+      <div class="max-w-4xl mb-24">
+        <span class="text-[10px] font-mono text-[#94a3b8] uppercase tracking-widest block mb-4 font-semibold">Ingeniería Web de Élite</span>
+        <h2 class="text-3xl md:text-5xl font-light text-white tracking-tight leading-snug">
+          Capacidades de ingeniería para el ecosistema digital moderno.
+        </h2>
+      </div>
+
+      <!-- Grid de Servicios (Estilo Linear - 2 Columnas) -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+        
+        <!-- Servicio 1: Desarrollo de Web Apps a Medida -->
+        <div class="linear-card rounded-lg border border-[#1f1f24] bg-[#08080c]/30 p-8 flex flex-col justify-between group glow-hover transition-all duration-300">
+          <div>
+            <!-- Abstract Line Graphic: Matrix Tridimensional -->
+            <div class="w-full h-36 flex items-center justify-center bg-black/40 rounded border border-[#1f1f24] mb-8 overflow-hidden relative">
+              <!-- Radial Glow -->
+              <div class="absolute inset-0 bg-cyan-500/[0.02] opacity-0 group-hover:opacity-100 transition-opacity blur-2xl rounded-full"></div>
+              
+              <svg class="w-48 h-24 text-slate-700/80 group-hover:text-cyan-500/30 transition-colors" viewBox="0 0 200 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- Grid perspective lines -->
+                <line x1="10" y1="90" x2="190" y2="90" stroke="#334155" stroke-width="0.75" />
+                <line x1="20" y1="70" x2="180" y2="70" stroke="#334155" stroke-width="0.75" stroke-dasharray="2 2" />
+                <line x1="40" y1="50" x2="160" y2="50" stroke="#334155" stroke-width="0.75" stroke-dasharray="2 2" />
+                <line x1="60" y1="30" x2="140" y2="30" stroke="#334155" stroke-width="0.75" stroke-dasharray="4 4" />
+                
+                <!-- Interconnecting perspective lines -->
+                <line x1="10" y1="90" x2="60" y2="30" stroke="#334155" stroke-width="0.75" />
+                <line x1="70" y1="90" x2="85" y2="30" stroke="#334155" stroke-width="0.75" />
+                <line x1="130" y1="90" x2="115" y2="30" stroke="#334155" stroke-width="0.75" />
+                <line x1="190" y1="90" x2="140" y2="30" stroke="#334155" stroke-width="0.75" />
+                
+                <!-- Floating geometric cubes of data -->
+                <rect x="35" y="65" width="8" height="8" stroke="#334155" stroke-width="1" fill="#08080c" />
+                <rect x="95" y="45" width="10" height="10" stroke="#334155" stroke-width="1" fill="#08080c" class="group-hover:stroke-cyan-500 transition-colors" />
+                <rect x="155" y="65" width="8" height="8" stroke="#334155" stroke-width="1" fill="#08080c" />
+                
+                <circle cx="100" cy="50" r="2" fill="currentColor" class="text-cyan-400 animate-pulse" />
+                <circle cx="39" cy="69" r="2" fill="currentColor" class="text-cyan-400" />
+                <circle cx="159" cy="69" r="2" fill="currentColor" class="text-cyan-400" />
+              </svg>
+            </div>
+            
+            <span class="text-[10px] font-mono text-cyan-400 uppercase tracking-wider block mb-2 font-medium">Sistemas Distribuidos</span>
+            <h3 class="text-xl md:text-2xl font-light text-white mb-4">Aplicaciones Web y Plataformas SaaS</h3>
+            <p class="text-xs md:text-sm text-[#94a3b8] font-light leading-relaxed mb-6">
+              Construimos sistemas complejos y aplicaciones web escalables utilizando Next.js, React y TypeScript. Diseñamos paneles de administración, herramientas internas y plataformas de software estables, seguras y rápidas, optimizadas para el despliegue global en Vercel.
+            </p>
+          </div>
+          <a href="#contacto" class="text-xs font-normal text-white hover:text-cyan-400 flex items-center gap-1 mt-2 transition-colors">
+            Cotizar plataforma SaaS <span class="group-hover:translate-x-1 transition-transform">➔</span>
+          </a>
+        </div>
+
+        <!-- Servicio 2: WordPress de Alto Rendimiento (Engineering-Grade) -->
+        <div class="linear-card rounded-lg border border-[#1f1f24] bg-[#08080c]/30 p-8 flex flex-col justify-between group glow-hover transition-all duration-300">
+          <div>
+            <!-- Abstract Line Graphic: Minimalist Gear / Core Engine -->
+            <div class="w-full h-36 flex items-center justify-center bg-black/40 rounded border border-[#1f1f24] mb-8 overflow-hidden relative">
+              <!-- Radial Glow -->
+              <div class="absolute inset-0 bg-yellow-500/[0.01] opacity-0 group-hover:opacity-100 transition-opacity blur-2xl rounded-full"></div>
+
+              <svg class="w-48 h-24 text-slate-700/80 group-hover:text-yellow-500/30 transition-colors" viewBox="0 0 200 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- Circular coordinates -->
+                <circle cx="100" cy="50" r="30" stroke="#334155" stroke-width="1" />
+                <circle cx="100" cy="50" r="18" stroke="#334155" stroke-width="1" stroke-dasharray="2 2" />
+                <circle cx="100" cy="50" r="8" stroke="#334155" stroke-width="1" />
+                
+                <!-- Central Node vectors -->
+                <line x1="100" y1="10" x2="100" y2="90" stroke="#334155" stroke-width="0.75" />
+                <line x1="60" y1="50" x2="140" y2="50" stroke="#334155" stroke-width="0.75" />
+                <line x1="72" y1="22" x2="128" y2="78" stroke="#334155" stroke-width="0.75" stroke-dasharray="4 4" />
+                <line x1="72" y1="78" x2="128" y2="22" stroke="#334155" stroke-width="0.75" stroke-dasharray="4 4" />
+                
+                <!-- Peripheral Node Dots -->
+                <circle cx="100" cy="20" r="3" fill="#08080c" stroke="#334155" stroke-width="1" class="group-hover:stroke-yellow-500 transition-colors" />
+                <circle cx="100" cy="80" r="3" fill="#08080c" stroke="#334155" stroke-width="1" />
+                <circle cx="70" cy="50" r="3" fill="#08080c" stroke="#334155" stroke-width="1" />
+                <circle cx="130" cy="50" r="3" fill="#08080c" stroke="#334155" stroke-width="1" />
+                
+                <circle cx="100" cy="50" r="2" fill="currentColor" class="text-yellow-400" />
+              </svg>
+            </div>
+            
+            <span class="text-[10px] font-mono text-yellow-500 uppercase tracking-wider block mb-2 font-medium">CMS de Alto Rendimiento</span>
+            <h3 class="text-xl md:text-2xl font-light text-white mb-4">WordPress Optimizado a Código Puro</h3>
+            <p class="text-xs md:text-sm text-[#94a3b8] font-light leading-relaxed mb-6">
+              Llevamos WordPress al máximo nivel de eficiencia. Desarrollamos temas y plugins a medida sin maquetadores visuales lentos (como Elementor o Divi). Logramos tiempos de carga instantáneos manteniendo la facilidad de gestión de contenidos que tu equipo ya conoce.
+            </p>
+          </div>
+          <a href="#contacto" class="text-xs font-normal text-white hover:text-yellow-500 flex items-center gap-1 mt-2 transition-colors">
+            Optimizar mi WordPress <span class="group-hover:translate-x-1 transition-transform">➔</span>
+          </a>
+        </div>
+
+        <!-- Servicio 3: Arquitectura Backend y Bases de Datos -->
+        <div class="linear-card rounded-lg border border-[#1f1f24] bg-[#08080c]/30 p-8 flex flex-col justify-between group glow-hover transition-all duration-300">
+          <div>
+            <!-- Abstract Line Graphic: Three Concentric Cylinders (Databases) -->
+            <div class="w-full h-36 flex items-center justify-center bg-black/40 rounded border border-[#1f1f24] mb-8 overflow-hidden relative">
+              <!-- Radial Glow -->
+              <div class="absolute inset-0 bg-blue-500/[0.015] opacity-0 group-hover:opacity-100 transition-opacity blur-2xl rounded-full"></div>
+
+              <svg class="w-48 h-24 text-slate-700/80 group-hover:text-blue-500/30 transition-colors" viewBox="0 0 200 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- Database Cylinders -->
+                <!-- Cylinder 1 (Left) -->
+                <path d="M50 35 C50 27, 80 27, 80 35 M50 35 L50 75 C50 83, 80 83, 80 75 L80 35 M50 55 C50 63, 80 63, 80 55" stroke="#334155" stroke-width="1" stroke-dasharray="2 2" />
+                <ellipse cx="65" cy="35" rx="15" ry="5" stroke="#334155" stroke-width="1" />
+                
+                <!-- Cylinder 2 (Center - High) -->
+                <path d="M85 25 C85 15, 115 15, 115 25 M85 25 L85 65 C85 75, 115 75, 115 65 L115 25 M85 45 C85 55, 115 55, 115 45" stroke="#334155" stroke-width="1" />
+                <ellipse cx="100" cy="25" rx="15" ry="5" stroke="#334155" stroke-width="1.2" class="group-hover:stroke-blue-400 transition-colors" />
+                
+                <!-- Cylinder 3 (Right) -->
+                <path d="M120 35 C120 27, 150 27, 150 35 M120 35 L120 75 C120 83, 150 83, 150 75 L150 35 M120 55 C120 63, 150 63, 150 55" stroke="#334155" stroke-width="1" stroke-dasharray="2 2" />
+                <ellipse cx="135" cy="35" rx="15" ry="5" stroke="#334155" stroke-width="1" />
+                
+                <!-- Connection waves -->
+                <path d="M65 45 Q100 65 135 45" stroke="#334155" stroke-width="0.75" stroke-dasharray="3 3" />
+                <path d="M65 65 Q100 85 135 65" stroke="#334155" stroke-width="0.75" stroke-dasharray="3 3" />
+                <circle cx="100" cy="55" r="2" fill="currentColor" class="text-blue-400" />
+              </svg>
+            </div>
+            
+            <span class="text-[10px] font-mono text-blue-400 uppercase tracking-wider block mb-2 font-medium">Arquitectura Cloud robusta</span>
+            <h3 class="text-xl md:text-2xl font-light text-white mb-4">Infraestructura Cloud y Supabase</h3>
+            <p class="text-xs md:text-sm text-[#94a3b8] font-light leading-relaxed mb-6">
+              Modelamos bases de datos relacionales robustas con Supabase y PostgreSQL. Configuramos sistemas de autenticación seguros, almacenamiento en la nube y funciones serverless que garantizan que la infraestructura de tu aplicación crezca sin fricciones ni costes ocultos.
+            </p>
+          </div>
+          <a href="#contacto" class="text-xs font-normal text-white hover:text-blue-400 flex items-center gap-1 mt-2 transition-colors">
+            Diseñar base de datos <span class="group-hover:translate-x-1 transition-transform">➔</span>
+          </a>
+        </div>
+
+        <!-- Servicio 4: SEO Técnico y Optimización Core Web Vitals -->
+        <div class="linear-card rounded-lg border border-[#1f1f24] bg-[#08080c]/30 p-8 flex flex-col justify-between group glow-hover transition-all duration-300">
+          <div>
+            <!-- Abstract Line Graphic: Ascending 45-degree clean vector line -->
+            <div class="w-full h-36 flex items-center justify-center bg-black/40 rounded border border-[#1f1f24] mb-8 overflow-hidden relative">
+              <!-- Radial Glow -->
+              <div class="absolute inset-0 bg-emerald-500/[0.015] opacity-0 group-hover:opacity-100 transition-opacity blur-2xl rounded-full"></div>
+
+              <svg class="w-48 h-24 text-slate-700/80 group-hover:text-emerald-500/30 transition-colors" viewBox="0 0 200 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- Mathematical grid coordinates -->
+                <line x1="20" y1="80" x2="180" y2="80" stroke="#334155" stroke-width="0.75" />
+                <line x1="40" y1="20" x2="40" y2="90" stroke="#334155" stroke-width="0.75" stroke-dasharray="2 2" />
+                <line x1="160" y1="20" x2="160" y2="90" stroke="#334155" stroke-width="0.75" stroke-dasharray="2 2" />
+                
+                <!-- Secondary axis lines -->
+                <line x1="40" y1="50" x2="160" y2="50" stroke="#334155" stroke-width="0.5" stroke-dasharray="4 4" />
+                
+                <!-- 45-degree ascending performance vector -->
+                <line x1="40" y1="80" x2="140" y2="30" stroke="#334155" stroke-width="1.5" class="group-hover:stroke-emerald-400 transition-colors" />
+                <line x1="140" y1="30" x2="170" y2="15" stroke="#334155" stroke-width="1.5" stroke-dasharray="2 2" />
+                
+                <!-- Intersect nodes and metric dots -->
+                <circle cx="40" cy="80" r="3" fill="#08080c" stroke="#334155" stroke-width="1" />
+                <circle cx="90" cy="55" r="3" fill="#08080c" stroke="#334155" stroke-width="1" />
+                <circle cx="140" cy="30" r="3" fill="#08080c" stroke="currentColor" stroke-width="1" class="text-emerald-400" />
+                
+                <!-- Speed score tag mockup -->
+                <rect x="135" y="45" width="35" height="12" rx="2" fill="#050507" stroke="#334155" stroke-width="0.5" />
+                <text x="141" y="53" fill="#10b981" font-size="6" font-family="monospace" font-weight="bold">100%</text>
+              </svg>
+            </div>
+            
+            <span class="text-[10px] font-mono text-emerald-400 uppercase tracking-wider block mb-2 font-medium">Performance y Visibilidad</span>
+            <h3 class="text-xl md:text-2xl font-light text-white mb-4">SEO Técnico y Performance Extrema</h3>
+            <p class="text-xs md:text-sm text-[#94a3b8] font-light leading-relaxed mb-6">
+              El código es el pilar del posicionamiento. Desarrollamos con Astro, el framework más rápido para webs de contenido, garantizando métricas impecables en Google PageSpeed. Estructuramos datos indexables, semántica HTML5 nativa y optimización móvil avanzada.
+            </p>
+          </div>
+          <a href="#contacto" class="text-xs font-normal text-white hover:text-emerald-400 flex items-center gap-1 mt-2 transition-colors">
+            Auditar velocidad actual <span class="group-hover:translate-x-1 transition-transform">➔</span>
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Bloque Detallado: Flujo de Trabajo (Fondo charcoal oscuro con padding amplio) -->
+  <section class="py-36 px-6 md:px-12 bg-[#08080c]/50 relative border-b border-[#1f1f24]">
+    <!-- Glow de atmósfera sutil -->
+    <div class="absolute inset-0 bg-white/[0.005] pointer-events-none"></div>
+
+    <div class="max-w-[1200px] mx-auto relative z-10">
+      
+      <!-- Título de la Sección -->
+      <div class="max-w-3xl mb-24">
+        <span class="text-[10px] font-mono text-[#8a8a93] uppercase tracking-widest block mb-4 font-semibold">Proceso de Ingeniería de Software</span>
+        <h2 class="text-3xl md:text-5xl font-light text-white tracking-tight mb-6">
+          Cómo construimos software de nivel internacional.
+        </h2>
+        <p class="text-[#94a3b8] font-light leading-relaxed text-sm md:text-base">
+          Un proceso transparente, iterativo y centrado en la calidad del código.
+        </p>
+      </div>
+
+      <!-- Flujo de Trabajo en 3 Pasos -->
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12 mb-20">
+        
+        <!-- Paso 1 -->
+        <div class="p-8 rounded-lg border border-[#1f1f24] bg-black/40 hover:border-slate-800 transition-colors">
+          <div class="font-mono text-cyan-400 font-bold text-xs uppercase tracking-widest mb-4">Paso 01</div>
+          <h4 class="text-white text-lg font-light mb-3">Consultoría y Arquitectura</h4>
+          <p class="text-xs md:text-sm text-[#94a3b8] font-light leading-relaxed">
+            Analizamos los requerimientos de tu proyecto para seleccionar el stack tecnológico ideal. Diseñamos la estructura de datos y el flujo de navegación antes de escribir la primera línea de código.
+          </p>
+        </div>
+
+        <!-- Paso 2 -->
+        <div class="p-8 rounded-lg border border-[#1f1f24] bg-black/40 hover:border-slate-800 transition-colors">
+          <div class="font-mono text-cyan-400 font-bold text-xs uppercase tracking-widest mb-4">Paso 02</div>
+          <h4 class="text-white text-lg font-light mb-3">Desarrollo e Integración Continua</h4>
+          <p class="text-xs md:text-sm text-[#94a3b8] font-light leading-relaxed">
+            Programamos con metodologías ágiles y control de versiones estricto en GitHub. Todo nuestro código es modular, limpio, documentado y pasa por pruebas de rendimiento automatizadas.
+          </p>
+        </div>
+
+        <!-- Paso 3 -->
+        <div class="p-8 rounded-lg border border-[#1f1f24] bg-black/40 hover:border-slate-800 transition-colors">
+          <div class="font-mono text-cyan-400 font-bold text-xs uppercase tracking-widest mb-4">Paso 03</div>
+          <h4 class="text-white text-lg font-light mb-3">Despliegue y Monitoreo global</h4>
+          <p class="text-xs md:text-sm text-[#94a3b8] font-light leading-relaxed">
+            Lanzamos tu plataforma en entornos cloud de última generación. Configuramos sistemas de monitoreo en tiempo real para asegurar una disponibilidad del 99.9% y proteger tu aplicación contra vulnerabilidades.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Tipo de Imagen Acompañando al Flujo (Línea de tiempo horizontal impecable con 3 maquetas) -->
+      <div class="linear-card rounded-lg border border-[#1f1f24] bg-black/60 p-8 md:p-12 relative overflow-hidden">
+        <!-- Glow suave de fondo -->
+        <div class="absolute -right-24 top-0 w-80 h-80 bg-cyan-500/[0.01] rounded-full blur-[100px] pointer-events-none"></div>
+
+        <div class="relative flex flex-col md:flex-row items-center justify-between gap-8 md:gap-4">
+          <!-- Línea conector horizontal de fondo en desktop -->
+          <div class="absolute top-[48px] left-[10%] right-[10%] h-[1px] bg-gradient-to-r from-transparent via-[#334155]/60 to-transparent hidden md:block z-0"></div>
+
+          <!-- Maqueta 1: Consola Ejecutando Compilación (Paso 1/2) -->
+          <div class="w-full md:w-72 linear-card rounded border border-[#1f1f24] bg-[#050507] p-4 text-[9px] font-mono text-left text-slate-400 shadow-xl relative z-10">
+            <div class="flex items-center justify-between border-b border-[#1f1f24] pb-2 mb-2 text-[#8a8a93]">
+              <span>compiler_daemon</span>
+              <span class="text-green-400">● online</span>
+            </div>
+            <div class="space-y-0.5">
+              <div class="text-slate-500">$ npm run build</div>
+              <div>&gt; vortex-landing@1.0.0 build</div>
+              <div>&gt; astro build</div>
+              <div class="text-cyan-400">[content] Syncing content models...</div>
+              <div class="text-green-400">✓ Completed in 280ms.</div>
+              <div class="text-white">[build] Server built successfully.</div>
+              <div class="text-emerald-400 font-bold">✓ Production bundles ready! [9.8s]</div>
+            </div>
+          </div>
+
+          <!-- Maqueta 2: Gráfico de Tráfico de Red (Paso 2/3) -->
+          <div class="w-full md:w-64 linear-card rounded border border-[#1f1f24] bg-[#050507] p-4 text-[9px] font-mono text-left shadow-xl relative z-10">
+            <div class="flex items-center justify-between border-b border-[#1f1f24] pb-2 mb-3 text-[#8a8a93]">
+              <span>network_throughput</span>
+              <span>avg_latency: 14ms</span>
+            </div>
+            <!-- SVG Curve graph -->
+            <div class="h-16 w-full flex items-end">
+              <svg class="w-full h-full text-slate-700" viewBox="0 0 160 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- Axis lines -->
+                <line x1="0" y1="45" x2="160" y2="45" stroke="#1f1f24" stroke-width="1" />
+                <!-- Grid background lines -->
+                <line x1="0" y1="25" x2="160" y2="25" stroke="#1f1f24" stroke-width="0.5" stroke-dasharray="2 2" />
+                
+                <!-- Fluid latencies curves -->
+                <path d="M0 40 Q20 20 40 35 T80 15 T120 42 T160 10" stroke="#334155" stroke-width="1" fill="none" />
+                <path d="M0 40 Q20 20 40 35 T80 15 T120 42 T160 10 L160 45 L0 45 Z" fill="url(#latencyGrad)" opacity="0.05" />
+                
+                <!-- Real-time dynamic dot -->
+                <circle cx="80" cy="15" r="2" fill="currentColor" class="text-cyan-400 animate-pulse" />
+                <line x1="80" y1="15" x2="80" y2="45" stroke="currentColor" stroke-width="0.5" stroke-dasharray="1 1" class="text-cyan-400/40" />
+                
+                <defs>
+                  <linearGradient id="latencyGrad" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#22d3ee" />
+                    <stop offset="100%" stop-color="#000" />
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
+          </div>
+
+          <!-- Maqueta 3: Escudo Heráldico Geométrico (Seguridad) -->
+          <div class="w-full md:w-56 linear-card rounded border border-[#1f1f24] bg-[#050507] p-4 text-[9px] font-mono text-center shadow-xl relative z-10 flex flex-col items-center justify-center min-h-[96px]">
+            <div class="w-12 h-12 flex items-center justify-center border border-[#1f1f24] rounded-full mb-2 bg-[#08080c] relative">
+              <!-- Geometric shield SVG -->
+              <svg class="w-6 h-6 text-slate-500 group-hover:text-cyan-400 transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                <path d="M12 8v8M9 11h6" stroke-dasharray="1 1" />
+              </svg>
+            </div>
+            <div class="text-[#8a8a93] font-semibold text-[8px] uppercase tracking-widest mb-0.5">Sandboxed Security</div>
+            <div class="text-emerald-400 font-bold text-[8px]">AES_256_GCM VERIFIED</div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Sección de Conversión (Footer CTA de Servicios) -->
+  <section class="py-36 px-6 md:px-12 bg-black relative" id="contacto">
+    <div class="max-w-[1200px] mx-auto relative z-10">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-center">
+        
+        <!-- Textos del CTA -->
+        <div class="lg:col-span-6 space-y-6">
+          <span class="text-[10px] font-mono text-cyan-400 uppercase tracking-widest block font-medium">Evolución de Infraestructura</span>
+          <h2 class="text-3xl md:text-5xl font-light text-white tracking-tight leading-tight">
+            ¿Listo para elevar el estándar tecnológico de tu negocio?
+          </h2>
+          <p class="text-base text-[#94a3b8] font-light leading-relaxed">
+            Agenda una sesión técnica de 15 minutos. Evaluaremos tu proyecto actual o tu idea y te propondremos la infraestructura ideal para hacerlo escalable. Sin rodeos, sin costes imprevistos.
+          </p>
+          
+          <!-- Elementos adicionales del CTA -->
+          <div class="pt-6 space-y-4 border-t border-[#1f1f24] text-xs text-[#8a8a93]">
+            <div class="flex items-center gap-3">
+              <span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
+              <span>Análisis de arquitectura actual 100% gratuito.</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
+              <span>Propuesta clara sin plantillas ni maquetadores lentos.</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Columna del Formulario Corporativo Premium -->
+        <div class="lg:col-span-6">
+          <div class="linear-card rounded-lg border border-[#2e2e34] bg-[#050507] p-8 md:p-10 shadow-[0_30px_60px_-10px_rgba(0,0,0,0.9)] relative overflow-hidden">
+            <!-- Glow detrás del Formulario -->
+            <div class="absolute top-0 right-0 w-64 h-64 bg-cyan-500/[0.01] rounded-full blur-[80px] pointer-events-none"></div>
+            
+            <h3 class="text-lg font-light text-white mb-6">Iniciar mi Consultoría Técnica</h3>
+            <ContactForm />
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+</BaseLayout>

@@ -507,47 +507,95 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
       <!-- Formulario minimalista Linear, cajas negras con bordes finos -->
       <div class="linear-card p-8 rounded-lg border border-[#1f1f24] bg-[#08080c]/40 text-left space-y-6">
-        <form class="space-y-4" onsubmit="event.preventDefault(); alert('¡Mensaje enviado con éxito! Nuestro equipo de ingenieros analizará tu propuesta.');">
+        <div id="form-feedback" class="text-sm mt-4 hidden"></div>
+        <form id="contact-form-index" class="space-y-4">
           <div>
             <label class="block text-[10px] font-mono text-[#94a3b8] uppercase tracking-wider mb-2 font-medium" for="fullname">Nombre y Apellido</label>
-            <input 
-              class="w-full bg-black border border-[#1f1f24] rounded px-4 py-3 text-xs text-white placeholder-neutral-800 focus:outline-none focus:border-white transition-colors" 
-              type="text" 
-              id="fullname" 
-              placeholder="e.g. Carlos Pérez" 
+            <input
+              class="w-full bg-black border border-[#1f1f24] rounded px-4 py-3 text-xs text-white placeholder-neutral-800 focus:outline-none focus:border-white transition-colors"
+              type="text"
+              id="fullname"
+              name="name"
+              placeholder="e.g. Carlos Pérez"
               required
             />
           </div>
           
           <div>
             <label class="block text-[10px] font-mono text-[#94a3b8] uppercase tracking-wider mb-2 font-medium" for="corp_email">Correo Corporativo</label>
-            <input 
-              class="w-full bg-black border border-[#1f1f24] rounded px-4 py-3 text-xs text-white placeholder-neutral-800 focus:outline-none focus:border-white transition-colors" 
-              type="email" 
-              id="corp_email" 
-              placeholder="operator@acme.com" 
+            <input
+              class="w-full bg-black border border-[#1f1f24] rounded px-4 py-3 text-xs text-white placeholder-neutral-800 focus:outline-none focus:border-white transition-colors"
+              type="email"
+              id="corp_email"
+              name="email"
+              placeholder="operator@acme.com"
               required
             />
           </div>
           
           <div>
             <label class="block text-[10px] font-mono text-[#94a3b8] uppercase tracking-wider mb-2 font-medium" for="project_details">Cuéntanos sobre tu proyecto</label>
-            <textarea 
-              class="w-full bg-black border border-[#1f1f24] rounded px-4 py-3 text-xs text-white placeholder-neutral-800 focus:outline-none focus:border-white transition-colors min-h-[100px]" 
-              id="project_details" 
+            <textarea
+              class="w-full bg-black border border-[#1f1f24] rounded px-4 py-3 text-xs text-white placeholder-neutral-800 focus:outline-none focus:border-white transition-colors min-h-[100px]"
+              id="project_details"
+              name="message"
               placeholder="Describa el alcance de la aplicación web, integraciones o landing page requerida..."
               required
             ></textarea>
           </div>
+
+          <input type="hidden" name="service" value="consulta-general" />
           
-          <button 
-            type="submit" 
+          <button
+            type="button"
+            data-original-text="Enviar Mensaje"
             class="w-full py-3 bg-white text-black font-semibold text-xs rounded hover:bg-neutral-200 transition-colors duration-200"
+            onclick="submitFormIndex()"
           >
             Enviar Mensaje
           </button>
         </form>
       </div>
+
+      <script>
+        async function submitFormIndex() {
+          const form = document.getElementById('contact-form-index');
+          const feedback = document.getElementById('form-feedback');
+          const btn = form.querySelector('button[type="button"]');
+          
+          if (!form.checkValidity()) {
+            form.reportValidity();
+            return;
+          }
+          
+          btn.disabled = true;
+          btn.textContent = 'Enviando...';
+          
+          try {
+            const res = await fetch('/api/contact', {
+              method: 'POST',
+              body: new FormData(form)
+            });
+            const data = await res.json();
+            
+            if (data.success) {
+              feedback.className = 'text-sm mt-4 text-green-400';
+              feedback.textContent = '¡Mensaje enviado con éxito! Te contactaremos pronto.';
+              feedback.classList.remove('hidden');
+              form.reset();
+            } else {
+              throw new Error(data.error);
+            }
+          } catch (err) {
+            feedback.className = 'text-sm mt-4 text-red-400';
+            feedback.textContent = 'Error al enviar. Intenta de nuevo o escríbenos a info@vortexlm.com.';
+            feedback.classList.remove('hidden');
+          } finally {
+            btn.disabled = false;
+            btn.textContent = btn.getAttribute('data-original-text') || 'Enviar';
+          }
+        }
+      </script>
     </div>
   </section>
 </BaseLayout>

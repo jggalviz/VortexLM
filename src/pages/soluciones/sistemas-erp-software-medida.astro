@@ -257,7 +257,8 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         </div>
         
         <div class="linear-card p-8 rounded-lg border border-[#1f1f24] bg-[#08080c]/40">
-          <form action="/api/contact" method="POST" class="space-y-5">
+          <div id="form-feedback" class="text-sm mt-4 hidden"></div>
+          <form id="contact-form-erp" class="space-y-5">
             <div>
               <label class="block text-xs text-[#94a3b8] font-light mb-2">Nombre y Cargo del Contacto</label>
               <input type="text" name="name" placeholder="Ej. Guillermo Vega — Director de Operaciones" required autocomplete="name" class="bg-black border border-[#1f1f24] rounded-lg px-4 py-3 w-full text-white placeholder-[#52525b] outline-none focus:border-[#444] transition-all text-sm" />
@@ -274,12 +275,53 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
               <label class="block text-xs text-[#94a3b8] font-light mb-2">Describe las áreas críticas a automatizar</label>
               <textarea name="message" rows="4" placeholder="Cuéntanos brevemente qué procesos necesitas optimizar o centralizar (ej. ventas, inventario, facturación)..." required class="bg-black border border-[#1f1f24] rounded-lg px-4 py-3 w-full text-white placeholder-[#52525b] outline-none focus:border-[#444] transition-all text-sm resize-none"></textarea>
             </div>
-            <button type="submit" class="bg-white text-black font-semibold text-xs rounded-full hover:bg-neutral-200 transition-all px-6 py-3 w-full flex items-center justify-center gap-2 shadow-[0_0_15px_rgba(255,255,255,0.1)]">
+            <input type="hidden" name="service" value="sistemas-erp-software-medida" />
+            <button type="button" data-original-text="Diseñar nuestro sistema a medida" class="bg-white text-black font-semibold text-xs rounded-full hover:bg-neutral-200 transition-all px-6 py-3 w-full flex items-center justify-center gap-2 shadow-[0_0_15px_rgba(255,255,255,0.1)]" onclick="submitFormERP()">
               Diseñar nuestro sistema a medida
               <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
             </button>
           </form>
         </div>
+
+        <script>
+          async function submitFormERP() {
+            const form = document.getElementById('contact-form-erp');
+            const feedback = document.getElementById('form-feedback');
+            const btn = form.querySelector('button[type="button"]');
+            
+            if (!form.checkValidity()) {
+              form.reportValidity();
+              return;
+            }
+            
+            btn.disabled = true;
+            btn.textContent = 'Enviando...';
+            
+            try {
+              const res = await fetch('/api/contact', {
+                method: 'POST',
+                body: new FormData(form)
+              });
+              const data = await res.json();
+              
+              if (data.success) {
+                feedback.className = 'text-sm mt-4 text-green-400';
+                feedback.textContent = '¡Mensaje enviado con éxito! Te contactaremos pronto.';
+                feedback.classList.remove('hidden');
+                form.reset();
+              } else {
+                throw new Error(data.error);
+              }
+            } catch (err) {
+              feedback.className = 'text-sm mt-4 text-red-400';
+              feedback.textContent = 'Error al enviar. Intenta de nuevo o escríbenos a info@vortexlm.com.';
+              feedback.classList.remove('hidden');
+            } finally {
+              btn.disabled = false;
+              btn.textContent = btn.getAttribute('data-original-text') || 'Enviar';
+            }
+          }
+        </script>
       </div>
     </div>
   </section>

@@ -30,6 +30,17 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             <p class="font-mono text-[10px] uppercase tracking-widest text-[#94a3b8] mb-1">EMAIL</p>
             <a href="mailto:info@vortexlm.com" class="font-light text-white text-lg hover:text-[#94a3b8] transition-colors">info@vortexlm.com</a>
           </div>
+          <a href="https://wa.me/15072190951" target="_blank" rel="noopener noreferrer" class="flex items-start gap-3 group">
+            <svg class="w-5 h-5 text-neutral-400 group-hover:text-white transition-colors duration-200 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21" />
+              <path d="M9 10a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1H9z" />
+              <path d="M9 13a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1H9z" />
+            </svg>
+            <div class="flex flex-col">
+              <span class="text-[10px] uppercase tracking-widest text-neutral-500 font-mono">WHATSAPP</span>
+              <span class="text-sm text-neutral-300 group-hover:text-white transition-colors duration-200">+1 (507) 219-0951</span>
+            </div>
+          </a>
           <div>
             <p class="font-mono text-[10px] uppercase tracking-widest text-[#94a3b8] mb-1">UBICACIÓN</p>
             <p class="font-light text-white text-lg">Caracas, Venezuela</p>
@@ -44,7 +55,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <!-- RIGHT COLUMN: Contact Form -->
       <div class="w-full">
         <div class="linear-card p-8 rounded-lg border border-[#1f1f24] bg-[#08080c]/40">
-          <form action="/api/contact" method="POST" class="space-y-5">
+          <div id="form-feedback" class="text-sm mt-4 hidden"></div>
+          <form id="contact-form-contacto" class="space-y-5">
             <!-- Name / Company -->
             <div>
               <label class="block font-mono text-[10px] uppercase tracking-widest text-[#94a3b8] mb-2" for="name">Nombre / Empresa</label>
@@ -110,8 +122,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             
             <!-- Submit Button -->
             <button
-              type="submit"
+              type="button"
+              data-original-text="Enviar mensaje"
               class="bg-white text-black font-semibold text-xs rounded-full hover:bg-neutral-200 transition-all px-6 py-3 w-full flex items-center justify-center gap-2"
+              onclick="submitFormContacto()"
             >
               Enviar mensaje
               <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -122,6 +136,46 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           </form>
         </div>
       </div>
+
+      <script>
+        async function submitFormContacto() {
+          const form = document.getElementById('contact-form-contacto');
+          const feedback = document.getElementById('form-feedback');
+          const btn = form.querySelector('button[type="button"]');
+          
+          if (!form.checkValidity()) {
+            form.reportValidity();
+            return;
+          }
+          
+          btn.disabled = true;
+          btn.textContent = 'Enviando...';
+          
+          try {
+            const res = await fetch('/api/contact', {
+              method: 'POST',
+              body: new FormData(form)
+            });
+            const data = await res.json();
+            
+            if (data.success) {
+              feedback.className = 'text-sm mt-4 text-green-400';
+              feedback.textContent = '¡Mensaje enviado con éxito! Te contactaremos pronto.';
+              feedback.classList.remove('hidden');
+              form.reset();
+            } else {
+              throw new Error(data.error);
+            }
+          } catch (err) {
+            feedback.className = 'text-sm mt-4 text-red-400';
+            feedback.textContent = 'Error al enviar. Intenta de nuevo o escríbenos a info@vortexlm.com.';
+            feedback.classList.remove('hidden');
+          } finally {
+            btn.disabled = false;
+            btn.textContent = btn.getAttribute('data-original-text') || 'Enviar';
+          }
+        }
+      </script>
       
     </div>
   </section>

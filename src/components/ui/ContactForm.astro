@@ -14,7 +14,8 @@ const {
   inputBorderClass = "border-slate-700 focus:border-cyan-500 focus:ring-cyan-500"
 } = Astro.props;
 ---
-<form action="/api/contact" method="POST" class="space-y-4">
+<div id="form-feedback" class="text-sm mt-4 hidden"></div>
+<form id="contact-form-reusable" class="space-y-4">
   <div>
     <label for="name" class="block text-sm font-medium text-slate-300 mb-1">Nombre Completo</label>
     <input 
@@ -55,8 +56,10 @@ const {
   </div>
 
   <button 
-    type="submit" 
+    type="button"
+    data-original-text={buttonText}
     class={buttonClass}
+    onclick="submitFormReusable()"
   >
     {buttonText}
   </button>
@@ -66,3 +69,42 @@ const {
   </p>
 </form>
 
+<script>
+  async function submitFormReusable() {
+    const form = document.getElementById('contact-form-reusable');
+    const feedback = document.getElementById('form-feedback');
+    const btn = form.querySelector('button[type="button"]');
+    
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
+    
+    btn.disabled = true;
+    btn.textContent = 'Enviando...';
+    
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        body: new FormData(form)
+      });
+      const data = await res.json();
+      
+      if (data.success) {
+        feedback.className = 'text-sm mt-4 text-green-400';
+        feedback.textContent = '¡Mensaje enviado con éxito! Te contactaremos pronto.';
+        feedback.classList.remove('hidden');
+        form.reset();
+      } else {
+        throw new Error(data.error);
+      }
+    } catch (err) {
+      feedback.className = 'text-sm mt-4 text-red-400';
+      feedback.textContent = 'Error al enviar. Intenta de nuevo o escríbenos a info@vortexlm.com.';
+      feedback.classList.remove('hidden');
+    } finally {
+      btn.disabled = false;
+      btn.textContent = btn.getAttribute('data-original-text') || 'Enviar';
+    }
+  }
+</script>

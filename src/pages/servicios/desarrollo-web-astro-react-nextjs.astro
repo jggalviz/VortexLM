@@ -1,0 +1,132 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import HeroService from '../../components/ui/HeroService.astro';
+import ServiceCard from '../../components/ui/ServiceCard.astro';
+import FAQSchema from '../../components/seo/FAQSchema.astro';
+import ContactForm from '../../components/ui/ContactForm.astro';
+
+const faqs = [
+  { question: "¿Qué es la arquitectura Jamstack y por qué es más rápida?", answer: "Jamstack (JavaScript, APIs, Markup) es una arquitectura que separa el front-end del back-end, sirviendo archivos estáticos pre-renderizados a través de una CDN. Esto elimina los tiempos de carga del servidor, logrando puntuaciones perfectas de 100/100 en Google PageSpeed Insights." },
+  { question: "¿Cuál es la diferencia entre Astro, React y Next.js?", answer: "Astro es ideal para sitios de contenido y landing pages porque elimina JavaScript innecesario del navegador. React es perfecto para interfaces interactivas complejas. Next.js combina lo mejor de ambos con renderizado híbrido (SSR + SSG), ideal para aplicaciones web completas y e-commerce." },
+  { question: "¿Puedo mantener mi panel de administración de WordPress con una web más rápida?", answer: "Sí. Implementamos una arquitectura Headless donde WordPress funciona solo como back-end para gestión de contenidos, mientras el front-end se construye con Astro o Next.js. Así mantienes la facilidad de uso de WordPress con la velocidad de un framework moderno." },
+  { question: "¿Cuánto tiempo toma desarrollar un sitio con estas tecnologías?", answer: "Gracias a nuestra automatización con IA y flujos de integración continua, los tiempos de entrega se reducen hasta un 50%. Un sitio corporativo puede estar listo en 2-3 semanas, mientras que aplicaciones web complejas pueden tomar de 4 a 8 semanas dependiendo de los requerimientos." }
+];
+---
+<BaseLayout 
+  title="Desarrollo Web con Astro, React y Next.js | VortexLM"
+  description="Creamos páginas web de alto rendimiento con arquitectura Jamstack y Headless CMS. Velocidad de carga 100/100, seguridad total y optimización SEO nativa."
+>
+  <HeroService 
+    title="Páginas web del futuro: Rápidas, seguras y optimizadas para Google con"
+    highlight="stacks modernos"
+    subtitle="El desarrollo web tradicional basado en plantillas pesadas y monolitos sobrecargados ha quedado en el pasado. En el ecosistema digital actual, cada milisegundo de carga cuenta. Si tu sitio web tarda más de 2 segundos en responder, estás perdiendo clientes y posiciones en Google."
+  />
+
+  <!-- Section: El Enfoque Headless -->
+  <section class="py-24 px-4 md:px-8 max-w-7xl mx-auto">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-5xl font-black text-white mb-6">El Enfoque Headless: Lo mejor de dos mundos</h2>
+      <p class="text-slate-400 max-w-3xl mx-auto text-lg">No tienes que renunciar a la comodidad de tu panel de administración actual para tener una web ultra rápida. Nuestra especialidad es desacoplar el sistema:</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <ServiceCard 
+        title="Back-end Autogestionable" 
+        description="Mantenemos la robustez de plataformas como WordPress o Supabase para que sigas gestionando tus contenidos, blogs, productos y clientes de forma sencilla."
+      />
+      <ServiceCard 
+        title="Front-end de Alto Rendimiento" 
+        description="Diseñamos y compilamos la interfaz visual utilizando los frameworks más potentes del mercado moderno. El resultado es un código HTML limpio, estático y optimizado que vuela."
+      />
+    </div>
+  </section>
+
+  <!-- Section: Stack Tecnológico -->
+  <section class="py-24 px-4 md:px-8 bg-slate-900/30 border-y border-slate-800">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-5xl font-black text-white mb-6">Nuestro Stack Tecnológico Primario</h2>
+        <p class="text-slate-400 max-w-2xl mx-auto text-lg">Elegimos la herramienta exacta para cada tipo de necesidad, garantizando escalabilidad y código limpio.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <ServiceCard 
+          title="Astro" 
+          description="El framework ideal para webs corporativas, landings de conversión y blogs de contenido editorial o lifestyle. Astro elimina todo el JavaScript innecesario del navegador por defecto, generando páginas estáticas que logran una puntuación perfecta de 100/100 en Google PageSpeed. Imágenes pesadas y portafolios de alta calidad cargan al instante."
+        />
+        <ServiceCard 
+          title="React & Next.js" 
+          description="Para aplicaciones web interactivas, plataformas de telemedicina con sincronización en tiempo real, sistemas CRM a medida y e-commerce de alta escala. Con Next.js implementamos renderizado en el servidor (SSR) y arquitecturas híbridas avanzadas, manteniendo la agilidad de una aplicación móvil en un entorno web seguro."
+        />
+        <ServiceCard 
+          title="Tailwind CSS" 
+          description="Estilizados a medida desde cero. No compramos plantillas genéricas. Escribimos CSS utilitario y optimizado para que la interfaz sea 100% responsive, coherente con tus guías de branding y sumamente ligera en dispositivos móviles."
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: Beneficios Jamstack -->
+  <section class="py-24 px-4 md:px-8 max-w-7xl mx-auto">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-5xl font-black text-white mb-6">Beneficios de la Arquitectura Jamstack con Vortex</h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="p-6 rounded-2xl bg-slate-900/30 border border-slate-800">
+        <span class="text-3xl mb-4 block">⚡</span>
+        <h3 class="text-lg font-bold text-white mb-2">Velocidad Instantánea (SEO Nativo)</h3>
+        <p class="text-slate-400 text-sm leading-relaxed">Al servir archivos estáticos pre-renderizados a través de una red global (CDN), los Core Web Vitals de Google se optimizan en automático, dándote una ventaja drástica en el posicionamiento orgánico.</p>
+      </div>
+      <div class="p-6 rounded-2xl bg-slate-900/30 border border-slate-800">
+        <span class="text-3xl mb-4 block">🛡️</span>
+        <h3 class="text-lg font-bold text-white mb-2">Seguridad Blindada</h3>
+        <p class="text-slate-400 text-sm leading-relaxed">Al no haber una base de datos expuesta directamente en el Front-end, los vectores de ataque comunes (como inyecciones SQL o hackeos de plugins tradicionales) se reducen a cero.</p>
+      </div>
+      <div class="p-6 rounded-2xl bg-slate-900/30 border border-slate-800">
+        <span class="text-3xl mb-4 block">📱</span>
+        <h3 class="text-lg font-bold text-white mb-2">Experiencia Móvil Fluida</h3>
+        <p class="text-slate-400 text-sm leading-relaxed">Diseñamos pensando primero en el móvil (Mobile-First). La ligereza del código garantiza que la web responda sin retrasos ni pantallas en blanco, incluso en conexiones lentas.</p>
+      </div>
+      <div class="p-6 rounded-2xl bg-slate-900/30 border border-slate-800">
+        <span class="text-3xl mb-4 block">💰</span>
+        <h3 class="text-lg font-bold text-white mb-2">Costos de Infraestructura Reducidos</h3>
+        <p class="text-slate-400 text-sm leading-relaxed">Las webs estáticas consumen una fracción de los recursos de un servidor tradicional, permitiendo soportar miles de visitas simultáneas en plataformas de despliegue moderno como Vercel sin caídas del sistema.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: Automatización -->
+  <section class="py-24 px-4 md:px-8 bg-slate-900/30 border-y border-slate-800">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-3xl md:text-5xl font-black text-white mb-6">Automatización y Desarrollo Inteligente</h2>
+      <p class="text-slate-400 text-lg leading-relaxed mb-8 max-w-3xl mx-auto">
+        Nuestro flujo de trabajo está potenciado por agentes de IA locales e integración continua. Esto nos permite refactorizar código en tiempo real, auditar la seguridad de cada componente y automatizar pruebas de rendimiento antes de cada despliegue. Para ti, esto se traduce en tiempos de entrega hasta un 50% más rápidos y un producto final libre de errores técnicos.
+      </p>
+      <a href="/#contacto" class="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 font-medium transition-colors">
+        ¿Listo para dar el salto al desarrollo web moderno? Hablemos
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" /></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- Section: FAQ -->
+  <section class="py-24 px-4 md:px-8 bg-slate-900/30 border-y border-slate-800">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-black text-white text-center mb-4">Preguntas Frecuentes</h2>
+      <p class="text-slate-400 text-center mb-8">Información transparente sobre nuestras tecnologías y procesos.</p>
+      <FAQSchema faqs={faqs} />
+    </div>
+  </section>
+
+  <!-- Section: Contacto -->
+  <section class="py-24 px-4 md:px-8 max-w-4xl mx-auto text-center" id="contacto">
+    <h2 class="text-4xl font-black text-white mb-6">¿Listo para escalar tu negocio?</h2>
+    <p class="text-slate-400 mb-10 text-lg">Déjanos tus datos y un arquitecto de software evaluará tu caso sin compromiso.</p>
+    
+    <div class="bg-slate-900 border border-slate-800 p-8 md:p-12 rounded-3xl text-left shadow-2xl relative overflow-hidden">
+      <div class="absolute top-0 right-0 w-64 h-64 bg-blue-600/10 rounded-full blur-[80px]"></div>
+      <ContactForm />
+    </div>
+  </section>
+</BaseLayout>

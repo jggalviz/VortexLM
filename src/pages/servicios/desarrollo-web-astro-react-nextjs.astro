@@ -1,8 +1,5 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import HeroService from '../../components/ui/HeroService.astro';
-import ServiceCard from '../../components/ui/ServiceCard.astro';
-import FAQSchema from '../../components/seo/FAQSchema.astro';
 import ContactForm from '../../components/ui/ContactForm.astro';
 
 const faqs = [
@@ -16,117 +13,295 @@ const faqs = [
   title="Desarrollo Web con Astro, React y Next.js | VortexLM"
   description="Creamos páginas web de alto rendimiento con arquitectura Jamstack y Headless CMS. Velocidad de carga 100/100, seguridad total y optimización SEO nativa."
 >
-  <HeroService 
-    title="Páginas web del futuro: Rápidas, seguras y optimizadas para Google con"
-    highlight="stacks modernos"
-    subtitle="El desarrollo web tradicional basado en plantillas pesadas y monolitos sobrecargados ha quedado en el pasado. En el ecosistema digital actual, cada milisegundo de carga cuenta. Si tu sitio web tarda más de 2 segundos en responder, estás perdiendo clientes y posiciones en Google."
-  />
-
-  <!-- Section: El Enfoque Headless -->
-  <section class="py-24 px-4 md:px-8 max-w-7xl mx-auto">
-    <div class="text-center mb-16">
-      <h2 class="text-3xl md:text-5xl font-black text-white mb-6">El Enfoque Headless: Lo mejor de dos mundos</h2>
-      <p class="text-slate-400 max-w-3xl mx-auto text-lg">No tienes que renunciar a la comodidad de tu panel de administración actual para tener una web ultra rápida. Nuestra especialidad es desacoplar el sistema:</p>
-    </div>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-      <ServiceCard 
-        title="Back-end Autogestionable" 
-        description="Mantenemos la robustez de plataformas como WordPress o Supabase para que sigas gestionando tus contenidos, blogs, productos y clientes de forma sencilla."
-      />
-      <ServiceCard 
-        title="Front-end de Alto Rendimiento" 
-        description="Diseñamos y compilamos la interfaz visual utilizando los frameworks más potentes del mercado moderno. El resultado es un código HTML limpio, estático y optimizado que vuela."
-      />
-    </div>
-  </section>
-
-  <!-- Section: Stack Tecnológico -->
-  <section class="py-24 px-4 md:px-8 bg-slate-900/30 border-y border-slate-800">
-    <div class="max-w-7xl mx-auto">
-      <div class="text-center mb-16">
-        <h2 class="text-3xl md:text-5xl font-black text-white mb-6">Nuestro Stack Tecnológico Primario</h2>
-        <p class="text-slate-400 max-w-2xl mx-auto text-lg">Elegimos la herramienta exacta para cada tipo de necesidad, garantizando escalabilidad y código limpio.</p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <ServiceCard 
-          title="Astro" 
-          description="El framework ideal para webs corporativas, landings de conversión y blogs de contenido editorial o lifestyle. Astro elimina todo el JavaScript innecesario del navegador por defecto, generando páginas estáticas que logran una puntuación perfecta de 100/100 en Google PageSpeed. Imágenes pesadas y portafolios de alta calidad cargan al instante."
-        />
-        <ServiceCard 
-          title="React & Next.js" 
-          description="Para aplicaciones web interactivas, plataformas de telemedicina con sincronización en tiempo real, sistemas CRM a medida y e-commerce de alta escala. Con Next.js implementamos renderizado en el servidor (SSR) y arquitecturas híbridas avanzadas, manteniendo la agilidad de una aplicación móvil en un entorno web seguro."
-        />
-        <ServiceCard 
-          title="Tailwind CSS" 
-          description="Estilizados a medida desde cero. No compramos plantillas genéricas. Escribimos CSS utilitario y optimizado para que la interfaz sea 100% responsive, coherente con tus guías de branding y sumamente ligera en dispositivos móviles."
-        />
-      </div>
-    </div>
-  </section>
-
-  <!-- Section: Beneficios Jamstack -->
-  <section class="py-24 px-4 md:px-8 max-w-7xl mx-auto">
-    <div class="text-center mb-16">
-      <h2 class="text-3xl md:text-5xl font-black text-white mb-6">Beneficios de la Arquitectura Jamstack con Vortex</h2>
-    </div>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-      <div class="p-6 rounded-2xl bg-slate-900/30 border border-slate-800">
-        <span class="text-3xl mb-4 block">⚡</span>
-        <h3 class="text-lg font-bold text-white mb-2">Velocidad Instantánea (SEO Nativo)</h3>
-        <p class="text-slate-400 text-sm leading-relaxed">Al servir archivos estáticos pre-renderizados a través de una red global (CDN), los Core Web Vitals de Google se optimizan en automático, dándote una ventaja drástica en el posicionamiento orgánico.</p>
-      </div>
-      <div class="p-6 rounded-2xl bg-slate-900/30 border border-slate-800">
-        <span class="text-3xl mb-4 block">🛡️</span>
-        <h3 class="text-lg font-bold text-white mb-2">Seguridad Blindada</h3>
-        <p class="text-slate-400 text-sm leading-relaxed">Al no haber una base de datos expuesta directamente en el Front-end, los vectores de ataque comunes (como inyecciones SQL o hackeos de plugins tradicionales) se reducen a cero.</p>
-      </div>
-      <div class="p-6 rounded-2xl bg-slate-900/30 border border-slate-800">
-        <span class="text-3xl mb-4 block">📱</span>
-        <h3 class="text-lg font-bold text-white mb-2">Experiencia Móvil Fluida</h3>
-        <p class="text-slate-400 text-sm leading-relaxed">Diseñamos pensando primero en el móvil (Mobile-First). La ligereza del código garantiza que la web responda sin retrasos ni pantallas en blanco, incluso en conexiones lentas.</p>
-      </div>
-      <div class="p-6 rounded-2xl bg-slate-900/30 border border-slate-800">
-        <span class="text-3xl mb-4 block">💰</span>
-        <h3 class="text-lg font-bold text-white mb-2">Costos de Infraestructura Reducidos</h3>
-        <p class="text-slate-400 text-sm leading-relaxed">Las webs estáticas consumen una fracción de los recursos de un servidor tradicional, permitiendo soportar miles de visitas simultáneas en plataformas de despliegue moderno como Vercel sin caídas del sistema.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Section: Automatización -->
-  <section class="py-24 px-4 md:px-8 bg-slate-900/30 border-y border-slate-800">
-    <div class="max-w-4xl mx-auto text-center">
-      <h2 class="text-3xl md:text-5xl font-black text-white mb-6">Automatización y Desarrollo Inteligente</h2>
-      <p class="text-slate-400 text-lg leading-relaxed mb-8 max-w-3xl mx-auto">
-        Nuestro flujo de trabajo está potenciado por agentes de IA locales e integración continua. Esto nos permite refactorizar código en tiempo real, auditar la seguridad de cada componente y automatizar pruebas de rendimiento antes de cada despliegue. Para ti, esto se traduce en tiempos de entrega hasta un 50% más rápidos y un producto final libre de errores técnicos.
+  <!-- HERO SECTION - Exact homepage style -->
+  <section class="relative pt-36 pb-32 overflow-hidden linear-gradient-bg border-b border-[#1f1f24] px-6 md:px-12">
+    <div class="absolute inset-0 linear-grid opacity-30 pointer-events-none"></div>
+    <div class="max-w-[1200px] mx-auto text-center relative z-10">
+      <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-white/[0.015] blur-[120px] rounded-full pointer-events-none"></div>
+      
+      <h1 class="text-4xl md:text-7xl font-extralight tracking-tight text-white mb-8 leading-[1.08] max-w-4xl mx-auto opacity-95">
+        Páginas web del futuro: Rápidas, seguras y optimizadas para Google con stacks modernos.
+      </h1>
+      
+      <p class="text-base md:text-lg text-[#94a3b8] font-light mb-12 max-w-3xl mx-auto leading-relaxed">
+        El desarrollo web tradicional basado en plantillas pesadas y monolitos sobrecargados ha quedado en el pasado. En el ecosistema digital actual, cada milisegundo de carga cuenta. Si tu sitio web tarda más de 2 segundos en responder, estás perdiendo clientes y posiciones en Google.
       </p>
-      <a href="/#contacto" class="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 font-medium transition-colors">
-        ¿Listo para dar el salto al desarrollo web moderno? Hablemos
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" /></svg>
-      </a>
+
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-6 mb-20">
+        <a href="#contacto" class="w-full sm:w-auto px-8 py-3 bg-white text-black font-semibold text-xs rounded-full hover:bg-neutral-200 transition-all text-center duration-200 active:scale-95 shadow-[0_0_25px_rgba(255,255,255,0.15)]">
+          Agendar una llamada
+        </a>
+        <a href="#stack" class="w-full sm:w-auto px-6 py-3 text-white/80 font-medium text-xs rounded-full hover:text-white flex items-center justify-center gap-1.5 group transition-colors">
+          Ver tecnologías <span class="group-hover:translate-x-1 transition-transform">➔</span>
+        </a>
+      </div>
     </div>
   </section>
 
-  <!-- Section: FAQ -->
-  <section class="py-24 px-4 md:px-8 bg-slate-900/30 border-y border-slate-800">
+  <!-- HEADLESS APPROACH SECTION - 2 feature cards like homepage -->
+  <section id="stack" class="py-36 px-6 md:px-12 bg-black border-b border-[#1f1f24]">
+    <div class="max-w-[1200px] mx-auto">
+      <div class="max-w-4xl mb-24">
+        <h2 class="text-2xl md:text-4xl font-light text-white tracking-tight leading-snug">
+          El Enfoque Headless: Lo mejor de dos mundos. No tienes que renunciar a la comodidad de tu panel de administración actual para tener una web ultra rápida.
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16">
+        <!-- Card 1 -->
+        <div class="space-y-6 group">
+          <div class="w-full aspect-[4/3] linear-card rounded border border-[#1f1f24] bg-[#08080c]/30 flex items-center justify-center p-6 glow-hover transition-all">
+            <svg class="w-20 h-20 text-[#94a3b8]/40 group-hover:text-white/80 transition-colors" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M50 15L85 35L50 55L15 35L50 15Z" stroke="currentColor" stroke-width="0.75" stroke-dasharray="2 2"/>
+              <path d="M50 55V95" stroke="currentColor" stroke-width="0.75" stroke-dasharray="2 2"/>
+              <path d="M50 25L80 42V67L50 85L20 67V42L50 25Z" stroke="currentColor" stroke-width="1.25"/>
+              <path d="M50 25V85" stroke="currentColor" stroke-width="1.25"/>
+              <path d="M20 42L50 60L80 42" stroke="currentColor" stroke-width="1.25"/>
+              <circle cx="50" cy="25" r="2.5" fill="currentColor"/>
+              <circle cx="20" cy="42" r="2.5" fill="currentColor"/>
+              <circle cx="80" cy="42" r="2.5" fill="currentColor"/>
+              <circle cx="50" cy="60" r="2.5" fill="currentColor"/>
+              <circle cx="50" cy="85" r="2.5" fill="currentColor"/>
+            </svg>
+          </div>
+          <div>
+            <h3 class="text-sm font-medium text-white mb-2.5">Back-end Autogestionable</h3>
+            <p class="text-xs text-[#94a3b8] leading-relaxed">
+              Mantenemos la robustez de plataformas como WordPress o Supabase para que sigas gestionando tus contenidos, blogs, productos y clientes de forma sencilla.
+            </p>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="space-y-6 group">
+          <div class="w-full aspect-[4/3] linear-card rounded border border-[#1f1f24] bg-[#08080c]/30 flex items-center justify-center p-6 glow-hover transition-all">
+            <svg class="w-20 h-20 text-[#94a3b8]/40 group-hover:text-white/80 transition-colors" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M50 20L80 32L50 44L20 32L50 20Z" stroke="currentColor" stroke-width="1.25"/>
+              <path d="M50 40L80 52L50 64L20 52L50 40Z" stroke="currentColor" stroke-width="1"/>
+              <path d="M50 60L80 72L50 84L20 72L50 60Z" stroke="currentColor" stroke-width="1.25"/>
+              <path d="M50 32V72" stroke="currentColor" stroke-width="0.75" stroke-dasharray="3 3"/>
+              <circle cx="50" cy="32" r="2" fill="currentColor"/>
+              <circle cx="50" cy="52" r="2" fill="currentColor"/>
+              <circle cx="50" cy="72" r="2" fill="currentColor"/>
+            </svg>
+          </div>
+          <div>
+            <h3 class="text-sm font-medium text-white mb-2.5">Front-end de Alto Rendimiento</h3>
+            <p class="text-xs text-[#94a3b8] leading-relaxed">
+              Diseñamos y compilamos la interfaz visual utilizando los frameworks más potentes del mercado moderno. El resultado es un código HTML limpio, estático y optimizado que vuela.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TECH STACK SECTION - 3 cards like homepage features -->
+  <section class="py-36 px-6 md:px-12 bg-black border-b border-[#1f1f24]">
+    <div class="max-w-[1200px] mx-auto">
+      <div class="max-w-4xl mb-24">
+        <h2 class="text-2xl md:text-4xl font-light text-white tracking-tight leading-snug">
+          Nuestro Stack Tecnológico Primario. Elegimos la herramienta exacta para cada tipo de necesidad, garantizando escalabilidad y código limpio.
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16">
+        <!-- Astro -->
+        <div class="space-y-6 group">
+          <div class="w-full aspect-[4/3] linear-card rounded border border-[#1f1f24] bg-[#08080c]/30 flex items-center justify-center p-6 glow-hover transition-all">
+            <svg class="w-20 h-20 text-[#94a3b8]/40 group-hover:text-white/80 transition-colors" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M30 45L50 25L70 45L50 65L30 45Z" stroke="currentColor" stroke-width="0.75"/>
+              <path d="M50 25V65" stroke="currentColor" stroke-width="0.75"/>
+              <path d="M30 45H70" stroke="currentColor" stroke-width="0.75"/>
+              <path d="M20 65L50 65" stroke="currentColor" stroke-width="0.5" stroke-dasharray="2 2"/>
+              <path d="M70 45L85 60" stroke="currentColor" stroke-width="0.5" stroke-dasharray="2 2"/>
+              <circle cx="50" cy="25" r="4" fill="currentColor"/>
+              <circle cx="30" cy="45" r="3.5" fill="currentColor" fill-opacity="0.6"/>
+              <circle cx="70" cy="45" r="3.5" fill="currentColor" fill-opacity="0.6"/>
+              <circle cx="50" cy="65" r="5" fill="currentColor"/>
+              <circle cx="20" cy="65" r="2" fill="currentColor" fill-opacity="0.3"/>
+              <circle cx="85" cy="60" r="2" fill="currentColor" fill-opacity="0.3"/>
+            </svg>
+          </div>
+          <div>
+            <h3 class="text-sm font-medium text-white mb-2.5">Astro</h3>
+            <p class="text-xs text-[#94a3b8] leading-relaxed">
+              El framework ideal para webs corporativas, landings de conversión y blogs de contenido editorial o lifestyle. Astro elimina todo el JavaScript innecesario del navegador por defecto, generando páginas estáticas que logran una puntuación perfecta de 100/100 en Google PageSpeed. Imágenes pesadas y portafolios de alta calidad cargan al instante.
+            </p>
+          </div>
+        </div>
+
+        <!-- React & Next.js -->
+        <div class="space-y-6 group">
+          <div class="w-full aspect-[4/3] linear-card rounded border border-[#1f1f24] bg-[#08080c]/30 flex items-center justify-center p-6 glow-hover transition-all">
+            <svg class="w-20 h-20 text-[#94a3b8]/40 group-hover:text-white/80 transition-colors" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M50 15L85 35L50 55L15 35L50 15Z" stroke="currentColor" stroke-width="0.75" stroke-dasharray="2 2"/>
+              <path d="M50 55V95" stroke="currentColor" stroke-width="0.75" stroke-dasharray="2 2"/>
+              <path d="M50 25L80 42V67L50 85L20 67V42L50 25Z" stroke="currentColor" stroke-width="1.25"/>
+              <path d="M50 25V85" stroke="currentColor" stroke-width="1.25"/>
+              <path d="M20 42L50 60L80 42" stroke="currentColor" stroke-width="1.25"/>
+              <circle cx="50" cy="25" r="2.5" fill="currentColor"/>
+              <circle cx="20" cy="42" r="2.5" fill="currentColor"/>
+              <circle cx="80" cy="42" r="2.5" fill="currentColor"/>
+              <circle cx="50" cy="60" r="2.5" fill="currentColor"/>
+              <circle cx="50" cy="85" r="2.5" fill="currentColor"/>
+            </svg>
+          </div>
+          <div>
+            <h3 class="text-sm font-medium text-white mb-2.5">React & Next.js</h3>
+            <p class="text-xs text-[#94a3b8] leading-relaxed">
+              Para aplicaciones web interactivas, plataformas de telemedicina con sincronización en tiempo real, sistemas CRM a medida y e-commerce de alta escala. Con Next.js implementamos renderizado en el servidor (SSR) y arquitecturas híbridas avanzadas, manteniendo la agilidad de una aplicación móvil en un entorno web seguro.
+            </p>
+          </div>
+        </div>
+
+        <!-- Tailwind CSS -->
+        <div class="space-y-6 group">
+          <div class="w-full aspect-[4/3] linear-card rounded border border-[#1f1f24] bg-[#08080c]/30 flex items-center justify-center p-6 glow-hover transition-all">
+            <svg class="w-20 h-20 text-[#94a3b8]/40 group-hover:text-white/80 transition-colors" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M50 20L80 32L50 44L20 32L50 20Z" stroke="currentColor" stroke-width="1.25"/>
+              <path d="M50 40L80 52L50 64L20 52L50 40Z" stroke="currentColor" stroke-width="1"/>
+              <path d="M50 60L80 72L50 84L20 72L50 60Z" stroke="currentColor" stroke-width="1.25"/>
+              <path d="M50 32V72" stroke="currentColor" stroke-width="0.75" stroke-dasharray="3 3"/>
+              <circle cx="50" cy="32" r="2" fill="currentColor"/>
+              <circle cx="50" cy="52" r="2" fill="currentColor"/>
+              <circle cx="50" cy="72" r="2" fill="currentColor"/>
+            </svg>
+          </div>
+          <div>
+            <h3 class="text-sm font-medium text-white mb-2.5">Tailwind CSS</h3>
+            <p class="text-xs text-[#94a3b8] leading-relaxed">
+              Estilizados a medida desde cero. No compramos plantillas genéricas. Escribimos CSS utilitario y optimizado para que la interfaz sea 100% responsive, coherente con tus guías de branding y sumamente ligera en dispositivos móviles.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- JAMSTACK BENEFITS SECTION - 4 cards in a row -->
+  <section class="py-36 px-6 md:px-12 bg-black border-b border-[#1f1f24]">
+    <div class="max-w-[1200px] mx-auto">
+      <div class="max-w-4xl mb-24">
+        <h2 class="text-2xl md:text-4xl font-light text-white tracking-tight leading-snug">
+          Beneficios de la Arquitectura Jamstack con Vortex.
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Benefit 1 -->
+        <div class="linear-card rounded border border-[#1f1f24] bg-[#08080c]/30 p-6 glow-hover transition-all group">
+          <span class="text-2xl mb-4 block text-[#94a3b8]/60 group-hover:text-white/80 transition-colors">⚡</span>
+          <h3 class="text-sm font-medium text-white mb-2.5">Velocidad Instantánea (SEO Nativo)</h3>
+          <p class="text-xs text-[#94a3b8] leading-relaxed">Al servir archivos estáticos pre-renderizados a través de una red global (CDN), los Core Web Vitals de Google se optimizan en automático, dándote una ventaja drástica en el posicionamiento orgánico.</p>
+        </div>
+
+        <!-- Benefit 2 -->
+        <div class="linear-card rounded border border-[#1f1f24] bg-[#08080c]/30 p-6 glow-hover transition-all group">
+          <span class="text-2xl mb-4 block text-[#94a3b8]/60 group-hover:text-white/80 transition-colors">🛡️</span>
+          <h3 class="text-sm font-medium text-white mb-2.5">Seguridad Blindada</h3>
+          <p class="text-xs text-[#94a3b8] leading-relaxed">Al no haber una base de datos expuesta directamente en el Front-end, los vectores de ataque comunes (como inyecciones SQL o hackeos de plugins tradicionales) se reducen a cero.</p>
+        </div>
+
+        <!-- Benefit 3 -->
+        <div class="linear-card rounded border border-[#1f1f24] bg-[#08080c]/30 p-6 glow-hover transition-all group">
+          <span class="text-2xl mb-4 block text-[#94a3b8]/60 group-hover:text-white/80 transition-colors">📱</span>
+          <h3 class="text-sm font-medium text-white mb-2.5">Experiencia Móvil Fluida</h3>
+          <p class="text-xs text-[#94a3b8] leading-relaxed">Diseñamos pensando primero en el móvil (Mobile-First). La ligereza del código garantiza que la web responda sin retrasos ni pantallas en blanco, incluso en conexiones lentas.</p>
+        </div>
+
+        <!-- Benefit 4 -->
+        <div class="linear-card rounded border border-[#1f1f24] bg-[#08080c]/30 p-6 glow-hover transition-all group">
+          <span class="text-2xl mb-4 block text-[#94a3b8]/60 group-hover:text-white/80 transition-colors">💰</span>
+          <h3 class="text-sm font-medium text-white mb-2.5">Costos de Infraestructura Reducidos</h3>
+          <p class="text-xs text-[#94a3b8] leading-relaxed">Las webs estáticas consumen una fracción de los recursos de un servidor tradicional, permitiendo soportar miles de visitas simultáneas en plataformas de despliegue moderno como Vercel sin caídas del sistema.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AUTOMATION SECTION - Alternating detail block like homepage -->
+  <section class="py-36 px-6 md:px-12 bg-black border-b border-[#1f1f24]">
+    <div class="max-w-[1200px] mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
+        <div class="lg:col-span-5 space-y-5">
+          <span class="text-[10px] font-mono text-[#94a3b8] uppercase tracking-widest block font-medium">Automatización y Desarrollo Inteligente</span>
+          <h2 class="text-2xl md:text-4xl font-light text-white tracking-tight leading-tight">
+            Automatización y Desarrollo Inteligente.
+          </h2>
+          <p class="text-sm text-[#94a3b8] font-light leading-relaxed">
+            Nuestro flujo de trabajo está potenciado por agentes de IA locales e integración continua. Esto nos permite refactorizar código en tiempo real, auditar la seguridad de cada componente y automatizar pruebas de rendimiento antes de cada despliegue. Para ti, esto se traduce en tiempos de entrega hasta un 50% más rápidos y un producto final libre de errores técnicos.
+          </p>
+          <a href="#contacto" class="inline-flex items-center gap-2 text-xs text-white/80 hover:text-white font-medium transition-colors group">
+            ¿Listo para dar el salto al desarrollo web moderno? Hablemos
+            <span class="group-hover:translate-x-1 transition-transform">➔</span>
+          </a>
+        </div>
+        
+        <!-- Mockup card -->
+        <div class="lg:col-span-7">
+          <div class="linear-card rounded-lg border border-[#1f1f24] overflow-hidden bg-[#08080c]/50 p-6 shadow-2xl">
+            <div class="flex items-center justify-between border-b border-[#1f1f24] pb-4 mb-4">
+              <span class="text-[10px] font-mono text-[#94a3b8] flex items-center gap-1.5">
+                <span class="w-1.5 h-1.5 rounded-full bg-cyan-500"></span>
+                vortex-ci // pipeline-status
+              </span>
+              <span class="text-[9px] text-green-400 font-mono">All checks passed</span>
+            </div>
+            <div class="space-y-3 font-mono text-[10px]">
+              <div class="flex items-center gap-2 text-green-400">
+                <span>✓</span> Build & Test — 12.4s
+              </div>
+              <div class="flex items-center gap-2 text-green-400">
+                <span>✓</span> Lighthouse Audit — 100/100
+              </div>
+              <div class="flex items-center gap-2 text-green-400">
+                <span>✓</span> Security Scan — 0 vulnerabilities
+              </div>
+              <div class="flex items-center gap-2 text-cyan-400">
+                <span>→</span> Deploy to Production
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ SECTION - Accordion style matching homepage -->
+  <section class="py-36 px-6 md:px-12 bg-black border-b border-[#1f1f24]">
     <div class="max-w-3xl mx-auto">
-      <h2 class="text-3xl md:text-4xl font-black text-white text-center mb-4">Preguntas Frecuentes</h2>
-      <p class="text-slate-400 text-center mb-8">Información transparente sobre nuestras tecnologías y procesos.</p>
-      <FAQSchema faqs={faqs} />
+      <div class="text-center mb-16">
+        <h2 class="text-2xl md:text-4xl font-light text-white tracking-tight leading-snug mb-4">Preguntas Frecuentes</h2>
+        <p class="text-sm text-[#94a3b8] font-light">Información transparente sobre nuestras tecnologías y procesos.</p>
+      </div>
+      
+      <div class="space-y-0">
+        {faqs.map((faq) => (
+          <details class="group border-b border-[#1f1f24] py-4">
+            <summary class="flex items-center justify-between cursor-pointer text-white font-medium text-sm list-none">
+              {faq.question}
+              <svg class="w-4 h-4 text-[#94a3b8] group-open:rotate-180 transition-transform shrink-0 ml-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+              </svg>
+            </summary>
+            <p class="mt-3 text-sm text-[#94a3b8] leading-relaxed">{faq.answer}</p>
+          </details>
+        ))}
+      </div>
     </div>
   </section>
 
-  <!-- Section: Contacto -->
-  <section class="py-24 px-4 md:px-8 max-w-4xl mx-auto text-center" id="contacto">
-    <h2 class="text-4xl font-black text-white mb-6">¿Listo para escalar tu negocio?</h2>
-    <p class="text-slate-400 mb-10 text-lg">Déjanos tus datos y un arquitecto de software evaluará tu caso sin compromiso.</p>
-    
-    <div class="bg-slate-900 border border-slate-800 p-8 md:p-12 rounded-3xl text-left shadow-2xl relative overflow-hidden">
-      <div class="absolute top-0 right-0 w-64 h-64 bg-blue-600/10 rounded-full blur-[80px]"></div>
-      <ContactForm />
+  <!-- CONTACT SECTION - Exact homepage style -->
+  <section id="contacto" class="py-36 px-6 md:px-12 bg-black">
+    <div class="max-w-[1200px] mx-auto">
+      <div class="max-w-2xl mx-auto text-center mb-16">
+        <h2 class="text-2xl md:text-4xl font-light text-white tracking-tight leading-snug mb-4">¿Listo para escalar tu negocio?</h2>
+        <p class="text-sm text-[#94a3b8] font-light">Déjanos tus datos y un arquitecto de software evaluará tu caso sin compromiso.</p>
+      </div>
+      <div class="max-w-lg mx-auto">
+        <ContactForm />
+      </div>
     </div>
   </section>
 </BaseLayout>

@@ -2,10 +2,208 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 ---
 <BaseLayout title="Expertos en Desarrollo Web con Astro, React y Next.js | Vortex" description="Engineering frontend del futuro: Interfaces ultra-fluidas y rendimiento extremo.">
-  <main class="py-36 px-6 md:px-12 bg-black min-h-screen">
-    <div class="max-w-4xl mx-auto">
-      <p class="font-mono text-[10px] uppercase tracking-widest text-[#94a3b8] mb-6">SOLUCIONES</p>
-      <h1 class="font-extralight text-4xl md:text-5xl lg:text-6xl tracking-tight text-white mb-6">Engineering frontend del futuro: Interfaces ultra-fluidas y rendimiento extremo.</h1>
+  <!-- Section 1: Hero with terminal mockup -->
+  <section class="relative py-36 px-6 md:px-12 bg-black border-b border-[#1f1f24] overflow-hidden">
+    <div class="absolute inset-0 linear-gradient-bg"></div>
+    <div class="absolute inset-0 linear-grid"></div>
+    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-white/[0.03] rounded-full blur-3xl pointer-events-none"></div>
+    
+    <div class="max-w-6xl mx-auto relative z-10">
+      <p class="font-mono text-[10px] uppercase tracking-widest text-[#94a3b8] mb-6">DESARROLLO WEB MODERNO</p>
+      
+      <div class="max-w-4xl">
+        <h1 class="font-extralight text-4xl md:text-5xl lg:text-6xl tracking-tight text-white mb-6 leading-[1.1]">
+          Ingeniería frontend del futuro: Interfaces ultra-fluidas y rendimiento extremo.
+        </h1>
+        <p class="font-light text-[#94a3b8] text-lg md:text-xl leading-relaxed max-w-2xl mb-10">
+          Dejamos atrás las tecnologías lentas y los constructores visuales monolíticos. Desarrollamos plataformas y sitios web modernos utilizando frameworks de última generación. Arquitecturas Jamstack y Server-Side Rendering (SSR) preparadas para la máxima escala global.
+        </p>
+      </div>
+      
+      <div class="flex flex-wrap gap-4 items-center">
+        <a href="#contacto" class="bg-white text-black font-semibold text-xs rounded-full hover:bg-neutral-200 transition-all px-6 py-3 shadow-[0_0_15px_rgba(255,255,255,0.1)]">
+          Iniciar desarrollo moderno
+        </a>
+        <a href="#stack" class="text-[#94a3b8] hover:text-white text-xs font-light transition-colors flex items-center gap-1.5">
+          Ver documentación de nuestro stack
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+      
+      <!-- Terminal Mockup -->
+      <div class="mt-20 linear-card rounded-xl border border-[#1f1f24] bg-[#08080c]/40 p-6 max-w-4xl overflow-hidden">
+        <!-- Terminal header -->
+        <div class="flex items-center gap-2 mb-4">
+          <div class="w-3 h-3 rounded-full bg-[#ef4444]/80"></div>
+          <div class="w-3 h-3 rounded-full bg-[#eab308]/80"></div>
+          <div class="w-3 h-3 rounded-full bg-[#22c55e]/80"></div>
+          <span class="text-[10px] text-[#52525b] font-mono ml-2">bash — vortex build</span>
+        </div>
+        <!-- Terminal content -->
+        <div class="font-mono text-[11px] leading-relaxed space-y-1.5">
+          <p class="text-[#94a3b8]">$ <span class="text-white">npm run build</span></p>
+          <p class="text-[#94a3b8]">></p>
+          <p class="text-[#22c55e]">✓ Generated static pages (Astro):</p>
+          <p class="text-[#94a3b8] pl-4">  / → index.html (0.2s)</p>
+          <p class="text-[#94a3b8] pl-4">  /soluciones → soluciones/index.html (0.1s)</p>
+          <p class="text-[#94a3b8] pl-4">  /blog → blog/index.html (0.3s)</p>
+          <p class="text-[#94a3b8]">></p>
+          <p class="text-[#818cf8]">◆ Server-side rendered endpoints (Next.js):</p>
+          <p class="text-[#94a3b8] pl-4">  /dashboard → SSR (0.8s TTFB)</p>
+          <p class="text-[#94a3b8] pl-4">  /api/orders → Edge Function (0.05s)</p>
+          <p class="text-[#94a3b8]">></p>
+          <p class="text-[#22c55e] font-semibold">✓ Build completed successfully (1.2s)</p>
+        </div>
+      </div>
     </div>
-  </main>
+  </section>
+
+  <!-- Section 2: Framework Specialization (2-column grid) -->
+  <section id="stack" class="py-36 px-6 md:px-12 bg-black border-b border-[#1f1f24]">
+    <div class="max-w-6xl mx-auto">
+      <p class="font-mono text-[10px] uppercase tracking-widest text-[#94a3b8] mb-4">ESPECIALIZACIÓN POR FRAMEWORK</p>
+      <h2 class="font-light text-3xl md:text-4xl tracking-tight text-white mb-6">La herramienta correcta para el objetivo correcto.</h2>
+      <p class="font-light text-[#94a3b8] text-sm md:text-base leading-relaxed max-w-2xl mb-16">
+        No forzamos un solo framework para todo; seleccionamos la tecnología según los requerimientos de conversión y dinamismo de tu negocio.
+      </p>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Card 1: Astro -->
+        <div class="linear-card rounded-lg border border-[#1f1f24] bg-[#08080c]/30 p-8 glow-hover transition-all group">
+          <div class="w-10 h-10 rounded-lg bg-white/5 border border-[#1f1f24] flex items-center justify-center mb-5">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/>
+            </svg>
+          </div>
+          <h3 class="font-light text-xl text-white mb-3">Astro Framework</h3>
+          <p class="font-mono text-[10px] uppercase tracking-widest text-[#818cf8] mb-3">Rendimiento Imbatible para Sitios de Contenido</p>
+          <p class="font-light text-[#94a3b8] text-sm leading-relaxed">
+            El framework ideal para páginas web corporativas, landings de venta y blogs. Astro elimina por completo el JavaScript del cliente por defecto ("Zero JS"). Genera HTML estático puro que vuela en cualquier dispositivo, garantizando un posicionamiento SEO nativo impecable y conversiones inmediatas.
+          </p>
+        </div>
+        
+        <!-- Card 2: Next.js -->
+        <div class="linear-card rounded-lg border border-[#1f1f24] bg-[#08080c]/30 p-8 glow-hover transition-all group">
+          <div class="w-10 h-10 rounded-lg bg-white/5 border border-[#1f1f24] flex items-center justify-center mb-5">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><line x1="21.17" y1="8" x2="12" y2="8"/><line x1="3.95" y1="6.06" x2="8.54" y2="14"/><line x1="10.88" y1="21.94" x2="15.46" y2="14"/>
+            </svg>
+          </div>
+          <h3 class="font-light text-xl text-white mb-3">Next.js + React</h3>
+          <p class="font-mono text-[10px] uppercase tracking-widest text-[#22c55e] mb-3">Poder y Escalabilidad para Aplicaciones Complejas</p>
+          <p class="font-light text-[#94a3b8] text-sm leading-relaxed">
+            La infraestructura estándar de la industria para plataformas dinámicas, sistemas SaaS, dashboards corporativos y plataformas interactivas. Con soporte avanzado para Server-Side Rendering (SSR) e Incremental Static Regeneration (ISR), Next.js procesa la lógica pesada en el servidor y entrega interfaces ultra-rápidas al usuario.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3: Islands Architecture (2-column alternating) -->
+  <section class="py-36 px-6 md:px-12 bg-black border-b border-[#1f1f24]">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+        <div>
+          <p class="font-mono text-[10px] uppercase tracking-widest text-[#94a3b8] mb-4">ARQUITECTURA DE ISLAS</p>
+          <h2 class="font-light text-3xl md:text-4xl tracking-tight text-white mb-6">Interactividad selectiva. Cero bytes de código basura.</h2>
+          <p class="font-light text-[#94a3b8] text-sm md:text-base leading-relaxed">
+            Las páginas web tradicionales obligan al navegador a descargar y procesar megabytes de JavaScript para toda la página, incluso para elementos estáticos que no lo necesitan (como texto o imágenes). Con la Arquitectura de Islas (Islands Architecture), tu página web se renderiza como un documento HTML puro y ultrarrápido. Si una sección específica requiere interactividad (como un carrito de compras o un formulario dinámico), el navegador solo descarga el JavaScript exacto para esa sección aislada. El resto de la página se mantiene ligera, segura e interactiva al instante.
+          </p>
+        </div>
+        
+        <!-- Islands mockup -->
+        <div class="linear-card rounded-xl border border-[#1f1f24] bg-[#08080c]/40 p-8">
+          <div class="space-y-3">
+            <!-- Static blocks (gray) -->
+            <div class="h-8 bg-[#1f1f24]/50 rounded-md"></div>
+            <div class="h-8 bg-[#1f1f24]/50 rounded-md"></div>
+            <div class="h-8 bg-[#1f1f24]/50 rounded-md"></div>
+            <!-- Active island (neon) -->
+            <div class="h-10 bg-[#818cf8]/20 border border-[#818cf8]/30 rounded-md flex items-center px-4">
+              <span class="text-[10px] text-[#818cf8] font-mono">✦ Componente React activo (solo este bloque carga JS)</span>
+            </div>
+            <div class="h-8 bg-[#1f1f24]/50 rounded-md"></div>
+            <div class="h-8 bg-[#1f1f24]/50 rounded-md"></div>
+            <!-- Another active island -->
+            <div class="h-10 bg-[#22c55e]/20 border border-[#22c55e]/30 rounded-md flex items-center px-4">
+              <span class="text-[10px] text-[#22c55e] font-mono">✦ Formulario interactivo (carga JS aislada)</span>
+            </div>
+            <div class="h-8 bg-[#1f1f24]/50 rounded-md"></div>
+          </div>
+          <p class="text-[10px] text-[#94a3b8] font-mono text-center mt-4">HTML estático — Sin consumo de recursos</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4: Infrastructure Stack (3-column numbered) -->
+  <section class="py-36 px-6 md:px-12 bg-black border-b border-[#1f1f24]">
+    <div class="max-w-6xl mx-auto">
+      <p class="font-mono text-[10px] uppercase tracking-widest text-[#94a3b8] mb-4">INFRAESTRUCTURA</p>
+      <h2 class="font-light text-3xl md:text-4xl tracking-tight text-white mb-16">Infraestructura moderna sin servidores</h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-x-12 gap-y-12">
+        <!-- Step 1 -->
+        <div class="flex flex-col">
+          <span class="font-mono text-5xl text-[#1f1f24] font-light mb-6">01</span>
+          <h3 class="font-light text-lg text-white mb-3">Frontend de Alto Nivel <span class="text-[#94a3b8]">(React & TypeScript)</span></h3>
+          <p class="font-light text-[#94a3b8] text-sm leading-relaxed">Escribimos interfaces tipadas y modulares que previenen errores en producción. Componentes reutilizables y limpios que facilitan el mantenimiento y la evolución del software.</p>
+        </div>
+        
+        <!-- Step 2 -->
+        <div class="flex flex-col">
+          <span class="font-mono text-5xl text-[#1f1f24] font-light mb-6">02</span>
+          <h3 class="font-light text-lg text-white mb-3">Backend y Capa de Datos <span class="text-[#94a3b8]">(Supabase & PostgreSQL)</span></h3>
+          <p class="font-light text-[#94a3b8] text-sm leading-relaxed">Conectamos tus flujos dinámicos con Supabase para almacenamiento en tiempo real, autenticación de usuarios segura y consultas de bases de datos relacionales sin latencia.</p>
+        </div>
+        
+        <!-- Step 3 -->
+        <div class="flex flex-col">
+          <span class="font-mono text-5xl text-[#1f1f24] font-light mb-6">03</span>
+          <h3 class="font-light text-lg text-white mb-3">Distribución Global Instantánea <span class="text-[#94a3b8]">(Vercel Edge Network)</span></h3>
+          <p class="font-light text-[#94a3b8] text-sm leading-relaxed">Desplegamos tus aplicaciones directamente en la infraestructura cloud de Vercel. Tu código se ejecuta a nivel de red perimetral (Edge Functions), eliminando retrasos de servidores tradicionales y resistiendo ataques de tráfico.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 5: Contact Form (CTA Final) -->
+  <section id="contacto" class="py-36 px-6 md:px-12 bg-black">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
+        <div>
+          <p class="font-mono text-[10px] uppercase tracking-widest text-[#94a3b8] mb-4">CONTACTO</p>
+          <h2 class="font-light text-3xl md:text-4xl tracking-tight text-white mb-6">Construyamos el software del mañana.</h2>
+          <p class="font-light text-[#94a3b8] text-sm md:text-base leading-relaxed">
+            Cuéntanos los requerimientos de tu plataforma web. Diseñaremos una arquitectura escalable, segura y veloz utilizando los estándares técnicos de las empresas líderes del sector.
+          </p>
+        </div>
+        
+        <div class="linear-card p-8 rounded-lg border border-[#1f1f24] bg-[#08080c]/40">
+          <form action="/api/contact" method="POST" class="space-y-5">
+            <div>
+              <label class="block text-xs text-[#94a3b8] font-light mb-2">Nombre o Empresa</label>
+              <input type="text" name="name" placeholder="Ej. Vortex Partner Comercial" required autocomplete="name" class="bg-black border border-[#1f1f24] rounded-lg px-4 py-3 w-full text-white placeholder-[#52525b] outline-none focus:border-[#444] transition-all text-sm" />
+            </div>
+            <div>
+              <label class="block text-xs text-[#94a3b8] font-light mb-2">Correo Electrónico de Negocios</label>
+              <input type="email" name="email" placeholder="nombre@empresa.com" required autocomplete="email" class="bg-black border border-[#1f1f24] rounded-lg px-4 py-3 w-full text-white placeholder-[#52525b] outline-none focus:border-[#444] transition-all text-sm" />
+            </div>
+            <div>
+              <label class="block text-xs text-[#94a3b8] font-light mb-2">Tipo de proyecto</label>
+              <input type="text" name="project_type" placeholder="Ej. Landing Page de Venta, Software SaaS, Portal Corporativo..." class="bg-black border border-[#1f1f24] rounded-lg px-4 py-3 w-full text-white placeholder-[#52525b] outline-none focus:border-[#444] transition-all text-sm" />
+            </div>
+            <div>
+              <label class="block text-xs text-[#94a3b8] font-light mb-2">Requerimientos del Stack</label>
+              <textarea name="message" rows="4" placeholder="Detalla qué funciones dinámicas necesitas (autenticación, bases de datos, integraciones)..." required class="bg-black border border-[#1f1f24] rounded-lg px-4 py-3 w-full text-white placeholder-[#52525b] outline-none focus:border-[#444] transition-all text-sm resize-none"></textarea>
+            </div>
+            <button type="submit" class="bg-white text-black font-semibold text-xs rounded-full hover:bg-neutral-200 transition-all px-6 py-3 w-full flex items-center justify-center gap-2 shadow-[0_0_15px_rgba(255,255,255,0.1)]">
+              Desarrollar con rendimiento extremo
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
 </BaseLayout>

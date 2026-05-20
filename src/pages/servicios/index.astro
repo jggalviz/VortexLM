@@ -37,14 +37,14 @@ import ContactForm from '../../components/ui/ContactForm.astro';
       </div>
 
       <!-- Elemento Gráfico Central (Mockup de arquitectura modular de tres paneles superpuestos) -->
-      <div class="relative max-w-5xl mx-auto mt-16 min-h-[380px] md:min-h-[460px] flex items-center justify-center">
+      <div class="relative w-full max-w-5xl mx-auto mt-16 min-h-[380px] md:min-h-[460px] flex items-center justify-center px-4">
         <!-- Resplandor sutil debajo del Mockup -->
         <div class="absolute inset-0 bg-cyan-500/[0.015] blur-[150px] rounded-full pointer-events-none"></div>
 
         <div class="relative w-full max-w-4xl grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
           
           <!-- Panel 1: API JSON (Izquierda - Detrás) -->
-          <div class="col-span-1 md:col-span-4 linear-card rounded-lg border border-[#1f1f24] bg-[#08080c]/80 p-5 font-mono text-[10px] text-left text-[#94a3b8] shadow-2xl relative md:-mr-6 md:translate-y-6 md:hover:translate-y-4 md:hover:z-30 transition-all duration-300 md:opacity-85 md:hover:opacity-100">
+          <div class="col-span-1 md:col-span-4 linear-card rounded-lg border border-[#1f1f24] bg-[#08080c]/80 p-5 font-mono text-[10px] text-left text-[#94a3b8] shadow-2xl relative md:-mr-6 md:translate-y-6 md:hover:translate-y-4 md:hover:z-30 transition-all duration-300 md:opacity-85 md:hover:opacity-100 overflow-x-auto">
             <div class="flex items-center justify-between border-b border-[#1f1f24] pb-3 mb-4">
               <div class="flex items-center gap-1.5">
                 <span class="w-2 h-2 rounded-full bg-[#ff5f56]/40"></span>
@@ -55,21 +55,21 @@ import ContactForm from '../../components/ui/ContactForm.astro';
             </div>
             <div class="space-y-1 text-slate-300/90 leading-normal">
               <div><span class="text-cyan-400">GET</span> <span class="text-green-400">/api/v1/performance</span></div>
-              <div class="text-[#8a8a93]">{</div>
+              <div class="text-[#8a8a93]">&#123;</div>
               <div class="pl-4">"<span class="text-yellow-200">status</span>": "<span class="text-green-300">success</span>",</div>
               <div class="pl-4">"<span class="text-yellow-200">framework</span>": "<span class="text-green-300">Astro/React</span>",</div>
-              <div class="pl-4">"<span class="text-yellow-200">metrics</span>": {</div>
+              <div class="pl-4">"<span class="text-yellow-200">metrics</span>": &#123;</div>
               <div class="pl-8">"<span class="text-yellow-200">firstContentfulPaint</span>": "<span class="text-cyan-300">0.3s</span>",</div>
               <div class="pl-8">"<span class="text-yellow-200">performanceScore</span>": <span class="text-yellow-400">100</span>,</div>
               <div class="pl-8">"<span class="text-yellow-200">serverResponseTime</span>": "<span class="text-cyan-300">42ms</span>"</div>
-              <div class="pl-4">},</div>
+              <div class="pl-4">&#125;,</div>
               <div class="pl-4">"<span class="text-yellow-200">deployment</span>": "<span class="text-green-300">Edge Network</span>"</div>
-              <div class="text-[#8a8a93]">}</div>
+              <div class="text-[#8a8a93]">&#125;</div>
             </div>
           </div>
 
           <!-- Panel 2: Componente React/Astro (Centro - Elevado) -->
-          <div class="col-span-1 md:col-span-5 linear-card rounded-lg border border-[#2e2e34] bg-[#050507] p-6 font-mono text-[10px] text-left shadow-[0_40px_80px_rgba(0,0,0,0.8)] relative z-20 md:scale-105 transition-all duration-300">
+          <div class="col-span-1 md:col-span-5 linear-card rounded-lg border border-[#2e2e34] bg-[#050507] p-6 font-mono text-[10px] text-left shadow-[0_40px_80px_rgba(0,0,0,0.8)] relative z-20 md:scale-105 transition-all duration-300 overflow-x-auto">
             <div class="flex items-center justify-between border-b border-[#1f1f24] pb-3.5 mb-4">
               <div class="flex items-center gap-1.5">
                 <span class="w-2.5 h-2.5 rounded-full bg-[#ff5f56]"></span>
@@ -87,7 +87,9 @@ import ContactForm from '../../components/ui/ContactForm.astro';
               <div class="pl-4"><span class="text-slate-300">description</span>: <span class="text-cyan-400">string</span>;</div>
               <div>&#125;</div>
               <br />
-              <div><span class="text-blue-400">export const</span> <span class="text-yellow-200">ServiceCard</span> = (&#123; <span class="text-slate-200">title, description</span> &#125;: <span class="text-yellow-300">Props</span>) => &#123;</div>
+              <div><span class="text-blue-400">export const</span> <span class="text-yellow-200">ServiceCard</span> = (</div>
+              <div class="pl-4">&#123; <span class="text-slate-200">title, description</span> &#125;: <span class="text-yellow-300">Props</span></div>
+              <div>) => &#123;</div>
               <div class="pl-4"><span class="text-purple-400">return</span> (</div>
               <div class="pl-8">&lt;<span class="text-blue-300">div</span> className=<span class="text-green-300">"linear-card hover:glow"</span>&gt;</div>
               <div class="pl-12">&lt;<span class="text-blue-300">IconVortex</span> className=<span class="text-green-300">"w-5 h-5 text-cyan-400"</span> /&gt;</div>
@@ -99,8 +101,7 @@ import ContactForm from '../../components/ui/ContactForm.astro';
             </div>
           </div>
 
-          <!-- Panel 3: Base de Datos Relacional (Derecha - Detrás) -->
-          <div class="col-span-1 md:col-span-3 linear-card rounded-lg border border-[#1f1f24] bg-[#08080c]/80 p-5 font-mono text-[9px] text-left text-[#94a3b8] shadow-2xl relative md:-ml-6 md:-translate-y-6 md:hover:-translate-y-8 md:hover:z-30 transition-all duration-300 md:opacity-85 md:hover:opacity-100">
+          <div class="col-span-1 md:col-span-3 linear-card rounded-lg border border-[#1f1f24] bg-[#08080c]/80 p-5 font-mono text-[9px] text-left text-[#94a3b8] shadow-2xl relative md:-mr-6 md:-translate-y-6 md:hover:-translate-y-8 md:hover:z-30 transition-all duration-300 md:opacity-85 md:hover:opacity-100 overflow-x-auto">
             <div class="flex items-center justify-between border-b border-[#1f1f24] pb-3 mb-4">
               <div class="flex items-center gap-1.5">
                 <span class="w-2 h-2 rounded-full bg-[#ff5f56]/40"></span>

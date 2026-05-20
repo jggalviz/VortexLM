@@ -21,9 +21,12 @@ const { title, description, isLocalBusiness, type = 'website' } = Astro.props;
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
     <style is:global>
       /* Main theme setup for Linear.app style */
-      html {
+      html, body {
           background-color: #000000;
           color: #f7f7f8;
+          width: 100%;
+          margin: 0;
+          padding: 0;
       }
       .linear-card {
           background: rgba(8, 8, 12, 0.4);
@@ -63,9 +66,9 @@ const { title, description, isLocalBusiness, type = 'website' } = Astro.props;
       }
     </style>
   </head>
-  <body class="bg-[#000000] text-[#f7f7f8] font-body-md linear-grid min-h-screen overflow-x-hidden flex flex-col">
+  <body class="bg-[#000000] text-[#f7f7f8] font-body-md linear-grid min-h-screen overflow-x-hidden flex flex-col w-full">
     <Header />
-    <main class="flex-grow">
+    <main class="flex-grow w-full">
       <slot />
     </main>
     <Footer />

@@ -163,6 +163,12 @@
         const char = content[index - 1] || '';
         const delay = (char === ' ' || char === '.' || char === ',' || char === '!' || char === '?') ? 15 : 25;
         setTimeout(typeNext, delay);
+      } else {
+        // Typewriter finished - check for WhatsApp keywords
+        const lower = content.toLowerCase();
+        if (lower.includes('whatsapp') || lower.includes('botón') || lower.includes('enlace')) {
+          injectWhatsAppButton();
+        }
       }
     }
     
@@ -191,6 +197,24 @@
 
   function scrollToBottom() {
     messagesContainer.scrollTop = messagesContainer.scrollHeight;
+  }
+
+  function injectWhatsAppButton() {
+    // Check if button already exists to avoid duplicates
+    if (document.querySelector('.wa-button')) return;
+    
+    const container = document.createElement('div');
+    container.className = 'flex justify-start wa-button';
+    container.innerHTML = `
+      <a href="https://wa.me/15072190951?text=Hola%20VortexLM,%20vengo%20de%20la%20web%20y%20me%20gustar%C3%ADa%20solicitar%20m%C3%A1s%20informaci%C3%B3n%20sobre%20un%20proyecto."
+         target="_blank"
+         rel="noopener noreferrer"
+         class="bg-white text-black font-medium py-3 px-5 rounded-xl shadow-lg hover:scale-105 transition-all text-center block mt-4 text-sm tracking-wide">
+        → Hablar con un Ingeniero en WhatsApp
+      </a>
+    `;
+    messagesContainer.appendChild(container);
+    scrollToBottom();
   }
 
   async function sendMessage(text) {

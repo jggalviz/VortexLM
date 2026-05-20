@@ -1,5 +1,5 @@
 ---
-import '../styles/fonts.css';
+import fontsCSS from '../styles/fonts.css?url';
 import SEO from '../components/seo/SEO.astro';
 import Header from '../components/ui/Header.astro';
 import Footer from '../components/ui/Footer.astro';
@@ -12,56 +12,20 @@ export interface Props {
 }
 
 const { title, description, isLocalBusiness, type = 'website' } = Astro.props;
+
+// Critical CSS inlined directly to avoid render-blocking external stylesheet requests
+const criticalCSS = `html,body{background-color:#000;color:#f7f7f8;width:100%;margin:0;padding:0}.linear-card{background:#08080c66;backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.05);box-shadow:0 30px 60px -15px #000000e6,inset 0 1px #ffffff0d;position:relative;overflow:hidden}.linear-card:before{content:"";position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.1),transparent);pointer-events:none}.glow-hover:hover{border-color:#ffffff26!important;box-shadow:0 0 30px #ffffff08,inset 0 1px #ffffff1a}.linear-grid{background-image:radial-gradient(rgba(255,255,255,.03) 1px,transparent 1px);background-size:32px 32px}.glow-line{height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.08),transparent)}.linear-gradient-bg{background:radial-gradient(circle at top center,#ffffff08,#000 70%)}.material-symbols-outlined{font-variation-settings:"FILL" 0,"wght" 300,"GRAD" 0,"opsz" 24}`;
 ---
 <html lang="es" class="scroll-smooth dark">
   <head>
     <SEO title={title} description={description} isLocalBusiness={isLocalBusiness} type={type} />
-    <style is:global>
-      /* Main theme setup for Linear.app style */
-      html, body {
-          background-color: #000000;
-          color: #f7f7f8;
-          width: 100%;
-          margin: 0;
-          padding: 0;
-      }
-      .linear-card {
-          background: rgba(8, 8, 12, 0.4);
-          backdrop-filter: blur(20px);
-          border: 1px solid rgba(255, 255, 255, 0.05);
-          box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.9), inset 0 1px 0 rgba(255, 255, 255, 0.05);
-          position: relative;
-          overflow: hidden;
-      }
-      .linear-card::before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          height: 1px;
-          background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-          pointer-events: none;
-      }
-      .glow-hover:hover {
-          border-color: rgba(255, 255, 255, 0.15) !important;
-          box-shadow: 0 0 30px rgba(255, 255, 255, 0.03), inset 0 1px 0 rgba(255, 255, 255, 0.1);
-      }
-      .linear-grid {
-          background-image: radial-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-          background-size: 32px 32px;
-      }
-      .glow-line {
-          height: 1px;
-          background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.08), transparent);
-      }
-      .linear-gradient-bg {
-          background: radial-gradient(circle at top center, rgba(255, 255, 255, 0.03) 0%, rgba(0, 0, 0, 1) 70%);
-      }
-      .material-symbols-outlined {
-          font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
-      }
-    </style>
+    
+    <!-- Load full stylesheet (fonts + all CSS) asynchronously - non-render-blocking -->
+    <link rel="preload" href={fontsCSS} as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href={fontsCSS}></noscript>
+    
+    <!-- Critical inlined styles (non-render-blocking since they're in the HTML itself) -->
+    <style set:html={criticalCSS}></style>
   </head>
   <body class="bg-[#000000] text-[#f7f7f8] font-body-md linear-grid min-h-screen overflow-x-hidden flex flex-col w-full">
     <Header />

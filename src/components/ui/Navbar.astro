@@ -9,28 +9,38 @@ const { isLanding = false } = Astro.props;
     <!-- Logo -->
     {
       isLanding ? (
-        <span class="font-body-md text-lg tracking-tight flex items-center gap-2.5 cursor-default">
-          <svg class="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 3C16.97 3 21 7.03 21 12C21 15.5 19 18.5 16 20" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M12 21C7.03 21 3 16.97 3 12C3 8.5 5 5.5 8 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M12 7C14.76 7 17 9.24 17 12C17 14 15.7 15.7 14 16.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M12 17C9.24 17 7 14.76 7 12C7 10 8.3 8.3 10 7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M12 10C13.1 10 14 10.9 14 12C14 12.6 13.5 13.1 13 13.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M12 14C10.9 14 10 13.1 10 12C10 11.4 10.5 10.9 11 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <a href="/" class="flex items-center gap-2 group focus:outline-none" aria-label="VortexLM Home">
+          <svg class="w-6 h-6 text-white transition-transform duration-300 group-hover:rotate-45 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10" class="stroke-neutral-800" />
+            <circle cx="12" cy="12" r="5" />
+            <circle cx="12" cy="12" r="1" fill="currentColor" />
+            <path d="M12 2v3M12 19v3M2 12h3M19 12h3" />
+            <circle cx="12" cy="5" r="0.75" fill="currentColor" />
+            <circle cx="12" cy="19" r="0.75" fill="currentColor" />
+            <circle cx="5" cy="12" r="0.75" fill="currentColor" />
+            <circle cx="19" cy="12" r="0.75" fill="currentColor" />
           </svg>
-          <span class="font-bold text-white">VORTEX</span><span class="text-neutral-500">LM</span>
-        </span>
+
+          <span class="font-sans text-lg font-semibold tracking-[0.15em] text-white uppercase transition-colors duration-200">
+            Vortex<span class="font-light tracking-normal text-neutral-500 group-hover:text-neutral-400 ml-0.5">LM</span>
+          </span>
+        </a>
       ) : (
-        <a href="/" class="font-body-md text-lg tracking-tight flex items-center gap-2.5 hover:opacity-85 transition-opacity">
-          <svg class="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 3C16.97 3 21 7.03 21 12C21 15.5 19 18.5 16 20" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M12 21C7.03 21 3 16.97 3 12C3 8.5 5 5.5 8 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M12 7C14.76 7 17 9.24 17 12C17 14 15.7 15.7 14 16.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M12 17C9.24 17 7 14.76 7 12C7 10 8.3 8.3 10 7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M12 10C13.1 10 14 10.9 14 12C14 12.6 13.5 13.1 13 13.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M12 14C10.9 14 10 13.1 10 12C10 11.4 10.5 10.9 11 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <a href="/" class="flex items-center gap-2 group focus:outline-none" aria-label="VortexLM Home">
+          <svg class="w-6 h-6 text-white transition-transform duration-300 group-hover:rotate-45 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10" class="stroke-neutral-800" />
+            <circle cx="12" cy="12" r="5" />
+            <circle cx="12" cy="12" r="1" fill="currentColor" />
+            <path d="M12 2v3M12 19v3M2 12h3M19 12h3" />
+            <circle cx="12" cy="5" r="0.75" fill="currentColor" />
+            <circle cx="12" cy="19" r="0.75" fill="currentColor" />
+            <circle cx="5" cy="12" r="0.75" fill="currentColor" />
+            <circle cx="19" cy="12" r="0.75" fill="currentColor" />
           </svg>
-          <span class="font-bold text-white">VORTEX</span><span class="text-neutral-500">LM</span>
+
+          <span class="font-sans text-lg font-semibold tracking-[0.15em] text-white uppercase transition-colors duration-200">
+            Vortex<span class="font-light tracking-normal text-neutral-500 group-hover:text-neutral-400 ml-0.5">LM</span>
+          </span>
         </a>
       )
     }

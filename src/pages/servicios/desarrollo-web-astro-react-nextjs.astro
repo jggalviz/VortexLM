@@ -1,6 +1,5 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import ContactForm from '../../components/ui/ContactForm.astro';
 
 const faqs = [
   { question: "¿Qué es la arquitectura Jamstack y por qué es más rápida?", answer: "Jamstack (JavaScript, APIs, Markup) es una arquitectura que separa el front-end del back-end, sirviendo archivos estáticos pre-renderizados a través de una CDN. Esto elimina los tiempos de carga del servidor, logrando puntuaciones perfectas de 100/100 en Google PageSpeed Insights." },
@@ -292,15 +291,83 @@ const faqs = [
     </div>
   </section>
 
-  <!-- CONTACT SECTION - Exact homepage style -->
+  <!-- CONTACT SECTION -->
   <section id="contacto" class="py-36 px-6 md:px-12 bg-black">
-    <div class="max-w-[1200px] mx-auto">
-      <div class="max-w-2xl mx-auto text-center mb-16">
-        <h2 class="text-2xl md:text-4xl font-light text-white tracking-tight leading-snug mb-4">¿Listo para escalar tu negocio?</h2>
-        <p class="text-sm text-[#94a3b8] font-light">Déjanos tus datos y un arquitecto de software evaluará tu caso sin compromiso.</p>
-      </div>
-      <div class="max-w-lg mx-auto">
-        <ContactForm />
+    <div class="max-w-[600px] mx-auto text-center relative z-10 space-y-8">
+      <span class="text-[10px] font-mono text-[#94a3b8] uppercase tracking-widest block font-medium">Inicia hoy</span>
+      <h2 class="text-3xl md:text-5xl font-light text-white tracking-tight leading-tight">Escala tus operaciones digitales.</h2>
+      <p class="text-sm text-[#94a3b8] font-light leading-relaxed">
+        Hablemos de tu proyecto. Cuéntanos qué necesitas construir con Astro, Next.js o Supabase y te propondremos la arquitectura ideal.
+      </p>
+
+      <div class="linear-card p-8 rounded-lg border border-[#1f1f24] bg-[#08080c]/40 text-left space-y-6">
+        <form action="/api/contact" method="POST" class="space-y-4">
+          <div>
+            <label class="block text-[10px] font-mono text-[#94a3b8] uppercase tracking-wider mb-2 font-medium" for="name">Nombre Completo</label>
+            <input
+              class="w-full bg-black border border-[#222226] rounded px-4 py-3 text-xs text-white placeholder-[#52525b] focus:outline-none focus:border-white transition-colors"
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Ej. Carlos Mendoza"
+              required
+            />
+          </div>
+          
+          <div>
+            <label class="block text-[10px] font-mono text-[#94a3b8] uppercase tracking-wider mb-2 font-medium" for="email">Correo Corporativo</label>
+            <input
+              class="w-full bg-black border border-[#222226] rounded px-4 py-3 text-xs text-white placeholder-[#52525b] focus:outline-none focus:border-white transition-colors"
+              type="email"
+              id="email"
+              name="email"
+              placeholder="carlos@tuempresa.com"
+              required
+            />
+          </div>
+          
+          <div>
+            <label class="block text-[10px] font-mono text-[#94a3b8] uppercase tracking-wider mb-2 font-medium" for="budget">Presupuesto Estimado</label>
+            <div class="relative">
+              <select
+                id="budget"
+                name="budget"
+                required
+                class="w-full bg-black border border-[#222226] rounded px-4 py-3 text-xs text-white focus:outline-none focus:border-white transition-colors appearance-none cursor-pointer"
+              >
+                <option value="" disabled selected class="text-[#52525b]">Selecciona un rango</option>
+                <option value="menor-1000" class="text-white">Menos de $1,000 USD</option>
+                <option value="1000-3000" class="text-white">$1,000 - $3,000 USD</option>
+                <option value="3000-5000" class="text-white">$3,000 - $5,000 USD</option>
+                <option value="5000-10000" class="text-white">$5,000 - $10,000 USD</option>
+                <option value="mayor-10000" class="text-white">Más de $10,000 USD</option>
+              </select>
+              <svg class="absolute right-3 top-1/2 -translate-y-1/2 w-3 h-3 text-[#52525b] pointer-events-none" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+              </svg>
+            </div>
+          </div>
+          
+          <div>
+            <label class="block text-[10px] font-mono text-[#94a3b8] uppercase tracking-wider mb-2 font-medium" for="project">Cuéntanos sobre tu proyecto</label>
+            <textarea
+              class="w-full bg-black border border-[#222226] rounded px-4 py-3 text-xs text-white placeholder-[#52525b] focus:outline-none focus:border-white transition-colors min-h-[100px]"
+              id="project"
+              name="project"
+              placeholder="Describe el alcance de tu proyecto, tecnologías de interés y objetivos de negocio..."
+              required
+            ></textarea>
+          </div>
+          
+          <button
+            type="submit"
+            class="w-full py-3 bg-white text-black font-semibold text-xs rounded hover:bg-neutral-200 transition-colors duration-200"
+          >
+            Enviar Propuesta
+          </button>
+          
+          <p class="text-[10px] text-[#52525b] text-center mt-4 font-mono">Tus datos están protegidos. Sin spam, garantizado.</p>
+        </form>
       </div>
     </div>
   </section>

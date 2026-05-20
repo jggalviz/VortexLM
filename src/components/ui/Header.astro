@@ -1,57 +1,73 @@
 ---
 ---
-<header class="fixed top-0 left-0 right-0 z-50 bg-surface/80 backdrop-blur-md border-b border-outline-variant/30">
-  <nav class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop h-20 max-w-container-max mx-auto">
-    <a href="/" class="font-display-lg text-headline-md tracking-tighter text-on-surface hover:text-primary transition-colors flex items-center gap-2 group">
-      Vortex<span class="text-primary">LM</span>
+<header class="fixed top-0 left-0 right-0 z-50 bg-black/60 backdrop-blur-lg border-b border-[#1f1f24]">
+  <nav class="flex justify-between items-center w-full px-6 md:px-12 h-16 max-w-container-max mx-auto">
+    <!-- VortexLM Logo with Abstract Geometric Icon -->
+    <a href="/" class="font-body-md text-lg tracking-tight text-white hover:opacity-85 transition-opacity flex items-center gap-2.5">
+      <svg class="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span class="font-normal">Vortex</span><span class="font-light text-white/60">LM</span>
     </a>
     
-    <div class="hidden md:flex items-center gap-8">
-      <a href="/" class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-300">Inicio</a>
+    <!-- Central Menu Links -->
+    <div class="hidden md:flex items-center gap-7">
+      <a href="/#productos" class="text-xs font-normal text-[#8a8a93] hover:text-[#f7f7f8] transition-colors duration-300">Productos</a>
       
+      <!-- 'Soluciones' Dropdown mapping previous services -->
       <div class="relative group py-4">
-        <span class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors flex items-center gap-1 cursor-pointer">
-          Servicios
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" /></svg>
+        <span class="text-xs font-normal text-[#8a8a93] hover:text-[#f7f7f8] transition-colors flex items-center gap-1 cursor-pointer">
+          Soluciones
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-3 h-3 opacity-60"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" /></svg>
         </span>
         
-        <div class="absolute top-full left-1/2 -translate-x-1/2 pt-2 w-64 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-[100]">
-          <div class="glass-card rounded-xl flex flex-col overflow-hidden shadow-2xl">
-            <a href="/servicios/diseno-web-caracas" class="px-6 py-4 font-label-md text-sm text-on-surface hover:bg-surface-container-high hover:text-primary border-b border-outline-variant/30">
+        <!-- Gap-free hover menu with linear.app visual style -->
+        <div class="absolute top-full left-1/2 -translate-x-1/2 pt-1 w-52 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-[100]">
+          <div class="linear-card rounded-md flex flex-col overflow-hidden bg-[#08080c]/95 border border-[#1f1f24]">
+            <a href="/servicios/diseno-web-caracas" class="px-5 py-3 text-xs text-[#8a8a93] hover:bg-[#121216] hover:text-white border-b border-[#1f1f24] transition-colors">
               Diseño Web
             </a>
-            <a href="/servicios/desarrollo-de-apps-caracas" class="px-6 py-4 font-label-md text-sm text-on-surface hover:bg-surface-container-high hover:text-primary border-b border-outline-variant/30">
+            <a href="/servicios/desarrollo-de-apps-caracas" class="px-5 py-3 text-xs text-[#8a8a93] hover:bg-[#121216] hover:text-white border-b border-[#1f1f24] transition-colors">
               Apps Móviles
             </a>
-            <a href="/servicios/sistemas-gestion-medida" class="px-6 py-4 font-label-md text-sm text-on-surface hover:bg-surface-container-high hover:text-primary">
+            <a href="/servicios/sistemas-gestion-medida" class="px-5 py-3 text-xs text-[#8a8a93] hover:bg-[#121216] hover:text-white transition-colors">
               Sistemas Pro
             </a>
           </div>
         </div>
       </div>
 
-      <a href="/blog" class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-300">Blog</a>
-      
-      <a href="/#contacto" class="bg-primary-container text-on-primary-container px-6 py-2 rounded-none font-label-md text-label-md active:scale-95 transition-transform hover:opacity-90 shadow-[0_0_15px_rgba(138,43,226,0.3)]">
-        Contactar
+      <a href="/#tecnologia" class="text-xs font-normal text-[#8a8a93] hover:text-[#f7f7f8] transition-colors duration-300">Tecnología</a>
+      <a href="/#portales" class="text-xs font-normal text-[#8a8a93] hover:text-[#f7f7f8] transition-colors duration-300">Portales</a>
+      <a href="/#soporte" class="text-xs font-normal text-[#8a8a93] hover:text-[#f7f7f8] transition-colors duration-300">Soporte</a>
+    </div>
+    
+    <!-- Prominent 'Empezar' Action Button -->
+    <div class="hidden md:flex items-center">
+      <a href="/#contacto" class="bg-white text-black hover:bg-[#e2e2e8] px-4 py-1.5 rounded-full text-xs font-medium transition-all duration-200 shadow-[0_0_15px_rgba(255,255,255,0.1)] active:scale-95">
+        Empezar
       </a>
     </div>
     
-    <!-- Mobile menu button (Zero JS CSS Only) -->
+    <!-- Mobile menu button (Zero JS CSS Only using details tag) -->
     <details class="md:hidden group relative">
-      <summary class="list-none cursor-pointer text-on-surface-variant hover:text-primary p-2">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+      <summary class="list-none cursor-pointer text-[#8a8a93] hover:text-white p-2">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
           <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
         </svg>
       </summary>
-      <div class="absolute right-0 top-full mt-4 w-64 glass-card rounded-lg shadow-2xl overflow-hidden flex flex-col z-50 max-h-[80vh] overflow-y-auto">
-        <a href="/" class="px-5 py-4 font-label-md text-sm text-on-surface-variant hover:bg-surface-container-high hover:text-primary border-b border-outline-variant/30">Inicio</a>
-        <div class="px-5 py-2 font-label-sm text-xs text-outline uppercase tracking-wider bg-surface-container/50">Servicios</div>
-        <a href="/servicios/diseno-web-caracas" class="px-5 py-4 pl-8 font-label-md text-sm text-on-surface-variant hover:bg-surface-container-high hover:text-primary border-b border-outline-variant/30">↳ Diseño Web</a>
-        <a href="/servicios/desarrollo-de-apps-caracas" class="px-5 py-4 pl-8 font-label-md text-sm text-on-surface-variant hover:bg-surface-container-high hover:text-primary border-b border-outline-variant/30">↳ Apps Móviles</a>
-        <a href="/servicios/sistemas-gestion-medida" class="px-5 py-4 pl-8 font-label-md text-sm text-on-surface-variant hover:bg-surface-container-high hover:text-primary border-b border-outline-variant/30">↳ Software a Medida</a>
-        <a href="/blog" class="px-5 py-4 font-label-md text-sm text-on-surface-variant hover:bg-surface-container-high hover:text-primary border-b border-outline-variant/30">Blog Técnico</a>
-        <a href="/#contacto" class="px-5 py-4 font-label-md text-sm text-primary hover:bg-surface-container-high">Contactar a Ventas</a>
+      <div class="absolute right-0 top-full mt-3 w-56 linear-card rounded-md shadow-2xl overflow-hidden flex flex-col z-50 bg-[#08080c]/95 border border-[#1f1f24]">
+        <a href="/#productos" class="px-5 py-3.5 text-xs text-[#8a8a93] hover:bg-[#121216] hover:text-white border-b border-[#1f1f24] transition-colors">Productos</a>
+        <div class="px-5 py-2 text-[10px] text-[#8a8a93]/50 uppercase tracking-wider bg-[#000000]/50 font-mono">Soluciones</div>
+        <a href="/servicios/diseno-web-caracas" class="px-5 py-3 pl-8 text-xs text-[#8a8a93] hover:bg-[#121216] hover:text-white border-b border-[#1f1f24] transition-colors">Diseño Web</a>
+        <a href="/servicios/desarrollo-de-apps-caracas" class="px-5 py-3 pl-8 text-xs text-[#8a8a93] hover:bg-[#121216] hover:text-white border-b border-[#1f1f24] transition-colors">Apps Móviles</a>
+        <a href="/servicios/sistemas-gestion-medida" class="px-5 py-3 pl-8 text-xs text-[#8a8a93] hover:bg-[#121216] hover:text-white border-b border-[#1f1f24] transition-colors">Sistemas Pro</a>
+        <a href="/#tecnologia" class="px-5 py-3.5 text-xs text-[#8a8a93] hover:bg-[#121216] hover:text-white border-b border-[#1f1f24] transition-colors">Tecnología</a>
+        <a href="/#portales" class="px-5 py-3.5 text-xs text-[#8a8a93] hover:bg-[#121216] hover:text-white border-b border-[#1f1f24] transition-colors">Portales</a>
+        <a href="/#soporte" class="px-5 py-3.5 text-xs text-[#8a8a93] hover:bg-[#121216] hover:text-white border-b border-[#1f1f24] transition-colors">Soporte</a>
+        <a href="/#contacto" class="px-5 py-3.5 text-xs text-white bg-white/10 hover:bg-white/20 text-center font-medium transition-colors">Empezar</a>
       </div>
     </details>
   </nav>

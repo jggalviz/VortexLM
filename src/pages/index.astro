@@ -2,125 +2,596 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 <BaseLayout 
-  title="Inicio" 
-  description="Dominamos el mercado tecnológico con soluciones de velocidad luz y peso mínimo. Posiciona tu negocio como el #1 en Google."
-  isLocalBusiness={true}
+  title="Vortex - Desarrollo Web de Alto Rendimiento y Software a Medida" 
+  description="Creamos software robusto y páginas web ultrarrápidas que hacen crecer tu negocio. Jamstack (Astro, Next.js), Supabase y optimización extrema sin plantillas lentas."
 >
-<main class="pt-20">
-<!-- Hero Section -->
-<section class="relative min-h-[921px] flex items-center justify-center overflow-hidden px-margin-mobile md:px-margin-desktop">
-<!-- Background Elements -->
-<div class="absolute inset-0 -z-10 vortex-gradient"></div>
-<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary-container/10 blur-[120px] rounded-full"></div>
-<div class="max-w-container-max mx-auto text-center relative z-10">
-<h1 class="font-display-lg text-4xl md:text-display-lg mb-6 leading-tight max-w-4xl mx-auto">
-                    Desarrollamos el <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-primary-fixed">Futuro Digital</span> de Venezuela.
-                </h1>
-<p class="font-body-lg text-body-lg text-on-surface-variant mb-12 max-w-2xl mx-auto opacity-80">Creamos aplicaciones web y móviles con velocidad extrema, SEO dominante y seguridad impenetrable.</p>
-<div class="flex flex-col md:flex-row items-center justify-center gap-6">
-<a href="#contacto" class="w-full md:w-auto px-10 py-4 bg-primary text-on-primary font-label-md text-label-md rounded-none border border-primary glow-hover transition-all shadow-[0_0_15px_rgba(138,43,226,0.3)] text-center">
-                        Iniciar Proyecto
-                    </a>
-<a href="/portafolio" class="w-full md:w-auto px-10 py-4 bg-transparent border border-outline text-on-surface font-label-md text-label-md rounded-none hover:bg-surface-container-high transition-all text-center">
-                        Ver Portafolio
-                    </a>
-</div>
-</div>
-<!-- Abstract Monofilament Lines -->
-<div class="absolute bottom-0 left-0 w-full opacity-30">
-<div class="glow-line mb-4 w-3/4 mx-auto"></div>
-<div class="glow-line w-1/2 mx-auto"></div>
-</div>
-</section>
+  <!-- Hero Section (Sección Superior) -->
+  <section class="relative pt-36 pb-32 overflow-hidden linear-gradient-bg border-b border-[#1f1f24] px-6 md:px-12">
+    <!-- Grid Overlay sutil -->
+    <div class="absolute inset-0 linear-grid opacity-30 pointer-events-none"></div>
+    
+    <div class="max-w-[1200px] mx-auto text-center relative z-10">
+      <!-- Resplandor sutil detrás del H1 -->
+      <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-white/[0.015] blur-[120px] rounded-full pointer-events-none"></div>
 
-<!-- Trusted By Section -->
-<section class="py-12 border-y border-outline-variant/20 bg-surface-container-lowest/50">
-<div class="max-w-container-max mx-auto px-margin-desktop">
-<p class="text-center font-label-sm text-label-sm text-outline mb-8 uppercase tracking-widest">Stack Tecnológico de Élite</p>
-<div class="flex flex-wrap justify-center items-center gap-12 md:gap-24 opacity-50 grayscale hover:grayscale-0 transition-all">
-<div class="flex items-center gap-2 font-display-lg text-xl">
-<span class="material-symbols-outlined text-primary">rocket_launch</span> Astro
-                    </div>
-<div class="flex items-center gap-2 font-display-lg text-xl">
-<span class="material-symbols-outlined text-primary">deployed_code</span> React
-                    </div>
-<div class="flex items-center gap-2 font-display-lg text-xl">
-<span class="material-symbols-outlined text-primary">cloud</span> Vercel
-                    </div>
-<div class="flex items-center gap-2 font-display-lg text-xl">
-<span class="material-symbols-outlined text-primary">terminal</span> TypeScript
-                    </div>
-</div>
-</div>
-</section>
+      <!-- Título Principal (H1) -->
+      <h1 class="text-4xl md:text-7xl font-extralight tracking-tight text-white mb-8 leading-[1.08] max-w-4xl mx-auto opacity-95">
+        Creamos software robusto y páginas web ultrarrápidas que hacen crecer tu negocio.
+      </h1>
+      
+      <!-- Subtítulo (Párrafo de soporte en gris claro) -->
+      <p class="text-base md:text-lg text-[#94a3b8] font-light mb-12 max-w-3xl mx-auto leading-relaxed">
+        Desarrollamos con tecnologías de última generación para empresas y agencias que exigen velocidad extrema, seguridad y arquitectura escalable. Sin plantillas pesadas, sin código basura.
+      </p>
 
-<!-- Services Section -->
-<section class="py-24 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
-<div class="mb-16">
-<h2 class="font-headline-lg text-headline-lg mb-4">Servicios Especializados</h2>
-<div class="h-1 w-20 bg-primary"></div>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
-<!-- Card 1 -->
-<div class="glass-card p-10 flex flex-col group hover:border-primary/50 transition-colors">
-<span class="material-symbols-outlined text-primary text-4xl mb-6 group-hover:scale-110 transition-transform">language</span>
-<h3 class="font-headline-md text-2xl mb-4">Diseño Web</h3>
-<p class="font-body-md text-on-surface-variant flex-grow">
-                        Páginas web que cargan en milisegundos. Optimizadas para convertir visitantes en clientes en todo el territorio nacional.
-                    </p>
-<a href="/servicios/diseno-web-caracas" class="mt-8 flex items-center text-primary font-label-md text-label-md gap-2 cursor-pointer group/link">
-                        SABER MÁS <span class="material-symbols-outlined text-sm group-hover/link:translate-x-1 transition-transform">arrow_forward</span>
-</a>
-</div>
-<!-- Card 2 -->
-<div class="glass-card p-10 flex flex-col group hover:border-primary/50 transition-colors">
-<span class="material-symbols-outlined text-primary text-4xl mb-6 group-hover:scale-110 transition-transform">phone_iphone</span>
-<h3 class="font-headline-md text-2xl mb-4">Apps Móviles</h3>
-<p class="font-body-md text-on-surface-variant flex-grow">
-                        Desarrollo nativo e híbrido para iOS y Android. Llevamos tu negocio al bolsillo de tus usuarios de forma eficiente.
-                    </p>
-<a href="/servicios/desarrollo-de-apps-caracas" class="mt-8 flex items-center text-primary font-label-md text-label-md gap-2 cursor-pointer group/link">
-                        SABER MÁS <span class="material-symbols-outlined text-sm group-hover/link:translate-x-1 transition-transform">arrow_forward</span>
-</a>
-</div>
-<!-- Card 3 -->
-<div class="glass-card p-10 flex flex-col group hover:border-primary/50 transition-colors">
-<span class="material-symbols-outlined text-primary text-4xl mb-6 group-hover:scale-110 transition-transform">settings_suggest</span>
-<h3 class="font-headline-md text-2xl mb-4">Sistemas Pro</h3>
-<p class="font-body-md text-on-surface-variant flex-grow">
-                        Software a medida que automatiza tu empresa. Escalabilidad garantizada bajo los más altos estándares internacionales.
-                    </p>
-<a href="/servicios/sistemas-gestion-medida" class="mt-8 flex items-center text-primary font-label-md text-label-md gap-2 cursor-pointer group/link">
-                        SABER MÁS <span class="material-symbols-outlined text-sm group-hover/link:translate-x-1 transition-transform">arrow_forward</span>
-</a>
-</div>
-</div>
-</section>
+      <!-- Botones de Acción (CTAs) -->
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-6 mb-20">
+        <a href="#contacto" class="w-full sm:w-auto px-8 py-3 bg-white text-black font-semibold text-xs rounded-full hover:bg-neutral-200 transition-all text-center duration-200 active:scale-95 shadow-[0_0_25px_rgba(255,255,255,0.15)]">
+          Agendar una llamada
+        </a>
+        <a href="#features" class="w-full sm:w-auto px-6 py-3 text-white/80 font-medium text-xs rounded-full hover:text-white flex items-center justify-center gap-1.5 group transition-colors">
+          Ver servicios <span class="group-hover:translate-x-1 transition-transform">➔</span>
+        </a>
+      </div>
 
-<!-- Technology Detail Section -->
-<section class="py-24 bg-surface-container-low/30 overflow-hidden">
-<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-<div class="relative">
-<h2 class="font-headline-lg text-headline-lg mb-8 leading-tight">Tecnología de <span class="text-primary">Alto Rendimiento.</span></h2>
-<p class="font-body-lg text-body-lg text-on-surface-variant mb-8">
-                        Mientras otros usan herramientas del pasado, nosotros utilizamos Astro, TypeScript y Edge Computing. Tu web no solo se verá bien; será la más rápida de Caracas y de toda la región.
-                    </p>
-<div class="grid grid-cols-2 gap-6">
-<div class="border-l-2 border-primary pl-4">
-<div class="font-display-lg text-3xl text-primary">100%</div>
-<p class="font-label-sm text-label-sm text-outline uppercase">Lighthouse SEO</p>
-</div>
-<div class="border-l-2 border-primary pl-4">
-<div class="font-display-lg text-3xl text-primary">&lt;500ms</div>
-<p class="font-label-sm text-label-sm text-outline uppercase">Time to Interactive</p>
-</div>
-</div>
-</div>
-<!-- Abstract Performance Graphic -->
-<div class="relative glass-card aspect-square max-w-md mx-auto flex items-center justify-center">
-  <img alt="Abstract Wave Graphic" class="w-full h-full object-cover opacity-80 mix-blend-lighten" src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80" />
-</div>
-</div>
-</section>
-</main>
+      <!-- Elemento Gráfico Central (El gran mockup flotante de entorno de desarrollo) -->
+      <div class="relative max-w-5xl mx-auto">
+        <!-- Antigravity Annotation 1: Entorno de Desarrollo -->
+        <div class="absolute -top-12 -left-4 md:-left-16 z-30 flex items-center gap-3">
+          <div class="antigravity-tag px-3 py-1.5 rounded-full text-[10px] flex items-center gap-2 select-none">
+            <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 antigravity-pulse"></span>
+            <span>Antigravity: Replicate linear app visual depth and UI elements</span>
+          </div>
+          <svg class="w-12 h-8 text-[#1f1f24] hidden md:block" viewBox="0 0 50 30" fill="none">
+            <path d="M0 15C15 15 25 25 50 25" stroke="currentColor" stroke-width="1" stroke-dasharray="3 3"/>
+          </svg>
+        </div>
+
+        <!-- Frame de ventana flotante con relieve skeuomórfico y glow de fondo -->
+        <div class="linear-card rounded-lg overflow-hidden border border-[#2e2e34] shadow-[0_50px_100px_-20px_rgba(0,0,0,0.98)]">
+          <!-- Barra superior simulando MacOS / IDE -->
+          <div class="bg-[#08080c] px-4 py-3.5 flex items-center justify-between border-b border-[#1f1f24]">
+            <div class="flex items-center gap-2">
+              <span class="w-2.5 h-2.5 rounded-full bg-[#ff5f56]/50"></span>
+              <span class="w-2.5 h-2.5 rounded-full bg-[#ffbd2e]/50"></span>
+              <span class="w-2.5 h-2.5 rounded-full bg-[#27c93f]/50"></span>
+            </div>
+            <div class="text-[10px] font-mono text-[#94a3b8]/40 flex items-center gap-1.5">
+              <span class="material-symbols-outlined text-[10px]">code</span>
+              vortex-workspace // src/pages/index.astro
+            </div>
+            <div class="w-12"></div>
+          </div>
+
+          <!-- Entorno de Trabajo de Tres Columnas -->
+          <div class="grid grid-cols-1 md:grid-cols-12 min-h-[500px] bg-[#000000] text-left">
+            
+            <!-- Columna Izquierda: Estructura de carpetas limpia de Astro/Next.js -->
+            <div class="col-span-1 md:col-span-3 border-r border-[#1f1f24] bg-[#050507]/60 p-4 font-mono text-[11px] text-[#94a3b8]/80">
+              <span class="text-[9px] uppercase tracking-wider text-[#94a3b8]/40 block mb-3 font-semibold">Explorador de Archivos</span>
+              <div class="space-y-2">
+                <div class="flex items-center gap-2 text-white">
+                  <span class="material-symbols-outlined text-xs text-[#94a3b8]">folder_open</span> src/
+                </div>
+                <div class="pl-4 space-y-1.5 border-l border-[#1f1f24] ml-2">
+                  <div class="flex items-center gap-2 text-white/90">
+                    <span class="material-symbols-outlined text-xs text-[#94a3b8]">folder</span> components/
+                  </div>
+                  <div class="pl-4 space-y-1 border-l border-[#1f1f24] ml-2">
+                    <div class="text-[#94a3b8] hover:text-white transition-colors cursor-pointer flex items-center gap-1">
+                      <span class="material-symbols-outlined text-[10px]">draft</span> Header.astro
+                    </div>
+                    <div class="text-[#94a3b8] hover:text-white transition-colors cursor-pointer flex items-center gap-1">
+                      <span class="material-symbols-outlined text-[10px]">draft</span> Footer.astro
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-2 text-white/90">
+                    <span class="material-symbols-outlined text-xs text-[#94a3b8]">folder_open</span> pages/
+                  </div>
+                  <div class="pl-4 border-l border-[#1f1f24] ml-2">
+                    <div class="text-cyan-400 font-medium flex items-center gap-1">
+                      <span class="material-symbols-outlined text-[10px]">draft</span> index.astro
+                    </div>
+                  </div>
+                </div>
+                <div class="flex items-center gap-2 text-[#94a3b8]">
+                  <span class="material-symbols-outlined text-xs">settings</span> tailwind.config.mjs
+                </div>
+                <div class="flex items-center gap-2 text-[#94a3b8]">
+                  <span class="material-symbols-outlined text-xs">settings</span> astro.config.mjs
+                </div>
+              </div>
+            </div>
+
+            <!-- Columna Central: Fragmento de código TypeScript/Astro impecable -->
+            <div class="col-span-1 md:col-span-6 p-6 border-r border-[#1f1f24] font-mono text-[11px] leading-relaxed overflow-x-auto text-[#94a3b8]/90">
+              <span class="text-[9px] uppercase tracking-wider text-[#94a3b8]/40 block mb-3 font-semibold">Editor de Código</span>
+              <div class="space-y-1">
+                <div><span class="text-purple-400">import</span> BaseLayout <span class="text-purple-400">from</span> <span class="text-green-300">'../layouts/BaseLayout.astro'</span>;</div>
+                <div><span class="text-purple-400">import</span> Button <span class="text-purple-400">from</span> <span class="text-green-300">'../components/ui/Button.tsx'</span>;</div>
+                <div class="text-[#94a3b8]/40">// Inicializa la arquitectura ultrarrápida</div>
+                <div><span class="text-blue-400">const</span> <span class="text-yellow-200">projectName</span> = <span class="text-green-300">"Vortex Scalable Project"</span>;</div>
+                <div><span class="text-blue-400">const</span> <span class="text-yellow-200">pageSpeedScore</span> = <span class="text-yellow-400">100</span>;</div>
+                <br />
+                <div>&lt;<span class="text-blue-300">BaseLayout</span> title=&#123;projectName&#125;&gt;</div>
+                <div class="pl-4">&lt;<span class="text-blue-300">main</span> class=<span class="text-green-300">"jamstack-grid font-light"</span>&gt;</div>
+                <div class="pl-8">&lt;<span class="text-blue-300">section</span> id=<span class="text-green-300">"hero"</span>&gt;</div>
+                <div class="pl-12">&lt;<span class="text-blue-300">h1</span>&gt;Software robusto que escala&lt;/<span class="text-blue-300">h1</span>&gt;</div>
+                <div class="pl-12">&lt;<span class="text-blue-300">Button</span> client:load size=<span class="text-green-300">"sm"</span>&gt;</div>
+                <div class="pl-16">Agendar llamada</div>
+                <div class="pl-12">&lt;/<span class="text-blue-300">Button</span>&gt;</div>
+                <div class="pl-8">&lt;/<span class="text-blue-300">section</span>&gt;</div>
+                <div class="pl-4">&lt;/<span class="text-blue-300">main</span>&gt;</div>
+                <div>&lt;/<span class="text-blue-300">BaseLayout</span>&gt;</div>
+              </div>
+            </div>
+
+            <!-- Columna Derecha: Base de datos Supabase minimalista -->
+            <div class="col-span-1 md:col-span-3 p-4 bg-[#050507]/30 flex flex-col justify-between">
+              <div>
+                <span class="text-[9px] uppercase tracking-wider text-[#94a3b8]/40 block mb-3 font-mono font-semibold">Supabase PostgreSQL</span>
+                <div class="space-y-3 font-mono text-[10px]">
+                  <div class="p-2 border border-[#1f1f24] rounded bg-black/40">
+                    <div class="text-white/80 font-bold mb-0.5">Tabla: clients_db</div>
+                    <div class="text-[#94a3b8]/60 text-[9px]">3 columns // 1,420 rows</div>
+                  </div>
+                  <div class="space-y-1.5">
+                    <div class="flex justify-between border-b border-[#1f1f24] pb-1">
+                      <span class="text-[#94a3b8]/80">uuid</span>
+                      <span class="text-cyan-400">pkey</span>
+                    </div>
+                    <div class="flex justify-between border-b border-[#1f1f24] pb-1">
+                      <span class="text-[#94a3b8]/80">empresa_name</span>
+                      <span class="text-[#94a3b8]/40">text</span>
+                    </div>
+                    <div class="flex justify-between border-b border-[#1f1f24] pb-1">
+                      <span class="text-[#94a3b8]/80">conversion_rate</span>
+                      <span class="text-green-400">float8</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- SSL Indicator and verification lock -->
+              <div class="border-t border-[#1f1f24]/50 pt-3 flex items-center justify-between text-[9px] font-mono text-[#94a3b8]/40">
+                <span class="flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-green-500"></span> Live Node</span>
+                <span>SSL Encrypted</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sticky Sub-navigation (Barra fija pequeña en desktop) -->
+  <nav class="sticky top-16 z-40 bg-black/80 backdrop-blur-md border-b border-[#1f1f24] hidden md:block">
+    <div class="max-w-[1200px] mx-auto px-12 h-10 flex items-center justify-between text-[10px] text-[#94a3b8] font-mono">
+      <div class="flex items-center gap-6">
+        <a href="#features" class="hover:text-white transition-colors">Características</a>
+        <a href="#optimización" class="hover:text-white transition-colors">Optimización SEO</a>
+        <a href="#plataformas" class="hover:text-white transition-colors">Aplicaciones a Medida</a>
+      </div>
+      <div class="flex items-center gap-6">
+        <a href="#infraestructura" class="hover:text-white transition-colors">Infraestructura Corporativa</a>
+        <a href="#contacto" class="hover:text-white transition-colors">Agendar</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Sección de Características Principales (Los 3 bloques con iconos) -->
+  <section id="features" class="py-36 px-6 md:px-12 bg-black relative border-b border-[#1f1f24]">
+    <div class="max-w-[1200px] mx-auto relative z-10">
+      
+      <!-- Antigravity Annotation 2: Iconos Geométricos -->
+      <div class="absolute -top-12 right-0 md:right-12 z-30 flex items-center gap-3">
+        <svg class="w-12 h-8 text-[#1f1f24] hidden md:block rotate-180" viewBox="0 0 50 30" fill="none">
+          <path d="M0 15C15 15 25 25 50 25" stroke="currentColor" stroke-width="1" stroke-dasharray="3 3"/>
+        </svg>
+        <div class="antigravity-tag px-3 py-1.5 rounded-full text-[10px] flex items-center gap-2 select-none">
+          <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 antigravity-pulse"></span>
+          <span>Antigravity: Create unique VertesLM geometric icons</span>
+        </div>
+      </div>
+
+      <!-- Texto introductorio (Arriba de las tarjetas) -->
+      <div class="max-w-4xl mb-24">
+        <h2 class="text-2xl md:text-4xl font-light text-white tracking-tight leading-snug">
+          Una nueva especie de desarrollo. Diseñado a medida para la era digital. Vortex establece un estándar superior en rendimiento web y aplicaciones escalables.
+        </h2>
+      </div>
+
+      <!-- 3 bloques con iconos -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16">
+        
+        <!-- Bloque 1: Jamstack y SSR -->
+        <div class="space-y-6 group">
+          <!-- Cubo Isométrico SVG -->
+          <div class="w-full aspect-[4/3] linear-card rounded border border-[#1f1f24] bg-[#08080c]/30 flex items-center justify-center p-6 glow-hover transition-all">
+            <svg class="w-20 h-20 text-[#94a3b8]/40 group-hover:text-white/80 transition-colors" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M50 15L85 35L50 55L15 35L50 15Z" stroke="currentColor" stroke-width="0.75" stroke-dasharray="2 2"/>
+              <path d="M50 55V95" stroke="currentColor" stroke-width="0.75" stroke-dasharray="2 2"/>
+              <path d="M50 25L80 42V67L50 85L20 67V42L50 25Z" stroke="currentColor" stroke-width="1.25"/>
+              <path d="M50 25V85" stroke="currentColor" stroke-width="1.25"/>
+              <path d="M20 42L50 60L80 42" stroke="currentColor" stroke-width="1.25"/>
+              <circle cx="50" cy="25" r="2.5" fill="currentColor"/>
+              <circle cx="20" cy="42" r="2.5" fill="currentColor"/>
+              <circle cx="80" cy="42" r="2.5" fill="currentColor"/>
+              <circle cx="50" cy="60" r="2.5" fill="currentColor"/>
+              <circle cx="50" cy="85" r="2.5" fill="currentColor"/>
+            </svg>
+          </div>
+          <div>
+            <h3 class="text-sm font-medium text-white mb-2.5">Arquitectura Jamstack y SSR</h3>
+            <p class="text-xs text-[#94a3b8] leading-relaxed">
+              Implementamos el stack moderno con Astro y Next.js. Separamos el frontend del backend para garantizar cargas en menos de un segundo y una seguridad impenetrable.
+            </p>
+          </div>
+        </div>
+
+        <!-- Bloque 2: Supabase y PostgreSQL -->
+        <div class="space-y-6 group">
+          <!-- Tres Planos Horizontales SVG -->
+          <div class="w-full aspect-[4/3] linear-card rounded border border-[#1f1f24] bg-[#08080c]/30 flex items-center justify-center p-6 glow-hover transition-all">
+            <svg class="w-20 h-20 text-[#94a3b8]/40 group-hover:text-white/80 transition-colors" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M50 20L80 32L50 44L20 32L50 20Z" stroke="currentColor" stroke-width="1.25"/>
+              <path d="M50 40L80 52L50 64L20 52L50 40Z" stroke="currentColor" stroke-width="1"/>
+              <path d="M50 60L80 72L50 84L20 72L50 60Z" stroke="currentColor" stroke-width="1.25"/>
+              <path d="M50 32V72" stroke="currentColor" stroke-width="0.75" stroke-dasharray="3 3"/>
+              <circle cx="50" cy="32" r="2" fill="currentColor"/>
+              <circle cx="50" cy="52" r="2" fill="currentColor"/>
+              <circle cx="50" cy="72" r="2" fill="currentColor"/>
+            </svg>
+          </div>
+          <div>
+            <h3 class="text-sm font-medium text-white mb-2.5">Bases de Datos y Nube Escalable</h3>
+            <p class="text-xs text-[#94a3b8] leading-relaxed">
+              Conectamos tus sistemas con Supabase y PostgreSQL, desplegando la infraestructura en Vercel. Aplicaciones web preparadas para soportar miles de usuarios concurrentes sin caídas.
+            </p>
+          </div>
+        </div>
+
+        <!-- Bloque 3: WordPress de Ingeniería -->
+        <div class="space-y-6 group">
+          <!-- Esfera de Nodos Conectados SVG -->
+          <div class="w-full aspect-[4/3] linear-card rounded border border-[#1f1f24] bg-[#08080c]/30 flex items-center justify-center p-6 glow-hover transition-all">
+            <svg class="w-20 h-20 text-[#94a3b8]/40 group-hover:text-white/80 transition-colors" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M30 45L50 25L70 45L50 65L30 45Z" stroke="currentColor" stroke-width="0.75"/>
+              <path d="M50 25V65" stroke="currentColor" stroke-width="0.75"/>
+              <path d="M30 45H70" stroke="currentColor" stroke-width="0.75"/>
+              <path d="M20 65L50 65" stroke="currentColor" stroke-width="0.5" stroke-dasharray="2 2"/>
+              <path d="M70 45L85 60" stroke="currentColor" stroke-width="0.5" stroke-dasharray="2 2"/>
+              <circle cx="50" cy="25" r="4" fill="currentColor"/>
+              <circle cx="30" cy="45" r="3.5" fill="currentColor" fill-opacity="0.6"/>
+              <circle cx="70" cy="45" r="3.5" fill="currentColor" fill-opacity="0.6"/>
+              <circle cx="50" cy="65" r="5" fill="currentColor"/>
+              <circle cx="20" cy="65" r="2" fill="currentColor" fill-opacity="0.3"/>
+              <circle cx="85" cy="60" r="2" fill="currentColor" fill-opacity="0.3"/>
+            </svg>
+          </div>
+          <div>
+            <h3 class="text-sm font-medium text-white mb-2.5">WordPress de Ingeniería</h3>
+            <p class="text-xs text-[#94a3b8] leading-relaxed">
+              Llevamos WordPress al límite. Diseños premium optimizados a nivel de código puro, sin depender de constructores lentos. Velocidad nativa con la flexibilidad del panel de control clásico.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Bloques de Funcionalidad Detallada (Alternados con padding amplio) -->
+  <section id="optimización" class="py-36 px-6 md:px-12 bg-black border-b border-[#1f1f24] relative">
+    <div class="max-w-[1200px] mx-auto space-y-44 relative z-10">
+      
+      <!-- Antigravity Annotation 3: Llenar Mockups -->
+      <div class="absolute top-[35%] -left-4 md:-left-16 z-30 flex items-center gap-3">
+        <div class="antigravity-tag px-3 py-1.5 rounded-full text-[10px] flex items-center gap-2 select-none">
+          <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 antigravity-pulse"></span>
+          <span>Antigravity: Populate all mociiops with custom VertesLM content</span>
+        </div>
+        <svg class="w-12 h-8 text-[#1f1f24] hidden md:block" viewBox="0 0 50 30" fill="none">
+          <path d="M0 15C15 15 25 25 50 25" stroke="currentColor" stroke-width="1" stroke-dasharray="3 3"/>
+        </svg>
+      </div>
+
+      <!-- Bloque Detallado 1: Optimización total para Google (Texto Izq, Mockup Der) -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
+        <!-- Columna de Texto -->
+        <div class="lg:col-span-5 space-y-5">
+          <span class="text-[10px] font-mono text-[#94a3b8] uppercase tracking-widest block font-medium">Core Web Vitals</span>
+          <h2 class="text-2xl md:text-4xl font-light text-white tracking-tight leading-tight">
+            Optimización total para Google.
+          </h2>
+          <p class="text-sm text-[#94a3b8] font-light leading-relaxed">
+            SEO técnico integrado desde la primera línea de código. No dejamos el posicionamiento orgánico al azar; estructuramos tu web con semántica perfecta, datos estructurados y rendimiento Core Web Vitals en verde absoluto.
+          </p>
+        </div>
+        
+        <!-- Mockup: Reporte Google PageSpeed Insights de alta fidelidad -->
+        <div class="lg:col-span-7">
+          <div class="linear-card rounded-lg border border-[#1f1f24] overflow-hidden bg-[#08080c]/50 p-8 shadow-2xl relative">
+            <!-- Etiquetas HTML5 semánticas difuminadas al fondo -->
+            <div class="absolute inset-0 font-mono text-[8px] text-[#1f1f24] p-6 select-none overflow-hidden leading-relaxed pointer-events-none opacity-20">
+              &lt;article&gt;<br />
+              &nbsp;&nbsp;&lt;header class="vortex-sem"&gt;<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&lt;h1 itemprop="headline"&gt;Rendimiento Verde&lt;/h1&gt;<br />
+              &nbsp;&nbsp;&lt;/header&gt;<br />
+              &nbsp;&nbsp;&lt;main itemprop="articleBody"&gt;<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&lt;section&gt;Carga extrema en &lt;100ms&lt;/section&gt;<br />
+              &nbsp;&nbsp;&lt;/main&gt;<br />
+              &lt;/article&gt;
+            </div>
+
+            <div class="flex items-center justify-between border-b border-[#1f1f24] pb-4 mb-6 relative z-10">
+              <span class="text-[10px] font-mono text-[#94a3b8] flex items-center gap-1.5">
+                <span class="w-1.5 h-1.5 rounded-full bg-green-500"></span>
+                lighthouse-audit // google-pagespeed
+              </span>
+              <span class="text-[9px] text-green-400 font-mono">Mobile & Desktop PASS</span>
+            </div>
+
+            <!-- PageSpeed Audit Indicators -->
+            <div class="grid grid-cols-3 gap-4 relative z-10">
+              <!-- Score 1: Rendimiento -->
+              <div class="flex flex-col items-center justify-center p-4 border border-green-500/20 bg-green-950/5 rounded-md text-center">
+                <div class="relative w-16 h-16 flex items-center justify-center mb-2">
+                  <svg class="absolute inset-0 w-full h-full -rotate-90" viewBox="0 0 36 36">
+                    <path class="text-[#1f1f24]" stroke-width="2.5" stroke="currentColor" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                    <path class="text-green-500" stroke-dasharray="100, 100" stroke-width="2.5" stroke-linecap="round" stroke="currentColor" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                  </svg>
+                  <span class="font-mono text-base font-bold text-green-500">100</span>
+                </div>
+                <span class="text-[9px] uppercase tracking-wider font-mono text-[#94a3b8]/80">Rendimiento</span>
+              </div>
+
+              <!-- Score 2: SEO -->
+              <div class="flex flex-col items-center justify-center p-4 border border-green-500/20 bg-green-950/5 rounded-md text-center">
+                <div class="relative w-16 h-16 flex items-center justify-center mb-2">
+                  <svg class="absolute inset-0 w-full h-full -rotate-90" viewBox="0 0 36 36">
+                    <path class="text-[#1f1f24]" stroke-width="2.5" stroke="currentColor" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                    <path class="text-green-500" stroke-dasharray="100, 100" stroke-width="2.5" stroke-linecap="round" stroke="currentColor" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                  </svg>
+                  <span class="font-mono text-base font-bold text-green-500">100</span>
+                </div>
+                <span class="text-[9px] uppercase tracking-wider font-mono text-[#94a3b8]/80">SEO</span>
+              </div>
+
+              <!-- Score 3: Prácticas -->
+              <div class="flex flex-col items-center justify-center p-4 border border-green-500/20 bg-green-950/5 rounded-md text-center">
+                <div class="relative w-16 h-16 flex items-center justify-center mb-2">
+                  <svg class="absolute inset-0 w-full h-full -rotate-90" viewBox="0 0 36 36">
+                    <path class="text-[#1f1f24]" stroke-width="2.5" stroke="currentColor" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                    <path class="text-green-500" stroke-dasharray="100, 100" stroke-width="2.5" stroke-linecap="round" stroke="currentColor" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                  </svg>
+                  <span class="font-mono text-base font-bold text-green-500">100</span>
+                </div>
+                <span class="text-[9px] uppercase tracking-wider font-mono text-[#94a3b8]/80">Prácticas</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bloque Detallado 2: Aplicaciones Web a la medida (Mockup Izq, Texto Der) -->
+      <div id="plataformas" class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
+        <!-- Mockup: CRM/ERP a medida interactivo con crecimiento de línea -->
+        <div class="lg:col-span-7 order-2 lg:order-1">
+          <div class="linear-card rounded-lg border border-[#1f1f24] overflow-hidden bg-[#08080c]/50 p-6 shadow-2xl">
+            <!-- Header -->
+            <div class="flex items-center justify-between border-b border-[#1f1f24] pb-4 mb-4">
+              <span class="text-[10px] font-mono text-[#94a3b8] flex items-center gap-1.5">
+                <span class="w-1.5 h-1.5 rounded-full bg-cyan-500"></span>
+                vortex-platform // sales-dashboard
+              </span>
+              <span class="text-[9px] text-[#94a3b8]/40 font-mono">Actualizado hace un momento</span>
+            </div>
+
+            <!-- Financial growth fine-line chart & dark table -->
+            <div class="space-y-4">
+              <!-- Line Chart -->
+              <div class="border border-[#1f1f24] p-4 bg-black/40 rounded-md">
+                <div class="flex justify-between items-center mb-3">
+                  <span class="font-mono text-[9px] text-[#94a3b8]">Facturación Mensual Swarm</span>
+                  <span class="font-mono text-xs text-green-400 font-bold">+42.8%</span>
+                </div>
+                <div class="relative w-full h-24 flex items-end">
+                  <!-- Custom fine-line graph using simple relative coordinates -->
+                  <svg class="w-full h-full text-cyan-500" viewBox="0 0 100 30" fill="none">
+                    <path d="M0 25 Q15 24 30 18 T60 12 T90 5 T100 2" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"/>
+                    <path d="M0 25 Q15 24 30 18 T60 12 T90 5 T100 2 V30 H0 Z" fill="currentColor" fill-opacity="0.02"/>
+                  </svg>
+                </div>
+              </div>
+
+              <!-- Compact Table with 1px border and custom statuses -->
+              <div class="border border-[#1f1f24] bg-black/60 rounded-md overflow-hidden font-mono text-[10px]">
+                <table class="w-full text-left">
+                  <thead>
+                    <tr class="border-b border-[#1f1f24] bg-[#050507]/40 text-[#94a3b8]/60 text-[9px]">
+                      <th class="p-2">ID_PROYECTO</th>
+                      <th class="p-2">TECNOLOGÍA</th>
+                      <th class="p-2 text-right">ESTADO</th>
+                    </tr>
+                  </thead>
+                  <tbody class="text-white/80">
+                    <tr class="border-b border-[#1f1f24]/50">
+                      <td class="p-2">#0842-acme</td>
+                      <td class="p-2">Astro / Supabase</td>
+                      <td class="p-2 text-right"><span class="px-2 py-0.5 rounded-full bg-green-500/10 text-green-400 text-[8px]">completado</span></td>
+                    </tr>
+                    <tr>
+                      <td class="p-2">#0843-corp</td>
+                      <td class="p-2">Next.js / Vercel</td>
+                      <td class="p-2 text-right"><span class="px-2 py-0.5 rounded-full bg-yellow-500/10 text-yellow-400 text-[8px]">pendiente</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Columna de Texto -->
+        <div class="lg:col-span-5 space-y-5 order-1 lg:order-2">
+          <span class="text-[10px] font-mono text-[#94a3b8] uppercase tracking-widest block font-medium">Arquitectura de Sistemas</span>
+          <h2 class="text-2xl md:text-4xl font-light text-white tracking-tight leading-tight">
+            Aplicaciones Web a la medida de tu flujo de trabajo.
+          </h2>
+          <p class="text-sm text-[#94a3b8] font-light leading-relaxed">
+            Diseñamos y programamos plataformas web que automatizan tus procesos de negocio. Portales de clientes, paneles de administración complejos y sistemas de gestión interna que se sienten tan fluidos como una aplicación de escritorio.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Sección: Infraestructura Técnica (El bloque con fondo gris oscuro y padding amplio) -->
+  <section id="infraestructura" class="py-36 px-6 md:px-12 bg-black relative border-b border-[#1f1f24]">
+    <div class="max-w-[1200px] mx-auto relative z-10">
+
+      <!-- Antigravity Annotation 4: Alineación del flujo técnico -->
+      <div class="absolute -top-12 right-0 md:right-12 z-30 flex items-center gap-3">
+        <svg class="w-12 h-8 text-[#1f1f24] hidden md:block rotate-180" viewBox="0 0 50 30" fill="none">
+          <path d="M0 15C15 15 25 25 50 25" stroke="currentColor" stroke-width="1" stroke-dasharray="3 3"/>
+        </svg>
+        <div class="antigravity-tag px-3 py-1.5 rounded-full text-[10px] flex items-center gap-2 select-none">
+          <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 antigravity-pulse"></span>
+          <span>Antigravity: Maintain precise text alignment and section flow</span>
+        </div>
+      </div>
+
+      <!-- Título Central -->
+      <div class="text-center max-w-2xl mx-auto mb-20">
+        <span class="text-[10px] font-mono text-[#94a3b8] uppercase tracking-widest block mb-3 font-semibold">Tecnología Corporativa</span>
+        <h2 class="text-3xl md:text-5xl font-light text-white tracking-tight">Infraestructura Corporativa</h2>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 mb-16">
+        <!-- Columna Izquierda: Seguridad y Código Limpio -->
+        <div class="linear-card rounded-lg border border-[#1f1f24] bg-[#08080c]/40 p-8 flex flex-col justify-between min-h-[380px] glow-hover transition-all">
+          <div class="space-y-4">
+            <span class="text-[10px] font-mono text-[#94a3b8] uppercase tracking-widest block font-medium">Clean Code</span>
+            <h3 class="text-xl md:text-2xl font-light text-white tracking-tight">Seguridad y Código Limpio</h3>
+            <p class="text-xs text-[#94a3b8] leading-relaxed max-w-md">
+              Tu software es un activo. Desarrollamos bajo estándares de seguridad estrictos, previniendo vulnerabilidades y asegurando que cada línea de código sea mantenible a largo plazo por cualquier equipo técnico.
+            </p>
+          </div>
+        </div>
+
+        <!-- Columna Derecha: Monitoreo y Analítica en Tiempo Real -->
+        <div class="linear-card rounded-lg border border-[#1f1f24] bg-[#08080c]/40 p-8 flex flex-col justify-between min-h-[380px] glow-hover transition-all">
+          <div class="space-y-4">
+            <span class="text-[10px] font-mono text-[#94a3b8] uppercase tracking-widest block font-medium">Real-Time Data</span>
+            <h3 class="text-xl md:text-2xl font-light text-white tracking-tight">Monitoreo y Analítica en Tiempo Real</h3>
+            <p class="text-xs text-[#94a3b8] leading-relaxed max-w-md">
+              Integramos paneles de control para que entiendas el comportamiento de tus usuarios y el rendimiento de tu plataforma en tiempo real. Decisiones basadas en datos, sin adivinanzas.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tipo de Imagen (Debajo de los textos): Dos bloques simétricos oscuros -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+        <!-- Bloque Izquierdo: Consola con logs de seguridad -->
+        <div class="linear-card bg-black p-4 rounded border border-[#1f1f24] font-mono text-[10px] text-[#94a3b8]/80 space-y-1.5 h-[160px] overflow-y-auto">
+          <div class="text-[#94a3b8]/40">&gt; npm run audit --secure</div>
+          <div class="text-white">[VORTEX SHIELD ACTIVE] Scanning node packages...</div>
+          <div class="text-green-500">✔ 0 vulnerabilities detected. Code certified clean.</div>
+          <div class="text-[#94a3b8]/60">&gt; SSL handshake verified // cert-auth</div>
+          <div class="text-green-500">✔ Secure isolated container thread running. OK</div>
+        </div>
+
+        <!-- Bloque Derecho: Servidor de analíticas de carga minimalistas -->
+        <div class="linear-card bg-black p-4 rounded border border-[#1f1f24] h-[160px] flex flex-col justify-between">
+          <div class="flex justify-between items-center text-[9px] font-mono text-[#94a3b8]/40 border-b border-[#1f1f24]/50 pb-2">
+            <span>Uso de CPU del Servidor / Carga Mínima</span>
+            <span class="text-green-400 font-bold font-mono">0.05% load</span>
+          </div>
+
+          <!-- Subtle server load bars -->
+          <div class="flex items-end justify-between h-[80px] px-4 pt-1">
+            <div class="w-4 bg-[#1f1f24] rounded-t-sm h-[20px] relative overflow-hidden flex items-end">
+              <div class="w-full bg-[#94a3b8]/60 h-[70%]"></div>
+            </div>
+            <div class="w-4 bg-[#1f1f24] rounded-t-sm h-[30px] relative overflow-hidden flex items-end">
+              <div class="w-full bg-[#94a3b8]/60 h-[60%]"></div>
+            </div>
+            <div class="w-4 bg-[#1f1f24] rounded-t-sm h-[50px] relative overflow-hidden flex items-end">
+              <div class="w-full bg-white h-[90%]"></div>
+            </div>
+            <div class="w-4 bg-[#1f1f24] rounded-t-sm h-[25px] relative overflow-hidden flex items-end">
+              <div class="w-full bg-[#94a3b8]/60 h-[80%]"></div>
+            </div>
+            <div class="w-4 bg-[#1f1f24] rounded-t-sm h-[15px] relative overflow-hidden flex items-end">
+              <div class="w-full bg-[#94a3b8]/60 h-[50%]"></div>
+            </div>
+          </div>
+
+          <div class="border-t border-[#1f1f24]/50 pt-2 text-[9px] font-mono text-[#94a3b8]/40 text-right">
+            Vercel Edge Nodes: 99.99% Uptime
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Sección de Cierre / Conversión (El Formulario de abajo) -->
+  <section id="contacto" class="py-36 px-6 md:px-12 bg-black relative">
+    <div class="max-w-[600px] mx-auto text-center relative z-10 space-y-8">
+      <span class="text-[10px] font-mono text-[#94a3b8] uppercase tracking-widest block font-medium">Inicia hoy</span>
+      <h2 class="text-3xl md:text-5xl font-light text-white tracking-tight leading-tight">Escala tus operaciones digitales.</h2>
+      <p class="text-sm text-[#94a3b8] font-light leading-relaxed">
+        Hablemos de tu proyecto. Cuéntanos qué necesitas construir y te propondremos la arquitectura tecnológica ideal para lograrlo.
+      </p>
+
+      <!-- Formulario minimalista Linear, cajas negras con bordes finos -->
+      <div class="linear-card p-8 rounded-lg border border-[#1f1f24] bg-[#08080c]/40 text-left space-y-6">
+        <form class="space-y-4" onsubmit="event.preventDefault(); alert('¡Mensaje enviado con éxito! Nuestro equipo de ingenieros analizará tu propuesta.');">
+          <div>
+            <label class="block text-[10px] font-mono text-[#94a3b8] uppercase tracking-wider mb-2 font-medium" for="fullname">Nombre y Apellido</label>
+            <input 
+              class="w-full bg-black border border-[#1f1f24] rounded px-4 py-3 text-xs text-white placeholder-neutral-800 focus:outline-none focus:border-white transition-colors" 
+              type="text" 
+              id="fullname" 
+              placeholder="e.g. Carlos Pérez" 
+              required
+            />
+          </div>
+          
+          <div>
+            <label class="block text-[10px] font-mono text-[#94a3b8] uppercase tracking-wider mb-2 font-medium" for="corp_email">Correo Corporativo</label>
+            <input 
+              class="w-full bg-black border border-[#1f1f24] rounded px-4 py-3 text-xs text-white placeholder-neutral-800 focus:outline-none focus:border-white transition-colors" 
+              type="email" 
+              id="corp_email" 
+              placeholder="operator@acme.com" 
+              required
+            />
+          </div>
+          
+          <div>
+            <label class="block text-[10px] font-mono text-[#94a3b8] uppercase tracking-wider mb-2 font-medium" for="project_details">Cuéntanos sobre tu proyecto</label>
+            <textarea 
+              class="w-full bg-black border border-[#1f1f24] rounded px-4 py-3 text-xs text-white placeholder-neutral-800 focus:outline-none focus:border-white transition-colors min-h-[100px]" 
+              id="project_details" 
+              placeholder="Describa el alcance de la aplicación web, integraciones o landing page requerida..."
+              required
+            ></textarea>
+          </div>
+          
+          <button 
+            type="submit" 
+            class="w-full py-3 bg-white text-black font-semibold text-xs rounded hover:bg-neutral-200 transition-colors duration-200"
+          >
+            Enviar Mensaje
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
 </BaseLayout>

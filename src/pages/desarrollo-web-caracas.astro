@@ -1,0 +1,279 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const isLanding = true;
+---
+
+<BaseLayout isLanding={isLanding}>
+  <main class="bg-neutral-950 text-white">
+
+    <!-- HERO SECTION -->
+    <section class="relative min-h-screen flex items-center justify-center overflow-hidden bg-neutral-950 px-6">
+      <!-- Grid overlay -->
+      <div class="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:64px_64px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)]"></div>
+      <!-- Glow orb -->
+      <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-gradient-to-b from-white/5 via-white/[0.02] to-transparent rounded-full blur-3xl pointer-events-none"></div>
+      
+      <div class="relative z-10 max-w-5xl mx-auto text-center pt-32 pb-24">
+        <span class="inline-block px-3 py-1.5 border border-neutral-800 rounded-full text-[10px] font-mono uppercase tracking-widest text-neutral-500 mb-8">Caracas, Venezuela</span>
+        <h1 class="text-4xl md:text-7xl font-extralight tracking-tight text-white mb-8 leading-[1.08] max-w-4xl mx-auto opacity-95">
+          Desarrollo Web de Alto Rendimiento en Caracas.<br/>
+          <span class="text-neutral-400">Tu negocio en línea, 10 veces más rápido.</span>
+        </h1>
+        <p class="text-sm md:text-base text-neutral-400 max-w-3xl mx-auto mb-12 leading-relaxed font-light">
+          No dejes que tus clientes se vayan con la competencia por culpa de una página lenta. Creamos aplicaciones web, plataformas SaaS y sitios corporativos premium con tecnología perimetral que carga al instante en cualquier conexión de Venezuela.
+        </p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <button onclick="window.openLiveChat()" class="w-full sm:w-auto px-8 py-3 bg-white text-black font-semibold text-xs rounded-full hover:bg-neutral-200 transition-all text-center duration-200 active:scale-95 shadow-[0_0_25px_rgba(255,255,255,0.15)] cursor-pointer">
+            Cotizar mi Proyecto en 5 Minutos
+          </button>
+          <a href="/contacto" class="w-full sm:w-auto px-8 py-3 border border-neutral-800 text-neutral-300 font-medium text-xs rounded-full hover:bg-neutral-900 transition-all text-center duration-200">
+            Ver Portafolio →
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRUST BAR -->
+    <section class="border-t border-b border-neutral-900 py-8 bg-neutral-950/50">
+      <div class="max-w-6xl mx-auto px-6">
+        <p class="text-[10px] font-mono uppercase tracking-widest text-neutral-600 text-center mb-6">Confían en nosotros</p>
+        <div class="flex flex-wrap items-center justify-center gap-8 md:gap-16 text-neutral-700">
+          <span class="text-xs font-mono tracking-widest">CLÍNICAS</span>
+          <span class="text-xs font-mono tracking-widest">CONSTRUCTORAS</span>
+          <span class="text-xs font-mono tracking-widest">RETAIL</span>
+          <span class="text-xs font-mono tracking-widest">STARTUPS</span>
+          <span class="text-xs font-mono tracking-widest">SaaS</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3-COLUMN FEATURES -->
+    <section class="py-32 px-6 md:px-12 bg-black border-b border-neutral-900">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-20">
+          <span class="inline-block px-3 py-1.5 border border-neutral-800 rounded-full text-[10px] font-mono uppercase tracking-widest text-neutral-500 mb-6">Beneficios Locales</span>
+          <h2 class="text-3xl md:text-5xl font-light text-white mb-6 tracking-tight">Diseñado para el mercado<br/><span class="text-neutral-400">venezolano</span></h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16">
+          <!-- Card 1 -->
+          <div class="flex flex-col">
+            <div class="w-full aspect-[4/3] linear-card rounded border border-neutral-900 bg-neutral-950/30 flex items-center justify-center p-6 glow-hover transition-all mb-8">
+              <div class="text-center">
+                <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-white/5 border border-neutral-800 flex items-center justify-center">
+                  <svg class="w-7 h-7 text-neutral-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                </div>
+              </div>
+            </div>
+            <h3 class="text-sm font-medium text-white mb-2.5">Carga Ultra-Rápida</h3>
+            <p class="text-xs text-neutral-400 leading-relaxed">Optimizado para conexiones móviles locales. Nuestras páginas cargan en menos de 1 segundo incluso en redes 3G/4G venezolanas.</p>
+          </div>
+          <!-- Card 2 -->
+          <div class="flex flex-col">
+            <div class="w-full aspect-[4/3] linear-card rounded border border-neutral-900 bg-neutral-950/30 flex items-center justify-center p-6 glow-hover transition-all mb-8">
+              <div class="text-center">
+                <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-white/5 border border-neutral-800 flex items-center justify-center">
+                  <svg class="w-7 h-7 text-neutral-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                </div>
+              </div>
+            </div>
+            <h3 class="text-sm font-medium text-white mb-2.5">Arquitectura Élite</h3>
+            <p class="text-xs text-neutral-400 leading-relaxed">Olvídate de plantillas pesadas de WordPress. Programamos con Astro, Next.js y Tailwind CSS para un rendimiento impecable.</p>
+          </div>
+          <!-- Card 3 -->
+          <div class="flex flex-col">
+            <div class="w-full aspect-[4/3] linear-card rounded border border-neutral-900 bg-neutral-950/30 flex items-center justify-center p-6 glow-hover transition-all mb-8">
+              <div class="text-center">
+                <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-white/5 border border-neutral-800 flex items-center justify-center">
+                  <svg class="w-7 h-7 text-neutral-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+                </div>
+              </div>
+            </div>
+            <h3 class="text-sm font-medium text-white mb-2.5">Soporte y Garantía Directa</h3>
+            <p class="text-xs text-neutral-400 leading-relaxed">Respaldado por ingenieros senior listos para atenderte localmente. Soporte técnico en español, sin intermediarios.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DETAIL BLOCK 1: Transformación Digital -->
+    <section class="py-32 px-6 md:px-12 bg-black border-b border-neutral-900">
+      <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24 items-center">
+        <div>
+          <span class="inline-block px-3 py-1.5 border border-neutral-800 rounded-full text-[10px] font-mono uppercase tracking-widest text-neutral-500 mb-6">Transformación Digital</span>
+          <h2 class="text-3xl md:text-4xl font-light text-white mb-6 tracking-tight leading-[1.1]">Lleva tu negocio al<br/><span class="text-neutral-400">siguiente nivel digital</span></h2>
+          <p class="text-sm text-neutral-400 leading-relaxed font-light mb-6">
+            En Caracas, la velocidad de conexión no debería limitar tu presencia en línea. Diseñamos experiencias web que cargan al instante, optimizadas para la infraestructura local, para que tus clientes disfruten de una navegación fluida sin importar su ubicación.
+          </p>
+          <ul class="space-y-3">
+            <li class="flex items-start gap-3 text-xs text-neutral-400">
+              <svg class="w-4 h-4 text-neutral-500 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              <span>Auditoría técnica gratuita de tu sitio actual</span>
+            </li>
+            <li class="flex items-start gap-3 text-xs text-neutral-400">
+              <svg class="w-4 h-4 text-neutral-500 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              <span>Migración desde WordPress, Wix o cualquier CMS</span>
+            </li>
+            <li class="flex items-start gap-3 text-xs text-neutral-400">
+              <svg class="w-4 h-4 text-neutral-500 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              <span>Hosting optimizado con CDN global incluido</span>
+            </li>
+          </ul>
+        </div>
+        <div class="w-full aspect-[4/3] linear-card rounded border border-neutral-900 bg-neutral-950/30 flex items-center justify-center p-8 glow-hover transition-all">
+          <div class="text-center text-neutral-700">
+            <svg class="w-16 h-16 mx-auto mb-4 opacity-50" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+            <p class="text-[10px] font-mono uppercase tracking-widest">100% Seguro y Optimizado</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DETAIL BLOCK 2: Tecnología -->
+    <section class="py-32 px-6 md:px-12 bg-black border-b border-neutral-900">
+      <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24 items-center">
+        <div class="order-2 md:order-1 w-full aspect-[4/3] linear-card rounded border border-neutral-900 bg-neutral-950/30 flex items-center justify-center p-8 glow-hover transition-all">
+          <div class="text-center text-neutral-700">
+            <svg class="w-16 h-16 mx-auto mb-4 opacity-50" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+            <p class="text-[10px] font-mono uppercase tracking-widest">Stack Moderno</p>
+          </div>
+        </div>
+        <div class="order-1 md:order-2">
+          <span class="inline-block px-3 py-1.5 border border-neutral-800 rounded-full text-[10px] font-mono uppercase tracking-widest text-neutral-500 mb-6">Stack Tecnológico</span>
+          <h2 class="text-3xl md:text-4xl font-light text-white mb-6 tracking-tight leading-[1.1]">Tecnología perimetral<br/><span class="text-neutral-400">para resultados reales</span></h2>
+          <p class="text-sm text-neutral-400 leading-relaxed font-light mb-6">
+            No usamos plantillas genéricas. Cada proyecto se construye desde cero con Astro, Next.js y Tailwind CSS, garantizando puntuaciones perfectas en Core Web Vitals y una experiencia de usuario superior.
+          </p>
+          <ul class="space-y-3">
+            <li class="flex items-start gap-3 text-xs text-neutral-400">
+              <svg class="w-4 h-4 text-neutral-500 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              <span>Astro + Next.js: rendimiento SSR y SSG nativo</span>
+            </li>
+            <li class="flex items-start gap-3 text-xs text-neutral-400">
+              <svg class="w-4 h-4 text-neutral-500 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              <span>Despliegue en Vercel Edge Network: latencia mínima</span>
+            </li>
+            <li class="flex items-start gap-3 text-xs text-neutral-400">
+              <svg class="w-4 h-4 text-neutral-500 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              <span>SEO técnico avanzado y optimización de conversiones</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section class="py-32 px-6 md:px-12 bg-black border-b border-neutral-900">
+      <div class="max-w-3xl mx-auto">
+        <div class="text-center mb-16">
+          <span class="inline-block px-3 py-1.5 border border-neutral-800 rounded-full text-[10px] font-mono uppercase tracking-widest text-neutral-500 mb-6">FAQ</span>
+          <h2 class="text-3xl md:text-4xl font-light text-white tracking-tight">Preguntas Frecuentes</h2>
+        </div>
+        <div class="space-y-4">
+          <details class="group border border-neutral-900 rounded-lg overflow-hidden">
+            <summary class="flex items-center justify-between px-6 py-5 text-sm font-medium text-white cursor-pointer hover:bg-neutral-900/30 transition-colors list-none">
+              ¿Cuánto tiempo toma desarrollar un sitio web?
+              <svg class="w-4 h-4 text-neutral-500 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </summary>
+            <div class="px-6 pb-5 text-xs text-neutral-400 leading-relaxed">
+              Dependiendo de la complejidad, un sitio corporativo puede estar listo en 2 a 4 semanas. Las plataformas SaaS y aplicaciones web más complejas pueden tomar de 6 a 12 semanas.
+            </div>
+          </details>
+          <details class="group border border-neutral-900 rounded-lg overflow-hidden">
+            <summary class="flex items-center justify-between px-6 py-5 text-sm font-medium text-white cursor-pointer hover:bg-neutral-900/30 transition-colors list-none">
+              ¿Ofrecen mantenimiento después del lanzamiento?
+              <svg class="w-4 h-4 text-neutral-500 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </summary>
+            <div class="px-6 pb-5 text-xs text-neutral-400 leading-relaxed">
+              Sí, ofrecemos planes de mantenimiento continuo que incluyen actualizaciones de seguridad, respaldos, optimización de rendimiento y soporte técnico prioritario.
+            </div>
+          </details>
+          <details class="group border border-neutral-900 rounded-lg overflow-hidden">
+            <summary class="flex items-center justify-between px-6 py-5 text-sm font-medium text-white cursor-pointer hover:bg-neutral-900/30 transition-colors list-none">
+              ¿Pueden migrar mi sitio actual desde WordPress?
+              <svg class="w-4 h-4 text-neutral-500 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </summary>
+            <div class="px-6 pb-5 text-xs text-neutral-400 leading-relaxed">
+              Absolutamente. Migramos sitios desde WordPress, Wix, Shopify y otros CMS a arquitecturas modernas con mejor rendimiento, seguridad y escalabilidad.
+            </div>
+          </details>
+          <details class="group border border-neutral-900 rounded-lg overflow-hidden">
+            <summary class="flex items-center justify-between px-6 py-5 text-sm font-medium text-white cursor-pointer hover:bg-neutral-900/30 transition-colors list-none">
+              ¿Trabajan con presupuestos ajustados?
+              <svg class="w-4 h-4 text-neutral-500 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </summary>
+            <div class="px-6 pb-5 text-xs text-neutral-400 leading-relaxed">
+              Sí, diseñamos soluciones escalables que se adaptan a tu presupuesto. Podemos comenzar con un MVP e ir agregando funcionalidades progresivamente.
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT FORM SECTION -->
+    <section id="contacto-form" class="py-32 px-6 md:px-12 bg-black">
+      <div class="max-w-3xl mx-auto">
+        <div class="text-center mb-12">
+          <span class="inline-block px-3 py-1.5 border border-neutral-800 rounded-full text-[10px] font-mono uppercase tracking-widest text-neutral-500 mb-6">Contacto</span>
+          <h2 class="text-3xl md:text-4xl font-light text-white mb-4 tracking-tight">Solicita tu cotización</h2>
+          <p class="text-sm text-neutral-400 font-light">Déjanos tus datos y te contactaremos en menos de 24 horas.</p>
+        </div>
+        <form id="contact-form-caracas" class="linear-card p-8 rounded-lg border border-neutral-900 bg-neutral-950/40 text-left space-y-6">
+          <input type="hidden" name="service" value="desarrollo-web-caracas" />
+          <div>
+            <label class="block text-[10px] font-mono text-neutral-400 uppercase tracking-wider mb-2 font-medium">Nombre completo</label>
+            <input type="text" name="name" required placeholder="Tu nombre" class="w-full bg-black border border-neutral-900 rounded px-4 py-3 text-xs text-white placeholder-neutral-700 focus:outline-none focus:border-neutral-600 transition-colors" />
+          </div>
+          <div>
+            <label class="block text-[10px] font-mono text-neutral-400 uppercase tracking-wider mb-2 font-medium">Correo electrónico</label>
+            <input type="email" name="email" required placeholder="tu@correo.com" class="w-full bg-black border border-neutral-900 rounded px-4 py-3 text-xs text-white placeholder-neutral-700 focus:outline-none focus:border-neutral-600 transition-colors" />
+          </div>
+          <div>
+            <label class="block text-[10px] font-mono text-neutral-400 uppercase tracking-wider mb-2 font-medium">Sitio web actual (opcional)</label>
+            <input type="url" name="website" placeholder="https://tusitio.com" class="w-full bg-black border border-neutral-900 rounded px-4 py-3 text-xs text-white placeholder-neutral-700 focus:outline-none focus:border-neutral-600 transition-colors" />
+          </div>
+          <div>
+            <label class="block text-[10px] font-mono text-neutral-400 uppercase tracking-wider mb-2 font-medium">Cuéntanos sobre tu proyecto</label>
+            <textarea name="message" required rows="4" placeholder="Describe tu proyecto, objetivos y requerimientos técnicos..." class="w-full bg-black border border-neutral-900 rounded px-4 py-3 text-xs text-white placeholder-neutral-700 focus:outline-none focus:border-neutral-600 transition-colors resize-none"></textarea>
+          </div>
+          <button type="submit" class="w-full py-3 bg-white text-black font-semibold text-xs rounded hover:bg-neutral-200 transition-colors duration-200">
+            Enviar Cotización
+          </button>
+          <p id="form-status-caracas" class="text-xs text-center hidden"></p>
+        </form>
+      </div>
+    </section>
+
+  </main>
+</BaseLayout>
+
+<script>
+  document.getElementById('contact-form-caracas')?.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const form = e.target;
+    const status = document.getElementById('form-status-caracas');
+    const btn = form.querySelector('button[type="submit"]');
+    const originalText = btn.textContent;
+    btn.textContent = 'Enviando...';
+    btn.disabled = true;
+    status.classList.add('hidden');
+    try {
+      const formData = new FormData(form);
+      const res = await fetch('/api/contact', { method: 'POST', body: formData });
+      const data = await res.json();
+      if (res.ok) {
+        status.textContent = '✅ ¡Mensaje enviado! Te contactaremos pronto.';
+        status.classList.remove('hidden', 'text-red-400');
+        status.classList.add('text-green-400');
+        form.reset();
+      } else {
+        throw new Error(data.error || 'Error al enviar');
+      }
+    } catch (err) {
+      status.textContent = '❌ Error al enviar. Intenta de nuevo o escríbenos a info@vortexlm.com';
+      status.classList.remove('hidden', 'text-green-400');
+      status.classList.add('text-red-400');
+    }
+    btn.textContent = originalText;
+    btn.disabled = false;
+  });
+</script>

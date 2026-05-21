@@ -4,7 +4,7 @@
 
 <div id="live-chat" class="fixed bottom-6 right-6 z-50">
   <!-- Chat Toggle Button -->
-  <button id="chat-toggle" class="w-14 h-14 rounded-full bg-white text-black shadow-lg hover:shadow-[0_0_20px_rgba(255,255,255,0.15)] transition-all duration-300 flex items-center justify-center group" aria-label="Abrir chat">
+  <button id="livechat-toggle" class="w-14 h-14 rounded-full bg-white text-black shadow-lg hover:shadow-[0_0_20px_rgba(255,255,255,0.15)] transition-all duration-300 flex items-center justify-center group" aria-label="Abrir chat">
     <svg id="chat-icon" class="w-6 h-6 transition-transform duration-300 group-hover:scale-110" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
       <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
     </svg>
@@ -15,7 +15,7 @@
   </button>
 
   <!-- Chat Panel -->
-  <div id="chat-panel" class="hidden fixed bottom-24 right-6 w-[380px] h-[520px] bg-neutral-950/90 backdrop-blur-xl border border-neutral-800 rounded-2xl shadow-2xl flex flex-col overflow-hidden animate-in">
+  <div id="livechat-panel" class="hidden fixed bottom-24 right-6 w-[380px] h-[520px] bg-neutral-950/90 backdrop-blur-xl border border-neutral-800 rounded-2xl shadow-2xl flex flex-col overflow-hidden animate-in">
     <!-- Header -->
     <div class="flex items-center justify-between px-5 py-4 border-b border-neutral-800">
       <div class="flex items-center gap-2.5">
@@ -83,8 +83,8 @@
 </style>
 
 <script>
-  const toggle = document.getElementById('chat-toggle');
-  const panel = document.getElementById('chat-panel');
+  const toggle = document.getElementById('livechat-toggle');
+  const panel = document.getElementById('livechat-panel');
   const closeBtn = document.getElementById('chat-close');
   const chatIcon = document.getElementById('chat-icon');
   const closeIcon = document.getElementById('close-icon');
@@ -299,5 +299,16 @@
   input.addEventListener('keydown', (e) => {
     if (e.key === 'Enter') sendMessage(input.value);
   });
+
+  // Expose function globally so CTA buttons can open chat
+  window.openLiveChat = function() {
+    const chatPanel = document.getElementById('livechat-panel');
+    const chatToggle = document.getElementById('livechat-toggle');
+    if (chatPanel && chatToggle) {
+      if (chatPanel.classList.contains('hidden')) {
+        chatToggle.click();
+      }
+    }
+  };
 
 </script>

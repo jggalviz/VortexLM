@@ -4,12 +4,23 @@ import vercel from '@astrojs/vercel';
 import mdx from '@astrojs/mdx';
 import react from '@astrojs/react';
 import keystatic from '@keystatic/astro';
+import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
   site: 'https://vortexlm.com',
   output: 'server',
   adapter: vercel(),
-  integrations: [react(), keystatic(), tailwind(), mdx()],
+  integrations: [
+    react(),
+    keystatic(),
+    tailwind(),
+    mdx(),
+    sitemap({
+      filter: (page) =>
+        !page.includes('/desarrollo-web-caracas') &&
+        !page.includes('/partner-tecnologico-b2b'),
+    }),
+  ],
   vite: {
     build: {
       rollupOptions: {

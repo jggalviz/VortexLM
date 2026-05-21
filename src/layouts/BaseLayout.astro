@@ -15,19 +15,51 @@ export interface Props {
 
 const { title, description, isLocalBusiness, type = 'website', isLanding = false } = Astro.props;
 
+// Detect admin/keystatic routes to conditionally load Keystatic CSS
+const isAdminRoute = Astro.url.pathname.startsWith('/keystatic') || Astro.url.pathname.startsWith('/admin');
+
 // Critical CSS inlined directly to avoid render-blocking external stylesheet requests
-const criticalCSS = `html,body{background-color:#000;color:#f7f7f8;width:100%;margin:0;padding:0}.linear-card{background:#08080c66;backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.05);box-shadow:0 30px 60px -15px #000000e6,inset 0 1px #ffffff0d;position:relative;overflow:hidden}.linear-card:before{content:"";position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.1),transparent);pointer-events:none}.glow-hover:hover{border-color:#ffffff26!important;box-shadow:0 0 30px #ffffff08,inset 0 1px #ffffff1a}.linear-grid{background-image:radial-gradient(rgba(255,255,255,.03) 1px,transparent 1px);background-size:32px 32px}.glow-line{height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.08),transparent)}.linear-gradient-bg{background:radial-gradient(circle at top center,#ffffff08,#000 70%)}.material-symbols-outlined{font-variation-settings:"FILL" 0,"wght" 300,"GRAD" 0,"opsz" 24}`;
+// Includes font-face declarations with font-display:swap for instant text rendering (FOFT strategy)
+const criticalCSS = `
+  /* Font-face declarations with font-display: swap for instant text rendering */
+  @font-face{font-family:'Inter Variable';font-style:normal;font-weight:100 900;font-display:swap;src:url(/_astro/inter-latin-wght-normal.woff2) format('woff2-variations')}
+  @font-face{font-family:'Inter Fallback';size-adjust:107%;ascent-override:90%;src:local('Arial')}
+  @font-face{font-family:'JetBrains Mono Variable';font-style:normal;font-weight:100 800;font-display:swap;src:url(/_astro/jetbrains-mono-latin-wght-normal.woff2) format('woff2-variations')}
+  @font-face{font-family:'Space Grotesk';font-style:normal;font-weight:300 700;font-display:swap;src:url(/_astro/space-grotesk-latin-wght-normal.woff2) format('woff2')}
+  @font-face{font-family:'Material Symbols Outlined';font-style:normal;font-weight:100 700;font-display:swap;src:url(/_astro/material-symbols-outlined-latin-wght-normal.woff2) format('woff2')}
+
+  /* Base resets */
+  *,::before,::after{box-sizing:border-box;border-width:0;border-style:solid}
+  html{-webkit-text-size-adjust:100%;tab-size:4;font-family:'Inter Variable','Inter Fallback',system-ui,sans-serif;scroll-behavior:smooth}
+  body{margin:0;background:#000;color:#f7f7f8;width:100%;min-height:100vh;overflow-x:hidden;display:flex;flex-direction:column}
+
+  /* Linear.app design system classes */
+  .linear-card{background:#08080c66;backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.05);box-shadow:0 30px 60px -15px #000000e6,inset 0 1px #ffffff0d;position:relative;overflow:hidden}
+  .linear-card:before{content:"";position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.1),transparent);pointer-events:none}
+  .glow-hover:hover{border-color:#ffffff26!important;box-shadow:0 0 30px #ffffff08,inset 0 1px #ffffff1a}
+  .linear-grid{background-image:radial-gradient(rgba(255,255,255,.03) 1px,transparent 1px);background-size:32px 32px}
+  .glow-line{height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.08),transparent)}
+  .linear-gradient-bg{background:radial-gradient(circle at top center,#ffffff08,#000 70%)}
+  .material-symbols-outlined{font-variation-settings:"FILL" 0,"wght" 300,"GRAD" 0,"opsz" 24}
+`;
 ---
 <html lang="es" class="scroll-smooth dark">
   <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#000000" />
+    
     <SEO title={title} description={description} isLocalBusiness={isLocalBusiness} type={type} />
     
-    <!-- Load full stylesheet (fonts + all CSS) asynchronously - non-render-blocking -->
-    <link rel="preload" href={fontsCSS} as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href={fontsCSS}></noscript>
-    
-    <!-- Critical inlined styles (non-render-blocking since they're in the HTML itself) -->
+    <!-- Critical inlined styles (non-render-blocking since embedded in HTML) -->
     <style set:html={criticalCSS}></style>
+    
+    <!-- Async full stylesheet load: media="print" trick makes it non-render-blocking -->
+    <!-- Switches to "all" after load, so styles apply to screen rendering -->
+    {!isAdminRoute && (
+      <link rel="stylesheet" href={fontsCSS} media="print" onload="this.media='all'" />
+    )}
+    <noscript><link rel="stylesheet" href={fontsCSS}></noscript>
   </head>
   <body class="bg-[#000000] text-[#f7f7f8] font-body-md linear-grid min-h-screen overflow-x-hidden flex flex-col w-full">
     <Navbar isLanding={isLanding} />

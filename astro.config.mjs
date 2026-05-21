@@ -9,5 +9,22 @@ export default defineConfig({
   site: 'https://vortexlm.com',
   output: 'server',
   adapter: vercel(),
-  integrations: [react(), keystatic(), tailwind(), mdx()]
+  integrations: [react(), keystatic(), tailwind(), mdx()],
+  vite: {
+    build: {
+      rollupOptions: {
+        output: {
+          // Split Keystatic UI into a separate chunk so its CSS doesn't pollute
+          // the global bundle loaded on public pages. This chunk is only loaded
+          // on the /keystatic/[...params] admin route.
+          manualChunks(id) {
+            if (id.includes('@keystatic') || id.includes('@radix-ui') || id.includes('@react-aria') || id.includes('@react-stately') || id.includes('@internationalized') || id.includes('react-aria')) {
+              return 'keystatic-vendor';
+            }
+            return null;
+          }
+        }
+      }
+    }
+  }
 });

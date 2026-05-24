@@ -27,7 +27,7 @@ export default defineConfig({
       config: {
         forward: ["dataLayer.push"],
         resolveUrl: function (url) {
-          if (url.hostname === 'www.googletagmanager.com') {
+          if (url.hostname === 'www.googletagmanager.com' || url.hostname === 'www.google-analytics.com') {
             var proxyUrl = new URL('https://cdn.builder.io/api/v1/proxy-api');
             proxyUrl.searchParams.append('url', url.href);
             return proxyUrl;

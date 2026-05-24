@@ -15,6 +15,7 @@ export interface Props {
 }
 
 const { title, description, isLocalBusiness, type = 'website', isLanding = false } = Astro.props;
+const ga4Id = import.meta.env.PUBLIC_GA4_ID;
 const pageTitle = title || "Vortex Logic | Desarrollo Web de Alto Rendimiento";
 
 // Detect admin/keystatic routes to conditionally load Keystatic CSS
@@ -64,7 +65,7 @@ const criticalCSS = `
     <noscript><link rel="stylesheet" href={fontsCSS}></noscript>
   </head>
   <body class="bg-[#000000] text-[#f7f7f8] font-body-md linear-grid min-h-screen overflow-x-hidden flex flex-col w-full">
-    <GoogleTagManager gtmId="GTM-P4MK3GT9" />
+    <GoogleTagManager gtmId="GTM-P4MK3GT9" ga4Id={ga4Id} />
     <Navbar isLanding={isLanding} />
     <main class="flex-grow w-full">
       <slot />

@@ -10,7 +10,9 @@ import partytown from '@astrojs/partytown';
 export default defineConfig({
   site: 'https://vortexlm.com',
   output: 'server',
-  adapter: vercel(),
+  adapter: vercel({
+    nodeVersion: 22
+  }),
   integrations: [
     react(),
     keystatic(),

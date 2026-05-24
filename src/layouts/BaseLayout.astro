@@ -4,6 +4,7 @@ import SEO from '../components/seo/SEO.astro';
 import Navbar from '../components/ui/Navbar.astro';
 import Footer from '../components/ui/Footer.astro';
 import LiveChat from '../components/ui/LiveChat.astro';
+import GoogleTagManager from '../components/seo/GoogleTagManager.astro';
 
 export interface Props {
   title: string;
@@ -62,6 +63,7 @@ const criticalCSS = `
     <noscript><link rel="stylesheet" href={fontsCSS}></noscript>
   </head>
   <body class="bg-[#000000] text-[#f7f7f8] font-body-md linear-grid min-h-screen overflow-x-hidden flex flex-col w-full">
+    <GoogleTagManager gtmId="GTM-P4MK3GT9" />
     <Navbar isLanding={isLanding} />
     <main class="flex-grow w-full">
       <slot />

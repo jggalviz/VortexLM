@@ -5,6 +5,7 @@ import mdx from '@astrojs/mdx';
 import react from '@astrojs/react';
 import keystatic from '@keystatic/astro';
 import sitemap from '@astrojs/sitemap';
+import partytown from '@astrojs/partytown';
 
 export default defineConfig({
   site: 'https://vortexlm.com',
@@ -19,6 +20,11 @@ export default defineConfig({
       filter: (page) =>
         !page.includes('/desarrollo-web-caracas') &&
         !page.includes('/partner-tecnologico-b2b'),
+    }),
+    partytown({
+      config: {
+        forward: ["dataLayer.push"],
+      },
     }),
   ],
   vite: {

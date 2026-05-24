@@ -26,6 +26,7 @@ export default defineConfig({
     partytown({
       config: {
         forward: ["dataLayer.push"],
+        lib: "/partytown/",
         resolveUrl: function (url) {
           if (url.hostname === 'www.googletagmanager.com') {
             var proxyUrl = new URL('https://cdn.builder.io/api/v1/proxy-api');

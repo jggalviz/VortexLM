@@ -6,6 +6,7 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
+    "partytown": "astro partytown copy",
     "astro": "astro"
   },
   "dependencies": {

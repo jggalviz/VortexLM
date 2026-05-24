@@ -15,6 +15,7 @@ export interface Props {
 }
 
 const { title, description, isLocalBusiness, type = 'website', isLanding = false } = Astro.props;
+const pageTitle = title || "Vortex Logic | Desarrollo Web de Alto Rendimiento";
 
 // Detect admin/keystatic routes to conditionally load Keystatic CSS
 const isAdminRoute = Astro.url.pathname.startsWith('/keystatic') || Astro.url.pathname.startsWith('/admin');
@@ -50,7 +51,7 @@ const criticalCSS = `
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#000000" />
     
-    <SEO title={title} description={description} isLocalBusiness={isLocalBusiness} type={type} />
+    <SEO title={pageTitle} description={description} isLocalBusiness={isLocalBusiness} type={type} />
     
     <!-- Critical inlined styles (non-render-blocking since embedded in HTML) -->
     <style set:html={criticalCSS}></style>

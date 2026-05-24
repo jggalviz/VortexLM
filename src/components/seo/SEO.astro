@@ -19,7 +19,8 @@ const {
 
 const siteName = "VortexLM";
 const siteUrl = "https://vortexlm.com";
-const fullTitle = `${title} | Agencia de Desarrollo Web y Apps en Caracas`;
+const safeTitle = title || "Vortex Logic | Desarrollo Web de Alto Rendimiento";
+const fullTitle = `${safeTitle} | Agencia de Desarrollo Web y Apps en Caracas`;
 
 const localBusinessSchema = {
   "@context": "https://schema.org",

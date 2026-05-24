@@ -4,7 +4,7 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro partytown copy && astro build",
+    "build": "astro partytown copy public/partytown && astro build",
     "preview": "astro preview",
     "partytown": "astro partytown copy",
     "astro": "astro"

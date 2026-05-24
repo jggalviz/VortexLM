@@ -1,0 +1,354 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const isLanding = true;
+---
+
+<BaseLayout
+  title="Catálogo Mayorista B2B para Distribuidoras en Caracas | VortexLM"
+  description="Automatiza tus ventas al mayor con un catálogo web ultra rápido. Ideal para distribuidoras, importadoras y ventas de repuestos en Caracas."
+  isLanding={isLanding}
+>
+  <!-- ===== 1. HERO SECTION ===== -->
+  <section class="relative min-h-screen flex items-center bg-gradient-to-b from-gray-900 via-gray-900 to-gray-800 overflow-hidden">
+    <!-- Background decoration -->
+    <div class="absolute inset-0 overflow-hidden">
+      <div class="absolute -top-40 -right-40 w-96 h-96 bg-purple-600/10 rounded-full blur-3xl"></div>
+      <div class="absolute -bottom-40 -left-40 w-96 h-96 bg-indigo-600/10 rounded-full blur-3xl"></div>
+    </div>
+    
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      <!-- Cintillo superior -->
+      <div class="mb-6">
+        <span class="inline-block text-xs font-semibold tracking-[0.2em] text-purple-400 uppercase bg-purple-500/10 px-4 py-2 rounded-full border border-purple-500/20">
+          SOLUCIONES DIGITALES B2B PARA DISTRIBUIDORAS
+        </span>
+      </div>
+      
+      <!-- Título Principal H1 -->
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6 max-w-4xl">
+        Automatiza tus Ventas al Mayor con un Catálogo Web Ultra Rápido
+      </h1>
+      
+      <!-- Subtítulo -->
+      <p class="text-lg md:text-xl text-gray-300 max-w-3xl mb-10 leading-relaxed">
+        Elimina los PDFs pesados y las notas de voz eternas. Permite que tus clientes corporativos y tiendas aliadas consulten tu stock en tiempo real y armen sus pedidos en segundos, optimizado para las conexiones móviles de Caracas.
+      </p>
+      
+      <!-- CTA Button -->
+      <a
+        href="#contacto"
+        class="inline-flex items-center px-8 py-4 bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-xl transition-all duration-300 shadow-lg shadow-purple-600/25 hover:shadow-purple-600/40 text-lg"
+      >
+        Digitalizar mi Catálogo
+        <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+        </svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- ===== 2. AGITACIÓN (El Dolor) ===== -->
+  <section class="py-20 bg-gray-800/50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl md:text-4xl font-bold text-white text-center mb-16">
+        ¿Sigue tu distribuidora levantando pedidos de forma manual?
+      </h2>
+      
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Card 1: PDFs obsoletos -->
+        <div class="bg-gray-800 rounded-2xl p-8 border border-gray-700 hover:border-purple-500/50 transition-all duration-300">
+          <div class="w-14 h-14 bg-red-500/10 rounded-xl flex items-center justify-center mb-6">
+            <svg class="w-7 h-7 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-3">PDFs obsoletos</h3>
+          <p class="text-gray-400 leading-relaxed">
+            Mandas un catálogo digital en la mañana y al mediodía ya cambió el stock o el precio.
+          </p>
+        </div>
+        
+        <!-- Card 2: Caos en WhatsApp -->
+        <div class="bg-gray-800 rounded-2xl p-8 border border-gray-700 hover:border-purple-500/50 transition-all duration-300">
+          <div class="w-14 h-14 bg-orange-500/10 rounded-xl flex items-center justify-center mb-6">
+            <svg class="w-7 h-7 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-3">Caos en WhatsApp</h3>
+          <p class="text-gray-400 leading-relaxed">
+            Horas perdidas transcribiendo códigos de repuestos o SKUs mal dictados.
+          </p>
+        </div>
+        
+        <!-- Card 3: Páginas lentas -->
+        <div class="bg-gray-800 rounded-2xl p-8 border border-gray-700 hover:border-purple-500/50 transition-all duration-300">
+          <div class="w-14 h-14 bg-yellow-500/10 rounded-xl flex items-center justify-center mb-6">
+            <svg class="w-7 h-7 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-3">Páginas lentas</h3>
+          <p class="text-gray-400 leading-relaxed">
+            Sitios web pesados que no abren en la calle con datos móviles locales, espantando a los compradores.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 3. LA SOLUCIÓN TÉCNICA ===== -->
+  <section class="py-20 bg-gray-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl md:text-4xl font-bold text-white text-center mb-16">
+        Tu inventario y tus pedidos bajo control en una sola plataforma
+      </h2>
+      
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <!-- Mockup/Imagen placeholder -->
+        <div class="bg-gray-800 rounded-2xl border border-gray-700 p-4 aspect-video flex items-center justify-center">
+          <div class="text-center">
+            <svg class="w-16 h-16 text-purple-500/50 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+            </svg>
+            <p class="text-gray-500 text-sm">Interfaz del Sistema Administrativo SaaS</p>
+          </div>
+        </div>
+        
+        <!-- Beneficios -->
+        <div class="space-y-8">
+          <!-- Beneficio 1 -->
+          <div class="flex gap-4">
+            <div class="flex-shrink-0 w-12 h-12 bg-purple-500/10 rounded-xl flex items-center justify-center">
+              <svg class="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-lg font-bold text-white mb-1">Carga Récord en Datos Móviles</h3>
+              <p class="text-gray-400">Programado en Astro para garantizar carga instantánea en zonas industriales (La Yaguara, Boleíta, Los Ruices).</p>
+            </div>
+          </div>
+          
+          <!-- Beneficio 2 -->
+          <div class="flex gap-4">
+            <div class="flex-shrink-0 w-12 h-12 bg-purple-500/10 rounded-xl flex items-center justify-center">
+              <svg class="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-lg font-bold text-white mb-1">Buscador Inteligente de Piezas</h3>
+              <p class="text-gray-400">Búsqueda exacta por número de parte, código de barra, SKU o marca.</p>
+            </div>
+          </div>
+          
+          <!-- Beneficio 3 -->
+          <div class="flex gap-4">
+            <div class="flex-shrink-0 w-12 h-12 bg-purple-500/10 rounded-xl flex items-center justify-center">
+              <svg class="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 100 4 2 2 0 000-4z"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-lg font-bold text-white mb-1">Carrito a WhatsApp o Admin</h3>
+              <p class="text-gray-400">Pedidos masivos desglosados directo al equipo de ventas o al panel interno.</p>
+            </div>
+          </div>
+          
+          <!-- Beneficio 4 -->
+          <div class="flex gap-4">
+            <div class="flex-shrink-0 w-12 h-12 bg-purple-500/10 rounded-xl flex items-center justify-center">
+              <svg class="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-lg font-bold text-white mb-1">Métodos de Pago Flexibles</h3>
+              <p class="text-gray-400">Toggles manuales para Zelle, Pago Móvil, Binance o transferencias en el checkout.</p>
+            </div>
+          </div>
+          
+          <!-- Beneficio 5 -->
+          <div class="flex gap-4">
+            <div class="flex-shrink-0 w-12 h-12 bg-purple-500/10 rounded-xl flex items-center justify-center">
+              <svg class="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-lg font-bold text-white mb-1">Portal de Cliente en Vortex LM</h3>
+              <p class="text-gray-400">Acceso privado para monitorear el avance del proyecto, soporte, facturación y datos técnicos de su cuenta las 24 horas.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 4. PRECIOS ===== -->
+  <section class="py-20 bg-gray-800/50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
+          Inversión transparente, sin sorpresas
+        </h2>
+        <p class="text-gray-400 text-lg max-w-3xl mx-auto">
+          Despliegue robusto utilizando infraestructura serverless de alta gama (Vercel + Supabase) para garantizar cero caídas.
+        </p>
+      </div>
+      
+      <div class="max-w-lg mx-auto">
+        <div class="bg-gray-800 rounded-2xl border border-purple-500/30 p-8 relative">
+          <!-- Badge "Más Popular" -->
+          <div class="absolute -top-3 left-1/2 -translate-x-1/2">
+            <span class="bg-purple-600 text-white text-xs font-semibold px-4 py-1 rounded-full">
+              PLAN ÚNICO
+            </span>
+          </div>
+          
+          <div class="mt-4">
+            <h3 class="text-xl font-bold text-white mb-2">Desarrollo de Catálogo Mayorista B2B</h3>
+            <div class="mb-6">
+              <span class="text-4xl font-bold text-white">Desde $850 USD</span>
+              <p class="text-gray-400 text-sm mt-1">Pago fraccionado: 50% inicial / 50% contra entrega</p>
+            </div>
+            
+            <ul class="space-y-3 mb-8">
+              <li class="flex items-start gap-3 text-gray-300">
+                <svg class="w-5 h-5 text-purple-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                Base de datos Supabase integrada
+              </li>
+              <li class="flex items-start gap-3 text-gray-300">
+                <svg class="w-5 h-5 text-purple-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                Front-end en Vercel
+              </li>
+              <li class="flex items-start gap-3 text-gray-300">
+                <svg class="w-5 h-5 text-purple-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                Buscador indexado
+              </li>
+              <li class="flex items-start gap-3 text-gray-300">
+                <svg class="w-5 h-5 text-purple-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                Carrito automatizado
+              </li>
+              <li class="flex items-start gap-3 text-gray-300">
+                <svg class="w-5 h-5 text-purple-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                Soporte multi-moneda
+              </li>
+              <li class="flex items-start gap-3 text-gray-300">
+                <svg class="w-5 h-5 text-purple-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                Acceso privado al Portal de Cliente en vortexlm.com
+              </li>
+            </ul>
+            
+            <div class="border-t border-gray-700 pt-6">
+              <p class="text-sm font-semibold text-gray-300 mb-2">Mantenimiento mensual:</p>
+              <p class="text-gray-400 text-sm">
+                <span class="text-white font-semibold">$40 USD/mes</span> para Webs Corporativas y <span class="text-white font-semibold">$80 USD/mes</span> para Catálogos o SaaS
+              </p>
+              <p class="text-gray-500 text-xs mt-1">Incluye optimización de Supabase, monitoreo en Vercel y soporte prioritario ante cambios de API.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 5. FORMULARIO DE CIERRE ===== -->
+  <section id="contacto" class="py-20 bg-gray-900">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
+        Moderniza la logística de tus ventas hoy mismo
+      </h2>
+      <p class="text-gray-400 text-lg mb-12 max-w-2xl mx-auto">
+        Agenda una sesión técnica de 15 minutos y te mostramos cómo adaptar nuestro sistema a tu modelo de negocio.
+      </p>
+      
+      <div class="bg-gray-800 rounded-2xl p-8 border border-gray-700">
+        <form id="contact-form-b2b" class="space-y-6 text-left" action="/api/contact" method="POST">
+          <div>
+            <label for="nombre" class="block text-sm font-medium text-gray-300 mb-2">Nombre del Contacto</label>
+            <input type="text" id="nombre" name="name" required
+              class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all"
+              placeholder="Tu nombre completo">
+          </div>
+          
+          <div>
+            <label for="empresa" class="block text-sm font-medium text-gray-300 mb-2">Nombre de la Distribuidora / Importadora</label>
+            <input type="text" id="empresa" name="empresa" required
+              class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all"
+              placeholder="Nombre de tu empresa">
+          </div>
+          
+          <div>
+            <label for="whatsapp" class="block text-sm font-medium text-gray-300 mb-2">WhatsApp de Contacto</label>
+            <input type="tel" id="whatsapp" name="whatsapp" required
+              class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all"
+              placeholder="+58 412 123 4567">
+          </div>
+          
+          <div>
+            <label for="productos" class="block text-sm font-medium text-gray-300 mb-2">¿Qué tipo de productos distribuyes?</label>
+            <textarea id="productos" name="message" rows="3" required
+              class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all resize-none"
+              placeholder="Ej: Repuestos automotrices, equipos industriales, ferretería..."></textarea>
+          </div>
+
+          <input type="hidden" name="service" value="catalogo-mayorista-b2b-caracas" />
+          
+          <button type="submit"
+            class="w-full px-8 py-4 bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-xl transition-all duration-300 shadow-lg shadow-purple-600/25 hover:shadow-purple-600/40 text-lg">
+            Solicitar Demo de Catálogo B2B
+          </button>
+
+          <p id="form-status-b2b" class="text-sm text-center hidden"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  document.getElementById('contact-form-b2b')?.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const form = e.target;
+    const status = document.getElementById('form-status-b2b');
+    const btn = form.querySelector('button[type="submit"]');
+    const originalText = btn.textContent;
+    btn.textContent = 'Enviando...';
+    btn.disabled = true;
+    status.classList.add('hidden');
+    try {
+      const formData = new FormData(form);
+      const res = await fetch('/api/contact', { method: 'POST', body: formData });
+      const data = await res.json();
+      if (res.ok) {
+        status.textContent = '✅ ¡Mensaje enviado! Te contactaremos pronto.';
+        status.classList.remove('hidden', 'text-red-400');
+        status.classList.add('text-green-400');
+        form.reset();
+      } else {
+        throw new Error(data.error || 'Error al enviar');
+      }
+    } catch (err) {
+      status.textContent = '❌ Error al enviar. Intenta de nuevo o escríbenos a info@vortexlm.com';
+      status.classList.remove('hidden', 'text-green-400');
+      status.classList.add('text-red-400');
+    }
+    btn.textContent = originalText;
+    btn.disabled = false;
+  });
+</script>

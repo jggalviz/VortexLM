@@ -24,8 +24,15 @@ export default defineConfig({
     partytown({
       config: {
         forward: ["dataLayer.push"],
-        lib: "https://cdn.jsdelivr.net/npm/@qwik.dev/partytown@0.13.2/lib/",
-      },
+        resolveUrl: function (url) {
+          if (url.hostname === 'www.googletagmanager.com') {
+            var proxyUrl = new URL('https://cdn.builder.io/api/v1/proxy-api');
+            proxyUrl.searchParams.append('url', url.href);
+            return proxyUrl;
+          }
+          return url;
+        }
+      }
     }),
   ],
   vite: {

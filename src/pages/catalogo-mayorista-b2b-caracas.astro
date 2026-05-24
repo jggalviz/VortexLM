@@ -1,5 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { Image } from 'astro:assets';
+import dashboardMockup from '../assets/images/dashboard-saas.jpg';
 
 const isLanding = true;
 ---
@@ -114,15 +116,17 @@ const isLanding = true;
         Tu inventario y tus pedidos bajo control en una sola plataforma
       </h2>
       
-      <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-        <!-- Mockup/Imagen placeholder -->
-        <div class="linear-card rounded-lg border border-[#1f1f24] bg-[#08080c]/30 p-8 aspect-video flex items-center justify-center">
-          <div class="text-center">
-            <svg class="w-16 h-16 text-white/20 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-            </svg>
-            <p class="text-[#cbd5e1]/40 text-xs font-mono">Mockup del Sistema Administrativo SaaS</p>
-          </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
+        <!-- Dashboard SaaS Image -->
+        <div>
+          <Image
+            src={dashboardMockup}
+            alt="Dashboard del Sistema Administrativo SaaS - Vortex LM"
+            format="webp"
+            quality={85}
+            class="rounded-lg border border-[#1f1f24] shadow-[0_0_50px_rgba(0,0,0,0.8)] w-full h-auto object-cover"
+            loading="lazy"
+          />
         </div>
         
         <!-- Beneficios -->

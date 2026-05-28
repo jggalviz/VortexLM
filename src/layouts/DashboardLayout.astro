@@ -1,0 +1,147 @@
+---
+// src/layouts/DashboardLayout.astro
+// Exclusive layout for the B2B Client Portal — dark, clean, premium sidebar layout
+// Includes Supabase session verification — redirects to /login if no active session
+import SEO from '../components/seo/SEO.astro';
+import { supabase } from '../lib/supabaseClient';
+
+export interface Props {
+  title: string;
+  description: string;
+  activeSection: 'inicio' | 'proyectos' | 'facturacion';
+}
+
+const { title, description, activeSection } = Astro.props;
+const pageTitle = title || 'Panel de Cliente — VortexLM';
+
+// Verify Supabase session on the server side
+const { data: sessionData, error: sessionError } = await supabase.auth.getSession();
+
+// If no session, redirect to login
+if (!sessionData?.session) {
+  return Astro.redirect('/login');
+}
+
+const user = sessionData.session.user;
+const userEmail = user.email || '';
+const userName = user.user_metadata?.full_name || userEmail?.split('@')[0] || 'Usuario';
+---
+
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#000000" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <SEO title={pageTitle} description={description} type="website" />
+    <style>
+      /* Critical inline styles for dashboard */
+      *,::before,::after{box-sizing:border-box;border-width:0;border-style:solid}
+      html{-webkit-text-size-adjust:100%;tab-size:4;font-family:'Inter','system-ui',sans-serif}
+      body{margin:0;background:#000;color:#f7f7f8;overflow-x:hidden}
+      .sidebar-link{display:flex;align-items:center;gap:0.75rem;padding:0.625rem 1rem;border-radius:0.5rem;font-size:0.8125rem;color:#8a8a93;transition:all 0.2s ease}
+      .sidebar-link:hover{background:rgba(255,255,255,0.04);color:#f7f7f8}
+      .sidebar-link.active{background:rgba(255,255,255,0.08);color:#f7f7f8;font-weight:500}
+    </style>
+  </head>
+  <body class="bg-black min-h-screen flex">
+    <!-- Sidebar -->
+    <aside class="fixed top-0 left-0 h-full w-64 z-40 bg-[#08080c] border-r border-[#1f1f24] flex flex-col overflow-y-auto hidden md:flex">
+      <!-- Logo -->
+      <div class="px-5 py-5 border-b border-[#1f1f24]">
+        <a href="/dashboard" class="flex items-center gap-2 group">
+          <svg class="w-5 h-5 text-white transition-transform duration-300 group-hover:rotate-45" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10" class="stroke-neutral-800" />
+            <circle cx="12" cy="12" r="5" />
+            <circle cx="12" cy="12" r="1" fill="currentColor" />
+            <path d="M12 2v3M12 19v3M2 12h3M19 12h3" />
+          </svg>
+          <span class="text-sm font-semibold tracking-[0.15em] text-white uppercase">Vortex<span class="font-light text-neutral-300">LM</span></span>
+        </a>
+      </div>
+
+      <!-- User info -->
+      <div class="px-5 py-3 border-b border-[#1f1f24]">
+        <p class="text-xs text-white font-medium truncate">{userName}</p>
+        <p class="text-[10px] text-neutral-600 truncate">{userEmail}</p>
+      </div>
+
+      <!-- Navigation -->
+      <nav class="flex-1 px-3 py-4 space-y-1">
+        <a href="/dashboard" class={`sidebar-link ${activeSection === 'inicio' ? 'active' : ''}`}>
+          <svg class="w-4 h-4 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12l8.954-8.955a1.126 1.126 0 011.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
+          </svg>
+          Inicio
+        </a>
+        <a href="/dashboard/proyectos" class={`sidebar-link ${activeSection === 'proyectos' ? 'active' : ''}`}>
+          <svg class="w-4 h-4 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z" />
+          </svg>
+          Mis Proyectos
+        </a>
+        <a href="/dashboard/facturacion" class={`sidebar-link ${activeSection === 'facturacion' ? 'active' : ''}`}>
+          <svg class="w-4 h-4 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125V9M7.5 12h4.5m-4.5 3h4.5" />
+          </svg>
+          Facturación
+        </a>
+      </nav>
+
+      <!-- Bottom section -->
+      <div class="px-3 py-4 border-t border-[#1f1f24]">
+        <a href="/dashboard/cerrar-sesion" class="sidebar-link" id="logout-link">
+          <svg class="w-4 h-4 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9" />
+          </svg>
+          Cerrar Sesión
+        </a>
+      </div>
+    </aside>
+
+    <!-- Mobile top bar -->
+    <div class="md:hidden fixed top-0 left-0 right-0 z-40 bg-[#08080c]/95 backdrop-blur-md border-b border-[#1f1f24] px-4 py-3 flex items-center justify-between">
+      <a href="/dashboard" class="flex items-center gap-2">
+        <svg class="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+          <circle cx="12" cy="12" r="10" class="stroke-neutral-800" />
+          <circle cx="12" cy="12" r="5" />
+          <circle cx="12" cy="12" r="1" fill="currentColor" />
+        </svg>
+        <span class="text-sm font-semibold tracking-[0.15em] text-white uppercase">Vortex<span class="font-light text-neutral-300">LM</span></span>
+      </a>
+      <details class="group relative">
+        <summary class="list-none cursor-pointer text-[#a3a3a3] hover:text-white p-1">
+          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+          </svg>
+        </summary>
+        <div class="absolute right-0 top-full mt-2 w-52 rounded-lg shadow-2xl overflow-hidden flex flex-col z-50 bg-[#08080c]/95 border border-[#1f1f24]">
+          <a href="/dashboard" class="px-4 py-3 text-xs text-[#a3a3a3] hover:bg-[#121216] hover:text-white border-b border-[#1f1f24] transition-colors flex items-center gap-2">
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12l8.954-8.955a1.126 1.126 0 011.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" /></svg>
+            Inicio
+          </a>
+          <a href="/dashboard/proyectos" class="px-4 py-3 text-xs text-[#a3a3a3] hover:bg-[#121216] hover:text-white border-b border-[#1f1f24] transition-colors flex items-center gap-2">
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z" /></svg>
+            Mis Proyectos
+          </a>
+          <a href="/dashboard/facturacion" class="px-4 py-3 text-xs text-[#a3a3a3] hover:bg-[#121216] hover:text-white border-b border-[#1f1f24] transition-colors flex items-center gap-2">
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125V9M7.5 12h4.5m-4.5 3h4.5" /></svg>
+            Facturación
+          </a>
+          <a href="/dashboard/cerrar-sesion" class="px-4 py-3 text-xs text-[#a3a3a3] hover:bg-[#121216] hover:text-white transition-colors flex items-center gap-2">
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9" /></svg>
+            Cerrar Sesión
+          </a>
+        </div>
+      </details>
+    </div>
+
+    <!-- Main content area -->
+    <main class="flex-1 md:ml-64 pt-14 md:pt-0 min-h-screen bg-black">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 lg:py-10">
+        <slot />
+      </div>
+    </main>
+  </body>
+</html>

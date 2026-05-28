@@ -1,0 +1,213 @@
+---
+// src/pages/registro.astro
+// Registration page for the B2B Client Portal — uses Supabase Auth signUp
+// On success, shows confirmation message or redirects to /dashboard
+// Passes nombre_empresa in options.data for the DB trigger to create profile with 100 initial vCredits
+import SEO from '../components/seo/SEO.astro';
+---
+
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#000000" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <SEO title="Crear Cuenta — Portal de Clientes | VortexLM" description="Regístrate en el portal de clientes VortexLM y comienza a gestionar tus proyectos, facturas y vCredits." type="website" />
+    <style>
+      *,::before,::after{box-sizing:border-box;border-width:0;border-style:solid}
+      html{-webkit-text-size-adjust:100%;tab-size:4;font-family:'Inter','system-ui',sans-serif}
+      body{margin:0;background:#000;color:#f7f7f8;min-height:100vh;display:flex;align-items:center;justify-content:center}
+    </style>
+  </head>
+  <body>
+    <div class="w-full max-w-sm mx-auto px-4">
+      <!-- Logo -->
+      <div class="text-center mb-8">
+        <a href="/" class="inline-flex items-center gap-2 group">
+          <svg class="w-6 h-6 text-white transition-transform duration-300 group-hover:rotate-45" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10" class="stroke-neutral-800" />
+            <circle cx="12" cy="12" r="5" />
+            <circle cx="12" cy="12" r="1" fill="currentColor" />
+            <path d="M12 2v3M12 19v3M2 12h3M19 12h3" />
+          </svg>
+          <span class="text-lg font-semibold tracking-[0.15em] text-white uppercase">Vortex<span class="font-light text-neutral-300">LM</span></span>
+        </a>
+        <p class="text-sm text-neutral-500 font-body-md mt-3">Portal de Clientes B2B</p>
+      </div>
+
+      <!-- Registration Card -->
+      <div class="bg-[#08080c] border border-[#1f1f24] rounded-xl p-6">
+        <h1 class="text-base font-heading font-semibold text-white mb-1">Crear Cuenta</h1>
+        <p class="text-xs text-neutral-500 font-body-md mb-6">Regístrate para acceder al panel de clientes.</p>
+
+        <form id="registro-form" class="space-y-4">
+          <!-- Nombre de la Empresa -->
+          <div>
+            <label for="empresa" class="block text-xs text-neutral-400 font-body-md mb-1.5">Nombre de la Empresa</label>
+            <input
+              id="empresa"
+              type="text"
+              autocomplete="organization"
+              placeholder="Ej: Mi Empresa S.A.S."
+              required
+              class="w-full px-4 py-2.5 bg-black border border-[#1f1f24] rounded-lg text-sm text-white placeholder-neutral-600 focus:outline-none focus:border-white/30 transition-colors"
+            />
+          </div>
+
+          <!-- Correo Electrónico -->
+          <div>
+            <label for="email" class="block text-xs text-neutral-400 font-body-md mb-1.5">Correo Electrónico</label>
+            <input
+              id="email"
+              type="email"
+              autocomplete="email"
+              placeholder="tu@correo.com"
+              required
+              class="w-full px-4 py-2.5 bg-black border border-[#1f1f24] rounded-lg text-sm text-white placeholder-neutral-600 focus:outline-none focus:border-white/30 transition-colors"
+            />
+          </div>
+
+          <!-- Contraseña -->
+          <div>
+            <label for="password" class="block text-xs text-neutral-400 font-body-md mb-1.5">Contraseña</label>
+            <input
+              id="password"
+              type="password"
+              autocomplete="new-password"
+              placeholder="Mínimo 6 caracteres"
+              required
+              minlength={6}
+              class="w-full px-4 py-2.5 bg-black border border-[#1f1f24] rounded-lg text-sm text-white placeholder-neutral-600 focus:outline-none focus:border-white/30 transition-colors"
+            />
+          </div>
+
+          <!-- Confirmar Contraseña -->
+          <div>
+            <label for="password-confirm" class="block text-xs text-neutral-400 font-body-md mb-1.5">Confirmar Contraseña</label>
+            <input
+              id="password-confirm"
+              type="password"
+              autocomplete="new-password"
+              placeholder="Repite la contraseña"
+              required
+              class="w-full px-4 py-2.5 bg-black border border-[#1f1f24] rounded-lg text-sm text-white placeholder-neutral-600 focus:outline-none focus:border-white/30 transition-colors"
+            />
+          </div>
+
+          <!-- Error message -->
+          <div id="registro-error" class="hidden text-xs text-red-400 bg-red-500/10 border border-red-500/20 rounded-lg px-3 py-2"></div>
+
+          <!-- Success message -->
+          <div id="registro-success" class="hidden text-xs text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 rounded-lg px-3 py-2"></div>
+
+          <!-- Submit -->
+          <button
+            type="submit"
+            id="registro-submit"
+            class="w-full px-5 py-2.5 bg-white text-black text-sm font-medium rounded-lg hover:bg-neutral-200 transition-all duration-200 active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed"
+          >
+            Crear Cuenta
+          </button>
+        </form>
+
+        <p class="text-xs text-neutral-600 font-body-md text-center mt-6">
+          ¿Ya tienes cuenta? <a href="/login" class="text-white hover:text-neutral-300 transition-colors">Iniciar Sesión</a>
+        </p>
+      </div>
+    </div>
+
+    <script type="module">
+      import { supabase } from '../lib/supabaseClient';
+
+      const form = document.getElementById('registro-form');
+      const empresaInput = document.getElementById('empresa');
+      const emailInput = document.getElementById('email');
+      const passwordInput = document.getElementById('password');
+      const passwordConfirmInput = document.getElementById('password-confirm');
+      const submitBtn = document.getElementById('registro-submit');
+      const errorEl = document.getElementById('registro-error');
+      const successEl = document.getElementById('registro-success');
+
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        // Reset UI state
+        errorEl.classList.add('hidden');
+        successEl.classList.add('hidden');
+        errorEl.textContent = '';
+        successEl.textContent = '';
+
+        const empresa = empresaInput.value.trim();
+        const email = emailInput.value.trim();
+        const password = passwordInput.value;
+        const passwordConfirm = passwordConfirmInput.value;
+
+        // Client-side validation
+        if (!empresa) {
+          errorEl.textContent = 'Por favor, ingresa el nombre de tu empresa.';
+          errorEl.classList.remove('hidden');
+          return;
+        }
+
+        if (password.length < 6) {
+          errorEl.textContent = 'La contraseña debe tener al menos 6 caracteres.';
+          errorEl.classList.remove('hidden');
+          return;
+        }
+
+        if (password !== passwordConfirm) {
+          errorEl.textContent = 'Las contraseñas no coinciden.';
+          errorEl.classList.remove('hidden');
+          return;
+        }
+
+        // Disable button and show loading state
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Creando cuenta...';
+
+        try {
+          const { data, error } = await supabase.auth.signUp({
+            email,
+            password,
+            options: {
+              data: {
+                nombre_empresa: empresa,
+              },
+            },
+          });
+
+          if (error) {
+            throw error;
+          }
+
+          // Check if email confirmation is required
+          if (data?.user?.identities && data.user.identities.length === 0) {
+            // User already exists
+            errorEl.textContent = 'Este correo electrónico ya está registrado.';
+            errorEl.classList.remove('hidden');
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Crear Cuenta';
+            return;
+          }
+
+          if (data?.user?.confirmed_at || data?.session) {
+            // No email confirmation needed — session is already active
+            window.location.href = '/dashboard';
+          } else {
+            // Email confirmation required — show success message
+            successEl.textContent = '¡Cuenta creada con éxito! Revisa tu correo electrónico para confirmar tu dirección antes de iniciar sesión.';
+            successEl.classList.remove('hidden');
+            submitBtn.textContent = 'Cuenta Creada ✓';
+            submitBtn.disabled = true;
+          }
+        } catch (err) {
+          errorEl.textContent = err.message || 'Error al crear la cuenta. Intenta de nuevo.';
+          errorEl.classList.remove('hidden');
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Crear Cuenta';
+        }
+      });
+    </script>
+  </body>
+</html>

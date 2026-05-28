@@ -1,0 +1,226 @@
+---
+// src/pages/dashboard/facturacion.astro
+// Finance panel — payment method toggle, report payment button, invoice history table
+// Data fetched from Supabase facturas table filtered by authenticated user
+import DashboardLayout from '../../layouts/DashboardLayout.astro';
+import { supabase } from '../../lib/supabaseClient';
+import PaymentToggle from '../../components/dashboard/PaymentToggle';
+
+// Get the authenticated user from the session (session already verified by DashboardLayout)
+const { data: sessionData } = await supabase.auth.getSession();
+const userId = sessionData?.session?.user?.id;
+
+// Fetch invoices from Supabase facturas table
+let facturas: any[] = [];
+let fetchError: string | null = null;
+
+if (userId) {
+  const { data, error } = await supabase
+    .from('facturas')
+    .select('*')
+    .eq('user_id', userId)
+    .order('created_at', { ascending: false });
+
+  if (error) {
+    fetchError = error.message;
+  } else {
+    facturas = data || [];
+  }
+} else {
+  fetchError = 'No se pudo identificar al usuario autenticado.';
+}
+---
+
+<DashboardLayout
+  title="Facturación — Panel de Cliente | VortexLM"
+  description="Gestiona tus métodos de pago, revisa facturas y reporta pagos."
+  activeSection="facturacion"
+>
+  <!-- Page header -->
+  <div class="mb-8">
+    <h1 class="text-xl sm:text-2xl font-heading font-semibold text-white tracking-tight">Facturación</h1>
+    <p class="text-sm text-neutral-500 font-body-md mt-1">Gestiona tus métodos de pago y revisa el historial de facturas.</p>
+  </div>
+
+  <!-- Two-column layout -->
+  <div class="grid grid-cols-1 lg:grid-cols-5 gap-6">
+    <!-- Payment Methods (3/5 width) -->
+    <div class="lg:col-span-3 bg-[#08080c] border border-[#1f1f24] rounded-xl p-5 sm:p-6">
+      <h2 class="text-sm font-heading font-semibold text-white mb-5">Métodos de Pago</h2>
+      <PaymentToggle client:load facturasPendientes={facturas.filter(f => f.estado === 'Pendiente')} />
+    </div>
+
+    <!-- Sidebar info (2/5 width) -->
+    <div class="lg:col-span-2 space-y-4">
+      <!-- vCredits info card -->
+      <div class="bg-[#08080c] border border-[#1f1f24] rounded-xl p-5">
+        <div class="flex items-center gap-3 mb-3">
+          <svg class="w-5 h-5 text-neutral-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+            <circle cx="12" cy="12" r="10" />
+            <circle cx="12" cy="12" r="5" />
+            <circle cx="12" cy="12" r="1" fill="currentColor" />
+          </svg>
+          <span class="text-xs font-label-md text-neutral-500 uppercase tracking-wider">Información</span>
+        </div>
+        <p class="text-xs text-neutral-400 font-body-md leading-relaxed">
+          Los pagos se procesan en USD. Una vez confirmado el pago, los vCredits se acreditan automáticamente a tu cuenta en menos de 24 horas hábiles.
+        </p>
+        <div class="mt-4 pt-4 border-t border-[#1f1f24]">
+          <p class="text-xs text-neutral-500 font-body-md">
+            <span class="text-neutral-400">1 vCredit</span> = $1.05 USD
+          </p>
+          <p class="text-xs text-neutral-600 font-body-md mt-1">
+            Sin cargos ocultos. Comisión de procesamiento incluida.
+          </p>
+        </div>
+      </div>
+
+      <!-- Support card -->
+      <div class="bg-[#08080c] border border-[#1f1f24] rounded-xl p-5">
+        <div class="flex items-center gap-3 mb-3">
+          <svg class="w-5 h-5 text-neutral-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 01-.825-.242m9.345-8.334a2.126 2.126 0 00-.476-.095 48.64 48.64 0 00-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0011.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155" />
+          </svg>
+          <span class="text-xs font-label-md text-neutral-500 uppercase tracking-wider">¿Dudas?</span>
+        </div>
+        <p class="text-xs text-neutral-400 font-body-md leading-relaxed mb-3">
+          Si tienes problemas con tu pago o necesitas una factura personalizada, contáctanos directamente.
+        </p>
+        <a
+          href="https://wa.me/15072190951"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 px-4 py-2 border border-white/20 text-white text-xs font-medium rounded-full hover:bg-white/10 hover:border-white/40 transition-all duration-300"
+        >
+          <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+          </svg>
+          Soporte por WhatsApp
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Invoice History -->
+  <div class="mt-8 bg-[#08080c] border border-[#1f1f24] rounded-xl p-5 sm:p-6">
+    <div class="flex items-center justify-between mb-5">
+      <h2 class="text-sm font-heading font-semibold text-white">Historial de Facturas</h2>
+      {!fetchError && facturas.length > 0 && (
+        <span class="text-[10px] font-label-md text-neutral-500 uppercase tracking-wider">{facturas.length} registros</span>
+      )}
+    </div>
+
+    {
+      fetchError ? (
+        <!-- Error state -->
+        <div class="flex flex-col items-center justify-center py-16 text-center">
+          <svg class="w-10 h-10 text-red-500/50 mb-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" />
+          </svg>
+          <p class="text-sm text-neutral-400 font-body-md mb-1">No se pudieron cargar las facturas.</p>
+          <p class="text-xs text-neutral-600 font-body-md">{fetchError}</p>
+        </div>
+      ) : facturas.length === 0 ? (
+        <!-- Empty state -->
+        <div class="flex flex-col items-center justify-center py-16 text-center">
+          <svg class="w-12 h-12 text-neutral-700 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
+          </svg>
+          <p class="text-sm text-neutral-400 font-body-md mb-1">No tienes facturas pendientes</p>
+          <p class="text-xs text-neutral-600 font-body-md">Todas tus facturas y recibos aparecerán aquí una vez que realices tu primer pago.</p>
+        </div>
+      ) : (
+        <>
+          <!-- Desktop table -->
+          <div class="hidden sm:block overflow-x-auto">
+            <table class="w-full text-left">
+              <thead>
+                <tr class="border-b border-[#1f1f24]">
+                  <th class="pb-3 text-[11px] font-label-md text-neutral-500 uppercase tracking-wider">Factura</th>
+                  <th class="pb-3 text-[11px] font-label-md text-neutral-500 uppercase tracking-wider">Concepto</th>
+                  <th class="pb-3 text-[11px] font-label-md text-neutral-500 uppercase tracking-wider">Monto</th>
+                  <th class="pb-3 text-[11px] font-label-md text-neutral-500 uppercase tracking-wider">Emisión</th>
+                  <th class="pb-3 text-[11px] font-label-md text-neutral-500 uppercase tracking-wider">Vencimiento</th>
+                  <th class="pb-3 text-[11px] font-label-md text-neutral-500 uppercase tracking-wider">Estado</th>
+                </tr>
+              </thead>
+              <tbody>
+                {facturas.map((factura) => (
+                  <tr class="border-b border-[#1f1f24]/50 hover:bg-white/[0.02] transition-colors">
+                    <td class="py-3.5 pr-4">
+                      <span class="text-sm text-white font-medium">{factura.numero}</span>
+                    </td>
+                    <td class="py-3.5 pr-4">
+                      <span class="text-sm text-neutral-400 font-body-md">{factura.concepto}</span>
+                    </td>
+                    <td class="py-3.5 pr-4">
+                      <span class="text-sm text-white font-medium">
+                        ${Number(factura.monto).toFixed(2)} USD
+                      </span>
+                    </td>
+                    <td class="py-3.5 pr-4">
+                      <span class="text-sm text-neutral-500 font-body-md">{factura.fecha_emision}</span>
+                    </td>
+                    <td class="py-3.5 pr-4">
+                      <span class="text-sm text-neutral-500 font-body-md">{factura.fecha_vencimiento}</span>
+                    </td>
+                    <td class="py-3.5">
+                      {factura.estado === 'Pagada' ? (
+                        <span class="inline-flex items-center gap-1.5 px-2.5 py-1 bg-emerald-500/10 border border-emerald-500/20 rounded-full text-[11px] font-label-md text-emerald-500">
+                          <span class="w-1.5 h-1.5 rounded-full bg-emerald-500" />
+                          Pagada
+                        </span>
+                      ) : factura.estado === 'Vencida' ? (
+                        <span class="inline-flex items-center gap-1.5 px-2.5 py-1 bg-red-500/10 border border-red-500/20 rounded-full text-[11px] font-label-md text-red-500">
+                          <span class="w-1.5 h-1.5 rounded-full bg-red-500" />
+                          Vencida
+                        </span>
+                      ) : (
+                        <span class="inline-flex items-center gap-1.5 px-2.5 py-1 bg-yellow-500/10 border border-yellow-500/20 rounded-full text-[11px] font-label-md text-yellow-500">
+                          <span class="w-1.5 h-1.5 rounded-full bg-yellow-500" />
+                          Pendiente
+                        </span>
+                      )}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Mobile cards -->
+          <div class="sm:hidden space-y-3">
+            {facturas.map((factura) => (
+              <div class="bg-black/50 border border-[#1f1f24] rounded-lg p-4">
+                <div class="flex items-center justify-between mb-2">
+                  <span class="text-xs text-white font-medium">{factura.numero}</span>
+                  {factura.estado === 'Pagada' ? (
+                    <span class="inline-flex items-center gap-1 px-2 py-0.5 bg-emerald-500/10 border border-emerald-500/20 rounded-full text-[10px] font-label-md text-emerald-500">
+                      <span class="w-1 h-1 rounded-full bg-emerald-500" />
+                      Pagada
+                    </span>
+                  ) : factura.estado === 'Vencida' ? (
+                    <span class="inline-flex items-center gap-1 px-2 py-0.5 bg-red-500/10 border border-red-500/20 rounded-full text-[10px] font-label-md text-red-500">
+                      <span class="w-1 h-1 rounded-full bg-red-500" />
+                      Vencida
+                    </span>
+                  ) : (
+                    <span class="inline-flex items-center gap-1 px-2 py-0.5 bg-yellow-500/10 border border-yellow-500/20 rounded-full text-[10px] font-label-md text-yellow-500">
+                      <span class="w-1 h-1 rounded-full bg-yellow-500" />
+                      Pendiente
+                    </span>
+                  )}
+                </div>
+                <p class="text-xs text-neutral-400 font-body-md mb-2">{factura.concepto}</p>
+                <div class="flex items-center justify-between text-xs text-neutral-500">
+                  <span>${Number(factura.monto).toFixed(2)} USD</span>
+                  <span>Vence: {factura.fecha_vencimiento}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </>
+      )
+    }
+  </div>
+</DashboardLayout>

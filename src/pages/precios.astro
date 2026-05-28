@@ -41,7 +41,6 @@ const faqItems = [
 
 <BaseLayout title={pageTitle} description={pageDescription} isLanding={isLanding} type="website">
   <SEO title={pageTitle} description={pageDescription} canonicalURL={canonicalURL} type="website" />
-  <FAQSchema faqs={faqItems} />
 
   <main class="bg-neutral-950 text-white">
     <!-- PRICING HERO — Pill badge, heading, subheading, currency info -->
@@ -61,5 +60,8 @@ const faqItems = [
 
     <!-- B2B EXPAND LINKS — Semantic navigation cards -->
     <B2BExpandLinks />
+
+    <!-- JSON-LD structured data (invisible) -->
+    <FAQSchema faqs={faqItems} />
   </main>
 </BaseLayout>

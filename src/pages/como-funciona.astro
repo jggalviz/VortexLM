@@ -15,33 +15,45 @@ const canonicalURL = 'https://vortexlm.com/como-funciona';
 
 const faqItems = [
   {
-    question: '¿Qué es un vCredit?',
+    question: '¿Qué son exactamente los vCredits?',
     answer:
-      'Un vCredit equivale a una hora de desarrollo especializado. Compras paquetes de vCredits y se descuentan en tiempo real según el consumo de tu agencia.',
+      'Los vCredits son nuestra moneda interna de intercambio. 1 vCredit equivale a $1.00 USD neto de desarrollo. Al comprar, pagas $1.05 USD por crédito para cubrir de forma transparente la comisión internacional de Stripe, garantizando que tu saldo rinda al 100% en tus tareas.',
   },
   {
-    question: '¿Cómo asigno tareas?',
+    question: '¿Cómo se facturan los servicios?',
     answer:
-      'Desde tu dashboard publicas proyectos con el alcance, prioridad y tecnologías requeridas. Nuestro equipo se activa automáticamente.',
+      'Emitimos facturas oficiales desde Vortex Logic LLC, registrada en EE.UU. Para agencias en España, aplicamos el 0% de IVA bajo el mecanismo europeo de inversión del sujeto pasivo (reverse charge). Consúltanos si necesitas más detalles fiscales.',
   },
   {
-    question: '¿Puedo ver el progreso en tiempo real?',
+    question: '¿Qué métodos de pago aceptan?',
     answer:
-      'Sí. Cada tarea registra el tiempo exacto de desarrollo y puedes consultar el avance, horas invertidas y vCredits consumidos desde tu dashboard.',
+      'Aceptamos tarjetas de crédito, transferencias bancarias directas (ACH en EE.UU. y SEPA en Europa) y pasarelas cripto/digitales como Binance Pay. Puedes usar el método que mejor se adapte a tu flujo de caja.',
   },
   {
-    question: '¿Hay contrato mínimo?',
+    question: '¿Hay contrato mínimo o permanencia?',
     answer:
-      'No. Compras vCredits sin compromiso mensual. El saldo no caduca y solo pagas por el desarrollo que realmente consumes.',
+      'No. Compras vCredits sin compromiso mensual. El saldo no caduca y solo pagas por el desarrollo que realmente consumes. Puedes recargar en cualquier momento con el pack que prefieras.',
+  },
+  {
+    question: '¿Puedo usar mis vCredits para cualquier servicio?',
+    answer:
+      'Sí. Los vCredits son universales: puedes usarlos para desarrollo frontend, WordPress, apps móviles, sistemas ERP o cualquier servicio técnico que ofrecemos. Cada servicio tiene un multiplicador de consumo por hora que se descuenta en tiempo real desde tu dashboard.',
+  },
+  {
+    question: '¿Qué pasa si no uso todos mis vCredits en un mes?',
+    answer:
+      'El saldo restante se mantiene en tu cuenta hasta que decidas usarlo. No hay penalizaciones por no consumir ni fecha de caducidad. Ideal para agencias con demanda variable.',
   },
 ];
 ---
 
 <BaseLayout title={pageTitle} description={pageDescription} isLanding={isLanding} type="website">
   <SEO title={pageTitle} description={pageDescription} canonicalURL={canonicalURL} type="website" />
-  <FAQSchema faqs={faqItems} />
 
   <main class="bg-neutral-950 text-white">
+    <!-- JSON-LD structured data (invisible) -->
+    <FAQSchema faqs={faqItems} />
+
     <!-- HERO SECTION -->
     <section aria-label="Introducción">
       <div class="relative">
@@ -72,20 +84,52 @@ const faqItems = [
     <!-- TRANSPARENCY TRACKING -->
     <TransparencyTracking />
 
-    <!-- FAQ SECTION -->
-    <section aria-label="Preguntas frecuentes" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-32">
-      <div class="max-w-3xl mx-auto">
-        <h2 class="text-center font-heading text-[clamp(1.5rem,3vw,2.5rem)] font-light tracking-tight text-white mb-4">
-          Preguntas frecuentes
-        </h2>
-        <p class="text-center text-neutral-400 font-body-md text-lg mb-12">
-          Resolvemos tus dudas sobre el modelo vCredits
-        </p>
-        <FAQSchema faqs={faqItems} />
+    <!-- VISUAL FAQ SECTION -->
+    <section aria-label="Preguntas frecuentes" class="w-full overflow-hidden bg-black">
+      <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/[0.06] to-transparent pointer-events-none" aria-hidden="true"></div>
+      <div class="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-28 lg:py-36">
+        <div class="text-center mb-16 sm:mb-20 lg:mb-24">
+          <div class="flex items-center justify-center mb-6">
+            <span class="inline-flex items-center gap-2 px-4 py-1.5 border border-linear-border rounded-full text-[10px] font-label-md uppercase tracking-[0.15em] text-linear-muted bg-linear-charcoal/60 backdrop-blur-sm">
+              <span class="w-1.5 h-1.5 rounded-full bg-linear-muted/60" aria-hidden="true"></span>
+              FAQ
+            </span>
+          </div>
+          <h2 class="text-[clamp(1.75rem,4vw,3.25rem)] leading-[1.08] tracking-[-0.03em] font-light text-linear-text" style="font-family: 'Space Grotesk', sans-serif;">
+            Preguntas frecuentes
+          </h2>
+          <p class="max-w-2xl mx-auto mt-5 text-sm sm:text-base leading-relaxed text-neutral-400 font-body-md">
+            Resolvemos tus dudas sobre el modelo vCredits.
+          </p>
+        </div>
+        <div class="max-w-3xl mx-auto space-y-3">
+          {faqItems.map((faq) => (
+            <details class="group bg-linear-charcoal/80 border border-linear-border rounded-xl overflow-hidden transition-all duration-500">
+              <summary class="flex items-center justify-between px-6 py-5 cursor-pointer font-body-md font-medium text-white hover:bg-white/[0.02] transition-colors duration-300 [&::-webkit-details-marker]:hidden list-none">
+                <span class="pr-4">{faq.question}</span>
+                <span class="group-open:rotate-45 accordion-icon relative flex-shrink-0 w-5 h-5 flex items-center justify-center transition-transform duration-300" aria-hidden="true">
+                  <span class="absolute w-5 h-px bg-linear-muted"></span>
+                  <span class="absolute w-px h-5 bg-linear-muted"></span>
+                </span>
+              </summary>
+              <div class="px-6 pb-6 pt-0 border-t border-linear-border/50">
+                <p class="text-neutral-400 font-body-md leading-relaxed mt-4">{faq.answer}</p>
+              </div>
+            </details>
+          ))}
+        </div>
       </div>
+      <div class="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/[0.06] to-transparent pointer-events-none" aria-hidden="true"></div>
     </section>
 
     <!-- B2B EXPAND LINKS — Semantic navigation cards -->
     <B2BExpandLinks />
   </main>
 </BaseLayout>
+
+<style>
+  /* Ensure accordion content fades in smoothly on open */
+  details[open] .accordion-icon {
+    transform: rotate(45deg);
+  }
+</style>

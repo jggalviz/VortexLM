@@ -34,7 +34,6 @@ const faqItems = [
 
 <BaseLayout title={pageTitle} description={pageDescription} isLanding={isLanding} type="website">
   <SEO title={pageTitle} description={pageDescription} canonicalURL={canonicalURL} type="website" />
-  <FAQSchema faqs={faqItems} />
 
   <main class="bg-neutral-950 text-white">
     <!-- B2B HERO SECTION -->
@@ -46,7 +45,62 @@ const faqItems = [
     <!-- B2B MODEL — vCredits 3-step -->
     <B2BModel />
 
+    <!-- FAQ SECTION — JSON-LD structured data (invisible) -->
+    <FAQSchema faqs={faqItems} />
+
+    <!-- VISUAL FAQ ACCORDION -->
+    <section aria-label="Preguntas frecuentes">
+      <div class="relative">
+        <div class="absolute inset-0 bg-gradient-to-b from-white/[0.02] to-transparent pointer-events-none" aria-hidden="true"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-32">
+          <!-- Pill badge -->
+          <div class="flex justify-center mb-6">
+            <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-linear-border bg-linear-charcoal/50 backdrop-blur-sm text-xs font-label-md tracking-wider uppercase text-linear-muted">
+              <span class="w-1.5 h-1.5 rounded-full bg-linear-accent"></span>
+              FAQ
+            </span>
+          </div>
+          <h2 class="text-center font-heading text-[clamp(1.75rem,4vw,3.25rem)] font-light tracking-tight text-white leading-[1.1] mb-4">Preguntas frecuentes</h2>
+          <p class="text-center text-neutral-400 font-body-md max-w-2xl mx-auto mb-16">Todo lo que necesitas saber sobre VortexLM.</p>
+          
+          <!-- FAQ Accordion -->
+          <div class="max-w-3xl mx-auto space-y-3">
+            {faqItems.map((faq) => (
+              <details class="group bg-linear-charcoal/80 border border-linear-border rounded-xl overflow-hidden transition-all duration-500">
+                <summary class="flex items-center justify-between px-6 py-5 cursor-pointer font-body-md font-medium text-white hover:bg-white/[0.02] transition-colors duration-300 [&::-webkit-details-marker]:hidden list-none">
+                  <span>{faq.question}</span>
+                  <span class="accordion-icon shrink-0 flex items-center justify-center w-5 h-5 rounded-full border border-linear-border text-linear-muted transition-transform duration-300" style="transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);">
+                    <svg class="w-3 h-3" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2">
+                      <line x1="6" y1="1" x2="6" y2="11" />
+                      <line x1="1" y1="6" x2="11" y2="6" />
+                    </svg>
+                  </span>
+                </summary>
+                <div class="px-6 pb-6 pt-0 border-t border-linear-border/50">
+                  <p class="text-neutral-400 font-body-md leading-relaxed mt-4">{faq.answer}</p>
+                </div>
+              </details>
+            ))}
+          </div>
+          
+          <!-- CSS for accordion rotation -->
+          <style>
+            details[open] .accordion-icon {
+              transform: rotate(45deg) !important;
+            }
+          </style>
+        </div>
+        <div class="absolute bottom-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-white/[0.06] to-transparent" aria-hidden="true"></div>
+      </div>
+    </section>
+
     <!-- B2B EXPAND LINKS — Semantic navigation cards -->
     <B2BExpandLinks />
   </main>
 </BaseLayout>
+
+<style>
+  /* FAQ accordion marker removal (cross-browser) */
+  summary::-webkit-details-marker { display: none; }
+  summary::marker { display: none; content: ""; }
+</style>

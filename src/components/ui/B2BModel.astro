@@ -1,0 +1,324 @@
+---
+// src/components/ui/B2BModel.astro
+// "El Modelo Vortex" — 3-step interactive visual explaining the vCredits token model
+// Self-contained component, no props, no external dependencies
+---
+
+<section
+  class="relative w-full overflow-hidden bg-black"
+  aria-label="El Modelo Vortex — Cómo funcionan los vCredits"
+>
+  <!-- Subtle top border glow -->
+  <div
+    class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/[0.06] to-transparent pointer-events-none"
+    aria-hidden="true"
+  ></div>
+
+  <div class="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-28 lg:py-36">
+    <!-- Section header -->
+    <div class="text-center mb-16 sm:mb-20 lg:mb-24">
+      <!-- Pill / badge label -->
+      <div class="flex items-center justify-center mb-6">
+        <span
+          class="inline-flex items-center gap-2 px-4 py-1.5 border border-linear-border rounded-full text-[10px] font-label-md uppercase tracking-[0.15em] text-linear-muted bg-linear-charcoal/60 backdrop-blur-sm"
+        >
+          <span class="w-1.5 h-1.5 rounded-full bg-linear-muted/60" aria-hidden="true"></span>
+          El Modelo Vortex
+        </span>
+      </div>
+
+      <h2
+        class="text-[clamp(1.75rem,4vw,3.25rem)] leading-[1.08] tracking-[-0.03em] font-light text-linear-text"
+        style="font-family: 'Space Grotesk', sans-serif;"
+      >
+        Cómo funcionan los
+        <span class="text-linear-muted">vCredits</span>
+      </h2>
+
+      <p
+        class="max-w-2xl mx-auto mt-5 text-sm sm:text-base leading-relaxed text-neutral-400 font-body-md"
+      >
+        Tres pasos simples para externalizar desarrollo web con total flexibilidad.
+        <strong class="text-linear-text font-medium">Sin contratos, sin compromisos mensuales.</strong>
+      </p>
+    </div>
+
+    <!-- Progress indicator (desktop) -->
+    <div
+      class="hidden lg:flex items-center justify-center gap-3 mb-16"
+      aria-hidden="true"
+    >
+      <span class="text-[10px] font-label-md uppercase tracking-[0.15em] text-linear-text/80">Paso 1</span>
+      <svg class="w-4 h-4 text-linear-muted/40" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+      </svg>
+      <span class="text-[10px] font-label-md uppercase tracking-[0.15em] text-linear-muted/50">Paso 2</span>
+      <svg class="w-4 h-4 text-linear-muted/40" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+      </svg>
+      <span class="text-[10px] font-label-md uppercase tracking-[0.15em] text-linear-muted/50">Paso 3</span>
+    </div>
+
+    <!-- Steps grid -->
+    <div class="relative grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-6 xl:gap-10">
+      <!-- ===== STEP 1: Compra de vCredits ===== -->
+      <div class="step-card group relative flex flex-col items-center text-center p-8 sm:p-10 rounded-2xl border border-linear-border bg-linear-charcoal/80 transition-all duration-500">
+        <!-- Step number -->
+        <div
+          class="step-number absolute top-4 right-5 text-[clamp(2.5rem,5vw,3.5rem)] font-bold leading-none tracking-[-0.04em] text-linear-border/40 select-none"
+          aria-hidden="true"
+          style="font-family: 'JetBrains Mono', monospace;"
+        >
+          01
+        </div>
+
+        <!-- Icon container -->
+        <div
+          class="relative flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 mb-6 rounded-xl bg-gradient-to-br from-white/[0.04] to-white/[0.01] border border-linear-border/60 group-hover:border-linear-muted/30 transition-colors duration-500"
+        >
+          <!-- Wallet / credit card icon -->
+          <svg
+            class="w-7 h-7 sm:w-8 sm:h-8 text-linear-muted group-hover:text-linear-text transition-colors duration-500"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="1.5"
+            aria-hidden="true"
+          >
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a2.25 2.25 0 00-2.25-2.25H15a3 3 0 11-6 0H5.25A2.25 2.25 0 003 12m18 0v6a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 18v-6m18 0V9M3 12V9m18 0a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 9m18 0V6a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 6v3" />
+          </svg>
+
+          <!-- Hover glow ring -->
+          <div
+            class="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 ring-1 ring-white/10 ring-offset-1 ring-offset-transparent"
+            aria-hidden="true"
+          ></div>
+        </div>
+
+        <!-- Title -->
+        <h3
+          class="text-lg sm:text-xl font-medium text-linear-text mb-3 transition-colors duration-500"
+          style="font-family: 'Space Grotesk', sans-serif;"
+        >
+          Compra de vCredits
+        </h3>
+
+        <!-- Description -->
+        <p class="text-sm leading-relaxed text-neutral-400 max-w-xs">
+          Adquiere paquetes de <strong class="text-linear-text font-medium">vCredits</strong> sin contratos fijos. Elige el volumen que mejor se adapte a tu demanda mensual.
+        </p>
+
+        <!-- Bottom accent line -->
+        <div
+          class="absolute bottom-0 left-[15%] right-[15%] h-px bg-gradient-to-r from-transparent via-linear-muted/20 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-center"
+          aria-hidden="true"
+        ></div>
+      </div>
+
+      <!-- Connecting line (desktop: between 1 & 2) -->
+      <div
+        class="hidden lg:block absolute top-[4.5rem] left-[calc(33.333%_-_0.75rem)] w-[calc(33.333%_-_1.5rem)] h-px"
+        aria-hidden="true"
+      >
+        <div class="relative w-full h-full">
+          <div class="absolute inset-0 bg-gradient-to-r from-linear-muted/30 via-linear-muted/10 to-transparent"></div>
+          <!-- Arrow head -->
+          <svg class="absolute -right-[5px] -top-[4px] w-2.5 h-2.5 text-linear-muted/30" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+          </svg>
+        </div>
+      </div>
+
+      <!-- ===== STEP 2: Asignación de tareas ===== -->
+      <div class="step-card group relative flex flex-col items-center text-center p-8 sm:p-10 rounded-2xl border border-linear-border bg-linear-charcoal/80 transition-all duration-500">
+        <!-- Step number -->
+        <div
+          class="step-number absolute top-4 right-5 text-[clamp(2.5rem,5vw,3.5rem)] font-bold leading-none tracking-[-0.04em] text-linear-border/40 select-none"
+          aria-hidden="true"
+          style="font-family: 'JetBrains Mono', monospace;"
+        >
+          02
+        </div>
+
+        <!-- Icon container -->
+        <div
+          class="relative flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 mb-6 rounded-xl bg-gradient-to-br from-white/[0.04] to-white/[0.01] border border-linear-border/60 group-hover:border-linear-muted/30 transition-colors duration-500"
+        >
+          <!-- Clipboard / dashboard list icon -->
+          <svg
+            class="w-7 h-7 sm:w-8 sm:h-8 text-linear-muted group-hover:text-linear-text transition-colors duration-500"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="1.5"
+            aria-hidden="true"
+          >
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+          </svg>
+
+          <!-- Hover glow ring -->
+          <div
+            class="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 ring-1 ring-white/10 ring-offset-1 ring-offset-transparent"
+            aria-hidden="true"
+          ></div>
+        </div>
+
+        <!-- Title -->
+        <h3
+          class="text-lg sm:text-xl font-medium text-linear-text mb-3 transition-colors duration-500"
+          style="font-family: 'Space Grotesk', sans-serif;"
+        >
+          Asignación de tareas
+        </h3>
+
+        <!-- Description -->
+        <p class="text-sm leading-relaxed text-neutral-400 max-w-xs">
+          Publica tus proyectos en el dashboard. Describe el alcance, prioridad y tecnologías (<strong class="text-linear-text font-medium">Frontend, WordPress, APIs</strong>).
+        </p>
+
+        <!-- Bottom accent line -->
+        <div
+          class="absolute bottom-0 left-[15%] right-[15%] h-px bg-gradient-to-r from-transparent via-linear-muted/20 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-center"
+          aria-hidden="true"
+        ></div>
+      </div>
+
+      <!-- Connecting line (desktop: between 2 & 3) -->
+      <div
+        class="hidden lg:block absolute top-[4.5rem] left-[calc(66.666%_-_0.75rem)] w-[calc(33.333%_-_1.5rem)] h-px"
+        aria-hidden="true"
+      >
+        <div class="relative w-full h-full">
+          <div class="absolute inset-0 bg-gradient-to-r from-linear-muted/30 via-linear-muted/10 to-transparent"></div>
+          <!-- Arrow head -->
+          <svg class="absolute -right-[5px] -top-[4px] w-2.5 h-2.5 text-linear-muted/30" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+          </svg>
+        </div>
+      </div>
+
+      <!-- ===== STEP 3: Consumo en tiempo real ===== -->
+      <div class="step-card group relative flex flex-col items-center text-center p-8 sm:p-10 rounded-2xl border border-linear-border bg-linear-charcoal/80 transition-all duration-500">
+        <!-- Step number -->
+        <div
+          class="step-number absolute top-4 right-5 text-[clamp(2.5rem,5vw,3.5rem)] font-bold leading-none tracking-[-0.04em] text-linear-border/40 select-none"
+          aria-hidden="true"
+          style="font-family: 'JetBrains Mono', monospace;"
+        >
+          03
+        </div>
+
+        <!-- Icon container -->
+        <div
+          class="relative flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 mb-6 rounded-xl bg-gradient-to-br from-white/[0.04] to-white/[0.01] border border-linear-border/60 group-hover:border-linear-muted/30 transition-colors duration-500"
+        >
+          <!-- Clock / activity icon -->
+          <svg
+            class="w-7 h-7 sm:w-8 sm:h-8 text-linear-muted group-hover:text-linear-text transition-colors duration-500"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="1.5"
+            aria-hidden="true"
+          >
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+
+          <!-- Hover glow ring -->
+          <div
+            class="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 ring-1 ring-white/10 ring-offset-1 ring-offset-transparent"
+            aria-hidden="true"
+          ></div>
+        </div>
+
+        <!-- Title -->
+        <h3
+          class="text-lg sm:text-xl font-medium text-linear-text mb-3 transition-colors duration-500"
+          style="font-family: 'Space Grotesk', sans-serif;"
+        >
+          Consumo en tiempo real
+        </h3>
+
+        <!-- Description -->
+        <p class="text-sm leading-relaxed text-neutral-400 max-w-xs">
+          Activamos a tu equipo dedicado. Cada hora de desarrollo se descuenta de tu saldo de <strong class="text-linear-text font-medium">vCredits</strong> en tiempo real.
+        </p>
+
+        <!-- Bottom accent line -->
+        <div
+          class="absolute bottom-0 left-[15%] right-[15%] h-px bg-gradient-to-r from-transparent via-linear-muted/20 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-center"
+          aria-hidden="true"
+        ></div>
+      </div>
+    </div>
+
+    <!-- Mobile connecting lines (vertical between steps) -->
+    <div class="lg:hidden flex flex-col items-center mt-0" aria-hidden="true">
+      <!-- Between step 1 and 2 -->
+      <div class="relative w-px h-10 bg-gradient-to-b from-linear-muted/20 to-linear-muted/10">
+        <svg class="absolute -bottom-[9px] -left-[4px] w-2.5 h-2.5 text-linear-muted/20 rotate-90" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+        </svg>
+      </div>
+      <!-- Between step 2 and 3 -->
+      <div class="relative w-px h-10 bg-gradient-to-b from-linear-muted/20 to-linear-muted/10">
+        <svg class="absolute -bottom-[9px] -left-[4px] w-2.5 h-2.5 text-linear-muted/20 rotate-90" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+        </svg>
+      </div>
+    </div>
+
+    <!-- Bottom CTA hint -->
+    <div class="mt-14 sm:mt-16 text-center">
+      <p class="text-[10px] font-label-md uppercase tracking-[0.15em] text-linear-muted/50">
+        Compra. Asigna. Escala. Sin fricción.
+      </p>
+    </div>
+  </div>
+
+  <!-- Bottom border glow -->
+  <div
+    class="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/[0.06] to-transparent pointer-events-none"
+    aria-hidden="true"
+  ></div>
+</section>
+
+<style>
+  /* Step card hover elevation */
+  .step-card {
+    will-change: transform;
+  }
+
+  .step-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(255, 255, 255, 0.08);
+    box-shadow:
+      0 20px 40px -12px rgba(0, 0, 0, 0.6),
+      0 0 0 1px rgba(255, 255, 255, 0.04) inset;
+    background: rgba(8, 8, 12, 0.95);
+  }
+
+  /* Step number subtle scale on hover */
+  .step-card:hover .step-number {
+    opacity: 0.6;
+  }
+
+  /* Smooth transition for all interactive elements */
+  .step-card * {
+    transition-duration: 500ms;
+    transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  /* Responsive adjustments */
+  @media (min-width: 1024px) {
+    .step-card {
+      min-height: 340px;
+    }
+  }
+
+  @media (max-width: 1023px) {
+    .step-card {
+      min-height: auto;
+    }
+  }
+</style>

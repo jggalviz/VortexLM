@@ -1,0 +1,182 @@
+---
+// src/components/ui/MultipliersTable.astro
+// Multiplicadores de consumo — hourly consumption rates table for VortexLM /precios page
+// Self-contained component, no props, no external dependencies
+---
+
+<section
+  class="relative w-full overflow-hidden bg-black"
+  aria-label="Tarifas por hora — Multiplicadores de consumo"
+>
+  <!-- Subtle top border glow -->
+  <div
+    class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/[0.06] to-transparent pointer-events-none"
+    aria-hidden="true"
+  ></div>
+
+  <div class="relative">
+    <div
+      class="absolute inset-0 bg-gradient-to-b from-white/[0.02] to-transparent pointer-events-none"
+      aria-hidden="true"
+    ></div>
+
+    <div class="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-32">
+      <!-- Section header -->
+      <div class="text-center mb-16 sm:mb-20">
+        <!-- Pill badge -->
+        <div class="flex justify-center mb-6">
+          <span
+            class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-linear-border bg-linear-charcoal/50 backdrop-blur-sm text-xs font-label-md tracking-wider uppercase text-linear-muted"
+          >
+            <span class="w-1.5 h-1.5 rounded-full bg-linear-accent"></span>
+            TARIFAS POR HORA
+          </span>
+        </div>
+
+        <h2
+          class="text-center font-heading text-[clamp(1.75rem,4vw,3.25rem)] font-light tracking-tight text-white leading-[1.1] mb-4"
+          style="font-family: 'Space Grotesk', sans-serif;"
+        >
+          Multiplicadores de <span class="text-linear-accent">consumo</span>
+        </h2>
+
+        <p
+          class="text-center text-neutral-400 font-body-md max-w-2xl mx-auto mb-16"
+        >
+          Cada servicio tiene un coste en vCredits por hora. Así de transparente.
+        </p>
+      </div>
+
+      <!-- Table container -->
+      <div class="max-w-5xl mx-auto">
+        <div class="overflow-x-auto rounded-xl border border-linear-border bg-linear-charcoal/80">
+          <table class="w-full min-w-[640px]">
+            <thead>
+              <tr class="bg-linear-charcoal/60">
+                <th
+                  scope="col"
+                  class="px-6 py-4 text-left text-xs font-label-md uppercase tracking-wider text-linear-muted"
+                >
+                  Servicio
+                </th>
+                <th
+                  scope="col"
+                  class="px-6 py-4 text-right text-xs font-label-md uppercase tracking-wider text-linear-muted"
+                >
+                  vCredits/h
+                </th>
+                <th
+                  scope="col"
+                  class="px-6 py-4 text-right text-xs font-label-md uppercase tracking-wider text-linear-muted"
+                >
+                  Precio final/h
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="table-row border-t border-linear-border/40 transition-colors duration-300">
+                <td class="px-6 py-4 text-sm font-body-md text-neutral-300">
+                  Desarrollo Avanzado <span class="text-neutral-500">(Astro, React, Next.js, APIs)</span>
+                </td>
+                <td class="px-6 py-4 text-right text-sm font-label-md text-linear-accent">
+                  15 vCredits
+                </td>
+                <td class="px-6 py-4 text-right text-sm font-label-md text-white">
+                  $15.75 USD
+                </td>
+              </tr>
+              <tr class="table-row border-t border-linear-border/40 transition-colors duration-300">
+                <td class="px-6 py-4 text-sm font-body-md text-neutral-300">
+                  Soporte & WPO <span class="text-neutral-500">(WordPress, WooCommerce)</span>
+                </td>
+                <td class="px-6 py-4 text-right text-sm font-label-md text-linear-accent">
+                  12 vCredits
+                </td>
+                <td class="px-6 py-4 text-right text-sm font-label-md text-white">
+                  $12.60 USD
+                </td>
+              </tr>
+              <tr class="table-row border-t border-linear-border/40 transition-colors duration-300">
+                <td class="px-6 py-4 text-sm font-body-md text-neutral-300">
+                  Analítica Avanzada e Infraestructura <span class="text-neutral-500">(GA4, GTM)</span>
+                </td>
+                <td class="px-6 py-4 text-right text-sm font-label-md text-linear-accent">
+                  12 vCredits
+                </td>
+                <td class="px-6 py-4 text-right text-sm font-label-md text-white">
+                  $12.60 USD
+                </td>
+              </tr>
+              <tr class="table-row border-t border-linear-border/40 transition-colors duration-300">
+                <td class="px-6 py-4 text-sm font-body-md text-neutral-300">
+                  Gestión de Campañas <span class="text-neutral-500">(Google/Meta Ads)</span> y Diseño de Landings
+                </td>
+                <td class="px-6 py-4 text-right text-sm font-label-md text-linear-accent">
+                  10 vCredits
+                </td>
+                <td class="px-6 py-4 text-right text-sm font-label-md text-white">
+                  $10.50 USD
+                </td>
+              </tr>
+              <tr class="table-row border-t border-linear-border/40 transition-colors duration-300">
+                <td class="px-6 py-4 text-sm font-body-md text-neutral-300">
+                  Edición de Video Corto para Anuncios <span class="text-neutral-500">(Reels/TikTok)</span>
+                </td>
+                <td class="px-6 py-4 text-right text-sm font-label-md text-linear-accent">
+                  8 vCredits
+                </td>
+                <td class="px-6 py-4 text-right text-sm font-label-md text-white">
+                  $8.40 USD
+                </td>
+              </tr>
+              <tr class="table-row border-t border-linear-border/40 transition-colors duration-300">
+                <td class="px-6 py-4 text-sm font-body-md text-neutral-300">
+                  Diseño de Creativos y Banners Estáticos
+                </td>
+                <td class="px-6 py-4 text-right text-sm font-label-md text-linear-accent">
+                  6 vCredits
+                </td>
+                <td class="px-6 py-4 text-right text-sm font-label-md text-white">
+                  $6.30 USD
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Info note -->
+        <p
+          class="text-center text-sm text-linear-muted font-body-md mt-6"
+        >
+          Los vCredits se descuentan por minuto real de desarrollo. Sin redondeos.
+        </p>
+      </div>
+    </div>
+
+    <div
+      class="absolute bottom-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-white/[0.06] to-transparent"
+      aria-hidden="true"
+    ></div>
+  </div>
+</section>
+
+<style>
+  /* Alternating row backgrounds */
+  .table-row:nth-child(even) {
+    background: rgba(255, 255, 255, 0.015);
+  }
+
+  .table-row:nth-child(odd) {
+    background: transparent;
+  }
+
+  /* Hover effect — brighten row */
+  .table-row:hover {
+    background: rgba(255, 255, 255, 0.04);
+  }
+
+  /* Ensure Space Grotesk is applied for headings even before full CSS loads */
+  section h2 {
+    font-family: 'Space Grotesk', sans-serif;
+  }
+</style>

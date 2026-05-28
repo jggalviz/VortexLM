@@ -1,0 +1,292 @@
+---
+// src/components/ui/VCreditsExplanation.astro
+// "Qué es un vCredit" — explains 1 vCredit = 1 hour of specialized development
+// Self-contained component, no props, no external dependencies
+---
+
+<section
+  class="relative w-full overflow-hidden bg-black"
+  aria-label="Qué es un vCredit — Unidad de medida transparente"
+>
+  <!-- Subtle top border glow -->
+  <div
+    class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/[0.06] to-transparent pointer-events-none"
+    aria-hidden="true"
+  ></div>
+
+  <div class="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-28 lg:py-36">
+    <!-- Section header -->
+    <div class="text-center mb-16 sm:mb-20 lg:mb-24">
+      <!-- Pill / badge label -->
+      <div class="flex items-center justify-center mb-6">
+        <span
+          class="inline-flex items-center gap-2 px-4 py-1.5 border border-linear-border rounded-full text-[10px] font-label-md uppercase tracking-[0.15em] text-linear-muted bg-linear-charcoal/60 backdrop-blur-sm"
+        >
+          <span class="w-1.5 h-1.5 rounded-full bg-linear-muted/60" aria-hidden="true"></span>
+          EL MODELO
+        </span>
+      </div>
+
+      <h2
+        class="text-[clamp(1.75rem,4vw,3.25rem)] leading-[1.08] tracking-[-0.03em] font-light text-linear-text"
+        style="font-family: 'Space Grotesk', sans-serif;"
+      >
+        ¿Qué es un
+        <span class="text-linear-muted">vCredit</span>?
+      </h2>
+
+      <p
+        class="max-w-2xl mx-auto mt-5 text-sm sm:text-base leading-relaxed text-neutral-400 font-body-md"
+      >
+        Unidad de medida transparente que equipara tiempo de desarrollo especializado
+        con inversión predecible.
+      </p>
+    </div>
+
+    <!-- Two-column layout: main card (left) + metrics (right) -->
+    <div class="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-10">
+      <!-- ===== LEFT: Main "1 vCredit = 1 hora" visual card ===== -->
+      <div class="lg:col-span-3">
+        <div class="vcredit-hero-card group relative p-8 sm:p-10 lg:p-12 rounded-2xl border border-linear-border bg-linear-charcoal/80 overflow-hidden">
+          <!-- Animated gradient border glow (CSS only) -->
+          <div class="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" aria-hidden="true">
+            <div class="absolute inset-0 rounded-2xl bg-gradient-to-br from-linear-accent/5 via-transparent to-linear-accent/5"></div>
+          </div>
+
+          <!-- Subtle top-right accent glow -->
+          <div class="absolute -top-24 -right-24 w-48 h-48 bg-linear-accent/5 rounded-full blur-3xl pointer-events-none" aria-hidden="true"></div>
+
+          <!-- Content -->
+          <div class="relative z-10 flex flex-col items-center text-center">
+            <!-- Large "1 vCredit" heading -->
+            <div class="mb-4">
+              <span
+                class="text-[clamp(3rem,8vw,5.5rem)] font-bold leading-none tracking-[-0.04em] text-linear-accent"
+                style="font-family: 'JetBrains Mono', monospace;"
+              >
+                1
+              </span>
+              <span
+                class="text-[clamp(1.75rem,5vw,3.5rem)] font-bold leading-none tracking-[-0.03em] text-linear-text ml-2"
+                style="font-family: 'Space Grotesk', sans-serif;"
+              >
+                vCredit
+              </span>
+            </div>
+
+            <!-- Equals sign -->
+            <div class="flex items-center justify-center gap-4 my-4 sm:my-6">
+              <div class="w-12 sm:w-16 h-px bg-linear-border/60"></div>
+              <span
+                class="text-lg sm:text-xl text-linear-muted/60 font-label-md"
+              >
+                =
+              </span>
+              <div class="w-12 sm:w-16 h-px bg-linear-border/60"></div>
+            </div>
+
+            <!-- "1 hora de desarrollo especializado" -->
+            <p
+              class="text-[clamp(1.1rem,2.5vw,1.75rem)] font-light text-neutral-300 leading-snug max-w-md"
+              style="font-family: 'Space Grotesk', sans-serif;"
+            >
+              1 hora de desarrollo
+              <span class="text-linear-muted block mt-1">especializado</span>
+            </p>
+
+            <!-- Visual breakdown chips -->
+            <div class="flex flex-wrap items-center justify-center gap-3 mt-8 sm:mt-10">
+              <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-linear-border/60 bg-linear-charcoal/40 text-[10px] font-label-md uppercase tracking-wider text-neutral-400">
+                <span class="w-1.5 h-1.5 rounded-full bg-linear-accent/60"></span>
+                Frontend
+              </span>
+              <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-linear-border/60 bg-linear-charcoal/40 text-[10px] font-label-md uppercase tracking-wider text-neutral-400">
+                <span class="w-1.5 h-1.5 rounded-full bg-linear-accent/60"></span>
+                WordPress
+              </span>
+              <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-linear-border/60 bg-linear-charcoal/40 text-[10px] font-label-md uppercase tracking-wider text-neutral-400">
+                <span class="w-1.5 h-1.5 rounded-full bg-linear-accent/60"></span>
+                APIs
+              </span>
+              <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-linear-border/60 bg-linear-charcoal/40 text-[10px] font-label-md uppercase tracking-wider text-neutral-400">
+                <span class="w-1.5 h-1.5 rounded-full bg-linear-accent/60"></span>
+                Revisiones
+              </span>
+            </div>
+
+            <!-- Bottom description -->
+            <p class="mt-8 text-sm leading-relaxed text-neutral-500 max-w-sm">
+              Cada vCredit representa una hora de trabajo de nuestro equipo multidisciplinario. Sin markup, sin sorpresas. Lo que ves es lo que pagas.
+            </p>
+          </div>
+
+          <!-- Bottom accent line -->
+          <div
+            class="absolute bottom-0 left-[10%] right-[10%] h-px bg-gradient-to-r from-transparent via-linear-accent/20 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-center"
+            aria-hidden="true"
+          ></div>
+        </div>
+      </div>
+
+      <!-- ===== RIGHT: 3 Key metrics stacked vertically ===== -->
+      <div class="lg:col-span-2 flex flex-col gap-6">
+        <!-- Metric 1: Sin contratos fijos -->
+        <div class="metric-card group relative p-6 sm:p-7 rounded-xl border border-linear-border bg-linear-charcoal/80 transition-all duration-500">
+          <div class="flex items-start gap-4">
+            <div
+              class="w-10 h-10 rounded-lg bg-linear-accent/10 border border-linear-accent/20 flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-linear-accent/15 group-hover:border-linear-accent/30 transition-all duration-500"
+            >
+              <!-- Handshake / no-contract icon -->
+              <svg class="w-5 h-5 text-linear-accent/70" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z" />
+              </svg>
+            </div>
+            <div class="min-w-0">
+              <h3 class="text-sm font-medium text-neutral-200 mb-1.5">
+                Sin contratos fijos
+              </h3>
+              <p class="text-xs text-neutral-400 leading-relaxed">
+                No hay retenedores mensuales ni permanencias. Compra vCredits cuando quieras y úsalos a tu ritmo. Tú controlas el gasto.
+              </p>
+            </div>
+          </div>
+
+          <!-- Hover glow ring -->
+          <div
+            class="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 ring-1 ring-white/[0.04] ring-offset-1 ring-offset-transparent pointer-events-none"
+            aria-hidden="true"
+          ></div>
+        </div>
+
+        <!-- Metric 2: Saldo sin caducidad -->
+        <div class="metric-card group relative p-6 sm:p-7 rounded-xl border border-linear-border bg-linear-charcoal/80 transition-all duration-500">
+          <div class="flex items-start gap-4">
+            <div
+              class="w-10 h-10 rounded-lg bg-linear-accent/10 border border-linear-accent/20 flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-linear-accent/15 group-hover:border-linear-accent/30 transition-all duration-500"
+            >
+              <!-- Clock / no-expiry icon -->
+              <svg class="w-5 h-5 text-linear-accent/70" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <div class="min-w-0">
+              <h3 class="text-sm font-medium text-neutral-200 mb-1.5">
+                Saldo sin caducidad
+              </h3>
+              <p class="text-xs text-neutral-400 leading-relaxed">
+                Tus vCredits no expiran. Acumula saldo, úsalo cuando surja la necesidad. Ideal para agencias que manejan cargas de trabajo variables.
+              </p>
+            </div>
+          </div>
+
+          <!-- Hover glow ring -->
+          <div
+            class="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 ring-1 ring-white/[0.04] ring-offset-1 ring-offset-transparent pointer-events-none"
+            aria-hidden="true"
+          ></div>
+        </div>
+
+        <!-- Metric 3: Consumo en tiempo real -->
+        <div class="metric-card group relative p-6 sm:p-7 rounded-xl border border-linear-border bg-linear-charcoal/80 transition-all duration-500">
+          <div class="flex items-start gap-4">
+            <div
+              class="w-10 h-10 rounded-lg bg-linear-accent/10 border border-linear-accent/20 flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-linear-accent/15 group-hover:border-linear-accent/30 transition-all duration-500"
+            >
+              <!-- Activity / real-time icon -->
+              <svg class="w-5 h-5 text-linear-accent/70" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3 4.5h14.25M3 9h9.75M3 13.5h5.25m5.25-.75H17.25m-6 0h6m-6 0h.75m-6 0h.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <div class="min-w-0">
+              <h3 class="text-sm font-medium text-neutral-200 mb-1.5">
+                Consumo en tiempo real
+              </h3>
+              <p class="text-xs text-neutral-400 leading-relaxed">
+                Cada hora de trabajo se descuenta al instante de tu saldo. Recibe notificaciones y mantén control total desde tu dashboard.
+              </p>
+            </div>
+          </div>
+
+          <!-- Hover glow ring -->
+          <div
+            class="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 ring-1 ring-white/[0.04] ring-offset-1 ring-offset-transparent pointer-events-none"
+            aria-hidden="true"
+          ></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom CTA hint -->
+    <div class="mt-14 sm:mt-16 text-center">
+      <p class="text-[10px] font-label-md uppercase tracking-[0.15em] text-linear-muted/50">
+        Transparencia total. Sin markup. Sin sorpresas.
+      </p>
+    </div>
+  </div>
+
+  <!-- Bottom border glow -->
+  <div
+    class="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/[0.06] to-transparent pointer-events-none"
+    aria-hidden="true"
+  ></div>
+</section>
+
+<style>
+  /* Main hero card hover elevation */
+  .vcredit-hero-card {
+    will-change: transform;
+  }
+
+  .vcredit-hero-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(34, 197, 94, 0.15);
+    box-shadow:
+      0 24px 48px -16px rgba(0, 0, 0, 0.6),
+      0 0 0 1px rgba(34, 197, 94, 0.06) inset;
+    background: rgba(8, 8, 12, 0.95);
+  }
+
+  /* Metric cards hover elevation */
+  .metric-card {
+    will-change: transform;
+  }
+
+  .metric-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(255, 255, 255, 0.08);
+    box-shadow:
+      0 16px 32px -12px rgba(0, 0, 0, 0.5),
+      0 0 0 1px rgba(255, 255, 255, 0.04) inset;
+    background: rgba(8, 8, 12, 0.95);
+  }
+
+  /* Smooth transitions for all interactive elements */
+  .vcredit-hero-card *,
+  .metric-card * {
+    transition-duration: 500ms;
+    transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  /* Responsive adjustments */
+  @media (min-width: 1024px) {
+    .vcredit-hero-card {
+      min-height: 480px;
+      display: flex;
+      align-items: center;
+    }
+
+    .metric-card {
+      min-height: 130px;
+    }
+  }
+
+  @media (max-width: 1023px) {
+    .vcredit-hero-card {
+      min-height: auto;
+    }
+
+    .metric-card {
+      min-height: auto;
+    }
+  }
+</style>

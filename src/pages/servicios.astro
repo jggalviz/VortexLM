@@ -1,0 +1,69 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SEO from '../components/seo/SEO.astro';
+import FAQSchema from '../components/seo/FAQSchema.astro';
+import ServicesHero from '../components/ui/ServicesHero.astro';
+import TechGrid from '../components/ui/TechGrid.astro';
+import WhiteLabelConcept from '../components/ui/WhiteLabelConcept.astro';
+import B2BExpandLinks from '../components/ui/B2BExpandLinks.astro';
+
+const isLanding = true;
+const pageTitle = 'Servicios de Desarrollo White Label para Agencias — VortexLM';
+const pageDescription =
+  'Externaliza desarrollo frontend (Astro, React, Next.js), WordPress corporativo sin builders y automatizaciones avanzadas. 100% white label, NDA incluido.';
+const canonicalURL = 'https://vortexlm.com/servicios';
+
+const faqItems = [
+  {
+    question: '¿Qué tecnologías de frontend utilizan?',
+    answer:
+      'Trabajamos con Astro, React, Next.js y Tailwind CSS. Optimizamos cada proyecto para lograr 100/100 en Google PageSpeed con SSR, SSG o ISR según la necesidad.',
+  },
+  {
+    question: '¿Usan page builders como Elementor o Divi?',
+    answer:
+      'No. Desarrollamos WordPress con bloques Gutenberg nativos y código personalizado. Rechazamos builders pesados para garantizar velocidad, SEO limpio y facilidad de mantenimiento.',
+  },
+  {
+    question: '¿Ofrecen integraciones con APIs y automatizaciones?',
+    answer:
+      'Sí. Creamos APIs RESTful y GraphQL, webhooks en tiempo real, pasarelas de pago (Stripe, PayPal) y flujos ETL para automatizar procesos comerciales complejos.',
+  },
+  {
+    question: '¿Cómo funciona el modelo white label?',
+    answer:
+      'Trabajamos 100% detrás de tu marca. Todos los entregables se presentan como si fueran de tu agencia. Firmamos NDA y nunca contactamos a tus clientes.',
+  },
+];
+---
+
+<BaseLayout title={pageTitle} description={pageDescription} isLanding={isLanding} type="website">
+  <SEO title={pageTitle} description={pageDescription} canonicalURL={canonicalURL} type="website" />
+
+  <main class="bg-neutral-950 text-white">
+    <!-- SERVICES HERO — Capacidades técnicas -->
+    <ServicesHero />
+
+    <!-- TECH GRID — 3 premium service cards -->
+    <TechGrid />
+
+    <!-- WHITE LABEL CONCEPT — NDA trust section -->
+    <WhiteLabelConcept />
+
+    <!-- FAQ SECTION -->
+    <section aria-label="Preguntas frecuentes" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-28 lg:py-36">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-center font-heading text-[clamp(1.5rem,3vw,2.5rem)] font-light tracking-tight text-white mb-4">
+          Preguntas frecuentes
+        </h2>
+        <p class="text-center text-neutral-400 font-body-md text-lg mb-12">
+          Resolvemos tus dudas sobre nuestros servicios de desarrollo
+        </p>
+        <FAQSchema faqs={faqItems} />
+      </div>
+    </section>
+
+    <!-- B2B EXPAND LINKS — Semantic navigation cards -->
+    <B2BExpandLinks />
+  </main>
+</BaseLayout>

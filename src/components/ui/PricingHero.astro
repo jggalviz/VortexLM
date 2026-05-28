@@ -1,0 +1,46 @@
+---
+// src/components/ui/PricingHero.astro
+// Hero Section for VortexLM /precios page — showcasing vCredits pricing plans
+// Self-contained component, no props, no external dependencies
+---
+
+<section aria-label="Planes de precios vCredits">
+  <div class="relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-32">
+
+      <!-- Pill badge -->
+      <div class="flex justify-center mb-6">
+        <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-linear-border bg-linear-charcoal/50 backdrop-blur-sm text-xs font-label-md tracking-wider uppercase text-linear-muted">
+          <span class="w-1.5 h-1.5 rounded-full bg-linear-accent"></span>
+          PRECIOS
+        </span>
+      </div>
+
+      <!-- Heading -->
+      <h1 class="text-center font-heading text-[clamp(2rem,5vw,4rem)] font-light tracking-tight text-white leading-[1.1] max-w-4xl mx-auto">
+        Planes flexibles de <span class="text-linear-accent">vCredits</span> para tu agencia
+      </h1>
+
+      <!-- Subheading -->
+      <p class="text-center text-neutral-400 font-body-md text-lg max-w-2xl mx-auto mt-6">
+        Paga solo por el desarrollo que consumes. Sin contratos fijos, sin compromisos mensuales. Descuentos por volumen a partir de 500 créditos.
+      </p>
+
+      <!-- Currency info badge -->
+      <div class="flex justify-center mt-8">
+        <span class="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-linear-border bg-linear-charcoal/30 text-sm font-label-md text-linear-muted mx-auto">
+          1 vCredit = $1.00 USD neto · Pagas $1.05 USD/crédito (comisión Stripe transparente)
+        </span>
+      </div>
+
+    </div>
+    <div class="absolute bottom-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-white/[0.06] to-transparent" aria-hidden="true"></div>
+  </div>
+</section>
+
+<style>
+  /* Ensure Space Grotesk is applied for the heading even before full CSS loads */
+  section h1 {
+    font-family: 'Space Grotesk', sans-serif;
+  }
+</style>

@@ -1,0 +1,320 @@
+---
+// src/components/ui/WhiteLabelConcept.astro
+// "100% invisible. 100% tu marca." — White-label trust section for VortexLM /servicios page
+// Self-contained component, no props, no external dependencies
+---
+
+<section
+  class="relative w-full overflow-hidden bg-black"
+  aria-label="White Label — 100% invisible, 100% tu marca"
+>
+  <!-- Subtle top border glow -->
+  <div
+    class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/[0.06] to-transparent pointer-events-none"
+    aria-hidden="true"
+  ></div>
+
+  <div class="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-28 lg:py-36">
+    <!-- Section header -->
+    <div class="text-center mb-16 sm:mb-20 lg:mb-24">
+      <!-- Pill / badge label -->
+      <div class="flex items-center justify-center mb-6">
+        <span
+          class="inline-flex items-center gap-2 px-4 py-1.5 border border-linear-border rounded-full text-[10px] font-label-md uppercase tracking-[0.15em] text-linear-muted bg-linear-charcoal/60 backdrop-blur-sm"
+        >
+          <span class="w-1.5 h-1.5 rounded-full bg-linear-muted/60" aria-hidden="true"></span>
+          WHITE LABEL
+        </span>
+      </div>
+
+      <h2
+        class="text-[clamp(1.75rem,4vw,3.25rem)] leading-[1.08] tracking-[-0.03em] font-light text-linear-text"
+        style="font-family: 'Space Grotesk', sans-serif;"
+      >
+        100% invisible. <span class="text-linear-muted">100% tu marca.</span>
+      </h2>
+
+      <p
+        class="max-w-2xl mx-auto mt-5 text-sm sm:text-base leading-relaxed text-neutral-400 font-body-md"
+      >
+        Trabajamos en segundo plano para que tu agencia luzca como propia ante tus clientes.
+      </p>
+    </div>
+
+    <!-- Two-column layout: pillars (left) + NDA seal (right) -->
+    <div class="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-10 xl:gap-14 items-start">
+      <!-- ===== LEFT COLUMN: 3 Pillars (lg:col-span-3) ===== -->
+      <div class="lg:col-span-3 space-y-6 lg:space-y-8">
+
+        <!-- Pillar 1: Marca Blanca Total -->
+        <div class="pillar-card group relative p-6 sm:p-8 rounded-xl border border-linear-border bg-linear-charcoal/80 transition-all duration-500"
+             style="transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);">
+          <div class="flex items-start gap-4 sm:gap-5">
+            <!-- Icon -->
+            <div
+              class="relative flex items-center justify-center w-11 h-11 sm:w-12 sm:h-12 mt-1 shrink-0 rounded-lg bg-gradient-to-br from-white/[0.04] to-white/[0.01] border border-linear-border/60 group-hover:border-linear-muted/30 transition-colors duration-500"
+            >
+              <!-- Eye-off / incognito icon -->
+              <svg
+                class="w-5 h-5 sm:w-5.5 sm:h-5.5 text-linear-muted group-hover:text-linear-text transition-colors duration-500"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="1.5"
+                aria-hidden="true"
+              >
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.98 8.223A10.477 10.477 0 001.934 12C3.226 16.338 7.244 19.5 12 19.5c.993 0 1.953-.138 2.863-.395M6.228 6.228A10.45 10.45 0 0112 4.5c4.756 0 8.773 3.162 10.065 7.498a10.523 10.523 0 01-4.293 5.774M6.228 6.228L3 3m3.228 3.228l3.65 3.65m7.894 7.894L21 21m-3.228-3.228l-3.65-3.65m0 0a3 3 0 10-4.243-4.243m4.242 4.242L9.88 9.88" />
+              </svg>
+
+              <!-- Hover glow ring -->
+              <div
+                class="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500 ring-1 ring-white/10 ring-offset-1 ring-offset-transparent"
+                aria-hidden="true"
+              ></div>
+            </div>
+
+            <!-- Content -->
+            <div class="min-w-0">
+              <h3
+                class="text-base sm:text-lg font-medium text-linear-text mb-2 transition-colors duration-500"
+                style="font-family: 'Space Grotesk', sans-serif;"
+              >
+                Marca Blanca Total
+              </h3>
+              <p class="text-xs sm:text-sm leading-relaxed text-neutral-400">
+                Todos los entregables, comunicaciones y resultados se presentan como si fueran de tu agencia. <strong class="text-linear-text font-medium">Sin menciones a VortexLM.</strong>
+              </p>
+            </div>
+          </div>
+
+          <!-- Left border accent -->
+          <div
+            class="absolute left-0 top-4 bottom-4 w-0.5 bg-linear-muted/20 rounded-full scale-y-0 group-hover:scale-y-100 transition-transform duration-700 origin-top"
+            aria-hidden="true"
+          ></div>
+
+          <!-- Bottom accent line -->
+          <div
+            class="absolute bottom-0 left-[15%] right-[15%] h-px bg-gradient-to-r from-transparent via-linear-muted/20 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-center"
+            aria-hidden="true"
+          ></div>
+        </div>
+
+        <!-- Pillar 2: NDA y Confidencialidad -->
+        <div class="pillar-card group relative p-6 sm:p-8 rounded-xl border border-linear-border bg-linear-charcoal/80 transition-all duration-500"
+             style="transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);">
+          <div class="flex items-start gap-4 sm:gap-5">
+            <!-- Icon -->
+            <div
+              class="relative flex items-center justify-center w-11 h-11 sm:w-12 sm:h-12 mt-1 shrink-0 rounded-lg bg-gradient-to-br from-white/[0.04] to-white/[0.01] border border-linear-border/60 group-hover:border-linear-muted/30 transition-colors duration-500"
+            >
+              <!-- Shield / document icon -->
+              <svg
+                class="w-5 h-5 sm:w-5.5 sm:h-5.5 text-linear-muted group-hover:text-linear-text transition-colors duration-500"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="1.5"
+                aria-hidden="true"
+              >
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+              </svg>
+
+              <!-- Hover glow ring -->
+              <div
+                class="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500 ring-1 ring-white/10 ring-offset-1 ring-offset-transparent"
+                aria-hidden="true"
+              ></div>
+            </div>
+
+            <!-- Content -->
+            <div class="min-w-0">
+              <h3
+                class="text-base sm:text-lg font-medium text-linear-text mb-2 transition-colors duration-500"
+                style="font-family: 'Space Grotesk', sans-serif;"
+              >
+                NDA y Confidencialidad
+              </h3>
+              <p class="text-xs sm:text-sm leading-relaxed text-neutral-400">
+                Firmamos acuerdos de confidencialidad que protegen tu relación con tus clientes. <strong class="text-linear-text font-medium">Tu cartera de clientes es sagrada.</strong>
+              </p>
+            </div>
+          </div>
+
+          <!-- Left border accent -->
+          <div
+            class="absolute left-0 top-4 bottom-4 w-0.5 bg-linear-muted/20 rounded-full scale-y-0 group-hover:scale-y-100 transition-transform duration-700 origin-top"
+            aria-hidden="true"
+          ></div>
+
+          <!-- Bottom accent line -->
+          <div
+            class="absolute bottom-0 left-[15%] right-[15%] h-px bg-gradient-to-r from-transparent via-linear-muted/20 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-center"
+            aria-hidden="true"
+          ></div>
+        </div>
+
+        <!-- Pillar 3: Sin Intermediación -->
+        <div class="pillar-card group relative p-6 sm:p-8 rounded-xl border border-linear-border bg-linear-charcoal/80 transition-all duration-500"
+             style="transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);">
+          <div class="flex items-start gap-4 sm:gap-5">
+            <!-- Icon -->
+            <div
+              class="relative flex items-center justify-center w-11 h-11 sm:w-12 sm:h-12 mt-1 shrink-0 rounded-lg bg-gradient-to-br from-white/[0.04] to-white/[0.01] border border-linear-border/60 group-hover:border-linear-muted/30 transition-colors duration-500"
+            >
+              <!-- Handshake / link-off icon -->
+              <svg
+                class="w-5 h-5 sm:w-5.5 sm:h-5.5 text-linear-muted group-hover:text-linear-text transition-colors duration-500"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="1.5"
+                aria-hidden="true"
+              >
+                <path stroke-linecap="round" stroke-linejoin="round" d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636" />
+              </svg>
+
+              <!-- Hover glow ring -->
+              <div
+                class="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500 ring-1 ring-white/10 ring-offset-1 ring-offset-transparent"
+                aria-hidden="true"
+              ></div>
+            </div>
+
+            <!-- Content -->
+            <div class="min-w-0">
+              <h3
+                class="text-base sm:text-lg font-medium text-linear-text mb-2 transition-colors duration-500"
+                style="font-family: 'Space Grotesk', sans-serif;"
+              >
+                Sin Intermediación
+              </h3>
+              <p class="text-xs sm:text-sm leading-relaxed text-neutral-400">
+                Nunca contactamos a tus clientes ni nos presentamos como proveedores. La relación comercial es siempre entre <strong class="text-linear-text font-medium">tu agencia y tu cliente.</strong>
+              </p>
+            </div>
+          </div>
+
+          <!-- Left border accent -->
+          <div
+            class="absolute left-0 top-4 bottom-4 w-0.5 bg-linear-muted/20 rounded-full scale-y-0 group-hover:scale-y-100 transition-transform duration-700 origin-top"
+            aria-hidden="true"
+          ></div>
+
+          <!-- Bottom accent line -->
+          <div
+            class="absolute bottom-0 left-[15%] right-[15%] h-px bg-gradient-to-r from-transparent via-linear-muted/20 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-center"
+            aria-hidden="true"
+          ></div>
+        </div>
+
+      </div>
+
+      <!-- ===== RIGHT COLUMN: NDA Seal (lg:col-span-2) ===== -->
+      <div class="lg:col-span-2 flex flex-col items-center justify-center pt-0 lg:pt-8">
+        <!-- NDA Seal / Badge -->
+        <div class="nda-seal group relative w-64 h-64 sm:w-72 sm:h-72 lg:w-80 lg:h-80">
+          <!-- Outer glow -->
+          <div
+            class="absolute inset-0 rounded-full bg-gradient-to-br from-white/[0.04] via-transparent to-white/[0.01] blur-2xl opacity-60 group-hover:opacity-100 transition-opacity duration-700"
+            aria-hidden="true"
+          ></div>
+
+          <!-- Main circle with gradient border -->
+          <div
+            class="relative w-full h-full rounded-full bg-linear-charcoal/90 backdrop-blur-sm border-2 border-transparent bg-clip-padding"
+            style="background-image: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.03), transparent 70%), linear-gradient(#08080c, #08080c); background-origin: border-box; background-clip: padding-box, border-box;"
+          >
+            <!-- Gradient border overlay -->
+            <div
+              class="absolute inset-0 rounded-full pointer-events-none"
+              style="background: linear-gradient(135deg, rgba(138,138,147,0.3), rgba(138,138,147,0.08), rgba(255,255,255,0.05)); -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); -webkit-mask-composite: xor; mask-composite: exclude; padding: 2px;"
+              aria-hidden="true"
+            ></div>
+
+            <!-- Inner content -->
+            <div class="absolute inset-0 flex flex-col items-center justify-center text-center p-8">
+              <!-- Decorative top arc lines -->
+              <div class="flex items-center gap-2 mb-4" aria-hidden="true">
+                <span class="block w-8 h-px bg-linear-muted/30"></span>
+                <span class="block w-2 h-2 rounded-full bg-linear-muted/40"></span>
+                <span class="block w-8 h-px bg-linear-muted/30"></span>
+              </div>
+
+              <!-- NDA text -->
+              <span
+                class="text-[clamp(2.5rem,5vw,3.5rem)] font-bold leading-none tracking-[-0.04em] text-linear-text select-none"
+                style="font-family: 'JetBrains Mono', monospace;"
+              >
+                NDA
+              </span>
+
+              <!-- Sub-label -->
+              <span
+                class="mt-2 text-[9px] font-label-md uppercase tracking-[0.2em] text-linear-muted/70"
+              >
+                Acuerdo de Confidencialidad
+              </span>
+
+              <!-- Decorative bottom arc lines -->
+              <div class="flex items-center gap-2 mt-4" aria-hidden="true">
+                <span class="block w-6 h-px bg-linear-muted/20"></span>
+                <span class="block w-1 h-1 rounded-full bg-linear-muted/30"></span>
+                <span class="block w-6 h-px bg-linear-muted/20"></span>
+              </div>
+            </div>
+
+            <!-- Hover ring glow -->
+            <div
+              class="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700 ring-1 ring-white/[0.08] ring-offset-4 ring-offset-transparent"
+              aria-hidden="true"
+            ></div>
+          </div>
+        </div>
+
+        <!-- Supporting text below seal -->
+        <p class="mt-6 text-xs sm:text-sm leading-relaxed text-neutral-400 text-center max-w-xs font-body-md">
+          Acuerdo de Confidencialidad incluido en <strong class="text-linear-text font-medium">todos los proyectos</strong>
+        </p>
+
+        <!-- Trust micro-text -->
+        <p class="mt-4 text-[9px] font-label-md uppercase tracking-[0.2em] text-linear-muted/40 text-center">
+          Protegemos tu relación con tus clientes
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom glow line -->
+  <div class="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/[0.06] to-transparent pointer-events-none" aria-hidden="true"></div>
+</section>
+
+<style>
+  /* Ensure Space Grotesk is applied for headings even before full CSS loads */
+  section h2,
+  section h3 {
+    font-family: 'Space Grotesk', sans-serif;
+  }
+
+  /* Pillar card hover lift */
+  .pillar-card {
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+                border-color 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+                box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .pillar-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(138, 138, 147, 0.3);
+    box-shadow: 0 12px 40px -8px rgba(255, 255, 255, 0.04);
+  }
+
+  /* NDA seal subtle pulse on hover */
+  .nda-seal {
+    transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .nda-seal:hover {
+    transform: scale(1.03);
+  }
+</style>

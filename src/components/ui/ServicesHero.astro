@@ -1,0 +1,84 @@
+---
+// src/components/ui/ServicesHero.astro
+// Hero Section for VortexLM /servicios page — showcasing technical capabilities as a white-label development partner
+// Self-contained component, no props, no external dependencies
+---
+
+<section
+  class="relative w-full min-h-[70vh] flex items-center justify-center overflow-hidden bg-[#000000]"
+  aria-label="Hero — Capacidades técnicas de desarrollo white label"
+>
+  <!-- Grid pattern overlay (Linear.app inspired) -->
+  <div
+    class="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.025)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.025)_1px,transparent_1px)] bg-[size:64px_64px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)] pointer-events-none"
+    aria-hidden="true"
+  ></div>
+
+  <!-- Subtle glow orb -->
+  <div
+    class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-gradient-to-b from-white/[0.04] via-white/[0.015] to-transparent rounded-full blur-3xl pointer-events-none"
+    aria-hidden="true"
+  ></div>
+
+  <!-- Secondary glow accent (bottom-right) -->
+  <div
+    class="absolute bottom-0 right-0 w-[400px] h-[400px] bg-gradient-to-tl from-white/[0.02] to-transparent rounded-full blur-3xl pointer-events-none"
+    aria-hidden="true"
+  ></div>
+
+  <!-- Content container -->
+  <div class="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-32 lg:py-40">
+    <div class="max-w-4xl mx-auto text-center">
+
+      <!-- Pill badge -->
+      <div class="flex items-center justify-center mb-8">
+        <span
+          class="inline-flex items-center gap-2 px-4 py-1.5 border border-linear-border rounded-full text-[10px] font-label-md uppercase tracking-[0.15em] text-linear-muted bg-linear-charcoal/60 backdrop-blur-sm"
+        >
+          <span class="w-1.5 h-1.5 rounded-full bg-linear-accent" aria-hidden="true"></span>
+          Capacidad Técnica
+        </span>
+      </div>
+
+      <!-- Heading -->
+      <h1
+        class="text-[clamp(2.25rem,5.5vw,4.5rem)] leading-[1.08] tracking-[-0.03em] font-light text-linear-text mb-6"
+        style="font-family: 'Space Grotesk', sans-serif;"
+      >
+        Servicios de desarrollo
+        <span class="block text-linear-muted">white label para tu agencia</span>
+      </h1>
+
+      <!-- Subheading -->
+      <p
+        class="max-w-2xl mx-auto text-sm sm:text-base leading-relaxed text-linear-muted font-body-md mb-10"
+      >
+        Desde frontend con tecnologías modernas hasta WordPress corporativo y automatizaciones complejas. Todo el desarrollo que necesitas, bajo tu marca.
+      </p>
+
+      <!-- Tech stack badges -->
+      <div class="flex flex-wrap justify-center gap-3 mt-8">
+        <span class="inline-flex items-center px-3 py-1 rounded-full border border-linear-border bg-linear-charcoal/30 text-xs font-label-md text-linear-muted">
+          Astro
+        </span>
+        <span class="inline-flex items-center px-3 py-1 rounded-full border border-linear-border bg-linear-charcoal/30 text-xs font-label-md text-linear-muted">
+          React / Next.js
+        </span>
+        <span class="inline-flex items-center px-3 py-1 rounded-full border border-linear-border bg-linear-charcoal/30 text-xs font-label-md text-linear-muted">
+          Tailwind CSS
+        </span>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Bottom glow line -->
+  <div class="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/[0.06] to-transparent pointer-events-none" aria-hidden="true"></div>
+</section>
+
+<style>
+  /* Ensure Space Grotesk is applied for the heading even before full CSS loads */
+  section h1 {
+    font-family: 'Space Grotesk', sans-serif;
+  }
+</style>

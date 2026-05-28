@@ -1,0 +1,308 @@
+---
+// src/components/ui/B2BExpandLinks.astro
+// "Explora más" — Card-style semantic expansion links for VortexLM B2B landing page
+// Self-contained component, no props, no external dependencies
+---
+
+<section
+  class="relative w-full overflow-hidden bg-black"
+  aria-label="Explora más sobre VortexLM"
+>
+  <!-- Subtle top border glow -->
+  <div
+    class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/[0.06] to-transparent pointer-events-none"
+    aria-hidden="true"
+  ></div>
+
+  <div class="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-28 lg:py-36">
+    <!-- Section header -->
+    <div class="text-center mb-16 sm:mb-20 lg:mb-24">
+      <!-- Pill / badge label -->
+      <div class="flex items-center justify-center mb-6">
+        <span
+          class="inline-flex items-center gap-2 px-4 py-1.5 border border-linear-border rounded-full text-[10px] font-label-md uppercase tracking-[0.15em] text-linear-muted bg-linear-charcoal/60 backdrop-blur-sm"
+        >
+          <span class="w-1.5 h-1.5 rounded-full bg-linear-muted/60" aria-hidden="true"></span>
+          Explora más
+        </span>
+      </div>
+
+      <h2
+        class="text-[clamp(1.75rem,4vw,3.25rem)] leading-[1.08] tracking-[-0.03em] font-light text-linear-text"
+        style="font-family: 'Space Grotesk', sans-serif;"
+      >
+        Todo lo que necesitas saber
+      </h2>
+
+      <p
+        class="max-w-2xl mx-auto mt-5 text-sm sm:text-base leading-relaxed text-neutral-400 font-body-md"
+      >
+        Descubre cómo funciona el modelo <strong class="text-linear-text font-medium">vCredits</strong>,
+        explora nuestros servicios y elige el plan ideal para tu agencia.
+      </p>
+    </div>
+
+    <!-- Cards grid -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
+      <!-- ===== CARD 1: ¿Cómo funciona? ===== -->
+      <a
+        href="/como-funciona"
+        rel="prefetch"
+        class="expand-card group relative flex flex-col p-8 sm:p-10 rounded-2xl border border-linear-border bg-linear-charcoal/80 transition-all duration-700"
+        style="transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);"
+      >
+        <!-- Icon container -->
+        <div
+          class="relative flex items-center justify-center w-14 h-14 mb-6 rounded-xl bg-gradient-to-br from-white/[0.04] to-white/[0.01] border border-linear-border/60 group-hover:border-linear-muted/30 transition-colors duration-500"
+        >
+          <!-- Play circle / arrow path icon -->
+          <svg
+            class="w-6 h-6 text-linear-muted group-hover:text-linear-text transition-colors duration-500"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="1.5"
+            aria-hidden="true"
+          >
+            <path stroke-linecap="round" stroke-linejoin="round" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+
+          <!-- Hover glow ring -->
+          <div
+            class="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 ring-1 ring-white/10 ring-offset-1 ring-offset-transparent"
+            aria-hidden="true"
+          ></div>
+        </div>
+
+        <!-- Title -->
+        <h3
+          class="text-lg sm:text-xl font-medium text-linear-text mb-3 transition-colors duration-500"
+          style="font-family: 'Space Grotesk', sans-serif;"
+        >
+          ¿Cómo funciona?
+        </h3>
+
+        <!-- Description -->
+        <p class="text-sm leading-relaxed text-neutral-400 flex-1 mb-6">
+          Descubre el proceso completo: desde la compra de <strong class="text-linear-text font-medium">vCredits</strong> hasta la entrega de tu proyecto.
+        </p>
+
+        <!-- Arrow indicator -->
+        <div class="flex items-center gap-2 mt-auto">
+          <span
+            class="text-[10px] font-label-md uppercase tracking-[0.15em] text-linear-muted/60 group-hover:text-linear-text transition-colors duration-500"
+          >
+            Ver más
+          </span>
+          <svg
+            class="w-4 h-4 text-linear-muted/60 group-hover:text-linear-text group-hover:translate-x-1 transition-all duration-500"
+            style="transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="2"
+            aria-hidden="true"
+          >
+            <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </div>
+
+        <!-- Bottom accent line -->
+        <div
+          class="absolute bottom-0 left-[15%] right-[15%] h-px bg-gradient-to-r from-transparent via-linear-muted/20 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-center"
+          aria-hidden="true"
+        ></div>
+      </a>
+
+      <!-- ===== CARD 2: Servicios ===== -->
+      <a
+        href="/servicios"
+        rel="prefetch"
+        class="expand-card group relative flex flex-col p-8 sm:p-10 rounded-2xl border border-linear-border bg-linear-charcoal/80 transition-all duration-700"
+        style="transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);"
+      >
+        <!-- Icon container -->
+        <div
+          class="relative flex items-center justify-center w-14 h-14 mb-6 rounded-xl bg-gradient-to-br from-white/[0.04] to-white/[0.01] border border-linear-border/60 group-hover:border-linear-muted/30 transition-colors duration-500"
+        >
+          <!-- Grid / layout / code icon -->
+          <svg
+            class="w-6 h-6 text-linear-muted group-hover:text-linear-text transition-colors duration-500"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="1.5"
+            aria-hidden="true"
+          >
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z" />
+          </svg>
+
+          <!-- Hover glow ring -->
+          <div
+            class="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 ring-1 ring-white/10 ring-offset-1 ring-offset-transparent"
+            aria-hidden="true"
+          ></div>
+        </div>
+
+        <!-- Title -->
+        <h3
+          class="text-lg sm:text-xl font-medium text-linear-text mb-3 transition-colors duration-500"
+          style="font-family: 'Space Grotesk', sans-serif;"
+        >
+          Servicios
+        </h3>
+
+        <!-- Description -->
+        <p class="text-sm leading-relaxed text-neutral-400 flex-1 mb-6">
+          Frontend, WordPress, APIs y más. Todo el desarrollo que tu agencia necesita, bajo tu marca.
+        </p>
+
+        <!-- Arrow indicator -->
+        <div class="flex items-center gap-2 mt-auto">
+          <span
+            class="text-[10px] font-label-md uppercase tracking-[0.15em] text-linear-muted/60 group-hover:text-linear-text transition-colors duration-500"
+          >
+            Ver más
+          </span>
+          <svg
+            class="w-4 h-4 text-linear-muted/60 group-hover:text-linear-text group-hover:translate-x-1 transition-all duration-500"
+            style="transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="2"
+            aria-hidden="true"
+          >
+            <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </div>
+
+        <!-- Bottom accent line -->
+        <div
+          class="absolute bottom-0 left-[15%] right-[15%] h-px bg-gradient-to-r from-transparent via-linear-muted/20 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-center"
+          aria-hidden="true"
+        ></div>
+      </a>
+
+      <!-- ===== CARD 3: Precios ===== -->
+      <a
+        href="/precios"
+        rel="prefetch"
+        class="expand-card group relative flex flex-col p-8 sm:p-10 rounded-2xl border border-linear-border bg-linear-charcoal/80 transition-all duration-700"
+        style="transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);"
+      >
+        <!-- Icon container -->
+        <div
+          class="relative flex items-center justify-center w-14 h-14 mb-6 rounded-xl bg-gradient-to-br from-white/[0.04] to-white/[0.01] border border-linear-border/60 group-hover:border-linear-muted/30 transition-colors duration-500"
+        >
+          <!-- Tag / chart / dollar icon -->
+          <svg
+            class="w-6 h-6 text-linear-muted group-hover:text-linear-text transition-colors duration-500"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="1.5"
+            aria-hidden="true"
+          >
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9.568 3H5.25A2.25 2.25 0 003 5.25v4.318c0 .597.237 1.17.659 1.591l9.581 9.581c.699.699 1.78.872 2.607.33a18.095 18.095 0 005.223-5.223c.542-.827.369-1.908-.33-2.607L11.16 3.66A2.25 2.25 0 009.568 3z" />
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 6h.008v.008H6V6z" />
+          </svg>
+
+          <!-- Hover glow ring -->
+          <div
+            class="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 ring-1 ring-white/10 ring-offset-1 ring-offset-transparent"
+            aria-hidden="true"
+          ></div>
+        </div>
+
+        <!-- Title -->
+        <h3
+          class="text-lg sm:text-xl font-medium text-linear-text mb-3 transition-colors duration-500"
+          style="font-family: 'Space Grotesk', sans-serif;"
+        >
+          Precios
+        </h3>
+
+        <!-- Description -->
+        <p class="text-sm leading-relaxed text-neutral-400 flex-1 mb-6">
+          Planes flexibles de <strong class="text-linear-text font-medium">vCredits</strong> adaptados al volumen de tu agencia. Sin sorpresas ni costes ocultos.
+        </p>
+
+        <!-- Arrow indicator -->
+        <div class="flex items-center gap-2 mt-auto">
+          <span
+            class="text-[10px] font-label-md uppercase tracking-[0.15em] text-linear-muted/60 group-hover:text-linear-text transition-colors duration-500"
+          >
+            Ver más
+          </span>
+          <svg
+            class="w-4 h-4 text-linear-muted/60 group-hover:text-linear-text group-hover:translate-x-1 transition-all duration-500"
+            style="transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="2"
+            aria-hidden="true"
+          >
+            <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </div>
+
+        <!-- Bottom accent line -->
+        <div
+          class="absolute bottom-0 left-[15%] right-[15%] h-px bg-gradient-to-r from-transparent via-linear-muted/20 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-center"
+          aria-hidden="true"
+        ></div>
+      </a>
+    </div>
+
+    <!-- Bottom CTA hint -->
+    <div class="mt-14 sm:mt-16 text-center">
+      <p class="text-[10px] font-label-md uppercase tracking-[0.15em] text-linear-muted/50">
+        Sin compromisos. Explora sin prisas.
+      </p>
+    </div>
+  </div>
+
+  <!-- Bottom border glow -->
+  <div
+    class="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/[0.06] to-transparent pointer-events-none"
+    aria-hidden="true"
+  ></div>
+</section>
+
+<style>
+  /* Card hover elevation */
+  .expand-card {
+    will-change: transform;
+  }
+
+  .expand-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(255, 255, 255, 0.08);
+    box-shadow:
+      0 20px 40px -12px rgba(0, 0, 0, 0.6),
+      0 0 0 1px rgba(255, 255, 255, 0.04) inset;
+    background: rgba(8, 8, 12, 0.95);
+  }
+
+  /* Smooth transition for all interactive elements */
+  .expand-card * {
+    transition-duration: 500ms;
+    transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  /* Responsive adjustments */
+  @media (min-width: 1024px) {
+    .expand-card {
+      min-height: 340px;
+    }
+  }
+
+  @media (max-width: 1023px) {
+    .expand-card {
+      min-height: auto;
+    }
+  }
+</style>

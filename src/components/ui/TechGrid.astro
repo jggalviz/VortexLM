@@ -1,0 +1,350 @@
+---
+// src/components/ui/TechGrid.astro
+// "Capacidades Técnicas" — 3 premium service cards for VortexLM /servicios page
+// Self-contained component, no props, no external dependencies
+---
+
+<section
+  class="relative w-full overflow-hidden bg-black"
+  aria-label="Capacidades — Tecnologías con las que trabajamos"
+>
+  <!-- Subtle top border glow -->
+  <div
+    class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/[0.06] to-transparent pointer-events-none"
+    aria-hidden="true"
+  ></div>
+
+  <div class="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-28 lg:py-36">
+    <!-- Section header -->
+    <div class="text-center mb-16 sm:mb-20 lg:mb-24">
+      <!-- Pill / badge label -->
+      <div class="flex items-center justify-center mb-6">
+        <span
+          class="inline-flex items-center gap-2 px-4 py-1.5 border border-linear-border rounded-full text-[10px] font-label-md uppercase tracking-[0.15em] text-linear-muted bg-linear-charcoal/60 backdrop-blur-sm"
+        >
+          <span class="w-1.5 h-1.5 rounded-full bg-linear-muted/60" aria-hidden="true"></span>
+          Capacidades
+        </span>
+      </div>
+
+      <h2
+        class="text-[clamp(1.75rem,4vw,3.25rem)] leading-[1.08] tracking-[-0.03em] font-light text-linear-text"
+        style="font-family: 'Space Grotesk', sans-serif;"
+      >
+        Tecnologías con las que trabajamos
+      </h2>
+
+      <p
+        class="max-w-2xl mx-auto mt-5 text-sm sm:text-base leading-relaxed text-neutral-400 font-body-md"
+      >
+        Stack moderno, rendimiento extremo y código limpio.
+        <strong class="text-linear-text font-medium">Sin builders pesados, sin atajos.</strong>
+      </p>
+    </div>
+
+    <!-- ===== CARDS STACK (single-column, full-width layout) ===== -->
+    <div class="space-y-8 lg:space-y-10">
+
+      <!-- ============================================================ -->
+      <!-- BLOCK 1: Frontend Engineering de Alto Rendimiento             -->
+      <!-- Accent: blue/indigo                                          -->
+      <!-- ============================================================ -->
+      <div class="group relative p-6 sm:p-8 lg:p-10 rounded-2xl border border-linear-border bg-linear-charcoal/80 transition-all duration-500" style="transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);">
+        <!-- Left colored accent bar (desktop) -->
+        <div class="absolute left-0 top-4 bottom-4 w-0.5 rounded-full bg-gradient-to-b from-blue-500/60 via-blue-400/30 to-transparent opacity-60 group-hover:opacity-100 transition-opacity duration-500 hidden sm:block" aria-hidden="true"></div>
+
+        <!-- Top colored accent line (mobile) -->
+        <div class="absolute top-0 left-4 right-4 h-0.5 rounded-full bg-gradient-to-r from-blue-500/60 via-blue-400/30 to-transparent opacity-60 group-hover:opacity-100 transition-opacity duration-500 sm:hidden" aria-hidden="true"></div>
+
+        <div class="flex flex-col lg:flex-row lg:items-start gap-6 lg:gap-10">
+          <!-- Left: Icon + Title + Description -->
+          <div class="flex-1 min-w-0">
+            <div class="flex items-start gap-4 mb-4">
+              <!-- Icon container -->
+              <div
+                class="relative flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 shrink-0 rounded-xl bg-gradient-to-br from-blue-500/[0.08] to-blue-500/[0.02] border border-blue-500/20 group-hover:border-blue-400/40 transition-colors duration-500"
+              >
+                <!-- Code / layout SVG icon -->
+                <svg class="w-6 h-6 sm:w-7 sm:h-7 text-blue-400/80 group-hover:text-blue-300 transition-colors duration-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5" />
+                </svg>
+
+                <!-- Hover glow ring -->
+                <div
+                  class="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 ring-1 ring-blue-400/20 ring-offset-1 ring-offset-transparent"
+                  aria-hidden="true"
+                ></div>
+              </div>
+
+              <div class="min-w-0 pt-1">
+                <h3
+                  class="text-lg sm:text-xl font-medium text-linear-text mb-1.5 transition-colors duration-500"
+                  style="font-family: 'Space Grotesk', sans-serif;"
+                >
+                  Frontend Engineering de Alto Rendimiento
+                </h3>
+                <p class="text-sm leading-relaxed text-neutral-400">
+                  Construimos interfaces modernas con Astro, React, Next.js y Tailwind CSS. Optimización nativa para lograr 100/100 en Google PageSpeed, Core Web Vitals perfectos y experiencia de usuario impecable.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Tech tags + Features -->
+          <div class="lg:w-[340px] xl:w-[380px] shrink-0 space-y-5">
+            <!-- Tech tags -->
+            <div class="flex flex-wrap gap-2">
+              <span class="inline-flex items-center px-3 py-1 rounded-full border border-linear-border bg-linear-charcoal/30 text-xs font-label-md text-linear-muted">Astro</span>
+              <span class="inline-flex items-center px-3 py-1 rounded-full border border-linear-border bg-linear-charcoal/30 text-xs font-label-md text-linear-muted">React</span>
+              <span class="inline-flex items-center px-3 py-1 rounded-full border border-linear-border bg-linear-charcoal/30 text-xs font-label-md text-linear-muted">Next.js</span>
+              <span class="inline-flex items-center px-3 py-1 rounded-full border border-linear-border bg-linear-charcoal/30 text-xs font-label-md text-linear-muted">Tailwind CSS</span>
+              <span class="inline-flex items-center px-3 py-1 rounded-full border border-linear-border bg-linear-charcoal/30 text-xs font-label-md text-linear-muted">TypeScript</span>
+            </div>
+
+            <!-- Feature list -->
+            <ul class="space-y-2">
+              <li class="flex items-center gap-2.5 text-xs text-neutral-400">
+                <svg class="w-3.5 h-3.5 shrink-0 text-blue-400/70" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span>SSR / SSG / ISR según necesidad</span>
+              </li>
+              <li class="flex items-center gap-2.5 text-xs text-neutral-400">
+                <svg class="w-3.5 h-3.5 shrink-0 text-blue-400/70" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span>Lazy loading nativo</span>
+              </li>
+              <li class="flex items-center gap-2.5 text-xs text-neutral-400">
+                <svg class="w-3.5 h-3.5 shrink-0 text-blue-400/70" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span>Imágenes optimizadas automáticas</span>
+              </li>
+              <li class="flex items-center gap-2.5 text-xs text-neutral-400">
+                <svg class="w-3.5 h-3.5 shrink-0 text-blue-400/70" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span>SEO técnico integrado</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Bottom accent line (hover effect) -->
+        <div
+          class="absolute bottom-0 left-[10%] right-[10%] h-px bg-gradient-to-r from-transparent via-blue-400/20 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-center"
+          aria-hidden="true"
+        ></div>
+      </div>
+
+      <!-- ============================================================ -->
+      <!-- BLOCK 2: WordPress Corporativo sin Bloat                     -->
+      <!-- Accent: emerald/green                                        -->
+      <!-- ============================================================ -->
+      <div class="group relative p-6 sm:p-8 lg:p-10 rounded-2xl border border-linear-border bg-linear-charcoal/80 transition-all duration-500" style="transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);">
+        <!-- Left colored accent bar (desktop) -->
+        <div class="absolute left-0 top-4 bottom-4 w-0.5 rounded-full bg-gradient-to-b from-emerald-500/60 via-emerald-400/30 to-transparent opacity-60 group-hover:opacity-100 transition-opacity duration-500 hidden sm:block" aria-hidden="true"></div>
+
+        <!-- Top colored accent line (mobile) -->
+        <div class="absolute top-0 left-4 right-4 h-0.5 rounded-full bg-gradient-to-r from-emerald-500/60 via-emerald-400/30 to-transparent opacity-60 group-hover:opacity-100 transition-opacity duration-500 sm:hidden" aria-hidden="true"></div>
+
+        <div class="flex flex-col lg:flex-row lg:items-start gap-6 lg:gap-10">
+          <!-- Left: Icon + Title + Description -->
+          <div class="flex-1 min-w-0">
+            <div class="flex items-start gap-4 mb-4">
+              <!-- Icon container -->
+              <div
+                class="relative flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 shrink-0 rounded-xl bg-gradient-to-br from-emerald-500/[0.08] to-emerald-500/[0.02] border border-emerald-500/20 group-hover:border-emerald-400/40 transition-colors duration-500"
+              >
+                <!-- WordPress / WWW SVG icon -->
+                <svg class="w-6 h-6 sm:w-7 sm:h-7 text-emerald-400/80 group-hover:text-emerald-300 transition-colors duration-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418" />
+                </svg>
+
+                <!-- Hover glow ring -->
+                <div
+                  class="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 ring-1 ring-emerald-400/20 ring-offset-1 ring-offset-transparent"
+                  aria-hidden="true"
+                ></div>
+              </div>
+
+              <div class="min-w-0 pt-1">
+                <h3
+                  class="text-lg sm:text-xl font-medium text-linear-text mb-1.5 transition-colors duration-500"
+                  style="font-family: 'Space Grotesk', sans-serif;"
+                >
+                  WordPress Corporativo sin Bloat
+                </h3>
+                <p class="text-sm leading-relaxed text-neutral-400">
+                  Desarrollo limpio a medida mediante bloques nativos o código personalizado. Excluimos estrictamente builders pesados (Elementor, Divi, WPBakery) para asegurar velocidad atómica, SEO limpio y facilidad de mantenimiento.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Tech tags + Features -->
+          <div class="lg:w-[340px] xl:w-[380px] shrink-0 space-y-5">
+            <!-- Tech tags -->
+            <div class="flex flex-wrap gap-2">
+              <span class="inline-flex items-center px-3 py-1 rounded-full border border-linear-border bg-linear-charcoal/30 text-xs font-label-md text-linear-muted">WordPress</span>
+              <span class="inline-flex items-center px-3 py-1 rounded-full border border-linear-border bg-linear-charcoal/30 text-xs font-label-md text-linear-muted">WooCommerce</span>
+              <span class="inline-flex items-center px-3 py-1 rounded-full border border-linear-border bg-linear-charcoal/30 text-xs font-label-md text-linear-muted">ACF</span>
+              <span class="inline-flex items-center px-3 py-1 rounded-full border border-linear-border bg-linear-charcoal/30 text-xs font-label-md text-linear-muted">Gutenberg</span>
+              <span class="inline-flex items-center px-3 py-1 rounded-full border border-linear-border bg-linear-charcoal/30 text-xs font-label-md text-linear-muted">PHP 8+</span>
+            </div>
+
+            <!-- Feature list -->
+            <ul class="space-y-2">
+              <li class="flex items-center gap-2.5 text-xs text-neutral-400">
+                <svg class="w-3.5 h-3.5 shrink-0 text-emerald-400/70" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span>Bloques Gutenberg nativos</span>
+              </li>
+              <li class="flex items-center gap-2.5 text-xs text-neutral-400">
+                <svg class="w-3.5 h-3.5 shrink-0 text-emerald-400/70" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span>Sin page builders</span>
+              </li>
+              <li class="flex items-center gap-2.5 text-xs text-neutral-400">
+                <svg class="w-3.5 h-3.5 shrink-0 text-emerald-400/70" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span>WooCommerce headless</span>
+              </li>
+              <li class="flex items-center gap-2.5 text-xs text-neutral-400">
+                <svg class="w-3.5 h-3.5 shrink-0 text-emerald-400/70" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span>Rendimiento 95+ PageSpeed</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Bottom accent line (hover effect) -->
+        <div
+          class="absolute bottom-0 left-[10%] right-[10%] h-px bg-gradient-to-r from-transparent via-emerald-400/20 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-center"
+          aria-hidden="true"
+        ></div>
+      </div>
+
+      <!-- ============================================================ -->
+      <!-- BLOCK 3: Automatizaciones e Integración de Datos              -->
+      <!-- Accent: violet/purple                                        -->
+      <!-- ============================================================ -->
+      <div class="group relative p-6 sm:p-8 lg:p-10 rounded-2xl border border-linear-border bg-linear-charcoal/80 transition-all duration-500" style="transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);">
+        <!-- Left colored accent bar (desktop) -->
+        <div class="absolute left-0 top-4 bottom-4 w-0.5 rounded-full bg-gradient-to-b from-violet-500/60 via-violet-400/30 to-transparent opacity-60 group-hover:opacity-100 transition-opacity duration-500 hidden sm:block" aria-hidden="true"></div>
+
+        <!-- Top colored accent line (mobile) -->
+        <div class="absolute top-0 left-4 right-4 h-0.5 rounded-full bg-gradient-to-r from-violet-500/60 via-violet-400/30 to-transparent opacity-60 group-hover:opacity-100 transition-opacity duration-500 sm:hidden" aria-hidden="true"></div>
+
+        <div class="flex flex-col lg:flex-row lg:items-start gap-6 lg:gap-10">
+          <!-- Left: Icon + Title + Description -->
+          <div class="flex-1 min-w-0">
+            <div class="flex items-start gap-4 mb-4">
+              <!-- Icon container -->
+              <div
+                class="relative flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 shrink-0 rounded-xl bg-gradient-to-br from-violet-500/[0.08] to-violet-500/[0.02] border border-violet-500/20 group-hover:border-violet-400/40 transition-colors duration-500"
+              >
+                <!-- Automation / gears SVG icon -->
+                <svg class="w-6 h-6 sm:w-7 sm:h-7 text-violet-400/80 group-hover:text-violet-300 transition-colors duration-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12a7.5 7.5 0 0015 0m-15 0a7.5 7.5 0 1115 0m-15 0H3m16.5 0H21m-1.5 0H12m-8.457 3.077l1.41-.513m14.095-5.13l1.41-.513M5.106 17.785l1.15-.964m11.49-9.642l1.149-.964M7.501 19.795l.75-1.3m7.5-12.99l.75-1.3m-6.063 16.658l.26-1.477m2.605-14.772l.26-1.477m0 17.726l-.26-1.477M10.698 4.614l-.26-1.477M16.5 19.794l-.75-1.299M7.5 4.205L12 12m6.894 5.785l-1.149-.964M6.256 7.178l-1.15-.964m15.352 8.864l-1.41-.513M4.954 9.435l-1.41-.514M12.002 12l-3.75 6.495" />
+                </svg>
+
+                <!-- Hover glow ring -->
+                <div
+                  class="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 ring-1 ring-violet-400/20 ring-offset-1 ring-offset-transparent"
+                  aria-hidden="true"
+                ></div>
+              </div>
+
+              <div class="min-w-0 pt-1">
+                <h3
+                  class="text-lg sm:text-xl font-medium text-linear-text mb-1.5 transition-colors duration-500"
+                  style="font-family: 'Space Grotesk', sans-serif;"
+                >
+                  Automatizaciones e Integración de Datos
+                </h3>
+                <p class="text-sm leading-relaxed text-neutral-400">
+                  Conexión avanzada de Webhooks, APIs personalizadas, flujos comerciales automáticos, pasarelas de pago y manipulación eficiente de bases de datos. Transformamos procesos manuales en pipelines automatizados.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Tech tags + Features -->
+          <div class="lg:w-[340px] xl:w-[380px] shrink-0 space-y-5">
+            <!-- Tech tags -->
+            <div class="flex flex-wrap gap-2">
+              <span class="inline-flex items-center px-3 py-1 rounded-full border border-linear-border bg-linear-charcoal/30 text-xs font-label-md text-linear-muted">Webhooks</span>
+              <span class="inline-flex items-center px-3 py-1 rounded-full border border-linear-border bg-linear-charcoal/30 text-xs font-label-md text-linear-muted">REST APIs</span>
+              <span class="inline-flex items-center px-3 py-1 rounded-full border border-linear-border bg-linear-charcoal/30 text-xs font-label-md text-linear-muted">GraphQL</span>
+              <span class="inline-flex items-center px-3 py-1 rounded-full border border-linear-border bg-linear-charcoal/30 text-xs font-label-md text-linear-muted">Node.js</span>
+              <span class="inline-flex items-center px-3 py-1 rounded-full border border-linear-border bg-linear-charcoal/30 text-xs font-label-md text-linear-muted">Python</span>
+            </div>
+
+            <!-- Feature list -->
+            <ul class="space-y-2">
+              <li class="flex items-center gap-2.5 text-xs text-neutral-400">
+                <svg class="w-3.5 h-3.5 shrink-0 text-violet-400/70" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span>APIs RESTful y GraphQL</span>
+              </li>
+              <li class="flex items-center gap-2.5 text-xs text-neutral-400">
+                <svg class="w-3.5 h-3.5 shrink-0 text-violet-400/70" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span>Webhooks en tiempo real</span>
+              </li>
+              <li class="flex items-center gap-2.5 text-xs text-neutral-400">
+                <svg class="w-3.5 h-3.5 shrink-0 text-violet-400/70" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span>Pasarelas de pago (Stripe, PayPal)</span>
+              </li>
+              <li class="flex items-center gap-2.5 text-xs text-neutral-400">
+                <svg class="w-3.5 h-3.5 shrink-0 text-violet-400/70" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span>ETL y scraping eficiente</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Bottom accent line (hover effect) -->
+        <div
+          class="absolute bottom-0 left-[10%] right-[10%] h-px bg-gradient-to-r from-transparent via-violet-400/20 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-center"
+          aria-hidden="true"
+        ></div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Bottom glow line -->
+  <div class="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/[0.06] to-transparent pointer-events-none" aria-hidden="true"></div>
+</section>
+
+<style>
+  /* Ensure Space Grotesk is applied for headings */
+  section h2,
+  section h3 {
+    font-family: 'Space Grotesk', sans-serif;
+  }
+
+  /* Smooth hover lift */
+  .group {
+    will-change: transform;
+  }
+
+  .group:hover {
+    transform: translateY(-6px);
+    border-color: rgba(255, 255, 255, 0.08);
+  }
+</style>

@@ -1,0 +1,347 @@
+---
+// src/components/ui/TransparencyTracking.astro
+// "Transparencia Total" section for the /como-funciona page
+// Explains the hour-per-task tracking system with 3 feature cards
+// Self-contained component, no props, no external dependencies
+---
+
+<section
+  class="relative w-full overflow-hidden bg-black"
+  aria-label="Transparencia Total — Sistema de seguimiento por tarea"
+>
+  <!-- Subtle top border glow -->
+  <div
+    class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/[0.06] to-transparent pointer-events-none"
+    aria-hidden="true"
+  ></div>
+
+  <div class="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-28 lg:py-36">
+    <!-- Section header -->
+    <div class="text-center mb-16 sm:mb-20 lg:mb-24">
+      <!-- Pill / badge label -->
+      <div class="flex items-center justify-center mb-6">
+        <span
+          class="inline-flex items-center gap-2 px-4 py-1.5 border border-linear-border rounded-full text-[10px] font-label-md uppercase tracking-[0.15em] text-linear-muted bg-linear-charcoal/60 backdrop-blur-sm"
+        >
+          <span class="w-1.5 h-1.5 rounded-full bg-linear-muted/60" aria-hidden="true"></span>
+          Transparencia
+        </span>
+      </div>
+
+      <h2
+        class="text-[clamp(1.75rem,4vw,3.25rem)] leading-[1.08] tracking-[-0.03em] font-light text-linear-text"
+        style="font-family: 'Space Grotesk', sans-serif;"
+      >
+        Transparencia
+        <span class="text-linear-muted">Total</span>
+      </h2>
+
+      <p
+        class="max-w-2xl mx-auto mt-5 text-sm sm:text-base leading-relaxed text-neutral-400 font-body-md"
+      >
+        Cada minuto de desarrollo está registrado y visible.
+        <strong class="text-linear-text font-medium">Sin sorpresas en tu factura.</strong>
+      </p>
+    </div>
+
+    <!-- Feature cards grid -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-6 xl:gap-10">
+      <!-- ===== CARD 1: Tiempo Real ===== -->
+      <div class="tracking-card group relative flex flex-col p-8 sm:p-10 rounded-2xl border border-linear-border bg-linear-charcoal/80 transition-all duration-500">
+        <!-- Icon container -->
+        <div
+          class="relative flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 mb-6 rounded-xl bg-gradient-to-br from-white/[0.04] to-white/[0.01] border border-linear-border/60 group-hover:border-linear-muted/30 transition-colors duration-500"
+        >
+          <!-- Clock / timer icon -->
+          <svg
+            class="w-6 h-6 sm:w-7 sm:h-7 text-linear-muted group-hover:text-linear-text transition-colors duration-500"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="1.5"
+            aria-hidden="true"
+          >
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+
+          <!-- Hover glow ring -->
+          <div
+            class="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 ring-1 ring-white/10 ring-offset-1 ring-offset-transparent"
+            aria-hidden="true"
+          ></div>
+        </div>
+
+        <!-- Title -->
+        <h3
+          class="text-lg sm:text-xl font-medium text-linear-text mb-3 transition-colors duration-500"
+          style="font-family: 'Space Grotesk', sans-serif;"
+        >
+          Tiempo Real
+        </h3>
+
+        <!-- Description -->
+        <p class="text-sm leading-relaxed text-neutral-400 mb-6">
+          Cada tarea registra el tiempo exacto de desarrollo. Consulta el progreso en vivo desde tu dashboard.
+        </p>
+
+        <!-- Mini visual widget: Progress bar -->
+        <div class="mt-auto p-4 rounded-xl bg-white/[0.03] border border-white/[0.06]">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-[10px] font-label-md uppercase tracking-[0.1em] text-neutral-500">Progreso actual</span>
+            <span class="text-[11px] font-label-md text-linear-muted">2.4h / 5h estimadas</span>
+          </div>
+          <!-- Progress bar track -->
+          <div class="relative w-full h-2 rounded-full bg-white/[0.06] overflow-hidden">
+            <!-- Animated gradient fill -->
+            <div
+              class="progress-fill h-full rounded-full"
+              style="width: 48%;"
+            ></div>
+          </div>
+          <div class="flex items-center justify-between mt-2">
+            <span class="text-[9px] font-label-md uppercase tracking-[0.1em] text-neutral-600">Iniciado</span>
+            <span class="text-[9px] font-label-md uppercase tracking-[0.1em] text-neutral-600">Completado</span>
+          </div>
+          <!-- Live indicator -->
+          <div class="flex items-center gap-1.5 mt-3 pt-3 border-t border-white/[0.04]">
+            <span class="relative flex h-2 w-2">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+            </span>
+            <span class="text-[9px] font-label-md uppercase tracking-[0.1em] text-emerald-400/80">Seguimiento activo</span>
+          </div>
+        </div>
+
+        <!-- Bottom accent line -->
+        <div
+          class="absolute bottom-0 left-[15%] right-[15%] h-px bg-gradient-to-r from-transparent via-linear-muted/20 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-center"
+          aria-hidden="true"
+        ></div>
+      </div>
+
+      <!-- ===== CARD 2: Desglose por Tarea ===== -->
+      <div class="tracking-card group relative flex flex-col p-8 sm:p-10 rounded-2xl border border-linear-border bg-linear-charcoal/80 transition-all duration-500">
+        <!-- Icon container -->
+        <div
+          class="relative flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 mb-6 rounded-xl bg-gradient-to-br from-white/[0.04] to-white/[0.01] border border-linear-border/60 group-hover:border-linear-muted/30 transition-colors duration-500"
+        >
+          <!-- List / breakdown icon -->
+          <svg
+            class="w-6 h-6 sm:w-7 sm:h-7 text-linear-muted group-hover:text-linear-text transition-colors duration-500"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="1.5"
+            aria-hidden="true"
+          >
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
+          </svg>
+
+          <!-- Hover glow ring -->
+          <div
+            class="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 ring-1 ring-white/10 ring-offset-1 ring-offset-transparent"
+            aria-hidden="true"
+          ></div>
+        </div>
+
+        <!-- Title -->
+        <h3
+          class="text-lg sm:text-xl font-medium text-linear-text mb-3 transition-colors duration-500"
+          style="font-family: 'Space Grotesk', sans-serif;"
+        >
+          Desglose por Tarea
+        </h3>
+
+        <!-- Description -->
+        <p class="text-sm leading-relaxed text-neutral-400 mb-6">
+          Visualiza el coste de cada tarea individual: horas invertidas, vCredits consumidos y desarrollador asignado.
+        </p>
+
+        <!-- Mini visual widget: Mini table -->
+        <div class="mt-auto p-4 rounded-xl bg-white/[0.03] border border-white/[0.06]">
+          <!-- Table header -->
+          <div class="grid grid-cols-[1fr_auto_auto] gap-x-3 gap-y-0 text-[9px] font-label-md uppercase tracking-[0.1em] text-neutral-600 pb-2 mb-2 border-b border-white/[0.04]">
+            <span>Tarea</span>
+            <span>Horas</span>
+            <span>vCredits</span>
+          </div>
+          <!-- Table rows -->
+          <div class="space-y-1.5">
+            <div class="grid grid-cols-[1fr_auto_auto] gap-x-3 gap-y-0 text-[11px] font-body-md text-neutral-400">
+              <span class="truncate text-neutral-300">Header responsive</span>
+              <span class="font-label-md text-linear-muted">3.2h</span>
+              <span class="font-label-md text-linear-muted">3.2</span>
+            </div>
+            <div class="grid grid-cols-[1fr_auto_auto] gap-x-3 gap-y-0 text-[11px] font-body-md text-neutral-400">
+              <span class="truncate text-neutral-300">API integración</span>
+              <span class="font-label-md text-linear-muted">5.8h</span>
+              <span class="font-label-md text-linear-muted">5.8</span>
+            </div>
+            <div class="grid grid-cols-[1fr_auto_auto] gap-x-3 gap-y-0 text-[11px] font-body-md text-neutral-400">
+              <span class="truncate text-neutral-300">SEO optimización</span>
+              <span class="font-label-md text-linear-muted">2.1h</span>
+              <span class="font-label-md text-linear-muted">2.1</span>
+            </div>
+          </div>
+          <!-- Total row -->
+          <div class="grid grid-cols-[1fr_auto_auto] gap-x-3 gap-y-0 text-[11px] font-label-md text-linear-text pt-2 mt-2 border-t border-white/[0.04]">
+            <span>Total</span>
+            <span>11.1h</span>
+            <span>11.1</span>
+          </div>
+        </div>
+
+        <!-- Bottom accent line -->
+        <div
+          class="absolute bottom-0 left-[15%] right-[15%] h-px bg-gradient-to-r from-transparent via-linear-muted/20 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-center"
+          aria-hidden="true"
+        ></div>
+      </div>
+
+      <!-- ===== CARD 3: Notificaciones Automáticas ===== -->
+      <div class="tracking-card group relative flex flex-col p-8 sm:p-10 rounded-2xl border border-linear-border bg-linear-charcoal/80 transition-all duration-500">
+        <!-- Icon container -->
+        <div
+          class="relative flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 mb-6 rounded-xl bg-gradient-to-br from-white/[0.04] to-white/[0.01] border border-linear-border/60 group-hover:border-linear-muted/30 transition-colors duration-500"
+        >
+          <!-- Bell / notification icon -->
+          <svg
+            class="w-6 h-6 sm:w-7 sm:h-7 text-linear-muted group-hover:text-linear-text transition-colors duration-500"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="1.5"
+            aria-hidden="true"
+          >
+            <path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0" />
+          </svg>
+
+          <!-- Hover glow ring -->
+          <div
+            class="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 ring-1 ring-white/10 ring-offset-1 ring-offset-transparent"
+            aria-hidden="true"
+          ></div>
+        </div>
+
+        <!-- Title -->
+        <h3
+          class="text-lg sm:text-xl font-medium text-linear-text mb-3 transition-colors duration-500"
+          style="font-family: 'Space Grotesk', sans-serif;"
+        >
+          Notificaciones Automáticas
+        </h3>
+
+        <!-- Description -->
+        <p class="text-sm leading-relaxed text-neutral-400 mb-6">
+          Recibe alertas cuando un proyecto completa un hito o cuando el saldo de vCredits está próximo a agotarse.
+        </p>
+
+        <!-- Mini visual widget: Notification cards -->
+        <div class="mt-auto space-y-2.5">
+          <!-- Notification 1: Milestone -->
+          <div class="p-3 rounded-xl bg-white/[0.03] border border-white/[0.06] flex items-start gap-3">
+            <div class="w-7 h-7 rounded-lg bg-emerald-950/50 border border-emerald-900/30 flex items-center justify-center shrink-0 mt-0.5">
+              <svg class="w-3.5 h-3.5 text-emerald-400/80" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <div class="min-w-0">
+              <p class="text-[11px] font-medium text-neutral-200 leading-snug">Hito completado</p>
+              <p class="text-[10px] text-neutral-500 leading-snug mt-0.5">Dashboard — Fase 1 finalizada</p>
+              <span class="inline-block mt-1 text-[8px] font-label-md uppercase tracking-[0.1em] text-emerald-400/60">Hace 2 min</span>
+            </div>
+          </div>
+
+          <!-- Notification 2: Low balance -->
+          <div class="p-3 rounded-xl bg-white/[0.03] border border-white/[0.06] flex items-start gap-3">
+            <div class="w-7 h-7 rounded-lg bg-amber-950/50 border border-amber-900/30 flex items-center justify-center shrink-0 mt-0.5">
+              <svg class="w-3.5 h-3.5 text-amber-400/80" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <div class="min-w-0">
+              <p class="text-[11px] font-medium text-neutral-200 leading-snug">Saldo bajo</p>
+              <p class="text-[10px] text-neutral-500 leading-snug mt-0.5">Quedan 12 vCredits disponibles</p>
+              <span class="inline-block mt-1 text-[8px] font-label-md uppercase tracking-[0.1em] text-amber-400/60">Hace 15 min</span>
+            </div>
+          </div>
+
+          <!-- Notification 3: Task assigned -->
+          <div class="p-3 rounded-xl bg-white/[0.03] border border-white/[0.06] flex items-start gap-3">
+            <div class="w-7 h-7 rounded-lg bg-blue-950/50 border border-blue-900/30 flex items-center justify-center shrink-0 mt-0.5">
+              <svg class="w-3.5 h-3.5 text-blue-400/80" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+              </svg>
+            </div>
+            <div class="min-w-0">
+              <p class="text-[11px] font-medium text-neutral-200 leading-snug">Nueva tarea asignada</p>
+              <p class="text-[10px] text-neutral-500 leading-snug mt-0.5">"Footer responsive" — Frontend</p>
+              <span class="inline-block mt-1 text-[8px] font-label-md uppercase tracking-[0.1em] text-blue-400/60">Hace 1 h</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom accent line -->
+        <div
+          class="absolute bottom-0 left-[15%] right-[15%] h-px bg-gradient-to-r from-transparent via-linear-muted/20 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-center"
+          aria-hidden="true"
+        ></div>
+      </div>
+    </div>
+
+    <!-- Bottom CTA hint -->
+    <div class="mt-14 sm:mt-16 text-center">
+      <p class="text-[10px] font-label-md uppercase tracking-[0.15em] text-linear-muted/50">
+        Control total. Sin incertidumbre. Resultados medibles.
+      </p>
+    </div>
+  </div>
+
+  <!-- Bottom border glow -->
+  <div
+    class="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/[0.06] to-transparent pointer-events-none"
+    aria-hidden="true"
+  ></div>
+</section>
+
+<style>
+  /* Card hover elevation */
+  .tracking-card {
+    will-change: transform;
+  }
+
+  .tracking-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(255, 255, 255, 0.08);
+    box-shadow:
+      0 20px 40px -12px rgba(0, 0, 0, 0.6),
+      0 0 0 1px rgba(255, 255, 255, 0.04) inset;
+    background: rgba(8, 8, 12, 0.95);
+  }
+
+  /* Progress bar gradient fill */
+  .progress-fill {
+    background: linear-gradient(90deg, #a78bfa, #34d399);
+    transition: width 1s ease;
+  }
+
+  /* Smooth transition for all interactive elements */
+  .tracking-card * {
+    transition-duration: 500ms;
+    transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  /* Responsive adjustments */
+  @media (min-width: 1024px) {
+    .tracking-card {
+      min-height: 480px;
+    }
+  }
+
+  @media (max-width: 1023px) {
+    .tracking-card {
+      min-height: auto;
+    }
+  }
+</style>

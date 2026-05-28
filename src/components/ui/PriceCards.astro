@@ -1,0 +1,333 @@
+---
+// src/components/ui/PriceCards.astro
+// Pricing cards section for VortexLM /precios page — 3 vCredits packs (Starter, Growth, Scale)
+// Self-contained component, no props, no external dependencies
+---
+
+<section
+  class="relative w-full overflow-hidden bg-black"
+  aria-label="Paquetes de vCredits — Starter, Growth y Scale"
+>
+  <!-- Subtle top border glow -->
+  <div
+    class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/[0.06] to-transparent pointer-events-none"
+    aria-hidden="true"
+  ></div>
+
+  <div class="relative">
+    <div
+      class="absolute inset-0 bg-gradient-to-b from-white/[0.02] to-transparent pointer-events-none"
+      aria-hidden="true"
+    ></div>
+
+    <div class="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-32">
+      <!-- Section header -->
+      <div class="text-center mb-16 sm:mb-20">
+        <!-- Pill badge -->
+        <div class="flex justify-center mb-6">
+          <span
+            class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-linear-border bg-linear-charcoal/50 backdrop-blur-sm text-xs font-label-md tracking-wider uppercase text-linear-muted"
+          >
+            <span class="w-1.5 h-1.5 rounded-full bg-linear-accent"></span>
+            PAQUETES
+          </span>
+        </div>
+
+        <h2
+          class="text-center font-heading text-[clamp(1.75rem,4vw,3.25rem)] font-light tracking-tight text-white leading-[1.1] mb-4"
+          style="font-family: 'Space Grotesk', sans-serif;"
+        >
+          Elige tu pack de <span class="text-linear-accent">vCredits</span>
+        </h2>
+
+        <p
+          class="text-center text-neutral-400 font-body-md max-w-2xl mx-auto mb-16"
+        >
+          Compra créditos y consúmelos cuando necesites. El saldo no caduca.
+        </p>
+      </div>
+
+      <!-- Pricing cards grid -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-6 xl:gap-8 max-w-6xl mx-auto items-stretch">
+        <!-- ===== CARD 1: Pack Starter ===== -->
+        <div class="price-card group relative flex flex-col p-8 rounded-xl border border-linear-border bg-linear-charcoal/80 transition-all duration-500">
+          <!-- Plan name -->
+          <h3
+            class="text-xl font-medium text-linear-text mb-1"
+            style="font-family: 'Space Grotesk', sans-serif;"
+          >
+            Starter
+          </h3>
+
+          <!-- vCredits amount -->
+          <div class="mt-4 mb-2">
+            <span
+              class="text-[clamp(2.5rem,5vw,3.5rem)] font-bold leading-none tracking-[-0.03em] text-linear-accent"
+              style="font-family: 'JetBrains Mono', monospace;"
+            >
+              100
+            </span>
+            <span
+              class="text-sm font-label-md text-linear-muted ml-1"
+              style="font-family: 'JetBrains Mono', monospace;"
+            >
+              vCredits
+            </span>
+          </div>
+
+          <!-- Final price -->
+          <p
+            class="text-lg font-medium text-white mt-1"
+            style="font-family: 'Space Grotesk', sans-serif;"
+          >
+            $105.00 USD
+          </p>
+
+          <!-- Price per credit -->
+          <p
+            class="text-xs font-label-md text-linear-muted mt-1"
+            style="font-family: 'JetBrains Mono', monospace;"
+          >
+            $1.05/crédito
+          </p>
+
+          <!-- No discount badge for Starter -->
+
+          <!-- Divider -->
+          <div class="my-6 h-px bg-gradient-to-r from-transparent via-linear-border to-transparent"></div>
+
+          <!-- Description -->
+          <p class="text-sm leading-relaxed text-neutral-400 font-body-md flex-grow">
+            Ideal para tareas puntuales o landings rápidas.
+          </p>
+
+          <!-- CTA button -->
+          <div class="mt-8">
+            <a
+              href="/contacto"
+              class="w-full inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl border border-linear-border text-sm font-label-md text-white hover:bg-white/5 transition-all duration-500"
+            >
+              Comprar Starter
+              <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </a>
+          </div>
+
+          <!-- Bottom accent line -->
+          <div
+            class="absolute bottom-0 left-[15%] right-[15%] h-px bg-gradient-to-r from-transparent via-linear-muted/20 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-center"
+            aria-hidden="true"
+          ></div>
+        </div>
+
+        <!-- ===== CARD 2: Pack Growth (RECOMMENDED) ===== -->
+        <div
+          class="price-card group relative flex flex-col p-8 rounded-xl border border-linear-border bg-linear-charcoal/80 transition-all duration-500 recommended-card"
+        >
+          <!-- RECOMENDADO badge -->
+          <div class="flex justify-center mb-4 -mt-1">
+            <span
+              class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-emerald-500/30 bg-emerald-950/40 backdrop-blur-sm text-[10px] font-label-md uppercase tracking-[0.12em] text-emerald-400"
+            >
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+              Recomendado
+            </span>
+          </div>
+
+          <!-- Plan name -->
+          <h3
+            class="text-xl font-medium text-linear-text mb-1 text-center"
+            style="font-family: 'Space Grotesk', sans-serif;"
+          >
+            Growth
+          </h3>
+
+          <!-- vCredits amount -->
+          <div class="mt-4 mb-2 text-center">
+            <span
+              class="text-[clamp(2.5rem,5vw,3.5rem)] font-bold leading-none tracking-[-0.03em] text-linear-accent"
+              style="font-family: 'JetBrains Mono', monospace;"
+            >
+              500
+            </span>
+            <span
+              class="text-sm font-label-md text-linear-muted ml-1"
+              style="font-family: 'JetBrains Mono', monospace;"
+            >
+              vCredits
+            </span>
+          </div>
+
+          <!-- Final price -->
+          <p
+            class="text-lg font-medium text-white mt-1 text-center"
+            style="font-family: 'Space Grotesk', sans-serif;"
+          >
+            $498.75 USD
+          </p>
+
+          <!-- Price per credit -->
+          <p
+            class="text-xs font-label-md text-linear-muted mt-1 text-center"
+            style="font-family: 'JetBrains Mono', monospace;"
+          >
+            $0.9975/crédito
+          </p>
+
+          <!-- Discount badge -->
+          <div class="flex justify-center mt-3">
+            <span
+              class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-emerald-950/30 border border-emerald-800/30 text-[10px] font-label-md text-emerald-400/80"
+            >
+              5% de descuento
+            </span>
+          </div>
+
+          <!-- Divider -->
+          <div class="my-6 h-px bg-gradient-to-r from-transparent via-linear-border to-transparent"></div>
+
+          <!-- Description -->
+          <p class="text-sm leading-relaxed text-neutral-400 font-body-md flex-grow text-center">
+            El favorito de agencias en crecimiento. Ahorro real.
+          </p>
+
+          <!-- CTA button -->
+          <div class="mt-8">
+            <a
+              href="/contacto"
+              class="w-full inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl border border-linear-border text-sm font-label-md text-white hover:bg-white/5 transition-all duration-500"
+            >
+              Comprar Growth
+              <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </a>
+          </div>
+
+          <!-- Bottom accent line -->
+          <div
+            class="absolute bottom-0 left-[15%] right-[15%] h-px bg-gradient-to-r from-transparent via-linear-muted/20 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-center"
+            aria-hidden="true"
+          ></div>
+        </div>
+
+        <!-- ===== CARD 3: Pack Scale ===== -->
+        <div class="price-card group relative flex flex-col p-8 rounded-xl border border-linear-border bg-linear-charcoal/80 transition-all duration-500">
+          <!-- Plan name -->
+          <h3
+            class="text-xl font-medium text-linear-text mb-1"
+            style="font-family: 'Space Grotesk', sans-serif;"
+          >
+            Scale
+          </h3>
+
+          <!-- vCredits amount -->
+          <div class="mt-4 mb-2">
+            <span
+              class="text-[clamp(2.5rem,5vw,3.5rem)] font-bold leading-none tracking-[-0.03em] text-linear-accent"
+              style="font-family: 'JetBrains Mono', monospace;"
+            >
+              1.000
+            </span>
+            <span
+              class="text-sm font-label-md text-linear-muted ml-1"
+              style="font-family: 'JetBrains Mono', monospace;"
+            >
+              vCredits
+            </span>
+          </div>
+
+          <!-- Final price -->
+          <p
+            class="text-lg font-medium text-white mt-1"
+            style="font-family: 'Space Grotesk', sans-serif;"
+          >
+            $945.00 USD
+          </p>
+
+          <!-- Price per credit -->
+          <p
+            class="text-xs font-label-md text-linear-muted mt-1"
+            style="font-family: 'JetBrains Mono', monospace;"
+          >
+            $0.945/crédito
+          </p>
+
+          <!-- Discount badge -->
+          <div class="mt-3">
+            <span
+              class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-emerald-950/30 border border-emerald-800/30 text-[10px] font-label-md text-emerald-400/80"
+            >
+              10% de descuento
+            </span>
+          </div>
+
+          <!-- Divider -->
+          <div class="my-6 h-px bg-gradient-to-r from-transparent via-linear-border to-transparent"></div>
+
+          <!-- Description -->
+          <p class="text-sm leading-relaxed text-neutral-400 font-body-md flex-grow">
+            Para agencias con alto volumen de proyectos.
+          </p>
+
+          <!-- CTA button -->
+          <div class="mt-8">
+            <a
+              href="/contacto"
+              class="w-full inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl border border-linear-border text-sm font-label-md text-white hover:bg-white/5 transition-all duration-500"
+            >
+              Comprar Scale
+              <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </a>
+          </div>
+
+          <!-- Bottom accent line -->
+          <div
+            class="absolute bottom-0 left-[15%] right-[15%] h-px bg-gradient-to-r from-transparent via-linear-muted/20 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-center"
+            aria-hidden="true"
+          ></div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="absolute bottom-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-white/[0.06] to-transparent"
+      aria-hidden="true"
+    ></div>
+  </div>
+</section>
+
+<style>
+  /* Card hover effects */
+  .price-card {
+    transition: all 500ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .price-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(255, 255, 255, 0.12);
+  }
+
+  /* Recommended card — elevated with glow */
+  .recommended-card {
+    position: relative;
+    border-color: rgba(34, 197, 94, 0.25);
+    box-shadow: 0 0 30px rgba(34, 197, 94, 0.12), 0 0 60px rgba(34, 197, 94, 0.06);
+    transform: translateY(-4px);
+  }
+
+  .recommended-card:hover {
+    border-color: rgba(34, 197, 94, 0.45);
+    box-shadow: 0 0 40px rgba(34, 197, 94, 0.2), 0 0 80px rgba(34, 197, 94, 0.08);
+    transform: translateY(-10px);
+  }
+
+  /* Ensure Space Grotesk is applied for headings even before full CSS loads */
+  section h2,
+  section h3 {
+    font-family: 'Space Grotesk', sans-serif;
+  }
+</style>

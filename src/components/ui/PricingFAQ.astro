@@ -1,0 +1,224 @@
+---
+// src/components/ui/PricingFAQ.astro
+// "Preguntas frecuentes sobre precios" — FAQ accordion section for VortexLM /precios page
+// Uses native HTML <details>/<summary> elements — NO JavaScript
+// Self-contained component, no props, no external dependencies
+---
+
+<section
+  class="relative w-full overflow-hidden bg-black"
+  aria-label="Preguntas frecuentes sobre precios — vCredits y facturación"
+>
+  <!-- Subtle top border glow -->
+  <div
+    class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/[0.06] to-transparent pointer-events-none"
+    aria-hidden="true"
+  ></div>
+
+  <div class="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-28 lg:py-36">
+    <!-- Section header -->
+    <div class="text-center mb-16 sm:mb-20 lg:mb-24">
+      <!-- Pill / badge label -->
+      <div class="flex items-center justify-center mb-6">
+        <span
+          class="inline-flex items-center gap-2 px-4 py-1.5 border border-linear-border rounded-full text-[10px] font-label-md uppercase tracking-[0.15em] text-linear-muted bg-linear-charcoal/60 backdrop-blur-sm"
+        >
+          <span class="w-1.5 h-1.5 rounded-full bg-linear-muted/60" aria-hidden="true"></span>
+          FAQ
+        </span>
+      </div>
+
+      <h2
+        class="text-[clamp(1.75rem,4vw,3.25rem)] leading-[1.08] tracking-[-0.03em] font-light text-linear-text"
+        style="font-family: 'Space Grotesk', sans-serif;"
+      >
+        Preguntas frecuentes sobre precios
+      </h2>
+
+      <p
+        class="max-w-2xl mx-auto mt-5 text-sm sm:text-base leading-relaxed text-neutral-400 font-body-md"
+      >
+        Todo lo que necesitas saber sobre nuestro sistema de vCredits y facturación.
+      </p>
+    </div>
+
+    <!-- Accordion FAQ -->
+    <div class="max-w-3xl mx-auto space-y-3">
+      <!-- FAQ 1 -->
+      <details class="faq-item group rounded-xl border border-linear-border bg-linear-charcoal/80 overflow-hidden transition-all duration-300">
+        <summary class="faq-summary flex items-center justify-between px-6 py-5 cursor-pointer select-none list-none">
+          <span class="font-body-md font-medium text-white pr-4">
+            ¿Qué son exactamente los vCredits?
+          </span>
+          <span class="accordion-icon relative flex-shrink-0 w-5 h-5 flex items-center justify-center" aria-hidden="true">
+            <span class="absolute w-5 h-px bg-linear-muted"></span>
+            <span class="absolute w-px h-5 bg-linear-muted"></span>
+          </span>
+        </summary>
+        <div class="px-6 pb-6 pt-0">
+          <div class="pt-4 border-t border-linear-border/60"></div>
+          <p class="font-body-md text-neutral-400 leading-relaxed">
+            Los vCredits son nuestra moneda interna de intercambio. 1 vCredit equivale a $1.00 USD neto de desarrollo. Al comprar, pagas $1.05 USD por crédito para cubrir de forma transparente la comisión internacional de Stripe, garantizando que tu saldo rinda al 100% en tus tareas.
+          </p>
+        </div>
+      </details>
+
+      <!-- FAQ 2 -->
+      <details class="faq-item group rounded-xl border border-linear-border bg-linear-charcoal/80 overflow-hidden transition-all duration-300">
+        <summary class="faq-summary flex items-center justify-between px-6 py-5 cursor-pointer select-none list-none">
+          <span class="font-body-md font-medium text-white pr-4">
+            ¿Los vCredits tienen fecha de caducidad?
+          </span>
+          <span class="accordion-icon relative flex-shrink-0 w-5 h-5 flex items-center justify-center" aria-hidden="true">
+            <span class="absolute w-5 h-px bg-linear-muted"></span>
+            <span class="absolute w-px h-5 bg-linear-muted"></span>
+          </span>
+        </summary>
+        <div class="px-6 pb-6 pt-0">
+          <div class="pt-4 border-t border-linear-border/60"></div>
+          <p class="font-body-md text-neutral-400 leading-relaxed">
+            No. Los vCredits no caducan. Puedes comprarlos y utilizarlos cuando los necesites, sin presión por consumirlos en un plazo determinado. Ideal para agencias con demanda variable.
+          </p>
+        </div>
+      </details>
+
+      <!-- FAQ 3 -->
+      <details class="faq-item group rounded-xl border border-linear-border bg-linear-charcoal/80 overflow-hidden transition-all duration-300">
+        <summary class="faq-summary flex items-center justify-between px-6 py-5 cursor-pointer select-none list-none">
+          <span class="font-body-md font-medium text-white pr-4">
+            ¿Cómo se factura? ¿Tienen IVA?
+          </span>
+          <span class="accordion-icon relative flex-shrink-0 w-5 h-5 flex items-center justify-center" aria-hidden="true">
+            <span class="absolute w-5 h-px bg-linear-muted"></span>
+            <span class="absolute w-px h-5 bg-linear-muted"></span>
+          </span>
+        </summary>
+        <div class="px-6 pb-6 pt-0">
+          <div class="pt-4 border-t border-linear-border/60"></div>
+          <p class="font-body-md text-neutral-400 leading-relaxed">
+            Emitimos facturas oficiales desde Vortex Logic LLC, registrada en EE.UU. Para agencias en España, aplicamos el 0% de IVA bajo el mecanismo europeo de inversión del sujeto pasivo (reverse charge). Consúltanos si necesitas más detalles fiscales.
+          </p>
+        </div>
+      </details>
+
+      <!-- FAQ 4 -->
+      <details class="faq-item group rounded-xl border border-linear-border bg-linear-charcoal/80 overflow-hidden transition-all duration-300">
+        <summary class="faq-summary flex items-center justify-between px-6 py-5 cursor-pointer select-none list-none">
+          <span class="font-body-md font-medium text-white pr-4">
+            ¿Puedo combinar métodos de pago?
+          </span>
+          <span class="accordion-icon relative flex-shrink-0 w-5 h-5 flex items-center justify-center" aria-hidden="true">
+            <span class="absolute w-5 h-px bg-linear-muted"></span>
+            <span class="absolute w-px h-5 bg-linear-muted"></span>
+          </span>
+        </summary>
+        <div class="px-6 pb-6 pt-0">
+          <div class="pt-4 border-t border-linear-border/60"></div>
+          <p class="font-body-md text-neutral-400 leading-relaxed">
+            Sí. Aceptamos tarjetas de crédito, transferencias bancarias directas (ACH en EE.UU. y SEPA en Europa) y pasarelas cripto/digitales como Binance Pay. Puedes usar el método que mejor se adapte a tu flujo de caja.
+          </p>
+        </div>
+      </details>
+
+      <!-- FAQ 5 -->
+      <details class="faq-item group rounded-xl border border-linear-border bg-linear-charcoal/80 overflow-hidden transition-all duration-300">
+        <summary class="faq-summary flex items-center justify-between px-6 py-5 cursor-pointer select-none list-none">
+          <span class="font-body-md font-medium text-white pr-4">
+            ¿Qué pasa si no uso todos los vCredits del pack?
+          </span>
+          <span class="accordion-icon relative flex-shrink-0 w-5 h-5 flex items-center justify-center" aria-hidden="true">
+            <span class="absolute w-5 h-px bg-linear-muted"></span>
+            <span class="absolute w-px h-5 bg-linear-muted"></span>
+          </span>
+        </summary>
+        <div class="px-6 pb-6 pt-0">
+          <div class="pt-4 border-t border-linear-border/60"></div>
+          <p class="font-body-md text-neutral-400 leading-relaxed">
+            El saldo restante se mantiene en tu cuenta hasta que decidas usarlo. No hay penalizaciones por no consumir. Además, si necesitas más créditos, puedes recargar en cualquier momento con el pack que prefieras.
+          </p>
+        </div>
+      </details>
+
+      <!-- FAQ 6 -->
+      <details class="faq-item group rounded-xl border border-linear-border bg-linear-charcoal/80 overflow-hidden transition-all duration-300">
+        <summary class="faq-summary flex items-center justify-between px-6 py-5 cursor-pointer select-none list-none">
+          <span class="font-body-md font-medium text-white pr-4">
+            ¿El bono de bienvenida de 10 vCredits tiene condiciones?
+          </span>
+          <span class="accordion-icon relative flex-shrink-0 w-5 h-5 flex items-center justify-center" aria-hidden="true">
+            <span class="absolute w-5 h-px bg-linear-muted"></span>
+            <span class="absolute w-px h-5 bg-linear-muted"></span>
+          </span>
+        </summary>
+        <div class="px-6 pb-6 pt-0">
+          <div class="pt-4 border-t border-linear-border/60"></div>
+          <p class="font-body-md text-neutral-400 leading-relaxed">
+            Solo necesitas agendar una llamada corta de activación con nuestro equipo para conocer tus necesidades y validar que somos el partner adecuado para tu agencia. Una vez activado, los 10 vCredits están disponibles para testear cualquier servicio sin compromiso.
+          </p>
+        </div>
+      </details>
+    </div>
+  </div>
+
+  <!-- Bottom border glow -->
+  <div
+    class="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/[0.06] to-transparent pointer-events-none"
+    aria-hidden="true"
+  ></div>
+</section>
+
+<style>
+  /* Remove default <details>/<summary> browser styling */
+  .faq-summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq-summary::marker {
+    display: none;
+    content: "";
+  }
+
+  /* Accordion icon: plus sign that rotates 45deg on open to become an X */
+  .accordion-icon {
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  details[open] .accordion-icon {
+    transform: rotate(45deg);
+  }
+
+  /* Hover effect: brighten the summary background */
+  .faq-summary {
+    transition: background-color 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    border-radius: 0.75rem;
+  }
+
+  .faq-summary:hover {
+    background-color: rgba(255, 255, 255, 0.02);
+  }
+
+  /* Smooth open/close animation for the content panel */
+  details.faq-item {
+    transition: border-color 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  details[open].faq-item {
+    border-color: rgba(255, 255, 255, 0.08);
+  }
+
+  /* Content fade-in on open */
+  details[open] .faq-item-content {
+    animation: faqFadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  @keyframes faqFadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-4px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>

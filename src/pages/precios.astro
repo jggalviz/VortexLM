@@ -1,0 +1,65 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SEO from '../components/seo/SEO.astro';
+import FAQSchema from '../components/seo/FAQSchema.astro';
+import PricingHero from '../components/ui/PricingHero.astro';
+import PriceCards from '../components/ui/PriceCards.astro';
+import MultipliersTable from '../components/ui/MultipliersTable.astro';
+import B2BBenefits from '../components/ui/B2BBenefits.astro';
+import PricingFAQ from '../components/ui/PricingFAQ.astro';
+import B2BExpandLinks from '../components/ui/B2BExpandLinks.astro';
+
+const isLanding = true;
+const pageTitle = 'Precios y Paquetes de vCredits para Agencias — VortexLM';
+const pageDescription =
+  'Planes flexibles de vCredits para agencias digitales. Desde $105 USD. Descuentos por volumen, facturación corporativa, 0% IVA y bono de bienvenida de 10 vCredits.';
+const canonicalURL = 'https://vortexlm.com/precios';
+
+const faqItems = [
+  {
+    question: '¿Qué son exactamente los vCredits?',
+    answer:
+      'Los vCredits son nuestra moneda interna de intercambio. 1 vCredit equivale a $1.00 USD neto de desarrollo. Al comprar, pagas $1.05 USD por crédito para cubrir de forma transparente la comisión internacional de Stripe.',
+  },
+  {
+    question: '¿Los vCredits tienen fecha de caducidad?',
+    answer:
+      'No. Los vCredits no caducan. Puedes comprarlos y utilizarlos cuando los necesites, sin presión por consumirlos en un plazo determinado.',
+  },
+  {
+    question: '¿Cómo se factura? ¿Tienen IVA?',
+    answer:
+      'Emitimos facturas oficiales desde Vortex Logic LLC, registrada en EE.UU. Para agencias en España, aplicamos el 0% de IVA bajo el mecanismo europeo de inversión del sujeto pasivo.',
+  },
+  {
+    question: '¿El bono de bienvenida de 10 vCredits tiene condiciones?',
+    answer:
+      'Solo necesitas agendar una llamada corta de activación con nuestro equipo. Una vez activado, los 10 vCredits están disponibles para testear cualquier servicio sin compromiso.',
+  },
+];
+---
+
+<BaseLayout title={pageTitle} description={pageDescription} isLanding={isLanding} type="website">
+  <SEO title={pageTitle} description={pageDescription} canonicalURL={canonicalURL} type="website" />
+  <FAQSchema faqs={faqItems} />
+
+  <main class="bg-neutral-950 text-white">
+    <!-- PRICING HERO — Pill badge, heading, subheading, currency info -->
+    <PricingHero />
+
+    <!-- PRICE CARDS — Starter (100), Growth (500, recommended), Scale (1000) -->
+    <PriceCards />
+
+    <!-- MULTIPLIERS TABLE — Hourly consumption rates for 6 services -->
+    <MultipliersTable />
+
+    <!-- B2B BENEFITS — Corporate advantages + welcome bonus banner -->
+    <B2BBenefits />
+
+    <!-- PRICING FAQ — Accordion with 6 native <details>/<summary> items -->
+    <PricingFAQ />
+
+    <!-- B2B EXPAND LINKS — Semantic navigation cards -->
+    <B2BExpandLinks />
+  </main>
+</BaseLayout>

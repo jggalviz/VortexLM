@@ -1,0 +1,250 @@
+---
+// src/components/ui/B2BPainPoints.astro
+// "Dolor vs Solución" (Pain vs Solution) section for VortexLM B2B landing page
+// Self-contained component, no props, no external dependencies
+---
+
+<section
+  class="relative w-full overflow-hidden bg-black"
+  aria-label="Dolor vs Solución — Por qué externalizar con VortexLM"
+>
+  <!-- Subtle top border glow -->
+  <div
+    class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/[0.06] to-transparent pointer-events-none"
+    aria-hidden="true"
+  ></div>
+
+  <div class="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-28 lg:py-36">
+    <!-- Section header -->
+    <div class="text-center mb-16 sm:mb-20 lg:mb-24">
+      <!-- Pill / badge label -->
+      <div class="flex items-center justify-center mb-6">
+        <span
+          class="inline-flex items-center gap-2 px-4 py-1.5 border border-linear-border rounded-full text-[10px] font-label-md uppercase tracking-[0.15em] text-linear-muted bg-linear-charcoal/60 backdrop-blur-sm"
+        >
+          <span class="w-1.5 h-1.5 rounded-full bg-linear-muted/60" aria-hidden="true"></span>
+          Dolor vs Solución
+        </span>
+      </div>
+
+      <h2
+        class="text-[clamp(1.75rem,4vw,3.25rem)] leading-[1.08] tracking-[-0.03em] font-light text-linear-text"
+        style="font-family: 'Space Grotesk', sans-serif;"
+      >
+        El problema de contratar desarrollo
+        <span class="block text-linear-muted">vs. externalizar con VortexLM</span>
+      </h2>
+
+      <p
+        class="max-w-2xl mx-auto mt-5 text-sm sm:text-base leading-relaxed text-neutral-400 font-body-md"
+      >
+        Comparamos el modelo tradicional de contratación con nuestro sistema de
+        <strong class="text-linear-text font-medium">vCredits</strong> para que
+        veas exactamente qué cambia.
+      </p>
+    </div>
+
+    <!-- Pain vs Solution grid -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
+      <!-- ===== LEFT COLUMN: PAIN POINTS ===== -->
+      <div class="space-y-6 lg:space-y-8">
+        <div
+          class="flex items-center gap-3 pb-4 border-b border-linear-border/50"
+        >
+          <div
+            class="w-8 h-8 rounded-full bg-red-950/60 border border-red-900/40 flex items-center justify-center shrink-0"
+          >
+            <svg class="w-4 h-4 text-red-400/80" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <span
+            class="text-[10px] font-label-md uppercase tracking-[0.15em] text-red-400/70"
+          >
+            El modelo tradicional
+          </span>
+        </div>
+
+        <!-- Pain 1 -->
+        <div class="group relative p-6 sm:p-7 rounded-xl border border-linear-border bg-linear-charcoal/80 hover:bg-linear-charcoal hover:border-red-900/40 transition-all duration-300">
+          <div class="flex items-start gap-4">
+            <div
+              class="w-10 h-10 rounded-lg bg-red-950/50 border border-red-900/30 flex items-center justify-center shrink-0 mt-0.5"
+            >
+              <svg class="w-5 h-5 text-red-400/70" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <div class="min-w-0">
+              <h3 class="text-sm font-medium text-neutral-200 mb-1.5">
+                Costes fijos elevados
+              </h3>
+              <p class="text-xs text-neutral-400 leading-relaxed">
+                Contratar desarrolladores full-time implica salarios, prestaciones,
+                herramientas, seguros y espacio de trabajo. Un costo mensual fijo
+                alto, incluso cuando no hay carga de trabajo.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pain 2 -->
+        <div class="group relative p-6 sm:p-7 rounded-xl border border-linear-border bg-linear-charcoal/80 hover:bg-linear-charcoal hover:border-red-900/40 transition-all duration-300">
+          <div class="flex items-start gap-4">
+            <div
+              class="w-10 h-10 rounded-lg bg-red-950/50 border border-red-900/30 flex items-center justify-center shrink-0 mt-0.5"
+            >
+              <svg class="w-5 h-5 text-red-400/70" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+              </svg>
+            </div>
+            <div class="min-w-0">
+              <h3 class="text-sm font-medium text-neutral-200 mb-1.5">
+                Cuellos de botella en capacidad
+              </h3>
+              <p class="text-xs text-neutral-400 leading-relaxed">
+                Tu equipo interno tiene capacidad limitada. Cuando llegan proyectos
+                grandes o fechas ajustadas, no puedes escalar rápido. Contratar
+                más personal toma meses.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pain 3 -->
+        <div class="group relative p-6 sm:p-7 rounded-xl border border-linear-border bg-linear-charcoal/80 hover:bg-linear-charcoal hover:border-red-900/40 transition-all duration-300">
+          <div class="flex items-start gap-4">
+            <div
+              class="w-10 h-10 rounded-lg bg-red-950/50 border border-red-900/30 flex items-center justify-center shrink-0 mt-0.5"
+            >
+              <svg class="w-5 h-5 text-red-400/70" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+              </svg>
+            </div>
+            <div class="min-w-0">
+              <h3 class="text-sm font-medium text-neutral-200 mb-1.5">
+                Sin control de calidad ni marca blanca
+              </h3>
+              <p class="text-xs text-neutral-400 leading-relaxed">
+                Externalizar con agencias tradicionales significa perder identidad
+                de marca. El código llega sin estándares, sin documentación, y el
+                cliente final sabe que no fue hecho por tu equipo.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== RIGHT COLUMN: SOLUTIONS ===== -->
+      <div class="space-y-6 lg:space-y-8">
+        <div
+          class="flex items-center gap-3 pb-4 border-b border-linear-border/50"
+        >
+          <div
+            class="w-8 h-8 rounded-full bg-emerald-950/60 border border-emerald-900/40 flex items-center justify-center shrink-0"
+          >
+            <svg class="w-4 h-4 text-emerald-400/80" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <span
+            class="text-[10px] font-label-md uppercase tracking-[0.15em] text-emerald-400/70"
+          >
+            Con VortexLM
+          </span>
+        </div>
+
+        <!-- Solution 1 -->
+        <div class="group relative p-6 sm:p-7 rounded-xl border border-linear-border bg-linear-charcoal/80 hover:bg-linear-charcoal hover:border-emerald-900/40 transition-all duration-300">
+          <div class="flex items-start gap-4">
+            <div
+              class="w-10 h-10 rounded-lg bg-emerald-950/50 border border-emerald-900/30 flex items-center justify-center shrink-0 mt-0.5"
+            >
+              <svg class="w-5 h-5 text-emerald-400/70" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
+              </svg>
+            </div>
+            <div class="min-w-0">
+              <h3 class="text-sm font-medium text-neutral-200 mb-1.5">
+                Pago por consumo real
+              </h3>
+              <p class="text-xs text-neutral-400 leading-relaxed">
+                Solo pagas por los <strong class="text-linear-text font-medium">vCredits</strong> que
+                consumes. Sin retenedor mensual, sin compromiso. Compra bloques de
+                horas y úsalos cuando los necesites. El control financiero está
+                en tus manos.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Solution 2 -->
+        <div class="group relative p-6 sm:p-7 rounded-xl border border-linear-border bg-linear-charcoal/80 hover:bg-linear-charcoal hover:border-emerald-900/40 transition-all duration-300">
+          <div class="flex items-start gap-4">
+            <div
+              class="w-10 h-10 rounded-lg bg-emerald-950/50 border border-emerald-900/30 flex items-center justify-center shrink-0 mt-0.5"
+            >
+              <svg class="w-5 h-5 text-emerald-400/70" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+            </div>
+            <div class="min-w-0">
+              <h3 class="text-sm font-medium text-neutral-200 mb-1.5">
+                Escalabilidad inmediata
+              </h3>
+              <p class="text-xs text-neutral-400 leading-relaxed">
+                Asigna tareas desde tu dashboard y nuestro equipo las ejecuta.
+                ¿Necesitas 3 desarrolladores para un proyecto urgente? Listo en
+                24 horas. ¿Bajas la carga? Simplemente consumes menos vCredits.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Solution 3 -->
+        <div class="group relative p-6 sm:p-7 rounded-xl border border-linear-border bg-linear-charcoal/80 hover:bg-linear-charcoal hover:border-emerald-900/40 transition-all duration-300">
+          <div class="flex items-start gap-4">
+            <div
+              class="w-10 h-10 rounded-lg bg-emerald-950/50 border border-emerald-900/30 flex items-center justify-center shrink-0 mt-0.5"
+            >
+              <svg class="w-5 h-5 text-emerald-400/70" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+            </div>
+            <div class="min-w-0">
+              <h3 class="text-sm font-medium text-neutral-200 mb-1.5">
+                Entregas con tu marca
+              </h3>
+              <p class="text-xs text-neutral-400 leading-relaxed">
+                100% white label. Todo el código se entrega con tu marca, sin
+                referencias a VortexLM. Incluimos NDA, control de calidad
+                automatizado y documentación completa. Tu cliente final nunca
+                sabrá que externalizaste.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom CTA hint -->
+    <div class="mt-14 sm:mt-16 text-center">
+      <p class="text-[10px] font-label-md uppercase tracking-[0.15em] text-linear-muted/50">
+        Sin riesgos. Sin compromisos. Solo resultados.
+      </p>
+    </div>
+  </div>
+
+  <!-- Bottom border glow -->
+  <div
+    class="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/[0.06] to-transparent pointer-events-none"
+    aria-hidden="true"
+  ></div>
+</section>
+
+<style>
+  section h2 {
+    font-family: 'Space Grotesk', sans-serif;
+  }
+</style>

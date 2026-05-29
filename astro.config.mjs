@@ -11,6 +11,11 @@ export default defineConfig({
   site: 'https://vortexlm.com',
   output: 'server',
   adapter: vercel({
+    webAnalytics: { enabled: true },
+    imagesConfig: { sizes: [320, 640, 1280] },
+    // Fuerza el runtime correcto aquí:
+    functionPerRoute: false,
+    edgeMiddleware: false,
     nodeVersion: "22.x"
   }),
   integrations: [

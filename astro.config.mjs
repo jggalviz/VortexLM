@@ -11,7 +11,7 @@ export default defineConfig({
   site: 'https://vortexlm.com',
   output: 'server',
   adapter: vercel({
-    nodeVersion: 22
+    nodeVersion: "22.x"
   }),
   integrations: [
     react(),

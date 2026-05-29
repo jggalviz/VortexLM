@@ -1,23 +1,21 @@
 ---
 // src/components/ui/Navbar.astro
-// Global navigation — includes SSR auth check for dynamic login/dashboard button
-import { supabase } from '../../lib/supabaseClient';
+// Global navigation — SSR-renders logged-out state by default; client script hydrates auth state
 
 interface Props {
   isLanding?: boolean;
 }
 const { isLanding = false } = Astro.props;
 
-// Check if user has an active Supabase session (SSR)
-// Wrapped in try-catch to gracefully fall back to logged-out state if Supabase is unreachable
-let isLoggedIn = false;
-try {
-  const { data: sessionData } = await supabase.auth.getSession();
-  isLoggedIn = !!sessionData?.session;
-} catch (e) {
-  // If Supabase is unreachable (e.g. dev environment, network issue), default to logged-out
-  isLoggedIn = false;
-}
+// NOTE: We intentionally do NOT call supabase.auth.getSession() here in SSR.
+// Doing so would make the entire Navbar (and thus every page) dependent on Supabase
+// being reachable during SSR. If Supabase is unreachable, the page would fail to render.
+// Instead, we always render the logged-out state from the server, and a lightweight
+// client-side script (<script> below) reads the Supabase session cookie directly
+// from the browser and updates the button text/link/href accordingly.
+// This is more robust: the Navbar always renders, and the correct auth state appears
+// immediately after the page loads in the browser.
+const isLoggedIn = false;
 ---
 <header class="fixed top-0 left-0 w-full z-50 bg-black/80 backdrop-blur-md border-b border-[#171717]">
   <nav class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">

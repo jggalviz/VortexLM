@@ -17,8 +17,7 @@ export default defineConfig({
       domains: [] // Evita el error 'not iterable' de forma definitiva
     },
     functionPerRoute: false,
-    edgeMiddleware: false,
-    nodeVersion: "22.x"
+    edgeMiddleware: false
   }),
   integrations: [
     react(),

@@ -9,8 +9,15 @@ interface Props {
 const { isLanding = false } = Astro.props;
 
 // Check if user has an active Supabase session (SSR)
-const { data: sessionData } = await supabase.auth.getSession();
-const isLoggedIn = !!sessionData?.session;
+// Wrapped in try-catch to gracefully fall back to logged-out state if Supabase is unreachable
+let isLoggedIn = false;
+try {
+  const { data: sessionData } = await supabase.auth.getSession();
+  isLoggedIn = !!sessionData?.session;
+} catch (e) {
+  // If Supabase is unreachable (e.g. dev environment, network issue), default to logged-out
+  isLoggedIn = false;
+}
 ---
 <header class="fixed top-0 left-0 w-full z-50 bg-black/80 backdrop-blur-md border-b border-[#171717]">
   <nav class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
@@ -52,8 +59,8 @@ const isLoggedIn = !!sessionData?.session;
       </a>
     </div>
 
-    <!-- Desktop CTA / Auth Button -->
-    <div class="hidden md:flex items-center gap-3">
+    <!-- Auth Button — visible on all screen sizes -->
+    <div class="flex items-center gap-3">
       {
         isLoggedIn ? (
           <a
@@ -79,11 +86,11 @@ const isLoggedIn = !!sessionData?.session;
       }
       {
         !isLoggedIn && isLanding ? (
-          <a href="#contacto-form" class="bg-white text-black text-xs font-medium px-4 py-2 rounded-md hover:bg-neutral-200 transition-all shadow-[0_0_15px_rgba(255,255,255,0.1)]">
+          <a href="#contacto-form" class="hidden md:inline-flex bg-white text-black text-xs font-medium px-4 py-2 rounded-md hover:bg-neutral-200 transition-all shadow-[0_0_15px_rgba(255,255,255,0.1)]">
             Cotizar Proyecto
           </a>
         ) : !isLoggedIn ? (
-          <a href="/contacto" class="bg-white text-black text-xs font-medium px-4 py-2 rounded-md hover:bg-neutral-200 transition-all">
+          <a href="/contacto" class="hidden md:inline-flex bg-white text-black text-xs font-medium px-4 py-2 rounded-md hover:bg-neutral-200 transition-all">
             Hablemos
           </a>
         ) : null

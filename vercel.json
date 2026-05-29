@@ -1,4 +1,6 @@
 {
+  "version": 2,
+  "crons": [],
   "headers": [
     {
       "source": "/(.*)\\.(avif|webp|png|jpg|jpeg|svg|css|js)$",
@@ -36,5 +38,13 @@
       "source": "/partytown/partytown-sw.js",
       "destination": "https://unpkg.com/@builder.io/partytown@0.10.2/lib/partytown-sw.js"
     }
-  ]
+  ],
+  "functions": {
+    "dist/server/entry.mjs": {
+      "runtime": "nodejs22.x"
+    },
+    "_render": {
+      "runtime": "nodejs22.x"
+    }
+  }
 }

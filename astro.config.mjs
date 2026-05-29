@@ -12,8 +12,10 @@ export default defineConfig({
   output: 'server',
   adapter: vercel({
     webAnalytics: { enabled: true },
-    imagesConfig: { sizes: [320, 640, 1280] },
-    // Fuerza el runtime correcto aquí:
+    imagesConfig: {
+      sizes: [320, 640, 1280],
+      domains: [] // Evita el error 'not iterable' de forma definitiva
+    },
     functionPerRoute: false,
     edgeMiddleware: false,
     nodeVersion: "22.x"

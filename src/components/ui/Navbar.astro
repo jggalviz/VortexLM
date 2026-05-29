@@ -64,6 +64,7 @@ try {
       {
         isLoggedIn ? (
           <a
+            data-auth-btn
             href="/dashboard"
             class="inline-flex items-center gap-2 px-4 py-2 bg-white text-black text-xs font-medium rounded-md hover:bg-neutral-200 transition-all shadow-[0_0_15px_rgba(255,255,255,0.1)] active:scale-[0.97]"
           >
@@ -74,6 +75,7 @@ try {
           </a>
         ) : (
           <a
+            data-auth-btn
             href="/login"
             class="inline-flex items-center gap-2 px-4 py-2 border border-white/20 text-white text-xs font-medium rounded-full hover:bg-white/10 hover:border-white/40 transition-all duration-300 active:scale-[0.97]"
           >
@@ -125,6 +127,7 @@ try {
         {
           isLoggedIn ? (
             <a
+              data-auth-mobile
               href="/dashboard"
               class="px-5 py-3.5 text-xs text-white bg-white/10 hover:bg-white/20 text-center font-medium transition-colors border-t border-[#1f1f24] flex items-center justify-center gap-2"
             >
@@ -135,6 +138,7 @@ try {
             </a>
           ) : (
             <a
+              data-auth-mobile
               href="/login"
               class="px-5 py-3.5 text-xs text-white bg-white/10 hover:bg-white/20 text-center font-medium transition-colors border-t border-[#1f1f24] flex items-center justify-center gap-2"
             >
@@ -152,3 +156,60 @@ try {
 
 <!-- Spacer to prevent content from hiding behind fixed header -->
 <div class="h-[68px]"></div>
+
+<script>
+  /**
+   * Client-side hydration script for auth-aware navigation button.
+   *
+   * WHY THIS IS NEEDED:
+   * Even though the site runs in SSR mode (output: 'server'), Vercel's Edge CDN
+   * may cache the HTML response for the home page and other public routes. This means
+   * the server-side `supabase.auth.getSession()` check in the frontmatter might not
+   * run on every request if the response is served from a cached edge node.
+   *
+   * This script runs in the browser after the page loads, reads the Supabase session
+   * cookie directly, and updates the button text/link/href accordingly. This ensures
+   * the correct auth state is always displayed, even if the SSR-rendered HTML was cached.
+   *
+   * The script targets the auth button by its data attribute (data-auth-btn) and the
+   * mobile auth link by its data attribute (data-auth-mobile), avoiding conflicts with
+   * any other elements on the page.
+   */
+  (function() {
+    // Check if there's a Supabase session by looking for the auth cookie
+    // Supabase stores the session in a cookie named 'sb-<project-ref>-auth-token'
+    // We check for any cookie starting with 'sb-'
+    const hasSession = document.cookie
+      .split('; ')
+      .some(cookie => cookie.startsWith('sb-'));
+
+    const authBtn = document.querySelector('[data-auth-btn]');
+    const authMobile = document.querySelector('[data-auth-mobile]');
+
+    if (hasSession) {
+      // User is logged in — show "Ir a mi Escritorio"
+      if (authBtn) {
+        authBtn.setAttribute('href', '/dashboard');
+        authBtn.innerHTML = `<svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12l8.954-8.955a1.126 1.126 0 011.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" /></svg> Ir a mi Escritorio`;
+        authBtn.className = 'inline-flex items-center gap-2 px-4 py-2 bg-white text-black text-xs font-medium rounded-md hover:bg-neutral-200 transition-all shadow-[0_0_15px_rgba(255,255,255,0.1)] active:scale-[0.97]';
+      }
+      if (authMobile) {
+        authMobile.setAttribute('href', '/dashboard');
+        authMobile.innerHTML = `<svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12l8.954-8.955a1.126 1.126 0 011.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" /></svg> Ir a mi Escritorio`;
+        authMobile.className = 'px-5 py-3.5 text-xs text-white bg-white/10 hover:bg-white/20 text-center font-medium transition-colors border-t border-[#1f1f24] flex items-center justify-center gap-2';
+      }
+    } else {
+      // User is logged out — show "Iniciar Sesión"
+      if (authBtn) {
+        authBtn.setAttribute('href', '/login');
+        authBtn.innerHTML = `<svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9" /></svg> Iniciar Sesión`;
+        authBtn.className = 'inline-flex items-center gap-2 px-4 py-2 border border-white/20 text-white text-xs font-medium rounded-full hover:bg-white/10 hover:border-white/40 transition-all duration-300 active:scale-[0.97]';
+      }
+      if (authMobile) {
+        authMobile.setAttribute('href', '/login');
+        authMobile.innerHTML = `<svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9" /></svg> Iniciar Sesión`;
+        authMobile.className = 'px-5 py-3.5 text-xs text-white bg-white/10 hover:bg-white/20 text-center font-medium transition-colors border-t border-[#1f1f24] flex items-center justify-center gap-2';
+      }
+    }
+  })();
+</script>

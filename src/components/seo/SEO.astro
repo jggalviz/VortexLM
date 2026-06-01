@@ -2,69 +2,102 @@
 export interface Props {
   title: string;
   description: string;
-  image?: string;
+  url?: string;
   canonicalURL?: string;
+  image?: string;
   type?: 'website' | 'article';
   isLocalBusiness?: boolean;
 }
 
+// ── Valores por defecto globales ──────────────────────────────────
+const SITE_NAME = "VortexLM";
+const COMPANY_NAME = "Vortex Logic Microsystems LLC";
+const SITE_URL = "https://vortexlm.com";
+const SITE_LOGO = "https://vortexlm.com/images/og-default.jpg";
+const DEFAULT_DESCRIPTION =
+  "Agencia de desarrollo web y apps en Caracas. Creamos productos digitales de alto rendimiento con Astro, React, Next.js y Node.js.";
+const DEFAULT_OG_IMAGE = SITE_LOGO;
+
 const {
   title,
-  description,
-  image = '/images/og-default.jpg',
-  canonicalURL = Astro.url.href,
+  description = DEFAULT_DESCRIPTION,
+  url,
+  canonicalURL: canonicalURLProp,
+  image = DEFAULT_OG_IMAGE,
   type = 'website',
   isLocalBusiness = false,
 } = Astro.props;
 
-const siteName = "VortexLM";
-const siteUrl = "https://vortexlm.com";
+// ── Resolución de URLs ───────────────────────────────────────────
+// `url` (nueva prop) puede pasarse como string absoluto o relativo.
+// Si no se pasa, se usa Astro.url (la URL canónica de la página actual).
+const pageURL = url
+  ? String(new URL(url, SITE_URL))
+  : canonicalURLProp
+    ? String(new URL(canonicalURLProp, SITE_URL))
+    : Astro.url.href;
+
+const canonicalURL = pageURL;
+
+// ── Títulos ───────────────────────────────────────────────────────
 const safeTitle = title || "Vortex Logic | Desarrollo Web de Alto Rendimiento";
 const fullTitle = `${safeTitle} | Agencia de Desarrollo Web y Apps en Caracas`;
 
+// ── Imagen OG absoluta ───────────────────────────────────────────
+const ogImage = image.startsWith("http")
+  ? image
+  : `${SITE_URL}${image.startsWith("/") ? "" : "/"}${image}`;
+
+// ── Schema LocalBusiness (condicional) ───────────────────────────
 const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
-  "name": "VortexLM",
-  "image": `${siteUrl}/images/logo.png`,
-  "@id": `${siteUrl}`,
-  "url": `${siteUrl}`,
-  "telephone": "+58-000-0000000", 
+  "name": COMPANY_NAME,
+  "image": SITE_LOGO,
+  "@id": SITE_URL,
+  "url": SITE_URL,
+  "logo": SITE_LOGO,
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "Zona Empresarial", 
     "addressLocality": "Caracas",
-    "addressRegion": "Miranda",
-    "postalCode": "1060",
-    "addressCountry": "VE"
+    "addressRegion": "Distrito Capital",
+    "addressCountry": "VE",
   },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": 10.4806, 
-    "longitude": -66.9036
-  },
-  "priceRange": "$$$",
-  "description": description
+  "priceRange": "$$",
+  description,
 };
 ---
+
+<!-- Meta tags base -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+<!-- Canonical URL — evita contenido duplicado -->
 <link rel="canonical" href={canonicalURL} />
+
+<!-- Title & Meta Description -->
 <title>{fullTitle}</title>
 <meta name="title" content={fullTitle} />
 <meta name="description" content={description} />
+
+<!-- Open Graph / Facebook -->
 <meta property="og:type" content={type} />
 <meta property="og:url" content={canonicalURL} />
 <meta property="og:title" content={fullTitle} />
 <meta property="og:description" content={description} />
-<meta property="og:image" content={new URL(image, Astro.url)} />
-<meta property="og:site_name" content={siteName} />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:url" content={canonicalURL} />
-<meta property="twitter:title" content={fullTitle} />
-<meta property="twitter:description" content={description} />
-<meta property="twitter:image" content={new URL(image, Astro.url)} />
+<meta property="og:image" content={ogImage} />
+<meta property="og:site_name" content={SITE_NAME} />
+<meta property="og:locale" content="es_ES" />
+
+<!-- Twitter Cards -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:url" content={canonicalURL} />
+<meta name="twitter:title" content={fullTitle} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={ogImage} />
+
+<!-- Schema.org LocalBusiness (opcional, se activa con isLocalBusiness={true}) -->
 {isLocalBusiness && (
   <script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} />
 )}

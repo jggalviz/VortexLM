@@ -1,0 +1,623 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+<BaseLayout
+  title="Programador Web en Caracas | Desarrollador Full-Stack Senior | Vortex Logic"
+  description="Programador web senior en Caracas. Especialista en desarrollo full-stack con Astro, React, Node.js y Supabase. Soluciones de software robustas, optimización de código y marca blanca."
+  isLocalBusiness={true}
+>
+  <!-- ─── HERO ───────────────────────────────────────────────────── -->
+  <section class="relative pt-36 pb-32 overflow-hidden linear-gradient-bg border-b border-[#1f1f24] px-6 md:px-12">
+    <div class="absolute inset-0 linear-grid opacity-30 pointer-events-none"></div>
+    <div class="max-w-[1200px] mx-auto text-center relative z-10">
+      <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-white/[0.015] blur-[120px] rounded-full pointer-events-none"></div>
+
+      <h1 class="text-4xl md:text-7xl font-extralight tracking-tight text-white mb-8 leading-[1.08] max-w-4xl mx-auto opacity-95">
+        Programador Web en Caracas: Desarrollo Full-Stack Senior y Código de Alto Rendimiento
+      </h1>
+
+      <p class="text-base md:text-lg text-[#cbd5e1] font-light mb-12 max-w-3xl mx-auto leading-relaxed">
+        Desarrollador full-stack senior especializado en Astro, React, Next.js, Node.js y Supabase. 
+        Escribo código limpio, optimizado y escalable. Trabajo con agencias como marca blanca 
+        y directamente con empresas que necesitan ingeniería web de alto nivel en Caracas.
+      </p>
+
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-6 mb-20">
+        <a href="#contacto" class="w-full sm:w-auto px-8 py-3 bg-white text-black font-semibold text-xs rounded-full hover:bg-neutral-200 transition-all text-center duration-200 active:scale-95 shadow-[0_0_25px_rgba(255,255,255,0.15)]">
+          Contratar Desarrollador Senior
+        </a>
+        <a href="#stack" class="w-full sm:w-auto px-6 py-3 text-white/90 font-medium text-xs rounded-full hover:text-white flex items-center justify-center gap-1.5 group transition-colors">
+          Ver stack técnico <span class="group-hover:translate-x-1 transition-transform">➔</span>
+        </a>
+      </div>
+
+      <!-- Mockup de terminal Git workflow -->
+      <div class="relative max-w-5xl mx-auto">
+        <div class="linear-card rounded-lg overflow-hidden border border-[#2e2e34] shadow-[0_50px_100px_-20px_rgba(0,0,0,0.98)]">
+          <div class="bg-[#08080c] px-4 py-3.5 flex items-center justify-between border-b border-[#1f1f24]">
+            <div class="flex items-center gap-2">
+              <span class="w-2.5 h-2.5 rounded-full bg-[#ff5f56]/50"></span>
+              <span class="w-2.5 h-2.5 rounded-full bg-[#ffbd2e]/50"></span>
+              <span class="w-2.5 h-2.5 rounded-full bg-[#27c93f]/50"></span>
+            </div>
+            <div class="text-[10px] font-mono text-[#cbd5e1]/40 flex items-center gap-1.5">
+              <span class="material-symbols-outlined text-[10px]">terminal</span>
+              vortex-dev // git:main
+            </div>
+            <div class="w-12"></div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-12 min-h-[400px] bg-[#000000] text-left">
+            <!-- Panel izquierdo: terminal de git -->
+            <div class="col-span-1 md:col-span-8 p-6 border-r border-[#1f1f24] font-mono text-[11px] leading-relaxed overflow-x-auto bg-[#050507]/30">
+              <div class="flex items-center gap-3 text-[10px] text-[#cbd5e1]/60 border-b border-[#1f1f24] pb-3 mb-4">
+                <span class="flex items-center gap-1.5">
+                  <span class="w-1.5 h-1.5 rounded-full bg-green-500"></span>
+                  git log --oneline
+                </span>
+                <span class="flex items-center gap-1.5">
+                  <span class="w-1.5 h-1.5 rounded-full bg-cyan-500"></span>
+                  main
+                </span>
+              </div>
+
+              <div class="space-y-2">
+                <div class="text-green-400">$ git push origin main</div>
+                <div class="text-white">Enumerating objects: 42, done.</div>
+                <div class="text-white">Counting objects: 100% (42/42), done.</div>
+                <br />
+                <div class="text-green-400">$ npm run test</div>
+                <div class="text-white">[VORTEX CI/CD] Running test suite...</div>
+                <div class="text-green-500">✔ 48 tests passed (2.3s)</div>
+                <div class="text-green-500">✔ Coverage: 96%</div>
+                <br />
+                <div class="text-green-400">$ npm run build</div>
+                <div class="text-white">[1/4] Resolving dependencies...</div>
+                <div class="text-white">[2/4] TypeScript compilation...</div>
+                <div class="text-green-500">✔ No type errors found</div>
+                <div class="text-green-500">✔ Build optimized · 98 Lighthouse</div>
+                <br />
+                <div class="flex items-center gap-2">
+                  <span class="text-cyan-400">feature/auth</span>
+                  <span class="text-[#cbd5e1]/60">3e8f2a1</span>
+                  <span class="text-white">Implement JWT + RLS security layer</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="text-cyan-400">main</span>
+                  <span class="text-[#cbd5e1]/60">a7c3d9e</span>
+                  <span class="text-white">Merge pull request #42</span>
+                </div>
+                <div class="text-[#cbd5e1]/40 mt-2">
+                  <span class="text-green-500">●</span> main · up-to-date · deploy ready
+                </div>
+              </div>
+            </div>
+
+            <!-- Panel derecho: stats del desarrollador -->
+            <div class="col-span-1 md:col-span-4 p-6 bg-[#050507]/30 font-mono text-[10px]">
+              <div class="text-[9px] uppercase tracking-wider text-[#cbd5e1]/40 mb-4 font-semibold">Developer Stats</div>
+              <div class="space-y-3">
+                <div class="p-2 border border-[#1f1f24] rounded bg-black/40">
+                  <div class="text-green-400">+4,200</div>
+                  <div class="text-[#cbd5e1]/60 text-[9px]">Commits en producción</div>
+                </div>
+                <div class="p-2 border border-[#1f1f24] rounded bg-black/40">
+                  <div class="text-green-400">15+</div>
+                  <div class="text-[#cbd5e1]/60 text-[9px]">Proyectos entregados</div>
+                </div>
+                <div class="p-2 border border-[#1f1f24] rounded bg-black/40">
+                  <div class="text-green-400">2.3s</div>
+                  <div class="text-[#cbd5e1]/60 text-[9px]">Test suite promedio</div>
+                </div>
+                <div class="border-t border-[#1f1f24]/50 pt-2 space-y-1">
+                  <div class="flex justify-between">
+                    <span class="text-[#cbd5e1]/60">TypeScript</span>
+                    <span class="text-white">100%</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span class="text-[#cbd5e1]/60">Coverage</span>
+                    <span class="text-green-400">96%</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span class="text-[#cbd5e1]/60">Code quality</span>
+                    <span class="text-green-400">A+</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── STACK TÉCNICO AVANZADO ─────────────────────────────────── -->
+  <section id="stack" class="py-36 px-6 md:px-12 bg-black relative border-b border-[#1f1f24]">
+    <div class="max-w-[1200px] mx-auto relative z-10">
+      <div class="max-w-4xl mb-24">
+        <span class="text-[10px] font-mono text-[#cbd5e1] uppercase tracking-widest block mb-3 font-medium">Stack Técnico</span>
+        <h2 class="text-2xl md:text-4xl font-light text-white tracking-tight leading-snug">
+          Frontend avanzado, backend sólido y automatización con AI. 
+          Todo el stack moderno en un solo programador.
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16">
+        <!-- Frontend Avanzado -->
+        <div class="space-y-6 group">
+          <div class="w-full aspect-[4/3] linear-card rounded border border-[#1f1f24] bg-[#08080c]/30 flex items-center justify-center p-6 glow-hover transition-all">
+            <svg class="w-20 h-20 text-[#cbd5e1]/40 group-hover:text-white/80 transition-colors" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="20" y="15" width="60" height="70" rx="6" stroke="currentColor" stroke-width="1.25"/>
+              <path d="M35 35L50 22L65 35" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"/>
+              <path d="M35 50L50 37L65 50" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-dasharray="2 2"/>
+              <path d="M35 65L50 52L65 65" stroke="currentColor" stroke-width="0.75" stroke-linecap="round" stroke-dasharray="2 2"/>
+              <circle cx="50" cy="28" r="2" fill="currentColor"/>
+              <circle cx="50" cy="43" r="2" fill="currentColor"/>
+              <circle cx="50" cy="58" r="2" fill="currentColor"/>
+            </svg>
+          </div>
+          <div>
+            <h3 class="text-sm font-medium text-white mb-2.5">Frontend Avanzado</h3>
+            <p class="text-xs text-[#cbd5e1] leading-relaxed">
+              Astro, React 19, Next.js 15, TypeScript estricto, Tailwind CSS, 
+              Framer Motion, React Query, Zustand. Arquitectura de componentes 
+              atómicos, Server Components, streaming SSR y optimización de 
+              Core Web Vitals al máximo.
+            </p>
+            <ul class="space-y-1 mt-3 text-[10px] text-[#cbd5e1] font-mono">
+              <li class="flex items-center gap-1.5"><span class="text-green-400">→</span> Islands Architecture</li>
+              <li class="flex items-center gap-1.5"><span class="text-green-400">→</span> Server Components / RSC</li>
+              <li class="flex items-center gap-1.5"><span class="text-green-400">→</span> Optimización Lighthouse 100</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Backend y Bases de Datos -->
+        <div class="space-y-6 group">
+          <div class="w-full aspect-[4/3] linear-card rounded border border-[#1f1f24] bg-[#08080c]/30 flex items-center justify-center p-6 glow-hover transition-all">
+            <svg class="w-20 h-20 text-[#cbd5e1]/40 group-hover:text-white/80 transition-colors" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M25 50L50 30L75 50L50 70L25 50Z" stroke="currentColor" stroke-width="1.25"/>
+              <path d="M25 50V70L50 90" stroke="currentColor" stroke-width="0.75"/>
+              <path d="M75 50V70L50 90" stroke="currentColor" stroke-width="0.75"/>
+              <path d="M50 30V70" stroke="currentColor" stroke-width="0.5" stroke-dasharray="2 2"/>
+              <circle cx="50" cy="50" r="3" fill="currentColor"/>
+              <path d="M50 70V90" stroke="currentColor" stroke-width="0.5" stroke-dasharray="2 2"/>
+            </svg>
+          </div>
+          <div>
+            <h3 class="text-sm font-medium text-white mb-2.5">Backend y Bases de Datos</h3>
+            <p class="text-xs text-[#cbd5e1] leading-relaxed">
+              Node.js, Supabase (PostgreSQL), API Routes en Astro/Next.js, 
+              Prisma ORM, Drizzle, Redis, WebSockets, autenticación JWT/OAuth, 
+              Row Level Security, migraciones automatizadas y Realtime subscriptions.
+            </p>
+            <ul class="space-y-1 mt-3 text-[10px] text-[#cbd5e1] font-mono">
+              <li class="flex items-center gap-1.5"><span class="text-green-400">→</span> REST + GraphQL APIs</li>
+              <li class="flex items-center gap-1.5"><span class="text-green-400">→</span> WebSockets en tiempo real</li>
+              <li class="flex items-center gap-1.5"><span class="text-green-400">→</span> Row Level Security (RLS)</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Automatización y AI -->
+        <div class="space-y-6 group">
+          <div class="w-full aspect-[4/3] linear-card rounded border border-[#1f1f24] bg-[#08080c]/30 flex items-center justify-center p-6 glow-hover transition-all">
+            <svg class="w-20 h-20 text-[#cbd5e1]/40 group-hover:text-white/80 transition-colors" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="50" cy="35" r="15" stroke="currentColor" stroke-width="1.25"/>
+              <path d="M35 35L25 50L35 65" stroke="currentColor" stroke-width="0.75" stroke-linecap="round"/>
+              <path d="M65 35L75 50L65 65" stroke="currentColor" stroke-width="0.75" stroke-linecap="round"/>
+              <path d="M50 65L50 85" stroke="currentColor" stroke-width="1.25"/>
+              <path d="M35 80L50 85L65 80" stroke="currentColor" stroke-width="0.75" stroke-linecap="round"/>
+              <circle cx="35" cy="65" r="2" fill="currentColor" fill-opacity="0.5"/>
+              <circle cx="65" cy="65" r="2" fill="currentColor" fill-opacity="0.5"/>
+            </svg>
+          </div>
+          <div>
+            <h3 class="text-sm font-medium text-white mb-2.5">Automatización y AI</h3>
+            <p class="text-xs text-[#cbd5e1] leading-relaxed">
+              CI/CD con GitHub Actions, testing automatizado (Vitest, Playwright), 
+              despliegues continuos a Vercel, integración de herramientas AI 
+              (Cursor, Claude, GPT) para acelerar el desarrollo sin sacrificar 
+              calidad. Infraestructura como código.
+            </p>
+            <ul class="space-y-1 mt-3 text-[10px] text-[#cbd5e1] font-mono">
+              <li class="flex items-center gap-1.5"><span class="text-green-400">→</span> CI/CD + Deploy automatizado</li>
+              <li class="flex items-center gap-1.5"><span class="text-green-400">→</span> Testing (Vitest + Playwright)</li>
+              <li class="flex items-center gap-1.5"><span class="text-green-400">→</span> AI-assisted development</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── MARCA BLANCA ───────────────────────────────────────────── -->
+  <section class="py-36 px-6 md:px-12 bg-black border-b border-[#1f1f24] relative">
+    <div class="max-w-[1200px] mx-auto relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
+        <div class="lg:col-span-5 space-y-5">
+          <span class="text-[10px] font-mono text-purple-400 uppercase tracking-widest block font-medium">Marca Blanca</span>
+          <h2 class="text-2xl md:text-4xl font-light text-white tracking-tight leading-tight">
+            Agencias: amplía tu capacidad de entrega sin contratar empleados fijos.
+          </h2>
+          <p class="text-sm text-[#cbd5e1] font-light leading-relaxed">
+            Trabajo como desarrollador marca blanca para agencias de diseño web, 
+            marketing digital y consultorías tecnológicas en Caracas y toda Venezuela. 
+            Tú vendes el proyecto, yo construyo la solución. Todo el código se entrega 
+            bajo tu marca, con la calidad y velocidad que tus clientes esperan.
+          </p>
+          <ul class="space-y-2 text-xs text-[#cbd5e1] font-light">
+            <li class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-sm text-purple-400">check_circle</span>
+              Código entregado bajo tu marca y repositorio
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-sm text-purple-400">check_circle</span>
+              Comunicación directa sin intermediarios técnicos
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-sm text-purple-400">check_circle</span>
+              Escala tu capacidad según demanda sin riesgo laboral
+            </li>
+          </ul>
+        </div>
+
+        <div class="lg:col-span-7">
+          <div class="linear-card rounded-lg border border-[#1f1f24] overflow-hidden bg-[#08080c]/50 p-8 shadow-2xl relative">
+            <div class="absolute inset-0 font-mono text-[8px] text-[#1f1f24] p-6 select-none overflow-hidden leading-relaxed pointer-events-none opacity-20">
+              white-label-agreement<br />
+              - Tú vendes, yo construyo<br />
+              - Código 100% transferido<br />
+              - Sin branding de Vortex<br />
+              - Repositorio cliente final<br />
+              - Soporte post-entrega
+            </div>
+
+            <div class="flex items-center justify-between border-b border-[#1f1f24] pb-4 mb-6 relative z-10">
+              <span class="text-[10px] font-mono text-[#cbd5e1] flex items-center gap-1.5">
+                <span class="w-1.5 h-1.5 rounded-full bg-purple-500"></span>
+                white-label // agency-partner
+              </span>
+              <span class="text-[9px] text-[#cbd5e1]/40 font-mono">Modelo B2B</span>
+            </div>
+
+            <!-- Grid de beneficios marca blanca -->
+            <div class="grid grid-cols-2 gap-4 relative z-10">
+              <div class="p-4 border border-[#1f1f24] rounded bg-black/40">
+                <span class="text-[10px] font-mono text-purple-400 block mb-1">Código Fuente</span>
+                <span class="text-xs text-white/90">100% transferido</span>
+                <span class="text-[10px] text-[#cbd5e1]/60 block">Sin dependencias ocultas</span>
+              </div>
+              <div class="p-4 border border-[#1f1f24] rounded bg-black/40">
+                <span class="text-[10px] font-mono text-purple-400 block mb-1">Marca</span>
+                <span class="text-xs text-white/90">Tuya al 100%</span>
+                <span class="text-[10px] text-[#cbd5e1]/60 block">Sin créditos ni logos</span>
+              </div>
+              <div class="p-4 border border-[#1f1f24] rounded bg-black/40">
+                <span class="text-[10px] font-mono text-purple-400 block mb-1">Repositorio</span>
+                <span class="text-xs text-white/90">GitHub/GitLab tuyo</span>
+                <span class="text-[10px] text-[#cbd5e1]/60 block">Commits con tu cuenta</span>
+              </div>
+              <div class="p-4 border border-[#1f1f24] rounded bg-black/40">
+                <span class="text-[10px] font-mono text-purple-400 block mb-1">Soporte</span>
+                <span class="text-xs text-white/90">Post-entrega</span>
+                <span class="text-[10px] text-[#cbd5e1]/60 block">3 meses incluido</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FLUJO DE TRABAJO ───────────────────────────────────────── -->
+  <section class="py-36 px-6 md:px-12 bg-black border-b border-[#1f1f24] relative">
+    <div class="max-w-[1200px] mx-auto relative z-10">
+      <div class="text-center max-w-2xl mx-auto mb-20">
+        <span class="text-[10px] font-mono text-[#cbd5e1] uppercase tracking-widest block mb-3 font-medium">Metodología de Trabajo</span>
+        <h2 class="text-3xl md:text-5xl font-light text-white tracking-tight">Código limpio, entregas rápidas, comunicación directa</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="linear-card rounded-lg border border-[#1f1f24] bg-[#08080c]/40 p-6 glow-hover transition-all">
+          <div class="text-2xl font-light text-purple-400 mb-3">01</div>
+          <h3 class="text-sm font-medium text-white mb-2">Requisitos y Plan</h3>
+          <p class="text-[10px] text-[#cbd5e1] leading-relaxed">
+            Definimos alcance, tecnologías, timeline y entregables. Te doy una 
+            estimación precisa con desglose de horas y costo.
+          </p>
+        </div>
+
+        <div class="linear-card rounded-lg border border-[#1f1f24] bg-[#08080c]/40 p-6 glow-hover transition-all">
+          <div class="text-2xl font-light text-cyan-400 mb-3">02</div>
+          <h3 class="text-sm font-medium text-white mb-2">Desarrollo Iterativo</h3>
+          <p class="text-[10px] text-[#cbd5e1] leading-relaxed">
+            Commits diarios, ramas por feature, PRs con code review. Ves el avance 
+            en tiempo real en tu repositorio de GitHub/GitLab.
+          </p>
+        </div>
+
+        <div class="linear-card rounded-lg border border-[#1f1f24] bg-[#08080c]/40 p-6 glow-hover transition-all">
+          <div class="text-2xl font-light text-green-400 mb-3">03</div>
+          <h3 class="text-sm font-medium text-white mb-2">Testing y QA</h3>
+          <p class="text-[10px] text-[#cbd5e1] leading-relaxed">
+            Suite de tests automatizados (unitarios, integración, e2e), 
+            linting estricto y auditoría de seguridad antes de cada deploy.
+          </p>
+        </div>
+
+        <div class="linear-card rounded-lg border border-[#1f1f24] bg-[#08080c]/40 p-6 glow-hover transition-all">
+          <div class="text-2xl font-light text-orange-400 mb-3">04</div>
+          <h3 class="text-sm font-medium text-white mb-2">Entrega y Soporte</h3>
+          <p class="text-[10px] text-[#cbd5e1] leading-relaxed">
+            Código fuente completo, documentación técnica y 3 meses de soporte 
+            post-entrega para ajustes y estabilización.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── HERRAMIENTAS ───────────────────────────────────────────── -->
+  <section class="py-36 px-6 md:px-12 bg-black border-b border-[#1f1f24] relative">
+    <div class="max-w-[1200px] mx-auto relative z-10">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-[10px] font-mono text-[#cbd5e1] uppercase tracking-widest block mb-3 font-medium">Herramientas Diarias</span>
+        <h2 class="text-3xl md:text-5xl font-light text-white tracking-tight">El arsenal técnico de un programador senior</h2>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 max-w-5xl mx-auto">
+        <div class="linear-card p-3 rounded border border-[#1f1f24] text-center glow-hover transition-all">
+          <span class="material-symbols-outlined text-lg text-cyan-400">code</span>
+          <div class="text-[10px] font-mono text-white mt-1">VS Code</div>
+        </div>
+        <div class="linear-card p-3 rounded border border-[#1f1f24] text-center glow-hover transition-all">
+          <span class="material-symbols-outlined text-lg text-purple-400">account_tree</span>
+          <div class="text-[10px] font-mono text-white mt-1">Git/GitHub</div>
+        </div>
+        <div class="linear-card p-3 rounded border border-[#1f1f24] text-center glow-hover transition-all">
+          <span class="material-symbols-outlined text-lg text-green-400">play_circle</span>
+          <div class="text-[10px] font-mono text-white mt-1">Vitest</div>
+        </div>
+        <div class="linear-card p-3 rounded border border-[#1f1f24] text-center glow-hover transition-all">
+          <span class="material-symbols-outlined text-lg text-orange-400">deployed_code</span>
+          <div class="text-[10px] font-mono text-white mt-1">Vercel</div>
+        </div>
+        <div class="linear-card p-3 rounded border border-[#1f1f24] text-center glow-hover transition-all">
+          <span class="material-symbols-outlined text-lg text-pink-400">database</span>
+          <div class="text-[10px] font-mono text-white mt-1">Supabase</div>
+        </div>
+        <div class="linear-card p-3 rounded border border-[#1f1f24] text-center glow-hover transition-all">
+          <span class="material-symbols-outlined text-lg text-yellow-400">psychology</span>
+          <div class="text-[10px] font-mono text-white mt-1">Cursor AI</div>
+        </div>
+        <div class="linear-card p-3 rounded border border-[#1f1f24] text-center glow-hover transition-all">
+          <span class="material-symbols-outlined text-lg text-cyan-400">test_tube</span>
+          <div class="text-[10px] font-mono text-white mt-1">Playwright</div>
+        </div>
+        <div class="linear-card p-3 rounded border border-[#1f1f24] text-center glow-hover transition-all">
+          <span class="material-symbols-outlined text-lg text-purple-400">dns</span>
+          <div class="text-[10px] font-mono text-white mt-1">Docker</div>
+        </div>
+        <div class="linear-card p-3 rounded border border-[#1f1f24] text-center glow-hover transition-all">
+          <span class="material-symbols-outlined text-lg text-green-400">webhook</span>
+          <div class="text-[10px] font-mono text-white mt-1">WebSockets</div>
+        </div>
+        <div class="linear-card p-3 rounded border border-[#1f1f24] text-center glow-hover transition-all">
+          <span class="material-symbols-outlined text-lg text-orange-400">terminal</span>
+          <div class="text-[10px] font-mono text-white mt-1">Node.js</div>
+        </div>
+        <div class="linear-card p-3 rounded border border-[#1f1f24] text-center glow-hover transition-all">
+          <span class="material-symbols-outlined text-lg text-pink-400">frame</span>
+          <div class="text-[10px] font-mono text-white mt-1">Figma API</div>
+        </div>
+        <div class="linear-card p-3 rounded border border-[#1f1f24] text-center glow-hover transition-all">
+          <span class="material-symbols-outlined text-lg text-yellow-400">cloud</span>
+          <div class="text-[10px] font-mono text-white mt-1">CI/CD</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FAQ TÉCNICA ────────────────────────────────────────────── -->
+  <section class="py-36 px-6 md:px-12 bg-black relative border-b border-[#1f1f24]">
+    <div class="max-w-[800px] mx-auto relative z-10">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <span class="text-[10px] font-mono text-[#cbd5e1] uppercase tracking-widest block mb-3 font-medium">FAQ Técnica</span>
+        <h2 class="text-3xl md:text-4xl font-light text-white tracking-tight">Preguntas sobre contratación y desarrollo</h2>
+      </div>
+
+      <div class="space-y-4">
+        <details class="group linear-card rounded-lg border border-[#1f1f24] bg-[#08080c]/30 overflow-hidden glow-hover transition-all">
+          <summary class="flex items-center justify-between p-5 cursor-pointer text-sm font-medium text-white/90 hover:text-white transition-colors">
+            ¿Cuántos años de experiencia tienes y en qué tecnologías?
+            <span class="material-symbols-outlined text-sm text-[#cbd5e1]/60 group-open:rotate-180 transition-transform">expand_more</span>
+          </summary>
+          <div class="px-5 pb-5 text-xs text-[#cbd5e1] leading-relaxed">
+            Tengo experiencia comprobable construyendo aplicaciones web profesionales 
+            con el stack moderno: <strong class="text-white">Astro, React, Next.js, TypeScript, 
+            Node.js, Supabase (PostgreSQL) y Tailwind CSS</strong>. Domino arquitectura 
+            Jamstack, Server Components, APIs REST/GraphQL, WebSockets, autenticación 
+            JWT/OAuth, Row Level Security, CI/CD, testing automatizado y despliegues 
+            en Vercel. Cada proyecto que entrego pasa por pruebas de rendimiento, 
+            seguridad y accesibilidad antes de salir a producción.
+          </div>
+        </details>
+
+        <details class="group linear-card rounded-lg border border-[#1f1f24] bg-[#08080c]/30 overflow-hidden glow-hover transition-all">
+          <summary class="flex items-center justify-between p-5 cursor-pointer text-sm font-medium text-white/90 hover:text-white transition-colors">
+            ¿Trabajas como marca blanca para otras agencias?
+            <span class="material-symbols-outlined text-sm text-[#cbd5e1]/60 group-open:rotate-180 transition-transform">expand_more</span>
+          </summary>
+          <div class="px-5 pb-5 text-xs text-[#cbd5e1] leading-relaxed">
+            Sí, es uno de mis servicios principales. Si tienes una agencia de diseño web, 
+            marketing digital o consultoría tecnológica, puedes <strong class="text-white">vender mis servicios 
+            como si fueran tuyos</strong>. Todo el código se entrega bajo tu marca, en tu 
+            repositorio de GitHub/GitLab, sin ningún logo o referencia a Vortex. 
+            Tú mantienes la relación con el cliente final, yo me encargo de la 
+            ingeniería. Es la forma más eficiente de escalar tu capacidad de entrega 
+            sin contratar empleados fijos.
+          </div>
+        </details>
+
+        <details class="group linear-card rounded-lg border border-[#1f1f24] bg-[#08080c]/30 overflow-hidden glow-hover transition-all">
+          <summary class="flex items-center justify-between p-5 cursor-pointer text-sm font-medium text-white/90 hover:text-white transition-colors">
+            ¿Qué metodologías y herramientas usas para programar?
+            <span class="material-symbols-outlined text-sm text-[#cbd5e1]/60 group-open:rotate-180 transition-transform">expand_more</span>
+          </summary>
+          <div class="px-5 pb-5 text-xs text-[#cbd5e1] leading-relaxed">
+            Uso <strong class="text-white">Git Flow</strong> con ramas por feature y Pull Requests 
+            con code review. Desarrollo en <strong class="text-white">VS Code + Cursor</strong> con 
+            TypeScript estricto, ESLint y Prettier. Tests automatizados con 
+            <strong class="text-white">Vitest</strong> (unitarios) y <strong class="text-white">Playwright</strong> (e2e). 
+            CI/CD con <strong class="text-white">GitHub Actions</strong> que ejecuta tests, linting 
+            y build en cada push. Despliegues automáticos a <strong class="text-white">Vercel</strong> 
+            con preview URLs por cada PR. Documentación técnica en el propio 
+            código (JSDoc) y README por proyecto.
+          </div>
+        </details>
+
+        <details class="group linear-card rounded-lg border border-[#1f1f24] bg-[#08080c]/30 overflow-hidden glow-hover transition-all">
+          <summary class="flex items-center justify-between p-5 cursor-pointer text-sm font-medium text-white/90 hover:text-white transition-colors">
+            ¿Cómo se maneja el soporte y la entrega del código?
+            <span class="material-symbols-outlined text-sm text-[#cbd5e1]/60 group-open:rotate-180 transition-transform">expand_more</span>
+          </summary>
+          <div class="px-5 pb-5 text-xs text-[#cbd5e1] leading-relaxed">
+            El código se entrega completo a través de <strong class="text-white">GitHub o GitLab</strong> 
+            (en tu repositorio si trabajamos marca blanca). Incluye: historial de 
+            commits, documentación técnica, instrucciones de deploy y variables de 
+            entorno. Para el soporte post-entrega, tienes <strong class="text-white">3 meses incluidos</strong> 
+            para ajustes, correcciones y preguntas técnicas. La comunicación es por 
+            Slack o WhatsApp con respuestas garantizadas en menos de 24 horas 
+            hábiles.
+          </div>
+        </details>
+
+        <details class="group linear-card rounded-lg border border-[#1f1f24] bg-[#08080c]/30 overflow-hidden glow-hover transition-all">
+          <summary class="flex items-center justify-between p-5 cursor-pointer text-sm font-medium text-white/90 hover:text-white transition-colors">
+            ¿Manejas integraciones de APIs complejas y WebSockets?
+            <span class="material-symbols-outlined text-sm text-[#cbd5e1]/60 group-open:rotate-180 transition-transform">expand_more</span>
+          </summary>
+          <div class="px-5 pb-5 text-xs text-[#cbd5e1] leading-relaxed">
+            Sí. He integrado sistemas con <strong class="text-white">Salesforce, HubSpot, pasarelas de pago 
+            (Stripe, PayPal, MercadoPago)</strong>, APIs de delivery (MRW, Zoom), 
+            servicios de email (SendGrid, Resend), autenticación OAuth (Google, 
+            GitHub), y sistemas contables venezolanos. Para tiempo real implemento 
+            <strong class="text-white">WebSockets con Supabase Realtime</strong> o Socket.io, 
+            ideal para notificaciones en vivo, chats, dashboards de monitoreo 
+            y sincronización de datos multi-usuario.
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── CONTACTO ────────────────────────────────────────────────── -->
+  <section id="contacto" class="py-36 px-6 md:px-12 bg-black relative">
+    <div class="max-w-[600px] mx-auto text-center relative z-10 space-y-8">
+      <span class="text-[10px] font-mono text-[#cbd5e1] uppercase tracking-widest block font-medium">Contratación</span>
+      <h2 class="text-3xl md:text-5xl font-light text-white tracking-tight leading-tight">
+        ¿Necesitas un programador senior para tu proyecto?
+      </h2>
+      <p class="text-sm text-[#cbd5e1] font-light leading-relaxed">
+        Cuéntame los detalles técnicos de tu proyecto y te responderé con una propuesta 
+        clara: alcance, tecnologías, timeline y presupuesto. Sin rodeos ni 
+        intermediarios — hablas directamente con el desarrollador.
+      </p>
+
+      <div class="linear-card p-8 rounded-lg border border-[#1f1f24] bg-[#08080c]/40 text-left space-y-6">
+        <div id="form-feedback" class="text-sm mt-4 hidden"></div>
+        <form id="contact-form-dev-senior" class="space-y-4">
+          <div>
+            <label class="block text-[10px] font-mono text-[#cbd5e1] uppercase tracking-wider mb-2 font-medium" for="fullname">Nombre y Apellido</label>
+            <input
+              class="w-full bg-black border border-[#1f1f24] rounded px-4 py-3 text-xs text-white placeholder-neutral-800 focus:outline-none focus:border-white transition-colors"
+              type="text"
+              id="fullname"
+              name="name"
+              placeholder="e.g. Carlos Pérez"
+              required
+            />
+          </div>
+
+          <div>
+            <label class="block text-[10px] font-mono text-[#cbd5e1] uppercase tracking-wider mb-2 font-medium" for="corp_email">Correo Corporativo</label>
+            <input
+              class="w-full bg-black border border-[#1f1f24] rounded px-4 py-3 text-xs text-white placeholder-neutral-800 focus:outline-none focus:border-white transition-colors"
+              type="email"
+              id="corp_email"
+              name="email"
+              placeholder="operator@acme.com"
+              required
+            />
+          </div>
+
+          <div>
+            <label class="block text-[10px] font-mono text-[#cbd5e1] uppercase tracking-wider mb-2 font-medium" for="project_details">Descripción técnica del proyecto</label>
+            <textarea
+              class="w-full bg-black border border-[#1f1f24] rounded px-4 py-3 text-xs text-white placeholder-neutral-800 focus:outline-none focus:border-white transition-colors min-h-[100px]"
+              id="project_details"
+              name="message"
+              placeholder="Cuéntame sobre tu proyecto: tipo de aplicación, stack deseado, plazos, presupuesto estimado, integraciones necesarias..."
+              required
+            ></textarea>
+          </div>
+
+          <input type="hidden" name="service" value="programador-web" />
+
+          <button
+            type="button"
+            data-original-text="Enviar Mensaje"
+            class="w-full py-3 bg-white text-black font-semibold text-xs rounded hover:bg-neutral-200 transition-colors duration-200"
+            onclick="submitFormSenior()"
+          >
+            Agendar Consultoría Técnica
+          </button>
+        </form>
+      </div>
+
+      <script>
+        async function submitFormSenior() {
+          const form = document.getElementById('contact-form-dev-senior');
+          const feedback = document.getElementById('form-feedback');
+          const btn = form?.querySelector('button[type="button"]');
+          
+          if (!form || !(form instanceof HTMLFormElement) || !btn) { return; }
+          if (!(feedback instanceof HTMLElement)) { return; }
+          
+          if (!form.checkValidity()) {
+            form.reportValidity();
+            return;
+          }
+          
+          btn.disabled = true;
+          btn.textContent = 'Enviando...';
+          
+          try {
+            const res = await fetch('/api/contact', {
+              method: 'POST',
+              body: new FormData(form)
+            });
+            const data = await res.json();
+            
+            if (data.success) {
+              feedback.className = 'text-sm mt-4 text-green-400';
+              feedback.textContent = 'Mensaje enviado con exito! Te contactare pronto.';
+              feedback.classList.remove('hidden');
+              form.reset();
+            } else {
+              throw new Error(data.error);
+            }
+          } catch (err) {
+            feedback.className = 'text-sm mt-4 text-red-400';
+            feedback.textContent = 'Error al enviar. Intenta de nuevo o escribeme a info@vortexlm.com.';
+            feedback.classList.remove('hidden');
+          } finally {
+            btn.disabled = false;
+            btn.textContent = (btn.getAttribute('data-original-text')) || 'Enviar';
+          }
+        }
+      </script>
+    </div>
+  </section>
+</BaseLayout>

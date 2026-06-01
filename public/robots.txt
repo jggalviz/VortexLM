@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /item/
+Disallow: /item
+Disallow: /hg/
+
+# Indica a Google dónde está tu sitemap real de Astro
+Sitemap: https://vortexlm.com/sitemap-index.xml

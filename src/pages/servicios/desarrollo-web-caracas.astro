@@ -1,0 +1,663 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+<BaseLayout
+  title="Desarrollo Web en Caracas | Ingeniería de Software | Vortex Logic"
+  description="Desarrollo web a medida en Caracas. Creamos aplicaciones web, PWAs e integraciones de API robustas, escalables y ultrarrápidas con Astro y React."
+  isLocalBusiness={true}
+>
+  <!-- ─── HERO ───────────────────────────────────────────────────── -->
+  <section class="relative pt-36 pb-32 overflow-hidden linear-gradient-bg border-b border-[#1f1f24] px-6 md:px-12">
+    <div class="absolute inset-0 linear-grid opacity-30 pointer-events-none"></div>
+    <div class="max-w-[1200px] mx-auto text-center relative z-10">
+      <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-white/[0.015] blur-[120px] rounded-full pointer-events-none"></div>
+
+      <h1 class="text-4xl md:text-7xl font-extralight tracking-tight text-white mb-8 leading-[1.08] max-w-4xl mx-auto opacity-95">
+        Desarrollo Web en Caracas: Ingeniería de Software a Medida
+      </h1>
+
+      <p class="text-base md:text-lg text-[#cbd5e1] font-light mb-12 max-w-3xl mx-auto leading-relaxed">
+        Creamos aplicaciones web progresivas, integraciones de API robustas y plataformas 
+        headless que escalan con tu negocio. Astro, React, Next.js y Supabase — 
+        el stack definitivo para empresas que exigen rendimiento.
+      </p>
+
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-6 mb-20">
+        <a href="#contacto" class="w-full sm:w-auto px-8 py-3 bg-white text-black font-semibold text-xs rounded-full hover:bg-neutral-200 transition-all text-center duration-200 active:scale-95 shadow-[0_0_25px_rgba(255,255,255,0.15)]">
+          Cotizar Solución Técnica
+        </a>
+        <a href="#soluciones" class="w-full sm:w-auto px-6 py-3 text-white/90 font-medium text-xs rounded-full hover:text-white flex items-center justify-center gap-1.5 group transition-colors">
+          Ver soluciones <span class="group-hover:translate-x-1 transition-transform">➔</span>
+        </a>
+      </div>
+
+      <!-- Mockup de consola/API visual -->
+      <div class="relative max-w-5xl mx-auto">
+        <div class="linear-card rounded-lg overflow-hidden border border-[#2e2e34] shadow-[0_50px_100px_-20px_rgba(0,0,0,0.98)]">
+          <div class="bg-[#08080c] px-4 py-3.5 flex items-center justify-between border-b border-[#1f1f24]">
+            <div class="flex items-center gap-2">
+              <span class="w-2.5 h-2.5 rounded-full bg-[#ff5f56]/50"></span>
+              <span class="w-2.5 h-2.5 rounded-full bg-[#ffbd2e]/50"></span>
+              <span class="w-2.5 h-2.5 rounded-full bg-[#27c93f]/50"></span>
+            </div>
+            <div class="text-[10px] font-mono text-[#cbd5e1]/40 flex items-center gap-1.5">
+              <span class="material-symbols-outlined text-[10px]">terminal</span>
+              vortex-api-server // build:production
+            </div>
+            <div class="w-12"></div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-12 min-h-[420px] bg-[#000000] text-left">
+            <!-- Panel izquierdo: editor de código -->
+            <div class="col-span-1 md:col-span-8 p-6 border-r border-[#1f1f24] font-mono text-[11px] leading-relaxed overflow-x-auto">
+              <div class="flex items-center gap-3 text-[10px] text-[#cbd5e1]/60 border-b border-[#1f1f24] pb-3 mb-4">
+                <span class="flex items-center gap-1.5">
+                  <span class="w-1.5 h-1.5 rounded-full bg-cyan-500"></span>
+                  api/endpoints.ts
+                </span>
+                <span class="flex items-center gap-1.5">
+                  <span class="w-1.5 h-1.5 rounded-full bg-purple-500"></span>
+                  components/
+                </span>
+                <span class="flex items-center gap-1.5">
+                  <span class="w-1.5 h-1.5 rounded-full bg-green-500"></span>
+                  db/schema.ts
+                </span>
+              </div>
+
+              <div class="space-y-1.5">
+                <div><span class="text-purple-400">import</span> { <span class="text-yellow-200">supabase</span> } <span class="text-purple-400">from</span> <span class="text-green-300">'../db/client'</span>;</div>
+                <div><span class="text-purple-400">import</span> { <span class="text-yellow-200">defineEndpoint</span> } <span class="text-purple-400">from</span> <span class="text-green-300">'@vortex/api'</span>;</div>
+                <div class="text-[#cbd5e1]/40">// Endpoint RESTful con validación y rate-limiting</div>
+                <br />
+                <div><span class="text-blue-400">export const</span> <span class="text-yellow-200">GET</span> = defineEndpoint(<span class="text-purple-400">async</span> (&#123; req, res &#125;) <span class="text-purple-400">=></span> &#123;</div>
+                <div class="pl-4"><span class="text-blue-400">const</span> { <span class="text-yellow-200">data</span> } = <span class="text-purple-400">await</span> <span class="text-yellow-200">supabase</span></div>
+                <div class="pl-8">.<span class="text-yellow-200">from</span>(<span class="text-green-300">'clientes'</span>)</div>
+                <div class="pl-8">.<span class="text-yellow-200">select</span>(<span class="text-green-300">'*'</span>)</div>
+                <div class="pl-8">.<span class="text-yellow-200">limit</span>(<span class="text-yellow-400">100</span>);</div>
+                <br />
+                <div class="pl-4"><span class="text-purple-400">return</span> res</div>
+                <div class="pl-8">.<span class="text-yellow-200">status</span>(<span class="text-yellow-400">200</span>)</div>
+                <div class="pl-8">.<span class="text-yellow-200">json</span>(&#123; data, meta: &#123; cached: <span class="text-blue-400">true</span>, latency: <span class="text-yellow-400">12ms</span> &#125;&#125;);</div>
+                <div>});</div>
+              </div>
+            </div>
+
+            <!-- Panel derecho: logs de respuesta API -->
+            <div class="col-span-1 md:col-span-4 p-6 bg-[#050507]/30 font-mono text-[10px]">
+              <div class="text-[9px] uppercase tracking-wider text-[#cbd5e1]/40 mb-4 font-semibold">Response Log</div>
+              <div class="space-y-2">
+                <div class="p-2 border border-[#1f1f24] rounded bg-black/40">
+                  <div class="text-green-400">200 OK</div>
+                  <div class="text-[#cbd5e1]/60">GET /api/clientes</div>
+                  <div class="text-[#cbd5e1]/40 text-[9px]">12ms · 1420 rows</div>
+                </div>
+                <div class="p-2 border border-[#1f1f24] rounded bg-black/40">
+                  <div class="text-green-400">201 Created</div>
+                  <div class="text-[#cbd5e1]/60">POST /api/contacto</div>
+                  <div class="text-[#cbd5e1]/40 text-[9px]">8ms · payload 2.4KB</div>
+                </div>
+                <div class="p-2 border border-[#1f1f24] rounded bg-black/40">
+                  <div class="text-yellow-400">304 Not Modified</div>
+                  <div class="text-[#cbd5e1]/60">GET /api/productos</div>
+                  <div class="text-[#cbd5e1]/40 text-[9px]">2ms · cached</div>
+                </div>
+                <div class="border-t border-[#1f1f24]/50 pt-2 mt-2">
+                  <div class="text-[#cbd5e1]/40">Uptime: 99.99%</div>
+                  <div class="text-green-500">SSL · WAF · Rate Limited</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── SOLUCIONES AVANZADAS ───────────────────────────────────── -->
+  <section id="soluciones" class="py-36 px-6 md:px-12 bg-black relative border-b border-[#1f1f24]">
+    <div class="max-w-[1200px] mx-auto relative z-10">
+      <div class="max-w-4xl mb-24">
+        <span class="text-[10px] font-mono text-[#cbd5e1] uppercase tracking-widest block mb-3 font-medium">Soluciones Avanzadas</span>
+        <h2 class="text-2xl md:text-4xl font-light text-white tracking-tight leading-snug">
+          Arquitectura de software moderna para empresas que necesitan más que un sitio web.
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16">
+        <!-- PWA -->
+        <div class="space-y-6 group">
+          <div class="w-full aspect-[4/3] linear-card rounded border border-[#1f1f24] bg-[#08080c]/30 flex items-center justify-center p-6 glow-hover transition-all">
+            <svg class="w-20 h-20 text-[#cbd5e1]/40 group-hover:text-white/80 transition-colors" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="20" y="10" width="60" height="80" rx="8" stroke="currentColor" stroke-width="1.25"/>
+              <rect x="30" y="20" width="40" height="40" rx="4" stroke="currentColor" stroke-width="0.75" stroke-dasharray="2 2"/>
+              <path d="M40 65H60" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              <circle cx="50" cy="48" r="3" fill="currentColor"/>
+              <path d="M35 80L50 72L65 80" stroke="currentColor" stroke-width="0.75" stroke-dasharray="2 2"/>
+              <path d="M50 20V10" stroke="currentColor" stroke-width="0.5" stroke-dasharray="1 1"/>
+              <path d="M30 88L50 82L70 88" stroke="currentColor" stroke-width="0.5" stroke-dasharray="1 1"/>
+            </svg>
+          </div>
+          <div>
+            <h3 class="text-sm font-medium text-white mb-2.5">Progressive Web Apps (PWA)</h3>
+            <p class="text-xs text-[#cbd5e1] leading-relaxed">
+              Transformamos tu web en una experiencia de aplicación nativa con service workers, 
+              caché offline, notificaciones push y carga instantánea. Tus usuarios en Caracas 
+              acceden a tu plataforma incluso sin conexión a internet.
+            </p>
+            <ul class="space-y-1 mt-3 text-[10px] text-[#cbd5e1] font-mono">
+              <li class="flex items-center gap-1.5"><span class="text-green-400">→</span> Instalable en home screen</li>
+              <li class="flex items-center gap-1.5"><span class="text-green-400">→</span> Sincronización en segundo plano</li>
+              <li class="flex items-center gap-1.5"><span class="text-green-400">→</span> 90% menos datos que app nativa</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- APIs e Integraciones -->
+        <div class="space-y-6 group">
+          <div class="w-full aspect-[4/3] linear-card rounded border border-[#1f1f24] bg-[#08080c]/30 flex items-center justify-center p-6 glow-hover transition-all">
+            <svg class="w-20 h-20 text-[#cbd5e1]/40 group-hover:text-white/80 transition-colors" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M15 50L40 30L40 70L15 50Z" stroke="currentColor" stroke-width="1.25"/>
+              <path d="M40 50L65 30L65 70L40 50Z" stroke="currentColor" stroke-width="1.25"/>
+              <path d="M65 50L90 30L90 70L65 50Z" stroke="currentColor" stroke-width="1.25"/>
+              <circle cx="40" cy="30" r="3" fill="currentColor"/>
+              <circle cx="65" cy="30" r="3" fill="currentColor"/>
+              <circle cx="40" cy="70" r="3" fill="currentColor"/>
+              <circle cx="65" cy="70" r="3" fill="currentColor"/>
+              <path d="M50 15L50 25" stroke="currentColor" stroke-width="0.75" stroke-dasharray="2 2"/>
+              <path d="M50 75L50 85" stroke="currentColor" stroke-width="0.75" stroke-dasharray="2 2"/>
+            </svg>
+          </div>
+          <div>
+            <h3 class="text-sm font-medium text-white mb-2.5">Integraciones de API y CRMs</h3>
+            <p class="text-xs text-[#cbd5e1] leading-relaxed">
+              Conectamos tu web con los sistemas que ya usas: CRMs como Salesforce o HubSpot, 
+              pasarelas de pago, ERP contable, sistemas de inventario y cualquier API REST 
+              o GraphQL. Flujos automatizados que eliminan procesos manuales.
+            </p>
+            <ul class="space-y-1 mt-3 text-[10px] text-[#cbd5e1] font-mono">
+              <li class="flex items-center gap-1.5"><span class="text-green-400">→</span> Webhooks en tiempo real</li>
+              <li class="flex items-center gap-1.5"><span class="text-green-400">→</span> Autenticación OAuth 2.0 / JWT</li>
+              <li class="flex items-center gap-1.5"><span class="text-green-400">→</span> Documentación Swagger/OpenAPI</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Bases de Datos Headless -->
+        <div class="space-y-6 group">
+          <div class="w-full aspect-[4/3] linear-card rounded border border-[#1f1f24] bg-[#08080c]/30 flex items-center justify-center p-6 glow-hover transition-all">
+            <svg class="w-20 h-20 text-[#cbd5e1]/40 group-hover:text-white/80 transition-colors" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M50 25L75 38L50 51L25 38L50 25Z" stroke="currentColor" stroke-width="1.25"/>
+              <path d="M50 45L75 58L50 71L25 58L50 45Z" stroke="currentColor" stroke-width="1.25"/>
+              <path d="M50 65L75 78L50 91L25 78L50 65Z" stroke="currentColor" stroke-width="1.25"/>
+              <path d="M50 25V91" stroke="currentColor" stroke-width="0.5" stroke-dasharray="2 2"/>
+              <circle cx="50" cy="38" r="2" fill="currentColor"/>
+              <circle cx="50" cy="58" r="2" fill="currentColor"/>
+              <circle cx="50" cy="78" r="2" fill="currentColor"/>
+            </svg>
+          </div>
+          <div>
+            <h3 class="text-sm font-medium text-white mb-2.5">Bases de Datos Headless</h3>
+            <p class="text-xs text-[#cbd5e1] leading-relaxed">
+              Arquitectura desacoplada con Supabase (PostgreSQL), Airtable o MongoDB. 
+              Tu equipo accede y edita los datos desde un panel amigable mientras el frontend 
+              consume la información via API. Escalabilidad horizontal sin límites.
+            </p>
+            <ul class="space-y-1 mt-3 text-[10px] text-[#cbd5e1] font-mono">
+              <li class="flex items-center gap-1.5"><span class="text-green-400">→</span> Realtime subscriptions (WebSockets)</li>
+              <li class="flex items-center gap-1.5"><span class="text-green-400">→</span> Row Level Security integrado</li>
+              <li class="flex items-center gap-1.5"><span class="text-green-400">→</span> Migraciones automatizadas</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── BLOQUE DETALLADO: ARQUITECTURA ─────────────────────────── -->
+  <section class="py-36 px-6 md:px-12 bg-black border-b border-[#1f1f24] relative">
+    <div class="max-w-[1200px] mx-auto space-y-44 relative z-10">
+
+      <!-- Bloque: Stack Técnico -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
+        <div class="lg:col-span-5 space-y-5">
+          <span class="text-[10px] font-mono text-[#cbd5e1] uppercase tracking-widest block font-medium">Stack Técnico</span>
+          <h2 class="text-2xl md:text-4xl font-light text-white tracking-tight leading-tight">
+            El stack que usan las startups más innovadoras del mundo.
+          </h2>
+          <p class="text-sm text-[#cbd5e1] font-light leading-relaxed">
+            Astro para velocidad extrema, React para interactividad, Supabase como backend 
+            escalable y Vercel para despliegues globales. Cada tecnología es seleccionada 
+            por su rendimiento, seguridad y ecosistema. No usamos código legacy ni dependencias 
+            innecesarias.
+          </p>
+          <ul class="space-y-2 text-xs text-[#cbd5e1] font-light">
+            <li class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-sm text-green-400">check_circle</span>
+              Astro + React Islands Architecture
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-sm text-green-400">check_circle</span>
+              TypeScript estricto en toda la codebase
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-sm text-green-400">check_circle</span>
+              Testing automatizado (Vitest + Playwright)
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-sm text-green-400">check_circle</span>
+              CI/CD con deploys automáticos desde GitHub
+            </li>
+          </ul>
+        </div>
+
+        <div class="lg:col-span-7">
+          <div class="linear-card rounded-lg border border-[#1f1f24] overflow-hidden bg-[#08080c]/50 p-8 shadow-2xl relative">
+            <div class="absolute inset-0 font-mono text-[8px] text-[#1f1f24] p-6 select-none overflow-hidden leading-relaxed pointer-events-none opacity-20">
+              // Arquitectura<br />
+              client → CDN → Edge<br />
+              ↓<br />
+              Astro SSR + API Routes<br />
+              ↓<br />
+              Supabase PostgreSQL<br />
+              ↓<br />
+              WebSocket Realtime
+            </div>
+
+            <div class="flex items-center justify-between border-b border-[#1f1f24] pb-4 mb-6 relative z-10">
+              <span class="text-[10px] font-mono text-[#cbd5e1] flex items-center gap-1.5">
+                <span class="w-1.5 h-1.5 rounded-full bg-cyan-500"></span>
+                architecture // vortex-stack
+              </span>
+              <span class="text-[9px] text-[#cbd5e1]/40 font-mono">Producción</span>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 relative z-10">
+              <div class="p-4 border border-[#1f1f24] rounded bg-black/40">
+                <span class="text-[10px] font-mono text-cyan-400 block mb-1">Frontend</span>
+                <span class="text-xs text-white/90">Astro + React + Tailwind</span>
+              </div>
+              <div class="p-4 border border-[#1f1f24] rounded bg-black/40">
+                <span class="text-[10px] font-mono text-cyan-400 block mb-1">Backend</span>
+                <span class="text-xs text-white/90">Supabase + API Routes</span>
+              </div>
+              <div class="p-4 border border-[#1f1f24] rounded bg-black/40">
+                <span class="text-[10px] font-mono text-cyan-400 block mb-1">Despliegue</span>
+                <span class="text-xs text-white/90">Vercel Edge Network</span>
+              </div>
+              <div class="p-4 border border-[#1f1f24] rounded bg-black/40">
+                <span class="text-[10px] font-mono text-cyan-400 block mb-1">Base de Datos</span>
+                <span class="text-xs text-white/90">PostgreSQL / Airtable</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bloque: Flujo de Datos / Diagrama API -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
+        <div class="lg:col-span-7 order-2 lg:order-1">
+          <div class="linear-card rounded-lg border border-[#1f1f24] overflow-hidden bg-[#08080c]/50 p-6 shadow-2xl">
+            <div class="flex items-center justify-between border-b border-[#1f1f24] pb-4 mb-4">
+              <span class="text-[10px] font-mono text-[#cbd5e1] flex items-center gap-1.5">
+                <span class="w-1.5 h-1.5 rounded-full bg-purple-500"></span>
+                data-flow // api-pipeline
+              </span>
+              <span class="text-[9px] text-[#cbd5e1]/40 font-mono">WebSocket Realtime</span>
+            </div>
+
+            <!-- Diagrama de flujo de datos visual -->
+            <div class="py-8 px-4 relative z-10">
+              <div class="flex items-center justify-between gap-2">
+                <!-- Cliente -->
+                <div class="flex flex-col items-center gap-1">
+                  <div class="w-12 h-12 border border-[#1f1f24] rounded-lg bg-black/60 flex items-center justify-center">
+                    <span class="material-symbols-outlined text-sm text-white/80">devices</span>
+                  </div>
+                  <span class="text-[8px] font-mono text-[#cbd5e1]/60">Cliente</span>
+                </div>
+                <div class="flex-1 h-px bg-gradient-to-r from-[#1f1f24] to-cyan-500/30 relative">
+                  <span class="absolute -top-3 left-1/2 -translate-x-1/2 text-[7px] font-mono text-[#cbd5e1]/30">HTTPS</span>
+                </div>
+                <!-- CDN -->
+                <div class="flex flex-col items-center gap-1">
+                  <div class="w-12 h-12 border border-[#1f1f24] rounded-lg bg-black/60 flex items-center justify-center">
+                    <span class="material-symbols-outlined text-sm text-cyan-400">cloud</span>
+                  </div>
+                  <span class="text-[8px] font-mono text-[#cbd5e1]/60">Edge CDN</span>
+                </div>
+                <div class="flex-1 h-px bg-gradient-to-r from-cyan-500/30 to-purple-500/30 relative">
+                  <span class="absolute -top-3 left-1/2 -translate-x-1/2 text-[7px] font-mono text-[#cbd5e1]/30">~12ms</span>
+                </div>
+                <!-- API Server -->
+                <div class="flex flex-col items-center gap-1">
+                  <div class="w-12 h-12 border border-[#1f1f24] rounded-lg bg-black/60 flex items-center justify-center">
+                    <span class="material-symbols-outlined text-sm text-purple-400">dns</span>
+                  </div>
+                  <span class="text-[8px] font-mono text-[#cbd5e1]/60">API Server</span>
+                </div>
+                <div class="flex-1 h-px bg-gradient-to-r from-purple-500/30 to-green-500/30 relative">
+                  <span class="absolute -top-3 left-1/2 -translate-x-1/2 text-[7px] font-mono text-[#cbd5e1]/30">SQL</span>
+                </div>
+                <!-- Database -->
+                <div class="flex flex-col items-center gap-1">
+                  <div class="w-12 h-12 border border-[#1f1f24] rounded-lg bg-black/60 flex items-center justify-center">
+                    <span class="material-symbols-outlined text-sm text-green-400">database</span>
+                  </div>
+                  <span class="text-[8px] font-mono text-[#cbd5e1]/60">PostgreSQL</span>
+                </div>
+              </div>
+
+              <!-- Línea de tiempo debajo -->
+              <div class="mt-6 border-t border-[#1f1f24]/50 pt-3 flex justify-between text-[8px] font-mono text-[#cbd5e1]/40">
+                <span>Request</span>
+                <span>Cache</span>
+                <span>Process</span>
+                <span>Query</span>
+                <span>Response</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-5 space-y-5 order-1 lg:order-2">
+          <span class="text-[10px] font-mono text-[#cbd5e1] uppercase tracking-widest block font-medium">Arquitectura de Datos</span>
+          <h2 class="text-2xl md:text-4xl font-light text-white tracking-tight leading-tight">
+            Flujo de datos en tiempo real. Sin cuellos de botella.
+          </h2>
+          <p class="text-sm text-[#cbd5e1] font-light leading-relaxed">
+            Diseñamos sistemas donde los datos viajan del cliente a la base de datos 
+            y viceversa en milisegundos. WebSockets para actualizaciones en vivo, 
+            caché inteligente en el edge y consultas optimizadas con índices 
+            personalizados. Tu equipo siempre ve la información más reciente.
+          </p>
+          <ul class="space-y-2 text-xs text-[#cbd5e1] font-light">
+            <li class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-sm text-green-400">check_circle</span>
+              Subscripciones Realtime con Supabase
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-sm text-green-400">check_circle</span>
+              Caché distribuido en Vercel Edge
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-sm text-green-400">check_circle</span>
+              Rate limiting y DDoS protection
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── INFRAESTRUCTURA TÉCNICA ────────────────────────────────── -->
+  <section class="py-36 px-6 md:px-12 bg-black relative border-b border-[#1f1f24]">
+    <div class="max-w-[1200px] mx-auto relative z-10">
+      <div class="text-center max-w-2xl mx-auto mb-20">
+        <span class="text-[10px] font-mono text-[#cbd5e1] uppercase tracking-widest block mb-3 font-semibold">Infraestructura Técnica</span>
+        <h2 class="text-3xl md:text-5xl font-light text-white tracking-tight">Seguridad, monitoreo y escalabilidad enterprise</h2>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 mb-16">
+        <div class="linear-card rounded-lg border border-[#1f1f24] bg-[#08080c]/40 p-8 flex flex-col justify-between min-h-[320px] glow-hover transition-all">
+          <div class="space-y-4">
+            <span class="text-[10px] font-mono text-[#cbd5e1] uppercase tracking-widest block font-medium">Seguridad</span>
+            <h3 class="text-xl md:text-2xl font-light text-white tracking-tight">Protección en múltiples capas</h3>
+            <p class="text-xs text-[#cbd5e1] leading-relaxed max-w-md">
+              SSL automatizado, Web Application Firewall, rate limiting, autenticación JWT 
+              y Row Level Security en base de datos. Cada proyecto incluye auditoría de 
+              vulnerabilidades antes de pasar a producción.
+            </p>
+          </div>
+        </div>
+
+        <div class="linear-card rounded-lg border border-[#1f1f24] bg-[#08080c]/40 p-8 flex flex-col justify-between min-h-[320px] glow-hover transition-all">
+          <div class="space-y-4">
+            <span class="text-[10px] font-mono text-[#cbd5e1] uppercase tracking-widest block font-medium">Monitoreo</span>
+            <h3 class="text-xl md:text-2xl font-light text-white tracking-tight">Observabilidad 24/7</h3>
+            <p class="text-xs text-[#cbd5e1] leading-relaxed max-w-md">
+              Dashboards en tiempo real con métricas de rendimiento, errores, uso de API 
+              y tiempo de respuesta. Alertas automáticas si algo se desvía de los 
+              parámetros normales.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Consola de deploy y métricas -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+        <div class="linear-card bg-black p-4 rounded border border-[#1f1f24] font-mono text-[10px] text-[#94a3b8]/80 space-y-1.5 h-[140px] overflow-y-auto">
+          <div class="text-[#94a3b8]/40">> npm run deploy --production</div>
+          <div class="text-white">[VORTEX CI/CD] Running test suite...</div>
+          <div class="text-green-500">✔ 42 tests passed (2.1s)</div>
+          <div class="text-green-500">✔ Build optimized · 98 Lighthouse</div>
+          <div class="text-[#94a3b8]/60">> Deploying to 100+ edge regions...</div>
+          <div class="text-green-500">✔ Deployment complete · v2.4.1</div>
+        </div>
+
+        <div class="linear-card bg-black p-4 rounded border border-[#1f1f24] h-[140px] flex flex-col justify-between">
+          <div class="flex justify-between items-center text-[9px] font-mono text-[#cbd5e1]/40 border-b border-[#1f1f24]/50 pb-2">
+            <span>API Response Times (p50)</span>
+            <span class="text-green-400 font-bold font-mono">18ms avg</span>
+          </div>
+          <div class="flex items-end justify-between h-[70px] px-4 pt-1">
+            <div class="w-4 bg-[#1f1f24] rounded-t-sm h-[25px] relative overflow-hidden flex items-end">
+              <div class="w-full bg-green-500/60 h-[70%]"></div>
+            </div>
+            <div class="w-4 bg-[#1f1f24] rounded-t-sm h-[35px] relative overflow-hidden flex items-end">
+              <div class="w-full bg-green-500/60 h-[85%]"></div>
+            </div>
+            <div class="w-4 bg-[#1f1f24] rounded-t-sm h-[20px] relative overflow-hidden flex items-end">
+              <div class="w-full bg-white h-[90%]"></div>
+            </div>
+            <div class="w-4 bg-[#1f1f24] rounded-t-sm h-[40px] relative overflow-hidden flex items-end">
+              <div class="w-full bg-green-500/60 h-[80%]"></div>
+            </div>
+            <div class="w-4 bg-[#1f1f24] rounded-t-sm h-[15px] relative overflow-hidden flex items-end">
+              <div class="w-full bg-green-500/60 h-[75%]"></div>
+            </div>
+          </div>
+          <div class="border-t border-[#1f1f24]/50 pt-2 text-[9px] font-mono text-[#cbd5e1]/40 text-right">
+            p50: 18ms · p95: 42ms · p99: 120ms
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FAQ TÉCNICA ────────────────────────────────────────────── -->
+  <section class="py-36 px-6 md:px-12 bg-black relative border-b border-[#1f1f24]">
+    <div class="max-w-[800px] mx-auto relative z-10">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <span class="text-[10px] font-mono text-[#cbd5e1] uppercase tracking-widest block mb-3 font-medium">FAQ Técnica</span>
+        <h2 class="text-3xl md:text-4xl font-light text-white tracking-tight">Preguntas frecuentes sobre desarrollo</h2>
+      </div>
+
+      <div class="space-y-4">
+        <details class="group linear-card rounded-lg border border-[#1f1f24] bg-[#08080c]/30 overflow-hidden glow-hover transition-all">
+          <summary class="flex items-center justify-between p-5 cursor-pointer text-sm font-medium text-white/90 hover:text-white transition-colors">
+            ¿Qué tecnologías usan para desarrollo web?
+            <span class="material-symbols-outlined text-sm text-[#cbd5e1]/60 group-open:rotate-180 transition-transform">expand_more</span>
+          </summary>
+          <div class="px-5 pb-5 text-xs text-[#cbd5e1] leading-relaxed">
+            Nuestro stack principal es <strong class="text-white">Astro + React + TypeScript</strong> para el frontend, 
+            <strong class="text-white">Supabase (PostgreSQL)</strong> como base de datos y backend, y 
+            <strong class="text-white">Vercel</strong> para despliegue global. Para proyectos que requieren 
+            renderizado del lado del servidor usamos <strong class="text-white">Next.js</strong>. 
+            También integramos WebSockets para funcionalidades en tiempo real, colas de trabajo 
+            con Redis cuando se necesita procesamiento asíncrono, y almacenamiento de archivos 
+            en CDN con optimización automática de imágenes.
+          </div>
+        </details>
+
+        <details class="group linear-card rounded-lg border border-[#1f1f24] bg-[#08080c]/30 overflow-hidden glow-hover transition-all">
+          <summary class="flex items-center justify-between p-5 cursor-pointer text-sm font-medium text-white/90 hover:text-white transition-colors">
+            ¿Cómo manejan los datos y la seguridad?
+            <span class="material-symbols-outlined text-sm text-[#cbd5e1]/60 group-open:rotate-180 transition-transform">expand_more</span>
+          </summary>
+          <div class="px-5 pb-5 text-xs text-[#cbd5e1] leading-relaxed">
+            Implementamos <strong class="text-white">Row Level Security (RLS)</strong> directamente en PostgreSQL — 
+            cada usuario solo ve los datos que le corresponden. La autenticación se maneja con 
+            <strong class="text-white">JWT + OAuth 2.0</strong> (Google, GitHub, email). Todas las conexiones 
+            viajan por HTTPS con SSL automatizado. Además, aplicamos rate limiting, validación 
+            de datos en el servidor y auditoría de seguridad automatizada antes de cada deploy.
+          </div>
+        </details>
+
+        <details class="group linear-card rounded-lg border border-[#1f1f24] bg-[#08080c]/30 overflow-hidden glow-hover transition-all">
+          <summary class="flex items-center justify-between p-5 cursor-pointer text-sm font-medium text-white/90 hover:text-white transition-colors">
+            ¿Se puede integrar con mi CRM o sistema actual?
+            <span class="material-symbols-outlined text-sm text-[#cbd5e1]/60 group-open:rotate-180 transition-transform">expand_more</span>
+          </summary>
+          <div class="px-5 pb-5 text-xs text-[#cbd5e1] leading-relaxed">
+            Sí. Diseñamos integraciones personalizadas con cualquier sistema que exponga una API 
+            REST o GraphQL. Hemos conectado plataformas con <strong class="text-white">Salesforce, HubSpot, 
+            SAP, sistemas contables venezolanos (Seniat, IVA)</strong>, pasarelas de pago como 
+            PayPal, Stripe y MercadoPago, y servicios de email como SendGrid y Resend. 
+            También podemos construir webhooks bidireccionales para sincronización en tiempo real.
+          </div>
+        </details>
+
+        <details class="group linear-card rounded-lg border border-[#1f1f24] bg-[#08080c]/30 overflow-hidden glow-hover transition-all">
+          <summary class="flex items-center justify-between p-5 cursor-pointer text-sm font-medium text-white/90 hover:text-white transition-colors">
+            ¿Qué ventajas tiene una PWA frente a una app nativa?
+            <span class="material-symbols-outlined text-sm text-[#cbd5e1]/60 group-open:rotate-180 transition-transform">expand_more</span>
+          </summary>
+          <div class="px-5 pb-5 text-xs text-[#cbd5e1] leading-relaxed">
+            Las PWAs ofrecen <strong class="text-white">90% menos costo de desarrollo</strong> que una app nativa, 
+            se actualizan instantáneamente (sin pasar por app stores), funcionan offline con 
+            service workers, pesan menos de 5MB y se instalan directamente desde el navegador. 
+            Para la mayoría de casos de uso empresarial —catálogos, paneles de administración, 
+            plataformas de servicio— una PWA supera el rendimiento y la experiencia de una app 
+            nativa. Si necesitas acceso profundo al hardware del dispositivo (bluetooth, 
+            sensores específicos), evaluamos una app nativa o híbrida.
+          </div>
+        </details>
+
+        <details class="group linear-card rounded-lg border border-[#1f1f24] bg-[#08080c]/30 overflow-hidden glow-hover transition-all">
+          <summary class="flex items-center justify-between p-5 cursor-pointer text-sm font-medium text-white/90 hover:text-white transition-colors">
+            ¿Ofrecen mantenimiento y soporte post-lanzamiento?
+            <span class="material-symbols-outlined text-sm text-[#cbd5e1]/60 group-open:rotate-180 transition-transform">expand_more</span>
+          </summary>
+          <div class="px-5 pb-5 text-xs text-[#cbd5e1] leading-relaxed">
+            Sí. Todos nuestros proyectos incluyen <strong class="text-white">3 meses de soporte técnico</strong> 
+            post-lanzamiento para ajustes y estabilización. Después ofrecemos planes de 
+            mantenimiento mensual que cubren: actualizaciones de dependencias, monitoreo 24/7, 
+            backups de base de datos, optimización de rendimiento y soporte prioritario 
+            por Slack/WhatsApp. También podemos agregar nuevas funcionalidades bajo demanda 
+            con presupuestos por sprint.
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── CONTACTO ────────────────────────────────────────────────── -->
+  <section id="contacto" class="py-36 px-6 md:px-12 bg-black relative">
+    <div class="max-w-[600px] mx-auto text-center relative z-10 space-y-8">
+      <span class="text-[10px] font-mono text-[#cbd5e1] uppercase tracking-widest block font-medium">Inicia tu proyecto</span>
+      <h2 class="text-3xl md:text-5xl font-light text-white tracking-tight leading-tight">
+        ¿Tienes un proyecto técnico en mente?
+      </h2>
+      <p class="text-sm text-[#cbd5e1] font-light leading-relaxed">
+        Cuéntanos los detalles técnicos de tu proyecto y te propondremos la arquitectura 
+        ideal. Respondemos en menos de 24 horas con una propuesta clara y presupuesto 
+        transparente.
+      </p>
+
+      <div class="linear-card p-8 rounded-lg border border-[#1f1f24] bg-[#08080c]/40 text-left space-y-6">
+        <div id="form-feedback" class="text-sm mt-4 hidden"></div>
+        <form id="contact-form-dev" class="space-y-4">
+          <div>
+            <label class="block text-[10px] font-mono text-[#cbd5e1] uppercase tracking-wider mb-2 font-medium" for="fullname">Nombre y Apellido</label>
+            <input
+              class="w-full bg-black border border-[#1f1f24] rounded px-4 py-3 text-xs text-white placeholder-neutral-800 focus:outline-none focus:border-white transition-colors"
+              type="text"
+              id="fullname"
+              name="name"
+              placeholder="e.g. Carlos Pérez"
+              required
+            />
+          </div>
+
+          <div>
+            <label class="block text-[10px] font-mono text-[#cbd5e1] uppercase tracking-wider mb-2 font-medium" for="corp_email">Correo Corporativo</label>
+            <input
+              class="w-full bg-black border border-[#1f1f24] rounded px-4 py-3 text-xs text-white placeholder-neutral-800 focus:outline-none focus:border-white transition-colors"
+              type="email"
+              id="corp_email"
+              name="email"
+              placeholder="operator@acme.com"
+              required
+            />
+          </div>
+
+          <div>
+            <label class="block text-[10px] font-mono text-[#cbd5e1] uppercase tracking-wider mb-2 font-medium" for="project_details">Descripción técnica del proyecto</label>
+            <textarea
+              class="w-full bg-black border border-[#1f1f24] rounded px-4 py-3 text-xs text-white placeholder-neutral-800 focus:outline-none focus:border-white transition-colors min-h-[100px]"
+              id="project_details"
+              name="message"
+              placeholder="¿Qué necesitas desarrollar? ¿Qué tecnologías prefieres? ¿Tienes integraciones con otros sistemas? Cuéntanos todo lo técnico."
+              required
+            ></textarea>
+          </div>
+
+          <input type="hidden" name="service" value="desarrollo-web" />
+
+          <button
+            type="button"
+            data-original-text="Enviar Mensaje"
+            class="w-full py-3 bg-white text-black font-semibold text-xs rounded hover:bg-neutral-200 transition-colors duration-200"
+            onclick="submitFormDev()"
+          >
+            Cotizar Solución Técnica
+          </button>
+        </form>
+      </div>
+
+      <script>
+        async function submitFormDev() {
+          const form = document.getElementById('contact-form-dev');
+          const feedback = document.getElementById('form-feedback');
+          const btn = form?.querySelector('button[type="button"]');
+          
+          if (!form || !(form instanceof HTMLFormElement) || !btn) { return; }
+          if (!(feedback instanceof HTMLElement)) { return; }
+          
+          if (!form.checkValidity()) {
+            form.reportValidity();
+            return;
+          }
+          
+          btn.disabled = true;
+          btn.textContent = 'Enviando...';
+          
+          try {
+            const res = await fetch('/api/contact', {
+              method: 'POST',
+              body: new FormData(form)
+            });
+            const data = await res.json();
+            
+            if (data.success) {
+              feedback.className = 'text-sm mt-4 text-green-400';
+              feedback.textContent = '¡Mensaje enviado con éxito! Te contactaremos pronto.';
+              feedback.classList.remove('hidden');
+              form.reset();
+            } else {
+              throw new Error(data.error);
+            }
+          } catch (err) {
+            feedback.className = 'text-sm mt-4 text-red-400';
+            feedback.textContent = 'Error al enviar. Intenta de nuevo o escríbenos a info@vortexlm.com.';
+            feedback.classList.remove('hidden');
+          } finally {
+            btn.disabled = false;
+            btn.textContent = (btn.getAttribute('data-original-text')) || 'Enviar';
+          }
+        }
+      </script>
+    </div>
+  </section>
+</BaseLayout>

@@ -9,12 +9,13 @@ import GoogleTagManager from '../components/seo/GoogleTagManager.astro';
 export interface Props {
   title: string;
   description: string;
+  url?: string;
   isLocalBusiness?: boolean;
   type?: 'website' | 'article';
   isLanding?: boolean;
 }
 
-const { title, description, isLocalBusiness, type = 'website', isLanding = false } = Astro.props;
+const { title, description, url, isLocalBusiness, type = 'website', isLanding = false } = Astro.props;
 const ga4Id = import.meta.env.PUBLIC_GA4_ID;
 const pageTitle = title || "Vortex Logic | Desarrollo Web de Alto Rendimiento";
 
@@ -56,7 +57,7 @@ const criticalCSS = `
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="icon" type="image/png" href="/favicon.png" />
     
-    <SEO title={pageTitle} description={description} isLocalBusiness={isLocalBusiness} type={type} />
+    <SEO title={pageTitle} description={description} url={url} isLocalBusiness={isLocalBusiness} type={type} />
     
     <!-- Critical inlined styles (non-render-blocking since embedded in HTML) -->
     <style set:html={criticalCSS}></style>

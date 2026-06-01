@@ -1,0 +1,613 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+<BaseLayout
+  title="Diseño de Páginas Web en Caracas | Vortex Logic"
+  description="Agencia de desarrollo web en Caracas. Creamos páginas web profesionales ultrarrápidas y software a medida optimizado para SEO y conversión."
+  isLocalBusiness={true}
+>
+  <!-- ─── HERO ───────────────────────────────────────────────────── -->
+  <section class="relative pt-36 pb-32 overflow-hidden linear-gradient-bg border-b border-[#1f1f24] px-6 md:px-12">
+    <div class="absolute inset-0 linear-grid opacity-30 pointer-events-none"></div>
+    <div class="max-w-[1200px] mx-auto text-center relative z-10">
+      <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-white/[0.015] blur-[120px] rounded-full pointer-events-none"></div>
+
+      <h1 class="text-4xl md:text-7xl font-extralight tracking-tight text-white mb-8 leading-[1.08] max-w-4xl mx-auto opacity-95">
+        Diseño de Páginas Web en Caracas para Empresas de Alto Rendimiento
+      </h1>
+
+      <p class="text-base md:text-lg text-[#cbd5e1] font-light mb-12 max-w-3xl mx-auto leading-relaxed">
+        Creamos sitios web ultrarrápidos con Astro, React y Next.js. Optimización SEO nativa, 
+        seguridad de nivel empresarial y diseño premium que convierte visitantes en clientes.
+      </p>
+
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-6 mb-20">
+        <a href="#contacto" class="w-full sm:w-auto px-8 py-3 bg-white text-black font-semibold text-xs rounded-full hover:bg-neutral-200 transition-all text-center duration-200 active:scale-95 shadow-[0_0_25px_rgba(255,255,255,0.15)]">
+          Agendar una llamada
+        </a>
+        <a href="#beneficios" class="w-full sm:w-auto px-6 py-3 text-white/90 font-medium text-xs rounded-full hover:text-white flex items-center justify-center gap-1.5 group transition-colors">
+          Ver beneficios <span class="group-hover:translate-x-1 transition-transform">➔</span>
+        </a>
+      </div>
+
+      <!-- Mockup visual: navegador con página web cargando -->
+      <div class="relative max-w-5xl mx-auto">
+        <div class="linear-card rounded-lg overflow-hidden border border-[#2e2e34] shadow-[0_50px_100px_-20px_rgba(0,0,0,0.98)]">
+          <div class="bg-[#08080c] px-4 py-3.5 flex items-center justify-between border-b border-[#1f1f24]">
+            <div class="flex items-center gap-2">
+              <span class="w-2.5 h-2.5 rounded-full bg-[#ff5f56]/50"></span>
+              <span class="w-2.5 h-2.5 rounded-full bg-[#ffbd2e]/50"></span>
+              <span class="w-2.5 h-2.5 rounded-full bg-[#27c93f]/50"></span>
+            </div>
+            <div class="text-[10px] font-mono text-[#cbd5e1]/40 flex items-center gap-1.5">
+              <span class="material-symbols-outlined text-[10px]">lock</span>
+              https://tusitio.com &middot; SSL Secured
+            </div>
+            <div class="w-12"></div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-12 min-h-[400px] bg-[#000000] text-left">
+            <!-- Vista previa del diseño responsive -->
+            <div class="col-span-1 md:col-span-8 p-6 border-r border-[#1f1f24]">
+              <div class="space-y-4">
+                <!-- Barra de score PageSpeed -->
+                <div class="flex items-center gap-4 text-[10px] font-mono text-[#cbd5e1]/60 border-b border-[#1f1f24] pb-3">
+                  <span class="flex items-center gap-1.5">
+                    <span class="w-1.5 h-1.5 rounded-full bg-green-500"></span>
+                    Core Web Vitals Pass
+                  </span>
+                  <span class="flex items-center gap-1.5">
+                    <span class="material-symbols-outlined text-xs">speed</span>
+                    Lighthouse 100
+                  </span>
+                  <span class="flex items-center gap-1.5">
+                    <span class="material-symbols-outlined text-xs">devices</span>
+                    Responsive
+                  </span>
+                </div>
+
+                <!-- Mockup del diseño de la web -->
+                <div class="border border-[#1f1f24] rounded p-4 bg-[#050507]/40">
+                  <div class="flex gap-3 mb-4">
+                    <div class="w-12 h-3 rounded bg-[#1f1f24]"></div>
+                    <div class="w-20 h-3 rounded bg-[#1f1f24]"></div>
+                    <div class="w-16 h-3 rounded bg-[#1f1f24]"></div>
+                    <div class="w-24 h-3 rounded bg-white/10 ml-auto"></div>
+                  </div>
+                  <div class="w-3/4 h-5 rounded bg-white/5 mb-3"></div>
+                  <div class="w-1/2 h-3 rounded bg-[#1f1f24] mb-6"></div>
+                  <div class="grid grid-cols-3 gap-3">
+                    <div class="h-20 rounded bg-[#1f1f24]/60"></div>
+                    <div class="h-20 rounded bg-[#1f1f24]/60"></div>
+                    <div class="h-20 rounded bg-[#1f1f24]/60"></div>
+                  </div>
+                </div>
+
+                <!-- Indicador de velocidad -->
+                <div class="flex items-center gap-2 text-[10px] font-mono text-green-400">
+                  <span class="material-symbols-outlined text-xs">bolt</span>
+                  Carga en menos de 100ms &middot; Primer paint instantáneo
+                </div>
+              </div>
+            </div>
+
+            <!-- Sidebar métricas SEO -->
+            <div class="col-span-1 md:col-span-4 p-6 bg-[#050507]/30">
+              <div class="text-[9px] uppercase tracking-wider text-[#cbd5e1]/40 mb-4 font-mono font-semibold">Métricas Clave</div>
+              <div class="space-y-4 font-mono text-[10px]">
+                <div class="p-3 border border-[#1f1f24] rounded bg-black/40">
+                  <div class="text-white/90 font-bold mb-1">Posicionamiento SEO</div>
+                  <div class="text-green-400">Top 3 en Google Caracas</div>
+                </div>
+                <div class="p-3 border border-[#1f1f24] rounded bg-black/40">
+                  <div class="text-white/90 font-bold mb-1">Velocidad de Carga</div>
+                  <div class="text-green-400">0.8s promedio</div>
+                </div>
+                <div class="p-3 border border-[#1f1f24] rounded bg-black/40">
+                  <div class="text-white/90 font-bold mb-1">Tasa de Conversión</div>
+                  <div class="text-green-400">+35% vs plantillas</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── BENEFICIOS ─────────────────────────────────────────────── -->
+  <section id="beneficios" class="py-36 px-6 md:px-12 bg-black relative border-b border-[#1f1f24]">
+    <div class="max-w-[1200px] mx-auto relative z-10">
+      <div class="max-w-4xl mb-24">
+        <span class="text-[10px] font-mono text-[#cbd5e1] uppercase tracking-widest block mb-3 font-medium">Por qué elegirnos</span>
+        <h2 class="text-2xl md:text-4xl font-light text-white tracking-tight leading-snug">
+          No construimos plantillas. Diseñamos plataformas digitales que impulsan tu negocio en Caracas y el mundo.
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16">
+        <!-- Beneficio 1: Velocidad extrema -->
+        <div class="space-y-6 group">
+          <div class="w-full aspect-[4/3] linear-card rounded border border-[#1f1f24] bg-[#08080c]/30 flex items-center justify-center p-6 glow-hover transition-all">
+            <svg class="w-20 h-20 text-[#cbd5e1]/40 group-hover:text-white/80 transition-colors" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M50 15L85 35L50 55L15 35L50 15Z" stroke="currentColor" stroke-width="0.75" stroke-dasharray="2 2"/>
+              <path d="M50 55V95" stroke="currentColor" stroke-width="0.75" stroke-dasharray="2 2"/>
+              <path d="M20 35L50 55L80 35" stroke="currentColor" stroke-width="0.5" stroke-dasharray="2 2"/>
+              <path d="M35 25L50 35L65 25" stroke="currentColor" stroke-width="0.75" stroke-dasharray="2 2"/>
+              <circle cx="50" cy="35" r="3" fill="currentColor"/>
+              <circle cx="50" cy="55" r="3" fill="currentColor"/>
+              <circle cx="30" cy="45" r="2" fill="currentColor" fill-opacity="0.5"/>
+              <circle cx="70" cy="45" r="2" fill="currentColor" fill-opacity="0.5"/>
+              <path d="M35 20L50 12L65 20" stroke="currentColor" stroke-width="0.5" stroke-dasharray="1 1"/>
+            </svg>
+          </div>
+          <div>
+            <h3 class="text-sm font-medium text-white mb-2.5">Velocidad de Carga Extrema</h3>
+            <p class="text-xs text-[#cbd5e1] leading-relaxed">
+              Utilizamos Astro y Jamstack para generar sitios estáticos que cargan en milisegundos. 
+              Google prioriza páginas rápidas: mejor Core Web Vitals, mejor posicionamiento orgánico en Caracas.
+            </p>
+          </div>
+        </div>
+
+        <!-- Beneficio 2: SEO nativo -->
+        <div class="space-y-6 group">
+          <div class="w-full aspect-[4/3] linear-card rounded border border-[#1f1f24] bg-[#08080c]/30 flex items-center justify-center p-6 glow-hover transition-all">
+            <svg class="w-20 h-20 text-[#cbd5e1]/40 group-hover:text-white/80 transition-colors" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="50" cy="50" r="30" stroke="currentColor" stroke-width="0.75" stroke-dasharray="2 2"/>
+              <path d="M50 20V50L68 68" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              <circle cx="50" cy="50" r="4" fill="currentColor"/>
+              <path d="M20 50H35" stroke="currentColor" stroke-width="0.5" stroke-dasharray="2 2"/>
+              <path d="M65 50H80" stroke="currentColor" stroke-width="0.5" stroke-dasharray="2 2"/>
+              <path d="M50 20V35" stroke="currentColor" stroke-width="0.5" stroke-dasharray="2 2"/>
+              <path d="M50 65V80" stroke="currentColor" stroke-width="0.5" stroke-dasharray="2 2"/>
+            </svg>
+          </div>
+          <div>
+            <h3 class="text-sm font-medium text-white mb-2.5">SEO Técnico Integrado</h3>
+            <p class="text-xs text-[#cbd5e1] leading-relaxed">
+              Cada página que diseñamos incluye datos estructurados, etiquetas Open Graph, 
+              meta descripciones optimizadas y Schema.org LocalBusiness. Aparece primero en Google 
+              cuando buscan servicios en Caracas.
+            </p>
+          </div>
+        </div>
+
+        <!-- Beneficio 3: Seguridad empresarial -->
+        <div class="space-y-6 group">
+          <div class="w-full aspect-[4/3] linear-card rounded border border-[#1f1f24] bg-[#08080c]/30 flex items-center justify-center p-6 glow-hover transition-all">
+            <svg class="w-20 h-20 text-[#cbd5e1]/40 group-hover:text-white/80 transition-colors" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="25" y="40" width="50" height="45" rx="3" stroke="currentColor" stroke-width="1.25"/>
+              <path d="M35 40V30C35 20 45 15 50 15C55 15 65 20 65 30V40" stroke="currentColor" stroke-width="1.25"/>
+              <circle cx="50" cy="62" r="5" fill="currentColor" fill-opacity="0.3"/>
+              <circle cx="50" cy="62" r="2.5" fill="currentColor"/>
+              <path d="M50 67V73" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              <path d="M40 50H60" stroke="currentColor" stroke-width="0.5" stroke-dasharray="2 2"/>
+            </svg>
+          </div>
+          <div>
+            <h3 class="text-sm font-medium text-white mb-2.5">Seguridad y Escalabilidad</h3>
+            <p class="text-xs text-[#cbd5e1] leading-relaxed">
+              Desplegamos en Vercel con SSL automatizado, protección DDoS y servidores edge. 
+              Tu web empresarial corre sobre una arquitectura que escala automáticamente sin importar 
+              el tráfico.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── BLOQUE DETALLADO: TECNOLOGÍA ────────────────────────────── -->
+  <section id="tecnologia" class="py-36 px-6 md:px-12 bg-black border-b border-[#1f1f24] relative">
+    <div class="max-w-[1200px] mx-auto space-y-44 relative z-10">
+      
+      <!-- Bloque: Stack Moderno -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
+        <div class="lg:col-span-5 space-y-5">
+          <span class="text-[10px] font-mono text-[#cbd5e1] uppercase tracking-widest block font-medium">Stack Moderno</span>
+          <h2 class="text-2xl md:text-4xl font-light text-white tracking-tight leading-tight">
+            Tecnología de última generación para tu sitio web en Caracas.
+          </h2>
+          <p class="text-sm text-[#cbd5e1] font-light leading-relaxed">
+            Olvídate de WordPress lento y constructores visuales que generan código basura. 
+            Construimos con Astro, Next.js y React — el mismo stack que usan las empresas 
+            tecnológicas más grandes del mundo. Tu página web cargará instantáneamente en 
+            cualquier dispositivo, incluso en conexiones 3G.
+          </p>
+          <ul class="space-y-2 text-xs text-[#cbd5e1] font-light">
+            <li class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-sm text-green-400">check_circle</span>
+              Generación estática + Server-Side Rendering híbrido
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-sm text-green-400">check_circle</span>
+              Imágenes optimizadas con WebP y carga lazy nativa
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-sm text-green-400">check_circle</span>
+              CSS crítico inline para pintado instantáneo
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-sm text-green-400">check_circle</span>
+              JavaScript mínimo y diferido (islands architecture)
+            </li>
+          </ul>
+        </div>
+        
+        <div class="lg:col-span-7">
+          <div class="linear-card rounded-lg border border-[#1f1f24] overflow-hidden bg-[#08080c]/50 p-8 shadow-2xl relative">
+            <div class="absolute inset-0 font-mono text-[8px] text-[#1f1f24] p-6 select-none overflow-hidden leading-relaxed pointer-events-none opacity-20">
+              <html lang="es"><br />
+              &nbsp;&nbsp;<head><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<meta name="description" /><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<script type="application/ld+json"><br />
+              &nbsp;&nbsp;</head><br />
+              &nbsp;&nbsp;<body><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<header><nav /></header><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<main><section /></main><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<footer></footer><br />
+              &nbsp;&nbsp;</body><br />
+              </html>
+            </div>
+
+            <div class="flex items-center justify-between border-b border-[#1f1f24] pb-4 mb-6 relative z-10">
+              <span class="text-[10px] font-mono text-[#cbd5e1] flex items-center gap-1.5">
+                <span class="w-1.5 h-1.5 rounded-full bg-cyan-500"></span>
+                tech-stack // vortex-architecture
+              </span>
+              <span class="text-[9px] text-[#cbd5e1]/40 font-mono">Producción lista</span>
+            </div>
+
+            <!-- Indicadores de tecnología -->
+            <div class="grid grid-cols-2 gap-4 relative z-10">
+              <div class="p-4 border border-[#1f1f24] rounded bg-black/40">
+                <span class="text-[10px] font-mono text-cyan-400 block mb-1">Framework</span>
+                <span class="text-xs text-white/90">Astro + React</span>
+              </div>
+              <div class="p-4 border border-[#1f1f24] rounded bg-black/40">
+                <span class="text-[10px] font-mono text-cyan-400 block mb-1">Estilos</span>
+                <span class="text-xs text-white/90">Tailwind CSS</span>
+              </div>
+              <div class="p-4 border border-[#1f1f24] rounded bg-black/40">
+                <span class="text-[10px] font-mono text-cyan-400 block mb-1">Hosting</span>
+                <span class="text-xs text-white/90">Vercel Edge</span>
+              </div>
+              <div class="p-4 border border-[#1f1f24] rounded bg-black/40">
+                <span class="text-[10px] font-mono text-cyan-400 block mb-1">Base de Datos</span>
+                <span class="text-xs text-white/90">Supabase / PostgreSQL</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bloque: Diseño Responsive y UX -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
+        <div class="lg:col-span-7 order-2 lg:order-1">
+          <div class="linear-card rounded-lg border border-[#1f1f24] overflow-hidden bg-[#08080c]/50 p-6 shadow-2xl">
+            <div class="flex items-center justify-between border-b border-[#1f1f24] pb-4 mb-4">
+              <span class="text-[10px] font-mono text-[#cbd5e1] flex items-center gap-1.5">
+                <span class="w-1.5 h-1.5 rounded-full bg-purple-500"></span>
+                responsive-design // device-preview
+              </span>
+              <span class="text-[9px] text-[#cbd5e1]/40 font-mono">Mobile First</span>
+            </div>
+
+            <!-- Mockup responsive: móvil + tablet + desktop -->
+            <div class="flex items-end justify-center gap-4 py-8 relative z-10">
+              <!-- Mobile -->
+              <div class="w-16 h-32 border border-[#1f1f24] rounded-lg bg-black/60 p-1.5 flex flex-col gap-1">
+                <div class="w-full h-2 rounded bg-white/10"></div>
+                <div class="w-3/4 h-1.5 rounded bg-[#1f1f24]"></div>
+                <div class="w-full h-8 rounded bg-[#1f1f24]/40 mt-1"></div>
+                <div class="w-full h-1.5 rounded bg-[#1f1f24] mt-auto"></div>
+              </div>
+              <!-- Tablet -->
+              <div class="w-28 h-36 border border-[#1f1f24] rounded-lg bg-black/60 p-2 flex flex-col gap-1.5">
+                <div class="w-full h-2 rounded bg-white/10"></div>
+                <div class="w-2/3 h-1.5 rounded bg-[#1f1f24]"></div>
+                <div class="grid grid-cols-2 gap-1 mt-2">
+                  <div class="h-6 rounded bg-[#1f1f24]/60"></div>
+                  <div class="h-6 rounded bg-[#1f1f24]/60"></div>
+                </div>
+                <div class="w-full h-1.5 rounded bg-[#1f1f24] mt-auto"></div>
+              </div>
+              <!-- Desktop -->
+              <div class="w-44 h-28 border border-[#1f1f24] rounded-lg bg-black/60 p-2 flex flex-col gap-1.5">
+                <div class="flex gap-2">
+                  <div class="w-12 h-1.5 rounded bg-white/10"></div>
+                  <div class="w-16 h-1.5 rounded bg-[#1f1f24]"></div>
+                </div>
+                <div class="grid grid-cols-3 gap-1 mt-1">
+                  <div class="h-8 rounded bg-[#1f1f24]/40"></div>
+                  <div class="h-8 rounded bg-[#1f1f24]/40"></div>
+                  <div class="h-8 rounded bg-[#1f1f24]/40"></div>
+                </div>
+                <div class="w-3/4 h-1 rounded bg-[#1f1f24] mt-auto"></div>
+              </div>
+            </div>
+
+            <div class="border-t border-[#1f1f24]/50 pt-3 text-[9px] font-mono text-[#cbd5e1]/40 text-center relative z-10">
+              Diseñado Mobile First &middot; 100% responsive en todos los dispositivos
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-5 space-y-5 order-1 lg:order-2">
+          <span class="text-[10px] font-mono text-[#cbd5e1] uppercase tracking-widest block font-medium">Experiencia de Usuario</span>
+          <h2 class="text-2xl md:text-4xl font-light text-white tracking-tight leading-tight">
+            Diseñado para convertir. Optimizado para móviles.
+          </h2>
+          <p class="text-sm text-[#cbd5e1] font-light leading-relaxed">
+            El 70% de los usuarios en Caracas navegan desde el móvil. Diseñamos cada página 
+            con enfoque Mobile First, asegurando que tu sitio se vea y funcione perfectamente 
+            en cualquier pantalla. Tipografía legible, botones táctiles y navegación intuitiva 
+            para maximizar la retención y conversión.
+          </p>
+          <ul class="space-y-2 text-xs text-[#cbd5e1] font-light">
+            <li class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-sm text-green-400">check_circle</span>
+              Diseño responsive probado en 20+ dispositivos
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-sm text-green-400">check_circle</span>
+              Navegación intuitiva con micro-interacciones
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-sm text-green-400">check_circle</span>
+              Formularios optimizados para conversión
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── INFRAESTRUCTURA ─────────────────────────────────────────── -->
+  <section class="py-36 px-6 md:px-12 bg-black relative border-b border-[#1f1f24]">
+    <div class="max-w-[1200px] mx-auto relative z-10">
+      <div class="text-center max-w-2xl mx-auto mb-20">
+        <span class="text-[10px] font-mono text-[#cbd5e1] uppercase tracking-widest block mb-3 font-semibold">Infraestructura Empresarial</span>
+        <h2 class="text-3xl md:text-5xl font-light text-white tracking-tight"> tu sitio web en las mejores manos</h2>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 mb-16">
+        <!-- Bloque: Velocidad y hosting -->
+        <div class="linear-card rounded-lg border border-[#1f1f24] bg-[#08080c]/40 p-8 flex flex-col justify-between min-h-[320px] glow-hover transition-all">
+          <div class="space-y-4">
+            <span class="text-[10px] font-mono text-[#cbd5e1] uppercase tracking-widest block font-medium">Edge Network</span>
+            <h3 class="text-xl md:text-2xl font-light text-white tracking-tight">Hosting en Vercel Edge Network</h3>
+            <p class="text-xs text-[#cbd5e1] leading-relaxed max-w-md">
+              Tu página web se despliega en más de 100 servidores alrededor del mundo. 
+              Los visitantes de Caracas reciben tu sitio desde el servidor edge más cercano, 
+              garantizando cargas instantáneas sin importar la hora del día.
+            </p>
+          </div>
+        </div>
+
+        <!-- Bloque: Monitoreo -->
+        <div class="linear-card rounded-lg border border-[#1f1f24] bg-[#08080c]/40 p-8 flex flex-col justify-between min-h-[320px] glow-hover transition-all">
+          <div class="space-y-4">
+            <span class="text-[10px] font-mono text-[#cbd5e1] uppercase tracking-widest block font-medium">SLA 99.99%</span>
+            <h3 class="text-xl md:text-2xl font-light text-white tracking-tight">Monitoreo y Analítica en Tiempo Real</h3>
+            <p class="text-xs text-[#cbd5e1] leading-relaxed max-w-md">
+              Panel de control en vivo con métricas de tráfico, rendimiento y comportamiento 
+              de usuarios. Optimizamos continuamente tu sitio basándonos en datos reales, 
+              no en suposiciones.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Consola visual -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+        <div class="linear-card bg-black p-4 rounded border border-[#1f1f24] font-mono text-[10px] text-[#94a3b8]/80 space-y-1.5 h-[140px] overflow-y-auto">
+          <div class="text-[#94a3b8]/40">> vercel deploy --prod</div>
+          <div class="text-white">[VORTEX DEPLOY] Building project...</div>
+          <div class="text-green-500">✔ Build completed in 12.4s</div>
+          <div class="text-green-500">✔ Deployed to 100+ edge regions</div>
+          <div class="text-[#94a3b8]/60">> SSL certificate issued automatically</div>
+          <div class="text-green-500">✔ HTTPS ready · A+ rating</div>
+        </div>
+
+        <div class="linear-card bg-black p-4 rounded border border-[#1f1f24] h-[140px] flex flex-col justify-between">
+          <div class="flex justify-between items-center text-[9px] font-mono text-[#cbd5e1]/40 border-b border-[#1f1f24]/50 pb-2">
+            <span>Rendimiento Global</span>
+            <span class="text-green-400 font-bold font-mono">0.12s latency</span>
+          </div>
+          <div class="flex items-end justify-between h-[70px] px-4 pt-1">
+            <div class="w-4 bg-[#1f1f24] rounded-t-sm h-[30px] relative overflow-hidden flex items-end">
+              <div class="w-full bg-green-500/60 h-[85%]"></div>
+            </div>
+            <div class="w-4 bg-[#1f1f24] rounded-t-sm h-[45px] relative overflow-hidden flex items-end">
+              <div class="w-full bg-green-500/60 h-[92%]"></div>
+            </div>
+            <div class="w-4 bg-[#1f1f24] rounded-t-sm h-[25px] relative overflow-hidden flex items-end">
+              <div class="w-full bg-white h-[95%]"></div>
+            </div>
+            <div class="w-4 bg-[#1f1f24] rounded-t-sm h-[35px] relative overflow-hidden flex items-end">
+              <div class="w-full bg-green-500/60 h-[88%]"></div>
+            </div>
+            <div class="w-4 bg-[#1f1f24] rounded-t-sm h-[20px] relative overflow-hidden flex items-end">
+              <div class="w-full bg-green-500/60 h-[78%]"></div>
+            </div>
+          </div>
+          <div class="border-t border-[#1f1f24]/50 pt-2 text-[9px] font-mono text-[#cbd5e1]/40 text-right">
+            Vercel Edge: 0.12s avg latency Caracas
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── PREGUNTAS FRECUENTES ────────────────────────────────────── -->
+  <section class="py-36 px-6 md:px-12 bg-black relative border-b border-[#1f1f24]">
+    <div class="max-w-[800px] mx-auto relative z-10">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <span class="text-[10px] font-mono text-[#cbd5e1] uppercase tracking-widest block mb-3 font-medium">FAQ</span>
+        <h2 class="text-3xl md:text-4xl font-light text-white tracking-tight">Preguntas Frecuentes</h2>
+      </div>
+
+      <div class="space-y-4">
+        <details class="group linear-card rounded-lg border border-[#1f1f24] bg-[#08080c]/30 overflow-hidden glow-hover transition-all">
+          <summary class="flex items-center justify-between p-5 cursor-pointer text-sm font-medium text-white/90 hover:text-white transition-colors">
+            ¿Cuánto tiempo toma desarrollar una página web profesional?
+            <span class="material-symbols-outlined text-sm text-[#cbd5e1]/60 group-open:rotate-180 transition-transform">expand_more</span>
+          </summary>
+          <div class="px-5 pb-5 text-xs text-[#cbd5e1] leading-relaxed">
+            Dependiendo de la complejidad, un sitio web corporativo puede estar listo en 2 a 4 semanas. 
+            Esto incluye diseño UI/UX, desarrollo, integración SEO, pruebas de rendimiento y despliegue. 
+            Proyectos más complejos con paneles de administración o integraciones pueden tomar de 4 a 8 semanas.
+          </div>
+        </details>
+
+        <details class="group linear-card rounded-lg border border-[#1f1f24] bg-[#08080c]/30 overflow-hidden glow-hover transition-all">
+          <summary class="flex items-center justify-between p-5 cursor-pointer text-sm font-medium text-white/90 hover:text-white transition-colors">
+            ¿Ofrecen hosting y mantenimiento?
+            <span class="material-symbols-outlined text-sm text-[#cbd5e1]/60 group-open:rotate-180 transition-transform">expand_more</span>
+          </summary>
+          <div class="px-5 pb-5 text-xs text-[#cbd5e1] leading-relaxed">
+            Sí. Desplegamos tu sitio en Vercel (hosting enterprise con CDN global) e incluimos 
+            mantenimiento técnico mensual: actualizaciones de seguridad, monitoreo de rendimiento, 
+            backups y optimización continua. También ofrecemos planes de contenido si necesitas 
+            actualizar textos o agregar secciones periódicamente.
+          </div>
+        </details>
+
+        <details class="group linear-card rounded-lg border border-[#1f1f24] bg-[#08080c]/30 overflow-hidden glow-hover transition-all">
+          <summary class="flex items-center justify-between p-5 cursor-pointer text-sm font-medium text-white/90 hover:text-white transition-colors">
+            ¿Puedo administrar el contenido yo mismo?
+            <span class="material-symbols-outlined text-sm text-[#cbd5e1]/60 group-open:rotate-180 transition-transform">expand_more</span>
+          </summary>
+          <div class="px-5 pb-5 text-xs text-[#cbd5e1] leading-relaxed">
+            Absolutamente. Integramos paneles de administración sencillos (Headless CMS o Keystatic) 
+            para que puedas editar textos, imágenes y publicar blog posts sin necesidad de conocimientos 
+            técnicos. Tú mantienes el control total de tu contenido.
+          </div>
+        </details>
+
+        <details class="group linear-card rounded-lg border border-[#1f1f24] bg-[#08080c]/30 overflow-hidden glow-hover transition-all">
+          <summary class="flex items-center justify-between p-5 cursor-pointer text-sm font-medium text-white/90 hover:text-white transition-colors">
+            ¿Por qué Astro y no WordPress?
+            <span class="material-symbols-outlined text-sm text-[#cbd5e1]/60 group-open:rotate-180 transition-transform">expand_more</span>
+          </summary>
+          <div class="px-5 pb-5 text-xs text-[#cbd5e1] leading-relaxed">
+            WordPress genera páginas dinámicas que cargan lentamente y son vulnerables a ataques. 
+            Astro genera HTML estático ultrarrápido que se despliega en CDN. Resultado: 10x más velocidad, 
+            seguridad superior (sin base de datos expuesta), mejor SEO y menor costo de hosting. 
+            Ideal para empresas que necesitan rendimiento profesional.
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── CONTACTO ────────────────────────────────────────────────── -->
+  <section id="contacto" class="py-36 px-6 md:px-12 bg-black relative">
+    <div class="max-w-[600px] mx-auto text-center relative z-10 space-y-8">
+      <span class="text-[10px] font-mono text-[#cbd5e1] uppercase tracking-widest block font-medium">Inicia tu proyecto</span>
+      <h2 class="text-3xl md:text-5xl font-light text-white tracking-tight leading-tight">
+        ¿Listo para tener la página web que tu empresa merece?
+      </h2>
+      <p class="text-sm text-[#cbd5e1] font-light leading-relaxed">
+        Cuéntanos sobre tu proyecto y te enviaremos una propuesta personalizada con 
+        arquitectura tecnológica, diseño UX/SEO y presupuesto transparente.
+      </p>
+
+      <div class="linear-card p-8 rounded-lg border border-[#1f1f24] bg-[#08080c]/40 text-left space-y-6">
+        <div id="form-feedback" class="text-sm mt-4 hidden"></div>
+        <form id="contact-form-landing" class="space-y-4">
+          <div>
+            <label class="block text-[10px] font-mono text-[#cbd5e1] uppercase tracking-wider mb-2 font-medium" for="fullname">Nombre y Apellido</label>
+            <input
+              class="w-full bg-black border border-[#1f1f24] rounded px-4 py-3 text-xs text-white placeholder-neutral-800 focus:outline-none focus:border-white transition-colors"
+              type="text"
+              id="fullname"
+              name="name"
+              placeholder="e.g. Carlos Pérez"
+              required
+            />
+          </div>
+
+          <div>
+            <label class="block text-[10px] font-mono text-[#cbd5e1] uppercase tracking-wider mb-2 font-medium" for="corp_email">Correo Corporativo</label>
+            <input
+              class="w-full bg-black border border-[#1f1f24] rounded px-4 py-3 text-xs text-white placeholder-neutral-800 focus:outline-none focus:border-white transition-colors"
+              type="email"
+              id="corp_email"
+              name="email"
+              placeholder="operator@acme.com"
+              required
+            />
+          </div>
+
+          <div>
+            <label class="block text-[10px] font-mono text-[#cbd5e1] uppercase tracking-wider mb-2 font-medium" for="project_details">Cuéntanos sobre tu proyecto</label>
+            <textarea
+              class="w-full bg-black border border-[#1f1f24] rounded px-4 py-3 text-xs text-white placeholder-neutral-800 focus:outline-none focus:border-white transition-colors min-h-[100px]"
+              id="project_details"
+              name="message"
+              placeholder="¿Qué tipo de sitio web necesitas? ¿Cuál es tu industria? ¿Tienes un plazo estimado?"
+              required
+            ></textarea>
+          </div>
+
+          <input type="hidden" name="service" value="diseno-paginas-web" />
+
+          <button
+            type="button"
+            data-original-text="Enviar Mensaje"
+            class="w-full py-3 bg-white text-black font-semibold text-xs rounded hover:bg-neutral-200 transition-colors duration-200"
+            onclick="submitFormLanding()"
+          >
+            Cotizar Proyecto
+          </button>
+        </form>
+      </div>
+
+      <script>
+        async function submitFormLanding() {
+          const form = document.getElementById('contact-form-landing');
+          const feedback = document.getElementById('form-feedback');
+          const btn = form?.querySelector('button[type="button"]');
+          
+          if (!form || !(form instanceof HTMLFormElement) || !btn) { return; }
+          if (!(feedback instanceof HTMLElement)) { return; }
+          
+          if (!form.checkValidity()) {
+            form.reportValidity();
+            return;
+          }
+          
+          btn.disabled = true;
+          btn.textContent = 'Enviando...';
+          
+          try {
+            const res = await fetch('/api/contact', {
+              method: 'POST',
+              body: new FormData(form)
+            });
+            const data = await res.json();
+            
+            if (data.success) {
+              feedback.className = 'text-sm mt-4 text-green-400';
+              feedback.textContent = '¡Mensaje enviado con éxito! Te contactaremos pronto.';
+              feedback.classList.remove('hidden');
+              form.reset();
+            } else {
+              throw new Error(data.error);
+            }
+          } catch (err) {
+            feedback.className = 'text-sm mt-4 text-red-400';
+            feedback.textContent = 'Error al enviar. Intenta de nuevo o escríbenos a info@vortexlm.com.';
+            feedback.classList.remove('hidden');
+          } finally {
+            btn.disabled = false;
+            btn.textContent = (btn.getAttribute('data-original-text')) || 'Enviar';
+          }
+        }
+      </script>
+    </div>
+  </section>
+</BaseLayout>

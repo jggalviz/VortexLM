@@ -1,0 +1,733 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+<BaseLayout
+  title="Diseño de Páginas Web en Venezuela | Alta Velocidad | Vortex Logic"
+  description="Agencia de desarrollo y diseño web en Venezuela. Creamos plataformas digitales y páginas web profesionales de carga instantánea listas para vender."
+  isLocalBusiness={false}
+>
+  <!-- ─── HERO ───────────────────────────────────────────────────── -->
+  <section class="relative pt-36 pb-32 overflow-hidden linear-gradient-bg border-b border-[#1f1f24] px-6 md:px-12">
+    <div class="absolute inset-0 linear-grid opacity-30 pointer-events-none"></div>
+    <div class="max-w-[1200px] mx-auto text-center relative z-10">
+      <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-white/[0.015] blur-[120px] rounded-full pointer-events-none"></div>
+
+      <h1 class="text-4xl md:text-7xl font-extralight tracking-tight text-white mb-8 leading-[1.08] max-w-4xl mx-auto opacity-95">
+        Diseño de Páginas Web en Venezuela con Rendimiento Premium
+      </h1>
+
+      <p class="text-base md:text-lg text-[#cbd5e1] font-light mb-12 max-w-3xl mx-auto leading-relaxed">
+        Creamos sitios web ultrarrápidos que cargan en milisegundos incluso en conexiones 3G. 
+        Optimizados para el ecosistema digital venezolano: pasarelas de pago internacionales, 
+        integraciones contables y delivery. Tu negocio en todo el país, sin fronteras.
+      </p>
+
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-6 mb-20">
+        <a href="#contacto" class="w-full sm:w-auto px-8 py-3 bg-white text-black font-semibold text-xs rounded-full hover:bg-neutral-200 transition-all text-center duration-200 active:scale-95 shadow-[0_0_25px_rgba(255,255,255,0.15)]">
+          Cotizar Proyecto Nacional
+        </a>
+        <a href="#ventajas" class="w-full sm:w-auto px-6 py-3 text-white/90 font-medium text-xs rounded-full hover:text-white flex items-center justify-center gap-1.5 group transition-colors">
+          Ventajas nacionales <span class="group-hover:translate-x-1 transition-transform">➔</span>
+        </a>
+      </div>
+
+      <!-- Mockup: Mapa CDN + gráfico de rendimiento comparativo -->
+      <div class="relative max-w-5xl mx-auto">
+        <div class="linear-card rounded-lg overflow-hidden border border-[#2e2e34] shadow-[0_50px_100px_-20px_rgba(0,0,0,0.98)]">
+          <div class="bg-[#08080c] px-4 py-3.5 flex items-center justify-between border-b border-[#1f1f24]">
+            <div class="flex items-center gap-2">
+              <span class="w-2.5 h-2.5 rounded-full bg-[#ff5f56]/50"></span>
+              <span class="w-2.5 h-2.5 rounded-full bg-[#ffbd2e]/50"></span>
+              <span class="w-2.5 h-2.5 rounded-full bg-[#27c93f]/50"></span>
+            </div>
+            <div class="text-[10px] font-mono text-[#cbd5e1]/40 flex items-center gap-1.5">
+              <span class="material-symbols-outlined text-[10px]">globe</span>
+              vortex-cdn // edge-regions:latam
+            </div>
+            <div class="w-12"></div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-12 min-h-[420px] bg-[#000000] text-left">
+            <!-- Panel izquierdo: Mapa de distribución CDN -->
+            <div class="col-span-1 md:col-span-7 p-6 border-r border-[#1f1f24]">
+              <div class="text-[9px] uppercase tracking-wider text-[#cbd5e1]/40 mb-4 font-mono font-semibold">Red de Distribución Global (CDN)</div>
+              <!-- Mapa simulado con puntos de presencia -->
+              <div class="relative border border-[#1f1f24] rounded-lg bg-[#050507]/40 p-6 h-[260px] overflow-hidden">
+                <!-- Líneas de conexión horizontales simulando mapa -->
+                <svg class="absolute inset-0 w-full h-full opacity-20" viewBox="0 0 400 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M50 100 Q120 30 200 60 T350 80" stroke="#6366f1" stroke-width="0.5" stroke-dasharray="3 3"/>
+                  <path d="M50 100 Q130 150 220 120 T360 100" stroke="#22d3ee" stroke-width="0.5" stroke-dasharray="3 3"/>
+                  <path d="M50 100 Q110 160 200 170 T340 150" stroke="#22d3ee" stroke-width="0.5" stroke-dasharray="3 3"/>
+                  <circle cx="50" cy="100" r="4" fill="#6366f1" opacity="0.8"/>
+                  <circle cx="120" cy="70" r="3" fill="#22d3ee" opacity="0.6"/>
+                  <circle cx="200" cy="60" r="3" fill="#22d3ee" opacity="0.6"/>
+                  <circle cx="280" cy="55" r="2.5" fill="#22d3ee" opacity="0.5"/>
+                  <circle cx="350" cy="80" r="3" fill="#22d3ee" opacity="0.6"/>
+                  <circle cx="130" cy="130" r="2.5" fill="#22d3ee" opacity="0.5"/>
+                  <circle cx="220" cy="120" r="3" fill="#22d3ee" opacity="0.6"/>
+                  <circle cx="310" cy="110" r="2.5" fill="#22d3ee" opacity="0.5"/>
+                </svg>
+                <!-- Nodo central Venezuela -->
+                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
+                  <div class="w-20 h-20 rounded-full bg-purple-500/10 border-2 border-purple-500/40 flex items-center justify-center animate-pulse">
+                    <div class="w-10 h-10 rounded-full bg-purple-500/20 border border-purple-500/60 flex items-center justify-center">
+                      <span class="material-symbols-outlined text-sm text-purple-400">bolt</span>
+                    </div>
+                  </div>
+                </div>
+                <!-- Etiquetas de ciudades -->
+                <div class="absolute top-4 left-6 text-[8px] font-mono text-[#cbd5e1]/60">Miami</div>
+                <div class="absolute top-3 right-12 text-[8px] font-mono text-[#cbd5e1]/60">São Paulo</div>
+                <div class="absolute bottom-6 left-8 text-[8px] font-mono text-[#cbd5e1]/60">Bogotá</div>
+                <div class="absolute bottom-4 right-8 text-[8px] font-mono text-[#cbd5e1]/60">Buenos Aires</div>
+                <div class="absolute top-1/2 left-3 -translate-y-1/2 text-[8px] font-mono text-purple-400/80">Venezuela</div>
+              </div>
+              <div class="flex justify-between mt-2 text-[8px] font-mono text-[#cbd5e1]/40">
+                <span>Edge nodes: 100+</span>
+                <span>Latencia promedio: 18ms</span>
+                <span>Uptime: 99.99%</span>
+              </div>
+            </div>
+
+            <!-- Panel derecho: Comparativa de rendimiento -->
+            <div class="col-span-1 md:col-span-5 p-6 bg-[#050507]/30 font-mono text-[10px]">
+              <div class="text-[9px] uppercase tracking-wider text-[#cbd5e1]/40 mb-4 font-semibold">Rendimiento Comparativo</div>
+              <div class="space-y-5">
+                <!-- WordPress tradicional -->
+                <div>
+                  <div class="flex justify-between items-center mb-1.5">
+                    <span class="text-[#cbd5e1]/80">Sitio Tradicional (WordPress)</span>
+                    <span class="text-red-400">6.2s</span>
+                  </div>
+                  <div class="w-full h-3 bg-[#1f1f24] rounded-full overflow-hidden">
+                    <div class="w-full h-full bg-red-500/30 rounded-full" style="width: 95%"></div>
+                  </div>
+                  <div class="flex justify-between text-[8px] text-[#cbd5e1]/40 mt-0.5">
+                    <span>Lighthouse: 42</span>
+                    <span>3G: 8.4s</span>
+                  </div>
+                </div>
+
+                <!-- Vortex Optimizado -->
+                <div>
+                  <div class="flex justify-between items-center mb-1.5">
+                    <span class="text-green-400">Vortex LM (Astro + Jamstack)</span>
+                    <span class="text-green-400">0.8s</span>
+                  </div>
+                  <div class="w-full h-3 bg-[#1f1f24] rounded-full overflow-hidden">
+                    <div class="h-full bg-green-500/40 rounded-full" style="width: 8%"></div>
+                  </div>
+                  <div class="flex justify-between text-[8px] text-[#cbd5e1]/40 mt-0.5">
+                    <span>Lighthouse: 100</span>
+                    <span>3G: 1.2s</span>
+                  </div>
+                </div>
+
+                <!-- Métricas adicionales -->
+                <div class="border-t border-[#1f1f24]/50 pt-3 space-y-1.5">
+                  <div class="flex justify-between">
+                    <span class="text-[#cbd5e1]/60">First Contentful Paint</span>
+                    <span class="text-green-400">0.3s</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span class="text-[#cbd5e1]/60">Time to Interactive</span>
+                    <span class="text-green-400">0.6s</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span class="text-[#cbd5e1]/60">Cumulative Layout Shift</span>
+                    <span class="text-green-400">0.02</span>
+                  </div>
+                  <div class="flex justify-between border-t border-[#1f1f24]/50 pt-1.5">
+                    <span class="text-[#cbd5e1]/40">vs WordPress promedio</span>
+                    <span class="text-green-500">8x ms rápido</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── VENTAJAS NACIONALES ────────────────────────────────────── -->
+  <section id="ventajas" class="py-36 px-6 md:px-12 bg-black relative border-b border-[#1f1f24]">
+    <div class="max-w-[1200px] mx-auto relative z-10">
+      <div class="max-w-4xl mb-24">
+        <span class="text-[10px] font-mono text-[#cbd5e1] uppercase tracking-widest block mb-3 font-medium">Ventajas Nacionales</span>
+        <h2 class="text-2xl md:text-4xl font-light text-white tracking-tight leading-snug">
+          Tu web funcionando a máxima velocidad desde cualquier estado de Venezuela, 
+          incluso en conexiones 3G con ancho de banda limitado.
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16">
+        <!-- Ventaja 1: Velocidad en conexiones lentas -->
+        <div class="space-y-6 group">
+          <div class="w-full aspect-[4/3] linear-card rounded border border-[#1f1f24] bg-[#08080c]/30 flex items-center justify-center p-6 glow-hover transition-all">
+            <svg class="w-20 h-20 text-[#cbd5e1]/40 group-hover:text-white/80 transition-colors" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M20 50L40 35V65L20 50Z" stroke="currentColor" stroke-width="1.25"/>
+              <path d="M40 50L60 35V65L40 50Z" stroke="currentColor" stroke-width="1.25"/>
+              <path d="M60 50L80 35V65L60 50Z" stroke="currentColor" stroke-width="1.25"/>
+              <circle cx="40" cy="35" r="2.5" fill="currentColor"/>
+              <circle cx="60" cy="35" r="2.5" fill="currentColor"/>
+              <circle cx="40" cy="65" r="2.5" fill="currentColor"/>
+              <circle cx="60" cy="65" r="2.5" fill="currentColor"/>
+              <path d="M15 55L20 50L25 55" stroke="currentColor" stroke-width="0.75" stroke-linecap="round"/>
+              <path d="M75 55L80 50L85 55" stroke="currentColor" stroke-width="0.75" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div>
+            <h3 class="text-sm font-medium text-white mb-2.5">Carga Instantánea en 3G/4G/5G</h3>
+            <p class="text-xs text-[#cbd5e1] leading-relaxed">
+              Astro genera HTML estático que pesa 90% menos que un sitio WordPress tradicional. 
+              Tu web carga en menos de 1 segundo incluso en conexiones móviles lentas de 
+              cualquier estado del país. Primer paint en 0.3s gracias al CSS crítico inline 
+              y la arquitectura Jamstack.
+            </p>
+            <ul class="space-y-1 mt-3 text-[10px] text-[#cbd5e1] font-mono">
+              <li class="flex items-center gap-1.5"><span class="text-green-400">→</span> HTML estático servido desde CDN</li>
+              <li class="flex items-center gap-1.5"><span class="text-green-400">→</span> JavaScript mínimo y diferido</li>
+              <li class="flex items-center gap-1.5"><span class="text-green-400">→</span> Imágenes WebP con lazy loading</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Ventaja 2: Integraciones locales -->
+        <div class="space-y-6 group">
+          <div class="w-full aspect-[4/3] linear-card rounded border border-[#1f1f24] bg-[#08080c]/30 flex items-center justify-center p-6 glow-hover transition-all">
+            <svg class="w-20 h-20 text-[#cbd5e1]/40 group-hover:text-white/80 transition-colors" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="20" y="30" width="60" height="50" rx="4" stroke="currentColor" stroke-width="1.25"/>
+              <path d="M20 45H80" stroke="currentColor" stroke-width="0.75"/>
+              <path d="M30 30V20H70V30" stroke="currentColor" stroke-width="0.75"/>
+              <circle cx="40" cy="60" r="3" fill="currentColor" fill-opacity="0.5"/>
+              <circle cx="55" cy="60" r="3" fill="currentColor" fill-opacity="0.5"/>
+              <path d="M35 68L40 72L50 62" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div>
+            <h3 class="text-sm font-medium text-white mb-2.5">Integraciones para el Mercado Venezolano</h3>
+            <p class="text-xs text-[#cbd5e1] leading-relaxed">
+              Conectamos tu web con las plataformas que usa tu negocio en Venezuela: 
+              pasarelas de pago internacionales (PayPal, Stripe, MercadoPago), sistemas 
+              de facturación electrónica (Seniat, IVA), plataformas de delivery locales 
+              y CRMs adaptados al mercado nacional. Todo integrado en un solo ecosistema.
+            </p>
+            <ul class="space-y-1 mt-3 text-[10px] text-[#cbd5e1] font-mono">
+              <li class="flex items-center gap-1.5"><span class="text-green-400">→</span> Pasarelas: PayPal, Stripe, MercadoPago, Zelle</li>
+              <li class="flex items-center gap-1.5"><span class="text-green-400">→</span> Facturación electrónica Seniat/IVA</li>
+              <li class="flex items-center gap-1.5"><span class="text-green-400">→</span> Catálogos con inventario en tiempo real</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Ventaja 3: Alcance nacional -->
+        <div class="space-y-6 group">
+          <div class="w-full aspect-[4/3] linear-card rounded border border-[#1f1f24] bg-[#08080c]/30 flex items-center justify-center p-6 glow-hover transition-all">
+            <svg class="w-20 h-20 text-[#cbd5e1]/40 group-hover:text-white/80 transition-colors" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="50" cy="50" r="35" stroke="currentColor" stroke-width="0.75" stroke-dasharray="2 2"/>
+              <path d="M50 15V85" stroke="currentColor" stroke-width="0.5" stroke-dasharray="2 2"/>
+              <path d="M15 50H85" stroke="currentColor" stroke-width="0.5" stroke-dasharray="2 2"/>
+              <circle cx="50" cy="50" r="8" stroke="currentColor" stroke-width="1.25"/>
+              <circle cx="50" cy="50" r="3" fill="currentColor"/>
+              <circle cx="35" cy="30" r="2" fill="currentColor" fill-opacity="0.4"/>
+              <circle cx="70" cy="35" r="2" fill="currentColor" fill-opacity="0.4"/>
+              <circle cx="30" cy="65" r="2" fill="currentColor" fill-opacity="0.4"/>
+              <circle cx="68" cy="68" r="2" fill="currentColor" fill-opacity="0.4"/>
+            </svg>
+          </div>
+          <div>
+            <h3 class="text-sm font-medium text-white mb-2.5">Presencia Digital en Todo el País</h3>
+            <p class="text-xs text-[#cbd5e1] leading-relaxed">
+              Sin importar si tu negocio está en Caracas, Maracaibo, Valencia, Barquisimeto, 
+              Maracay o cualquier ciudad del país. Tu web estará disponible para clientes 
+              en toda Venezuela con la misma velocidad y calidad. Servidores edge de Vercel 
+              aseguran latencia mínima desde cualquier ubicación.
+            </p>
+            <ul class="space-y-1 mt-3 text-[10px] text-[#cbd5e1] font-mono">
+              <li class="flex items-center gap-1.5"><span class="text-green-400">→</span> CDN global con nodos en Latinoamérica</li>
+              <li class="flex items-center gap-1.5"><span class="text-green-400">→</span> Soporte remoto desde cualquier estado</li>
+              <li class="flex items-center gap-1.5"><span class="text-green-400">→</span> Consultoría online sin necesidad de presencial</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── BLOQUE DETALLADO: TECNOLOGÍA PARA VENEZUELA ────────────── -->
+  <section class="py-36 px-6 md:px-12 bg-black border-b border-[#1f1f24] relative">
+    <div class="max-w-[1200px] mx-auto space-y-44 relative z-10">
+
+      <!-- Bloque: Stack optimizado para conexiones lentas -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
+        <div class="lg:col-span-5 space-y-5">
+          <span class="text-[10px] font-mono text-[#cbd5e1] uppercase tracking-widest block font-medium">Tecnología Adaptativa</span>
+          <h2 class="text-2xl md:text-4xl font-light text-white tracking-tight leading-tight">
+            Diseñado para el internet venezolano. Velocidad donde otros se quedan cargando.
+          </h2>
+          <p class="text-sm text-[#cbd5e1] font-light leading-relaxed">
+            En Venezuela, la velocidad de internet puede variar drásticamente según el 
+            operador y la región. Por eso construimos con Astro: genera HTML estático 
+            ultraligero que se sirve desde 100+ servidores alrededor del mundo. 
+            Mientras un sitio tradicional pesa 3-5MB y tarda 8 segundos en cargar, 
+            tu web Vortex pesa menos de 200KB y carga en menos de 1 segundo. 
+            Así de simple.
+          </p>
+          <ul class="space-y-2 text-xs text-[#cbd5e1] font-light">
+            <li class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-sm text-green-400">check_circle</span>
+              Compresión Brotli + HTML estático pre-renderizado
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-sm text-green-400">check_circle</span>
+              Imágenes WebP con calidad adaptativa por conexión
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-sm text-green-400">check_circle</span>
+              Service worker para modo offline parcial
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-sm text-green-400">check_circle</span>
+              Carga priorizada de contenido crítico (Critical CSS)
+            </li>
+          </ul>
+        </div>
+
+        <div class="lg:col-span-7">
+          <div class="linear-card rounded-lg border border-[#1f1f24] overflow-hidden bg-[#08080c]/50 p-8 shadow-2xl relative">
+            <div class="absolute inset-0 font-mono text-[8px] text-[#1f1f24] p-6 select-none overflow-hidden leading-relaxed pointer-events-none opacity-20">
+              Conexión: 3G (1.5 Mbps)<br />
+              Carga total: 187 KB<br />
+              Tiempo: 0.8s<br />
+              vs WordPress: 4.2 MB → 8.4s
+            </div>
+
+            <div class="flex items-center justify-between border-b border-[#1f1f24] pb-4 mb-6 relative z-10">
+              <span class="text-[10px] font-mono text-[#cbd5e1] flex items-center gap-1.5">
+                <span class="w-1.5 h-1.5 rounded-full bg-cyan-500"></span>
+                performance // venezuela-benchmark
+              </span>
+              <span class="text-[9px] text-[#cbd5e1]/40 font-mono">Simulado 3G</span>
+            </div>
+
+            <!-- Indicadores de rendimiento -->
+            <div class="grid grid-cols-2 gap-4 relative z-10">
+              <div class="p-4 border border-[#1f1f24] rounded bg-black/40">
+                <span class="text-[10px] font-mono text-cyan-400 block mb-1">Peso Total</span>
+                <span class="text-2xl font-light text-white">187KB</span>
+                <span class="text-[10px] text-[#cbd5e1]/60 block">vs 4.2MB WordPress</span>
+              </div>
+              <div class="p-4 border border-[#1f1f24] rounded bg-black/40">
+                <span class="text-[10px] font-mono text-cyan-400 block mb-1">Tiempo 3G</span>
+                <span class="text-2xl font-light text-white">0.8s</span>
+                <span class="text-[10px] text-[#cbd5e1]/60 block">vs 8.4s WordPress</span>
+              </div>
+              <div class="p-4 border border-[#1f1f24] rounded bg-black/40">
+                <span class="text-[10px] font-mono text-cyan-400 block mb-1">Lighthouse</span>
+                <span class="text-2xl font-light text-white">100</span>
+                <span class="text-[10px] text-[#cbd5e1]/60 block">Puntuación perfecta</span>
+              </div>
+              <div class="p-4 border border-[#1f1f24] rounded bg-black/40">
+                <span class="text-[10px] font-mono text-cyan-400 block mb-1">Uptime</span>
+                <span class="text-2xl font-light text-white">99.99%</span>
+                <span class="text-[10px] text-[#cbd5e1]/60 block">SLA Vercel Edge</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bloque: Integraciones Comerciales -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
+        <div class="lg:col-span-7 order-2 lg:order-1">
+          <div class="linear-card rounded-lg border border-[#1f1f24] overflow-hidden bg-[#08080c]/50 p-6 shadow-2xl">
+            <div class="flex items-center justify-between border-b border-[#1f1f24] pb-4 mb-4">
+              <span class="text-[10px] font-mono text-[#cbd5e1] flex items-center gap-1.5">
+                <span class="w-1.5 h-1.5 rounded-full bg-purple-500"></span>
+                integrations // venezuela-ecosystem
+              </span>
+              <span class="text-[9px] text-[#cbd5e1]/40 font-mono">API Ready</span>
+            </div>
+
+            <!-- Grid de integraciones -->
+            <div class="grid grid-cols-2 gap-3 py-4 relative z-10">
+              <div class="p-3 border border-[#1f1f24] rounded bg-black/40 flex items-center gap-2">
+                <span class="material-symbols-outlined text-sm text-blue-400">payments</span>
+                <div>
+                  <div class="text-[10px] text-white/90">PayPal / Stripe</div>
+                  <div class="text-[8px] text-[#cbd5e1]/40">Pasarelas globales</div>
+                </div>
+              </div>
+              <div class="p-3 border border-[#1f1f24] rounded bg-black/40 flex items-center gap-2">
+                <span class="material-symbols-outlined text-sm text-green-400">account_balance</span>
+                <div>
+                  <div class="text-[10px] text-white/90">MercadoPago</div>
+                  <div class="text-[8px] text-[#cbd5e1]/40">Pag. Latinoamérica</div>
+                </div>
+              </div>
+              <div class="p-3 border border-[#1f1f24] rounded bg-black/40 flex items-center gap-2">
+                <span class="material-symbols-outlined text-sm text-yellow-400">receipt_long</span>
+                <div>
+                  <div class="text-[10px] text-white/90">Facturación Seniat</div>
+                  <div class="text-[8px] text-[#cbd5e1]/40">IVA / CF Legal</div>
+                </div>
+              </div>
+              <div class="p-3 border border-[#1f1f24] rounded bg-black/40 flex items-center gap-2">
+                <span class="material-symbols-outlined text-sm text-orange-400">local_shipping</span>
+                <div>
+                  <div class="text-[10px] text-white/90">Delivery / Logística</div>
+                  <div class="text-[8px] text-[#cbd5e1]/40">MRW, Zoom, Domesa</div>
+                </div>
+              </div>
+              <div class="p-3 border border-[#1f1f24] rounded bg-black/40 flex items-center gap-2">
+                <span class="material-symbols-outlined text-sm text-cyan-400">inventory_2</span>
+                <div>
+                  <div class="text-[10px] text-white/90">Catálogos + Stock</div>
+                  <div class="text-[8px] text-[#cbd5e1]/40">Inventario en vivo</div>
+                </div>
+              </div>
+              <div class="p-3 border border-[#1f1f24] rounded bg-black/40 flex items-center gap-2">
+                <span class="material-symbols-outlined text-sm text-pink-400">support_agent</span>
+                <div>
+                  <div class="text-[10px] text-white/90">CRM Integrado</div>
+                  <div class="text-[8px] text-[#cbd5e1]/40">HubSpot / SalesForce</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="border-t border-[#1f1f24]/50 pt-3 text-[9px] font-mono text-[#cbd5e1]/40 text-center relative z-10">
+              API REST · Webhooks · Automatización · Tiempo real
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-5 space-y-5 order-1 lg:order-2">
+          <span class="text-[10px] font-mono text-[#cbd5e1] uppercase tracking-widest block font-medium">Comercio sin Fronteras</span>
+          <h2 class="text-2xl md:text-4xl font-light text-white tracking-tight leading-tight">
+            Vende a todo Venezuela (y el mundo) desde una sola plataforma.
+          </h2>
+          <p class="text-sm text-[#cbd5e1] font-light leading-relaxed">
+            Integramos tu web con las herramientas comerciales que necesitas: pasarelas de 
+            pago internacionales para recibir dólares, facturación electrónica conforme al 
+            Seniat, sistemas de delivery con MRW, Zoom y Domesa, y catálogos de productos 
+            con inventario sincronizado en tiempo real. Todo desde un panel centralizado 
+            y fácil de usar.
+          </p>
+          <ul class="space-y-2 text-xs text-[#cbd5e1] font-light">
+            <li class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-sm text-green-400">check_circle</span>
+              Pagos en divisas (PayPal, Stripe, Zelle) y bolívares
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-sm text-green-400">check_circle</span>
+              Facturación electrónica con requisitos fiscales VE
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-sm text-green-400">check_circle</span>
+              Delivery integrado con cálculo de tarifas en tiempo real
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── INFRAESTRUCTURA GLOBAL ─────────────────────────────────── -->
+  <section class="py-36 px-6 md:px-12 bg-black relative border-b border-[#1f1f24]">
+    <div class="max-w-[1200px] mx-auto relative z-10">
+      <div class="text-center max-w-2xl mx-auto mb-20">
+        <span class="text-[10px] font-mono text-[#cbd5e1] uppercase tracking-widest block mb-3 font-semibold">Infraestructura Global</span>
+        <h2 class="text-3xl md:text-5xl font-light text-white tracking-tight">Tu web corre sobre la misma red que las grandes tecnológicas</h2>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 mb-16">
+        <div class="linear-card rounded-lg border border-[#1f1f24] bg-[#08080c]/40 p-8 flex flex-col justify-between min-h-[300px] glow-hover transition-all">
+          <div class="space-y-4">
+            <span class="text-[10px] font-mono text-cyan-400 uppercase tracking-widest block font-medium">Vercel Edge Network</span>
+            <h3 class="text-xl md:text-2xl font-light text-white tracking-tight">100+ servidores. Latencia mínima desde Venezuela.</h3>
+            <p class="text-xs text-[#cbd5e1] leading-relaxed max-w-md">
+              Desplegamos tu sitio en la misma red edge de Vercel que usan empresas como 
+              Nike, TikTok y Airbnb. Tus visitantes en Venezuela reciben el contenido 
+              desde el servidor más cercano — Miami, São Paulo o Bogotá — con latencias 
+              promedio de 18ms. Carga instantánea desde cualquier estado del país.
+            </p>
+          </div>
+        </div>
+
+        <div class="linear-card rounded-lg border border-[#1f1f24] bg-[#08080c]/40 p-8 flex flex-col justify-between min-h-[300px] glow-hover transition-all">
+          <div class="space-y-4">
+            <span class="text-[10px] font-mono text-green-400 uppercase tracking-widest block font-medium">SSL + Seguridad</span>
+            <h3 class="text-xl md:text-2xl font-light text-white tracking-tight">Protección empresarial incluida en cada proyecto.</h3>
+            <p class="text-xs text-[#cbd5e1] leading-relaxed max-w-md">
+              SSL automatizado con certificados renovados cada 90 días, Web Application 
+              Firewall (WAF) contra ataques DDoS, rate limiting en endpoints críticos y 
+              autenticación JWT para áreas protegidas. Tu web y los datos de tus clientes 
+              están seguros con los más altos estándares de la industria.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Consola de rendimiento -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+        <div class="linear-card bg-black p-4 rounded border border-[#1f1f24] font-mono text-[10px] text-[#94a3b8]/80 space-y-1.5 h-[140px] overflow-y-auto">
+          <div class="text-[#94a3b8]/40">> curl -I https://tusitio.com</div>
+          <div class="text-green-500">HTTP/2 200</div>
+          <div class="text-[#94a3b8]/60">content-type: text/html</div>
+          <div class="text-[#94a3b8]/60">x-vercel-cache: HIT</div>
+          <div class="text-[#94a3b8]/60">server: Vercel</div>
+          <div class="text-green-500">✔ Connected · 0.12s · 187KB transferred</div>
+        </div>
+
+        <div class="linear-card bg-black p-4 rounded border border-[#1f1f24] h-[140px] flex flex-col justify-between">
+          <div class="flex justify-between items-center text-[9px] font-mono text-[#cbd5e1]/40 border-b border-[#1f1f24]/50 pb-2">
+            <span>Latencia por región (ms)</span>
+            <span class="text-green-400 font-bold font-mono">Global avg</span>
+          </div>
+          <div class="flex items-end justify-between h-[70px] px-4 pt-1">
+            <div class="flex flex-col items-center gap-0.5">
+              <span class="text-[7px] font-mono text-green-400">18</span>
+              <div class="w-5 bg-[#1f1f24] rounded-t-sm h-[35px] relative overflow-hidden flex items-end">
+                <div class="w-full bg-green-500/60 h-[85%]"></div>
+              </div>
+              <span class="text-[6px] font-mono text-[#cbd5e1]/40">LATAM</span>
+            </div>
+            <div class="flex flex-col items-center gap-0.5">
+              <span class="text-[7px] font-mono text-green-400">25</span>
+              <div class="w-5 bg-[#1f1f24] rounded-t-sm h-[30px] relative overflow-hidden flex items-end">
+                <div class="w-full bg-green-500/60 h-[72%]"></div>
+              </div>
+              <span class="text-[6px] font-mono text-[#cbd5e1]/40">USA</span>
+            </div>
+            <div class="flex flex-col items-center gap-0.5">
+              <span class="text-[7px] font-mono text-green-400">12</span>
+              <div class="w-5 bg-[#1f1f24] rounded-t-sm h-[40px] relative overflow-hidden flex items-end">
+                <div class="w-full bg-white h-[95%]"></div>
+              </div>
+              <span class="text-[6px] font-mono text-[#cbd5e1]/40">Miami</span>
+            </div>
+            <div class="flex flex-col items-center gap-0.5">
+              <span class="text-[7px] font-mono text-green-400">45</span>
+              <div class="w-5 bg-[#1f1f24] rounded-t-sm h-[25px] relative overflow-hidden flex items-end">
+                <div class="w-full bg-green-500/60 h-[65%]"></div>
+              </div>
+              <span class="text-[6px] font-mono text-[#cbd5e1]/40">Europa</span>
+            </div>
+            <div class="flex flex-col items-center gap-0.5">
+              <span class="text-[7px] font-mono text-green-400">35</span>
+              <div class="w-5 bg-[#1f1f24] rounded-t-sm h-[28px] relative overflow-hidden flex items-end">
+                <div class="w-full bg-green-500/60 h-[78%]"></div>
+              </div>
+              <span class="text-[6px] font-mono text-[#cbd5e1]/40">Asia</span>
+            </div>
+          </div>
+          <div class="border-t border-[#1f1f24]/50 pt-2 text-[9px] font-mono text-[#cbd5e1]/40 text-right">
+            P95 global: 120ms
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FAQ PAÍS ───────────────────────────────────────────────── -->
+  <section class="py-36 px-6 md:px-12 bg-black relative border-b border-[#1f1f24]">
+    <div class="max-w-[800px] mx-auto relative z-10">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <span class="text-[10px] font-mono text-[#cbd5e1] uppercase tracking-widest block mb-3 font-medium">FAQ Nacional</span>
+        <h2 class="text-3xl md:text-4xl font-light text-white tracking-tight">Preguntas frecuentes sobre nuestros servicios en Venezuela</h2>
+      </div>
+
+      <div class="space-y-4">
+        <details class="group linear-card rounded-lg border border-[#1f1f24] bg-[#08080c]/30 overflow-hidden glow-hover transition-all">
+          <summary class="flex items-center justify-between p-5 cursor-pointer text-sm font-medium text-white/90 hover:text-white transition-colors">
+            ¿Trabajan con empresas fuera de Caracas?
+            <span class="material-symbols-outlined text-sm text-[#cbd5e1]/60 group-open:rotate-180 transition-transform">expand_more</span>
+          </summary>
+          <div class="px-5 pb-5 text-xs text-[#cbd5e1] leading-relaxed">
+            ¡Por supuesto! Trabajamos con clientes de todo el país: Maracaibo, Valencia, 
+            Barquisimeto, Maracay, Puerto La Cruz, San Cristóbal y cualquier otra ciudad. 
+            Toda nuestra consultoría y desarrollo se realiza de forma remota a través de 
+            videollamadas, Slack y WhatsApp. No necesitamos reuniones presenciales para 
+            entregar resultados de clase mundial. De hecho, la mayoría de nuestros clientes 
+            los atendemos completamente online.
+          </div>
+        </details>
+
+        <details class="group linear-card rounded-lg border border-[#1f1f24] bg-[#08080c]/30 overflow-hidden glow-hover transition-all">
+          <summary class="flex items-center justify-between p-5 cursor-pointer text-sm font-medium text-white/90 hover:text-white transition-colors">
+            ¿Cómo se maneja la consultoría y el soporte remoto?
+            <span class="material-symbols-outlined text-sm text-[#cbd5e1]/60 group-open:rotate-180 transition-transform">expand_more</span>
+          </summary>
+          <div class="px-5 pb-5 text-xs text-[#cbd5e1] leading-relaxed">
+            Usamos metodologías ágiles con comunicación asíncrona y reuniones semanales 
+            por Google Meet o Zoom. Compartimos avances en tiempo real a través de 
+            canales de Slack/WhatsApp donde puedes ver el progreso del proyecto día a día. 
+            Para el soporte post-lanzamiento, tenemos un sistema de tickets con respuesta 
+            garantizada en menos de 48 horas. También ofrecemos sesiones de formación 
+            online para que tu equipo aprenda a administrar el contenido.
+          </div>
+        </details>
+
+        <details class="group linear-card rounded-lg border border-[#1f1f24] bg-[#08080c]/30 overflow-hidden glow-hover transition-all">
+          <summary class="flex items-center justify-between p-5 cursor-pointer text-sm font-medium text-white/90 hover:text-white transition-colors">
+            ¿Qué métodos de pago e integraciones comerciales manejan?
+            <span class="material-symbols-outlined text-sm text-[#cbd5e1]/60 group-open:rotate-180 transition-transform">expand_more</span>
+          </summary>
+          <div class="px-5 pb-5 text-xs text-[#cbd5e1] leading-relaxed">
+            Integramos las principales pasarelas de pago que operan en Venezuela y el 
+            extranjero: <strong class="text-white">PayPal, Stripe, MercadoPago y Zelle</strong>. 
+            Para facturación electrónica, conectamos con sistemas que cumplen con los 
+            requisitos del <strong class="text-white">Seniat</strong> (IVA, CF). También integramos 
+            plataformas de delivery como <strong class="text-white">MRW, Zoom y Domesa</strong> 
+            con cálculo de tarifas en tiempo real. Si necesitas una integración específica 
+            para tu industria, la desarrollamos a medida.
+          </div>
+        </details>
+
+        <details class="group linear-card rounded-lg border border-[#1f1f24] bg-[#08080c]/30 overflow-hidden glow-hover transition-all">
+          <summary class="flex items-center justify-between p-5 cursor-pointer text-sm font-medium text-white/90 hover:text-white transition-colors">
+            ¿La web funcionará rápido con conexiones lentas de internet?
+            <span class="material-symbols-outlined text-sm text-[#cbd5e1]/60 group-open:rotate-180 transition-transform">expand_more</span>
+          </summary>
+          <div class="px-5 pb-5 text-xs text-[#cbd5e1] leading-relaxed">
+            Sí, este es uno de nuestros diferenciadores principales. Una página web 
+            tradicional de WordPress pesa entre 3 y 5 MB y tarda 8 segundos o más en 
+            cargar con una conexión 3G típica en Venezuela. Nosotros generamos sitios 
+            que pesan <strong class="text-white">menos de 200 KB</strong> y cargan en 
+            <strong class="text-white">menos de 1 segundo</strong> en las mismas condiciones. 
+            Esto se logra con: HTML estático pre-renderizado, imágenes comprimidas en 
+            WebP, carga diferida de contenido no crítico y una arquitectura que elimina 
+            todo el JavaScript innecesario. Tu web funciona perfectamente incluso en 
+            conexiones inestables.
+          </div>
+        </details>
+
+        <details class="group linear-card rounded-lg border border-[#1f1f24] bg-[#08080c]/30 overflow-hidden glow-hover transition-all">
+          <summary class="flex items-center justify-between p-5 cursor-pointer text-sm font-medium text-white/90 hover:text-white transition-colors">
+            ¿Ofrecen mantenimiento y actualizaciones después del lanzamiento?
+            <span class="material-symbols-outlined text-sm text-[#cbd5e1]/60 group-open:rotate-180 transition-transform">expand_more</span>
+          </summary>
+          <div class="px-5 pb-5 text-xs text-[#cbd5e1] leading-relaxed">
+            Sí. Todos los proyectos incluyen <strong class="text-white">3 meses de soporte</strong> 
+            post-lanzamiento para ajustes menores y estabilización. Después ofrecemos 
+            planes de mantenimiento mensual que incluyen: actualizaciones de seguridad, 
+            monitoreo 24/7 del rendimiento y uptime, backups automáticos de base de datos, 
+            optimización continua de velocidad y soporte prioritario por Slack o WhatsApp. 
+            También podemos agregar nuevas funcionalidades o secciones a tu web bajo 
+            demanda.
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── CONTACTO ────────────────────────────────────────────────── -->
+  <section id="contacto" class="py-36 px-6 md:px-12 bg-black relative">
+    <div class="max-w-[600px] mx-auto text-center relative z-10 space-y-8">
+      <span class="text-[10px] font-mono text-[#cbd5e1] uppercase tracking-widest block font-medium">Inicia tu Proyecto Nacional</span>
+      <h2 class="text-3xl md:text-5xl font-light text-white tracking-tight leading-tight">
+        ¿Listo para llevar tu negocio al siguiente nivel digital?
+      </h2>
+      <p class="text-sm text-[#cbd5e1] font-light leading-relaxed">
+        Cuéntanos sobre tu proyecto y te enviaremos una propuesta personalizada con 
+        estrategia, desarrollo, integraciones comerciales y presupuesto transparente. 
+        Trabajamos con empresas de todo Venezuela, 100% remoto.
+      </p>
+
+      <div class="linear-card p-8 rounded-lg border border-[#1f1f24] bg-[#08080c]/40 text-left space-y-6">
+        <div id="form-feedback" class="text-sm mt-4 hidden"></div>
+        <form id="contact-form-nacional" class="space-y-4">
+          <div>
+            <label class="block text-[10px] font-mono text-[#cbd5e1] uppercase tracking-wider mb-2 font-medium" for="fullname">Nombre y Apellido</label>
+            <input
+              class="w-full bg-black border border-[#1f1f24] rounded px-4 py-3 text-xs text-white placeholder-neutral-800 focus:outline-none focus:border-white transition-colors"
+              type="text"
+              id="fullname"
+              name="name"
+              placeholder="e.g. Carlos Pérez"
+              required
+            />
+          </div>
+
+          <div>
+            <label class="block text-[10px] font-mono text-[#cbd5e1] uppercase tracking-wider mb-2 font-medium" for="corp_email">Correo Corporativo</label>
+            <input
+              class="w-full bg-black border border-[#1f1f24] rounded px-4 py-3 text-xs text-white placeholder-neutral-800 focus:outline-none focus:border-white transition-colors"
+              type="email"
+              id="corp_email"
+              name="email"
+              placeholder="operator@acme.com"
+              required
+            />
+          </div>
+
+          <div>
+            <label class="block text-[10px] font-mono text-[#cbd5e1] uppercase tracking-wider mb-2 font-medium" for="project_details">Cuéntanos sobre tu proyecto</label>
+            <textarea
+              class="w-full bg-black border border-[#1f1f24] rounded px-4 py-3 text-xs text-white placeholder-neutral-800 focus:outline-none focus:border-white transition-colors min-h-[100px]"
+              id="project_details"
+              name="message"
+              placeholder="¿Qué tipo de proyecto tienes en mente? ¿En qué ciudad de Venezuela estás? ¿Necesitas integraciones de pago o delivery?"
+              required
+            ></textarea>
+          </div>
+
+          <input type="hidden" name="service" value="diseno-web-nacional" />
+
+          <button
+            type="button"
+            data-original-text="Enviar Mensaje"
+            class="w-full py-3 bg-white text-black font-semibold text-xs rounded hover:bg-neutral-200 transition-colors duration-200"
+            onclick="submitFormNacional()"
+          >
+            Cotizar Proyecto Nacional
+          </button>
+        </form>
+      </div>
+
+      <script>
+        async function submitFormNacional() {
+          const form = document.getElementById('contact-form-nacional');
+          const feedback = document.getElementById('form-feedback');
+          const btn = form?.querySelector('button[type="button"]');
+          
+          if (!form || !(form instanceof HTMLFormElement) || !btn) { return; }
+          if (!(feedback instanceof HTMLElement)) { return; }
+          
+          if (!form.checkValidity()) {
+            form.reportValidity();
+            return;
+          }
+          
+          btn.disabled = true;
+          btn.textContent = 'Enviando...';
+          
+          try {
+            const res = await fetch('/api/contact', {
+              method: 'POST',
+              body: new FormData(form)
+            });
+            const data = await res.json();
+            
+            if (data.success) {
+              feedback.className = 'text-sm mt-4 text-green-400';
+              feedback.textContent = 'Mensaje enviado con exito! Te contactaremos pronto.';
+              feedback.classList.remove('hidden');
+              form.reset();
+            } else {
+              throw new Error(data.error);
+            }
+          } catch (err) {
+            feedback.className = 'text-sm mt-4 text-red-400';
+            feedback.textContent = 'Error al enviar. Intenta de nuevo o escribenos a info@vortexlm.com.';
+            feedback.classList.remove('hidden');
+          } finally {
+            btn.disabled = false;
+            btn.textContent = (btn.getAttribute('data-original-text')) || 'Enviar';
+          }
+        }
+      </script>
+    </div>
+  </section>
+</BaseLayout>

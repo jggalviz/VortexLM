@@ -13,9 +13,11 @@ export interface Props {
   isLocalBusiness?: boolean;
   type?: 'website' | 'article';
   isLanding?: boolean;
+  faqItems?: { question: string; answer: string }[];
+  noindex?: boolean;
 }
 
-const { title, description, url, isLocalBusiness, type = 'website', isLanding = false } = Astro.props;
+const { title, description, url, isLocalBusiness, type = 'website', isLanding = false, faqItems, noindex } = Astro.props;
 const ga4Id = import.meta.env.PUBLIC_GA4_ID;
 const pageTitle = title || "Vortex Logic | Desarrollo Web de Alto Rendimiento";
 
@@ -57,7 +59,7 @@ const criticalCSS = `
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="icon" type="image/png" href="/favicon.png" />
     
-    <SEO title={pageTitle} description={description} url={url} isLocalBusiness={isLocalBusiness} type={type} />
+    <SEO title={pageTitle} description={description} url={url} isLocalBusiness={isLocalBusiness} type={type} faqItems={faqItems} noindex={noindex} />
     
     <!-- Critical inlined styles (non-render-blocking since embedded in HTML) -->
     <style set:html={criticalCSS}></style>

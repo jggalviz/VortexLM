@@ -5,6 +5,13 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
   title="Desarrollo Web en Caracas | Ingeniería de Software | Vortex Logic"
   description="Desarrollo web a medida en Caracas. Creamos aplicaciones web, PWAs e integraciones de API robustas, escalables y ultrarrápidas con Astro y React."
   isLocalBusiness={true}
+  faqItems={[
+    { question: "¿Qué tecnologías usan para desarrollo web?", answer: "Nuestro stack principal es Astro + React + TypeScript para el frontend, Supabase (PostgreSQL) como base de datos y backend, y Vercel para despliegue global. Para proyectos que requieren renderizado del lado del servidor usamos Next.js. También integramos WebSockets para funcionalidades en tiempo real, colas de trabajo con Redis cuando se necesita procesamiento asíncrono, y almacenamiento de archivos en CDN con optimización automática de imágenes." },
+    { question: "¿Cómo manejan los datos y la seguridad?", answer: "Implementamos Row Level Security (RLS) directamente en PostgreSQL — cada usuario solo ve los datos que le corresponden. La autenticación se maneja con JWT + OAuth 2.0 (Google, GitHub, email). Todas las conexiones viajan por HTTPS con SSL automatizado. Además, aplicamos rate limiting, validación de datos en el servidor y auditoría de seguridad automatizada antes de cada deploy." },
+    { question: "¿Se puede integrar con mi CRM o sistema actual?", answer: "Sí. Diseñamos integraciones personalizadas con cualquier sistema que exponga una API REST o GraphQL. Hemos conectado plataformas con Salesforce, HubSpot, SAP, sistemas contables venezolanos (Seniat, IVA), pasarelas de pago como PayPal, Stripe y MercadoPago, y servicios de email como SendGrid y Resend. También podemos construir webhooks bidireccionales para sincronización en tiempo real." },
+    { question: "¿Qué ventajas tiene una PWA frente a una app nativa?", answer: "Las PWAs ofrecen 90% menos costo de desarrollo que una app nativa, se actualizan instantáneamente (sin pasar por app stores), funcionan offline con service workers, pesan menos de 5MB y se instalan directamente desde el navegador. Para la mayoría de casos de uso empresarial — catálogos, paneles de administración, plataformas de servicio — una PWA supera el rendimiento y la experiencia de una app nativa." },
+    { question: "¿Ofrecen mantenimiento y soporte post-lanzamiento?", answer: "Sí. Todos nuestros proyectos incluyen 3 meses de soporte técnico post-lanzamiento para ajustes y estabilización. Después ofrecemos planes de mantenimiento mensual que cubren: actualizaciones de dependencias, monitoreo 24/7, backups de base de datos, optimización de rendimiento y soporte prioritario por Slack/WhatsApp. También podemos agregar nuevas funcionalidades bajo demanda con presupuestos por sprint." },
+  ]}
 >
   <!-- ─── HERO ───────────────────────────────────────────────────── -->
   <section class="relative pt-36 pb-32 overflow-hidden linear-gradient-bg border-b border-[#1f1f24] px-6 md:px-12">
@@ -33,7 +40,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
       <!-- Mockup de consola/API visual -->
       <div class="relative max-w-5xl mx-auto">
-        <div class="linear-card rounded-lg overflow-hidden border border-[#2e2e34] shadow-[0_50px_100px_-20px_rgba(0,0,0,0.98)]">
+        <div class="linear-card rounded-lg overflow-hidden border border-[#2e2e34] shadow-[0_50px_100px_-20px_rgba(0,0,0,0.98)]" role="img" aria-label="Consola de API RESTful con código TypeScript - Desarrollo web en Caracas">
           <div class="bg-[#08080c] px-4 py-3.5 flex items-center justify-between border-b border-[#1f1f24]">
             <div class="flex items-center gap-2">
               <span class="w-2.5 h-2.5 rounded-full bg-[#ff5f56]/50"></span>

@@ -1,4 +1,9 @@
 ---
+export interface FAQItem {
+  question: string;
+  answer: string;
+}
+
 export interface Props {
   title: string;
   description: string;
@@ -7,6 +12,8 @@ export interface Props {
   image?: string;
   type?: 'website' | 'article';
   isLocalBusiness?: boolean;
+  faqItems?: FAQItem[];
+  noindex?: boolean;
 }
 
 // ── Valores por defecto globales ──────────────────────────────────
@@ -26,11 +33,11 @@ const {
   image = DEFAULT_OG_IMAGE,
   type = 'website',
   isLocalBusiness = false,
+  faqItems,
+  noindex = false,
 } = Astro.props;
 
 // ── Resolución de URLs ───────────────────────────────────────────
-// `url` (nueva prop) puede pasarse como string absoluto o relativo.
-// Si no se pasa, se usa Astro.url (la URL canónica de la página actual).
 const pageURL = url
   ? String(new URL(url, SITE_URL))
   : canonicalURLProp
@@ -66,6 +73,22 @@ const localBusinessSchema = {
   "priceRange": "$$",
   description,
 };
+
+// ── Schema FAQPage (condicional, se activa con faqItems) ─────────
+const faqSchema = faqItems && faqItems.length > 0
+  ? {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": faqItems.map((item) => ({
+        "@type": "Question",
+        "name": item.question,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": item.answer,
+        },
+      })),
+    }
+  : null;
 ---
 
 <!-- Meta tags base -->
@@ -75,6 +98,9 @@ const localBusinessSchema = {
 
 <!-- Canonical URL — evita contenido duplicado -->
 <link rel="canonical" href={canonicalURL} />
+
+<!-- Noindex (para páginas como 404, solo si se pasa la prop) -->
+{noindex && <meta name="robots" content="noindex, follow" />}
 
 <!-- Title & Meta Description -->
 <title>{fullTitle}</title>
@@ -100,4 +126,9 @@ const localBusinessSchema = {
 <!-- Schema.org LocalBusiness (opcional, se activa con isLocalBusiness={true}) -->
 {isLocalBusiness && (
   <script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} />
+)}
+
+<!-- Schema.org FAQPage (opcional, se activa con faqItems) -->
+{faqSchema && (
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 )}

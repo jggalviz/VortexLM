@@ -1,0 +1,90 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+<BaseLayout
+  title="404: Ruta No Encontrada | Vortex Logic"
+  description="La página que buscas no existe. Explora nuestros servicios de diseño y desarrollo web en Caracas y Venezuela."
+  noindex={true}
+>
+  <section class="relative pt-36 pb-32 min-h-[80vh] flex items-center linear-gradient-bg border-b border-[#1f1f24] px-6 md:px-12">
+    <div class="absolute inset-0 linear-grid opacity-30 pointer-events-none"></div>
+    
+    <div class="max-w-[800px] mx-auto text-center relative z-10 w-full">
+      <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[250px] bg-white/[0.015] blur-[120px] rounded-full pointer-events-none"></div>
+
+      <!-- Mockup de consola de error 404 -->
+      <div class="linear-card rounded-lg overflow-hidden border border-[#2e2e34] shadow-[0_50px_100px_-20px_rgba(0,0,0,0.98)] max-w-2xl mx-auto mb-12" role="img" aria-label="Consola de error 404 - Ruta no encontrada en Vortex Logic">
+        <div class="bg-[#08080c] px-4 py-3 flex items-center justify-between border-b border-[#1f1f24]">
+          <div class="flex items-center gap-2">
+            <span class="w-2.5 h-2.5 rounded-full bg-[#ff5f56]/50"></span>
+            <span class="w-2.5 h-2.5 rounded-full bg-[#ffbd2e]/50"></span>
+            <span class="w-2.5 h-2.5 rounded-full bg-[#27c93f]/50"></span>
+          </div>
+          <div class="text-[10px] font-mono text-[#cbd5e1]/40 flex items-center gap-1.5">
+            <span class="material-symbols-outlined text-[10px]">terminal</span>
+            vortex-router // status:404
+          </div>
+          <div class="w-12"></div>
+        </div>
+
+        <div class="p-6 md:p-8 text-left font-mono text-[11px] leading-relaxed bg-[#050507]/30">
+          <div class="text-[#cbd5e1]/40 mb-3">$ curl -I https://vortexlm.com<span class="text-white">/ruta-no-existe</span></div>
+          
+          <div class="text-red-400">HTTP/2 404 Not Found</div>
+          <div class="text-[#cbd5e1]/60">content-type: text/html</div>
+          <div class="text-[#cbd5e1]/60">status: 404</div>
+          <br />
+          <div class="text-[#cbd5e1]/40">// La ruta solicitada no existe en este servidor.</div>
+          <div class="text-[#cbd5e1]/40">// Pero no te preocupes, tenemos soluciones para ti.</div>
+          <br />
+          <div class="text-green-500">✔ Rutas disponibles:</div>
+          <div class="text-cyan-400 pl-4">→ /servicios/diseno-paginas-web-caracas</div>
+          <div class="text-cyan-400 pl-4">→ /servicios/desarrollo-web-caracas</div>
+          <div class="text-cyan-400 pl-4">→ /servicios/agencia-diseno-web-caracas</div>
+          <div class="text-cyan-400 pl-4">→ /servicios/diseno-paginas-web-venezuela</div>
+          <div class="text-cyan-400 pl-4">→ /servicios/programador-web-caracas</div>
+          <br />
+          <div class="text-yellow-400">●</div>
+          <div class="text-[#cbd5e1]/60">Se recomienda visitar la Home o explorar los servicios destacados.</div>
+        </div>
+      </div>
+
+      <!-- Texto amigable -->
+      <h1 class="text-3xl md:text-5xl font-extralight tracking-tight text-white mb-4 leading-[1.1]">
+        Esta p&aacute;gina no existe
+      </h1>
+      <p class="text-sm md:text-base text-[#cbd5e1] font-light mb-10 max-w-xl mx-auto leading-relaxed">
+        Parece que el enlace que seguiste est&aacute; roto o la p&aacute;gina fue movida. 
+        No te preocupes, aqu&iacute; te dejamos algunas rutas &uacute;tiles para que 
+        encuentres lo que buscas.
+      </p>
+
+      <!-- CTAs de rescate -->
+      <div class="flex flex-wrap items-center justify-center gap-4 max-w-xl mx-auto">
+        <a href="/" class="px-8 py-3 bg-white text-black font-semibold text-xs rounded-full hover:bg-neutral-200 transition-all duration-200 active:scale-95 shadow-[0_0_25px_rgba(255,255,255,0.15)]">
+          Volver al Inicio
+        </a>
+        <a href="/servicios/diseno-paginas-web-caracas" class="px-6 py-3 border border-[#1f1f24] text-white/90 font-medium text-xs rounded-full hover:border-purple-500/50 hover:text-purple-400 transition-all duration-200 flex items-center gap-1.5 group">
+          <span class="material-symbols-outlined text-sm text-purple-400">palette</span>
+          Dise&ntilde;o Web en Caracas
+          <span class="group-hover:translate-x-1 transition-transform">&#8594;</span>
+        </a>
+        <a href="/servicios/desarrollo-web-caracas" class="px-6 py-3 border border-[#1f1f24] text-white/90 font-medium text-xs rounded-full hover:border-cyan-500/50 hover:text-cyan-400 transition-all duration-200 flex items-center gap-1.5 group">
+          <span class="material-symbols-outlined text-sm text-cyan-400">code</span>
+          Desarrollo Web en Caracas
+          <span class="group-hover:translate-x-1 transition-transform">&#8594;</span>
+        </a>
+      </div>
+
+      <!-- Enlaces adicionales con texto discreto -->
+      <div class="mt-12 pt-8 border-t border-[#1f1f24]/50 max-w-md mx-auto">
+        <p class="text-[10px] font-mono text-[#cbd5e1]/40 mb-3">Tambi&eacute;n puedes explorar:</p>
+        <div class="flex flex-wrap justify-center gap-x-6 gap-y-2 text-[10px] font-mono">
+          <a href="/servicios/agencia-diseno-web-caracas" class="text-[#cbd5e1]/60 hover:text-green-400 transition-colors">Agencia de Dise&ntilde;o Web</a>
+          <a href="/servicios/diseno-paginas-web-venezuela" class="text-[#cbd5e1]/60 hover:text-orange-400 transition-colors">Dise&ntilde;o Web Venezuela</a>
+          <a href="/servicios/programador-web-caracas" class="text-[#cbd5e1]/60 hover:text-pink-400 transition-colors">Programador Web Senior</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

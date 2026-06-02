@@ -5,6 +5,13 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
   title="Programador Web en Caracas | Desarrollador Full-Stack Senior | Vortex Logic"
   description="Programador web senior en Caracas. Especialista en desarrollo full-stack con Astro, React, Node.js y Supabase. Soluciones de software robustas, optimización de código y marca blanca."
   isLocalBusiness={true}
+  faqItems={[
+    { question: "¿Cuántos años de experiencia tienes y en qué tecnologías?", answer: "Tengo experiencia comprobable construyendo aplicaciones web profesionales con el stack moderno: Astro, React, Next.js, TypeScript, Node.js, Supabase (PostgreSQL) y Tailwind CSS. Domino arquitectura Jamstack, Server Components, APIs REST/GraphQL, WebSockets, autenticación JWT/OAuth, Row Level Security, CI/CD, testing automatizado y despliegues en Vercel. Cada proyecto que entrego pasa por pruebas de rendimiento, seguridad y accesibilidad antes de salir a producción." },
+    { question: "¿Trabajas como marca blanca para otras agencias?", answer: "Sí, es uno de mis servicios principales. Si tienes una agencia de diseño web, marketing digital o consultoría tecnológica, puedes vender mis servicios como si fueran tuyos. Todo el código se entrega bajo tu marca, en tu repositorio de GitHub/GitLab, sin ningún logo o referencia a Vortex. Tú mantienes la relación con el cliente final, yo me encargo de la ingeniería." },
+    { question: "¿Qué metodologías y herramientas usas para programar?", answer: "Uso Git Flow con ramas por feature y Pull Requests con code review. Desarrollo en VS Code + Cursor con TypeScript estricto, ESLint y Prettier. Tests automatizados con Vitest (unitarios) y Playwright (e2e). CI/CD con GitHub Actions que ejecuta tests, linting y build en cada push. Despliegues automáticos a Vercel con preview URLs por cada PR." },
+    { question: "¿Cómo se maneja el soporte y la entrega del código?", answer: "El código se entrega completo a través de GitHub o GitLab (en tu repositorio si trabajamos marca blanca). Incluye: historial de commits, documentación técnica, instrucciones de deploy y variables de entorno. Para el soporte post-entrega, tienes 3 meses incluidos para ajustes, correcciones y preguntas técnicas. La comunicación es por Slack o WhatsApp con respuestas en menos de 24 horas hábiles." },
+    { question: "¿Manejas integraciones de APIs complejas y WebSockets?", answer: "Sí. He integrado sistemas con Salesforce, HubSpot, pasarelas de pago (Stripe, PayPal, MercadoPago), APIs de delivery (MRW, Zoom), servicios de email (SendGrid, Resend), autenticación OAuth (Google, GitHub), y sistemas contables venezolanos. Para tiempo real implemento WebSockets con Supabase Realtime o Socket.io, ideal para notificaciones en vivo, chats, dashboards de monitoreo y sincronización de datos multi-usuario." },
+  ]}
 >
   <!-- ─── HERO ───────────────────────────────────────────────────── -->
   <section class="relative pt-36 pb-32 overflow-hidden linear-gradient-bg border-b border-[#1f1f24] px-6 md:px-12">
@@ -33,7 +40,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
       <!-- Mockup de terminal Git workflow -->
       <div class="relative max-w-5xl mx-auto">
-        <div class="linear-card rounded-lg overflow-hidden border border-[#2e2e34] shadow-[0_50px_100px_-20px_rgba(0,0,0,0.98)]">
+        <div class="linear-card rounded-lg overflow-hidden border border-[#2e2e34] shadow-[0_50px_100px_-20px_rgba(0,0,0,0.98)]" role="img" aria-label="Flujo de trabajo Git con terminal de commits y tests - Programador web senior en Caracas">
           <div class="bg-[#08080c] px-4 py-3.5 flex items-center justify-between border-b border-[#1f1f24]">
             <div class="flex items-center gap-2">
               <span class="w-2.5 h-2.5 rounded-full bg-[#ff5f56]/50"></span>

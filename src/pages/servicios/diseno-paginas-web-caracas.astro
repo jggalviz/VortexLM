@@ -5,6 +5,12 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
   title="Diseño de Páginas Web en Caracas | Vortex Logic"
   description="Agencia de desarrollo web en Caracas. Creamos páginas web profesionales ultrarrápidas y software a medida optimizado para SEO y conversión."
   isLocalBusiness={true}
+  faqItems={[
+    { question: "¿Cuánto tiempo toma desarrollar una página web profesional?", answer: "Dependiendo de la complejidad, un sitio web corporativo puede estar listo en 2 a 4 semanas. Esto incluye diseño UI/UX, desarrollo, integración SEO, pruebas de rendimiento y despliegue. Proyectos más complejos con paneles de administración o integraciones pueden tomar de 4 a 8 semanas." },
+    { question: "¿Ofrecen hosting y mantenimiento?", answer: "Sí. Desplegamos tu sitio en Vercel (hosting enterprise con CDN global) e incluimos mantenimiento técnico mensual: actualizaciones de seguridad, monitoreo de rendimiento, backups y optimización continua. También ofrecemos planes de contenido si necesitas actualizar textos o agregar secciones periódicamente." },
+    { question: "¿Puedo administrar el contenido yo mismo?", answer: "Absolutamente. Integramos paneles de administración sencillos (Headless CMS o Keystatic) para que puedas editar textos, imágenes y publicar blog posts sin necesidad de conocimientos técnicos. Tú mantienes el control total de tu contenido." },
+    { question: "¿Por qué Astro y no WordPress?", answer: "WordPress genera páginas dinámicas que cargan lentamente y son vulnerables a ataques. Astro genera HTML estático ultrarrápido que se despliega en CDN. Resultado: 10x más velocidad, seguridad superior (sin base de datos expuesta), mejor SEO y menor costo de hosting. Ideal para empresas que necesitan rendimiento profesional." },
+  ]}
 >
   <!-- ─── HERO ───────────────────────────────────────────────────── -->
   <section class="relative pt-36 pb-32 overflow-hidden linear-gradient-bg border-b border-[#1f1f24] px-6 md:px-12">
@@ -32,7 +38,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
       <!-- Mockup visual: navegador con página web cargando -->
       <div class="relative max-w-5xl mx-auto">
-        <div class="linear-card rounded-lg overflow-hidden border border-[#2e2e34] shadow-[0_50px_100px_-20px_rgba(0,0,0,0.98)]">
+        <div class="linear-card rounded-lg overflow-hidden border border-[#2e2e34] shadow-[0_50px_100px_-20px_rgba(0,0,0,0.98)]" role="img" aria-label="Mockup de navegador con métricas PageSpeed - Diseño de páginas web en Caracas">
           <div class="bg-[#08080c] px-4 py-3.5 flex items-center justify-between border-b border-[#1f1f24]">
             <div class="flex items-center gap-2">
               <span class="w-2.5 h-2.5 rounded-full bg-[#ff5f56]/50"></span>

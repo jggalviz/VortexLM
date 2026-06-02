@@ -5,6 +5,13 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
   title="Diseño de Páginas Web en Venezuela | Alta Velocidad | Vortex Logic"
   description="Agencia de desarrollo y diseño web en Venezuela. Creamos plataformas digitales y páginas web profesionales de carga instantánea listas para vender."
   isLocalBusiness={false}
+  faqItems={[
+    { question: "¿Trabajan con empresas fuera de Caracas?", answer: "¡Por supuesto! Trabajamos con clientes de todo el país: Maracaibo, Valencia, Barquisimeto, Maracay, Puerto La Cruz, San Cristóbal y cualquier otra ciudad. Toda nuestra consultoría y desarrollo se realiza de forma remota a través de videollamadas, Slack y WhatsApp." },
+    { question: "¿Cómo se maneja la consultoría y el soporte remoto?", answer: "Usamos metodologías ágiles con comunicación asíncrona y reuniones semanales por Google Meet o Zoom. Compartimos avances en tiempo real a través de canales de Slack/WhatsApp. Para el soporte post-lanzamiento, tenemos respuesta garantizada en menos de 48 horas." },
+    { question: "¿Qué métodos de pago e integraciones comerciales manejan?", answer: "Integramos las principales pasarelas de pago que operan en Venezuela y el extranjero: PayPal, Stripe, MercadoPago y Zelle. Para facturación electrónica, conectamos con sistemas que cumplen con los requisitos del Seniat (IVA, CF). También integramos plataformas de delivery como MRW, Zoom y Domesa con cálculo de tarifas en tiempo real." },
+    { question: "¿La web funcionará rápido con conexiones lentas de internet?", answer: "Sí, este es uno de nuestros diferenciadores principales. Mientras una página WordPress pesa entre 3 y 5 MB y tarda 8 segundos en cargar con 3G, nuestros sitios pesan menos de 200 KB y cargan en menos de 1 segundo. Esto se logra con HTML estático pre-renderizado, imágenes WebP, carga diferida y una arquitectura que elimina todo el JavaScript innecesario." },
+    { question: "¿Ofrecen mantenimiento y actualizaciones después del lanzamiento?", answer: "Sí. Todos los proyectos incluyen 3 meses de soporte post-lanzamiento para ajustes menores y estabilización. Después ofrecemos planes de mantenimiento mensual que incluyen: actualizaciones de seguridad, monitoreo 24/7, backups automáticos, optimización continua de velocidad y soporte prioritario por Slack o WhatsApp." },
+  ]}
 >
   <!-- ─── HERO ───────────────────────────────────────────────────── -->
   <section class="relative pt-36 pb-32 overflow-hidden linear-gradient-bg border-b border-[#1f1f24] px-6 md:px-12">
@@ -33,7 +40,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
       <!-- Mockup: Mapa CDN + gráfico de rendimiento comparativo -->
       <div class="relative max-w-5xl mx-auto">
-        <div class="linear-card rounded-lg overflow-hidden border border-[#2e2e34] shadow-[0_50px_100px_-20px_rgba(0,0,0,0.98)]">
+        <div class="linear-card rounded-lg overflow-hidden border border-[#2e2e34] shadow-[0_50px_100px_-20px_rgba(0,0,0,0.98)]" role="img" aria-label="Mapa de distribución CDN con nodos en Latinoamérica - Diseño de páginas web en Venezuela">
           <div class="bg-[#08080c] px-4 py-3.5 flex items-center justify-between border-b border-[#1f1f24]">
             <div class="flex items-center gap-2">
               <span class="w-2.5 h-2.5 rounded-full bg-[#ff5f56]/50"></span>

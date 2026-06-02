@@ -5,6 +5,13 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
   title="Agencia de Diseño Web en Caracas | Vortex Logic"
   description="Agencia boutique de diseño web y desarrollo a medida en Caracas. Transformamos marcas con interfaces UI/UX de alto impacto, velocidad extrema y optimización SEO."
   isLocalBusiness={true}
+  faqItems={[
+    { question: "¿Cómo es el proceso de diseño con ustedes?", answer: "Comenzamos con una reunión de descubrimiento para entender tu negocio, audiencia y objetivos. Luego creamos un brief creativo con la dirección visual y arquitectura de información. Diseñamos los wireframes y prototipos en Figma que revisamos contigo en sesiones de feedback iterativas. Una vez aprobado el diseño, pasamos a desarrollo. Todo el proceso es transparente y colaborativo — tú ves el avance en tiempo real." },
+    { question: "¿Entregan prototipos en Figma antes de programar?", answer: "Sí, absolutamente. Nunca escribimos una línea de código sin antes tener el diseño completo aprobado en Figma. Esto incluye prototipos interactivos con navegación entre pantallas, animaciones y estados (hover, active, loading, error). Así garantizamos que el resultado final sea exactamente lo que esperas, sin sorpresas ni retrabajos costosos." },
+    { question: "¿Trabajan con marcas que ya tienen identidad visual?", answer: "Por supuesto. Si ya tienes una marca establecida con manual de identidad, colores corporativos, tipografía y logo, trabajamos sobre esos activos para crear una web que sea una extensión natural de tu marca. Si necesitas refrescar tu identidad o crearla desde cero, también ofrecemos servicios de branding estratégico." },
+    { question: "¿Cómo garantizan que la web ayude a vender?", answer: "Cada sección de tu web está diseñada con un propósito de conversión específico. Aplicamos principios de psicología del color, jerarquía visual, copywriting persuasivo y llamadas a la acción estratégicamente ubicadas. Además, integramos herramientas de analytics para medir el comportamiento de los visitantes y hacemos ajustes basados en datos reales." },
+    { question: "¿Ofrecen soporte después de lanzar la web?", answer: "Sí. Todos nuestros proyectos incluyen 3 meses de soporte post-lanzamiento para ajustes, correcciones y estabilización. Luego ofrecemos planes de mantenimiento mensual que cubren: actualizaciones de seguridad, monitoreo de rendimiento, backups, optimización SEO continua y soporte prioritario por Slack/WhatsApp." },
+  ]}
 >
   <!-- ─── HERO ───────────────────────────────────────────────────── -->
   <section class="relative pt-36 pb-32 overflow-hidden linear-gradient-bg border-b border-[#1f1f24] px-6 md:px-12">
@@ -33,7 +40,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
       <!-- Mockup de editor de diseño UI/UX estilo Figma -->
       <div class="relative max-w-5xl mx-auto">
-        <div class="linear-card rounded-lg overflow-hidden border border-[#2e2e34] shadow-[0_50px_100px_-20px_rgba(0,0,0,0.98)]">
+        <div class="linear-card rounded-lg overflow-hidden border border-[#2e2e34] shadow-[0_50px_100px_-20px_rgba(0,0,0,0.98)]" role="img" aria-label="Editor de diseño UI UX estilo Figma - Agencia de diseño web en Caracas">
           <div class="bg-[#08080c] px-4 py-3.5 flex items-center justify-between border-b border-[#1f1f24]">
             <div class="flex items-center gap-2">
               <span class="w-2.5 h-2.5 rounded-full bg-[#ff5f56]/50"></span>

@@ -85,11 +85,7 @@ const isLoggedIn = false;
         )
       }
       {
-        !isLoggedIn && isLanding ? (
-          <a href="#contacto-form" class="hidden md:inline-flex bg-white text-black text-xs font-medium px-4 py-2 rounded-md hover:bg-neutral-200 transition-all shadow-[0_0_15px_rgba(255,255,255,0.1)]">
-            Cotizar Proyecto
-          </a>
-        ) : !isLoggedIn ? (
+        !isLoggedIn ? (
           <a href="/contacto" class="hidden md:inline-flex bg-white text-black text-xs font-medium px-4 py-2 rounded-md hover:bg-neutral-200 transition-all">
             Hablemos
           </a>

@@ -86,7 +86,11 @@ const isLoggedIn = false;
       }
       {
         !isLoggedIn ? (
-          <a href="/contacto" class="hidden md:inline-flex bg-white text-black text-xs font-medium px-4 py-2 rounded-md hover:bg-neutral-200 transition-all">
+          <a
+            href="#contacto-form"
+            onclick="return (function(el){ if(typeof gtag_report_conversion !== 'undefined') { gtag_report_conversion('https://wa.me/15072190951?text=Hola%20Vortex.%20He%20visto%20la%20landing%20de%20partner%20tecnol%C3%B3gico%20y%20me%20gustar%C3%ADa%20agendar%20una%20videollamada%20r%C3%A1pida%20para%20conocer%20vuestros%20servicios%20marca%20blanca.'); } else { window.open('https://wa.me/15072190951?text=Hola%20Vortex.%20He%20visto%20la%20landing%20de%20partner%20tecnol%C3%B3gico%20y%20me%20gustar%C3%ADa%20agendar%20una%20videollamada%20r%C3%A1pida%20para%20conocer%20vuestros%20servicios%20marca%20blanca.', '_blank'); } })(this);"
+            class="hidden md:inline-flex bg-white text-black text-xs font-medium px-4 py-2 rounded-md hover:bg-neutral-200 transition-all"
+          >
             Hablemos
           </a>
         ) : null

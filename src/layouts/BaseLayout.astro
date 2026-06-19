@@ -84,10 +84,11 @@ const criticalCSS = `
             window.open(url, '_blank');
           }
         };
+        
         if (typeof(gtag) !== 'undefined') {
-          gtag('event', 'conversion', {
-              'send_to': 'AW-18175185887/conversion_id_aqui',
-              'event_callback': callback
+          // Disparo del evento real de contacto trackeado por Google Ads
+          gtag('event', 'ads_conversion_Contactar_1', {
+            'event_callback': callback
           });
         } else {
           callback();

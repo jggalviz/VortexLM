@@ -1,130 +1,126 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 const isLanding = true;
+
+const WA_LINK = "https://wa.me/15072190951?text=Hola%20Vortex.%20He%20visto%20la%20landing%20de%20partner%20tecnol%C3%B3gico%20y%20me%20gustar%C3%ADa%20agendar%20una%20videollamada%20r%C3%A1pida%20para%20conocer%20vuestros%20servicios%20marca%20blanca.";
 ---
 
-<BaseLayout title="Partner Tecnológico B2B para Startups y Empresas | VortexLM" isLanding={isLanding}>
+<BaseLayout title="Partner Tecnológico B2B para Startups y Empresas | VortexLM" description="Partner tecnológico en remoto para agencias en Madrid y Barcelona. Cobro por horas eficientes, panel de control en tiempo real y marca blanca." isLanding={isLanding}>
   <main class="bg-neutral-950 text-white">
 
-    <!-- HERO SECTION (refactorizada) -->
+    <!-- BLOQUE 1: HERO -->
     <section class="relative min-h-screen flex items-center justify-center overflow-hidden bg-neutral-950 px-6">
-      <!-- Grid overlay -->
       <div class="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:64px_64px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)]"></div>
-      <!-- Glow orb -->
       <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-gradient-to-b from-white/5 via-white/[0.02] to-transparent rounded-full blur-3xl pointer-events-none"></div>
       
       <div class="relative z-10 max-w-5xl mx-auto text-center pt-32 pb-24">
         <span class="inline-block px-3 py-1.5 border border-neutral-800 rounded-full text-[10px] font-mono uppercase tracking-widest text-neutral-500 mb-8">Partner Tecnológico</span>
         <h1 class="text-4xl md:text-7xl font-extralight tracking-tight text-white mb-8 leading-[1.08] max-w-4xl mx-auto opacity-95">
-          Cobro por horas eficientes.<br/>
-          Transparencia total.<br/>
-          <span class="text-neutral-400">Para startups y empresas en Madrid y Barcelona.</span>
+          Cobro por horas eficientes. Transparencia total.<br/>
+          <span class="text-neutral-400">Tu Partner Tecnológico en remoto para tus proyectos en España.</span>
         </h1>
         <p class="text-sm md:text-base text-neutral-400 max-w-3xl mx-auto mb-12 leading-relaxed font-light">
-          Contratas ingeniería de alto rendimiento sin pagar por horas muertas ni sorpresas en la factura. 
-          Cada minuto de desarrollo se registra en tu <strong class="text-white/80">Panel de Control</strong> en tiempo real: 
-          contador de horas exactas trabajadas, control de tareas del sprint y estado del proyecto. 
-          Paga solo por lo que realmente se invierte en tu producto.
+          Absorbemos la carga técnica de tu agencia en Madrid o Barcelona bajo modalidad Marca Blanca. 
+          Código limpio, sprints cada 2 semanas y un panel privado con contador de horas 
+          para un control absoluto de tus <strong class="text-white/80">costes de desarrollo</strong>.
         </p>
         <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <a href="/contacto" class="w-full sm:w-auto px-8 py-3 bg-white text-black font-semibold text-xs rounded-full hover:bg-neutral-200 transition-all text-center duration-200 active:scale-95 shadow-[0_0_25px_rgba(255,255,255,0.15)]">
-            Solicitar consultoría gratuita
+          <a href={WA_LINK} target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto px-8 py-3 bg-white text-black font-semibold text-xs rounded-full hover:bg-neutral-200 transition-all text-center duration-200 active:scale-95 shadow-[0_0_25px_rgba(255,255,255,0.15)]">
+            👉 Agendar videollamada por WhatsApp
           </a>
-          <a href="https://wa.me/15072190951?text=Hola%20Vortex.%20He%20visto%20la%20landing%20de%20partner%20tecnol%C3%B3gico%20y%20me%20gustar%C3%ADa%20agendar%20una%20videollamada%20r%C3%A1pida%20para%20conocer%20vuestros%20servicios%20marca%20blanca." target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto px-8 py-3 border border-neutral-800 text-neutral-300 font-medium text-xs rounded-full hover:bg-neutral-900 transition-all text-center duration-200">
-            ¿Dudas rápidas? Escríbenos por WhatsApp →
+          <a href="#contacto-form" class="w-full sm:w-auto px-8 py-3 border border-neutral-800 text-neutral-300 font-medium text-xs rounded-full hover:bg-neutral-900 transition-all text-center duration-200">
+            Agendar Consultoría Gratuita
           </a>
         </div>
         <p class="mt-6 text-[10px] font-mono uppercase tracking-widest text-neutral-600">Madrid · Barcelona · Sin permanencia · Sin mínimos</p>
       </div>
     </section>
 
-    <!-- TRUST BAR -->
-    <section class="border-t border-b border-neutral-900 py-8 bg-neutral-950/50">
-      <div class="max-w-6xl mx-auto px-6">
-        <p class="text-[10px] font-mono uppercase tracking-widest text-neutral-600 text-center mb-6">Especialistas en</p>
-        <div class="flex flex-wrap items-center justify-center gap-8 md:gap-16 text-neutral-700">
-          <span class="text-xs font-mono tracking-widest">STARTUPS</span>
-          <span class="text-xs font-mono tracking-widest">SaaS</span>
-          <span class="text-xs font-mono tracking-widest">FINTECH</span>
-          <span class="text-xs font-mono tracking-widest">E-COMMERCE</span>
-          <span class="text-xs font-mono tracking-widest">ENTERPRISE</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- 3-COLUMN SERVICES -->
-    <section class="py-32 px-6 md:px-12 bg-black border-b border-neutral-900">
-      <div class="max-w-6xl mx-auto">
-        <div class="text-center mb-20">
-          <span class="inline-block px-3 py-1.5 border border-neutral-800 rounded-full text-[10px] font-mono uppercase tracking-widest text-neutral-500 mb-6">Capacidades Técnicas</span>
-          <h2 class="text-3xl md:text-5xl font-light text-white mb-6 tracking-tight">Ingeniería de primer nivel<br/><span class="text-neutral-400">para tu negocio</span></h2>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16">
-          <!-- Card 1 -->
-          <div class="flex flex-col">
-            <div class="w-full aspect-[4/3] linear-card rounded border border-neutral-900 bg-neutral-950/30 flex items-center justify-center p-6 glow-hover transition-all mb-8">
-              <div class="text-center">
-                <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-white/5 border border-neutral-800 flex items-center justify-center">
-                  <svg class="w-7 h-7 text-neutral-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
-                </div>
-              </div>
-            </div>
-            <h3 class="text-sm font-medium text-white mb-2.5">Performance Estricto (100/100)</h3>
-            <p class="text-xs text-neutral-400 leading-relaxed">Eliminamos la pérdida de leads optimizando Core Web Vitals al máximo. Puntuaciones perfectas en Lighthouse y PageSpeed Insights garantizadas.</p>
-          </div>
-          <!-- Card 2 -->
-          <div class="flex flex-col">
-            <div class="w-full aspect-[4/3] linear-card rounded border border-neutral-900 bg-neutral-950/30 flex items-center justify-center p-6 glow-hover transition-all mb-8">
-              <div class="text-center">
-                <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-white/5 border border-neutral-800 flex items-center justify-center">
-                  <svg class="w-7 h-7 text-neutral-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
-                </div>
-              </div>
-            </div>
-            <h3 class="text-sm font-medium text-white mb-2.5">Stack Moderno y Escalable</h3>
-            <p class="text-xs text-neutral-400 leading-relaxed">Astro, Next.js, React, Node.js, TypeScript. Arquitecturas limpias con SSR, ISR y Edge Functions para máxima velocidad y escalabilidad.</p>
-          </div>
-          <!-- Card 3 -->
-          <div class="flex flex-col">
-            <div class="w-full aspect-[4/3] linear-card rounded border border-neutral-900 bg-neutral-950/30 flex items-center justify-center p-6 glow-hover transition-all mb-8">
-              <div class="text-center">
-                <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-white/5 border border-neutral-800 flex items-center justify-center">
-                  <svg class="w-7 h-7 text-neutral-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
-                </div>
-              </div>
-            </div>
-            <h3 class="text-sm font-medium text-white mb-2.5">Ciberseguridad y Compliance</h3>
-            <p class="text-xs text-neutral-400 leading-relaxed">Desarrollo con estándares OWASP, cifrado SSL/TLS, autenticación segura y cumplimiento GDPR para operar en Europa sin riesgos.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECCIÓN: Transparencia Radical – Panel de Control de Cliente -->
+    <!-- BLOQUE 2: LA OPORTUNIDAD (Estructura de Costes, Capacidad y Talento) -->
     <section class="py-32 px-6 md:px-12 bg-black border-b border-neutral-900">
       <div class="max-w-6xl mx-auto">
         <div class="text-center mb-16">
-          <span class="inline-block px-3 py-1.5 border border-neutral-800 rounded-full text-[10px] font-mono uppercase tracking-widest text-neutral-500 mb-6">Transparencia</span>
-          <h2 class="text-3xl md:text-5xl font-light text-white mb-6 tracking-tight">Transparencia Radical<br/><span class="text-neutral-400">Panel de Control de Cliente</span></h2>
+          <span class="inline-block px-3 py-1.5 border border-neutral-800 rounded-full text-[10px] font-mono uppercase tracking-widest text-neutral-500 mb-6">Ventaja Competitiva</span>
+          <h2 class="text-3xl md:text-5xl font-light text-white mb-6 tracking-tight">Talento, Costes y Flexibilidad<br/><span class="text-neutral-400">para tu Agencia</span></h2>
           <p class="text-sm md:text-base text-neutral-400 max-w-3xl mx-auto font-light leading-relaxed">
-            Olvídate de las incertidumbres. Nuestro panel privado te da visibilidad absoluta de cada minuto invertido, cada tarea completada y cada euro gastado. En tiempo real.
+            Operamos desde Caracas, Venezuela, un hub con una densidad impresionante de talento joven de ingeniería, 
+            alta capacitación técnica y dominio del español nativo. Sin barreras de comunicación. Con costes estructurales 
+            significativamente más bajos que los de la Unión Europea. Y toda esa eficiencia la trasladamos directamente a tu agencia.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
+          <!-- Card 1: Hub de Talento -->
+          <div class="group relative p-8 sm:p-10 rounded-2xl border border-neutral-900 bg-neutral-950/60 hover:bg-neutral-950/90 transition-all duration-500 hover:border-neutral-700 hover:-translate-y-1">
+            <div class="flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 mb-6 rounded-xl bg-white/[0.04] border border-neutral-800 group-hover:border-neutral-600 transition-colors">
+              <svg class="w-7 h-7 text-neutral-400 group-hover:text-white transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418"/></svg>
+            </div>
+            <h3 class="text-lg sm:text-xl font-medium text-white mb-3">Hub de Talento en Caracas</h3>
+            <p class="text-sm text-neutral-400 leading-relaxed">
+              Nuestro equipo central operativo se encuentra en Caracas, Venezuela, una región con una densidad impresionante 
+              de talento joven de ingeniería, alta capacitación técnica y un dominio del español nativo que elimina 
+              cualquier barrera de comunicación o malentendidos.
+            </p>
+          </div>
+
+          <!-- Card 2: Eficiencia de Costes -->
+          <div class="group relative p-8 sm:p-10 rounded-2xl border border-neutral-900 bg-neutral-950/60 hover:bg-neutral-950/90 transition-all duration-500 hover:border-neutral-700 hover:-translate-y-1">
+            <div class="flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 mb-6 rounded-xl bg-white/[0.04] border border-neutral-800 group-hover:border-neutral-600 transition-colors">
+              <svg class="w-7 h-7 text-neutral-400 group-hover:text-white transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m-3 2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            </div>
+            <h3 class="text-lg sm:text-xl font-medium text-white mb-3">Eficiencia de Costes Estructurales</h3>
+            <p class="text-sm text-neutral-400 leading-relaxed">
+              Al operar desde Caracas, contamos con costes estructurales y de servicios profesionales significativamente 
+              más bajos que en la Unión Europea. Trasladamos esa eficiencia directamente a tu agencia, permitiéndote 
+              <strong class="text-white/80">duplicar tus márgenes netos</strong>.
+            </p>
+          </div>
+
+          <!-- Card 3: Flexibilidad y Velocidad -->
+          <div class="group relative p-8 sm:p-10 rounded-2xl border border-neutral-900 bg-neutral-950/60 hover:bg-neutral-950/90 transition-all duration-500 hover:border-neutral-700 hover:-translate-y-1">
+            <div class="flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 mb-6 rounded-xl bg-white/[0.04] border border-neutral-800 group-hover:border-neutral-600 transition-colors">
+              <svg class="w-7 h-7 text-neutral-400 group-hover:text-white transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z"/></svg>
+            </div>
+            <h3 class="text-lg sm:text-xl font-medium text-white mb-3">Flexibilidad y Velocidad de Perfiles</h3>
+            <p class="text-sm text-neutral-400 leading-relaxed">
+              No importa el tamaño del reto. Nos encargamos de conseguir y asignar todo tipo de perfiles: 
+              desde desarrolladores <strong class="text-white/80">Junior</strong> enfocados en maquetación masiva, 
+              ágil y económica, hasta ingenieros <strong class="text-white/80">Senior</strong> especializados en 
+              arquitecturas complejas. Todo coordinado para sacar adelante tus proyectos de la forma más rápida 
+              y eficiente posible.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BLOQUE 3: TRANSPARENCIA RADICAL (Panel de Control) -->
+    <section class="py-32 px-6 md:px-12 bg-black border-b border-neutral-900">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+          <span class="inline-block px-3 py-1.5 border border-neutral-800 rounded-full text-[10px] font-mono uppercase tracking-widest text-neutral-500 mb-6">Software Propio</span>
+          <h2 class="text-3xl md:text-5xl font-light text-white mb-6 tracking-tight">Transparencia Radical<br/><span class="text-neutral-400">Panel de Control de Vortex</span></h2>
+          <p class="text-sm md:text-base text-neutral-400 max-w-3xl mx-auto font-light leading-relaxed">
+            Nuestro software propio es la garantía definitiva de honestidad y control para tu agencia. 
+            Cada minuto, cada tarea y cada euro, visibles al instante.
           </p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
-          <!-- Card Panel 1: Contador de horas en tiempo real -->
+          <!-- Panel 1: Contador de horas -->
           <div class="group relative p-8 sm:p-10 rounded-2xl border border-neutral-900 bg-neutral-950/60 hover:bg-neutral-950/90 transition-all duration-500 hover:border-neutral-700 hover:-translate-y-1">
             <div class="flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 mb-6 rounded-xl bg-white/[0.04] border border-neutral-800 group-hover:border-neutral-600 transition-colors">
               <svg class="w-7 h-7 text-neutral-400 group-hover:text-white transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
             </div>
-            <h3 class="text-lg sm:text-xl font-medium text-white mb-3">Contador de horas exactas trabajadas</h3>
+            <h3 class="text-lg sm:text-xl font-medium text-white mb-3">Contador de horas exactas por tarea</h3>
             <p class="text-sm text-neutral-400 leading-relaxed mb-4">
-              Olvídate de estimaciones hinchadas. Cada tarea registra el tiempo real de desarrollo con un temporizador que se sincroniza automáticamente con tu panel. Ves exactamente cuánto tiempo ha llevado cada cosa, quién trabajó y qué se hizo.
+              Cada tarea registra el tiempo exacto de desarrollo en tiempo real. Sabes quién trabajó, 
+              cuánto tiempo llevó cada cosa y el coste acumulado. Sin estimaciones, sin sorpresas.
             </p>
             <div class="p-4 rounded-xl bg-white/[0.03] border border-white/[0.06]">
               <div class="flex items-center justify-between mb-2">
-                <span class="text-[10px] font-mono uppercase tracking-widest text-neutral-500">Sprint actual — Rediseño Dashboard</span>
-                <span class="text-[11px] font-mono text-neutral-400">12.4h / 20h estimadas</span>
+                <span class="text-[10px] font-mono uppercase tracking-widest text-neutral-500">Tarea actual</span>
+                <span class="text-[11px] font-mono text-neutral-400">12.4h consumidas</span>
               </div>
               <div class="w-full h-2 rounded-full bg-white/[0.06] overflow-hidden">
                 <div class="h-full rounded-full bg-gradient-to-r from-violet-500 to-emerald-400" style="width:62%"></div>
@@ -139,246 +135,202 @@ const isLanding = true;
             </div>
           </div>
 
-          <!-- Card Panel 2: Control de tareas del sprint -->
+          <!-- Panel 2: Gestión de sprints -->
           <div class="group relative p-8 sm:p-10 rounded-2xl border border-neutral-900 bg-neutral-950/60 hover:bg-neutral-950/90 transition-all duration-500 hover:border-neutral-700 hover:-translate-y-1">
             <div class="flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 mb-6 rounded-xl bg-white/[0.04] border border-neutral-800 group-hover:border-neutral-600 transition-colors">
               <svg class="w-7 h-7 text-neutral-400 group-hover:text-white transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
             </div>
-            <h3 class="text-lg sm:text-xl font-medium text-white mb-3">Control de tareas del sprint</h3>
-            <p class="text-sm text-neutral-400 leading-relaxed mb-4">
-              Visualiza el kanban de tu proyecto en vivo: tareas pendientes, en progreso, en revisión y completadas. Cada tarea muestra su responsable, horas invertidas y estado. Ajusta prioridades sobre la marcha.
+            <h3 class="text-lg sm:text-xl font-medium text-white mb-3">Gestión de sprints y entregas cada 14 días</h3>
+            <p class="text-sm text-neutral-400 leading-relaxed">
+              Planificación quincenal con entregas funcionales. Visualiza el kanban de tu proyecto en vivo: 
+              tareas pendientes, en progreso, en revisión y completadas. Capacidad de ajustar prioridades 
+              sobre la marcha. Resultados medibles cada 2 semanas.
             </p>
-            <div class="space-y-2">
-              <div class="flex items-center gap-3 p-2.5 rounded-lg bg-white/[0.03] border border-white/[0.06]">
-                <div class="w-3 h-3 rounded-full border-2 border-yellow-500/50 bg-yellow-500/20 shrink-0"></div>
-                <span class="text-xs text-neutral-300 flex-1">Header responsive</span>
-                <span class="text-[10px] font-mono text-neutral-500">3.2h</span>
-                <span class="text-[9px] font-mono uppercase tracking-widest text-yellow-400/70">En progreso</span>
-              </div>
-              <div class="flex items-center gap-3 p-2.5 rounded-lg bg-white/[0.03] border border-white/[0.06]">
-                <div class="w-3 h-3 rounded-full border-2 border-blue-500/50 bg-blue-500/20 shrink-0"></div>
-                <span class="text-xs text-neutral-300 flex-1">Integración pasarela pago</span>
-                <span class="text-[10px] font-mono text-neutral-500">—</span>
-                <span class="text-[9px] font-mono uppercase tracking-widest text-blue-400/70">Pendiente</span>
-              </div>
-              <div class="flex items-center gap-3 p-2.5 rounded-lg bg-white/[0.03] border border-white/[0.06]">
-                <div class="w-3 h-3 rounded-full border-2 border-emerald-500/50 bg-emerald-500/20 flex items-center justify-center shrink-0">
-                  <svg class="w-2 h-2 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
-                </div>
-                <span class="text-xs text-neutral-300 flex-1">Optimización SEO blog</span>
-                <span class="text-[10px] font-mono text-neutral-500">1.0h</span>
-                <span class="text-[9px] font-mono uppercase tracking-widest text-emerald-400/70">Completado</span>
-              </div>
-            </div>
           </div>
 
-          <!-- Card Panel 3: Estado del proyecto -->
+          <!-- Panel 3: Estado del proyecto -->
           <div class="group relative p-8 sm:p-10 rounded-2xl border border-neutral-900 bg-neutral-950/60 hover:bg-neutral-950/90 transition-all duration-500 hover:border-neutral-700 hover:-translate-y-1">
             <div class="flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 mb-6 rounded-xl bg-white/[0.04] border border-neutral-800 group-hover:border-neutral-600 transition-colors">
               <svg class="w-7 h-7 text-neutral-400 group-hover:text-white transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z"/></svg>
             </div>
-            <h3 class="text-lg sm:text-xl font-medium text-white mb-3">Estado del proyecto en tiempo real</h3>
-            <p class="text-sm text-neutral-400 leading-relaxed mb-4">
-              Dashboard con métricas clave: porcentaje de avance del sprint, horas consumidas vs. presupuestadas, próximos hitos y entregas programadas. Siempre sabrás dónde está tu proyecto.
+            <h3 class="text-lg sm:text-xl font-medium text-white mb-3">Estado del proyecto y métricas en vivo</h3>
+            <p class="text-sm text-neutral-400 leading-relaxed">
+              Dashboard con porcentaje de avance del sprint, horas consumidas vs. presupuestadas, próximos hitos 
+              y entregas programadas. Siempre sabrás exactamente dónde está tu proyecto y cuánto se ha invertido.
             </p>
-            <div class="grid grid-cols-2 gap-3">
-              <div class="p-3 rounded-xl bg-white/[0.03] border border-white/[0.06] text-center">
-                <span class="block text-xl font-light text-white">62%</span>
-                <span class="text-[9px] font-mono uppercase tracking-widest text-neutral-500">Avance</span>
-              </div>
-              <div class="p-3 rounded-xl bg-white/[0.03] border border-white/[0.06] text-center">
-                <span class="block text-xl font-light text-white">12.4h</span>
-                <span class="text-[9px] font-mono uppercase tracking-widest text-neutral-500">Consumidas</span>
-              </div>
-            </div>
           </div>
 
-          <!-- Card Panel 4: Control de facturas LLC -->
+          <!-- Panel 4: Facturación LLC -->
           <div class="group relative p-8 sm:p-10 rounded-2xl border border-neutral-900 bg-neutral-950/60 hover:bg-neutral-950/90 transition-all duration-500 hover:border-neutral-700 hover:-translate-y-1">
             <div class="flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 mb-6 rounded-xl bg-white/[0.04] border border-neutral-800 group-hover:border-neutral-600 transition-colors">
               <svg class="w-7 h-7 text-neutral-400 group-hover:text-white transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"/></svg>
             </div>
-            <h3 class="text-lg sm:text-xl font-medium text-white mb-3">Control de facturas LLC sin sorpresas</h3>
-            <p class="text-sm text-neutral-400 leading-relaxed mb-4">
-              Cada factura emitida desde Vortex Logic LLC (EE.UU.) está respaldada por el registro de horas de tu panel. Revisa, descarga y concilia tus facturas con los datos reales de consumo. <strong class="text-white/80">Sin cargos ocultos, sin desviaciones.</strong>
+            <h3 class="text-lg sm:text-xl font-medium text-white mb-3">Facturación clara y transparente</h3>
+            <p class="text-sm text-neutral-400 leading-relaxed">
+              Cada factura emitida desde nuestra LLC internacional está respaldada por el registro de horas 
+              de tu panel. <strong class="text-white/80">Cero sorpresas en la factura final.</strong> Revisa, 
+              descarga y concilia tus facturas con los datos reales de consumo.
             </p>
-            <div class="flex items-center gap-3 p-3 rounded-xl bg-emerald-950/20 border border-emerald-900/30">
+            <div class="flex items-center gap-3 p-3 rounded-xl bg-emerald-950/20 border border-emerald-900/30 mt-4">
               <svg class="w-5 h-5 text-emerald-400/80 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-              <span class="text-xs text-emerald-300/80">Facturación basada en horas reales registradas. 0% IVA para empresas españolas (inversión del sujeto pasivo).</span>
+              <span class="text-xs text-emerald-300/80">0% IVA para empresas españolas (inversión del sujeto pasivo).</span>
             </div>
           </div>
         </div>
 
-        <!-- CTA de la sección -->
         <div class="mt-16 text-center">
           <p class="text-sm text-neutral-400 font-light mb-6">¿Quieres ver cómo funciona el panel en vivo?</p>
           <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a href="/contacto" class="px-8 py-3 bg-white text-black font-semibold text-xs rounded-full hover:bg-neutral-200 transition-all text-center duration-200">
-              Solicita una demo del panel
+            <a href={WA_LINK} target="_blank" rel="noopener noreferrer" class="px-8 py-3 bg-white text-black font-semibold text-xs rounded-full hover:bg-neutral-200 transition-all text-center duration-200">
+              👉 Agendar videollamada por WhatsApp
             </a>
-            <a href="https://wa.me/15072190951?text=Hola%20Vortex.%20He%20visto%20la%20landing%20de%20partner%20tecnol%C3%B3gico%20y%20me%20gustar%C3%ADa%20agendar%20una%20videollamada%20r%C3%A1pida%20para%20conocer%20vuestros%20servicios%20marca%20blanca." target="_blank" rel="noopener noreferrer" class="px-8 py-3 border border-neutral-800 text-neutral-300 font-medium text-xs rounded-full hover:bg-neutral-900 transition-all text-center duration-200">
-              O escríbenos por WhatsApp para una respuesta al instante
+            <a href="/contacto" class="px-8 py-3 border border-neutral-800 text-neutral-300 font-medium text-xs rounded-full hover:bg-neutral-900 transition-all text-center duration-200">
+                Solicita una demo del panel
             </a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- SECCIÓN: Desarrollo WordPress de Alto Nivel para tus Proyectos de Kit Digital -->
+    <!-- BLOQUE 4: CATÁLOGO DE SERVICIOS CORE -->
     <section class="py-32 px-6 md:px-12 bg-black border-b border-neutral-900">
       <div class="max-w-6xl mx-auto">
         <div class="text-center mb-16">
-          <span class="inline-block px-3 py-1.5 border border-neutral-800 rounded-full text-[10px] font-mono uppercase tracking-widest text-neutral-500 mb-6">WordPress Enterprise</span>
-          <h2 class="text-3xl md:text-5xl font-light text-white mb-6 tracking-tight">Desarrollo WordPress de Alto Nivel<br/><span class="text-neutral-400">para tus Proyectos de Kit Digital</span></h2>
-          <p class="text-sm md:text-base text-neutral-400 max-w-3xl mx-auto font-light leading-relaxed">
-            ¿Tienes aprobados bonos de Kit Digital pero tu equipo no da abasto para maquetar? 
-            Nosotros nos encargamos de la ingeniería. Tú gestionas al cliente y la burocracia; 
-            nosotros construimos las webs con <strong class="text-white/80">código impecable, Pixel-Perfect</strong> y optimizadas 
-            para superar cualquier auditoría técnica del programa. Sin page builders, sin plantillas, sin sorpresas.
-          </p>
+          <span class="inline-block px-3 py-1.5 border border-neutral-800 rounded-full text-[10px] font-mono uppercase tracking-widest text-neutral-500 mb-6">Capacidades</span>
+          <h2 class="text-3xl md:text-5xl font-light text-white mb-6 tracking-tight">Catálogo de Servicios Core<br/><span class="text-neutral-400">para tu Agencia</span></h2>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-          <!-- Card 1: Cumplimiento de Requisitos Oficiales -->
-          <div class="p-6 rounded-xl border border-neutral-900 bg-neutral-950/40 hover:bg-neutral-950/70 transition-all duration-300">
-            <div class="w-10 h-10 mb-4 rounded-lg bg-white/[0.04] border border-neutral-800 flex items-center justify-center">
-              <svg class="w-5 h-5 text-neutral-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-            </div>
-            <h3 class="text-sm font-medium text-white mb-2">Cumplimiento de Requisitos Oficiales</h3>
-            <p class="text-xs text-neutral-400 leading-relaxed">Estructuras adaptadas 100% a las exigencias del Kit Digital: Accesibilidad nivel AA (WCAG 2.1), SEO básico on-page, diseño responsive y paneles autogestionables listos para auditoría.</p>
-          </div>
-          <!-- Card 2: Velocidad de Entrega (Sprints) -->
-          <div class="p-6 rounded-xl border border-neutral-900 bg-neutral-950/40 hover:bg-neutral-950/70 transition-all duration-300">
-            <div class="w-10 h-10 mb-4 rounded-lg bg-white/[0.04] border border-neutral-800 flex items-center justify-center">
-              <svg class="w-5 h-5 text-neutral-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-            </div>
-            <h3 class="text-sm font-medium text-white mb-2">Velocidad de Entrega (Sprints)</h3>
-            <p class="text-xs text-neutral-400 leading-relaxed">Desbloquea tu flujo de caja. Entregamos las webs listas para revisión en tiempo récord para que puedas justificar el bono ante el Ministerio sin retrasos administrativos.</p>
-          </div>
-          <!-- Card 3: Código Limpio y WPO -->
-          <div class="p-6 rounded-xl border border-neutral-900 bg-neutral-950/40 hover:bg-neutral-950/70 transition-all duration-300">
-            <div class="w-10 h-10 mb-4 rounded-lg bg-white/[0.04] border border-neutral-800 flex items-center justify-center">
-              <svg class="w-5 h-5 text-neutral-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5m.75-9l3-3 2.148 2.148A12.061 12.061 0 0116.5 7.605"/></svg>
-            </div>
-            <h3 class="text-sm font-medium text-white mb-2">Código Limpio y WPO</h3>
-            <p class="text-xs text-neutral-400 leading-relaxed">Olvídate de maquetadores pesados o plantillas lentas cargadas de plugins basura. Desarrollamos temas a medida o bloques nativos de Gutenberg optimizados para cargar en milisegundos.</p>
-          </div>
-          <!-- Card 4: Marca Blanca Absoluta -->
-          <div class="p-6 rounded-xl border border-neutral-900 bg-neutral-950/40 hover:bg-neutral-950/70 transition-all duration-300">
-            <div class="w-10 h-10 mb-4 rounded-lg bg-white/[0.04] border border-neutral-800 flex items-center justify-center">
-              <svg class="w-5 h-5 text-neutral-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z"/></svg>
-            </div>
-            <h3 class="text-sm font-medium text-white mb-2">Marca Blanca Absoluta</h3>
-            <p class="text-xs text-neutral-400 leading-relaxed">Tus clientes nunca sabrán de nosotros. Todo el desarrollo se gestiona bajo la identidad de tu agencia, manteniendo la máxima confidencialidad bajo NDA. Tú facturas, nosotros ejecutamos.</p>
-          </div>
-        </div>
-
-        <!-- Propuesta de Conversión: Fábrica técnica marca blanca -->
-        <div class="p-8 sm:p-10 mb-8 rounded-2xl border border-neutral-800 bg-gradient-to-r from-neutral-900/80 via-neutral-950 to-neutral-900/80">
-          <div class="flex flex-col lg:flex-row items-center gap-6 lg:gap-10">
-            <div class="flex-shrink-0 flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-violet-500/10 border border-violet-500/20">
-              <svg class="w-8 h-8 sm:w-10 sm:h-10 text-violet-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-            </div>
-            <div class="flex-1 text-center lg:text-left">
-              <h3 class="text-lg sm:text-xl font-medium text-white mb-2">¿Tienes un pico de trabajo con proyectos de Kit Digital?</h3>
-              <p class="text-sm text-neutral-400 leading-relaxed max-w-3xl">
-                Súbelos a tu panel de Vortex, activa el contador de horas y nuestro equipo se encarga del desarrollo mientras tú te centras en captar más clientes y gestionar la burocracia. Nosotros ejecutamos con código impecable que pasa cualquier auditoría. Sin contratos, sin compromisos, solo horas reales trabajadas y visibles al instante.
+        <!-- Servicio 1: WordPress y Kit Digital -->
+        <div class="mb-20 lg:mb-24">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-8">
+            <div>
+              <span class="inline-block px-3 py-1.5 border border-neutral-800 rounded-full text-[10px] font-mono uppercase tracking-widest text-neutral-500 mb-4">Servicio 01</span>
+              <h3 class="text-2xl md:text-3xl font-light text-white mb-4 tracking-tight">WordPress y <span class="text-neutral-400">Kit Digital</span></h3>
+              <p class="text-sm text-neutral-400 leading-relaxed mb-4">
+                Tu agencia consigue los clientes y gestiona el bono; nosotros somos tu <strong class="text-white/80">fábrica técnica marca blanca</strong>.
               </p>
-              <div class="mt-5 flex flex-col sm:flex-row items-center gap-3">
-                <a href="https://wa.me/15072190951?text=Hola%20Vortex.%20He%20visto%20la%20landing%20de%20partner%20tecnol%C3%B3gico%20y%20me%20gustar%C3%ADa%20agendar%20una%20videollamada%20r%C3%A1pida%20para%20conocer%20vuestros%20servicios%20marca%20blanca." target="_blank" rel="noopener noreferrer" class="px-6 py-2.5 bg-violet-500/20 border border-violet-500/30 text-violet-300 font-medium text-xs rounded-full hover:bg-violet-500/30 transition-all duration-200">
-                  Consúltanos por WhatsApp para arrancar de inmediato
-                </a>
-                <span class="text-[10px] text-neutral-600 font-mono uppercase tracking-widest">o</span>
-                <a href="/contacto" class="px-6 py-2.5 border border-neutral-700 text-neutral-400 font-medium text-xs rounded-full hover:bg-neutral-800 transition-all duration-200">
-                  Envíanos los requerimientos en el formulario
-                </a>
+              <ul class="space-y-3">
+                <li class="flex items-start gap-3 text-xs text-neutral-400">
+                  <svg class="w-4 h-4 text-neutral-500 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                  <span>Maquetación Pixel-Perfect a partir de Figma</span>
+                </li>
+                <li class="flex items-start gap-3 text-xs text-neutral-400">
+                  <svg class="w-4 h-4 text-neutral-500 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                  <span>Custom Themes o bloques nativos de Gutenberg. Sin page builders ni plugins basura</span>
+                </li>
+                <li class="flex items-start gap-3 text-xs text-neutral-400">
+                  <svg class="w-4 h-4 text-neutral-500 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                  <span>Estructuras adaptadas 100% al Kit Digital: Accesibilidad AA (WCAG 2.1), SEO on-page, responsive y paneles autogestionables</span>
+                </li>
+                <li class="flex items-start gap-3 text-xs text-neutral-400">
+                  <svg class="w-4 h-4 text-neutral-500 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                  <span>Listo para superar cualquier auditoría técnica del Ministerio sin retrasar tus cobros</span>
+                </li>
+              </ul>
+            </div>
+            <div class="w-full aspect-[4/3] linear-card rounded border border-neutral-900 bg-neutral-950/30 flex items-center justify-center p-8 glow-hover transition-all">
+              <div class="text-center text-neutral-700">
+                <svg class="w-16 h-16 mx-auto mb-4 opacity-50" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08M15.75 18.75V4.875c0-.621-.504-1.125-1.125-1.125h-4.5c-.621 0-1.125.504-1.125 1.125v13.875M15.75 18.75h-7.5M15.75 18.75v.1875c0 .621-.504 1.125-1.125 1.125h-4.5c-.621 0-1.125-.504-1.125-1.125V18.75"/></svg>
+                <p class="text-[10px] font-mono uppercase tracking-widest">Kit Digital Ready</p>
+              </div>
+            </div>
+          </div>
+          <!-- Banner conversión WordPress -->
+          <div class="p-6 sm:p-8 rounded-2xl border border-violet-500/20 bg-gradient-to-r from-violet-500/10 via-neutral-950 to-violet-500/5">
+            <div class="flex flex-col sm:flex-row items-center gap-4 sm:gap-6">
+              <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-violet-500/10 border border-violet-500/20 flex items-center justify-center">
+                <svg class="w-6 h-6 text-violet-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              </div>
+              <div class="flex-1 text-center sm:text-left">
+                <p class="text-sm text-neutral-300 leading-relaxed">
+                  <strong>¿Saturado de proyectos de Kit Digital?</strong> Súbelos a tu panel de Vortex, activa el contador de horas 
+                  y nuestro equipo se encarga. <strong class="text-white/80">Escríbenos por WhatsApp y agendamos un Meet rápido para coordinar.</strong>
+                </p>
+              </div>
+              <a href={WA_LINK} target="_blank" rel="noopener noreferrer" class="shrink-0 px-6 py-2.5 bg-violet-500/20 border border-violet-500/30 text-violet-300 font-medium text-xs rounded-full hover:bg-violet-500/30 transition-all duration-200 whitespace-nowrap">
+                Escribir por WhatsApp →
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Servicio 2: Frontend y Backend Modernos -->
+        <div class="mb-20 lg:mb-24">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <div class="order-2 lg:order-1 w-full aspect-[4/3] linear-card rounded border border-neutral-900 bg-neutral-950/30 flex items-center justify-center p-8 glow-hover transition-all">
+              <div class="text-center text-neutral-700">
+                <svg class="w-16 h-16 mx-auto mb-4 opacity-50" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1"><path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+                <p class="text-[10px] font-mono uppercase tracking-widest">Astro · React · Next.js · Supabase</p>
+              </div>
+            </div>
+            <div class="order-1 lg:order-2">
+              <span class="inline-block px-3 py-1.5 border border-neutral-800 rounded-full text-[10px] font-mono uppercase tracking-widest text-neutral-500 mb-4">Servicio 02</span>
+              <h3 class="text-2xl md:text-3xl font-light text-white mb-4 tracking-tight">Frontend y Backend <span class="text-neutral-400">Modernos</span></h3>
+              <p class="text-sm text-neutral-400 leading-relaxed mb-4">
+                Arquitectura de software rápida, escalable y robusta para proyectos de alta exigencia.
+              </p>
+              <ul class="space-y-3">
+                <li class="flex items-start gap-3 text-xs text-neutral-400">
+                  <svg class="w-4 h-4 text-neutral-500 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                  <span>Frontends hiperrápidos con <strong class="text-white/70">Astro</strong> (ideal para landings corporativas y sitios de alto rendimiento WPO)</span>
+                </li>
+                <li class="flex items-start gap-3 text-xs text-neutral-400">
+                  <svg class="w-4 h-4 text-neutral-500 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                  <span>Aplicaciones web dinámicas con <strong class="text-white/70">React y Next.js</strong></span>
+                </li>
+                <li class="flex items-start gap-3 text-xs text-neutral-400">
+                  <svg class="w-4 h-4 text-neutral-500 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                  <span>Backend con <strong class="text-white/70">Supabase</strong>: lógica de negocio, bases de datos y autenticación segura</span>
+                </li>
+                <li class="flex items-start gap-3 text-xs text-neutral-400">
+                  <svg class="w-4 h-4 text-neutral-500 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                  <span>Integración de pasarelas de pago (Stripe), APIs de terceros y CI/CD en <strong class="text-white/70">Vercel</strong></span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Servicio 3: Apps Web y Móviles -->
+        <div>
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-8">
+            <div>
+              <span class="inline-block px-3 py-1.5 border border-neutral-800 rounded-full text-[10px] font-mono uppercase tracking-widest text-neutral-500 mb-4">Servicio 03</span>
+              <h3 class="text-2xl md:text-3xl font-light text-white mb-4 tracking-tight">Apps Web y Móviles<br/><span class="text-neutral-400">Desarrollo y Mantenimiento</span></h3>
+              <p class="text-sm text-neutral-400 leading-relaxed mb-4">
+                Ciclo de vida completo para plataformas digitales y aplicaciones nativas/híbridas.
+              </p>
+              <ul class="space-y-3">
+                <li class="flex items-start gap-3 text-xs text-neutral-400">
+                  <svg class="w-4 h-4 text-neutral-500 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                  <span>Diseño, desarrollo evolutivo y mantenimiento preventivo de aplicaciones web a medida</span>
+                </li>
+                <li class="flex items-start gap-3 text-xs text-neutral-400">
+                  <svg class="w-4 h-4 text-neutral-500 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                  <span>Creación del MVP inicial hasta soporte técnico continuo</span>
+                </li>
+                <li class="flex items-start gap-3 text-xs text-neutral-400">
+                  <svg class="w-4 h-4 text-neutral-500 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                  <span>Corrección de errores, actualizaciones de seguridad y optimización de rendimiento</span>
+                </li>
+                <li class="flex items-start gap-3 text-xs text-neutral-400">
+                  <svg class="w-4 h-4 text-neutral-500 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                  <span>Garantía de operación 24/7 para las apps de tus clientes</span>
+                </li>
+              </ul>
+            </div>
+            <div class="w-full aspect-[4/3] linear-card rounded border border-neutral-900 bg-neutral-950/30 flex items-center justify-center p-8 glow-hover transition-all">
+              <div class="text-center text-neutral-700">
+                <svg class="w-16 h-16 mx-auto mb-4 opacity-50" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1"><path stroke-linecap="round" stroke-linejoin="round" d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0V12a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 12V5.25"/></svg>
+                <p class="text-[10px] font-mono uppercase tracking-widest">Web · Móvil · MVP · Soporte</p>
               </div>
             </div>
           </div>
         </div>
-
-        <!-- CTA WordPress -->
-        <div class="text-center">
-          <p class="text-sm text-neutral-400 font-light mb-4">¿Necesitas una fábrica técnica marca blanca para escalar tu agencia?</p>
-          <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a href="https://wa.me/15072190951?text=Hola%20Vortex.%20He%20visto%20la%20landing%20de%20partner%20tecnol%C3%B3gico%20y%20me%20gustar%C3%ADa%20agendar%20una%20videollamada%20r%C3%A1pida%20para%20conocer%20vuestros%20servicios%20marca%20blanca." target="_blank" rel="noopener noreferrer" class="px-8 py-3 bg-white text-black font-semibold text-xs rounded-full hover:bg-neutral-200 transition-all text-center duration-200">
-              Háblanos por WhatsApp ahora mismo
-            </a>
-            <a href="/contacto" class="px-8 py-3 border border-neutral-800 text-neutral-300 font-medium text-xs rounded-full hover:bg-neutral-900 transition-all text-center duration-200">
-              O envíanos tu volumen de trabajo →
-            </a>
-          </div>
-        </div>
       </div>
     </section>
 
-    <!-- DETAIL BLOCK 1: Capacidad Técnica -->
-    <section class="py-32 px-6 md:px-12 bg-black border-b border-neutral-900">
-      <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24 items-center">
-        <div>
-          <span class="inline-block px-3 py-1.5 border border-neutral-800 rounded-full text-[10px] font-mono uppercase tracking-widest text-neutral-500 mb-6">Capacidad Técnica</span>
-          <h2 class="text-3xl md:text-4xl font-light text-white mb-6 tracking-tight leading-[1.1]">Un equipo de ingeniería<br/><span class="text-neutral-400">para tu proyecto</span></h2>
-          <p class="text-sm text-neutral-400 leading-relaxed font-light mb-6">
-            Actuamos como tu departamento de tecnología externo. Desde la arquitectura inicial hasta el despliegue en producción, te acompañamos con ingenieros senior que dominan las tecnologías más demandadas del mercado.
-          </p>
-          <ul class="space-y-3">
-            <li class="flex items-start gap-3 text-xs text-neutral-400">
-              <svg class="w-4 h-4 text-neutral-500 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-              <span>Equipo senior con experiencia en startups y enterprise</span>
-            </li>
-            <li class="flex items-start gap-3 text-xs text-neutral-400">
-              <svg class="w-4 h-4 text-neutral-500 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-              <span>Comunicación diaria vía Slack / Discord / WhatsApp</span>
-            </li>
-            <li class="flex items-start gap-3 text-xs text-neutral-400">
-              <svg class="w-4 h-4 text-neutral-500 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-              <span>Entregas semanales con CI/CD y despliegue continuo</span>
-            </li>
-          </ul>
-        </div>
-        <div class="w-full aspect-[4/3] linear-card rounded border border-neutral-900 bg-neutral-950/30 flex items-center justify-center p-8 glow-hover transition-all">
-          <div class="text-center text-neutral-700">
-            <svg class="w-16 h-16 mx-auto mb-4 opacity-50" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"/></svg>
-            <p class="text-[10px] font-mono uppercase tracking-widest">CI/CD Pipeline Integrado</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- DETAIL BLOCK 2: Metodología Ágil -->
-    <section class="py-32 px-6 md:px-12 bg-black border-b border-neutral-900">
-      <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24 items-center">
-        <div class="order-2 md:order-1 w-full aspect-[4/3] linear-card rounded border border-neutral-900 bg-neutral-950/30 flex items-center justify-center p-8 glow-hover transition-all">
-          <div class="text-center text-neutral-700">
-            <svg class="w-16 h-16 mx-auto mb-4 opacity-50" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
-            <p class="text-[10px] font-mono uppercase tracking-widest">Metodología Ágil</p>
-          </div>
-        </div>
-        <div class="order-1 md:order-2">
-          <span class="inline-block px-3 py-1.5 border border-neutral-800 rounded-full text-[10px] font-mono uppercase tracking-widest text-neutral-500 mb-6">Metodología Ágil</span>
-          <h2 class="text-3xl md:text-4xl font-light text-white mb-6 tracking-tight leading-[1.1]">Trabajamos con sprints<br/><span class="text-neutral-400">resultados cada 2 semanas</span></h2>
-          <p class="text-sm text-neutral-400 leading-relaxed font-light mb-6">
-            Metodología Scrum adaptada al trabajo remoto. Planificamos en sprints de dos semanas con demos al final de cada ciclo. Tendrás visibilidad total del progreso y capacidad de ajustar prioridades en tiempo real.
-          </p>
-          <ul class="space-y-3">
-            <li class="flex items-start gap-3 text-xs text-neutral-400">
-              <svg class="w-4 h-4 text-neutral-500 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-              <span>Sprints de 2 semanas con entregas funcionales</span>
-            </li>
-            <li class="flex items-start gap-3 text-xs text-neutral-400">
-              <svg class="w-4 h-4 text-neutral-500 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-              <span>Demos semanales y reportes de avance</span>
-            </li>
-            <li class="flex items-start gap-3 text-xs text-neutral-400">
-              <svg class="w-4 h-4 text-neutral-500 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-              <span>Roadmap transparente con milestones definidos</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- FAQ SECTION (REFORZADA) -->
+    <!-- BLOQUE 5: FAQs OPTIMIZADAS -->
     <section class="py-32 px-6 md:px-12 bg-black border-b border-neutral-900">
       <div class="max-w-3xl mx-auto">
         <div class="text-center mb-16">
@@ -386,103 +338,68 @@ const isLanding = true;
           <h2 class="text-3xl md:text-4xl font-light text-white tracking-tight">Preguntas Frecuentes</h2>
         </div>
         <div class="space-y-4">
-          <!-- FAQ existente 1 -->
+
           <details class="group border border-neutral-900 rounded-lg overflow-hidden">
             <summary class="flex items-center justify-between px-6 py-5 text-sm font-medium text-white cursor-pointer hover:bg-neutral-900/30 transition-colors list-none">
-              ¿Cuál es el modelo de contratación?
+              ¿Cómo sé que las horas del contador de Vortex son reales?
               <svg class="w-4 h-4 text-neutral-500 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
             </summary>
             <div class="px-6 pb-5 text-xs text-neutral-400 leading-relaxed">
-              Ofrecemos un modelo de cobro por horas eficientes registradas en tiempo real. No pagas por horas estimadas ni por tiempo muerto. Cada minuto de desarrollo se refleja en tu Panel de Control con detalle de tarea, proyecto y desarrollador. También disponemos de presupuestos fijos para proyectos cerrados y retainers mensuales para mantenimiento continuo.
-            </div>
-          </details>
-          <!-- FAQ existente 2 -->
-          <details class="group border border-neutral-900 rounded-lg overflow-hidden">
-            <summary class="flex items-center justify-between px-6 py-5 text-sm font-medium text-white cursor-pointer hover:bg-neutral-900/30 transition-colors list-none">
-              ¿Cómo funciona la comunicación con la diferencia horaria?
-              <svg class="w-4 h-4 text-neutral-500 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-            </summary>
-            <div class="px-6 pb-5 text-xs text-neutral-400 leading-relaxed">
-              Trabajamos en horario compatible con Europa (GMT-4 / Venezuela). Nuestro equipo está disponible desde las 8:00 AM hasta las 6:00 PM (hora local), con solapamiento directo con horario laboral europeo. Garantizamos respuesta en menos de 2 horas hábiles.
-            </div>
-          </details>
-          <!-- FAQ existente 3 -->
-          <details class="group border border-neutral-900 rounded-lg overflow-hidden">
-            <summary class="flex items-center justify-between px-6 py-5 text-sm font-medium text-white cursor-pointer hover:bg-neutral-900/30 transition-colors list-none">
-              ¿Qué tecnologías dominan?
-              <svg class="w-4 h-4 text-neutral-500 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-            </summary>
-            <div class="px-6 pb-5 text-xs text-neutral-400 leading-relaxed">
-              Astro, Next.js, React, Node.js, TypeScript, Tailwind CSS, PostgreSQL, Prisma, Vercel, AWS, Docker, y más. Evaluamos tu stack y te recomendamos la mejor arquitectura para tu proyecto.
-            </div>
-          </details>
-          <!-- FAQ existente 4 -->
-          <details class="group border border-neutral-900 rounded-lg overflow-hidden">
-            <summary class="flex items-center justify-between px-6 py-5 text-sm font-medium text-white cursor-pointer hover:bg-neutral-900/30 transition-colors list-none">
-              ¿Cuál es el timeline típico de un proyecto?
-              <svg class="w-4 h-4 text-neutral-500 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-            </summary>
-            <div class="px-6 pb-5 text-xs text-neutral-400 leading-relaxed">
-              Un MVP funcional puede estar listo en 4 a 6 semanas. Proyectos más complejos como plataformas SaaS enterprise pueden tomar de 3 a 6 meses. Durante la consultoría inicial definimos un roadmap detallado con hitos claros.
+              Cada tarea tiene un temporizador que se activa manualmente y se sincroniza automáticamente con tu Panel de Control. Puedes ver en vivo quién está trabajando, en qué tarea y el tiempo exacto acumulado. El sistema registra inicio, pausas y finalización por cada tarea individual. No hay forma de inflar las horas porque todo está traducido a tareas concretas del sprint que tú mismo apruebas en la planificación. <strong class="text-white/80">No pagas por tiempo muerto, solo por desarrollo real.</strong>
             </div>
           </details>
 
-          <!-- NUEVA FAQ 5: Seguimiento y justificación de horas -->
           <details class="group border border-neutral-900 rounded-lg overflow-hidden">
             <summary class="flex items-center justify-between px-6 py-5 text-sm font-medium text-white cursor-pointer hover:bg-neutral-900/30 transition-colors list-none">
-              ¿Cómo se realiza el seguimiento y la justificación de las horas cobradas?
+              ¿Cómo se maneja la confidencialidad con mis clientes?
               <svg class="w-4 h-4 text-neutral-500 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
             </summary>
             <div class="px-6 pb-5 text-xs text-neutral-400 leading-relaxed">
-              Cada hora de trabajo se registra mediante un sistema de temporizador por tarea en nuestro Panel de Control de Cliente. Puedes ver en tiempo real qué tarea se está ejecutando, qué desarrollador la está realizando, el tiempo exacto invertido y el coste acumulado. Al final de cada ciclo de facturación, recibes un desglose detallado con el histórico completo de horas por tarea, proyecto y miembro del equipo. <strong class="text-white/80">Sin estimaciones, sin suposiciones. Solo datos reales.</strong>
+              Firmamos un Acuerdo de Confidencialidad (NDA) mutuo y estricto antes de iniciar cualquier colaboración. Todo el desarrollo se gestiona bajo la identidad de tu agencia — <strong class="text-white/80">tus clientes nunca sabrán de nuestra existencia</strong>. Protegemos tu propiedad intelectual, código fuente, estrategia de negocio y cualquier información sensible. El NDA se mantiene vigente incluso después de finalizar la relación contractual.
             </div>
           </details>
 
-          <!-- NUEVA FAQ 6: NDA -->
           <details class="group border border-neutral-900 rounded-lg overflow-hidden">
             <summary class="flex items-center justify-between px-6 py-5 text-sm font-medium text-white cursor-pointer hover:bg-neutral-900/30 transition-colors list-none">
-              ¿Se firma un acuerdo de confidencialidad (NDA)?
-              <svg class="w-4 h-4 text-neutral-500 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-            </summary>
-            <div class="px-6 pb-5 text-xs text-neutral-400 leading-relaxed">
-              Sí, por supuesto. Firmamos un Acuerdo de Confidencialidad (NDA) mutuo antes de iniciar cualquier colaboración. Protegemos tu propiedad intelectual, código fuente, estrategia de negocio y cualquier información sensible que compartas con nosotros. El NDA es estándar en todos nuestros proyectos y se mantiene vigente incluso después de finalizar la relación contractual.
-            </div>
-          </details>
-
-          <!-- NUEVA FAQ 7: Facturación LLC España -->
-          <details class="group border border-neutral-900 rounded-lg overflow-hidden">
-            <summary class="flex items-center justify-between px-6 py-5 text-sm font-medium text-white cursor-pointer hover:bg-neutral-900/30 transition-colors list-none">
-              ¿Cómo funciona la facturación desde una LLC internacional para una empresa española?
+              ¿Cómo se realiza la facturación a nivel internacional con la LLC?
               <svg class="w-4 h-4 text-neutral-500 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
             </summary>
             <div class="px-6 pb-5 text-xs text-neutral-400 leading-relaxed space-y-2">
-              <p>Vortex Logic LLC está registrada en Estados Unidos y emite facturas oficiales con todos los requisitos fiscales internacionales. Para empresas españolas, la facturación se acoge al mecanismo de <strong class="text-white/80">inversión del sujeto pasivo</strong> (artículo 84.Uno.2º de la Ley del IVA), lo que significa:</p>
+              <p>Vortex Logic LLC está registrada en Estados Unidos y emite facturas oficiales. Para empresas españolas, la facturación se acoge al mecanismo de <strong class="text-white/80">inversión del sujeto pasivo</strong> (artículo 84.Uno.2º de la Ley del IVA):</p>
               <ul class="list-disc pl-4 space-y-1">
-                <li><strong class="text-white/70">0% IVA:</strong> No se repercute IVA en la factura. Eres tú quien declara el IVA devengado y su correspondiente deducción en tu modelo 303.</li>
-                <li><strong class="text-white/70">Sin retenciones:</strong> Al ser un servicio internacional, no aplican retenciones de IRPF (modelo 123/124).</li>
-                <li><strong class="text-white/70">Factura 100% deducible</strong> como gasto de desarrollo informático para tu empresa.</li>
+                <li><strong class="text-white/70">0% IVA</strong> — No se repercute IVA en la factura. Declaras el IVA devengado y su deducción en tu modelo 303.</li>
+                <li><strong class="text-white/70">Sin retenciones de IRPF</strong> — Al ser un servicio internacional, no aplican los modelos 123/124.</li>
+                <li><strong class="text-white/70">100% deducible</strong> como gasto de desarrollo informático para tu empresa.</li>
               </ul>
-              <p class="mt-2">Aceptamos pago por tarjeta de crédito, transferencia SEPA (Europa), ACH (EE.UU.) y Binance Pay. Te emitimos la factura en euros para tu comodidad.</p>
+              <p>Aceptamos tarjeta de crédito, transferencia SEPA, ACH y Binance Pay. Emitimos la factura en euros.</p>
             </div>
           </details>
-        </div>
 
-        <!-- CTA post-FAQ -->
-        <div class="mt-12 text-center">
-          <p class="text-sm text-neutral-400 font-light mb-4">¿Tienes más preguntas? Resuélvelas ahora mismo.</p>
-          <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a href="/contacto" class="px-8 py-3 bg-white text-black font-semibold text-xs rounded-full hover:bg-neutral-200 transition-all text-center duration-200">
-              Solicitar consultoría gratuita
-            </a>
-            <a href="https://wa.me/15072190951?text=Hola%20Vortex.%20He%20visto%20la%20landing%20de%20partner%20tecnol%C3%B3gico%20y%20me%20gustar%C3%ADa%20agendar%20una%20videollamada%20r%C3%A1pida%20para%20conocer%20vuestros%20servicios%20marca%20blanca." target="_blank" rel="noopener noreferrer" class="px-8 py-3 border border-neutral-800 text-neutral-300 font-medium text-xs rounded-full hover:bg-neutral-900 transition-all text-center duration-200">
-              ¿Dudas rápidas? Escríbenos por WhatsApp
-            </a>
-          </div>
         </div>
       </div>
     </section>
 
-    <!-- CONTACT FORM SECTION -->
+    <!-- BLOQUE 6: CIERRE Y CTAs DE CONVERSIÓN -->
+    <section class="py-32 px-6 md:px-12 bg-black border-b border-neutral-900">
+      <div class="max-w-4xl mx-auto text-center">
+        <span class="inline-block px-3 py-1.5 border border-neutral-800 rounded-full text-[10px] font-mono uppercase tracking-widest text-neutral-500 mb-6">¿Empezamos?</span>
+        <h2 class="text-3xl md:text-5xl font-light text-white mb-6 tracking-tight">¿Necesitas una fábrica técnica<br/><span class="text-neutral-400">marca blanca para escalar tu agencia?</span></h2>
+        <p class="text-sm md:text-base text-neutral-400 max-w-2xl mx-auto font-light leading-relaxed mb-10">
+          Cuéntanos tu volumen de proyectos y te enviamos una propuesta en menos de 48 horas. 
+          Sin compromiso, sin permanencia, sin mínimos.
+        </p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a href={WA_LINK} target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto px-8 py-3 bg-white text-black font-semibold text-xs rounded-full hover:bg-neutral-200 transition-all text-center duration-200 active:scale-95 shadow-[0_0_25px_rgba(255,255,255,0.15)]">
+            Escríbenos por WhatsApp y coordinamos un Meet →
+          </a>
+          <a href="#contacto-form" class="w-full sm:w-auto px-8 py-3 border border-neutral-800 text-neutral-300 font-medium text-xs rounded-full hover:bg-neutral-900 transition-all text-center duration-200">
+            O envíanos tu volumen de trabajo →
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FORMULARIO DE CONTACTO -->
     <section id="contacto-form" class="py-32 px-6 md:px-12 bg-black">
       <div class="max-w-3xl mx-auto">
         <div class="text-center mb-12">
@@ -515,7 +432,7 @@ const isLanding = true;
         </form>
         <div class="mt-6 text-center">
           <p class="text-xs text-neutral-500">¿Prefieres una respuesta inmediata?</p>
-          <a href="https://wa.me/15072190951?text=Hola%20Vortex.%20He%20visto%20la%20landing%20de%20partner%20tecnol%C3%B3gico%20y%20me%20gustar%C3%ADa%20agendar%20una%20videollamada%20r%C3%A1pida%20para%20conocer%20vuestros%20servicios%20marca%20blanca." target="_blank" rel="noopener noreferrer" class="inline-block mt-2 text-xs text-neutral-400 underline hover:text-white transition-colors">
+          <a href={WA_LINK} target="_blank" rel="noopener noreferrer" class="inline-block mt-2 text-xs text-neutral-400 underline hover:text-white transition-colors">
             Escríbenos por WhatsApp ahora →
           </a>
         </div>

@@ -70,6 +70,31 @@ const criticalCSS = `
       <link rel="stylesheet" href={fontsCSS} media="print" onload="this.media='all'" />
     )}
     <noscript><link rel="stylesheet" href={fontsCSS}></noscript>
+    <!-- Google Ads (AW-18175185887) tag manager -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18175185887" is:inline></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18175185887');
+
+      function gtag_report_conversion(url) {
+        var callback = function () {
+          if (typeof(url) != 'undefined') {
+            window.open(url, '_blank');
+          }
+        };
+        if (typeof(gtag) !== 'undefined') {
+          gtag('event', 'conversion', {
+              'send_to': 'AW-18175185887/conversion_id_aqui',
+              'event_callback': callback
+          });
+        } else {
+          callback();
+        }
+        return false;
+      }
+    </script>
   </head>
   <body class="bg-[#000000] text-[#f7f7f8] font-body-md linear-grid min-h-screen overflow-x-hidden flex flex-col w-full">
     <GoogleTagManager gtmId="GTM-P4MK3GT9" ga4Id={ga4Id} />

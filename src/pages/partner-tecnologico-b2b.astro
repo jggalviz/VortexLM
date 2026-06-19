@@ -6,7 +6,7 @@ const isLanding = true;
 <BaseLayout title="Partner Tecnológico B2B para Startups y Empresas | VortexLM" isLanding={isLanding}>
   <main class="bg-neutral-950 text-white">
 
-    <!-- HERO SECTION -->
+    <!-- HERO SECTION (refactorizada) -->
     <section class="relative min-h-screen flex items-center justify-center overflow-hidden bg-neutral-950 px-6">
       <!-- Grid overlay -->
       <div class="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:64px_64px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)]"></div>
@@ -16,20 +16,25 @@ const isLanding = true;
       <div class="relative z-10 max-w-5xl mx-auto text-center pt-32 pb-24">
         <span class="inline-block px-3 py-1.5 border border-neutral-800 rounded-full text-[10px] font-mono uppercase tracking-widest text-neutral-500 mb-8">Partner Tecnológico</span>
         <h1 class="text-4xl md:text-7xl font-extralight tracking-tight text-white mb-8 leading-[1.08] max-w-4xl mx-auto opacity-95">
-          Partner Tecnológico en Remoto para Startups y Empresas en<br/>
-          <span class="text-neutral-400">Madrid y Barcelona.</span>
+          Cobro por horas eficientes.<br/>
+          Transparencia total.<br/>
+          <span class="text-neutral-400">Para startups y empresas en Madrid y Barcelona.</span>
         </h1>
         <p class="text-sm md:text-base text-neutral-400 max-w-3xl mx-auto mb-12 leading-relaxed font-light">
-          Desarrollo de software a medida, aplicaciones SaaS y migraciones críticas a Next.js / Astro. Escalabilidad garantizada, código limpio y rendimiento de nivel superior bajo estándares de ciberseguridad.
+          Contratas ingeniería de alto rendimiento sin pagar por horas muertas ni sorpresas en la factura. 
+          Cada minuto de desarrollo se registra en tu <strong class="text-white/80">Panel de Control</strong> en tiempo real: 
+          contador de horas exactas trabajadas, control de tareas del sprint y estado del proyecto. 
+          Paga solo por lo que realmente se invierte en tu producto.
         </p>
         <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <a href="https://wa.me/15072190951?text=Hola%20VortexLM,%20vengo%20de%20la%20landing%20B2B%20y%20me%20gustar%C3%ADa%20agendar%20una%20consultor%C3%ADa%20t%C3%A9cnica." target="_blank" class="w-full sm:w-auto px-8 py-3 bg-white text-black font-semibold text-xs rounded-full hover:bg-neutral-200 transition-all text-center duration-200 active:scale-95 shadow-[0_0_25px_rgba(255,255,255,0.15)]">
-            Hablar con un Ingeniero Senior
+          <a href="/contacto" class="w-full sm:w-auto px-8 py-3 bg-white text-black font-semibold text-xs rounded-full hover:bg-neutral-200 transition-all text-center duration-200 active:scale-95 shadow-[0_0_25px_rgba(255,255,255,0.15)]">
+            Solicitar consultoría gratuita
           </a>
-          <a href="/contacto" class="w-full sm:w-auto px-8 py-3 border border-neutral-800 text-neutral-300 font-medium text-xs rounded-full hover:bg-neutral-900 transition-all text-center duration-200">
-            Ver Casos de Éxito →
+          <a href="javascript:void(0)" onclick="document.querySelector('.live-chat-trigger')?.click()" class="w-full sm:w-auto px-8 py-3 border border-neutral-800 text-neutral-300 font-medium text-xs rounded-full hover:bg-neutral-900 transition-all text-center duration-200">
+            ¿Dudas rápidas? Háblanos por el chat →
           </a>
         </div>
+        <p class="mt-6 text-[10px] font-mono uppercase tracking-widest text-neutral-600">Madrid · Barcelona · Sin permanencia · Sin mínimos</p>
       </div>
     </section>
 
@@ -90,6 +95,236 @@ const isLanding = true;
             </div>
             <h3 class="text-sm font-medium text-white mb-2.5">Ciberseguridad y Compliance</h3>
             <p class="text-xs text-neutral-400 leading-relaxed">Desarrollo con estándares OWASP, cifrado SSL/TLS, autenticación segura y cumplimiento GDPR para operar en Europa sin riesgos.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN: Transparencia Radical – Panel de Control de Cliente -->
+    <section class="py-32 px-6 md:px-12 bg-black border-b border-neutral-900">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+          <span class="inline-block px-3 py-1.5 border border-neutral-800 rounded-full text-[10px] font-mono uppercase tracking-widest text-neutral-500 mb-6">Transparencia</span>
+          <h2 class="text-3xl md:text-5xl font-light text-white mb-6 tracking-tight">Transparencia Radical<br/><span class="text-neutral-400">Panel de Control de Cliente</span></h2>
+          <p class="text-sm md:text-base text-neutral-400 max-w-3xl mx-auto font-light leading-relaxed">
+            Olvídate de las incertidumbres. Nuestro panel privado te da visibilidad absoluta de cada minuto invertido, cada tarea completada y cada euro gastado. En tiempo real.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+          <!-- Card Panel 1: Contador de horas en tiempo real -->
+          <div class="group relative p-8 sm:p-10 rounded-2xl border border-neutral-900 bg-neutral-950/60 hover:bg-neutral-950/90 transition-all duration-500 hover:border-neutral-700 hover:-translate-y-1">
+            <div class="flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 mb-6 rounded-xl bg-white/[0.04] border border-neutral-800 group-hover:border-neutral-600 transition-colors">
+              <svg class="w-7 h-7 text-neutral-400 group-hover:text-white transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            </div>
+            <h3 class="text-lg sm:text-xl font-medium text-white mb-3">Contador de horas exactas trabajadas</h3>
+            <p class="text-sm text-neutral-400 leading-relaxed mb-4">
+              Olvídate de estimaciones hinchadas. Cada tarea registra el tiempo real de desarrollo con un temporizador que se sincroniza automáticamente con tu panel. Ves exactamente cuánto tiempo ha llevado cada cosa, quién trabajó y qué se hizo.
+            </p>
+            <div class="p-4 rounded-xl bg-white/[0.03] border border-white/[0.06]">
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-[10px] font-mono uppercase tracking-widest text-neutral-500">Sprint actual — Rediseño Dashboard</span>
+                <span class="text-[11px] font-mono text-neutral-400">12.4h / 20h estimadas</span>
+              </div>
+              <div class="w-full h-2 rounded-full bg-white/[0.06] overflow-hidden">
+                <div class="h-full rounded-full bg-gradient-to-r from-violet-500 to-emerald-400" style="width:62%"></div>
+              </div>
+              <div class="flex items-center gap-1.5 mt-3 pt-3 border-t border-white/[0.04]">
+                <span class="relative flex h-2 w-2">
+                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                  <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                </span>
+                <span class="text-[9px] font-mono uppercase tracking-widest text-emerald-400/80">Seguimiento activo ahora</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card Panel 2: Control de tareas del sprint -->
+          <div class="group relative p-8 sm:p-10 rounded-2xl border border-neutral-900 bg-neutral-950/60 hover:bg-neutral-950/90 transition-all duration-500 hover:border-neutral-700 hover:-translate-y-1">
+            <div class="flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 mb-6 rounded-xl bg-white/[0.04] border border-neutral-800 group-hover:border-neutral-600 transition-colors">
+              <svg class="w-7 h-7 text-neutral-400 group-hover:text-white transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
+            </div>
+            <h3 class="text-lg sm:text-xl font-medium text-white mb-3">Control de tareas del sprint</h3>
+            <p class="text-sm text-neutral-400 leading-relaxed mb-4">
+              Visualiza el kanban de tu proyecto en vivo: tareas pendientes, en progreso, en revisión y completadas. Cada tarea muestra su responsable, horas invertidas y estado. Ajusta prioridades sobre la marcha.
+            </p>
+            <div class="space-y-2">
+              <div class="flex items-center gap-3 p-2.5 rounded-lg bg-white/[0.03] border border-white/[0.06]">
+                <div class="w-3 h-3 rounded-full border-2 border-yellow-500/50 bg-yellow-500/20 shrink-0"></div>
+                <span class="text-xs text-neutral-300 flex-1">Header responsive</span>
+                <span class="text-[10px] font-mono text-neutral-500">3.2h</span>
+                <span class="text-[9px] font-mono uppercase tracking-widest text-yellow-400/70">En progreso</span>
+              </div>
+              <div class="flex items-center gap-3 p-2.5 rounded-lg bg-white/[0.03] border border-white/[0.06]">
+                <div class="w-3 h-3 rounded-full border-2 border-blue-500/50 bg-blue-500/20 shrink-0"></div>
+                <span class="text-xs text-neutral-300 flex-1">Integración pasarela pago</span>
+                <span class="text-[10px] font-mono text-neutral-500">—</span>
+                <span class="text-[9px] font-mono uppercase tracking-widest text-blue-400/70">Pendiente</span>
+              </div>
+              <div class="flex items-center gap-3 p-2.5 rounded-lg bg-white/[0.03] border border-white/[0.06]">
+                <div class="w-3 h-3 rounded-full border-2 border-emerald-500/50 bg-emerald-500/20 flex items-center justify-center shrink-0">
+                  <svg class="w-2 h-2 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+                </div>
+                <span class="text-xs text-neutral-300 flex-1">Optimización SEO blog</span>
+                <span class="text-[10px] font-mono text-neutral-500">1.0h</span>
+                <span class="text-[9px] font-mono uppercase tracking-widest text-emerald-400/70">Completado</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card Panel 3: Estado del proyecto -->
+          <div class="group relative p-8 sm:p-10 rounded-2xl border border-neutral-900 bg-neutral-950/60 hover:bg-neutral-950/90 transition-all duration-500 hover:border-neutral-700 hover:-translate-y-1">
+            <div class="flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 mb-6 rounded-xl bg-white/[0.04] border border-neutral-800 group-hover:border-neutral-600 transition-colors">
+              <svg class="w-7 h-7 text-neutral-400 group-hover:text-white transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z"/></svg>
+            </div>
+            <h3 class="text-lg sm:text-xl font-medium text-white mb-3">Estado del proyecto en tiempo real</h3>
+            <p class="text-sm text-neutral-400 leading-relaxed mb-4">
+              Dashboard con métricas clave: porcentaje de avance del sprint, horas consumidas vs. presupuestadas, próximos hitos y entregas programadas. Siempre sabrás dónde está tu proyecto.
+            </p>
+            <div class="grid grid-cols-2 gap-3">
+              <div class="p-3 rounded-xl bg-white/[0.03] border border-white/[0.06] text-center">
+                <span class="block text-xl font-light text-white">62%</span>
+                <span class="text-[9px] font-mono uppercase tracking-widest text-neutral-500">Avance</span>
+              </div>
+              <div class="p-3 rounded-xl bg-white/[0.03] border border-white/[0.06] text-center">
+                <span class="block text-xl font-light text-white">12.4h</span>
+                <span class="text-[9px] font-mono uppercase tracking-widest text-neutral-500">Consumidas</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card Panel 4: Control de facturas LLC -->
+          <div class="group relative p-8 sm:p-10 rounded-2xl border border-neutral-900 bg-neutral-950/60 hover:bg-neutral-950/90 transition-all duration-500 hover:border-neutral-700 hover:-translate-y-1">
+            <div class="flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 mb-6 rounded-xl bg-white/[0.04] border border-neutral-800 group-hover:border-neutral-600 transition-colors">
+              <svg class="w-7 h-7 text-neutral-400 group-hover:text-white transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"/></svg>
+            </div>
+            <h3 class="text-lg sm:text-xl font-medium text-white mb-3">Control de facturas LLC sin sorpresas</h3>
+            <p class="text-sm text-neutral-400 leading-relaxed mb-4">
+              Cada factura emitida desde Vortex Logic LLC (EE.UU.) está respaldada por el registro de horas de tu panel. Revisa, descarga y concilia tus facturas con los datos reales de consumo. <strong class="text-white/80">Sin cargos ocultos, sin desviaciones.</strong>
+            </p>
+            <div class="flex items-center gap-3 p-3 rounded-xl bg-emerald-950/20 border border-emerald-900/30">
+              <svg class="w-5 h-5 text-emerald-400/80 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              <span class="text-xs text-emerald-300/80">Facturación basada en horas reales registradas. 0% IVA para empresas españolas (inversión del sujeto pasivo).</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- CTA de la sección -->
+        <div class="mt-16 text-center">
+          <p class="text-sm text-neutral-400 font-light mb-6">¿Quieres ver cómo funciona el panel en vivo?</p>
+          <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a href="/contacto" class="px-8 py-3 bg-white text-black font-semibold text-xs rounded-full hover:bg-neutral-200 transition-all text-center duration-200">
+              Solicita una demo del panel
+            </a>
+            <a href="javascript:void(0)" onclick="document.querySelector('.live-chat-trigger')?.click()" class="px-8 py-3 border border-neutral-800 text-neutral-300 font-medium text-xs rounded-full hover:bg-neutral-900 transition-all text-center duration-200">
+              O escríbenos por el chat web para una respuesta al instante
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN: Desarrollo WordPress de Alto Nivel & Kit Digital -->
+    <section class="py-32 px-6 md:px-12 bg-black border-b border-neutral-900">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+          <span class="inline-block px-3 py-1.5 border border-neutral-800 rounded-full text-[10px] font-mono uppercase tracking-widest text-neutral-500 mb-6">WordPress Enterprise</span>
+          <h2 class="text-3xl md:text-5xl font-light text-white mb-6 tracking-tight">Desarrollo WordPress de Alto Nivel<br/><span class="text-neutral-400">y Bonos del Kit Digital</span></h2>
+          <p class="text-sm md:text-base text-neutral-400 max-w-3xl mx-auto font-light leading-relaxed">
+            ¿Eres una agencia o pyme en España y necesitas subcontratar volumen de WordPress? 
+            Aquí no hay page builders ni plantillas prefabricadas. 
+            Creamos <strong class="text-white/80">Custom Themes desde cero</strong>, bloques nativos de Gutenberg y maquetación con Tailwind CSS si lo requieres. 
+            Código limpio, optimizado y seguro. Además, te ayudamos a gestionar las ayudas del <strong class="text-white/80">Kit Digital</strong>.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+          <!-- Feature 1: Custom Themes / Gutenberg / Tailwind -->
+          <div class="p-6 rounded-xl border border-neutral-900 bg-neutral-950/40 hover:bg-neutral-950/70 transition-all duration-300">
+            <div class="w-10 h-10 mb-4 rounded-lg bg-white/[0.04] border border-neutral-800 flex items-center justify-center">
+              <svg class="w-5 h-5 text-neutral-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+            </div>
+            <h3 class="text-sm font-medium text-white mb-2">Custom Themes, No Plantillas</h3>
+            <p class="text-xs text-neutral-400 leading-relaxed">Desarrollamos temas de WordPress a medida con bloques nativos de Gutenberg y Tailwind CSS si lo necesitas. Sin Divi, sin Elementor, sin código basura. Rendimiento puro desde el núcleo.</p>
+          </div>
+          <!-- Feature 2: Código Limpio y Seguro -->
+          <div class="p-6 rounded-xl border border-neutral-900 bg-neutral-950/40 hover:bg-neutral-950/70 transition-all duration-300">
+            <div class="w-10 h-10 mb-4 rounded-lg bg-white/[0.04] border border-neutral-800 flex items-center justify-center">
+              <svg class="w-5 h-5 text-neutral-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+            </div>
+            <h3 class="text-sm font-medium text-white mb-2">Código Limpio y Seguro</h3>
+            <p class="text-xs text-neutral-400 leading-relaxed">Estándares OWASP, functions.php optimizado sin redundancias, bases de datos normalizadas y actualizaciones controladas. Tu WordPress vuela, no vulnerable y sin hinchazón de plugins innecesarios.</p>
+          </div>
+          <!-- Feature 3: WPO Extremo -->
+          <div class="p-6 rounded-xl border border-neutral-900 bg-neutral-950/40 hover:bg-neutral-950/70 transition-all duration-300">
+            <div class="w-10 h-10 mb-4 rounded-lg bg-white/[0.04] border border-neutral-800 flex items-center justify-center">
+              <svg class="w-5 h-5 text-neutral-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5m.75-9l3-3 2.148 2.148A12.061 12.061 0 0116.5 7.605"/></svg>
+            </div>
+            <h3 class="text-sm font-medium text-white mb-2">WPO Extremo — Milisegundos</h3>
+            <p class="text-xs text-neutral-400 leading-relaxed">Optimización de imágenes con WebP/AVIF, minificación, lazy loading, caché avanzada y CDN. Conseguimos puntuaciones 95+ en PageSpeed Insights. Tu web carga en milisegundos, no en segundos.</p>
+          </div>
+          <!-- Feature 4: Aceptamos Kit Digital -->
+          <div class="p-6 rounded-xl border border-neutral-900 bg-neutral-950/40 hover:bg-neutral-950/70 transition-all duration-300">
+            <div class="w-10 h-10 mb-4 rounded-lg bg-white/[0.04] border border-neutral-800 flex items-center justify-center">
+              <svg class="w-5 h-5 text-neutral-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m-3 2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            </div>
+            <h3 class="text-sm font-medium text-white mb-2">Aceptamos Kit Digital</h3>
+            <p class="text-xs text-neutral-400 leading-relaxed">Gestionamos tu bono del Programa Kit Digital (Acelera Pyme) para que puedas financiar tu proyecto WordPress sin coste directo. Te ayudamos con la solicitud y la justificación.</p>
+          </div>
+        </div>
+
+        <!-- Propuesta de Conversión: Picos de trabajo WordPress -->
+        <div class="p-8 sm:p-10 mb-8 rounded-2xl border border-neutral-800 bg-gradient-to-r from-neutral-900/80 via-neutral-950 to-neutral-900/80">
+          <div class="flex flex-col lg:flex-row items-center gap-6 lg:gap-10">
+            <div class="flex-shrink-0 flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-violet-500/10 border border-violet-500/20">
+              <svg class="w-8 h-8 sm:w-10 sm:h-10 text-violet-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            </div>
+            <div class="flex-1 text-center lg:text-left">
+              <h3 class="text-lg sm:text-xl font-medium text-white mb-2">¿Tienes un pico de trabajo con proyectos WordPress?</h3>
+              <p class="text-sm text-neutral-400 leading-relaxed max-w-3xl">
+                Tanto si son proyectos heredados como nuevos: súbelos a tu panel de Vortex, activa el contador de horas y nuestro equipo se encarga del desarrollo mientras tú te centras en tu negocio. Sin contratos, sin compromisos, solo horas reales trabajadas y visibles al instante.
+              </p>
+              <div class="mt-5 flex flex-col sm:flex-row items-center gap-3">
+                <a href="javascript:void(0)" onclick="document.querySelector('.live-chat-trigger')?.click()" class="px-6 py-2.5 bg-violet-500/20 border border-violet-500/30 text-violet-300 font-medium text-xs rounded-full hover:bg-violet-500/30 transition-all duration-200">
+                  Consúltanos por el chat web para arrancar de inmediato
+                </a>
+                <span class="text-[10px] text-neutral-600 font-mono uppercase tracking-widest">o</span>
+                <a href="/contacto" class="px-6 py-2.5 border border-neutral-700 text-neutral-400 font-medium text-xs rounded-full hover:bg-neutral-800 transition-all duration-200">
+                  Envíanos los requerimientos en el formulario
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Kit Digital Info Banner -->
+        <div class="group relative w-full rounded-2xl border border-amber-500/20 bg-gradient-to-r from-amber-500/10 via-neutral-950 to-amber-500/5 overflow-hidden p-8 sm:p-10 mb-6">
+          <div class="relative z-10 flex flex-col lg:flex-row items-center gap-6 lg:gap-10">
+            <div class="flex-shrink-0 flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-amber-500/10 border border-amber-500/20">
+              <svg class="w-8 h-8 sm:w-10 sm:h-10 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z"/></svg>
+            </div>
+            <div class="flex-1 text-center lg:text-left">
+              <h3 class="text-lg sm:text-xl font-medium text-white mb-2">¿Tienes bono del Kit Digital?</h3>
+              <p class="text-sm text-neutral-400 leading-relaxed max-w-2xl">
+                Como agencia o pyme en España, puedes utilizar las ayudas del Kit Digital para subcontratar el desarrollo de tu web WordPress con nosotros. Te asesoramos en todo el proceso de solicitud y justificación del bono.
+              </p>
+              <a href="/contacto" class="mt-4 inline-flex items-center gap-2 px-6 py-2.5 bg-amber-500/20 border border-amber-500/30 text-amber-300 font-medium text-xs rounded-full hover:bg-amber-500/30 transition-all duration-200">
+                Consultar mi elegibilidad →
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- CTA WordPress -->
+        <div class="text-center">
+          <p class="text-sm text-neutral-400 font-light mb-4">¿Necesitas escalar tu producción WordPress sin perder calidad?</p>
+          <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a href="/contacto" class="px-8 py-3 bg-white text-black font-semibold text-xs rounded-full hover:bg-neutral-200 transition-all text-center duration-200">
+              Solicitar presupuesto WordPress
+            </a>
+            <a href="javascript:void(0)" onclick="document.querySelector('.live-chat-trigger')?.click()" class="px-8 py-3 border border-neutral-800 text-neutral-300 font-medium text-xs rounded-full hover:bg-neutral-900 transition-all text-center duration-200">
+              ¿Dudas rápidas? Háblanos por el chat ahora mismo
+            </a>
           </div>
         </div>
       </div>
@@ -161,7 +396,7 @@ const isLanding = true;
       </div>
     </section>
 
-    <!-- FAQ SECTION -->
+    <!-- FAQ SECTION (REFORZADA) -->
     <section class="py-32 px-6 md:px-12 bg-black border-b border-neutral-900">
       <div class="max-w-3xl mx-auto">
         <div class="text-center mb-16">
@@ -169,15 +404,17 @@ const isLanding = true;
           <h2 class="text-3xl md:text-4xl font-light text-white tracking-tight">Preguntas Frecuentes</h2>
         </div>
         <div class="space-y-4">
+          <!-- FAQ existente 1 -->
           <details class="group border border-neutral-900 rounded-lg overflow-hidden">
             <summary class="flex items-center justify-between px-6 py-5 text-sm font-medium text-white cursor-pointer hover:bg-neutral-900/30 transition-colors list-none">
               ¿Cuál es el modelo de contratación?
               <svg class="w-4 h-4 text-neutral-500 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
             </summary>
             <div class="px-6 pb-5 text-xs text-neutral-400 leading-relaxed">
-              Ofrecemos modelos flexibles: dedicación full-time por hora/mes, proyectos con presupuesto fijo, o retainers mensuales para mantenimiento y soporte continuo. Nos adaptamos a tus necesidades.
+              Ofrecemos un modelo de cobro por horas eficientes registradas en tiempo real. No pagas por horas estimadas ni por tiempo muerto. Cada minuto de desarrollo se refleja en tu Panel de Control con detalle de tarea, proyecto y desarrollador. También disponemos de presupuestos fijos para proyectos cerrados y retainers mensuales para mantenimiento continuo.
             </div>
           </details>
+          <!-- FAQ existente 2 -->
           <details class="group border border-neutral-900 rounded-lg overflow-hidden">
             <summary class="flex items-center justify-between px-6 py-5 text-sm font-medium text-white cursor-pointer hover:bg-neutral-900/30 transition-colors list-none">
               ¿Cómo funciona la comunicación con la diferencia horaria?
@@ -187,6 +424,7 @@ const isLanding = true;
               Trabajamos en horario compatible con Europa (GMT-4 / Venezuela). Nuestro equipo está disponible desde las 8:00 AM hasta las 6:00 PM (hora local), con solapamiento directo con horario laboral europeo. Garantizamos respuesta en menos de 2 horas hábiles.
             </div>
           </details>
+          <!-- FAQ existente 3 -->
           <details class="group border border-neutral-900 rounded-lg overflow-hidden">
             <summary class="flex items-center justify-between px-6 py-5 text-sm font-medium text-white cursor-pointer hover:bg-neutral-900/30 transition-colors list-none">
               ¿Qué tecnologías dominan?
@@ -196,6 +434,7 @@ const isLanding = true;
               Astro, Next.js, React, Node.js, TypeScript, Tailwind CSS, PostgreSQL, Prisma, Vercel, AWS, Docker, y más. Evaluamos tu stack y te recomendamos la mejor arquitectura para tu proyecto.
             </div>
           </details>
+          <!-- FAQ existente 4 -->
           <details class="group border border-neutral-900 rounded-lg overflow-hidden">
             <summary class="flex items-center justify-between px-6 py-5 text-sm font-medium text-white cursor-pointer hover:bg-neutral-900/30 transition-colors list-none">
               ¿Cuál es el timeline típico de un proyecto?
@@ -205,6 +444,58 @@ const isLanding = true;
               Un MVP funcional puede estar listo en 4 a 6 semanas. Proyectos más complejos como plataformas SaaS enterprise pueden tomar de 3 a 6 meses. Durante la consultoría inicial definimos un roadmap detallado con hitos claros.
             </div>
           </details>
+
+          <!-- NUEVA FAQ 5: Seguimiento y justificación de horas -->
+          <details class="group border border-neutral-900 rounded-lg overflow-hidden">
+            <summary class="flex items-center justify-between px-6 py-5 text-sm font-medium text-white cursor-pointer hover:bg-neutral-900/30 transition-colors list-none">
+              ¿Cómo se realiza el seguimiento y la justificación de las horas cobradas?
+              <svg class="w-4 h-4 text-neutral-500 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </summary>
+            <div class="px-6 pb-5 text-xs text-neutral-400 leading-relaxed">
+              Cada hora de trabajo se registra mediante un sistema de temporizador por tarea en nuestro Panel de Control de Cliente. Puedes ver en tiempo real qué tarea se está ejecutando, qué desarrollador la está realizando, el tiempo exacto invertido y el coste acumulado. Al final de cada ciclo de facturación, recibes un desglose detallado con el histórico completo de horas por tarea, proyecto y miembro del equipo. <strong class="text-white/80">Sin estimaciones, sin suposiciones. Solo datos reales.</strong>
+            </div>
+          </details>
+
+          <!-- NUEVA FAQ 6: NDA -->
+          <details class="group border border-neutral-900 rounded-lg overflow-hidden">
+            <summary class="flex items-center justify-between px-6 py-5 text-sm font-medium text-white cursor-pointer hover:bg-neutral-900/30 transition-colors list-none">
+              ¿Se firma un acuerdo de confidencialidad (NDA)?
+              <svg class="w-4 h-4 text-neutral-500 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </summary>
+            <div class="px-6 pb-5 text-xs text-neutral-400 leading-relaxed">
+              Sí, por supuesto. Firmamos un Acuerdo de Confidencialidad (NDA) mutuo antes de iniciar cualquier colaboración. Protegemos tu propiedad intelectual, código fuente, estrategia de negocio y cualquier información sensible que compartas con nosotros. El NDA es estándar en todos nuestros proyectos y se mantiene vigente incluso después de finalizar la relación contractual.
+            </div>
+          </details>
+
+          <!-- NUEVA FAQ 7: Facturación LLC España -->
+          <details class="group border border-neutral-900 rounded-lg overflow-hidden">
+            <summary class="flex items-center justify-between px-6 py-5 text-sm font-medium text-white cursor-pointer hover:bg-neutral-900/30 transition-colors list-none">
+              ¿Cómo funciona la facturación desde una LLC internacional para una empresa española?
+              <svg class="w-4 h-4 text-neutral-500 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </summary>
+            <div class="px-6 pb-5 text-xs text-neutral-400 leading-relaxed space-y-2">
+              <p>Vortex Logic LLC está registrada en Estados Unidos y emite facturas oficiales con todos los requisitos fiscales internacionales. Para empresas españolas, la facturación se acoge al mecanismo de <strong class="text-white/80">inversión del sujeto pasivo</strong> (artículo 84.Uno.2º de la Ley del IVA), lo que significa:</p>
+              <ul class="list-disc pl-4 space-y-1">
+                <li><strong class="text-white/70">0% IVA:</strong> No se repercute IVA en la factura. Eres tú quien declara el IVA devengado y su correspondiente deducción en tu modelo 303.</li>
+                <li><strong class="text-white/70">Sin retenciones:</strong> Al ser un servicio internacional, no aplican retenciones de IRPF (modelo 123/124).</li>
+                <li><strong class="text-white/70">Factura 100% deducible</strong> como gasto de desarrollo informático para tu empresa.</li>
+              </ul>
+              <p class="mt-2">Aceptamos pago por tarjeta de crédito, transferencia SEPA (Europa), ACH (EE.UU.) y Binance Pay. Te emitimos la factura en euros para tu comodidad.</p>
+            </div>
+          </details>
+        </div>
+
+        <!-- CTA post-FAQ -->
+        <div class="mt-12 text-center">
+          <p class="text-sm text-neutral-400 font-light mb-4">¿Tienes más preguntas? Resuélvelas ahora mismo.</p>
+          <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a href="/contacto" class="px-8 py-3 bg-white text-black font-semibold text-xs rounded-full hover:bg-neutral-200 transition-all text-center duration-200">
+              Solicitar consultoría gratuita
+            </a>
+            <a href="javascript:void(0)" onclick="document.querySelector('.live-chat-trigger')?.click()" class="px-8 py-3 border border-neutral-800 text-neutral-300 font-medium text-xs rounded-full hover:bg-neutral-900 transition-all text-center duration-200">
+              ¿Dudas rápidas? Háblanos por el chat ahora mismo
+            </a>
+          </div>
         </div>
       </div>
     </section>
@@ -215,7 +506,7 @@ const isLanding = true;
         <div class="text-center mb-12">
           <span class="inline-block px-3 py-1.5 border border-neutral-800 rounded-full text-[10px] font-mono uppercase tracking-widest text-neutral-500 mb-6">Contacto</span>
           <h2 class="text-3xl md:text-4xl font-light text-white mb-4 tracking-tight">Solicita una consultoría gratuita</h2>
-          <p class="text-sm text-neutral-400 font-light">Cuéntanos sobre tu proyecto y te enviaremos una propuesta técnica en menos de 48 horas.</p>
+          <p class="text-sm text-neutral-400 font-light">Cuéntanos sobre tu proyecto y te enviaremos una propuesta técnica en menos de 48 horas. Sin compromiso.</p>
         </div>
         <form id="contact-form-partner" class="linear-card p-8 rounded-lg border border-neutral-900 bg-neutral-950/40 text-left space-y-6">
           <input type="hidden" name="service" value="partner-tecnologico-b2b" />
@@ -240,6 +531,12 @@ const isLanding = true;
           </button>
           <p id="form-status-partner" class="text-xs text-center hidden"></p>
         </form>
+        <div class="mt-6 text-center">
+          <p class="text-xs text-neutral-500">¿Prefieres una respuesta inmediata?</p>
+          <a href="javascript:void(0)" onclick="document.querySelector('.live-chat-trigger')?.click()" class="inline-block mt-2 text-xs text-neutral-400 underline hover:text-white transition-colors">
+            Háblanos por el chat web ahora →
+          </a>
+        </div>
       </div>
     </section>
 

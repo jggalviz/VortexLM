@@ -86,8 +86,9 @@ const criticalCSS = `
         };
         
         if (typeof(gtag) !== 'undefined') {
-          // Disparo del evento real de contacto trackeado por Google Ads
-          gtag('event', 'ads_conversion_Contactar_1', {
+          // Disparo de la conversión real de contacto generada por Google Ads
+          gtag('event', 'conversion', {
+            'send_to': 'AW-18175185887/zparCIGTksIcEN-nzdpD',
             'event_callback': callback
           });
         } else {

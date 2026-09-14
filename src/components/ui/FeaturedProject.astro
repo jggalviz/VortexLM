@@ -1,0 +1,263 @@
+---
+/**
+ * FeaturedProject.astro
+ * ---------------------------------------------------------------------------
+ * Tarjeta destacada de "Proyecto Destacado / Caso de Éxito" para la landing
+ * page de Vortex. Se usa para presentar productos propios (SaaS) construidos
+ * por el estudio, resaltando su propuesta de valor y sus características
+ * clave, con un mockup de preview a la derecha.
+ *
+ * Layout: 2 columnas en escritorio (texto/features + preview visual) y
+ * 1 columna fluida en móvil.
+ * ---------------------------------------------------------------------------
+ */
+
+/** Característica / viñeta destacada del producto */
+export type ProjectFeature = string;
+
+/** Llamado a la acción de la tarjeta */
+export interface ProjectCta {
+  label: string;
+  href: string;
+  /** `true` abre el enlace en una nueva pestaña con rel="noopener noreferrer" */
+  external?: boolean;
+}
+
+/** Indicador numérico mostrado en el preview del producto */
+export interface ProjectKpi {
+  label: string;
+  value: string;
+  hint?: string;
+}
+
+export type AgendaTone = 'teal' | 'amber' | 'zinc';
+
+/** Reserva / cita mostrada en el preview de agenda del producto */
+export interface AgendaSlot {
+  time: string;
+  patient: string;
+  status: string;
+  tone?: AgendaTone;
+}
+
+/** Chip informativo del preview (ej: "IVA 16%", "BCV en vivo") */
+export interface PreviewTag {
+  label: string;
+  icon?: string;
+}
+
+export interface Props {
+  /** Chip superior principal (ej: "🚀 Proyecto Destacado") */
+  badge: string;
+  /** Chip secundario con categoría / año (ej: "SaaS Médico · 2026") */
+  badgeSecondary?: string;
+  /** Nombre del proyecto (ej: "Medisys") */
+  title: string;
+  /** Pitch corto del producto */
+  subtitle: string;
+  /** Dominio mostrado en la barra del navegador del preview */
+  domain?: string;
+  /** Estado de operación mostrado en la barra del preview */
+  statusLabel?: string;
+  /** Lista de características clave */
+  features?: ProjectFeature[];
+  /** CTA principal (obligatorio) */
+  primaryCta: ProjectCta;
+  /** CTA secundario u opcional */
+  secondaryCta?: ProjectCta;
+  /** Métricas resumidas del preview */
+  kpis?: ProjectKpi[];
+  /** Reservas de ejemplo del preview */
+  agenda?: AgendaSlot[];
+  /** Chips técnicos / comerciales del preview */
+  tags?: PreviewTag[];
+  /** Etiqueta pequeña sobre el bloque de KPIs */
+  kpiGroupLabel?: string;
+  /** Etiqueta pequeña sobre el bloque de agenda */
+  agendaGroupLabel?: string;
+}
+
+const {
+  badge,
+  badgeSecondary,
+  title,
+  subtitle,
+  domain = 'medisys.com.ve',
+  statusLabel = 'En producción',
+  features = [],
+  primaryCta,
+  secondaryCta,
+  kpis = [],
+  agenda = [],
+  tags = [],
+  kpiGroupLabel = 'Panel operativo',
+  agendaGroupLabel = 'Agenda de hoy',
+} = Astro.props;
+
+const toneClasses: Record<AgendaTone, string> = {
+  teal: 'bg-teal-500/10 text-teal-300 border-teal-500/25',
+  amber: 'bg-amber-500/10 text-amber-300 border-amber-500/25',
+  zinc: 'bg-white/[0.04] text-[#8a8a93] border-[#1f1f24]',
+};
+---
+<article
+  class="linear-card glow-hover rounded-2xl border border-[#1f1f24] bg-[#08080c]/50 p-7 md:p-12 shadow-sm hover:shadow-xl hover:border-teal-500/40 transition-all duration-300"
+>
+  <!-- Halo teal de acento (identidad visual Medisys) -->
+  <div class="absolute -top-32 -right-24 w-[420px] h-[420px] bg-teal-500/[0.07] blur-[120px] rounded-full pointer-events-none" aria-hidden="true"></div>
+
+  <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+
+    <!-- ─── Columna izquierda: badge + pitch + features + CTAs ─────── -->
+    <div class="lg:col-span-6 space-y-6">
+      <!-- Badges -->
+      <div class="flex flex-wrap items-center gap-2.5">
+        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-teal-500/30 bg-teal-500/10 text-teal-300 text-[10px] font-mono uppercase tracking-widest">
+          {badge}
+        </span>
+        {badgeSecondary && (
+          <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-[#1f1f24] bg-white/[0.03] text-[#8a8a93] text-[10px] font-mono uppercase tracking-widest">
+            {badgeSecondary}
+          </span>
+        )}
+      </div>
+
+      <!-- Título + pitch -->
+      <div>
+        <h3 class="text-3xl md:text-4xl font-light text-white tracking-tight leading-tight">
+          {title}
+        </h3>
+        <p class="text-sm text-[#cbd5e1] font-light leading-relaxed mt-4">
+          {subtitle}
+        </p>
+      </div>
+
+      <!-- Características clave -->
+      {features.length > 0 && (
+        <ul class="space-y-3 pt-1">
+          {features.map((feature) => (
+            <li class="flex items-start gap-3 text-xs text-[#cbd5e1] font-light leading-relaxed">
+              <span
+                class="mt-[1px] w-4 h-4 shrink-0 rounded-full bg-teal-500/10 border border-teal-500/30 flex items-center justify-center text-teal-400 text-[9px] font-bold"
+                aria-hidden="true"
+              >
+                &#10003;
+              </span>
+              <span>{feature}</span>
+            </li>
+          ))}
+        </ul>
+      )}
+
+      <!-- CTAs -->
+      <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-4">
+        <a
+          href={primaryCta.href}
+          target={primaryCta.external ? '_blank' : undefined}
+          rel={primaryCta.external ? 'noopener noreferrer' : undefined}
+          class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-teal-600 text-white text-xs font-semibold tracking-wide hover:bg-teal-500 transition-all duration-200 active:scale-[0.97] shadow-[0_0_25px_rgba(13,148,136,0.25)]"
+        >
+          {primaryCta.label}
+          {primaryCta.external && <span class="text-[10px]" aria-hidden="true">&#8599;</span>}
+        </a>
+        {secondaryCta && (
+          <a
+            href={secondaryCta.href}
+            target={secondaryCta.external ? '_blank' : undefined}
+            rel={secondaryCta.external ? 'noopener noreferrer' : undefined}
+            class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full border border-[#1f1f24] bg-white/[0.02] text-[#cbd5e1] text-xs font-medium hover:text-white hover:border-teal-500/40 transition-all duration-200 active:scale-[0.97]"
+          >
+            {secondaryCta.label}
+          </a>
+        )}
+      </div>
+    </div>
+    <!-- ─── Columna derecha: preview visual del producto ───────────── -->
+    <div class="lg:col-span-6">
+      <div class="rounded-2xl border border-[#1f1f24] bg-black overflow-hidden shadow-[0_40px_80px_-20px_rgba(0,0,0,0.95)]">
+        <!-- Barra de navegador -->
+        <div class="bg-[#08080c] px-4 py-3 flex items-center gap-3 border-b border-[#1f1f24]">
+          <div class="flex items-center gap-1.5" aria-hidden="true">
+            <span class="w-2.5 h-2.5 rounded-full bg-[#ff5f56]/50"></span>
+            <span class="w-2.5 h-2.5 rounded-full bg-[#ffbd2e]/50"></span>
+            <span class="w-2.5 h-2.5 rounded-full bg-[#27c93f]/50"></span>
+          </div>
+          <div class="flex-1 flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-black border border-[#1f1f24] text-[10px] font-mono text-[#cbd5e1]/70 min-w-0">
+            <span class="material-symbols-outlined text-[11px] text-teal-400">lock</span>
+            <span class="truncate">{domain}</span>
+          </div>
+          <span class="hidden sm:inline-flex items-center gap-1.5 text-[9px] font-mono text-teal-300 whitespace-nowrap">
+            <span class="w-1.5 h-1.5 rounded-full bg-teal-400"></span>
+            {statusLabel}
+          </span>
+        </div>
+
+        <!-- Cuerpo del preview -->
+        <div class="p-5 space-y-5 bg-[#050507]/70">
+          <!-- KPIs -->
+          {kpis.length > 0 && (
+            <div class="space-y-3">
+              <span class="text-[9px] uppercase tracking-wider text-[#cbd5e1]/40 font-mono font-semibold block">
+                {kpiGroupLabel}
+              </span>
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                {kpis.map((kpi) => (
+                  <div class="p-3 rounded-lg border border-[#1f1f24] bg-black/60">
+                    <div class="text-[9px] font-mono uppercase tracking-wider text-[#8a8a93] mb-1 truncate">
+                      {kpi.label}
+                    </div>
+                    <div class="text-sm font-medium text-white truncate">{kpi.value}</div>
+                    {kpi.hint && (
+                      <div class="text-[9px] font-mono text-teal-400/80 mt-1 truncate">{kpi.hint}</div>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+          <!-- Agenda 24/7 -->
+          {agenda.length > 0 && (
+            <div class="space-y-3">
+              <span class="text-[9px] uppercase tracking-wider text-[#cbd5e1]/40 font-mono font-semibold block">
+                {agendaGroupLabel}
+              </span>
+              <div class="divide-y divide-[#1f1f24] rounded-lg border border-[#1f1f24] bg-black/60 overflow-hidden">
+                {agenda.map((slot) => (
+                  <div class="flex items-center gap-3 px-3 py-2.5">
+                    <span class="text-[10px] font-mono text-[#cbd5e1]/80 shrink-0">{slot.time}</span>
+                    <span class="text-[11px] text-white/90 flex-grow truncate">{slot.patient}</span>
+                    <span
+                      class={`shrink-0 px-2 py-0.5 rounded-full border text-[8px] font-mono uppercase tracking-wide whitespace-nowrap ${toneClasses[slot.tone ?? 'zinc']}`}
+                    >
+                      {slot.status}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          <!-- Chips técnicos / comerciales -->
+          {tags.length > 0 && (
+            <div class="flex flex-wrap items-center gap-2 pt-1">
+              {tags.map((tag) => (
+                <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white/[0.03] border border-[#1f1f24] text-[9px] font-mono text-[#cbd5e1]/80">
+                  {tag.icon && (
+                    <span class="material-symbols-outlined text-[11px] text-teal-400" aria-hidden="true">
+                      {tag.icon}
+                    </span>
+                  )}
+                  {tag.label}
+                </span>
+              ))}
+            </div>
+          )}
+        </div>
+      </div>
+    </div>
+
+  </div>
+</article>
+
+
+

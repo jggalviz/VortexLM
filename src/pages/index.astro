@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import FeaturedProject from '../components/ui/FeaturedProject.astro';
 ---
 <BaseLayout 
   title="Vortex - Desarrollo Web de Alto Rendimiento y Software a Medida" 
@@ -160,6 +161,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <div class="max-w-[1200px] mx-auto px-12 h-10 flex items-center justify-between text-[10px] text-[#cbd5e1] font-mono">
       <div class="flex items-center gap-6">
         <a href="#features" class="hover:text-white transition-colors">Características</a>
+        <a href="#proyectos" class="hover:text-white transition-colors">Proyectos</a>
         <a href="#optimización" class="hover:text-white transition-colors">Optimización SEO</a>
         <a href="#plataformas" class="hover:text-white transition-colors">Aplicaciones a Medida</a>
       </div>
@@ -372,6 +374,61 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           </div>
         </a>
       </div>
+    </div>
+  </section>
+
+  <!-- ─── PROYECTOS RECIENTES / CASO DE ÉXITO ─────────────────────── -->
+  <section id="proyectos" class="py-36 px-6 md:px-12 bg-black relative border-b border-[#1f1f24]">
+    <div class="max-w-[1200px] mx-auto relative z-10">
+      <div class="max-w-4xl mb-16">
+        <span class="text-[10px] font-mono text-[#cbd5e1] uppercase tracking-widest block mb-3 font-medium">Proyectos Recientes</span>
+        <h2 class="text-2xl md:text-4xl font-light text-white tracking-tight leading-snug">
+          Software propio en producci&oacute;n. Nuestro producto insignia.
+        </h2>
+        <p class="text-sm text-[#cbd5e1] font-light leading-relaxed mt-4 max-w-3xl">
+          Adem&aacute;s de construir plataformas para nuestros clientes, desarrollamos productos SaaS
+          propios que resuelven problemas concretos del mercado venezolano. Medisys es nuestro
+          caso de &eacute;xito m&aacute;s reciente: agendamiento online, control fiscal y cobros
+          multimoneda en una sola plataforma.
+        </p>
+      </div>
+
+      <FeaturedProject
+        badge="🚀 Proyecto Destacado"
+        badgeSecondary="SaaS Médico · 2026"
+        title="Medisys"
+        subtitle="Plataforma integral de agendamiento médico, control fiscal SENIAT y gestión multimoneda para consultorios y clínicas en Venezuela."
+        domain="medisys.com.ve"
+        statusLabel="En producción"
+        kpiGroupLabel="Panel Medisys"
+        agendaGroupLabel="Agenda 24/7"
+        features={[
+          'Agendamiento 24/7 con enlaces permanentes y perfil público profesional',
+          'Facturación y cobros adaptados a Venezuela: BCV en vivo, IVA (16%) e IGTF (3%)',
+          'Libro de Ventas SENIAT, cuadre de caja diario y liquidación de honorarios',
+          'Modelo Freemium: Primeras 30 reservas gratis sin pagos por adelantado',
+        ]}
+        primaryCta={{ label: 'Visitar Medisys', href: 'https://medisys.com.ve', external: true }}
+        secondaryCta={{ label: 'Agendar demo guiada', href: '#contacto' }}
+        kpis={[
+          { label: 'Reservas', value: '24/7', hint: 'Enlace permanente' },
+          { label: 'Multimoneda', value: 'BCV en vivo', hint: 'IVA 16% · IGTF 3%' },
+          { label: 'Prueba gratis', value: '30 reservas', hint: 'Sin pago adelantado' },
+        ]}
+        agenda={[
+          { time: '09:00', patient: 'Consulta general', status: 'Confirmada', tone: 'teal' },
+          { time: '10:30', patient: 'Control · Cardiología', status: 'Cobro IGTF', tone: 'amber' },
+          { time: '11:15', patient: 'Primera consulta online', status: 'Reserva web', tone: 'zinc' },
+        ]}
+        tags={[
+          { label: 'BCV en vivo', icon: 'currency_exchange' },
+          { label: 'IVA 16%', icon: 'receipt_long' },
+          { label: 'IGTF 3%', icon: 'credit_card' },
+          { label: 'Libro SENIAT', icon: 'account_balance' },
+          { label: '30 reservas gratis', icon: 'redeem' },
+        ]}
+
+      />
     </div>
   </section>
 

@@ -8,10 +8,11 @@ dist/
 # env
 .env
 .env.*
+# el template sí se versiona (la negación debe ir después de las reglas de ignore)
 !.env.example
 
 # macos
 .DS_Store
 
 .vercel
-.env*
+# nota: `.env` y `.env.*` de arriba ya cubren todas las variantes locales

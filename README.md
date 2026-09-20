@@ -50,11 +50,11 @@ Architecturally, the project is a single Astro application running in **SSR mode
 - **Internal admin panel** — `/dashboard/admin`, gated by the `es_admin` flag on `perfiles_clientes`, exposing vCredits balance editing, project status changes, task injection and invoice validation.
 
 ### Performance, DX & Observability
-- **No render-blocking CSS** — critical CSS (font-faces, resets, Linear-style design system) is inlined in the document `head`; the remaining stylesheet loads with the `media="print"` → `onload="this.media='all'"` pattern.
+- **Zero render-blocking CSS (audited)** — `build.inlineStylesheets: 'always'` inlines each page's stylesheet into the HTML response, so no public route ships a `<link rel="stylesheet">` on the critical path (33 routes verified: 0 external stylesheets). Tailwind's global entry is owned by `src/styles/tailwind.css` with the integration's implicit injection disabled (`applyBaseStyles: false`), which also keeps the CMS route free of public-site CSS. The self-hosted font stylesheet still loads off the critical path via `media="print"` → `onload="this.media='all'"`, with a `<noscript>` fallback.
 - **Self-hosted variable fonts** — Inter, JetBrains Mono, Space Grotesk and Material Symbols via `@fontsource`, with `font-display: swap` and an adjusted `Inter Fallback` metric override to suppress layout shift.
 - **Partytown web-worker analytics** — GTM (`GTM-P4MK3GT9`) and GA4 execute off the main thread, with Google domains resolved through a first-party proxy (`cdn.builder.io/api/v1/proxy-api`).
 - **Conversion tracking** — a global `gtag_report_conversion()` helper fires the Google Ads conversion (`AW-18175185887`) on WhatsApp CTA clicks; Vercel Web Analytics is enabled through the adapter.
-- **Bundle isolation** — Keystatic's React/Radix dependency graph is forced into a dedicated `keystatic-vendor` chunk so CMS CSS/JS never reaches public page payloads.
+- **Bundle isolation (verified)** — `manualChunks` keeps the Keystatic CMS graph in its own 2.75 MB chunk (`keystatic-page`), React core in `react-vendor` (194 KB) and tiny shared helpers in `vendor-shared`. The CMS chunk is only referenced from `/keystatic/*`, so hydrated portal islands load ≈400 KB instead of the full CMS bundle, and public pages load no JavaScript at all.
 - **Strict typing** — `astro/tsconfigs/strict` applied to `src/**` and `keystatic.config.tsx`.
 
 ---
@@ -75,7 +75,7 @@ Architecturally, the project is a single Astro application running in **SSR mode
 
 | Layer | Technology | Notes |
 | --- | --- | --- |
-| Styling | **Tailwind CSS** `^3.4.0` | `@astrojs/tailwind`, `darkMode: 'class'`, JIT content scanning over `src/**` |
+| Styling | **Tailwind CSS** `^3.4.0` | `@astrojs/tailwind` with `applyBaseStyles: false`; single owned entry `src/styles/tailwind.css` (`@tailwind base/components/utilities`), inlined via `build.inlineStylesheets: 'always'`; `darkMode: 'class'` |
 | Typography plugin | **@tailwindcss/typography** `^0.5.19` | `prose prose-invert` styling for MDX articles |
 | Design tokens | Material-3-style palette + `linear-*` aliases | Black/near-black "Linear.app" aesthetic (`#000000`, `#08080c`, `#1f1f24`) |
 | Fonts | `@fontsource-variable/inter`, `@fontsource-variable/jetbrains-mono`, `@fontsource/space-grotesk`, `@fontsource/material-symbols-outlined` | Self-hosted, `font-display: swap`, zero third-party font requests |
@@ -179,7 +179,9 @@ VortexLM/
    │  ├─ dashboard/          # index, proyectos/[id], facturacion, admin
    │  ├─ servicios/ | soluciones/ | blog/
    │  └─ index.astro, precios.astro, contacto.astro, login.astro, registro.astro, 404.astro
-   └─ styles/fonts.css       # @fontsource imports
+   └─ styles/
+      ├─ tailwind.css        # Owned Tailwind entry (base + components + utilities)
+      └─ fonts.css           # @fontsource imports (loaded async)
 ```
 
 ---
@@ -436,7 +438,9 @@ Business rules enforced by the UI copy and the portal: **1 vCredit = 1 hour** of
 - **Sitemap exclusions are intentional** — `/desarrollo-web-caracas` and `/partner-tecnologico-b2b` are Google Ads destinations and are filtered out of the generated sitemap in `astro.config.mjs` to avoid organic/paid cannibalization.
 - **`robots.txt`** still lists legacy `Disallow: /item*` and `/hg/` rules inherited from a previous platform; safe to prune after auditing crawl logs.
 - **`src/data/mockDashboardData.ts`** is a typed fixture used for UI prototyping; the live portal reads exclusively from Supabase.
-- **Build warnings are expected** — Vite reports empty chunks for some prerendered pages and a >500 kB `keystatic-vendor` chunk; the latter is deliberate isolation for the admin CMS route.
+- **CSS delivery strategy** — the global Tailwind bundle (≈102 KB raw / ≈13 KB gzip) is inlined into every HTML response instead of being a separate request. Rationale: most funnel sessions are single-page views on unstable networks, so removing one round trip beats cross-navigation CSS caching. Measured payload: blog HTML ≈133 KB raw / 25 KB gzip with zero blocking stylesheets.
+- **Misleading asset names are fixed at the source** — the previous build emitted `/_astro/keystatic-astro-page.<hash>.css` on every public page. It contained no Keystatic code: it was Tailwind's globally injected `base.css`, attributed by Rollup to the CMS entry. Owning the entry removes both the blocking request and the confusing name.
+- **Build warnings are expected** — Vite still reports the intentionally large CMS chunks (`keystatic-page` ≈2.75 MB, `react-vendor` ≈194 KB); they are isolated on purpose and only fetched by the routes that need them.
 - **Analytics proxy** — Partytown resolves `googletagmanager.com` / `google-analytics.com` through `cdn.builder.io/api/v1/proxy-api`; if that proxy becomes unavailable, tags fall back to direct loading at the cost of main-thread work.
 
 ---

@@ -1,4 +1,8 @@
 ---
+// Global Tailwind entry — owned by the project (see src/styles/tailwind.css).
+// Loaded here so every public page ships Tailwind inlined instead of through an
+// external, render-blocking stylesheet.
+import '../styles/tailwind.css';
 import fontsCSS from '../styles/fonts.css?url';
 import SEO from '../components/seo/SEO.astro';
 import Navbar from '../components/ui/Navbar.astro';

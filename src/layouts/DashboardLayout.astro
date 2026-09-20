@@ -2,6 +2,8 @@
 // src/layouts/DashboardLayout.astro
 // Exclusive layout for the B2B Client Portal — dark, clean, premium sidebar layout
 // Includes Supabase session verification — redirects to /login if no active session
+// Global Tailwind entry (utilities + preflight) — see src/styles/tailwind.css.
+import '../styles/tailwind.css';
 import SEO from '../components/seo/SEO.astro';
 import { supabase } from '../lib/supabaseClient';
 

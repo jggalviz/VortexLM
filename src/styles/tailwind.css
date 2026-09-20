@@ -1,0 +1,19 @@
+/*
+ * Global Tailwind entry point.
+ *
+ * This file replaces the implicit global injection previously performed by
+ * `@astrojs/tailwind` (applyBaseStyles: true), which injected `base.css` into
+ * every page via a `page-ssr` script. That injection made Astro emit the whole
+ * Tailwind bundle as an EXTERNAL, render-blocking stylesheet (it appeared in
+ * the build as `keystatic-astro-page.<hash>.css` because Rollup attributed the
+ * shared CSS asset to the Keystatic admin entry).
+ *
+ * By owning the entry explicitly and importing it from the layouts, the CSS:
+ *   1. is only loaded by the documents that actually use Tailwind utilities,
+ *   2. never reaches the `/keystatic` CMS route,
+ *   3. is inlined into the HTML thanks to `build.inlineStylesheets: 'always'`,
+ *      so it no longer blocks the first render (critical for LCP on slow 3G/4G).
+ */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

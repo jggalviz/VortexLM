@@ -5,7 +5,6 @@ import mdx from '@astrojs/mdx';
 import react from '@astrojs/react';
 import keystatic from '@keystatic/astro';
 import sitemap from '@astrojs/sitemap';
-import partytown from '@astrojs/partytown';
 
 export default defineConfig({
   site: 'https://vortexlm.com',
@@ -43,19 +42,6 @@ export default defineConfig({
       filter: (page) =>
         !page.includes('/desarrollo-web-caracas') &&
         !page.includes('/partner-tecnologico-b2b'),
-    }),
-    partytown({
-      config: {
-        forward: ["dataLayer.push"],
-        resolveUrl: function (url) {
-          if (url.hostname === 'www.googletagmanager.com' || url.hostname === 'www.google-analytics.com') {
-            var proxyUrl = new URL('https://cdn.builder.io/api/v1/proxy-api');
-            proxyUrl.searchParams.append('url', url.href);
-            return proxyUrl;
-          }
-          return url;
-        }
-      }
     }),
   ],
   vite: {

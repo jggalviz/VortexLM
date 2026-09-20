@@ -52,8 +52,8 @@ Architecturally, the project is a single Astro application running in **SSR mode
 ### Performance, DX & Observability
 - **Zero render-blocking CSS (audited)** — `build.inlineStylesheets: 'always'` inlines each page's stylesheet into the HTML response, so no public route ships a `<link rel="stylesheet">` on the critical path (33 routes verified: 0 external stylesheets). Tailwind's global entry is owned by `src/styles/tailwind.css` with the integration's implicit injection disabled (`applyBaseStyles: false`), which also keeps the CMS route free of public-site CSS. The self-hosted font stylesheet still loads off the critical path via `media="print"` → `onload="this.media='all'"`, with a `<noscript>` fallback.
 - **Self-hosted variable fonts** — Inter, JetBrains Mono, Space Grotesk and Material Symbols via `@fontsource`, with `font-display: swap` and an adjusted `Inter Fallback` metric override to suppress layout shift.
-- **Partytown web-worker analytics** — GTM (`GTM-P4MK3GT9`) and GA4 execute off the main thread, with Google domains resolved through a first-party proxy (`cdn.builder.io/api/v1/proxy-api`).
-- **Conversion tracking** — a global `gtag_report_conversion()` helper fires the Google Ads conversion (`AW-18175185887`) on WhatsApp CTA clicks; Vercel Web Analytics is enabled through the adapter.
+- **Deferred third-party analytics** — no `googletagmanager.com` request is made during the initial load. A ~3.4 KB inline bootstrap queues `dataLayer`/`gtag` calls from the first byte and injects `gtag.js` (Google Ads) plus `gtm.js` (GTM container) only on the first user signal: interaction, an idle callback with a 4 s timeout, or page hide. Removing GTM from the critical path also removed Partytown's eager service-worker bootstrap from every page.
+- **Conversion tracking that can't lose the click** — `gtag_report_conversion()` keeps its original contract (same `send_to: AW-18175185887/zparCIGTksIcEN-nzdpD`, same `event_callback` flow) and now forces the loader on click, with a 900 ms safety net so a blocked or slow tag can never leave a WhatsApp CTA dead.
 - **Bundle isolation (verified)** — `manualChunks` keeps the Keystatic CMS graph in its own 2.75 MB chunk (`keystatic-page`), React core in `react-vendor` (194 KB) and tiny shared helpers in `vendor-shared`. The CMS chunk is only referenced from `/keystatic/*`, so hydrated portal islands load ≈400 KB instead of the full CMS bundle, and public pages load no JavaScript at all.
 - **Strict typing** — `astro/tsconfigs/strict` applied to `src/**` and `keystatic.config.tsx`.
 
@@ -80,7 +80,7 @@ Architecturally, the project is a single Astro application running in **SSR mode
 | Design tokens | Material-3-style palette + `linear-*` aliases | Black/near-black "Linear.app" aesthetic (`#000000`, `#08080c`, `#1f1f24`) |
 | Fonts | `@fontsource-variable/inter`, `@fontsource-variable/jetbrains-mono`, `@fontsource/space-grotesk`, `@fontsource/material-symbols-outlined` | Self-hosted, `font-display: swap`, zero third-party font requests |
 | Interactive islands | **React** `^19.2.6` via `@astrojs/react` `^5.0.4` | `client:load` used exclusively inside `/dashboard` |
-| Off-thread scripts | **@astrojs/partytown** `^2.1.7` | GTM + GA4 executed in a web worker |
+| Analytics bootstrap | Inline shim, `src/scripts/analytics-loader.js` via `?raw` | ~3.4 KB inline (comments stripped at build time); injects GTM/gtag after the first user signal |
 
 ### Backend, Data & Integrations
 
@@ -92,7 +92,7 @@ Architecturally, the project is a single Astro application running in **SSR mode
 | AI model | **DeepSeek `deepseek-chat`** | `https://api.deepseek.com/chat/completions`, bearer key held server-side |
 | Transactional email | **Resend** `^6.12.3` | Lead notifications from `info@vortexlm.com` |
 | Messaging | **WhatsApp Business deep links** (`wa.me`) | Primary conversion channel with Ads tracking |
-| Analytics | **GTM · GA4 · Google Ads · Vercel Web Analytics** | Container `GTM-P4MK3GT9`, conversion `AW-18175185887` |
+| Analytics | **GTM · GA4 · Google Ads · Vercel Web Analytics** | Deferred (interaction / idle 4 s / page hide); container `GTM-P4MK3GT9`, conversion `AW-18175185887` |
 | CMS | **Keystatic** (`@keystatic/core` `^0.5.50`, `@keystatic/astro` `^5.0.6`) | GitHub storage in production, local storage in development |
 | Content pipeline | `@astrojs/mdx` `^4.1.0` + **Content Collections** | Zod schema: `title`, `description`, `pubDate`, `author`, `image`, `category` |
 | SEO | `@astrojs/sitemap` `^3.7.2` | Filtered sitemap + static `robots.txt` |
@@ -147,7 +147,7 @@ Architecturally, the project is a single Astro application running in **SSR mode
 
 ### Request Flows
 
-1. **Public page render (SSR, no hydration)** — the request hits the Vercel function, Astro renders the page with `BaseLayout`, which inlines critical CSS, emits SEO/JSON-LD tags, loads the font stylesheet asynchronously and runs GTM/GA4 inside a Partytown worker. Result: HTML-first payload with no client framework runtime.
+1. **Public page render (SSR, no hydration)** — the request hits the Vercel function, Astro renders the page with `BaseLayout`, which inlines critical CSS, emits SEO/JSON-LD tags, loads the font stylesheet asynchronously and writes the analytics bootstrap inline. No third-party JS is requested during the initial load; the Google tags are injected afterwards on the first user signal. Result: HTML-first payload with no client framework runtime.
 2. **Lead capture** — the visitor submits a `ContactForm` (`FormData`) → `POST /api/contact` validates `name`, `email` and `service` → Resend sends the notification to `info@vortexlm.com`. The endpoint returns `{ success: true }` or a Spanish error message consumed by the inline feedback element.
 3. **AI conversation** — the client posts `{ messages: [...] }` → `POST /api/chat` prepends the guardrailed system prompt → DeepSeek returns a completion (`max_tokens: 300`, non-streaming) → the response is proxied back unchanged, with `502/500` mapped to friendly errors.
 4. **Authentication** — `/login` or `/registro` calls `supabase.auth.signInWithPassword` / `signUp` with `nombre_empresa` metadata; the database trigger creates the `perfiles_clientes` row and grants the initial vCredits.
@@ -174,6 +174,9 @@ VortexLM/
    ├─ data/                  # mockDashboardData.ts (typed fixture model)
    ├─ layouts/               # BaseLayout.astro, DashboardLayout.astro
    ├─ lib/supabaseClient.ts  # Shared Supabase browser/SSR client
+   ├─ scripts/
+   │  ├─ analytics-loader.js # Inline queue-first shim + deferred GTM/gtag loader
+   │  └─ analytics-inline.ts # Comment stripping + bootstrap builder (runs once)
    ├─ pages/
    │  ├─ api/                # contact.ts, chat.ts
    │  ├─ dashboard/          # index, proyectos/[id], facturacion, admin
@@ -441,7 +444,8 @@ Business rules enforced by the UI copy and the portal: **1 vCredit = 1 hour** of
 - **CSS delivery strategy** — the global Tailwind bundle (≈102 KB raw / ≈13 KB gzip) is inlined into every HTML response instead of being a separate request. Rationale: most funnel sessions are single-page views on unstable networks, so removing one round trip beats cross-navigation CSS caching. Measured payload: blog HTML ≈133 KB raw / 25 KB gzip with zero blocking stylesheets.
 - **Misleading asset names are fixed at the source** — the previous build emitted `/_astro/keystatic-astro-page.<hash>.css` on every public page. It contained no Keystatic code: it was Tailwind's globally injected `base.css`, attributed by Rollup to the CMS entry. Owning the entry removes both the blocking request and the confusing name.
 - **Build warnings are expected** — Vite still reports the intentionally large CMS chunks (`keystatic-page` ≈2.75 MB, `react-vendor` ≈194 KB); they are isolated on purpose and only fetched by the routes that need them.
-- **Analytics proxy** — Partytown resolves `googletagmanager.com` / `google-analytics.com` through `cdn.builder.io/api/v1/proxy-api`; if that proxy becomes unavailable, tags fall back to direct loading at the cost of main-thread work.
+- **Deferred analytics trade-off** — Google tags load on the first interaction, on idle (4 s, `delayMs` prop in `GoogleTagManager.astro`) or when the tab is hidden. Bounces shorter than the idle window with zero interaction are therefore not measured by GA4; pass `delayMs={0}` to switch to interaction-only loading (maximum PageSpeed gain, more data loss) or raise the delay to trade the other way. Google Ads conversions are unaffected: a CTA click always loads the tag immediately.
+- **Partytown was removed on purpose** — it initialised a service worker and a sandbox iframe on every page load, proxied `googletagmanager.com` through a third-party endpoint (`cdn.builder.io`) and cannot consume scripts injected after its bootstrap, so it is incompatible with deferred loading. `@astrojs/partytown` is still declared in `package.json` but no longer registered in `astro.config.mjs`; uninstall it on a Linux environment (this lockfile targets Linux, so `npm uninstall` fails on Windows with `notsup`).
 
 ---
 

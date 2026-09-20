@@ -1,36 +1,51 @@
 ---
+// src/components/seo/GoogleTagManager.astro
+// Deferred Google Tag Manager + Google Ads (gtag.js) + GA4 bootstrap.
+//
+// Why this shape: loading gtag.js/gtm.js during the initial load cost ~145 KiB
+// of third-party transfer and ~59 KiB of unused JS on the main thread, which is
+// exactly what PageSpeed Insights flagged. Instead, this component only ships a
+// ~1 KB queue-first shim and injects the real tags on the first user signal
+// (interaction, idle timeout or page hide). See src/scripts/analytics-loader.js.
+import { buildAnalyticsBootstrap } from '../../scripts/analytics-inline';
+
 export interface Props {
+  /** GTM container ID, e.g. GTM-P4MK3GT9 */
   gtmId: string;
+  /** Google Ads conversion ID, e.g. AW-18175185887 */
+  adsId: string;
+  /** Full conversion target, e.g. AW-18175185887/zparCIGTksIcEN-nzdpD */
+  conversionSendTo: string;
+  /** GA4 measurement ID (optional, sourced from PUBLIC_GA4_ID) */
   ga4Id?: string;
+  /** Idle delay in ms before tags are injected without interaction. `0` = interaction only. */
+  delayMs?: number;
 }
 
-const { gtmId, ga4Id } = Astro.props;
+const { gtmId, adsId, conversionSendTo, ga4Id, delayMs = 4000 } = Astro.props;
+
+const analyticsConfig = {
+  gtmId,
+  adsId,
+  conversionSendTo,
+  ga4Id: ga4Id ?? '',
+  delayMs,
+};
+
+// Config + comment-free loader source, inlined in one <script> (no extra request).
+const inlineLoader = buildAnalyticsBootstrap(analyticsConfig);
 ---
 
-<!-- Google Tag Manager + Google Analytics 4 (via Partytown Web Worker) -->
-<script type="text/partytown" define:vars={{ gtmId, ga4Id }}>
-  // GTM initialization
-  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer',gtmId);
+<!-- Warm the tag origin while the page is idle so the deferred load is instant.
+     No `crossorigin` here: gtm.js/gtag.js are fetched as classic scripts (no-cors),
+     and the preconnected socket is only reused when the modes match. -->
+<link rel="preconnect" href="https://www.googletagmanager.com" />
+<link rel="dns-prefetch" href="https://www.googletagmanager.com" />
 
-  // GA4 initialization (if ga4Id is provided)
-  if (ga4Id) {
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', ga4Id);
-  }
-</script>
+<!-- Queue-first analytics shim + deferred injection (no third-party JS on the critical path). -->
+<script is:inline set:html={inlineLoader}></script>
 
-<!-- Google Tag Manager (noscript fallback) -->
-<noscript>
-  <iframe
-    src="https://www.googletagmanager.com/ns.html?id={gtmId}"
-    height="0"
-    width="0"
-    style="display:none;visibility:hidden"
-  ></iframe>
-</noscript>
+
+<!-- The GTM <noscript> iframe fallback is rendered by BaseLayout inside <body>:
+     this component is rendered in <head>, where an iframe would be invalid HTML. -->
+

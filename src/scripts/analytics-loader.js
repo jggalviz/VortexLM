@@ -14,9 +14,13 @@
  * Phase 2 — deferred injection (never during the initial load):
  *   The Google Ads tag (gtag.js) and the GTM container (gtm.js) are injected
  *   only on the first real user signal:
- *     a) any interaction (pointerdown/mousedown/keydown/touchstart/scroll/mousemove)
- *     b) an idle callback with timeout (`delayMs`, default 4000 ms)
- *     c) page hide / tab hidden, so short sessions are not silently dropped
+ *     a) deliberate intent (pointerdown/mousedown/keydown/touchstart) → immediate
+ *     b) passive signals (scroll/mousemove) → deferred to the next frame/idle
+ *        slot, so no DOM work happens inside the scroll handler
+ *     c) idle fallback after `delayMs` (default 4000 ms) with zero interaction
+ *     d) page hide / tab hidden, so short sessions are not silently dropped
+ *   Nothing in this file reads layout (no offsetWidth/getBoundingClientRect), so
+ *   it can never be the source of a forced reflow.
  *   The configuration arrives through `window.__vxAnalytics`, written by the
  *   component right before this source: { gtmId, adsId, conversionSendTo,
  *   ga4Id, delayMs }. Set `delayMs: 0` to disable the idle fallback and load
@@ -27,8 +31,16 @@
 
   var cfg = window.__vxAnalytics || {};
   var delay = typeof cfg.delayMs === 'number' ? cfg.delayMs : 4000;
-  var INTERACTION_EVENTS = ['pointerdown', 'mousedown', 'keydown', 'touchstart', 'scroll', 'mousemove'];
+
+  // Deliberate intent (click/tap/key): load immediately.
+  var INTENT_EVENTS = ['pointerdown', 'mousedown', 'keydown', 'touchstart'];
+  // High-frequency passive signals (scroll/mousemove): defer the work out of the
+  // event dispatch so script injection never happens while the browser is
+  // scrolling — that is what turns a cheap listener into forced reflow.
+  var PASSIVE_EVENTS = ['scroll', 'mousemove'];
+
   var injected = false;
+  var scheduled = false;
   var idleHandle = null;
   var timeoutHandle = null;
 
@@ -70,13 +82,47 @@
     }
   }
 
+  // Deferred wrapper used by the passive (scroll/mousemove) triggers and by the
+  // idle fallback: DOM/script work happens on an idle slot or the next frame
+  // instead of inside the event handler, so nothing is injected mid-scroll.
+  function scheduleLoad() {
+    if (injected || scheduled) return;
+    scheduled = true;
+
+    var run = function () {
+      scheduled = false;
+      idleHandle = null;
+      timeoutHandle = null;
+      load();
+    };
+
+    if (typeof window.requestIdleCallback === 'function') {
+      idleHandle = window.requestIdleCallback(run, { timeout: 1000 });
+    } else if (typeof window.requestAnimationFrame === 'function') {
+      window.requestAnimationFrame(run);
+    } else {
+      timeoutHandle = setTimeout(run, 16);
+    }
+  }
+
+  // Idle fallback for sessions with zero interaction. The `delay` bound comes
+  // from the timer (not from requestIdleCallback): an un-timed rIC would fire as
+  // soon as the browser is idle, which can be a few hundred ms after load and
+  // would drag the tags back into the initial-load window.
+  function armIdleFallback() {
+    if (delay > 0) timeoutHandle = setTimeout(scheduleLoad, delay);
+  }
+
   function onVisibilityChange() {
     if (document.visibilityState === 'hidden') load();
   }
 
   function disarm() {
-    for (var i = 0; i < INTERACTION_EVENTS.length; i++) {
-      window.removeEventListener(INTERACTION_EVENTS[i], load);
+    for (var i = 0; i < INTENT_EVENTS.length; i++) {
+      window.removeEventListener(INTENT_EVENTS[i], load);
+    }
+    for (var j = 0; j < PASSIVE_EVENTS.length; j++) {
+      window.removeEventListener(PASSIVE_EVENTS[j], scheduleLoad);
     }
     document.removeEventListener('visibilitychange', onVisibilityChange);
     window.removeEventListener('pagehide', load);
@@ -89,19 +135,20 @@
   }
 
   function arm() {
-    for (var i = 0; i < INTERACTION_EVENTS.length; i++) {
-      window.addEventListener(INTERACTION_EVENTS[i], load, { once: true, passive: true });
+    for (var i = 0; i < INTENT_EVENTS.length; i++) {
+      window.addEventListener(INTENT_EVENTS[i], load, { once: true, passive: true });
+    }
+    // Passive listeners keep scroll handling off the critical path (no scroll
+    // blocking) and the work itself is deferred by scheduleLoad().
+    for (var j = 0; j < PASSIVE_EVENTS.length; j++) {
+      window.addEventListener(PASSIVE_EVENTS[j], scheduleLoad, { once: true, passive: true });
     }
     document.addEventListener('visibilitychange', onVisibilityChange);
     window.addEventListener('pagehide', load, { once: true });
 
-    if (delay > 0) {
-      if (typeof window.requestIdleCallback === 'function') {
-        idleHandle = window.requestIdleCallback(load, { timeout: delay });
-      } else {
-        timeoutHandle = setTimeout(load, delay);
-      }
-    }
+    // Idle fallback: with no interaction at all, analytics still loads after
+    // `delayMs` on an idle slot — never during the initial load.
+    armIdleFallback();
   }
 
   // Public hook: also used by gtag_report_conversion() so a revenue click

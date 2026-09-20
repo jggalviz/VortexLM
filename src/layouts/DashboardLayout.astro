@@ -47,7 +47,7 @@ const userName = user.user_metadata?.full_name || userEmail?.split('@')[0] || 'U
       .sidebar-link.active{background:rgba(255,255,255,0.08);color:#f7f7f8;font-weight:500}
     </style>
   </head>
-  <body class="bg-black min-h-screen flex">
+  <body class="bg-black min-h-dvh flex">
     <!-- Sidebar -->
     <aside class="fixed top-0 left-0 h-full w-64 z-40 bg-[#08080c] border-r border-[#1f1f24] flex flex-col overflow-y-auto hidden md:flex">
       <!-- Logo -->
@@ -140,7 +140,7 @@ const userName = user.user_metadata?.full_name || userEmail?.split('@')[0] || 'U
     </div>
 
     <!-- Main content area -->
-    <main class="flex-1 md:ml-64 pt-14 md:pt-0 min-h-screen bg-black">
+    <main class="flex-1 md:ml-64 pt-14 md:pt-0 min-h-dvh bg-black">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 lg:py-10">
         <slot />
       </div>

@@ -688,7 +688,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         </form>
       </div>
 
-      <script>
+      <script is:inline>
         async function submitFormAgency() {
           const form = document.getElementById('contact-form-agency');
           const feedback = document.getElementById('form-feedback');

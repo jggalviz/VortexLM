@@ -46,7 +46,7 @@ const criticalCSS = `
   /* Base resets */
   *,::before,::after{box-sizing:border-box;border-width:0;border-style:solid}
   html{-webkit-text-size-adjust:100%;tab-size:4;font-family:'Inter Variable','Inter Fallback',system-ui,sans-serif;scroll-behavior:smooth}
-  body{margin:0;background:#000;color:#f7f7f8;width:100%;min-height:100vh;overflow-x:hidden;display:flex;flex-direction:column}
+  body{margin:0;background:#000;color:#f7f7f8;width:100%;min-height:100vh;min-height:100dvh;overflow-x:hidden;display:flex;flex-direction:column}
 
   /* Linear.app design system classes */
   .linear-card{background:#08080c66;backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.05);box-shadow:0 30px 60px -15px #000000e6,inset 0 1px #ffffff0d;position:relative;overflow:hidden}
@@ -88,7 +88,7 @@ const criticalCSS = `
       ga4Id={ga4Id}
     />
   </head>
-  <body class="bg-[#000000] text-[#f7f7f8] font-body-md linear-grid min-h-screen overflow-x-hidden flex flex-col w-full">
+  <body class="bg-[#000000] text-[#f7f7f8] font-body-md linear-grid min-h-dvh overflow-x-hidden flex flex-col w-full">
     <!-- Google Tag Manager — no-JS fallback only. -->
     <noscript>
       <iframe

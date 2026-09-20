@@ -6,8 +6,12 @@ const isLanding = true;
 <BaseLayout title="Desarrollo Web de Alto Rendimiento en Caracas | VortexLM" isLanding={isLanding}>
   <main class="bg-neutral-950 text-white">
 
-    <!-- HERO SECTION -->
-    <section class="relative min-h-screen flex items-center justify-center overflow-hidden bg-neutral-950 px-6">
+    <!-- HERO SECTION
+         `min-h-svh` (small viewport height) instead of `100vh`/`dvh`: the hero is
+         inside a long, scrollable page, and a unit that changes while the mobile
+         URL bar collapses would resize the hero mid-scroll and invalidate layout
+         for everything below it. `svh` is stable, so no scroll-time reflow. -->
+    <section class="relative min-h-svh flex items-center justify-center overflow-hidden bg-neutral-950 px-6">
       <!-- Grid overlay -->
       <div class="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:64px_64px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)]"></div>
       <!-- Glow orb -->

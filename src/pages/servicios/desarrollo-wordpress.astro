@@ -1,0 +1,681 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+/* ───────────────────────────────────────────────────────────────────────────
+ *  /servicios/desarrollo-wordpress
+ *  Página de servicio + portafolio del practice de WordPress de Vortex Logic.
+ *
+ *  Estructura:
+ *    1. Hero con la propuesta de valor del practice (10+ años de CMS, 350+ sitios)
+ *    2. Capacidades técnicas (WordPress avanzado, Gutenberg nativo, WooCommerce…)
+ *    3. Portafolio agrupado en 7 industrias (26 dominios en producción)
+ *    4. FAQ (alimenta el FAQPage de SEO.astro vía BaseLayout)
+ *    5. Interlinking interno hacia el resto del sitio
+ *    6. CTA final: formulario /api/contact + consulta directa por WhatsApp
+ * ─────────────────────────────────────────────────────────────────────────── */
+
+/** Proyecto entregado — el dominio es la etiqueta del enlace limpio */
+interface PortfolioProject {
+  domain: string;
+  sector: string;
+}
+
+/** Industria / agrupación temática del portafolio */
+interface PortfolioCategory {
+  /** Ancla usada por el índice superior del portafolio */
+  id: string;
+  /** Índice visual del bloque ("01"…"07") */
+  index: string;
+  title: string;
+  /** Resumen de la especialización alcanzada en esa industria */
+  summary: string;
+  projects: PortfolioProject[];
+}
+
+const categories: PortfolioCategory[] = [
+  {
+    id: 'hogar-construccion-decoracion',
+    index: '01',
+    title: 'Hogar, Construcción y Decoración',
+    summary:
+      'Fabricantes y distribuidores de mobiliario, cerramientos y reformas que necesitan catálogos filtrables, fichas de producto y captación de presupuestos.',
+    projects: [
+      { domain: 'mualbu.com', sector: 'Mobiliario' },
+      { domain: 'bilox.es', sector: 'Cerramientos y Sistemas de Protección Solar' },
+      { domain: 'toldosaban.com', sector: 'Toldos y Pérgolas' },
+      { domain: 'cocimara.com', sector: 'Diseño de Cocinas y Hogar' },
+      { domain: 'khoraliving.com', sector: 'Mobiliario y Decoración' },
+      { domain: 'mueblessevilla.com', sector: 'Mobiliario' },
+      { domain: 'formobel.es', sector: 'Mobiliario' },
+    ],
+  },
+  {
+    id: 'servicios-corporativos-profesionales',
+    index: '02',
+    title: 'Servicios Corporativos y Profesionales',
+    summary:
+      'Consultoras y proveedores B2B que usan la web como canal comercial: casos de éxito, formularios cualificados y contenido que respalda la propuesta de valor.',
+    projects: [
+      { domain: 'bureau360.dk', sector: 'Agencia de Marketing Digital' },
+      { domain: 'primeconsultingcr.com', sector: 'Consultoría de Negocios' },
+      { domain: 'rotulosmarcos.com', sector: 'Rotulación y Señalética' },
+      { domain: 'globeservice.es', sector: 'Servicios Integrales para Empresas' },
+      { domain: 'limptex.com', sector: 'Servicios de Limpieza Corporativa' },
+    ],
+  },
+  {
+    id: 'restaurantes-hosteleria',
+    index: '03',
+    title: 'Restaurantes y Hostelería',
+    summary:
+      'Carta digital, reservas, eventos y galerías gastronómicas con rendimiento alto en móvil: la mayoría de las visitas de hostelería llegan desde el teléfono.',
+    projects: [
+      { domain: 'elinvernaderodelospenotes.es', sector: 'Restaurante y Eventos' },
+      { domain: 'carsdiner.com', sector: 'Restaurante Temático' },
+      { domain: 'hotelonda.com', sector: 'Hotel' },
+      { domain: 'restaurantegranbahia.com', sector: 'Restaurante' },
+    ],
+  },
+  {
+    id: 'salud-bienestar-estetica',
+    index: '04',
+    title: 'Salud, Bienestar y Estética',
+    summary:
+      'Centros que venden confianza antes que servicios: agenda de citas, tratamientos detallados, prueba social y cumplimiento estricto de privacidad.',
+    projects: [
+      { domain: 'anagomezestilistas.com', sector: 'Peluquería y Estilismo' },
+      { domain: 'centrohominum.org', sector: 'Centro de Psicología y Desarrollo Personal' },
+    ],
+  },
+  {
+    id: 'retail-tiendas-especializadas',
+    index: '05',
+    title: 'Comercio Minorista y Tiendas Especializadas (Retail)',
+    summary:
+      'E-commerce y catálogos con pasarela de pago, gestión de stock y variaciones de producto, optimizados para convertir desde la primera visita.',
+    projects: [
+      { domain: 'colchonight.com', sector: 'Colchones y Productos de Descanso' },
+      { domain: 'conforcama.es', sector: 'Colchones y Productos de Descanso' },
+    ],
+  },
+  {
+    id: 'sector-automotriz',
+    index: '06',
+    title: 'Sector Automotriz',
+    summary:
+      'Compraventa y contenido especializado: stock actualizado, fichas de vehículo, financiamiento y consultas directas por WhatsApp.',
+    projects: [
+      { domain: 'gescomauto.com', sector: 'Compraventa de Vehículos' },
+      { domain: 'inspiredbycars.es', sector: 'Contenido y Productos Automotrices' },
+    ],
+  },
+  {
+    id: 'ocio-entretenimiento-turismo',
+    index: '07',
+    title: 'Ocio, Entretenimiento y Turismo',
+    summary:
+      'Operadores con reserva inmediata: entradas, excursiones, alquiler de embarcaciones y salas de juego con flujos de conversión medibles.',
+    projects: [
+      { domain: 'casinosadmiral.com', sector: 'Casinos y Salas de Juego' },
+      { domain: 'infinityjump.es', sector: 'Parque de Trampolines' },
+      { domain: 'nauticajimenez.com', sector: 'Venta y Reparación de Embarcaciones' },
+      { domain: 'viajestabarca.com', sector: 'Excursiones y Turismo Marítimo' },
+    ],
+  },
+];
+
+const totalProjects = categories.reduce((total, category) => total + category.projects.length, 0);
+
+/** Métricas del hero — todas verificables con el portafolio listado abajo */
+const heroStats = [
+  { value: '10+', label: 'Años trabajando con CMS' },
+  { value: '350+', label: 'Sitios web desde cero' },
+  { value: String(totalProjects), label: 'Proyectos en este portafolio' },
+  { value: String(categories.length), label: 'Industrias especializadas' },
+];
+
+/** Capacidades técnicas del practice de WordPress */
+const capabilities = [
+  {
+    step: '01',
+    title: 'WordPress avanzado sin page builders',
+    description:
+      'Construimos con bloques Gutenberg nativos, campos personalizados y código propio. Sin Elementor, Divi ni constructores que arrastren CSS y JavaScript innecesario.',
+    points: [
+      'Temas y child themes a medida en PHP moderno',
+      'Bloques y patrones Gutenberg reutilizables',
+      'Campos personalizados y custom post types por sector',
+      'Cero dependencia de plantillas compradas',
+    ],
+  },
+  {
+    step: '02',
+    title: 'Rendimiento y Core Web Vitals',
+    description:
+      'Un WordPress bien construido compite con cualquier framework moderno. Optimizamos consultas, caché y assets hasta dejar la web en verde en PageSpeed.',
+    points: [
+      'Caché de objeto, de página y limpieza de consultas',
+      'CSS crítico, lazy loading y conversión WebP/AVIF',
+      'Métricas antes y después de cada entrega',
+      'Monitoreo continuo de LCP, INP y CLS',
+    ],
+  },
+  {
+    step: '03',
+    title: 'Contenido, SEO técnico y migraciones',
+    description:
+      'Dejas la web con una arquitectura SEO que tus editores pueden mantener sin depender de un desarrollador, y migramos desde tu plataforma actual sin perder posiciones.',
+    points: [
+      'Migraciones desde Joomla, Wix, Drupal o HTML estático',
+      'Redirecciones 301 y preservación de rankings',
+      'Schema.org, sitemap XML, hreflang y robots.txt',
+      'Estructura de contenidos pensada para posicionar',
+    ],
+  },
+  {
+    step: '04',
+    title: 'WooCommerce, headless e integraciones',
+    description:
+      'E-commerce completo o WordPress como back-end de un front-end ultrarrápido, conectado a la operación real del negocio: pagos, logística, CRM y automatizaciones.',
+    points: [
+      'WooCommerce: pagos, envíos, stock y variaciones',
+      'WordPress headless consumido por Astro o Next.js',
+      'APIs REST, webhooks y sincronización con CRM/ERP',
+      'Multilenguaje y arquitecturas multisite',
+    ],
+  },
+];
+
+/** Enlaces internos de interlinking (todos apuntan a rutas existentes) */
+const relatedLinks = [
+  {
+    href: '/servicios',
+    label: 'Servicios white label',
+    description:
+      'Externaliza desarrollo frontend, WordPress y automatizaciones con tu propia marca. NDA y pago por consumo real.',
+  },
+  {
+    href: '/servicios/desarrollo-web-astro-react-nextjs',
+    label: 'Stack moderno Astro, React y Next.js',
+    description:
+      'Cuando el proyecto exige máxima velocidad o un front-end headless sobre WordPress, este es el stack que usamos.',
+  },
+  {
+    href: '/servicios/diseno-paginas-web-caracas',
+    label: 'Diseño de páginas web en Caracas',
+    description:
+      'Metodología completa de diseño UI/UX, wireframes y sistemas de diseño antes de pasar a desarrollo.',
+  },
+  {
+    href: '/blog/cuanto-cuesta-pagina-web-profesional-venezuela-2026',
+    label: '¿Cuánto cuesta una página web en 2026?',
+    description:
+      'Desglose real de costes y ROI de invertir en un sitio profesional frente a una plantilla de bajo coste.',
+  },
+];
+
+const faqs = [
+  {
+    question: '¿Por qué WordPress y no una plantilla comprada o un page builder?',
+    answer:
+      'Una plantilla o un builder acelera la primera entrega, pero hipoteca todo lo que viene después: código inflado, actualizaciones que rompen el diseño y un SEO técnico difícil de controlar. Nosotros desarrollamos WordPress avanzado con bloques Gutenberg nativos y código propio, de modo que tu equipo puede editar todo el contenido desde el panel y la web sigue siendo rápida y mantenible años después.',
+  },
+  {
+    question: '¿Puedo migrar mi web actual a WordPress sin perder posicionamiento?',
+    answer:
+      'Sí. Trabajamos con un inventario completo de URLs, mapa de redirecciones 301 y preservación de títulos, meta descripciones, encabezados y datos estructurados. Antes de publicar comparamos rendimiento y posiciones para detectar cualquier caída a tiempo. Hemos migrado proyectos desde Joomla, Wix, Drupal y sitios HTML estáticos sin degradar sus rankings.',
+  },
+  {
+    question: '¿El sitio funcionará bien en móviles con conexiones lentas?',
+    answer:
+      'Es uno de nuestros criterios de aceptación. Optimizamos imágenes a WebP/AVIF, aplicamos lazy loading, caché de página y de objetos, y reducimos el JavaScript al mínimo necesario. Precisamente por eso llevamos más de 350 sitios web creados desde cero en todos los niveles de complejidad: sabemos qué cuello de botella aparece en cada tipo de negocio.',
+  },
+  {
+    question: '¿Puedo seguir editando el contenido yo mismo?',
+    answer:
+      'Sí, y está pensado para que sea así. Entregamos el panel de WordPress con bloques y patrones preparados para tus secciones, documentación de uso para tu equipo y una sesión de capacitación grabada. No quedas atado a nosotros para publicar contenido nuevo.',
+  },
+  {
+    question: '¿Ofrecen mantenimiento y soporte continuo?',
+    answer:
+      'Todos los proyectos incluyen 3 meses de soporte post-lanzamiento. Después ofrecemos planes mensuales con actualizaciones de core, plugins y temas, copias de seguridad, monitoreo de seguridad y uptime, optimización de rendimiento y soporte prioritario por WhatsApp o Slack.',
+  },
+];
+
+/** Consulta directa por WhatsApp (mismo número corporativo del sitio) */
+const whatsappHref = `https://wa.me/15072190951?text=${encodeURIComponent(
+  'Hola Vortex, quiero cotizar un proyecto de desarrollo WordPress. He visto el portafolio en vortexlm.com y me gustaría agendar una llamada.'
+)}`;
+
+/* ── Datos estructurados ───────────────────────────────────────────────────
+ * SEO.astro ya emite el ProfessionalService y el FAQPage desde BaseLayout;
+ * aquí sumamos el Service y la CollectionPage con el portafolio completo.
+ * Ambos scripts son datos (no código) y van auto-cerrados: el runner de lint
+ * exige que no queden etiquetas <script> sin cerrar.
+ * ──────────────────────────────────────────────────────────────────────── */
+let position = 0;
+const portfolioListItems = categories.flatMap((category) =>
+  category.projects.map((project) => {
+    position += 1;
+    return {
+      '@type': 'ListItem',
+      position,
+      item: {
+        '@type': 'WebSite',
+        name: project.domain,
+        url: `https://${project.domain}`,
+        description: `${project.sector} — ${category.title}`,
+      },
+    };
+  })
+);
+
+const wordpressServiceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Desarrollo WordPress Avanzado',
+  serviceType: 'Desarrollo de sitios web WordPress',
+  url: 'https://vortexlm.com/servicios/desarrollo-wordpress',
+  description:
+    'Desarrollo WordPress avanzado sin page builders: bloques Gutenberg nativos, WooCommerce, WordPress headless, migraciones y optimización de Core Web Vitals. Más de 10 años trabajando con CMS y más de 350 sitios web creados desde cero.',
+  provider: {
+    '@type': 'ProfessionalService',
+    name: 'Vortex Logic Microsystems LLC',
+    url: 'https://vortexlm.com',
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'Caracas',
+      addressRegion: 'Distrito Capital',
+      addressCountry: 'VE',
+    },
+  },
+  areaServed: [
+    { '@type': 'City', name: 'Caracas' },
+    { '@type': 'Country', name: 'Venezuela' },
+    { '@type': 'Country', name: 'Espana' },
+  ],
+  offers: {
+    '@type': 'Offer',
+    availability: 'https://schema.org/InStock',
+    priceCurrency: 'USD',
+    description:
+      'Sitios WordPress desde cero, migraciones, WooCommerce y planes de mantenimiento mensual.',
+  },
+};
+
+const wordpressPortfolioSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  name: 'Portafolio de proyectos WordPress — Vortex Logic',
+  url: 'https://vortexlm.com/servicios/desarrollo-wordpress',
+  description: `Portafolio de ${totalProjects} sitios web WordPress en produccion, agrupados en ${categories.length} industrias: hogar y construccion, servicios corporativos, hosteleria, salud y estetica, retail, automotriz y turismo.`,
+  inLanguage: 'es-ES',
+  isPartOf: {
+    '@type': 'WebSite',
+    name: 'VortexLM',
+    url: 'https://vortexlm.com',
+  },
+  about: {
+    '@type': 'Service',
+    name: 'Desarrollo WordPress Avanzado',
+    url: 'https://vortexlm.com/servicios/desarrollo-wordpress',
+  },
+  mainEntity: {
+    '@type': 'ItemList',
+    name: 'Proyectos WordPress por industria',
+    numberOfItems: totalProjects,
+    itemListElement: portfolioListItems,
+  },
+};
+---
+
+<BaseLayout
+  title="Desarrollo WordPress en Caracas | Portafolio de +350 Sitios Web"
+  description={`Agencia de desarrollo WordPress avanzado en Caracas: más de 350 sitios web creados desde cero en ${categories.length} industrias. Portafolio de ${totalProjects} proyectos en producción, sin page builders y optimizados para Core Web Vitals.`}
+  type="website"
+  isLocalBusiness={true}
+  faqItems={faqs}
+>
+  <!-- Datos estructurados de la página (Service + CollectionPage).
+       Se emiten dentro del body porque BaseLayout no expone un slot de <head>;
+       Google acepta JSON-LD en cualquier punto del documento. -->
+  <script type="application/ld+json" set:html={JSON.stringify(wordpressServiceSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(wordpressPortfolioSchema)} />
+
+  <!-- ─── HERO + PROPUESTA DE VALOR ───────────────────────────────── -->
+  <section class="relative pt-36 pb-28 overflow-hidden linear-gradient-bg border-b border-[#1f1f24] px-6 md:px-12">
+    <div class="absolute inset-0 linear-grid opacity-30 pointer-events-none"></div>
+    <div class="max-w-[1200px] mx-auto text-center relative z-10">
+      <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-white/[0.015] blur-[120px] rounded-full pointer-events-none"></div>
+
+      <span class="inline-block px-3 py-1.5 border border-[#1f1f24] rounded-full text-[10px] font-mono uppercase tracking-widest text-[#8a8a93] mb-8">
+        WordPress Avanzado · Portafolio
+      </span>
+
+      <h1 class="text-4xl md:text-7xl font-extralight tracking-tight text-white mb-8 leading-[1.08] max-w-4xl mx-auto opacity-95">
+        Desarrollo WordPress en Caracas: 350+ sitios web construidos desde cero
+      </h1>
+
+      <!-- Propuesta de valor del practice. El texto va en una sola línea de
+           origen para que aparezca idéntico en el HTML servido. -->
+      <div class="linear-card glow-hover rounded-lg border border-[#1f1f24] bg-[#08080c]/60 px-6 py-7 md:px-10 md:py-9 max-w-4xl mx-auto mb-10 text-left">
+        <div class="border-l-2 border-white/20 pl-5 md:pl-7">
+          <span class="text-[10px] font-mono uppercase tracking-widest text-[#8a8a93] block mb-3">Nuestra trayectoria con WordPress</span>
+          <p class="text-base md:text-xl text-white font-light leading-relaxed tracking-tight">Con más de 10 años trabajando con CMS, hemos podido hacer más de 350 sitios web desde cero en todos los niveles de complejidad, especializándonos en WordPress avanzado.</p>
+        </div>
+      </div>
+
+      <!-- Métricas del practice -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 max-w-4xl mx-auto mb-12">
+        {heroStats.map((stat) => (
+          <div class="linear-card glow-hover rounded-lg border border-[#1f1f24] bg-[#08080c]/40 px-4 py-5 text-center">
+            <div class="text-2xl md:text-3xl font-light text-white tracking-tight">{stat.value}</div>
+            <div class="text-[10px] font-mono uppercase tracking-wider text-[#8a8a93] mt-2 leading-snug">{stat.label}</div>
+          </div>
+        ))}
+      </div>
+
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-6">
+        <a href="#contacto" class="w-full sm:w-auto px-8 py-3 bg-white text-black font-semibold text-xs rounded-full hover:bg-neutral-200 transition-all text-center duration-200 active:scale-95 shadow-[0_0_25px_rgba(255,255,255,0.15)]">
+          Cotizar mi proyecto WordPress
+        </a>
+        <a href="#portafolio" class="w-full sm:w-auto px-6 py-3 text-white/90 font-medium text-xs rounded-full hover:text-white flex items-center justify-center gap-1.5 group transition-colors">
+          Ver los {totalProjects} proyectos <span class="group-hover:translate-x-1 transition-transform">➔</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── CAPACIDADES: WORDPRESS AVANZADO ─────────────────────────── -->
+  <section class="py-24 md:py-32 px-6 md:px-12 bg-black border-b border-[#1f1f24] relative">
+    <div class="max-w-[1200px] mx-auto relative z-10">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-[10px] font-mono text-[#8a8a93] uppercase tracking-widest block mb-3 font-medium">Cómo trabajamos</span>
+        <h2 class="text-3xl md:text-5xl font-light text-white tracking-tight mb-6">WordPress avanzado, sin plantillas ni page builders</h2>
+        <p class="text-sm md:text-base text-[#cbd5e1] font-light leading-relaxed">
+          La diferencia entre un WordPress que se degrada en seis meses y uno que sigue siendo rápido
+          en cinco años está en cómo se construye. Nuestro practice de CMS trabaja con bloques
+          Gutenberg nativos, código propio y una capa de rendimiento medible en cada entrega.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+        {capabilities.map((capability) => (
+          <article class="linear-card glow-hover rounded-lg border border-[#1f1f24] bg-[#08080c]/40 p-6 lg:p-8 transition-all">
+            <div class="flex items-center gap-3 mb-5">
+              <span class="text-[10px] font-mono text-[#8a8a93] uppercase tracking-widest">{capability.step}</span>
+              <span class="glow-line flex-grow" aria-hidden="true"></span>
+            </div>
+            <h3 class="text-lg md:text-xl font-light text-white tracking-tight mb-3">{capability.title}</h3>
+            <p class="text-xs text-[#cbd5e1] font-light leading-relaxed mb-5">{capability.description}</p>
+            <ul class="space-y-1.5 text-[10px] text-[#cbd5e1] font-mono">
+              {capability.points.map((point) => (
+                <li class="flex items-start gap-2">
+                  <span class="text-white/70" aria-hidden="true">→</span>
+                  <span>{point}</span>
+                </li>
+              ))}
+            </ul>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── PORTAFOLIO: 7 INDUSTRIAS, 26 DOMINIOS ───────────────────── -->
+  <section id="portafolio" class="py-24 md:py-32 px-6 md:px-12 bg-black border-b border-[#1f1f24] relative">
+    <div class="max-w-[1200px] mx-auto relative z-10">
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <span class="text-[10px] font-mono text-[#8a8a93] uppercase tracking-widest block mb-3 font-medium">Portafolio</span>
+        <h2 class="text-3xl md:text-5xl font-light text-white tracking-tight mb-6">
+          {totalProjects} proyectos WordPress en producción, en {categories.length} industrias
+        </h2>
+        <p class="text-sm md:text-base text-[#cbd5e1] font-light leading-relaxed">
+          Cada dominio es un proyecto real y sigue en línea. Haz clic en cualquiera para visitarlo.
+        </p>
+      </div>
+
+      <!-- Índice de industrias (navegación por anclas, sin JavaScript) -->
+      <nav aria-label="Índice de industrias del portafolio" class="flex flex-wrap items-center justify-center gap-2 mb-16">
+        {categories.map((category) => (
+          <a
+            href={`#${category.id}`}
+            class="inline-flex items-center gap-2 px-3.5 py-2 rounded-full border border-[#1f1f24] bg-[#08080c]/40 text-[10px] font-mono uppercase tracking-wider text-[#cbd5e1] hover:text-white hover:border-white/20 transition-colors"
+          >
+            <span class="text-[#8a8a93]">{category.index}</span>
+            {category.title}
+            <span class="text-[#8a8a93]">{category.projects.length}</span>
+          </a>
+        ))}
+      </nav>
+
+      <div class="space-y-14 md:space-y-16">
+        {categories.map((category) => (
+          <div id={category.id} class="scroll-mt-28">
+            <header class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 pb-5 mb-6 border-b border-[#1f1f24]">
+              <div class="flex items-start gap-4">
+                <span class="text-[10px] font-mono text-[#8a8a93] pt-2">{category.index}</span>
+                <div>
+                  <h3 class="text-lg md:text-2xl font-light text-white tracking-tight">{category.title}</h3>
+                  <p class="text-xs text-[#cbd5e1] font-light leading-relaxed mt-2 max-w-2xl">{category.summary}</p>
+                </div>
+              </div>
+              <span class="shrink-0 self-start md:self-auto text-[10px] font-mono uppercase tracking-wider text-[#8a8a93] border border-[#1f1f24] rounded-full px-3 py-1.5">
+                {category.projects.length} proyectos
+              </span>
+            </header>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {category.projects.map((project) => (
+                <a
+                  href={`https://${project.domain}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="linear-card glow-hover group rounded-lg border border-[#1f1f24] bg-[#08080c]/40 p-5 flex flex-col gap-3 transition-all"
+                >
+                  <div class="flex items-center justify-between gap-3">
+                    <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full border border-[#1f1f24] bg-white/[0.02] text-[9px] font-mono uppercase tracking-wider text-[#8a8a93]">
+                      WordPress
+                    </span>
+                    <svg class="w-3.5 h-3.5 text-[#8a8a93]/50 group-hover:text-white group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+                    </svg>
+                  </div>
+                  <span class="font-mono text-sm text-white break-all group-hover:underline decoration-[#8a8a93] underline-offset-4">
+                    {project.domain}
+                  </span>
+                  <span class="mt-auto text-[10px] font-mono uppercase tracking-wider text-[#8a8a93] leading-snug">
+                    {project.sector}
+                  </span>
+                </a>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FAQ ─────────────────────────────────────────────────────── -->
+  <section class="py-24 md:py-32 px-6 md:px-12 bg-black border-b border-[#1f1f24] relative">
+    <div class="max-w-[800px] mx-auto relative z-10">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <span class="text-[10px] font-mono text-[#cbd5e1] uppercase tracking-widest block mb-3 font-medium">FAQ</span>
+        <h2 class="text-3xl md:text-4xl font-light text-white tracking-tight">Preguntas frecuentes sobre desarrollo WordPress</h2>
+      </div>
+
+      <div class="space-y-4">
+        {faqs.map((faq) => (
+          <details class="group linear-card rounded-lg border border-[#1f1f24] bg-[#08080c]/30 overflow-hidden glow-hover transition-all">
+            <summary class="flex items-center justify-between gap-4 p-5 cursor-pointer text-sm font-medium text-white/90 hover:text-white transition-colors">
+              {faq.question}
+              <span class="material-symbols-outlined text-sm text-[#cbd5e1]/60 group-open:rotate-180 transition-transform shrink-0">expand_more</span>
+            </summary>
+            <div class="px-5 pb-5 text-xs text-[#cbd5e1] leading-relaxed">
+              {faq.answer}
+            </div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── INTERLINKING INTERNO ────────────────────────────────────── -->
+  <section class="py-24 md:py-32 px-6 md:px-12 bg-black border-b border-[#1f1f24] relative">
+    <div class="max-w-[1200px] mx-auto relative z-10">
+      <div class="text-center max-w-2xl mx-auto mb-14">
+        <span class="text-[10px] font-mono text-[#8a8a93] uppercase tracking-widest block mb-3 font-medium">Explora más</span>
+        <h2 class="text-3xl md:text-4xl font-light text-white tracking-tight">Otros servicios y recursos relacionados</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+        {relatedLinks.map((link) => (
+          <a
+            href={link.href}
+            rel="prefetch"
+            class="linear-card glow-hover group rounded-lg border border-[#1f1f24] bg-[#08080c]/40 p-6 flex flex-col transition-all"
+          >
+            <h3 class="text-sm font-medium text-white mb-3 tracking-tight">{link.label}</h3>
+            <p class="text-xs text-[#cbd5e1] font-light leading-relaxed mb-6">{link.description}</p>
+            <div class="mt-auto flex items-center gap-2">
+              <span class="text-[10px] font-mono uppercase tracking-wider text-[#8a8a93] group-hover:text-white transition-colors">Ver más</span>
+              <svg class="w-3.5 h-3.5 text-[#8a8a93] group-hover:text-white group-hover:translate-x-1 transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── CTA FINAL: FORMULARIO + WHATSAPP ────────────────────────── -->
+  <section id="contacto" class="py-24 md:py-36 px-6 md:px-12 bg-black relative">
+    <div class="max-w-[600px] mx-auto text-center relative z-10 space-y-8">
+      <span class="text-[10px] font-mono text-[#cbd5e1] uppercase tracking-widest block font-medium">Trabajemos juntos</span>
+      <h2 class="text-3xl md:text-5xl font-light text-white tracking-tight leading-tight">
+        ¿Tienes un proyecto WordPress pendiente?
+      </h2>
+      <p class="text-sm text-[#cbd5e1] font-light leading-relaxed">
+        Cuéntanos qué necesitas — una web nueva, una migración o un WordPress que dejó de rendir —
+        y recibirás una propuesta con alcance, plazos y presupuesto transparente. Sin compromiso.
+      </p>
+
+      <div class="linear-card p-8 rounded-lg border border-[#1f1f24] bg-[#08080c]/40 text-left space-y-6">
+        <div id="form-feedback" class="text-sm mt-4 hidden"></div>
+
+        <form id="contact-form-wordpress" class="space-y-4">
+          <div>
+            <label class="block text-[10px] font-mono text-[#cbd5e1] uppercase tracking-wider mb-2 font-medium" for="wp_name">Nombre y Apellido</label>
+            <input
+              class="w-full bg-black border border-[#1f1f24] rounded px-4 py-3 text-xs text-white placeholder-neutral-800 focus:outline-none focus:border-white transition-colors"
+              type="text"
+              id="wp_name"
+              name="name"
+              placeholder="Ej. Carlos Mendoza"
+              required
+            />
+          </div>
+
+          <div>
+            <label class="block text-[10px] font-mono text-[#cbd5e1] uppercase tracking-wider mb-2 font-medium" for="wp_email">Correo Corporativo</label>
+            <input
+              class="w-full bg-black border border-[#1f1f24] rounded px-4 py-3 text-xs text-white placeholder-neutral-800 focus:outline-none focus:border-white transition-colors"
+              type="email"
+              id="wp_email"
+              name="email"
+              placeholder="carlos@tuempresa.com"
+              required
+            />
+          </div>
+
+          <div>
+            <label class="block text-[10px] font-mono text-[#cbd5e1] uppercase tracking-wider mb-2 font-medium" for="wp_message">Cuéntanos sobre tu proyecto WordPress</label>
+            <textarea
+              class="w-full bg-black border border-[#1f1f24] rounded px-4 py-3 text-xs text-white placeholder-neutral-800 focus:outline-none focus:border-white transition-colors min-h-[100px]"
+              id="wp_message"
+              name="message"
+              placeholder="¿Es una web nueva, una migración o un rediseño? ¿Usas WooCommerce? ¿Tienes plazo o presupuesto estimado?"
+              required
+            ></textarea>
+          </div>
+
+          <input type="hidden" name="service" value="desarrollo-wordpress" />
+
+          <button
+            type="button"
+            data-original-text="Solicitar Propuesta WordPress"
+            class="w-full py-3 bg-white text-black font-semibold text-xs rounded hover:bg-neutral-200 transition-colors duration-200"
+            onclick="submitFormWordpress()"
+          >
+            Solicitar Propuesta WordPress
+          </button>
+
+          <p class="text-[10px] text-[#737373] text-center mt-4 font-mono">Tus datos están protegidos. Sin spam, garantizado.</p>
+        </form>
+
+        <div class="glow-line" aria-hidden="true"></div>
+
+        <!-- CTA alternativo: consulta directa sin formulario -->
+        <a
+          href={whatsappHref}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="w-full flex items-center justify-center gap-2 py-3 border border-[#1f1f24] rounded text-xs font-medium text-white hover:bg-white/[0.04] hover:border-white/20 transition-colors"
+        >
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+          </svg>
+          Consulta directa por WhatsApp
+        </a>
+      </div>
+    </div>
+
+    <script is:inline>
+      // El handler del botón se declara aquí (y no en un módulo empaquetado por
+      // Astro) porque los módulos tienen ámbito propio y el onclick no
+      // encontraría la función. Mismo patrón que /servicios/agencia-diseno-web-caracas.
+      async function submitFormWordpress() {
+        const form = document.getElementById('contact-form-wordpress');
+        const feedback = document.getElementById('form-feedback');
+        const btn = form?.querySelector('button[type="button"]');
+
+        if (!form || !(form instanceof HTMLFormElement) || !btn) { return; }
+        if (!(feedback instanceof HTMLElement)) { return; }
+
+        if (!form.checkValidity()) {
+          form.reportValidity();
+          return;
+        }
+
+        btn.disabled = true;
+        btn.textContent = 'Enviando...';
+
+        try {
+          const res = await fetch('/api/contact', {
+            method: 'POST',
+            body: new FormData(form)
+          });
+          const data = await res.json();
+
+          if (data.success) {
+            feedback.className = 'text-sm mt-4 text-green-400';
+            feedback.textContent = '¡Mensaje enviado con éxito! Te contactaremos pronto.';
+            feedback.classList.remove('hidden');
+            form.reset();
+          } else {
+            throw new Error(data.error);
+          }
+        } catch (err) {
+          feedback.className = 'text-sm mt-4 text-red-400';
+          feedback.textContent = 'Error al enviar. Intenta de nuevo o escríbenos a info@vortexlm.com.';
+          feedback.classList.remove('hidden');
+        } finally {
+          btn.disabled = false;
+          btn.textContent = (btn.getAttribute('data-original-text')) || 'Enviar';
+        }
+      }
+    </script>
+  </section>
+</BaseLayout>
+

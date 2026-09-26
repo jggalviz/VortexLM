@@ -104,7 +104,7 @@ Architecturally, the project is a single Astro application running in **SSR mode
 | --- | --- | --- |
 | GTM container | `GTM-P4MK3GT9` | `src/layouts/BaseLayout.astro` |
 | Google Ads ID / conversion label | `AW-18175185887` / `zparCIGTksIcEN-nzdpD` | `src/layouts/BaseLayout.astro` |
-| Corporate WhatsApp line | `+1 507 219 0951` | CTA links & `LiveChat.astro` |
+| Corporate WhatsApp line | `+58 422-8101010` | CTA links & `LiveChat.astro` |
 | Notification mailbox | `info@vortexlm.com` | `src/pages/api/contact.ts` |
 
 ---
@@ -491,6 +491,6 @@ Business rules enforced by the UI copy and the portal: **1 vCredit = 1 hour** of
 
 **VortexLM** — Engineering high-performance digital products from Caracas · Delivery in Spanish and English
 
-[WhatsApp](https://wa.me/15072190951) · [info@vortexlm.com](mailto:info@vortexlm.com) · [vortexlm.com](https://vortexlm.com)
+[WhatsApp](https://wa.me/584228101010) · [info@vortexlm.com](mailto:info@vortexlm.com) · [vortexlm.com](https://vortexlm.com)
 
 </div>

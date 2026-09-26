@@ -76,7 +76,7 @@ export default function PaymentToggle({ facturasPendientes }: Props) {
           `• Referencia: ${paymentRef}\n\n` +
           `Quedo atento a la confirmación. Gracias.`
         );
-        window.open(`https://wa.me/15072190951?text=${message}`, '_blank');
+        window.open(`https://wa.me/584228101010?text=${message}`, '_blank');
       }
     } catch (err: any) {
       setReportError(err.message || 'Error al reportar el pago. Intenta de nuevo.');

@@ -77,7 +77,13 @@ export default {
         "unit": "4px"
       },
       fontFamily: {
+        // Tipografía monoespaciada del sitio: la fuente ya se carga en el
+        // layout (fonts.css + critical CSS). `font-code` la expone como utilidad
+        // para bloques de código, KPIs y etiquetas técnicas sin tocar `font-mono`
+        // (que en el resto del sitio sigue resolviendo a la pila del sistema).
+        "code": ["JetBrains Mono Variable", "JetBrains Mono", "ui-monospace", "SFMono-Regular", "monospace"],
         "body-md": ["Inter", "sans-serif"],
+
         "label-md": ["JetBrains Mono", "monospace"],
         "display-lg": ["Inter", "sans-serif"],
         "headline-lg-mobile": ["Inter", "sans-serif"],

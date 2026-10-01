@@ -1,0 +1,119 @@
+---
+/**
+ * Caso de estudio público de Medisys · vortex.com.ve/caso-saas-medisys
+ * ------------------------------------------------------------------------
+ * Port de la página que se publicó en `medisys.com.ve/proceso-saas`: mismas
+ * cifras verificables, mismos textos y los mismos componentes, ahora servidos
+ * desde el sitio de Vortex con su navbar, su footer y su tipografía.
+ *
+ * La página es 100 % estática: las secciones son componentes de React sin
+ * estado ni efectos, así que se renderizan en el servidor y no hidratan nada en
+ * el cliente (el caso de estudio no añade JavaScript a la página). Por eso se
+ * prerenderiza: se sirve como HTML desde el CDN en lugar de invocar la función.
+ */
+export const prerender = true;
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { HeroSection } from '../components/caso-saas/HeroSection';
+import { RetoSection } from '../components/caso-saas/RetoSection';
+import { ArquitecturaSection } from '../components/caso-saas/ArquitecturaSection';
+import { RetosTecnicosSection } from '../components/caso-saas/RetosTecnicosSection';
+import { AprendizajesSection } from '../components/caso-saas/AprendizajesSection';
+import { CtaFinalSection } from '../components/caso-saas/CtaFinalSection';
+import {
+  CASO_ESTUDIO_URL,
+  COMPANY_NAME,
+  COMPANY_URL,
+  GITHUB_URL,
+  NAV_ANCHORS,
+  SITIO_URL,
+} from '../components/caso-saas/constantes';
+
+const TITULO = 'Caso de estudio · Medisys';
+
+const DESCRIPCION =
+  'Cómo diseñé y construí Medisys: SaaS médico multi-tenant y suite fiscal para Venezuela. 44.3k líneas TS/TSX, 22 migraciones SQL, 64 políticas RLS y un motor fiscal con IVA, IGTF y doble moneda.';
+
+/**
+ * Datos estructurados del producto documentado. Se declaran en el mismo formato
+ * que usa la página original para no perder el rich result.
+ */
+const DATOS_ESTRUCTURADOS = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: 'Medisys',
+  applicationCategory: 'BusinessApplication',
+  applicationSubCategory: 'Software médico, fiscal y de facturación',
+  operatingSystem: 'Web',
+  inLanguage: 'es-VE',
+  url: SITIO_URL,
+  description: DESCRIPCION,
+  sameAs: [GITHUB_URL],
+  author: { '@type': 'Organization', name: COMPANY_NAME, url: COMPANY_URL },
+  publisher: { '@type': 'Organization', name: COMPANY_NAME, url: COMPANY_URL },
+  isPartOf: {
+    '@type': 'WebPage',
+    name: 'Caso de estudio de Medisys',
+    url: CASO_ESTUDIO_URL,
+  },
+  offers: {
+    '@type': 'Offer',
+    price: '0',
+    priceCurrency: 'USD',
+    description: 'Prueba con 30 reservas gratis, sin pago por adelantado',
+  },
+};
+---
+
+<BaseLayout title={TITULO} description={DESCRIPCION} url={CASO_ESTUDIO_URL} type="article">
+  <script
+    type="application/ld+json"
+    set:html={JSON.stringify(DATOS_ESTRUCTURADOS)}></script>
+
+  <!--
+    Puente entre el navbar fijo del sitio (negro) y el layout del caso de
+    estudio: franja oscura con el índice de secciones. No es `sticky` a
+    propósito; el navbar del sitio ya cumple esa función, así que aquí solo
+    queda como índice de lectura.
+  -->
+  <div class="bg-zinc-950 pt-20">
+    <div class="mx-auto w-full max-w-6xl px-6 lg:px-8">
+      <div
+        class="flex flex-wrap items-center justify-between gap-x-4 gap-y-3 border-b border-white/10 pb-4"
+      >
+        <p class="font-code text-[11px] font-semibold uppercase tracking-[0.18em] text-teal-300">
+          Caso de estudio &middot; Medisys
+        </p>
+
+        <nav aria-label="Secciones del caso de estudio" class="flex flex-wrap items-center gap-0.5">
+          {
+            NAV_ANCHORS.map((ancla) => (
+              <a
+                href={`#${ancla.id}`}
+                class="rounded-full px-3 py-1.5 text-[13px] font-medium text-zinc-400 transition-colors hover:bg-white/5 hover:text-white"
+              >
+                {ancla.label}
+              </a>
+            ))
+          }
+        </nav>
+
+        <a
+          href={GITHUB_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 rounded-full border border-white/15 px-3.5 py-1.5 text-[13px] font-semibold text-zinc-200 transition-colors hover:border-teal-400/60 hover:text-white"
+        >
+          <span class="material-symbols-outlined text-[16px]" aria-hidden="true">code</span>
+          Código fuente
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <HeroSection />
+  <RetoSection />
+  <ArquitecturaSection />
+  <RetosTecnicosSection />
+  <AprendizajesSection />
+  <CtaFinalSection />
+</BaseLayout>

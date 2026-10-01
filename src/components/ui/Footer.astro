@@ -9,7 +9,7 @@ const { isLanding = false } = Astro.props;
   <div class="max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8 mb-12 relative z-10">
     <div class="col-span-1 md:col-span-5">
       <!-- Footer Logo -->
-      <a href="/" class="flex items-center gap-2 group focus:outline-none mb-4 inline-flex" aria-label="VortexLM Home">
+      <a href="/" class="flex items-center gap-2 group focus:outline-none mb-4 inline-flex" aria-label="VortexLM Home" data-i18n-aria-label="nav.homeAria">
         <svg class="w-5 h-5 text-white transition-transform duration-300 group-hover:rotate-45 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
           <circle cx="12" cy="12" r="10" class="stroke-neutral-800" />
           <circle cx="12" cy="12" r="5" />
@@ -25,33 +25,33 @@ const { isLanding = false } = Astro.props;
           Vortex<span class="font-light tracking-normal text-neutral-300 group-hover:text-neutral-400 ml-0.5">LM</span>
         </span>
       </a>
-      <p class="text-xs text-[#a8a8b3] leading-relaxed max-w-sm">
+      <p class="text-xs text-[#a8a8b3] leading-relaxed max-w-sm" data-i18n="footer.tagline">
         Desarrollo de software robusto, aplicaciones web escalables y plataformas de alta velocidad. Implementamos ingeniería frontend de última generación para transformar el rendimiento digital de tu negocio.      </p>
     </div>
     
     {!isLanding && (
       <div class="col-span-1 md:col-span-3 md:col-start-7">
-        <h3 class="text-white text-xs font-normal mb-5">Soluciones</h3>
+        <h3 class="text-white text-xs font-normal mb-5" data-i18n="footer.solutions">Soluciones</h3>
         <ul class="space-y-3 text-xs text-[#a8a8b3]">
-          <li><a href="/soluciones/diseno-web-velocidad" class="hover:text-white transition-colors duration-200">Diseño Web de Alta Velocidad</a></li>
-          <li><a href="/soluciones/desarrollo-apps-moviles" class="hover:text-white transition-colors duration-200">Desarrollo de Apps Móviles iOS/Android</a></li>
-          <li><a href="/soluciones/desarrollo-astro-nextjs" class="hover:text-white transition-colors duration-200">Desarrollo Web con Astro y Next.js</a></li>
-          <li><a href="/soluciones/sistemas-erp-software-medida" class="hover:text-white transition-colors duration-200">Sistemas ERP y Software a Medida</a></li>
-          <li><a href="/servicios/desarrollo-wordpress" class="hover:text-white transition-colors duration-200">Desarrollo WordPress Avanzado</a></li>
+          <li><a href="/soluciones/diseno-web-velocidad" class="hover:text-white transition-colors duration-200" data-i18n="footer.link.speed">Diseño Web de Alta Velocidad</a></li>
+          <li><a href="/soluciones/desarrollo-apps-moviles" class="hover:text-white transition-colors duration-200" data-i18n="footer.link.apps">Desarrollo de Apps Móviles iOS/Android</a></li>
+          <li><a href="/soluciones/desarrollo-astro-nextjs" class="hover:text-white transition-colors duration-200" data-i18n="footer.link.astro">Desarrollo Web con Astro y Next.js</a></li>
+          <li><a href="/soluciones/sistemas-erp-software-medida" class="hover:text-white transition-colors duration-200" data-i18n="footer.link.erp">Sistemas ERP y Software a Medida</a></li>
+          <li><a href="/servicios/desarrollo-wordpress" class="hover:text-white transition-colors duration-200" data-i18n="footer.link.wp">Desarrollo WordPress Avanzado</a></li>
         </ul>
       </div>
     )}
     
     <div class="col-span-1 md:col-span-2 md:col-start-11">
-      <h3 class="text-white text-xs font-normal mb-5">Plataforma</h3>
+      <h3 class="text-white text-xs font-normal mb-5" data-i18n="footer.platform">Plataforma</h3>
       <ul class="space-y-3 text-xs text-[#a8a8b3]">
-        <li><a href="/blog" class="hover:text-white transition-colors duration-200">Blog Técnico</a></li>
-        <li><a href="/contacto" class="hover:text-white transition-colors duration-200">Contacto</a></li>
+        <li><a href="/blog" class="hover:text-white transition-colors duration-200" data-i18n="footer.blog">Blog Técnico</a></li>
+        <li><a href="/contacto" class="hover:text-white transition-colors duration-200" data-i18n="footer.contact">Contacto</a></li>
       </ul>
     </div>
   </div>
   
   <div class="max-w-container-max mx-auto pt-8 border-t border-[#1f1f24] flex flex-col md:flex-row items-center justify-between text-[11px] text-[#a8a8b3]/60 relative z-10 font-mono">
-    <p>&copy; {new Date().getFullYear()} VortexLM. Todos los derechos reservados.</p>
+    <p>&copy; {new Date().getFullYear()} VortexLM. <span data-i18n="footer.rights">Todos los derechos reservados.</span></p>
   </div>
 </footer>

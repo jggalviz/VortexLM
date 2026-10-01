@@ -6,8 +6,9 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "lint": "node scripts/lint.mjs",
+    "lint": "node scripts/lint.mjs && node scripts/verify-i18n.mjs",
     "lint:strict": "node scripts/lint.mjs --strict",
+    "verify:i18n": "node scripts/verify-i18n.mjs",
     "astro": "astro"
   },
   "dependencies": {

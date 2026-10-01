@@ -14,6 +14,8 @@ export interface Props {
   isLocalBusiness?: boolean;
   faqItems?: FAQItem[];
   noindex?: boolean;
+  /** Clave i18n de la meta description (permite traducirla sin recargar). */
+  descriptionKey?: string;
 }
 
 // ── Valores por defecto globales ──────────────────────────────────
@@ -35,6 +37,7 @@ const {
   isLocalBusiness = false,
   faqItems,
   noindex = false,
+  descriptionKey,
 } = Astro.props;
 
 // ── Resolución de URLs ───────────────────────────────────────────
@@ -105,7 +108,7 @@ const faqSchema = faqItems && faqItems.length > 0
 <!-- Title & Meta Description -->
 <title>{fullTitle}</title>
 <meta name="title" content={fullTitle} />
-<meta name="description" content={description} />
+<meta name="description" content={description} data-i18n-meta-description={descriptionKey} />
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content={type} />

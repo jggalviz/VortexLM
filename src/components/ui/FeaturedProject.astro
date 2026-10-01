@@ -75,6 +75,13 @@ export interface Props {
   kpiGroupLabel?: string;
   /** Etiqueta pequeña sobre el bloque de agenda */
   agendaGroupLabel?: string;
+  /**
+   * Prefijo de claves i18n (p. ej. "home.project"). Cuando se informa, el
+   * componente marca cada texto con su `data-i18n` correspondiente para que el
+   * motor de i18n del cliente pueda traducirlo sin recargar. Si se omite, el
+   * componente se comporta exactamente igual que antes (sin atributos i18n).
+   */
+  i18nPrefix?: string;
 }
 
 const {
@@ -92,7 +99,16 @@ const {
   tags = [],
   kpiGroupLabel = 'Panel operativo',
   agendaGroupLabel = 'Agenda de hoy',
+  i18nPrefix = '',
 } = Astro.props;
+
+/**
+ * Clave i18n de un nodo a partir del prefijo. Devuelve `undefined` si no hay
+ * prefijo, de modo que Astro omite el atributo y el componente sigue siendo
+ * válido sin sistema de traducciones.
+ */
+const keyFor = (suffix: string): string | undefined =>
+  i18nPrefix ? `${i18nPrefix}.${suffix}` : undefined;
 
 const toneClasses: Record<AgendaTone, string> = {
   teal: 'bg-teal-500/10 text-teal-300 border-teal-500/25',
@@ -112,11 +128,11 @@ const toneClasses: Record<AgendaTone, string> = {
     <div class="lg:col-span-6 space-y-6">
       <!-- Badges -->
       <div class="flex flex-wrap items-center gap-2.5">
-        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-teal-500/30 bg-teal-500/10 text-teal-300 text-[10px] font-mono uppercase tracking-widest">
+        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-teal-500/30 bg-teal-500/10 text-teal-300 text-[10px] font-mono uppercase tracking-widest" data-i18n={keyFor('badge')}>
           {badge}
         </span>
         {badgeSecondary && (
-          <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-[#1f1f24] bg-white/[0.03] text-[#8a8a93] text-[10px] font-mono uppercase tracking-widest">
+          <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-[#1f1f24] bg-white/[0.03] text-[#8a8a93] text-[10px] font-mono uppercase tracking-widest" data-i18n={keyFor('badgeSecondary')}>
             {badgeSecondary}
           </span>
         )}
@@ -127,7 +143,7 @@ const toneClasses: Record<AgendaTone, string> = {
         <h3 class="text-3xl md:text-4xl font-light text-white tracking-tight leading-tight">
           {title}
         </h3>
-        <p class="text-sm text-[#cbd5e1] font-light leading-relaxed mt-4">
+        <p class="text-sm text-[#cbd5e1] font-light leading-relaxed mt-4" data-i18n={keyFor('subtitle')}>
           {subtitle}
         </p>
       </div>
@@ -135,7 +151,7 @@ const toneClasses: Record<AgendaTone, string> = {
       <!-- Características clave -->
       {features.length > 0 && (
         <ul class="space-y-3 pt-1">
-          {features.map((feature) => (
+          {features.map((feature, index) => (
             <li class="flex items-start gap-3 text-xs text-[#cbd5e1] font-light leading-relaxed">
               <span
                 class="mt-[1px] w-4 h-4 shrink-0 rounded-full bg-teal-500/10 border border-teal-500/30 flex items-center justify-center text-teal-400 text-[9px] font-bold"
@@ -143,7 +159,7 @@ const toneClasses: Record<AgendaTone, string> = {
               >
                 &#10003;
               </span>
-              <span>{feature}</span>
+              <span data-i18n={keyFor(`feature.${index}`)}>{feature}</span>
             </li>
           ))}
         </ul>
@@ -157,7 +173,7 @@ const toneClasses: Record<AgendaTone, string> = {
           rel={primaryCta.external ? 'noopener noreferrer' : undefined}
           class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-teal-600 text-white text-xs font-semibold tracking-wide hover:bg-teal-500 transition-all duration-200 active:scale-[0.97] shadow-[0_0_25px_rgba(13,148,136,0.25)]"
         >
-          {primaryCta.label}
+          <span data-i18n={keyFor('ctaPrimary')}>{primaryCta.label}</span>
           {primaryCta.external && <span class="text-[10px]" aria-hidden="true">&#8599;</span>}
         </a>
         {secondaryCta && (
@@ -167,7 +183,7 @@ const toneClasses: Record<AgendaTone, string> = {
             rel={secondaryCta.external ? 'noopener noreferrer' : undefined}
             class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full border border-[#1f1f24] bg-white/[0.02] text-[#cbd5e1] text-xs font-medium hover:text-white hover:border-teal-500/40 transition-all duration-200 active:scale-[0.97]"
           >
-            {secondaryCta.label}
+            <span data-i18n={keyFor('ctaSecondary')}>{secondaryCta.label}</span>
           </a>
         )}
       </div>
@@ -188,7 +204,7 @@ const toneClasses: Record<AgendaTone, string> = {
           </div>
           <span class="hidden sm:inline-flex items-center gap-1.5 text-[9px] font-mono text-teal-300 whitespace-nowrap">
             <span class="w-1.5 h-1.5 rounded-full bg-teal-400"></span>
-            {statusLabel}
+            <span data-i18n={keyFor('status')}>{statusLabel}</span>
           </span>
         </div>
 
@@ -197,18 +213,18 @@ const toneClasses: Record<AgendaTone, string> = {
           <!-- KPIs -->
           {kpis.length > 0 && (
             <div class="space-y-3">
-              <span class="text-[9px] uppercase tracking-wider text-[#cbd5e1]/40 font-mono font-semibold block">
+              <span class="text-[9px] uppercase tracking-wider text-[#cbd5e1]/40 font-mono font-semibold block" data-i18n={keyFor('kpiGroup')}>
                 {kpiGroupLabel}
               </span>
               <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                {kpis.map((kpi) => (
+                {kpis.map((kpi, index) => (
                   <div class="p-3 rounded-lg border border-[#1f1f24] bg-black/60">
-                    <div class="text-[9px] font-mono uppercase tracking-wider text-[#8a8a93] mb-1 truncate">
+                    <div class="text-[9px] font-mono uppercase tracking-wider text-[#8a8a93] mb-1 truncate" data-i18n={keyFor(`kpi.${index}.label`)}>
                       {kpi.label}
                     </div>
-                    <div class="text-sm font-medium text-white truncate">{kpi.value}</div>
+                    <div class="text-sm font-medium text-white truncate" data-i18n={keyFor(`kpi.${index}.value`)}>{kpi.value}</div>
                     {kpi.hint && (
-                      <div class="text-[9px] font-mono text-teal-400/80 mt-1 truncate">{kpi.hint}</div>
+                      <div class="text-[9px] font-mono text-teal-400/80 mt-1 truncate" data-i18n={keyFor(`kpi.${index}.hint`)}>{kpi.hint}</div>
                     )}
                   </div>
                 ))}
@@ -218,16 +234,17 @@ const toneClasses: Record<AgendaTone, string> = {
           <!-- Agenda 24/7 -->
           {agenda.length > 0 && (
             <div class="space-y-3">
-              <span class="text-[9px] uppercase tracking-wider text-[#cbd5e1]/40 font-mono font-semibold block">
+              <span class="text-[9px] uppercase tracking-wider text-[#cbd5e1]/40 font-mono font-semibold block" data-i18n={keyFor('agendaGroup')}>
                 {agendaGroupLabel}
               </span>
               <div class="divide-y divide-[#1f1f24] rounded-lg border border-[#1f1f24] bg-black/60 overflow-hidden">
-                {agenda.map((slot) => (
+                {agenda.map((slot, index) => (
                   <div class="flex items-center gap-3 px-3 py-2.5">
                     <span class="text-[10px] font-mono text-[#cbd5e1]/80 shrink-0">{slot.time}</span>
-                    <span class="text-[11px] text-white/90 flex-grow truncate">{slot.patient}</span>
+                    <span class="text-[11px] text-white/90 flex-grow truncate" data-i18n={keyFor(`agenda.${index}.patient`)}>{slot.patient}</span>
                     <span
                       class={`shrink-0 px-2 py-0.5 rounded-full border text-[8px] font-mono uppercase tracking-wide whitespace-nowrap ${toneClasses[slot.tone ?? 'zinc']}`}
+                      data-i18n={keyFor(`agenda.${index}.status`)}
                     >
                       {slot.status}
                     </span>
@@ -240,14 +257,14 @@ const toneClasses: Record<AgendaTone, string> = {
           <!-- Chips técnicos / comerciales -->
           {tags.length > 0 && (
             <div class="flex flex-wrap items-center gap-2 pt-1">
-              {tags.map((tag) => (
+              {tags.map((tag, index) => (
                 <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white/[0.03] border border-[#1f1f24] text-[9px] font-mono text-[#cbd5e1]/80">
                   {tag.icon && (
                     <span class="material-symbols-outlined text-[11px] text-teal-400" aria-hidden="true">
                       {tag.icon}
                     </span>
                   )}
-                  {tag.label}
+                  <span data-i18n={keyFor(`tag.${index}`)}>{tag.label}</span>
                 </span>
               ))}
             </div>

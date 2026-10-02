@@ -10,11 +10,11 @@
 //   3. Siempre `aria-hidden`: el nombre accesible lo da el texto del botón.
 //
 // Para cambiar la bandera de un idioma basta con reapuntar `FLAGS` a otra
-// constante (p. ej. `FLAG_ES_SPAIN` en lugar de `FLAG_ES_VENEZUELA`).
+// constante (p. ej. `FLAG_ES_VENEZUELA` en lugar de `FLAG_ES_SPAIN`).
 
 import type { Locale } from './config';
 
-/** Bandera de Venezuela (mercado principal de Vortex). */
+/** Bandera de Venezuela (alternativa para el locale `es`, mercado principal de Vortex). */
 export const FLAG_ES_VENEZUELA =
   '<svg viewBox="0 0 21 15" width="100%" height="100%" aria-hidden="true" focusable="false">' +
   '<rect width="21" height="5" fill="#FCD116"/>' +
@@ -27,7 +27,8 @@ export const FLAG_ES_VENEZUELA =
   '<circle cx="15.6" cy="7.7" r="0.55"/><circle cx="17.4" cy="8.7" r="0.55"/>' +
   '</g></svg>';
 
-/** Bandera de España (alternativa para el locale `es`). */
+/** Bandera de España: la que se muestra para el locale `es`
+ *  (símbolo estándar del idioma español y coherente con `og:locale: es_ES`). */
 export const FLAG_ES_SPAIN =
   '<svg viewBox="0 0 21 15" width="100%" height="100%" aria-hidden="true" focusable="false">' +
   '<rect width="21" height="15" fill="#AA151B"/>' +
@@ -60,6 +61,6 @@ export const FLAG_EN_USA =
 
 /** Bandera mostrada para cada locale en el selector. */
 export const FLAGS: Record<Locale, string> = {
-  es: FLAG_ES_VENEZUELA,
+  es: FLAG_ES_SPAIN,
   en: FLAG_EN_USA,
 };

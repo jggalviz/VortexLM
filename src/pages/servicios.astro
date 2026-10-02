@@ -3,14 +3,15 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import SEO from '../components/seo/SEO.astro';
 import FAQSchema from '../components/seo/FAQSchema.astro';
 import ServicesHero from '../components/ui/ServicesHero.astro';
+import ServicesDirectory from '../components/ui/ServicesDirectory.astro';
 import TechGrid from '../components/ui/TechGrid.astro';
 import WhiteLabelConcept from '../components/ui/WhiteLabelConcept.astro';
 import B2BExpandLinks from '../components/ui/B2BExpandLinks.astro';
 
 const isLanding = true;
-const pageTitle = 'Servicios de Desarrollo White Label para Agencias — VortexLM';
+const pageTitle = 'Servicios de Desarrollo Web y Perfiles Técnicos — VortexLM';
 const pageDescription =
-  'Externaliza desarrollo frontend (Astro, React, Next.js), WordPress corporativo sin builders y automatizaciones avanzadas. 100% white label, NDA incluido.';
+  'Directorio de servicios de desarrollo: perfil full-stack (Astro, React, Next.js), ingeniería de CMS (WordPress, Shopify), administración de aplicaciones web y sistemas a medida. Elige el perfil técnico que necesita tu proyecto.';
 const canonicalURL = 'https://vortexlm.com/servicios';
 
 const faqItems = [
@@ -43,6 +44,9 @@ const faqItems = [
   <main class="bg-neutral-950 text-white">
     <!-- SERVICES HERO — Capacidades técnicas -->
     <ServicesHero />
+
+    <!-- SERVICES DIRECTORY — índice maestro: acceso directo a cada perfil técnico -->
+    <ServicesDirectory />
 
     <!-- TECH GRID — 3 premium service cards -->
     <TechGrid />

@@ -1,0 +1,600 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+/* ───────────────────────────────────────────────────────────────────────────
+ *  /servicios/administrador-aplicaciones-web
+ *
+ *  Página del perfil "Administrador de Aplicaciones Web" (perfil 03 del
+ *  directorio de /servicios). Explica el servicio de gestión, despliegue y
+ *  mantenimiento de aplicaciones en producción, la integración y el soporte de
+ *  CRM/CMS, el monitoreo de rendimiento y la resolución de incidencias.
+ *
+ *  Estructura:
+ *    1. Hero con la propuesta de valor y métricas operativas del servicio
+ *    2. Capacidades: despliegue, mantenimiento, integraciones CRM/CMS, monitoreo
+ *    3. Plataformas y herramientas que administramos
+ *    4. Método de trabajo en cuatro fases
+ *    5. FAQ (alimenta el FAQPage de SEO.astro vía BaseLayout)
+ *    6. Interlinking interno hacia el resto del sitio
+ *    7. CTA final: formulario /api/contact + consulta directa por WhatsApp
+ *
+ *  Convención i18n del repo: cada texto visible va marcado con `data-i18n*` y su
+ *  valor español vive en una sola línea de origen para que el HTML servido sea
+ *  idéntico al diccionario `es` (lo verifica el crawl SSR).
+ * ─────────────────────────────────────────────────────────────────────────── */
+
+interface AdminCapability {
+  step: string;
+  slug: string;
+  title: string;
+  description: string;
+  points: string[];
+}
+
+interface ManagedPlatform {
+  slug: string;
+  name: string;
+  note: string;
+}
+
+/** Métricas operativas del servicio — todas verificables con la operación real */
+const heroStats = [
+  { value: '99.9%', label: 'Uptime objetivo en producción', slug: 'uptime' },
+  { value: '≤ 2 h', label: 'Primera respuesta ante incidencias', slug: 'respuesta' },
+  { value: '10+', label: 'Plataformas y servicios gestionados', slug: 'plataformas' },
+  { value: '350+', label: 'Sitios web y tiendas construidos desde cero', slug: 'proyectos' },
+];
+
+/** Capacidades del servicio de administración de aplicaciones web */
+const capabilities: AdminCapability[] = [
+  {
+    step: '01',
+    slug: 'despliegue',
+    title: 'Gestión y despliegue de arquitecturas web',
+    description:
+      'Ponemos en producción y mantenemos tu infraestructura: Vercel, Supabase, servidores gestionados, DNS, certificados y entornos de staging separados del sitio real.',
+    points: [
+      'Vercel: despliegues, previews por rama y dominios',
+      'Supabase: PostgreSQL, auth, storage y realtime',
+      'DNS, SSL, CDN y servidores gestionados',
+      'Control de versiones con Git y flujo de release',
+    ],
+  },
+  {
+    step: '02',
+    slug: 'mantenimiento',
+    title: 'Mantenimiento preventivo y continuo',
+    description:
+      'Actualizaciones de núcleo, dependencias y plugins con pruebas previas, copias de seguridad verificadas y ventanas de mantenimiento acordadas contigo.',
+    points: [
+      'Backups automáticos y prueba de restauración',
+      'Actualizaciones de WordPress, npm y dependencias',
+      'Entornos de staging para validar cada cambio',
+      'Informe mensual con cambios y estado del sistema',
+    ],
+  },
+  {
+    step: '03',
+    slug: 'integraciones',
+    title: 'Integración de CRM, CMS y sistemas a medida',
+    description:
+      'Conectamos tu web con las herramientas que ya usa tu equipo —CRM, CMS, pagos, ERP— y eliminamos el trabajo manual que nadie quiere seguir haciendo.',
+    points: [
+      'CRM: HubSpot, Zoho, Salesforce y desarrollos a medida',
+      'CMS: WordPress, Shopify y paneles propios',
+      'APIs REST, webhooks y sincronización de datos',
+      'Automatizaciones y flujos internos sin intervención',
+    ],
+  },
+  {
+    step: '04',
+    slug: 'monitoreo',
+    title: 'Monitoreo, seguridad e incidencias',
+    description:
+      'Vigilamos disponibilidad, rendimiento y seguridad, y resolvemos incidencias con un canal directo y tiempos de respuesta comprometidos por contrato.',
+    points: [
+      'Monitoreo de uptime, LCP, INP y CLS',
+      'Gestión de accesos, roles y permisos mínimos',
+      'Revisión de dependencias y buenas prácticas',
+      'Soporte prioritario por WhatsApp o Slack',
+    ],
+  },
+];
+
+/** Plataformas y herramientas que administramos (8 servicios en total) */
+const platforms: ManagedPlatform[] = [
+  { slug: 'vercel', name: 'Vercel', note: 'Hosting y despliegues con previews por rama' },
+  { slug: 'supabase', name: 'Supabase', note: 'PostgreSQL, autenticación, storage y realtime' },
+  { slug: 'github', name: 'GitHub', note: 'Repositorios, revisiones de código y releases' },
+  { slug: 'cloudflare', name: 'Cloudflare', note: 'DNS, CDN, caché y protección perimetral' },
+  { slug: 'wordpress', name: 'WordPress', note: 'Núcleo, plugins, temas y seguridad del panel' },
+  { slug: 'shopify', name: 'Shopify', note: 'Tiendas, apps y sincronización con tu operación' },
+  { slug: 'docker', name: 'Docker y servidores gestionados', note: 'Contenedores, despliegues y respaldos' },
+  { slug: 'n8n', name: 'n8n y automatizaciones', note: 'Flujos de trabajo, webhooks y tareas programadas' },
+];
+
+/** Método de trabajo en cuatro fases */
+const methodSteps = [
+  {
+    slug: 'diagnostico',
+    name: 'Diagnóstico y traspaso',
+    description:
+      'Auditamos accesos, infraestructura y riesgos, y firmamos el acuerdo de niveles de servicio antes de tocar nada.',
+  },
+  {
+    slug: 'puesta-en-produccion',
+    name: 'Puesta en producción',
+    description:
+      'Montamos staging, automatizamos despliegues y dejamos el sistema monitorizado con alertas desde el primer día.',
+  },
+  {
+    slug: 'operacion',
+    name: 'Operación continua',
+    description:
+      'Backups verificados, actualizaciones controladas, revisiones de seguridad y resoluciones dentro del tiempo acordado.',
+  },
+  {
+    slug: 'evolucion',
+    name: 'Optimización y evolución',
+    description:
+      'Cada mes revisamos rendimiento y backlog contigo y planificamos las mejoras que más impacto tienen en tu operación.',
+  },
+];
+
+/** FAQ — alimenta el JSON-LD FAQPage que emite SEO.astro desde BaseLayout */
+const faqs = [
+  {
+    slug: 'alcance',
+    question: '¿Qué incluye exactamente la administración de mis aplicaciones web?',
+    answer:
+      'Incluye la gestión de la infraestructura y de los servicios que tu aplicación necesita: despliegues, dominios, DNS, certificados, copias de seguridad, actualizaciones, monitoreo de disponibilidad y rendimiento, revisiones de seguridad y resolución de incidencias. No hace falta que tengas un departamento técnico propio: nosotros actuamos como tu equipo de operaciones.',
+  },
+  {
+    slug: 'hecho-por-otra-agencia',
+    question: '¿Pueden administrar una aplicación que no desarrolló VortexLM?',
+    answer:
+      'Sí. Trabajamos sobre aplicaciones en Astro, React, Next.js, WordPress, Shopify y backends propios, desarrolladas por cualquier equipo. Empezamos con un diagnóstico técnico y un traspaso de accesos ordenado, y documentamos todo lo que encontramos para que no dependas de nosotros para entender tu propio sistema.',
+  },
+  {
+    slug: 'incidencias',
+    question: '¿Qué pasa si mi aplicación se cae un fin de semana?',
+    answer:
+      'Los planes de operación continua incluyen monitoreo 24/7 con alertas automáticas. Si el sistema detecta una caída, recibimos el aviso y actuamos sin esperar a que lo notes. Los incidentes críticos tienen un tiempo de primera respuesta comprometido por contrato y un canal directo por WhatsApp o Slack.',
+  },
+  {
+    slug: 'migracion-infraestructura',
+    question: '¿Pueden migrar mi aplicación a otra infraestructura sin tiempo de caída?',
+    answer:
+      'Sí. Trabajamos con despliegues en staging, verificación de datos y ventanas de mantenimiento acordadas contigo. Hemos movido proyectos entre proveedores de hosting, de base de datos y de correo manteniendo el sitio en línea, redirecciones 301 en su sitio y sin perder posicionamiento ni datos de negocio.',
+  },
+  {
+    slug: 'precios',
+    question: '¿Cómo se cobra la administración mensual?',
+    answer:
+      'Con una cuota mensual fija según la complejidad de la aplicación, el número de integraciones y el nivel de soporte que necesites. Las mejoras evolutivas y los proyectos nuevos se cotizan aparte con alcance y plazos claros. Sin costes ocultos ni horas sorpresa al final del mes.',
+  },
+];
+
+/** Interlinking interno hacia el resto del sitio */
+const relatedLinks = [
+  {
+    href: '/servicios',
+    slug: 'directorio',
+    label: 'Directorio de servicios y perfiles técnicos',
+    description: 'Compara los cuatro perfiles técnicos del directorio y combina los que necesite tu proyecto.',
+  },
+  {
+    href: '/servicios/desarrollo-wordpress',
+    slug: 'cms',
+    label: 'Desarrollo WordPress avanzado',
+    description: 'El perfil de CMS: sitios y tiendas que después actualizamos, respaldamos y monitorizamos.',
+  },
+  {
+    href: '/servicios/programador-web-caracas',
+    slug: 'fullstack',
+    label: 'Desarrollador full-stack senior',
+    description: 'Cuando la operación detecta deuda técnica, el mismo equipo puede rehacer la arquitectura.',
+  },
+  {
+    href: '/servicios/sistemas-gestion-medida',
+    slug: 'sistemas',
+    label: 'Sistemas de gestión a medida',
+    description: 'Paneles internos y software de gestión a los que damos soporte y mantenemos conectados.',
+  },
+];
+
+/** Consulta directa por WhatsApp (mismo número corporativo del sitio) */
+const whatsappHref = `https://wa.me/584228101010?text=${encodeURIComponent(
+  'Hola Vortex, quiero un plan de administración para mis aplicaciones web. He visto el servicio en vortexlm.com y me gustaría recibir un diagnóstico y una propuesta de soporte.'
+)}`;
+
+/* ── Datos estructurados ───────────────────────────────────────────────────
+ * SEO.astro ya emite el ProfessionalService y el FAQPage desde BaseLayout;
+ * aquí sumamos el Service con su catálogo de planes de administración.
+ * Los scripts son datos (no código) y van auto-cerrados: el runner de lint
+ * exige que no queden etiquetas <script> sin cerrar.
+ * ──────────────────────────────────────────────────────────────────────── */
+const appsAdminServiceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Administración de Aplicaciones Web',
+  serviceType: 'Administración, despliegue y mantenimiento de aplicaciones web',
+  url: 'https://vortexlm.com/servicios/administrador-aplicaciones-web',
+  description:
+    'Administración de aplicaciones web: despliegue en Vercel y Supabase, mantenimiento preventivo, integración y soporte de CRM y CMS, monitoreo de disponibilidad y rendimiento y resolución de incidencias con soporte prioritario.',
+  provider: {
+    '@type': 'ProfessionalService',
+    name: 'Vortex Logic Microsystems LLC',
+    url: 'https://vortexlm.com',
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'Caracas',
+      addressRegion: 'Distrito Capital',
+      addressCountry: 'VE',
+    },
+  },
+  areaServed: [
+    { '@type': 'City', name: 'Caracas' },
+    { '@type': 'Country', name: 'Venezuela' },
+    { '@type': 'Country', name: 'Espana' },
+  ],
+  offers: {
+    '@type': 'Offer',
+    availability: 'https://schema.org/InStock',
+    priceCurrency: 'USD',
+    description:
+      'Cuota mensual de administración según complejidad, integraciones y nivel de soporte; mejoras evolutivas cotizadas aparte.',
+  },
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'Planes de administración de aplicaciones web',
+    itemListElement: [
+      {
+        '@type': 'Offer',
+        name: 'Mantenimiento esencial',
+        description: 'Actualizaciones controladas, copias de seguridad verificadas y monitorización de disponibilidad.',
+      },
+      {
+        '@type': 'Offer',
+        name: 'Operación continua',
+        description: 'Despliegues e integraciones CRM/CMS, revisiones de seguridad y soporte prioritario por WhatsApp o Slack.',
+      },
+      {
+        '@type': 'Offer',
+        name: 'Soporte a medida',
+        description: 'Bolsa de horas para incidencias, mejoras evolutivas y proyectos puntuales de infraestructura.',
+      },
+    ],
+  },
+};
+---
+
+<BaseLayout
+  title="Administrador de Aplicaciones Web en Caracas | Despliegue, Mantenimiento y Soporte"
+  description="Administración de aplicaciones web en Caracas: despliegue en Vercel y Supabase, mantenimiento preventivo, integración de CRM y CMS, monitoreo de rendimiento y soporte con tiempos de respuesta comprometidos."
+  titleKey="svcAppsAdmin.meta.title"
+  descriptionKey="svcAppsAdmin.meta.description"
+  type="website"
+  isLocalBusiness={true}
+  faqItems={faqs}
+>
+  <!-- Datos estructurados de la página (Service + catálogo de planes).
+       Se emiten dentro del body porque BaseLayout no expone un slot de <head>;
+       Google acepta JSON-LD en cualquier punto del documento. -->
+  <script type="application/ld+json" set:html={JSON.stringify(appsAdminServiceSchema)} />
+
+<!-- ─── HERO + PROPUESTA DE VALOR ───────────────────────────────── -->
+<section class="relative pt-36 pb-28 overflow-hidden linear-gradient-bg border-b border-[#1f1f24] px-6 md:px-12">
+  <div class="absolute inset-0 linear-grid opacity-30 pointer-events-none"></div>
+  <div class="max-w-[1200px] mx-auto text-center relative z-10">
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-white/[0.015] blur-[120px] rounded-full pointer-events-none"></div>
+
+    <span class="inline-block px-3 py-1.5 border border-[#1f1f24] rounded-full text-[10px] font-mono uppercase tracking-widest text-[#8a8a93] mb-8" data-i18n="svcAppsAdmin.n01">
+      Administrador de Aplicaciones Web
+    </span>
+
+    <h1 class="text-4xl md:text-7xl font-extralight tracking-tight text-white mb-8 leading-[1.08] max-w-4xl mx-auto opacity-95" data-i18n="svcAppsAdmin.n02">
+      Administrador de aplicaciones web: tus sistemas en producción, gestionados y monitorizados
+    </h1>
+
+    <!-- Propuesta de valor del servicio. El texto va en una sola línea de
+         origen para que aparezca idéntico en el HTML servido. -->
+    <div class="linear-card glow-hover rounded-lg border border-[#1f1f24] bg-[#08080c]/60 px-6 py-7 md:px-10 md:py-9 max-w-4xl mx-auto mb-10 text-left">
+      <div class="border-l-2 border-white/20 pl-5 md:pl-7">
+        <span class="text-[10px] font-mono uppercase tracking-widest text-[#8a8a93] block mb-3" data-i18n="svcAppsAdmin.n03">Qué hace un administrador de aplicaciones web</span>
+        <p class="text-base md:text-xl text-white font-light leading-relaxed tracking-tight" data-i18n="svcAppsAdmin.n04">Aplicaciones web conectadas a bases de datos, pasarelas de pago y sistemas de gestión propios, puestas en producción y administradas en serio: despliegues, mantenimiento, integraciones, monitoreo y soporte con tiempos de respuesta comprometidos.</p>
+      </div>
+    </div>
+
+    <!-- Métricas operativas del servicio -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 max-w-4xl mx-auto mb-12">
+      {heroStats.map((stat) => (
+        <div class="linear-card glow-hover rounded-lg border border-[#1f1f24] bg-[#08080c]/40 px-4 py-5 text-center">
+          <div class="text-2xl md:text-3xl font-light text-white tracking-tight">{stat.value}</div>
+          <div class="text-[10px] font-mono uppercase tracking-wider text-[#8a8a93] mt-2 leading-snug" data-i18n={`svcAppsAdmin.stat.${stat.slug}`}>{stat.label}</div>
+        </div>
+      ))}
+    </div>
+
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-6">
+      <a href="#contacto" class="w-full sm:w-auto px-8 py-3 bg-white text-black font-semibold text-xs rounded-full hover:bg-neutral-200 transition-all text-center duration-200 active:scale-95 shadow-[0_0_25px_rgba(255,255,255,0.15)]" data-i18n="svcAppsAdmin.n05">
+        Quiero administración y soporte
+      </a>
+      <a href="#capacidades" class="w-full sm:w-auto px-6 py-3 text-white/90 font-medium text-xs rounded-full hover:text-white flex items-center justify-center gap-1.5 group transition-colors">
+        <span data-i18n="svcAppsAdmin.n06">Ver las</span> <span data-i18n="svcAppsAdmin.n07">capacidades del servicio</span>
+        <span class="group-hover:translate-x-1 transition-transform">➔</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CAPACIDADES: ADMINISTRACIÓN DE APLICACIONES WEB ─────────── -->
+<section id="capacidades" class="py-24 md:py-32 px-6 md:px-12 bg-black border-b border-[#1f1f24] relative">
+  <div class="max-w-[1200px] mx-auto relative z-10">
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <span class="text-[10px] font-mono text-[#8a8a93] uppercase tracking-widest block mb-3 font-medium" data-i18n="svcAppsAdmin.n08">Cómo trabajamos</span>
+      <h2 class="text-3xl md:text-5xl font-light text-white tracking-tight mb-6" data-i18n="svcAppsAdmin.n09">Qué incluye la administración de tus aplicaciones web</h2>
+      <p class="text-sm md:text-base text-[#cbd5e1] font-light leading-relaxed" data-i18n="svcAppsAdmin.n10">
+        Una aplicación en producción no se mantiene sola. Cubrimos las cuatro áreas críticas de la
+        operación —despliegue, mantenimiento, integraciones y monitoreo— para que tu equipo se
+        dedique a lo suyo y el sistema siga funcionando como el primer día.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+      {capabilities.map((capability) => (
+        <article class="linear-card glow-hover rounded-lg border border-[#1f1f24] bg-[#08080c]/40 p-6 lg:p-8 transition-all">
+          <div class="flex items-center gap-3 mb-5">
+            <span class="text-[10px] font-mono text-[#8a8a93] uppercase tracking-widest">{capability.step}</span>
+            <span class="glow-line flex-grow" aria-hidden="true"></span>
+          </div>
+          <h3 class="text-lg md:text-xl font-light text-white tracking-tight mb-3" data-i18n={`svcAppsAdmin.capability.${capability.slug}.title`}>{capability.title}</h3>
+          <p class="text-xs text-[#cbd5e1] font-light leading-relaxed mb-5" data-i18n={`svcAppsAdmin.capability.${capability.slug}.description`}>{capability.description}</p>
+          <ul class="space-y-1.5 text-[10px] text-[#cbd5e1] font-mono">
+            {capability.points.map((point, k) => (
+              <li class="flex items-start gap-2">
+                <span class="text-white/70" aria-hidden="true">→</span>
+                <span data-i18n={`svcAppsAdmin.capability.${capability.slug}.point.${k}`}>{point}</span>
+              </li>
+            ))}
+          </ul>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- ─── PLATAFORMAS Y HERRAMIENTAS QUE ADMINISTRAMOS ────────────── -->
+<section class="py-24 md:py-32 px-6 md:px-12 bg-black border-b border-[#1f1f24] relative">
+  <div class="max-w-[1200px] mx-auto relative z-10">
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <span class="text-[10px] font-mono text-[#8a8a93] uppercase tracking-widest block mb-3 font-medium" data-i18n="svcAppsAdmin.n11">Plataformas</span>
+      <h2 class="text-3xl md:text-5xl font-light text-white tracking-tight mb-6" data-i18n="svcAppsAdmin.n12">Plataformas y servicios que administramos a diario</h2>
+      <p class="text-sm md:text-base text-[#cbd5e1] font-light leading-relaxed" data-i18n="svcAppsAdmin.n13">
+        No hace falta que tu equipo conozca cada consola, cada panel de facturación o cada cuota de
+        API. Estos son los entornos sobre los que operamos todos los días y con los que tu
+        aplicación probablemente ya cuenta.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+      {platforms.map((platform) => (
+        <div class="linear-card glow-hover rounded-lg border border-[#1f1f24] bg-[#08080c]/40 p-5 flex flex-col gap-2">
+          <span class="font-mono text-xs text-white break-words" data-i18n={`svcAppsAdmin.platform.${platform.slug}.name`}>{platform.name}</span>
+          <span class="text-[10px] font-mono uppercase tracking-wider text-[#8a8a93] leading-snug" data-i18n={`svcAppsAdmin.platform.${platform.slug}.note`}>{platform.note}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- ─── MÉTODO DE TRABAJO EN CUATRO FASES ───────────────────────── -->
+<section class="py-24 md:py-32 px-6 md:px-12 bg-black border-b border-[#1f1f24] relative">
+  <div class="max-w-[1200px] mx-auto relative z-10">
+    <div class="text-center max-w-2xl mx-auto mb-16">
+      <span class="text-[10px] font-mono text-[#8a8a93] uppercase tracking-widest block mb-3 font-medium" data-i18n="svcAppsAdmin.n14">Método</span>
+      <h2 class="text-3xl md:text-4xl font-light text-white tracking-tight" data-i18n="svcAppsAdmin.n15">Cómo pasamos tu aplicación a operación administrada</h2>
+    </div>
+
+    <ol class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      {methodSteps.map((step, index) => (
+        <li class="linear-card glow-hover rounded-lg border border-[#1f1f24] bg-[#08080c]/40 p-6 lg:p-7 transition-all">
+          <span class="text-[10px] font-mono text-[#8a8a93] uppercase tracking-widest block mb-4">{String(index + 1).padStart(2, '0')}</span>
+          <h3 class="text-base md:text-lg font-light text-white tracking-tight mb-3" data-i18n={`svcAppsAdmin.step.${step.slug}.name`}>{step.name}</h3>
+          <p class="text-xs text-[#cbd5e1] font-light leading-relaxed" data-i18n={`svcAppsAdmin.step.${step.slug}.description`}>{step.description}</p>
+        </li>
+      ))}
+    </ol>
+  </div>
+</section>
+
+<!-- ─── FAQ ─────────────────────────────────────────────────────── -->
+<section class="py-24 md:py-32 px-6 md:px-12 bg-black border-b border-[#1f1f24] relative">
+  <div class="max-w-[800px] mx-auto relative z-10">
+    <div class="text-center max-w-2xl mx-auto mb-16">
+      <span class="text-[10px] font-mono text-[#cbd5e1] uppercase tracking-widest block mb-3 font-medium" data-i18n="svcAppsAdmin.n16">FAQ</span>
+      <h2 class="text-3xl md:text-4xl font-light text-white tracking-tight" data-i18n="svcAppsAdmin.n17">Preguntas frecuentes sobre administración de aplicaciones web</h2>
+    </div>
+
+    <div class="space-y-4">
+      {faqs.map((faq) => (
+        <details class="group linear-card rounded-lg border border-[#1f1f24] bg-[#08080c]/30 overflow-hidden glow-hover transition-all">
+          <summary class="flex items-center justify-between gap-4 p-5 cursor-pointer text-sm font-medium text-white/90 hover:text-white transition-colors">
+            <span data-i18n={`svcAppsAdmin.faq.${faq.slug}.question`}>{faq.question}</span>
+            <span class="material-symbols-outlined text-sm text-[#cbd5e1]/60 group-open:rotate-180 transition-transform shrink-0" data-i18n="svcAppsAdmin.n18">expand_more</span>
+          </summary>
+          <div class="px-5 pb-5 text-xs text-[#cbd5e1] leading-relaxed">
+            <span data-i18n={`svcAppsAdmin.faq.${faq.slug}.answer`}>{faq.answer}</span>
+          </div>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- ─── INTERLINKING INTERNO ────────────────────────────────────── -->
+<section class="py-24 md:py-32 px-6 md:px-12 bg-black border-b border-[#1f1f24] relative">
+  <div class="max-w-[1200px] mx-auto relative z-10">
+    <div class="text-center max-w-2xl mx-auto mb-14">
+      <span class="text-[10px] font-mono text-[#8a8a93] uppercase tracking-widest block mb-3 font-medium" data-i18n="svcAppsAdmin.n19">Seguir explorando</span>
+      <h2 class="text-3xl md:text-4xl font-light text-white tracking-tight" data-i18n="svcAppsAdmin.n20">El resto del directorio, a un clic</h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
+      {relatedLinks.map((link) => (
+        <a href={link.href} class="linear-card glow-hover group rounded-lg border border-[#1f1f24] bg-[#08080c]/40 p-6 flex flex-col gap-3 transition-all">
+          <h3 class="text-sm font-light text-white tracking-tight group-hover:underline decoration-[#8a8a93] underline-offset-4" data-i18n={`svcAppsAdmin.link.${link.slug}.label`}>{link.label}</h3>
+          <p class="text-[11px] text-[#cbd5e1] font-light leading-relaxed" data-i18n={`svcAppsAdmin.link.${link.slug}.description`}>{link.description}</p>
+          <div class="mt-auto pt-2 flex items-center gap-2 text-[10px] font-mono uppercase tracking-wider text-[#8a8a93] group-hover:text-white transition-colors">
+            <span data-i18n="svcAppsAdmin.n21">Ver más</span>
+            <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </div>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- ─── CTA FINAL: FORMULARIO + WHATSAPP ────────────────────────── -->
+<section id="contacto" class="py-24 md:py-36 px-6 md:px-12 bg-black relative">
+  <div class="max-w-[600px] mx-auto text-center relative z-10 space-y-8">
+    <span class="text-[10px] font-mono text-[#cbd5e1] uppercase tracking-widest block font-medium" data-i18n="svcAppsAdmin.n22">Trabajemos juntos</span>
+    <h2 class="text-3xl md:text-5xl font-light text-white tracking-tight leading-tight" data-i18n="svcAppsAdmin.n23">
+      ¿Necesitas administrar tus aplicaciones web?
+    </h2>
+    <p class="text-sm text-[#cbd5e1] font-light leading-relaxed" data-i18n="svcAppsAdmin.n24">
+      Cuéntanos qué tienes en producción — una web, una tienda, un panel interno o una integración
+      con tu CRM — y recibirás un diagnóstico y un plan de administración con alcance, plazos y
+      presupuesto transparente. Sin compromiso.
+    </p>
+
+    <div class="linear-card p-8 rounded-lg border border-[#1f1f24] bg-[#08080c]/40 text-left space-y-6">
+      <div id="form-feedback" class="text-sm mt-4 hidden"></div>
+
+      <form id="contact-form-apps-admin" class="space-y-4">
+        <div>
+          <label class="block text-[10px] font-mono text-[#cbd5e1] uppercase tracking-wider mb-2 font-medium" for="app_name" data-i18n="svcAppsAdmin.n25">Nombre y Apellido</label>
+          <input
+            class="w-full bg-black border border-[#1f1f24] rounded px-4 py-3 text-xs text-white placeholder-neutral-800 focus:outline-none focus:border-white transition-colors"
+            type="text"
+            id="app_name"
+            name="name"
+            placeholder="Ej. Carlos Mendoza" data-i18n-placeholder="svcAppsAdmin.n26"
+            required
+          />
+        </div>
+
+        <div>
+          <label class="block text-[10px] font-mono text-[#cbd5e1] uppercase tracking-wider mb-2 font-medium" for="app_email" data-i18n="svcAppsAdmin.n27">Correo Corporativo</label>
+          <input
+            class="w-full bg-black border border-[#1f1f24] rounded px-4 py-3 text-xs text-white placeholder-neutral-800 focus:outline-none focus:border-white transition-colors"
+            type="email"
+            id="app_email"
+            name="email"
+            placeholder="carlos@tuempresa.com" data-i18n-placeholder="svcAppsAdmin.n28"
+            required
+          />
+        </div>
+
+        <div>
+          <label class="block text-[10px] font-mono text-[#cbd5e1] uppercase tracking-wider mb-2 font-medium" for="app_message" data-i18n="svcAppsAdmin.n29">Cuéntanos qué necesitas administrar</label>
+          <textarea
+            class="w-full bg-black border border-[#1f1f24] rounded px-4 py-3 text-xs text-white placeholder-neutral-800 focus:outline-none focus:border-white transition-colors min-h-[100px]"
+            id="app_message"
+            name="message"
+            placeholder="¿Qué aplicación o web quieres administrar? ¿Qué infraestructura usa hoy y con qué CRM o CMS trabaja tu equipo?" data-i18n-placeholder="svcAppsAdmin.n30"
+            required
+          ></textarea>
+        </div>
+
+        <input type="hidden" name="service" value="administrador-aplicaciones-web" />
+
+        <button
+          type="button"
+          data-original-text="Solicitar plan de administración"
+          class="w-full py-3 bg-white text-black font-semibold text-xs rounded hover:bg-neutral-200 transition-colors duration-200"
+          onclick="submitFormAppsAdmin()"
+        >
+          <span data-i18n="svcAppsAdmin.n31">Solicitar plan de administración</span>
+        </button>
+
+        <p class="text-[10px] text-[#737373] text-center mt-4 font-mono" data-i18n="svcAppsAdmin.n32">Tus datos están protegidos. Sin spam, garantizado.</p>
+      </form>
+
+      <div class="glow-line" aria-hidden="true"></div>
+
+      <!-- CTA alternativo: consulta directa sin formulario -->
+      <a
+        href={whatsappHref}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="w-full flex items-center justify-center gap-2 py-3 border border-[#1f1f24] rounded text-xs font-medium text-white hover:bg-white/[0.04] hover:border-white/20 transition-colors"
+      >
+        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+        </svg>
+        <span data-i18n="svcAppsAdmin.n33">Consulta directa por WhatsApp</span>
+      </a>
+    </div>
+  </div>
+
+  <script is:inline>
+    // El handler del botón se declara aquí (y no en un módulo empaquetado por
+    // Astro) porque los módulos tienen ámbito propio y el onclick no
+    // encontraría la función. Mismo patrón que /servicios/desarrollo-wordpress.
+    async function submitFormAppsAdmin() {
+      const form = document.getElementById('contact-form-apps-admin');
+      const feedback = document.getElementById('form-feedback');
+      const btn = form?.querySelector('button[type="button"]');
+      // Mensajes dinámicos en el idioma activo (la carga del motor i18n en
+      // BaseLayout ya inicializó window.vortexI18n antes de cualquier submit).
+      const translate = (key, fallback) => {
+        const i18n = window.vortexI18n;
+        return i18n ? i18n.t(key, fallback) : fallback;
+      };
+
+      if (!form || !(form instanceof HTMLFormElement) || !btn) { return; }
+      if (!(feedback instanceof HTMLElement)) { return; }
+
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+
+      btn.disabled = true;
+      btn.textContent = translate('svcAppsAdmin.form.sending', 'Enviando...');
+
+      try {
+        const res = await fetch('/api/contact', {
+          method: 'POST',
+          body: new FormData(form)
+        });
+        const data = await res.json();
+
+        if (data.success) {
+          feedback.className = 'text-sm mt-4 text-green-400';
+          feedback.textContent = translate('svcAppsAdmin.form.success', '¡Mensaje enviado con éxito! Te contactaremos pronto.');
+          feedback.classList.remove('hidden');
+          form.reset();
+        } else {
+          throw new Error(data.error);
+        }
+      } catch (err) {
+        feedback.className = 'text-sm mt-4 text-red-400';
+        feedback.textContent = translate('svcAppsAdmin.form.error', 'Error al enviar. Intenta de nuevo o escríbenos a info@vortexlm.com.');
+        feedback.classList.remove('hidden');
+      } finally {
+        btn.disabled = false;
+        btn.textContent = translate(
+          'svcAppsAdmin.form.submit',
+          btn.getAttribute('data-original-text') || 'Solicitar plan de administración'
+        );
+      }
+    }
+  </script>
+</section>
+</BaseLayout>
+
+

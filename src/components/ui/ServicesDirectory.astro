@@ -1,0 +1,179 @@
+---
+// src/components/ui/ServicesDirectory.astro
+//
+// "Directorio de servicios" — índice maestro de /servicios.
+//
+// Sustituye la antigua lista plana de servicios por un directorio limpio: cada
+// tarjeta es un acceso directo a la subpágina especializada de un perfil técnico
+// (desarrollador full-stack, desarrollador CMS, administrador de aplicaciones web
+// y sistemas a medida). Autocontenido, sin props ni dependencias externas.
+//
+// i18n: namespace `svcDirectory.*`. Los textos se marcan con plantilla
+// (`data-i18n={`svcDirectory.card.${slug}.title`}`), de modo que añadir un perfil
+// nuevo solo requiere un objeto más en `cards` y sus claves en el diccionario.
+
+interface DirectoryCard {
+  slug: string;
+  index: string;
+  href: string;
+  role: string;
+  title: string;
+  description: string;
+  points: string[];
+}
+
+const cards: DirectoryCard[] = [
+  {
+    slug: 'fullstack',
+    index: '01',
+    href: '/servicios/programador-web-caracas',
+    role: 'Desarrollador Full-Stack',
+    title: 'Desarrollador Full-Stack',
+    description:
+      'Ingeniería de producto de punta a punta: arquitectura, front-end, back-end, base de datos y despliegue con Astro, React, Next.js, Node.js y Supabase.',
+    points: [
+      'Astro, React, Next.js y TypeScript',
+      'APIs REST y GraphQL, webhooks y WebSockets',
+      'Autenticación, Row Level Security y CI/CD en Vercel',
+    ],
+  },
+  {
+    slug: 'cms',
+    index: '02',
+    href: '/servicios/desarrollo-wordpress',
+    role: 'Desarrollador CMS',
+    title: 'Desarrollador CMS',
+    description:
+      'WordPress, Shopify y CMS a medida sin page builders: contenido que tu equipo edita sin depender de un desarrollador y un rendimiento que no se degrada.',
+    points: [
+      'Bloques Gutenberg nativos y child themes',
+      'WooCommerce, headless y arquitecturas multisite',
+      'Migraciones sin perder posicionamiento',
+    ],
+  },
+  {
+    slug: 'apps',
+    index: '03',
+    href: '/servicios/administrador-aplicaciones-web',
+    role: 'Administrador de Aplicaciones',
+    title: 'Administrador de Aplicaciones Web',
+    description:
+      'Gestión, despliegue y soporte de tus aplicaciones en producción: Vercel, Supabase, servidores, CRM y CMS, con monitoreo y resolución de incidencias.',
+    points: [
+      'Despliegues, backups y control de versiones',
+      'Integración y soporte de CRM y CMS',
+      'Monitoreo, seguridad y tiempos de respuesta',
+    ],
+  },
+  {
+    slug: 'sistemas',
+    index: '04',
+    href: '/servicios/sistemas-gestion-medida',
+    role: 'Sistemas a medida',
+    title: 'Sistemas y automatizaciones a medida',
+    description:
+      'Software de gestión, paneles internos y flujos automatizados que conectan tu operación real con el resto de las plataformas de tu empresa.',
+    points: [
+      'Inventario, facturación y CRM a medida',
+      'Integraciones ETL, APIs y webhooks',
+      'Dashboards y reportería operativa',
+    ],
+  },
+];
+---
+<section
+  id="directorio"
+  class="relative w-full overflow-hidden bg-black border-t border-linear-border"
+  aria-label="Directorio de servicios y perfiles técnicos" data-i18n-aria-label="svcDirectory.aria"
+>
+  <!-- Top border glow -->
+  <div
+    class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/[0.06] to-transparent pointer-events-none"
+    aria-hidden="true"
+  ></div>
+
+  <div class="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-28 lg:py-32">
+    <!-- Section header -->
+    <div class="text-center mb-14 sm:mb-16 lg:mb-20">
+      <div class="flex items-center justify-center mb-6">
+        <span
+          class="inline-flex items-center gap-2 px-4 py-1.5 border border-linear-border rounded-full text-[10px] font-label-md uppercase tracking-[0.15em] text-linear-muted bg-linear-charcoal/60 backdrop-blur-sm"
+        >
+          <span class="w-1.5 h-1.5 rounded-full bg-linear-muted/60" aria-hidden="true"></span>
+          <span data-i18n="svcDirectory.badge">Directorio de servicios</span>
+        </span>
+      </div>
+
+      <h2
+        class="text-[clamp(1.75rem,4vw,3.25rem)] leading-[1.08] tracking-[-0.03em] font-light text-linear-text"
+        style="font-family: 'Space Grotesk', sans-serif;"
+      >
+        <span data-i18n="svcDirectory.title">Elige el perfil técnico que necesita tu proyecto</span>
+      </h2>
+
+      <p class="max-w-2xl mx-auto mt-5 text-sm sm:text-base leading-relaxed text-neutral-400 font-body-md">
+        <span data-i18n="svcDirectory.subtitle">Cada tarjeta abre la ficha completa del servicio: alcance, metodología, entregables y tiempos de respuesta. Puedes combinar varios perfiles en un mismo proyecto.</span>
+      </p>
+    </div>
+    <!-- Perfil cards: cada tarjeta enlaza a la subpágina especializada -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+      {cards.map((card) => (
+        <a
+          href={card.href}
+          class="group relative flex flex-col p-6 sm:p-8 rounded-2xl border border-linear-border bg-linear-charcoal/60 glow-hover transition-all duration-500 hover:-translate-y-0.5"
+          style="transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);"
+        >
+          <div class="flex items-center justify-between gap-4 mb-5">
+            <span class="font-code text-[11px] tracking-[0.2em] text-linear-muted/70">{card.index}</span>
+            <span class="inline-flex items-center px-3 py-1 rounded-full border border-linear-border text-[10px] font-label-md uppercase tracking-[0.12em] text-linear-muted">
+              <span data-i18n={`svcDirectory.card.${card.slug}.role`}>{card.role}</span>
+            </span>
+          </div>
+
+          <h3 class="text-xl sm:text-2xl font-light tracking-tight text-linear-text mb-4">
+            <span data-i18n={`svcDirectory.card.${card.slug}.title`}>{card.title}</span>
+          </h3>
+
+          <p class="text-sm leading-relaxed text-neutral-400 font-body-md mb-6">
+            <span data-i18n={`svcDirectory.card.${card.slug}.description`}>{card.description}</span>
+          </p>
+
+          <ul class="space-y-3 mb-8">
+            {card.points.map((point, pointIndex) => (
+              <li class="flex items-start gap-2.5">
+                <svg class="w-3.5 h-3.5 mt-1 flex-shrink-0 text-linear-muted/70" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M5 13l4 4L19 7" />
+                </svg>
+                <span class="font-code text-xs leading-relaxed text-neutral-400" data-i18n={`svcDirectory.card.${card.slug}.point.${pointIndex}`}>{point}</span>
+              </li>
+            ))}
+          </ul>
+
+          <div class="mt-auto flex items-center gap-2 text-xs font-medium text-linear-text">
+            <span data-i18n="svcDirectory.cta">Ver servicio</span>
+            <svg class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M5 12h14M13 6l6 6-6 6" />
+            </svg>
+          </div>
+        </a>
+      ))}
+    </div>
+    <!-- Footnote: salida para el visitante indeciso -->
+    <div class="mt-12 sm:mt-14 flex flex-col sm:flex-row items-center justify-center gap-3 text-center">
+      <p class="text-sm text-neutral-400 font-body-md">
+        <span data-i18n="svcDirectory.footnote">¿No sabes qué perfil encaja con tu proyecto?</span>
+      </p>
+      <a
+        href="/contacto"
+        class="inline-flex items-center gap-2 px-5 py-2 border border-linear-border rounded-full text-xs font-medium text-linear-text hover:bg-white/[0.04] hover:border-white/20 transition-colors duration-200"
+      >
+        <span data-i18n="svcDirectory.footnoteCta">Cuéntanos el caso y te recomendamos el equipo adecuado</span>
+        <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M5 12h14M13 6l6 6-6 6" />
+        </svg>
+      </a>
+    </div>
+
+  </div>
+</section>
+

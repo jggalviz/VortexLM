@@ -27,6 +27,7 @@ export const es = {
   'nav.stack': 'Stack Moderno',
   'nav.portfolio': 'Portafolio',
   'nav.portfolioTitle': 'Portafolio de sitios web WordPress',
+  'nav.apps': 'Apps y Soporte',
   'nav.contact': 'Contacto',
   'nav.ctaTeam': 'Contacta con nuestro equipo',
   'nav.login': 'Iniciar Sesión',
@@ -50,6 +51,7 @@ export const es = {
   'footer.link.astro': 'Desarrollo Web con Astro y Next.js',
   'footer.link.erp': 'Sistemas ERP y Software a Medida',
   'footer.link.wp': 'Desarrollo WordPress Avanzado',
+  'footer.link.appsAdmin': 'Administración de Aplicaciones Web',
 
   // ── Home · Hero ───────────────────────────────────────────────────────────
   'home.meta.title':
@@ -644,12 +646,12 @@ export const es = {
   'case.cta.hard.cta': 'Ir a los retos técnicos',
 
   // ── Servicios · Hero (ServicesHero.astro) ─────────────────────────────────
-  'servicesHero.badge': 'Capacidad Técnica',
-  'servicesHero.aria': 'Hero — Capacidades técnicas de desarrollo white label',
+  'servicesHero.badge': 'Directorio de servicios',
+  'servicesHero.aria': 'Hero — Directorio de servicios y perfiles técnicos',
   'servicesHero.title': 'Servicios de desarrollo',
   'servicesHero.titleAlt': 'white label para tu agencia',
   'servicesHero.subtitle':
-    'Desde frontend con tecnologías modernas hasta WordPress corporativo y automatizaciones complejas. Todo el desarrollo que necesitas, bajo tu marca.',
+    'Cuatro perfiles técnicos y un mismo estándar de ingeniería: desarrollo full-stack, ingeniería de CMS, administración de aplicaciones web y sistemas a medida. Todo el desarrollo que necesitas, bajo tu marca.',
 
   // ── Precios · Hero (PricingHero.astro) ────────────────────────────────────
   'pricingHero.badge': 'PRECIOS',
@@ -1180,9 +1182,9 @@ export const es = {
     'Cuéntanos cómo funciona tu empresa actualmente y te propondremos la arquitectura ideal.',
   // ── Metadatos de páginas core (title / description del documento) ──
   'svcPage.meta.title':
-    'Servicios de Desarrollo White Label para Agencias — VortexLM | Agencia de Desarrollo Web y Apps en Caracas',
+    'Servicios de Desarrollo Web y Perfiles Técnicos — VortexLM | Agencia de Desarrollo Web y Apps en Caracas',
   'svcPage.meta.description':
-    'Externaliza desarrollo frontend (Astro, React, Next.js), WordPress corporativo sin builders y automatizaciones avanzadas. 100% white label, NDA incluido.',
+    'Directorio de servicios de desarrollo: perfil full-stack (Astro, React, Next.js), ingeniería de CMS (WordPress, Shopify), administración de aplicaciones web y sistemas a medida. Elige el perfil técnico que necesita tu proyecto.',
   'contactoPage.meta.title':
     'Contacta con Nuestros Especialistas en Software y Web | Vortex | Agencia de Desarrollo Web y Apps en Caracas',
   'contactoPage.meta.description':
@@ -2834,6 +2836,187 @@ export const es = {
   'svcWordpress.stat.industrias': 'Industrias especializadas',
   'svcWordpress.stat.portafolio': 'Proyectos en este portafolio',
   'svcWordpress.stat.sitios': 'Sitios web desde cero',
+
+  // ── src/pages/servicios/administrador-aplicaciones-web.astro ──
+  'svcAppsAdmin.n01': 'Administrador de Aplicaciones Web',
+  'svcAppsAdmin.n02':
+    'Administrador de aplicaciones web: tus sistemas en producción, gestionados y monitorizados',
+  'svcAppsAdmin.n03': 'Qué hace un administrador de aplicaciones web',
+  'svcAppsAdmin.n04':
+    'Aplicaciones web conectadas a bases de datos, pasarelas de pago y sistemas de gestión propios, puestas en producción y administradas en serio: despliegues, mantenimiento, integraciones, monitoreo y soporte con tiempos de respuesta comprometidos.',
+  'svcAppsAdmin.n05': 'Quiero administración y soporte',
+  'svcAppsAdmin.n06': 'Ver las',
+  'svcAppsAdmin.n07': 'capacidades del servicio',
+  'svcAppsAdmin.n08': 'Cómo trabajamos',
+  'svcAppsAdmin.n09': 'Qué incluye la administración de tus aplicaciones web',
+  'svcAppsAdmin.n10':
+    'Una aplicación en producción no se mantiene sola. Cubrimos las cuatro áreas críticas de la operación —despliegue, mantenimiento, integraciones y monitoreo— para que tu equipo se dedique a lo suyo y el sistema siga funcionando como el primer día.',
+  'svcAppsAdmin.n11': 'Plataformas',
+  'svcAppsAdmin.n12': 'Plataformas y servicios que administramos a diario',
+  'svcAppsAdmin.n13':
+    'No hace falta que tu equipo conozca cada consola, cada panel de facturación o cada cuota de API. Estos son los entornos sobre los que operamos todos los días y con los que tu aplicación probablemente ya cuenta.',
+  'svcAppsAdmin.n14': 'Método',
+  'svcAppsAdmin.n15': 'Cómo pasamos tu aplicación a operación administrada',
+  'svcAppsAdmin.n16': 'FAQ',
+  'svcAppsAdmin.n17': 'Preguntas frecuentes sobre administración de aplicaciones web',
+  'svcAppsAdmin.n18': 'expand_more',
+  'svcAppsAdmin.n19': 'Seguir explorando',
+  'svcAppsAdmin.n20': 'El resto del directorio, a un clic',
+  'svcAppsAdmin.n21': 'Ver más',
+  'svcAppsAdmin.n22': 'Trabajemos juntos',
+  'svcAppsAdmin.n23': '¿Necesitas administrar tus aplicaciones web?',
+  'svcAppsAdmin.n24':
+    'Cuéntanos qué tienes en producción — una web, una tienda, un panel interno o una integración con tu CRM — y recibirás un diagnóstico y un plan de administración con alcance, plazos y presupuesto transparente. Sin compromiso.',
+  'svcAppsAdmin.n25': 'Nombre y Apellido',
+  'svcAppsAdmin.n26': 'Ej. Carlos Mendoza',
+  'svcAppsAdmin.n27': 'Correo Corporativo',
+  'svcAppsAdmin.n28': 'carlos@tuempresa.com',
+  'svcAppsAdmin.n29': 'Cuéntanos qué necesitas administrar',
+  'svcAppsAdmin.n30':
+    '¿Qué aplicación o web quieres administrar? ¿Qué infraestructura usa hoy y con qué CRM o CMS trabaja tu equipo?',
+  'svcAppsAdmin.n31': 'Solicitar plan de administración',
+  'svcAppsAdmin.n32': 'Tus datos están protegidos. Sin spam, garantizado.',
+  'svcAppsAdmin.n33': 'Consulta directa por WhatsApp',
+  'svcAppsAdmin.capability.despliegue.description':
+    'Ponemos en producción y mantenemos tu infraestructura: Vercel, Supabase, servidores gestionados, DNS, certificados y entornos de staging separados del sitio real.',
+  'svcAppsAdmin.capability.despliegue.point.0': 'Vercel: despliegues, previews por rama y dominios',
+  'svcAppsAdmin.capability.despliegue.point.1': 'Supabase: PostgreSQL, auth, storage y realtime',
+  'svcAppsAdmin.capability.despliegue.point.2': 'DNS, SSL, CDN y servidores gestionados',
+  'svcAppsAdmin.capability.despliegue.point.3': 'Control de versiones con Git y flujo de release',
+  'svcAppsAdmin.capability.despliegue.title': 'Gestión y despliegue de arquitecturas web',
+  'svcAppsAdmin.capability.integraciones.description':
+    'Conectamos tu web con las herramientas que ya usa tu equipo —CRM, CMS, pagos, ERP— y eliminamos el trabajo manual que nadie quiere seguir haciendo.',
+  'svcAppsAdmin.capability.integraciones.point.0':
+    'CRM: HubSpot, Zoho, Salesforce y desarrollos a medida',
+  'svcAppsAdmin.capability.integraciones.point.1': 'CMS: WordPress, Shopify y paneles propios',
+  'svcAppsAdmin.capability.integraciones.point.2': 'APIs REST, webhooks y sincronización de datos',
+  'svcAppsAdmin.capability.integraciones.point.3':
+    'Automatizaciones y flujos internos sin intervención',
+  'svcAppsAdmin.capability.integraciones.title': 'Integración de CRM, CMS y sistemas a medida',
+  'svcAppsAdmin.capability.mantenimiento.description':
+    'Actualizaciones de núcleo, dependencias y plugins con pruebas previas, copias de seguridad verificadas y ventanas de mantenimiento acordadas contigo.',
+  'svcAppsAdmin.capability.mantenimiento.point.0': 'Backups automáticos y prueba de restauración',
+  'svcAppsAdmin.capability.mantenimiento.point.1':
+    'Actualizaciones de WordPress, npm y dependencias',
+  'svcAppsAdmin.capability.mantenimiento.point.2': 'Entornos de staging para validar cada cambio',
+  'svcAppsAdmin.capability.mantenimiento.point.3':
+    'Informe mensual con cambios y estado del sistema',
+  'svcAppsAdmin.capability.mantenimiento.title': 'Mantenimiento preventivo y continuo',
+  'svcAppsAdmin.capability.monitoreo.description':
+    'Vigilamos disponibilidad, rendimiento y seguridad, y resolvemos incidencias con un canal directo y tiempos de respuesta comprometidos por contrato.',
+  'svcAppsAdmin.capability.monitoreo.point.0': 'Monitoreo de uptime, LCP, INP y CLS',
+  'svcAppsAdmin.capability.monitoreo.point.1': 'Gestión de accesos, roles y permisos mínimos',
+  'svcAppsAdmin.capability.monitoreo.point.2': 'Revisión de dependencias y buenas prácticas',
+  'svcAppsAdmin.capability.monitoreo.point.3': 'Soporte prioritario por WhatsApp o Slack',
+  'svcAppsAdmin.capability.monitoreo.title': 'Monitoreo, seguridad e incidencias',
+  'svcAppsAdmin.faq.alcance.answer':
+    'Incluye la gestión de la infraestructura y de los servicios que tu aplicación necesita: despliegues, dominios, DNS, certificados, copias de seguridad, actualizaciones, monitoreo de disponibilidad y rendimiento, revisiones de seguridad y resolución de incidencias. No hace falta que tengas un departamento técnico propio: nosotros actuamos como tu equipo de operaciones.',
+  'svcAppsAdmin.faq.alcance.question':
+    '¿Qué incluye exactamente la administración de mis aplicaciones web?',
+  'svcAppsAdmin.faq.hecho-por-otra-agencia.answer':
+    'Sí. Trabajamos sobre aplicaciones en Astro, React, Next.js, WordPress, Shopify y backends propios, desarrolladas por cualquier equipo. Empezamos con un diagnóstico técnico y un traspaso de accesos ordenado, y documentamos todo lo que encontramos para que no dependas de nosotros para entender tu propio sistema.',
+  'svcAppsAdmin.faq.hecho-por-otra-agencia.question':
+    '¿Pueden administrar una aplicación que no desarrolló VortexLM?',
+  'svcAppsAdmin.faq.incidencias.answer':
+    'Los planes de operación continua incluyen monitoreo 24/7 con alertas automáticas. Si el sistema detecta una caída, recibimos el aviso y actuamos sin esperar a que lo notes. Los incidentes críticos tienen un tiempo de primera respuesta comprometido por contrato y un canal directo por WhatsApp o Slack.',
+  'svcAppsAdmin.faq.incidencias.question': '¿Qué pasa si mi aplicación se cae un fin de semana?',
+  'svcAppsAdmin.faq.migracion-infraestructura.answer':
+    'Sí. Trabajamos con despliegues en staging, verificación de datos y ventanas de mantenimiento acordadas contigo. Hemos movido proyectos entre proveedores de hosting, de base de datos y de correo manteniendo el sitio en línea, redirecciones 301 en su sitio y sin perder posicionamiento ni datos de negocio.',
+  'svcAppsAdmin.faq.migracion-infraestructura.question':
+    '¿Pueden migrar mi aplicación a otra infraestructura sin tiempo de caída?',
+  'svcAppsAdmin.faq.precios.answer':
+    'Con una cuota mensual fija según la complejidad de la aplicación, el número de integraciones y el nivel de soporte que necesites. Las mejoras evolutivas y los proyectos nuevos se cotizan aparte con alcance y plazos claros. Sin costes ocultos ni horas sorpresa al final del mes.',
+  'svcAppsAdmin.faq.precios.question': '¿Cómo se cobra la administración mensual?',
+  'svcAppsAdmin.form.error': 'Error al enviar. Intenta de nuevo o escríbenos a info@vortexlm.com.',
+  'svcAppsAdmin.form.sending': 'Enviando...',
+  'svcAppsAdmin.form.submit': 'Solicitar plan de administración',
+  'svcAppsAdmin.form.success': '¡Mensaje enviado con éxito! Te contactaremos pronto.',
+  'svcAppsAdmin.link.cms.description':
+    'El perfil de CMS: sitios y tiendas que después actualizamos, respaldamos y monitorizamos.',
+  'svcAppsAdmin.link.cms.label': 'Desarrollo WordPress avanzado',
+  'svcAppsAdmin.link.directorio.description':
+    'Compara los cuatro perfiles técnicos del directorio y combina los que necesite tu proyecto.',
+  'svcAppsAdmin.link.directorio.label': 'Directorio de servicios y perfiles técnicos',
+  'svcAppsAdmin.link.fullstack.description':
+    'Cuando la operación detecta deuda técnica, el mismo equipo puede rehacer la arquitectura.',
+  'svcAppsAdmin.link.fullstack.label': 'Desarrollador full-stack senior',
+  'svcAppsAdmin.link.sistemas.description':
+    'Paneles internos y software de gestión a los que damos soporte y mantenemos conectados.',
+  'svcAppsAdmin.link.sistemas.label': 'Sistemas de gestión a medida',
+  'svcAppsAdmin.meta.description':
+    'Administración de aplicaciones web en Caracas: despliegue en Vercel y Supabase, mantenimiento preventivo, integración de CRM y CMS, monitoreo de rendimiento y soporte con tiempos de respuesta comprometidos.',
+  'svcAppsAdmin.meta.title':
+    'Administrador de Aplicaciones Web en Caracas | Despliegue, Mantenimiento y Soporte | Agencia de Desarrollo Web y Apps en Caracas',
+  'svcAppsAdmin.platform.cloudflare.name': 'Cloudflare',
+  'svcAppsAdmin.platform.cloudflare.note': 'DNS, CDN, caché y protección perimetral',
+  'svcAppsAdmin.platform.docker.name': 'Docker y servidores gestionados',
+  'svcAppsAdmin.platform.docker.note': 'Contenedores, despliegues y respaldos',
+  'svcAppsAdmin.platform.github.name': 'GitHub',
+  'svcAppsAdmin.platform.github.note': 'Repositorios, revisiones de código y releases',
+  'svcAppsAdmin.platform.n8n.name': 'n8n y automatizaciones',
+  'svcAppsAdmin.platform.n8n.note': 'Flujos de trabajo, webhooks y tareas programadas',
+  'svcAppsAdmin.platform.shopify.name': 'Shopify',
+  'svcAppsAdmin.platform.shopify.note': 'Tiendas, apps y sincronización con tu operación',
+  'svcAppsAdmin.platform.supabase.name': 'Supabase',
+  'svcAppsAdmin.platform.supabase.note': 'PostgreSQL, autenticación, storage y realtime',
+  'svcAppsAdmin.platform.vercel.name': 'Vercel',
+  'svcAppsAdmin.platform.vercel.note': 'Hosting y despliegues con previews por rama',
+  'svcAppsAdmin.platform.wordpress.name': 'WordPress',
+  'svcAppsAdmin.platform.wordpress.note': 'Núcleo, plugins, temas y seguridad del panel',
+  'svcAppsAdmin.stat.plataformas': 'Plataformas y servicios gestionados',
+  'svcAppsAdmin.stat.proyectos': 'Sitios web y tiendas construidos desde cero',
+  'svcAppsAdmin.stat.respuesta': 'Primera respuesta ante incidencias',
+  'svcAppsAdmin.stat.uptime': 'Uptime objetivo en producción',
+  'svcAppsAdmin.step.diagnostico.description':
+    'Auditamos accesos, infraestructura y riesgos, y firmamos el acuerdo de niveles de servicio antes de tocar nada.',
+  'svcAppsAdmin.step.diagnostico.name': 'Diagnóstico y traspaso',
+  'svcAppsAdmin.step.evolucion.description':
+    'Cada mes revisamos rendimiento y backlog contigo y planificamos las mejoras que más impacto tienen en tu operación.',
+  'svcAppsAdmin.step.evolucion.name': 'Optimización y evolución',
+  'svcAppsAdmin.step.operacion.description':
+    'Backups verificados, actualizaciones controladas, revisiones de seguridad y resoluciones dentro del tiempo acordado.',
+  'svcAppsAdmin.step.operacion.name': 'Operación continua',
+  'svcAppsAdmin.step.puesta-en-produccion.description':
+    'Montamos staging, automatizamos despliegues y dejamos el sistema monitorizado con alertas desde el primer día.',
+  'svcAppsAdmin.step.puesta-en-produccion.name': 'Puesta en producción',
+
+  // ── src/components/ui/ServicesDirectory.astro ──
+  'svcDirectory.aria': 'Directorio de servicios y perfiles técnicos',
+  'svcDirectory.badge': 'Directorio de servicios',
+  'svcDirectory.card.apps.description':
+    'Gestión, despliegue y soporte de tus aplicaciones en producción: Vercel, Supabase, servidores, CRM y CMS, con monitoreo y resolución de incidencias.',
+  'svcDirectory.card.apps.point.0': 'Despliegues, backups y control de versiones',
+  'svcDirectory.card.apps.point.1': 'Integración y soporte de CRM y CMS',
+  'svcDirectory.card.apps.point.2': 'Monitoreo, seguridad y tiempos de respuesta',
+  'svcDirectory.card.apps.role': 'Administrador de Aplicaciones',
+  'svcDirectory.card.apps.title': 'Administrador de Aplicaciones Web',
+  'svcDirectory.card.cms.description':
+    'WordPress, Shopify y CMS a medida sin page builders: contenido que tu equipo edita sin depender de un desarrollador y un rendimiento que no se degrada.',
+  'svcDirectory.card.cms.point.0': 'Bloques Gutenberg nativos y child themes',
+  'svcDirectory.card.cms.point.1': 'WooCommerce, headless y arquitecturas multisite',
+  'svcDirectory.card.cms.point.2': 'Migraciones sin perder posicionamiento',
+  'svcDirectory.card.cms.role': 'Desarrollador CMS',
+  'svcDirectory.card.cms.title': 'Desarrollador CMS',
+  'svcDirectory.card.fullstack.description':
+    'Ingeniería de producto de punta a punta: arquitectura, front-end, back-end, base de datos y despliegue con Astro, React, Next.js, Node.js y Supabase.',
+  'svcDirectory.card.fullstack.point.0': 'Astro, React, Next.js y TypeScript',
+  'svcDirectory.card.fullstack.point.1': 'APIs REST y GraphQL, webhooks y WebSockets',
+  'svcDirectory.card.fullstack.point.2': 'Autenticación, Row Level Security y CI/CD en Vercel',
+  'svcDirectory.card.fullstack.role': 'Desarrollador Full-Stack',
+  'svcDirectory.card.fullstack.title': 'Desarrollador Full-Stack',
+  'svcDirectory.card.sistemas.description':
+    'Software de gestión, paneles internos y flujos automatizados que conectan tu operación real con el resto de las plataformas de tu empresa.',
+  'svcDirectory.card.sistemas.point.0': 'Inventario, facturación y CRM a medida',
+  'svcDirectory.card.sistemas.point.1': 'Integraciones ETL, APIs y webhooks',
+  'svcDirectory.card.sistemas.point.2': 'Dashboards y reportería operativa',
+  'svcDirectory.card.sistemas.role': 'Sistemas a medida',
+  'svcDirectory.card.sistemas.title': 'Sistemas y automatizaciones a medida',
+  'svcDirectory.cta': 'Ver servicio',
+  'svcDirectory.footnote': '¿No sabes qué perfil encaja con tu proyecto?',
+  'svcDirectory.footnoteCta': 'Cuéntanos el caso y te recomendamos el equipo adecuado',
+  'svcDirectory.subtitle':
+    'Cada tarjeta abre la ficha completa del servicio: alcance, metodología, entregables y tiempos de respuesta. Puedes combinar varios perfiles en un mismo proyecto.',
+  'svcDirectory.title': 'Elige el perfil técnico que necesita tu proyecto',
 } as const;
 
 /** Claves válidas del diccionario (derivadas de `es`). */
@@ -2851,6 +3034,7 @@ export const en: Record<UiKey, string> = {
   'nav.stack': 'Modern Stack',
   'nav.portfolio': 'Portfolio',
   'nav.portfolioTitle': 'WordPress website portfolio',
+  'nav.apps': 'Apps and Support',
   'nav.contact': 'Contact',
   'nav.ctaTeam': 'Talk to our team',
   'nav.login': 'Sign In',
@@ -2874,6 +3058,7 @@ export const en: Record<UiKey, string> = {
   'footer.link.astro': 'Web Development with Astro & Next.js',
   'footer.link.erp': 'ERP Systems & Custom Software',
   'footer.link.wp': 'Advanced WordPress Development',
+  'footer.link.appsAdmin': 'Web Application Administration',
 
   // ── Home · Hero ───────────────────────────────────────────────────────────
   'home.meta.title':
@@ -3465,12 +3650,12 @@ export const en: Record<UiKey, string> = {
   'case.cta.hard.cta': 'Go to the technical challenges',
 
   // ── Services · Hero (ServicesHero.astro) ──────────────────────────────────
-  'servicesHero.badge': 'Technical Capability',
-  'servicesHero.aria': 'Hero — White label development technical capabilities',
+  'servicesHero.badge': 'Services Directory',
+  'servicesHero.aria': 'Hero — Services directory and technical profiles',
   'servicesHero.title': 'Development services',
   'servicesHero.titleAlt': 'white label for your agency',
   'servicesHero.subtitle':
-    'From frontend with modern technologies to corporate WordPress and complex automations. All the development you need, under your brand.',
+    'Four technical profiles, one engineering standard: full-stack development, CMS engineering, web application administration and custom systems. All the development you need, under your brand.',
 
   // ── Pricing · Hero (PricingHero.astro) ────────────────────────────────────
   'pricingHero.badge': 'PRICING',
@@ -4000,9 +4185,9 @@ export const en: Record<UiKey, string> = {
     'Tell us how your company works today and we will propose the ideal architecture.',
   // ── Metadatos de páginas core (title / description del documento) ──
   'svcPage.meta.title':
-    'White Label Development Services for Agencies — VortexLM | Web and App Development Agency in Caracas',
+    'Web Development Services and Technical Profiles — VortexLM | Web and App Development Agency in Caracas',
   'svcPage.meta.description':
-    'Outsource frontend development (Astro, React, Next.js), corporate WordPress without builders and advanced automations. 100% white label, NDA included.',
+    'Development services directory: full-stack profile (Astro, React, Next.js), CMS engineering (WordPress, Shopify), web application administration and custom systems. Choose the technical profile your project needs.',
   'contactoPage.meta.title':
     'Contact Our Software and Web Specialists | Vortex | Web and App Development Agency in Caracas',
   'contactoPage.meta.description':
@@ -5645,6 +5830,186 @@ export const en: Record<UiKey, string> = {
   'svcWordpress.stat.industrias': 'Specialized industries',
   'svcWordpress.stat.portafolio': 'Projects in this portfolio',
   'svcWordpress.stat.sitios': 'Websites built from scratch',
+
+  // ── src/pages/servicios/administrador-aplicaciones-web.astro ──
+  'svcAppsAdmin.n01': 'Web Application Administrator',
+  'svcAppsAdmin.n02':
+    'Web application administrator: your systems in production, managed and monitored',
+  'svcAppsAdmin.n03': 'What a web application administrator does',
+  'svcAppsAdmin.n04':
+    'Web applications connected to databases, payment gateways and in-house management systems, shipped to production and seriously administered: deployments, maintenance, integrations, monitoring and support with committed response times.',
+  'svcAppsAdmin.n05': 'I want management and support',
+  'svcAppsAdmin.n06': 'See the',
+  'svcAppsAdmin.n07': 'capabilities of the service',
+  'svcAppsAdmin.n08': 'How we work',
+  'svcAppsAdmin.n09': 'What managing your web applications includes',
+  'svcAppsAdmin.n10':
+    'An application in production does not maintain itself. We cover the four critical areas of the operation — deployment, maintenance, integrations and monitoring — so that your team can focus on its own work and the system keeps running as it did on day one.',
+  'svcAppsAdmin.n11': 'Platforms',
+  'svcAppsAdmin.n12': 'Platforms and services we manage every day',
+  'svcAppsAdmin.n13':
+    'Your team does not need to know every console, every billing dashboard or every API quota. These are the environments we operate in every day and the ones your application most likely already uses.',
+  'svcAppsAdmin.n14': 'Method',
+  'svcAppsAdmin.n15': 'How we move your application to managed operations',
+  'svcAppsAdmin.n16': 'FAQ',
+  'svcAppsAdmin.n17': 'Frequently asked questions about web application management',
+  'svcAppsAdmin.n18': 'expand_more',
+  'svcAppsAdmin.n19': 'Keep exploring',
+  'svcAppsAdmin.n20': 'The rest of the directory, one click away',
+  'svcAppsAdmin.n21': 'Learn more',
+  'svcAppsAdmin.n22': 'Let us work together',
+  'svcAppsAdmin.n23': 'Do you need to manage your web applications?',
+  'svcAppsAdmin.n24':
+    'Tell us what you have in production — a website, a store, an internal dashboard or an integration with your CRM — and you will receive an assessment and a management plan with transparent scope, timelines and budget. No commitment.',
+  'svcAppsAdmin.n25': 'First and Last Name',
+  'svcAppsAdmin.n26': 'e.g. Carlos Mendoza',
+  'svcAppsAdmin.n27': 'Corporate Email',
+  'svcAppsAdmin.n28': 'carlos@yourcompany.com',
+  'svcAppsAdmin.n29': 'Tell us what you need managed',
+  'svcAppsAdmin.n30':
+    'Which application or website do you want to manage? What infrastructure does it use today and which CRM or CMS does your team work with?',
+  'svcAppsAdmin.n31': 'Request a management plan',
+  'svcAppsAdmin.n32': 'Your data is protected. No spam, guaranteed.',
+  'svcAppsAdmin.n33': 'Direct enquiry on WhatsApp',
+  'svcAppsAdmin.capability.despliegue.description':
+    'We ship and maintain your infrastructure: Vercel, Supabase, managed servers, DNS, certificates and staging environments kept separate from the live site.',
+  'svcAppsAdmin.capability.despliegue.point.0':
+    'Vercel: deployments, per-branch previews and domains',
+  'svcAppsAdmin.capability.despliegue.point.1': 'Supabase: PostgreSQL, auth, storage and realtime',
+  'svcAppsAdmin.capability.despliegue.point.2': 'DNS, SSL, CDN and managed servers',
+  'svcAppsAdmin.capability.despliegue.point.3': 'Version control with Git and a release workflow',
+  'svcAppsAdmin.capability.despliegue.title': 'Management and deployment of web architectures',
+  'svcAppsAdmin.capability.integraciones.description':
+    'We connect your site with the tools your team already uses — CRM, CMS, payments, ERP — and remove the manual work nobody wants to keep doing.',
+  'svcAppsAdmin.capability.integraciones.point.0':
+    'CRM: HubSpot, Zoho, Salesforce and custom development',
+  'svcAppsAdmin.capability.integraciones.point.1':
+    'CMS: WordPress, Shopify and in-house dashboards',
+  'svcAppsAdmin.capability.integraciones.point.2': 'REST APIs, webhooks and data synchronization',
+  'svcAppsAdmin.capability.integraciones.point.3':
+    'Automations and internal flows that run unattended',
+  'svcAppsAdmin.capability.integraciones.title': 'CRM, CMS and custom system integrations',
+  'svcAppsAdmin.capability.mantenimiento.description':
+    'Core, dependency and plugin updates with prior testing, verified backups and maintenance windows agreed with you.',
+  'svcAppsAdmin.capability.mantenimiento.point.0': 'Automatic backups and restore testing',
+  'svcAppsAdmin.capability.mantenimiento.point.1': 'WordPress, npm and dependency updates',
+  'svcAppsAdmin.capability.mantenimiento.point.2': 'Staging environments to validate every change',
+  'svcAppsAdmin.capability.mantenimiento.point.3': 'Monthly report with changes and system status',
+  'svcAppsAdmin.capability.mantenimiento.title': 'Preventive, continuous maintenance',
+  'svcAppsAdmin.capability.monitoreo.description':
+    'We watch availability, performance and security, and resolve incidents through a direct channel with contractually committed response times.',
+  'svcAppsAdmin.capability.monitoreo.point.0': 'Uptime, LCP, INP and CLS monitoring',
+  'svcAppsAdmin.capability.monitoreo.point.1': 'Access, role and least-privilege management',
+  'svcAppsAdmin.capability.monitoreo.point.2': 'Dependency and best-practice reviews',
+  'svcAppsAdmin.capability.monitoreo.point.3': 'Priority support over WhatsApp or Slack',
+  'svcAppsAdmin.capability.monitoreo.title': 'Monitoring, security and incident response',
+  'svcAppsAdmin.faq.alcance.answer':
+    'It covers the management of the infrastructure and of the services your application needs: deployments, domains, DNS, certificates, backups, updates, uptime and performance monitoring, security reviews and incident resolution. You do not need a technical department of your own: we act as your operations team.',
+  'svcAppsAdmin.faq.alcance.question': 'What exactly does managing my web applications include?',
+  'svcAppsAdmin.faq.hecho-por-otra-agencia.answer':
+    'Yes. We work on applications built with Astro, React, Next.js, WordPress, Shopify and custom back ends, developed by any team. We start with a technical assessment and an orderly handover of accesses, and we document everything we find so that you never depend on us to understand your own system.',
+  'svcAppsAdmin.faq.hecho-por-otra-agencia.question':
+    'Can you manage an application VortexLM did not build?',
+  'svcAppsAdmin.faq.incidencias.answer':
+    'Continuous operation plans include 24/7 monitoring with automatic alerts. If the system detects an outage we get the alert and act without waiting for you to notice. Critical incidents have a contractually committed first-response time and a direct channel over WhatsApp or Slack.',
+  'svcAppsAdmin.faq.incidencias.question': 'What happens if my application goes down on a weekend?',
+  'svcAppsAdmin.faq.migracion-infraestructura.answer':
+    'Yes. We work with staging deployments, data verification and maintenance windows agreed with you. We have moved projects between hosting, database and email providers while keeping the site online, with 301 redirects in place and no loss of rankings or business data.',
+  'svcAppsAdmin.faq.migracion-infraestructura.question':
+    'Can you migrate my application to another infrastructure with no downtime?',
+  'svcAppsAdmin.faq.precios.answer':
+    'With a fixed monthly fee based on the complexity of the application, the number of integrations and the level of support you need. Evolutionary improvements and new projects are quoted separately with clear scope and timelines. No hidden costs and no surprise hours at the end of the month.',
+  'svcAppsAdmin.faq.precios.question': 'How is the monthly management fee billed?',
+  'svcAppsAdmin.form.error': 'Sending failed. Please try again or email us at info@vortexlm.com.',
+  'svcAppsAdmin.form.sending': 'Sending...',
+  'svcAppsAdmin.form.submit': 'Request a management plan',
+  'svcAppsAdmin.form.success': 'Message sent successfully! We will contact you soon.',
+  'svcAppsAdmin.link.cms.description':
+    'The CMS profile: sites and stores we later update, back up and monitor.',
+  'svcAppsAdmin.link.cms.label': 'Advanced WordPress development',
+  'svcAppsAdmin.link.directorio.description':
+    'Compare the four technical profiles in the directory and combine the ones your project needs.',
+  'svcAppsAdmin.link.directorio.label': 'Services and technical profiles directory',
+  'svcAppsAdmin.link.fullstack.description':
+    'When operations detect technical debt, the same team can rebuild the architecture.',
+  'svcAppsAdmin.link.fullstack.label': 'Senior full-stack developer',
+  'svcAppsAdmin.link.sistemas.description':
+    'Internal dashboards and management software we support and keep connected.',
+  'svcAppsAdmin.link.sistemas.label': 'Custom management systems',
+  'svcAppsAdmin.meta.description':
+    'Web application management in Caracas: deployment on Vercel and Supabase, preventive maintenance, CRM and CMS integration, performance monitoring and support with committed response times.',
+  'svcAppsAdmin.meta.title':
+    'Web Application Administrator in Caracas | Deployment, Maintenance and Support | Web and App Development Agency in Caracas',
+  'svcAppsAdmin.platform.cloudflare.name': 'Cloudflare',
+  'svcAppsAdmin.platform.cloudflare.note': 'DNS, CDN, caching and edge protection',
+  'svcAppsAdmin.platform.docker.name': 'Docker and managed servers',
+  'svcAppsAdmin.platform.docker.note': 'Containers, deployments and backups',
+  'svcAppsAdmin.platform.github.name': 'GitHub',
+  'svcAppsAdmin.platform.github.note': 'Repositories, code reviews and releases',
+  'svcAppsAdmin.platform.n8n.name': 'n8n and automations',
+  'svcAppsAdmin.platform.n8n.note': 'Workflows, webhooks and scheduled tasks',
+  'svcAppsAdmin.platform.shopify.name': 'Shopify',
+  'svcAppsAdmin.platform.shopify.note': 'Stores, apps and synchronization with your operation',
+  'svcAppsAdmin.platform.supabase.name': 'Supabase',
+  'svcAppsAdmin.platform.supabase.note': 'PostgreSQL, authentication, storage and realtime',
+  'svcAppsAdmin.platform.vercel.name': 'Vercel',
+  'svcAppsAdmin.platform.vercel.note': 'Hosting and deployments with per-branch previews',
+  'svcAppsAdmin.platform.wordpress.name': 'WordPress',
+  'svcAppsAdmin.platform.wordpress.note': 'Core, plugins, themes and dashboard security',
+  'svcAppsAdmin.stat.plataformas': 'Platforms and services managed',
+  'svcAppsAdmin.stat.proyectos': 'Websites and stores built from scratch',
+  'svcAppsAdmin.stat.respuesta': 'First response to incidents',
+  'svcAppsAdmin.stat.uptime': 'Target uptime in production',
+  'svcAppsAdmin.step.diagnostico.description':
+    'We audit accesses, infrastructure and risks, and sign the service level agreement before touching anything.',
+  'svcAppsAdmin.step.diagnostico.name': 'Assessment and handover',
+  'svcAppsAdmin.step.evolucion.description':
+    'Every month we review performance and backlog with you and plan the improvements with the biggest impact on your operation.',
+  'svcAppsAdmin.step.evolucion.name': 'Optimization and evolution',
+  'svcAppsAdmin.step.operacion.description':
+    'Verified backups, controlled updates, security reviews and resolutions within the agreed time.',
+  'svcAppsAdmin.step.operacion.name': 'Continuous operation',
+  'svcAppsAdmin.step.puesta-en-produccion.description':
+    'We set up staging, automate deployments and leave the system monitored with alerts from day one.',
+  'svcAppsAdmin.step.puesta-en-produccion.name': 'Go live',
+
+  // ── src/components/ui/ServicesDirectory.astro ──
+  'svcDirectory.aria': 'Services and technical profiles directory',
+  'svcDirectory.badge': 'Services directory',
+  'svcDirectory.card.apps.description':
+    'Management, deployment and support for your applications in production: Vercel, Supabase, servers, CRM and CMS, with monitoring and incident resolution.',
+  'svcDirectory.card.apps.point.0': 'Deployments, backups and version control',
+  'svcDirectory.card.apps.point.1': 'CRM and CMS integration and support',
+  'svcDirectory.card.apps.point.2': 'Monitoring, security and response times',
+  'svcDirectory.card.apps.role': 'Application Administrator',
+  'svcDirectory.card.apps.title': 'Web Application Administrator',
+  'svcDirectory.card.cms.description':
+    'WordPress, Shopify and custom CMS without page builders: content your team edits without depending on a developer, and performance that does not degrade.',
+  'svcDirectory.card.cms.point.0': 'Native Gutenberg blocks and child themes',
+  'svcDirectory.card.cms.point.1': 'WooCommerce, headless and multisite architectures',
+  'svcDirectory.card.cms.point.2': 'Migrations with no loss of rankings',
+  'svcDirectory.card.cms.role': 'CMS Developer',
+  'svcDirectory.card.cms.title': 'CMS Developer',
+  'svcDirectory.card.fullstack.description':
+    'End-to-end product engineering: architecture, front end, back end, database and deployment with Astro, React, Next.js, Node.js and Supabase.',
+  'svcDirectory.card.fullstack.point.0': 'Astro, React, Next.js and TypeScript',
+  'svcDirectory.card.fullstack.point.1': 'REST and GraphQL APIs, webhooks and WebSockets',
+  'svcDirectory.card.fullstack.point.2': 'Authentication, Row Level Security and CI/CD on Vercel',
+  'svcDirectory.card.fullstack.role': 'Full-Stack Developer',
+  'svcDirectory.card.fullstack.title': 'Full-Stack Developer',
+  'svcDirectory.card.sistemas.description':
+    'Management software, internal dashboards and automated workflows that connect your real operation with the rest of your company platforms.',
+  'svcDirectory.card.sistemas.point.0': 'Custom inventory, invoicing and CRM',
+  'svcDirectory.card.sistemas.point.1': 'ETL, API and webhook integrations',
+  'svcDirectory.card.sistemas.point.2': 'Operational dashboards and reporting',
+  'svcDirectory.card.sistemas.role': 'Custom systems',
+  'svcDirectory.card.sistemas.title': 'Custom systems and automations',
+  'svcDirectory.cta': 'View service',
+  'svcDirectory.footnote': 'Not sure which profile fits your project?',
+  'svcDirectory.footnoteCta': 'Tell us the case and we will recommend the right team',
+  'svcDirectory.subtitle':
+    'Each card opens the full service page: scope, methodology, deliverables and response times. You can combine several profiles in the same project.',
+  'svcDirectory.title': 'Choose the technical profile your project needs',
 };
 
 /** Catálogo completo indexado por locale. */

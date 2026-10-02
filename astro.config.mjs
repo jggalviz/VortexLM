@@ -9,6 +9,13 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
   site: 'https://vortexlm.com',
   output: 'server',
+  // Redirect 301 de la URL antigua del perfil al nuevo slug: el servicio pasó de
+  // "Administrador de Aplicaciones Web" a "Administrador de Aplicaciones
+  // Empresariales" (CRM, ERP, DXP, IAM e ITSM). El adaptador de Vercel emite la
+  // ruta 301 a partir de esta declaración, así que la URL indexada no se pierde.
+  redirects: {
+    '/servicios/administrador-aplicaciones-web': '/servicios/administrador-aplicaciones-empresariales',
+  },
   build: {
     // 'always' inlines every page stylesheet into the HTML that Astro already
     // renders per request. Trade-off: the Tailwind bundle (≈102 kB raw, ≈14 kB

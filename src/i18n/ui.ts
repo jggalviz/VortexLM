@@ -54,7 +54,7 @@ export const es = {
   'footer.link.astro': 'Desarrollo Web con Astro y Next.js',
   'footer.link.erp': 'Sistemas ERP y Software a Medida',
   'footer.link.wp': 'Desarrollo WordPress Avanzado',
-  'footer.link.appsAdmin': 'Administración de Aplicaciones Web',
+  'footer.link.appsAdmin': 'Administración de Aplicaciones Empresariales',
 
   // ── Home · Hero ───────────────────────────────────────────────────────────
   'home.meta.title':
@@ -654,7 +654,7 @@ export const es = {
   'servicesHero.title': 'Servicios de desarrollo',
   'servicesHero.titleAlt': 'white label para tu agencia',
   'servicesHero.subtitle':
-    'Cuatro perfiles técnicos y un mismo estándar de ingeniería: desarrollo full-stack, ingeniería de CMS, administración de aplicaciones web y sistemas a medida. Todo el desarrollo que necesitas, bajo tu marca.',
+    'Cuatro perfiles técnicos y un mismo estándar de ingeniería: desarrollo full-stack, ingeniería de CMS, administración de aplicaciones empresariales y sistemas a medida. Todo el desarrollo que necesitas, bajo tu marca.',
 
   // ── Precios · Hero (PricingHero.astro) ────────────────────────────────────
   'pricingHero.badge': 'PRECIOS',
@@ -1187,7 +1187,7 @@ export const es = {
   'svcPage.meta.title':
     'Servicios de Desarrollo Web y Perfiles Técnicos — VortexLM | Agencia de Desarrollo Web y Apps en Caracas',
   'svcPage.meta.description':
-    'Directorio de servicios de desarrollo: perfil full-stack (Astro, React, Next.js), ingeniería de CMS (WordPress, Shopify), administración de aplicaciones web y sistemas a medida. Elige el perfil técnico que necesita tu proyecto.',
+    'Directorio de servicios de desarrollo: perfil full-stack (Astro, React, Next.js), ingeniería de CMS (WordPress, Shopify), administración de aplicaciones empresariales y sistemas a medida. Elige el perfil técnico que necesita tu proyecto.',
   'contactoPage.meta.title':
     'Contacta con Nuestros Especialistas en Software y Web | Vortex | Agencia de Desarrollo Web y Apps en Caracas',
   'contactoPage.meta.description':
@@ -2840,96 +2840,107 @@ export const es = {
   'svcWordpress.stat.portafolio': 'Proyectos en este portafolio',
   'svcWordpress.stat.sitios': 'Sitios web desde cero',
 
-  // ── src/pages/servicios/administrador-aplicaciones-web.astro ──
-  'svcAppsAdmin.n01': 'Administrador de Aplicaciones Web',
+  // ── src/pages/servicios/administrador-aplicaciones-empresariales.astro ──
+  'svcAppsAdmin.n01': 'Administrador de Aplicaciones Empresariales',
   'svcAppsAdmin.n02':
-    'Administrador de aplicaciones web: tus sistemas en producción, gestionados y monitorizados',
-  'svcAppsAdmin.n03': 'Qué hace un administrador de aplicaciones web',
+    'Administrador de aplicaciones empresariales: CRM, ERP y portales corporativos bajo control',
+  'svcAppsAdmin.n03': 'Qué hace un administrador de aplicaciones empresariales',
   'svcAppsAdmin.n04':
-    'Aplicaciones web conectadas a bases de datos, pasarelas de pago y sistemas de gestión propios, puestas en producción y administradas en serio: despliegues, mantenimiento, integraciones, monitoreo y soporte con tiempos de respuesta comprometidos.',
+    'Gestionamos las plataformas que sostienen tu operación —Salesforce, Dynamics 365, Liferay, Okta, ServiceNow— con gobernanza de identidades, integraciones, soporte L2/L3 y ciclos de vida planificados. Tu equipo se dedica al negocio; nosotros a que las aplicaciones empresariales funcionen como el primer día.',
   'svcAppsAdmin.n05': 'Quiero administración y soporte',
   'svcAppsAdmin.n06': 'Ver las',
   'svcAppsAdmin.n07': 'capacidades del servicio',
   'svcAppsAdmin.n08': 'Cómo trabajamos',
-  'svcAppsAdmin.n09': 'Qué incluye la administración de tus aplicaciones web',
+  'svcAppsAdmin.n09': 'Qué incluye la administración de tus aplicaciones empresariales',
   'svcAppsAdmin.n10':
-    'Una aplicación en producción no se mantiene sola. Cubrimos las cuatro áreas críticas de la operación —despliegue, mantenimiento, integraciones y monitoreo— para que tu equipo se dedique a lo suyo y el sistema siga funcionando como el primer día.',
+    'Una aplicación empresarial no se mantiene sola. Gestionamos las cinco áreas críticas de la operación —identidades, integraciones, mantenimiento, soporte y gobernanza— para que tu equipo se dedique a lo suyo y la plataforma siga alineada con el negocio.',
   'svcAppsAdmin.n11': 'Plataformas',
-  'svcAppsAdmin.n12': 'Plataformas y servicios que administramos a diario',
+  'svcAppsAdmin.n12': 'Plataformas empresariales que administramos a diario',
   'svcAppsAdmin.n13':
-    'No hace falta que tu equipo conozca cada consola, cada panel de facturación o cada cuota de API. Estos son los entornos sobre los que operamos todos los días y con los que tu aplicación probablemente ya cuenta.',
+    'No hace falta que tu equipo conozca cada consola, cada panel de facturación o cada cuota de API. Estos son los entornos corporativos sobre los que operamos todos los días y con los que tu empresa probablemente ya cuenta.',
   'svcAppsAdmin.n14': 'Método',
-  'svcAppsAdmin.n15': 'Cómo pasamos tu aplicación a operación administrada',
+  'svcAppsAdmin.n15': 'Cómo pasamos tus aplicaciones a operación administrada',
   'svcAppsAdmin.n16': 'FAQ',
-  'svcAppsAdmin.n17': 'Preguntas frecuentes sobre administración de aplicaciones web',
+  'svcAppsAdmin.n17': 'Preguntas frecuentes sobre administración de aplicaciones empresariales',
   'svcAppsAdmin.n18': 'expand_more',
   'svcAppsAdmin.n19': 'Seguir explorando',
   'svcAppsAdmin.n20': 'El resto del directorio, a un clic',
   'svcAppsAdmin.n21': 'Ver más',
   'svcAppsAdmin.n22': 'Trabajemos juntos',
-  'svcAppsAdmin.n23': '¿Necesitas administrar tus aplicaciones web?',
+  'svcAppsAdmin.n23': '¿Necesitas administrar tus aplicaciones empresariales?',
   'svcAppsAdmin.n24':
-    'Cuéntanos qué tienes en producción — una web, una tienda, un panel interno o una integración con tu CRM — y recibirás un diagnóstico y un plan de administración con alcance, plazos y presupuesto transparente. Sin compromiso.',
+    'Cuéntanos qué plataformas tienes en producción —Salesforce, Dynamics, Liferay, Okta, ServiceNow o cualquier otra— y recibirás un diagnóstico y un plan de administración con alcance, plazos y presupuesto transparente. Sin compromiso.',
   'svcAppsAdmin.n25': 'Nombre y Apellido',
   'svcAppsAdmin.n26': 'Ej. Carlos Mendoza',
   'svcAppsAdmin.n27': 'Correo Corporativo',
   'svcAppsAdmin.n28': 'carlos@tuempresa.com',
   'svcAppsAdmin.n29': 'Cuéntanos qué necesitas administrar',
   'svcAppsAdmin.n30':
-    '¿Qué aplicación o web quieres administrar? ¿Qué infraestructura usa hoy y con qué CRM o CMS trabaja tu equipo?',
+    '¿Qué plataformas tienes en producción y qué proveedores de identidad, ERP o CRM usan hoy tus equipos?',
   'svcAppsAdmin.n31': 'Solicitar plan de administración',
   'svcAppsAdmin.n32': 'Tus datos están protegidos. Sin spam, garantizado.',
   'svcAppsAdmin.n33': 'Consulta directa por WhatsApp',
-  'svcAppsAdmin.capability.despliegue.description':
-    'Ponemos en producción y mantenemos tu infraestructura: Vercel, Supabase, servidores gestionados, DNS, certificados y entornos de staging separados del sitio real.',
-  'svcAppsAdmin.capability.despliegue.point.0': 'Vercel: despliegues, previews por rama y dominios',
-  'svcAppsAdmin.capability.despliegue.point.1': 'Supabase: PostgreSQL, auth, storage y realtime',
-  'svcAppsAdmin.capability.despliegue.point.2': 'DNS, SSL, CDN y servidores gestionados',
-  'svcAppsAdmin.capability.despliegue.point.3': 'Control de versiones con Git y flujo de release',
-  'svcAppsAdmin.capability.despliegue.title': 'Gestión y despliegue de arquitecturas web',
-  'svcAppsAdmin.capability.integraciones.description':
-    'Conectamos tu web con las herramientas que ya usa tu equipo —CRM, CMS, pagos, ERP— y eliminamos el trabajo manual que nadie quiere seguir haciendo.',
-  'svcAppsAdmin.capability.integraciones.point.0':
-    'CRM: HubSpot, Zoho, Salesforce y desarrollos a medida',
-  'svcAppsAdmin.capability.integraciones.point.1': 'CMS: WordPress, Shopify y paneles propios',
-  'svcAppsAdmin.capability.integraciones.point.2': 'APIs REST, webhooks y sincronización de datos',
-  'svcAppsAdmin.capability.integraciones.point.3':
-    'Automatizaciones y flujos internos sin intervención',
-  'svcAppsAdmin.capability.integraciones.title': 'Integración de CRM, CMS y sistemas a medida',
-  'svcAppsAdmin.capability.mantenimiento.description':
-    'Actualizaciones de núcleo, dependencias y plugins con pruebas previas, copias de seguridad verificadas y ventanas de mantenimiento acordadas contigo.',
-  'svcAppsAdmin.capability.mantenimiento.point.0': 'Backups automáticos y prueba de restauración',
-  'svcAppsAdmin.capability.mantenimiento.point.1':
-    'Actualizaciones de WordPress, npm y dependencias',
-  'svcAppsAdmin.capability.mantenimiento.point.2': 'Entornos de staging para validar cada cambio',
-  'svcAppsAdmin.capability.mantenimiento.point.3':
-    'Informe mensual con cambios y estado del sistema',
-  'svcAppsAdmin.capability.mantenimiento.title': 'Mantenimiento preventivo y continuo',
-  'svcAppsAdmin.capability.monitoreo.description':
-    'Vigilamos disponibilidad, rendimiento y seguridad, y resolvemos incidencias con un canal directo y tiempos de respuesta comprometidos por contrato.',
-  'svcAppsAdmin.capability.monitoreo.point.0': 'Monitoreo de uptime, LCP, INP y CLS',
-  'svcAppsAdmin.capability.monitoreo.point.1': 'Gestión de accesos, roles y permisos mínimos',
-  'svcAppsAdmin.capability.monitoreo.point.2': 'Revisión de dependencias y buenas prácticas',
-  'svcAppsAdmin.capability.monitoreo.point.3': 'Soporte prioritario por WhatsApp o Slack',
-  'svcAppsAdmin.capability.monitoreo.title': 'Monitoreo, seguridad e incidencias',
+  'svcAppsAdmin.capability.ciclo-de-vida.description':
+    'Gestionamos versiones, parches, licenciamiento y roadmap de cada plataforma para que nunca te sorprenda una actualización crítica ni una renovación de contrato.',
+  'svcAppsAdmin.capability.ciclo-de-vida.point.0': 'Actualizaciones de versión y parches de seguridad',
+  'svcAppsAdmin.capability.ciclo-de-vida.point.1':
+    'Gestión de licencias, renovaciones y relación con proveedores',
+  'svcAppsAdmin.capability.ciclo-de-vida.point.2': 'Entornos de staging y pruebas antes de cada cambio',
+  'svcAppsAdmin.capability.ciclo-de-vida.point.3': 'Informe mensual de estado, cambios y riesgos',
+  'svcAppsAdmin.capability.ciclo-de-vida.title': 'Mantenimiento, actualizaciones y ciclo de vida',
+  'svcAppsAdmin.capability.gobernanza.description':
+    'Aseguramos que la plataforma se use bien: formamos usuarios, revisamos adopción y alineamos la configuración con los procesos reales del negocio.',
+  'svcAppsAdmin.capability.gobernanza.point.0': 'Formación y onboarding de usuarios internos',
+  'svcAppsAdmin.capability.gobernanza.point.1': 'Revisión de adopción y buenas prácticas de uso',
+  'svcAppsAdmin.capability.gobernanza.point.2': 'Gobernanza de datos y cumplimiento normativo',
+  'svcAppsAdmin.capability.gobernanza.point.3':
+    'Alineación entre configuración técnica y procesos de negocio',
+  'svcAppsAdmin.capability.gobernanza.title': 'Gobernanza y adopción',
+  'svcAppsAdmin.capability.iam.description':
+    'Administramos quién puede ver qué dentro de cada aplicación. Configuramos SSO, roles, permisos y políticas de acceso mínimo con Okta, Microsoft Entra ID o el proveedor de identidad corporativo.',
+  'svcAppsAdmin.capability.iam.point.0': 'SSO y autenticación centralizada con Okta o Entra ID',
+  'svcAppsAdmin.capability.iam.point.1': 'Gestión de roles y permisos por aplicación y por área',
+  'svcAppsAdmin.capability.iam.point.2': 'Aprovisionamiento y desaprovisionamiento de usuarios',
+  'svcAppsAdmin.capability.iam.point.3': 'Auditoría de accesos y cumplimiento de políticas internas',
+  'svcAppsAdmin.capability.iam.title': 'Gestión de identidades y accesos (IAM)',
+  'svcAppsAdmin.capability.integracion.description':
+    'Conectamos las aplicaciones entre sí —CRM, ERP, DXP, pagos, mesa de ayuda— y eliminamos la carga manual y los errores de datos duplicados.',
+  'svcAppsAdmin.capability.integracion.point.0':
+    'CRM: Salesforce, Microsoft Dynamics 365, HubSpot, Zoho',
+  'svcAppsAdmin.capability.integracion.point.1': 'ERP: Dynamics 365 Business Central, NetSuite, SAP',
+  'svcAppsAdmin.capability.integracion.point.2':
+    'DXP: Liferay DXP, Sitefinity, Adobe Experience Manager',
+  'svcAppsAdmin.capability.integracion.point.3':
+    'APIs REST, middleware, webhooks y sincronización de datos',
+  'svcAppsAdmin.capability.integracion.title': 'Integración de CRM, ERP y sistemas corporativos',
+  'svcAppsAdmin.capability.soporte.description':
+    'Resolvemos incidencias complejas que el helpdesk inicial no puede atender, con canal directo y tiempos de respuesta comprometidos por contrato.',
+  'svcAppsAdmin.capability.soporte.point.0': 'Soporte L2/L3 sobre aplicaciones empresariales',
+  'svcAppsAdmin.capability.soporte.point.1': 'Gestión de tickets, cambios e incidentes bajo ITIL',
+  'svcAppsAdmin.capability.soporte.point.2':
+    'ServiceNow y Jira Service Management como mesas de ayuda',
+  'svcAppsAdmin.capability.soporte.point.3': 'Documentación de soluciones y base de conocimiento',
+  'svcAppsAdmin.capability.soporte.title': 'Soporte L2/L3 y gestión de incidencias',
   'svcAppsAdmin.faq.alcance.answer':
-    'Incluye la gestión de la infraestructura y de los servicios que tu aplicación necesita: despliegues, dominios, DNS, certificados, copias de seguridad, actualizaciones, monitoreo de disponibilidad y rendimiento, revisiones de seguridad y resolución de incidencias. No hace falta que tengas un departamento técnico propio: nosotros actuamos como tu equipo de operaciones.',
+    'Incluye la gestión de identidades y accesos, integraciones entre plataformas, actualizaciones y parches, gestión de licencias, soporte L2/L3, documentación y gobernanza. No hace falta que tengas un equipo interno dedicado: actuamos como tu área de operaciones de aplicaciones corporativas.',
   'svcAppsAdmin.faq.alcance.question':
-    '¿Qué incluye exactamente la administración de mis aplicaciones web?',
-  'svcAppsAdmin.faq.hecho-por-otra-agencia.answer':
-    'Sí. Trabajamos sobre aplicaciones en Astro, React, Next.js, WordPress, Shopify y backends propios, desarrolladas por cualquier equipo. Empezamos con un diagnóstico técnico y un traspaso de accesos ordenado, y documentamos todo lo que encontramos para que no dependas de nosotros para entender tu propio sistema.',
-  'svcAppsAdmin.faq.hecho-por-otra-agencia.question':
+    '¿Qué incluye exactamente la administración de aplicaciones empresariales?',
+  'svcAppsAdmin.faq.hecho-por-otro-proveedor.answer':
+    'Sí. Trabajamos sobre Salesforce, Dynamics 365, Liferay, Sitefinity, AEM, Okta, ServiceNow y otras plataformas desarrolladas o implementadas por cualquier proveedor. Empezamos con un diagnóstico y un traspaso ordenado de accesos y documentación.',
+  'svcAppsAdmin.faq.hecho-por-otro-proveedor.question':
     '¿Pueden administrar una aplicación que no desarrolló VortexLM?',
-  'svcAppsAdmin.faq.incidencias.answer':
-    'Los planes de operación continua incluyen monitoreo 24/7 con alertas automáticas. Si el sistema detecta una caída, recibimos el aviso y actuamos sin esperar a que lo notes. Los incidentes críticos tienen un tiempo de primera respuesta comprometido por contrato y un canal directo por WhatsApp o Slack.',
-  'svcAppsAdmin.faq.incidencias.question': '¿Qué pasa si mi aplicación se cae un fin de semana?',
-  'svcAppsAdmin.faq.migracion-infraestructura.answer':
-    'Sí. Trabajamos con despliegues en staging, verificación de datos y ventanas de mantenimiento acordadas contigo. Hemos movido proyectos entre proveedores de hosting, de base de datos y de correo manteniendo el sitio en línea, redirecciones 301 en su sitio y sin perder posicionamiento ni datos de negocio.',
-  'svcAppsAdmin.faq.migracion-infraestructura.question':
-    '¿Pueden migrar mi aplicación a otra infraestructura sin tiempo de caída?',
+  'svcAppsAdmin.faq.incidencia-fin-de-semana.answer':
+    'Los planes de operación continua incluyen monitoreo 24/7 con alertas automáticas. Si el sistema detecta una caída, recibimos el aviso y actuamos sin esperar a que lo notes. Los incidentes críticos tienen un tiempo de primera respuesta comprometido por contrato.',
+  'svcAppsAdmin.faq.incidencia-fin-de-semana.question':
+    '¿Qué pasa si una aplicación crítica se cae un fin de semana?',
+  'svcAppsAdmin.faq.migracion.answer':
+    'Sí. Trabajamos con staging, verificación de datos y ventanas de mantenimiento acordadas contigo. Hemos movido plataformas entre proveedores de hosting, base de datos e identidad manteniendo el servicio en línea y sin perder datos de negocio.',
+  'svcAppsAdmin.faq.migracion.question':
+    '¿Pueden migrar una aplicación empresarial a otra infraestructura sin tiempo de caída?',
   'svcAppsAdmin.faq.precios.answer':
-    'Con una cuota mensual fija según la complejidad de la aplicación, el número de integraciones y el nivel de soporte que necesites. Las mejoras evolutivas y los proyectos nuevos se cotizan aparte con alcance y plazos claros. Sin costes ocultos ni horas sorpresa al final del mes.',
-  'svcAppsAdmin.faq.precios.question': '¿Cómo se cobra la administración mensual?',
+    'Con una cuota mensual fija según la complejidad de las plataformas, el número de integraciones y el nivel de soporte que necesites. Las mejoras evolutivas, migraciones y proyectos nuevos se cotizan aparte con alcance y plazos claros.',
+  'svcAppsAdmin.faq.precios.question':
+    '¿Cómo se cobra la administración mensual de aplicaciones empresariales?',
   'svcAppsAdmin.form.error': 'Error al enviar. Intenta de nuevo o escríbenos a info@vortexlm.com.',
   'svcAppsAdmin.form.sending': 'Enviando...',
   'svcAppsAdmin.form.submit': 'Solicitar plan de administración',
@@ -2947,52 +2958,61 @@ export const es = {
     'Paneles internos y software de gestión a los que damos soporte y mantenemos conectados.',
   'svcAppsAdmin.link.sistemas.label': 'Sistemas de gestión a medida',
   'svcAppsAdmin.meta.description':
-    'Administración de aplicaciones web en Caracas: despliegue en Vercel y Supabase, mantenimiento preventivo, integración de CRM y CMS, monitoreo de rendimiento y soporte con tiempos de respuesta comprometidos.',
+    'Administración de aplicaciones empresariales en Caracas: CRM, ERP, DXP e IAM sobre Salesforce, Dynamics 365, Liferay, Okta y ServiceNow, con gobernanza de identidades, integraciones, soporte L2/L3 y ciclos de vida planificados.',
   'svcAppsAdmin.meta.title':
-    'Administrador de Aplicaciones Web en Caracas | Despliegue, Mantenimiento y Soporte | Agencia de Desarrollo Web y Apps en Caracas',
-  'svcAppsAdmin.platform.cloudflare.name': 'Cloudflare',
-  'svcAppsAdmin.platform.cloudflare.note': 'DNS, CDN, caché y protección perimetral',
-  'svcAppsAdmin.platform.docker.name': 'Docker y servidores gestionados',
-  'svcAppsAdmin.platform.docker.note': 'Contenedores, despliegues y respaldos',
-  'svcAppsAdmin.platform.github.name': 'GitHub',
-  'svcAppsAdmin.platform.github.note': 'Repositorios, revisiones de código y releases',
-  'svcAppsAdmin.platform.n8n.name': 'n8n y automatizaciones',
-  'svcAppsAdmin.platform.n8n.note': 'Flujos de trabajo, webhooks y tareas programadas',
-  'svcAppsAdmin.platform.shopify.name': 'Shopify',
-  'svcAppsAdmin.platform.shopify.note': 'Tiendas, apps y sincronización con tu operación',
-  'svcAppsAdmin.platform.supabase.name': 'Supabase',
-  'svcAppsAdmin.platform.supabase.note': 'PostgreSQL, autenticación, storage y realtime',
-  'svcAppsAdmin.platform.vercel.name': 'Vercel',
-  'svcAppsAdmin.platform.vercel.note': 'Hosting y despliegues con previews por rama',
-  'svcAppsAdmin.platform.wordpress.name': 'WordPress',
-  'svcAppsAdmin.platform.wordpress.note': 'Núcleo, plugins, temas y seguridad del panel',
-  'svcAppsAdmin.stat.plataformas': 'Plataformas y servicios gestionados',
-  'svcAppsAdmin.stat.proyectos': 'Sitios web y tiendas construidos desde cero',
-  'svcAppsAdmin.stat.respuesta': 'Primera respuesta ante incidencias',
-  'svcAppsAdmin.stat.uptime': 'Uptime objetivo en producción',
+    'Administrador de Aplicaciones Empresariales en Caracas | CRM, ERP, IAM y Soporte L2/L3 | Agencia de Desarrollo Web y Apps en Caracas',
+  'svcAppsAdmin.platform.aem.name': 'Adobe Experience Manager',
+  'svcAppsAdmin.platform.aem.note': 'DXP para grandes organizaciones',
+  'svcAppsAdmin.platform.dynamics365.name': 'Microsoft Dynamics 365',
+  'svcAppsAdmin.platform.dynamics365.note': 'CRM, ERP y ecosistema Power Platform',
+  'svcAppsAdmin.platform.entra-id.name': 'Microsoft Entra ID',
+  'svcAppsAdmin.platform.entra-id.note': 'Directorio activo en la nube y acceso condicional',
+  'svcAppsAdmin.platform.hubspot.name': 'HubSpot',
+  'svcAppsAdmin.platform.hubspot.note': 'CRM para equipos de ventas y marketing',
+  'svcAppsAdmin.platform.jira-service-management.name': 'Jira Service Management',
+  'svcAppsAdmin.platform.jira-service-management.note': 'Mesa de ayuda y gestión de servicios',
+  'svcAppsAdmin.platform.liferay.name': 'Liferay DXP',
+  'svcAppsAdmin.platform.liferay.note': 'Portales corporativos, intranets y experiencias digitales',
+  'svcAppsAdmin.platform.okta.name': 'Okta',
+  'svcAppsAdmin.platform.okta.note': 'Gestión de identidades y SSO',
+  'svcAppsAdmin.platform.salesforce.name': 'Salesforce',
+  'svcAppsAdmin.platform.salesforce.note':
+    'CRM, Service Cloud, Marketing Cloud y gestión de usuarios',
+  'svcAppsAdmin.platform.servicenow.name': 'ServiceNow',
+  'svcAppsAdmin.platform.servicenow.note': 'ITSM, tickets, cambios e incidentes',
+  'svcAppsAdmin.platform.sitefinity.name': 'Sitefinity',
+  'svcAppsAdmin.platform.sitefinity.note': 'CMS empresarial y sitios corporativos',
+  'svcAppsAdmin.platform.wordpress-vip.name': 'WordPress VIP',
+  'svcAppsAdmin.platform.wordpress-vip.note': 'CMS empresarial para sitios de alto tráfico',
+  'svcAppsAdmin.platform.zoho.name': 'Zoho CRM',
+  'svcAppsAdmin.platform.zoho.note': 'CRM para pymes y equipos en crecimiento',
+  'svcAppsAdmin.stat.identidades': 'Gestión de identidades y accesos centralizada',
+  'svcAppsAdmin.stat.plataformas': 'Plataformas empresariales gestionadas',
+  'svcAppsAdmin.stat.respuesta': 'Primera respuesta ante incidentes L2/L3',
+  'svcAppsAdmin.stat.uptime': 'Uptime objetivo en plataformas críticas',
   'svcAppsAdmin.step.diagnostico.description':
-    'Auditamos accesos, infraestructura y riesgos, y firmamos el acuerdo de niveles de servicio antes de tocar nada.',
+    'Auditamos accesos, identidades, integraciones, licencias y riesgos de cada plataforma. Firmamos el acuerdo de niveles de servicio antes de tocar nada.',
   'svcAppsAdmin.step.diagnostico.name': 'Diagnóstico y traspaso',
   'svcAppsAdmin.step.evolucion.description':
-    'Cada mes revisamos rendimiento y backlog contigo y planificamos las mejoras que más impacto tienen en tu operación.',
+    'Cada mes revisamos adopción, rendimiento y roadmap de cada plataforma contigo y planificamos las mejoras que más impacto tienen en tu operación.',
   'svcAppsAdmin.step.evolucion.name': 'Optimización y evolución',
   'svcAppsAdmin.step.operacion.description':
-    'Backups verificados, actualizaciones controladas, revisiones de seguridad y resoluciones dentro del tiempo acordado.',
+    'Gestionamos actualizaciones, backups verificados, revisiones de seguridad, soporte L2/L3 y relación con proveedores dentro de los tiempos acordados.',
   'svcAppsAdmin.step.operacion.name': 'Operación continua',
-  'svcAppsAdmin.step.puesta-en-produccion.description':
-    'Montamos staging, automatizamos despliegues y dejamos el sistema monitorizado con alertas desde el primer día.',
-  'svcAppsAdmin.step.puesta-en-produccion.name': 'Puesta en producción',
+  'svcAppsAdmin.step.puesta-en-operacion.description':
+    'Configuramos SSO, roles y permisos, montamos staging, documentamos integraciones y dejamos el sistema monitorizado con alertas desde el primer día.',
+  'svcAppsAdmin.step.puesta-en-operacion.name': 'Puesta en operación',
 
   // ── src/components/ui/ServicesDirectory.astro ──
   'svcDirectory.aria': 'Directorio de servicios y perfiles técnicos',
   'svcDirectory.badge': 'Directorio de servicios',
   'svcDirectory.card.apps.description':
-    'Gestión, despliegue y soporte de tus aplicaciones en producción: Vercel, Supabase, servidores, CRM y CMS, con monitoreo y resolución de incidencias.',
-  'svcDirectory.card.apps.point.0': 'Despliegues, backups y control de versiones',
-  'svcDirectory.card.apps.point.1': 'Integración y soporte de CRM y CMS',
-  'svcDirectory.card.apps.point.2': 'Monitoreo, seguridad y tiempos de respuesta',
-  'svcDirectory.card.apps.role': 'Administrador de Aplicaciones',
-  'svcDirectory.card.apps.title': 'Administrador de Aplicaciones Web',
+    'Administración, integración y soporte de aplicaciones empresariales: Salesforce, Dynamics 365, Liferay, Okta y ServiceNow, con IAM, licenciamiento y soporte L2/L3.',
+  'svcDirectory.card.apps.point.0': 'Identidades, roles y permisos por aplicación',
+  'svcDirectory.card.apps.point.1': 'Integración de CRM, ERP, DXP y mesas de ayuda',
+  'svcDirectory.card.apps.point.2': 'Soporte L2/L3, licenciamiento y ciclo de vida',
+  'svcDirectory.card.apps.role': 'Administrador de Aplicaciones Empresariales',
+  'svcDirectory.card.apps.title': 'Administrador de Aplicaciones Empresariales',
   'svcDirectory.card.cms.description':
     'WordPress, Shopify y CMS a medida sin page builders: contenido que tu equipo edita sin depender de un desarrollador y un rendimiento que no se degrada.',
   'svcDirectory.card.cms.point.0': 'Bloques Gutenberg nativos y child themes',
@@ -3064,7 +3084,7 @@ export const en: Record<UiKey, string> = {
   'footer.link.astro': 'Web Development with Astro & Next.js',
   'footer.link.erp': 'ERP Systems & Custom Software',
   'footer.link.wp': 'Advanced WordPress Development',
-  'footer.link.appsAdmin': 'Web Application Administration',
+  'footer.link.appsAdmin': 'Enterprise Application Management',
 
   // ── Home · Hero ───────────────────────────────────────────────────────────
   'home.meta.title':
@@ -3661,7 +3681,7 @@ export const en: Record<UiKey, string> = {
   'servicesHero.title': 'Development services',
   'servicesHero.titleAlt': 'white label for your agency',
   'servicesHero.subtitle':
-    'Four technical profiles, one engineering standard: full-stack development, CMS engineering, web application administration and custom systems. All the development you need, under your brand.',
+    'Four technical profiles, one engineering standard: full-stack development, CMS engineering, enterprise application administration and custom systems. All the development you need, under your brand.',
 
   // ── Pricing · Hero (PricingHero.astro) ────────────────────────────────────
   'pricingHero.badge': 'PRICING',
@@ -4193,7 +4213,7 @@ export const en: Record<UiKey, string> = {
   'svcPage.meta.title':
     'Web Development Services and Technical Profiles — VortexLM | Web and App Development Agency in Caracas',
   'svcPage.meta.description':
-    'Development services directory: full-stack profile (Astro, React, Next.js), CMS engineering (WordPress, Shopify), web application administration and custom systems. Choose the technical profile your project needs.',
+    'Development services directory: full-stack profile (Astro, React, Next.js), CMS engineering (WordPress, Shopify), enterprise application administration and custom systems. Choose the technical profile your project needs.',
   'contactoPage.meta.title':
     'Contact Our Software and Web Specialists | Vortex | Web and App Development Agency in Caracas',
   'contactoPage.meta.description':
@@ -5837,95 +5857,108 @@ export const en: Record<UiKey, string> = {
   'svcWordpress.stat.portafolio': 'Projects in this portfolio',
   'svcWordpress.stat.sitios': 'Websites built from scratch',
 
-  // ── src/pages/servicios/administrador-aplicaciones-web.astro ──
-  'svcAppsAdmin.n01': 'Web Application Administrator',
+  // ── src/pages/servicios/administrador-aplicaciones-empresariales.astro ──
+  'svcAppsAdmin.n01': 'Enterprise Applications Administrator',
   'svcAppsAdmin.n02':
-    'Web application administrator: your systems in production, managed and monitored',
-  'svcAppsAdmin.n03': 'What a web application administrator does',
+    'Enterprise applications administrator: CRM, ERP and corporate portals under control',
+  'svcAppsAdmin.n03': 'What an enterprise applications administrator does',
   'svcAppsAdmin.n04':
-    'Web applications connected to databases, payment gateways and in-house management systems, shipped to production and seriously administered: deployments, maintenance, integrations, monitoring and support with committed response times.',
+    'We manage the platforms that sustain your operation —Salesforce, Dynamics 365, Liferay, Okta, ServiceNow— with identity governance, integrations, L2/L3 support and planned life cycles. Your team focuses on the business; we make sure enterprise applications work as they did on day one.',
   'svcAppsAdmin.n05': 'I want management and support',
   'svcAppsAdmin.n06': 'See the',
   'svcAppsAdmin.n07': 'capabilities of the service',
   'svcAppsAdmin.n08': 'How we work',
-  'svcAppsAdmin.n09': 'What managing your web applications includes',
+  'svcAppsAdmin.n09': 'What managing your enterprise applications includes',
   'svcAppsAdmin.n10':
-    'An application in production does not maintain itself. We cover the four critical areas of the operation — deployment, maintenance, integrations and monitoring — so that your team can focus on its own work and the system keeps running as it did on day one.',
+    'An enterprise application does not maintain itself. We manage the five critical areas of the operation — identities, integrations, maintenance, support and governance — so that your team focuses on its own work and the platform stays aligned with the business.',
   'svcAppsAdmin.n11': 'Platforms',
-  'svcAppsAdmin.n12': 'Platforms and services we manage every day',
+  'svcAppsAdmin.n12': 'Enterprise platforms we manage every day',
   'svcAppsAdmin.n13':
-    'Your team does not need to know every console, every billing dashboard or every API quota. These are the environments we operate in every day and the ones your application most likely already uses.',
+    'Your team does not need to know every console, every billing dashboard or every API quota. These are the corporate environments we operate in every day and the ones your company most likely already uses.',
   'svcAppsAdmin.n14': 'Method',
-  'svcAppsAdmin.n15': 'How we move your application to managed operations',
+  'svcAppsAdmin.n15': 'How we move your applications to managed operations',
   'svcAppsAdmin.n16': 'FAQ',
-  'svcAppsAdmin.n17': 'Frequently asked questions about web application management',
+  'svcAppsAdmin.n17': 'Frequently asked questions about enterprise application management',
   'svcAppsAdmin.n18': 'expand_more',
   'svcAppsAdmin.n19': 'Keep exploring',
   'svcAppsAdmin.n20': 'The rest of the directory, one click away',
   'svcAppsAdmin.n21': 'Learn more',
   'svcAppsAdmin.n22': 'Let us work together',
-  'svcAppsAdmin.n23': 'Do you need to manage your web applications?',
+  'svcAppsAdmin.n23': 'Do you need to manage your enterprise applications?',
   'svcAppsAdmin.n24':
-    'Tell us what you have in production — a website, a store, an internal dashboard or an integration with your CRM — and you will receive an assessment and a management plan with transparent scope, timelines and budget. No commitment.',
+    'Tell us which platforms you have in production — Salesforce, Dynamics, Liferay, Okta, ServiceNow or any other — and you will receive an assessment and a management plan with transparent scope, timelines and budget. No commitment.',
   'svcAppsAdmin.n25': 'First and Last Name',
   'svcAppsAdmin.n26': 'e.g. Carlos Mendoza',
   'svcAppsAdmin.n27': 'Corporate Email',
   'svcAppsAdmin.n28': 'carlos@yourcompany.com',
   'svcAppsAdmin.n29': 'Tell us what you need managed',
   'svcAppsAdmin.n30':
-    'Which application or website do you want to manage? What infrastructure does it use today and which CRM or CMS does your team work with?',
+    'Which platforms do you have in production and which identity, ERP or CRM providers do your teams use today?',
   'svcAppsAdmin.n31': 'Request a management plan',
   'svcAppsAdmin.n32': 'Your data is protected. No spam, guaranteed.',
   'svcAppsAdmin.n33': 'Direct enquiry on WhatsApp',
-  'svcAppsAdmin.capability.despliegue.description':
-    'We ship and maintain your infrastructure: Vercel, Supabase, managed servers, DNS, certificates and staging environments kept separate from the live site.',
-  'svcAppsAdmin.capability.despliegue.point.0':
-    'Vercel: deployments, per-branch previews and domains',
-  'svcAppsAdmin.capability.despliegue.point.1': 'Supabase: PostgreSQL, auth, storage and realtime',
-  'svcAppsAdmin.capability.despliegue.point.2': 'DNS, SSL, CDN and managed servers',
-  'svcAppsAdmin.capability.despliegue.point.3': 'Version control with Git and a release workflow',
-  'svcAppsAdmin.capability.despliegue.title': 'Management and deployment of web architectures',
-  'svcAppsAdmin.capability.integraciones.description':
-    'We connect your site with the tools your team already uses — CRM, CMS, payments, ERP — and remove the manual work nobody wants to keep doing.',
-  'svcAppsAdmin.capability.integraciones.point.0':
-    'CRM: HubSpot, Zoho, Salesforce and custom development',
-  'svcAppsAdmin.capability.integraciones.point.1':
-    'CMS: WordPress, Shopify and in-house dashboards',
-  'svcAppsAdmin.capability.integraciones.point.2': 'REST APIs, webhooks and data synchronization',
-  'svcAppsAdmin.capability.integraciones.point.3':
-    'Automations and internal flows that run unattended',
-  'svcAppsAdmin.capability.integraciones.title': 'CRM, CMS and custom system integrations',
-  'svcAppsAdmin.capability.mantenimiento.description':
-    'Core, dependency and plugin updates with prior testing, verified backups and maintenance windows agreed with you.',
-  'svcAppsAdmin.capability.mantenimiento.point.0': 'Automatic backups and restore testing',
-  'svcAppsAdmin.capability.mantenimiento.point.1': 'WordPress, npm and dependency updates',
-  'svcAppsAdmin.capability.mantenimiento.point.2': 'Staging environments to validate every change',
-  'svcAppsAdmin.capability.mantenimiento.point.3': 'Monthly report with changes and system status',
-  'svcAppsAdmin.capability.mantenimiento.title': 'Preventive, continuous maintenance',
-  'svcAppsAdmin.capability.monitoreo.description':
-    'We watch availability, performance and security, and resolve incidents through a direct channel with contractually committed response times.',
-  'svcAppsAdmin.capability.monitoreo.point.0': 'Uptime, LCP, INP and CLS monitoring',
-  'svcAppsAdmin.capability.monitoreo.point.1': 'Access, role and least-privilege management',
-  'svcAppsAdmin.capability.monitoreo.point.2': 'Dependency and best-practice reviews',
-  'svcAppsAdmin.capability.monitoreo.point.3': 'Priority support over WhatsApp or Slack',
-  'svcAppsAdmin.capability.monitoreo.title': 'Monitoring, security and incident response',
+  'svcAppsAdmin.capability.ciclo-de-vida.description':
+    'We manage versions, patches, licensing and the roadmap of each platform so that a critical update or a contract renewal never catches you by surprise.',
+  'svcAppsAdmin.capability.ciclo-de-vida.point.0': 'Version updates and security patches',
+  'svcAppsAdmin.capability.ciclo-de-vida.point.1':
+    'License management, renewals and vendor relationships',
+  'svcAppsAdmin.capability.ciclo-de-vida.point.2': 'Staging and testing environments before every change',
+  'svcAppsAdmin.capability.ciclo-de-vida.point.3': 'Monthly report on status, changes and risks',
+  'svcAppsAdmin.capability.ciclo-de-vida.title': 'Maintenance, updates and life cycle',
+  'svcAppsAdmin.capability.gobernanza.description':
+    'We make sure the platform is used properly: we train users, review adoption and align configuration with the real business processes.',
+  'svcAppsAdmin.capability.gobernanza.point.0': 'Training and onboarding for internal users',
+  'svcAppsAdmin.capability.gobernanza.point.1': 'Adoption review and usage best practices',
+  'svcAppsAdmin.capability.gobernanza.point.2': 'Data governance and regulatory compliance',
+  'svcAppsAdmin.capability.gobernanza.point.3':
+    'Alignment between technical configuration and business processes',
+  'svcAppsAdmin.capability.gobernanza.title': 'Governance and adoption',
+  'svcAppsAdmin.capability.iam.description':
+    'We administer who can see what inside each application. We configure SSO, roles, permissions and least-privilege policies with Okta, Microsoft Entra ID or your corporate identity provider.',
+  'svcAppsAdmin.capability.iam.point.0': 'SSO and centralized authentication with Okta or Entra ID',
+  'svcAppsAdmin.capability.iam.point.1': 'Role and permission management per application and per area',
+  'svcAppsAdmin.capability.iam.point.2': 'User provisioning and deprovisioning',
+  'svcAppsAdmin.capability.iam.point.3': 'Access auditing and internal policy compliance',
+  'svcAppsAdmin.capability.iam.title': 'Identity and access management (IAM)',
+  'svcAppsAdmin.capability.integracion.description':
+    'We connect applications to each other — CRM, ERP, DXP, payments, service desk — and remove manual workload and duplicate-data errors.',
+  'svcAppsAdmin.capability.integracion.point.0':
+    'CRM: Salesforce, Microsoft Dynamics 365, HubSpot, Zoho',
+  'svcAppsAdmin.capability.integracion.point.1': 'ERP: Dynamics 365 Business Central, NetSuite, SAP',
+  'svcAppsAdmin.capability.integracion.point.2':
+    'DXP: Liferay DXP, Sitefinity, Adobe Experience Manager',
+  'svcAppsAdmin.capability.integracion.point.3':
+    'REST APIs, middleware, webhooks and data synchronization',
+  'svcAppsAdmin.capability.integracion.title':
+    'Integration of CRM, ERP and corporate systems',
+  'svcAppsAdmin.capability.soporte.description':
+    'We resolve complex incidents that the initial helpdesk cannot handle, with a direct channel and response times committed by contract.',
+  'svcAppsAdmin.capability.soporte.point.0': 'L2/L3 support on enterprise applications',
+  'svcAppsAdmin.capability.soporte.point.1': 'Ticket, change and incident management under ITIL',
+  'svcAppsAdmin.capability.soporte.point.2':
+    'ServiceNow and Jira Service Management as service desks',
+  'svcAppsAdmin.capability.soporte.point.3': 'Solution documentation and knowledge base',
+  'svcAppsAdmin.capability.soporte.title': 'L2/L3 support and incident management',
   'svcAppsAdmin.faq.alcance.answer':
-    'It covers the management of the infrastructure and of the services your application needs: deployments, domains, DNS, certificates, backups, updates, uptime and performance monitoring, security reviews and incident resolution. You do not need a technical department of your own: we act as your operations team.',
-  'svcAppsAdmin.faq.alcance.question': 'What exactly does managing my web applications include?',
-  'svcAppsAdmin.faq.hecho-por-otra-agencia.answer':
-    'Yes. We work on applications built with Astro, React, Next.js, WordPress, Shopify and custom back ends, developed by any team. We start with a technical assessment and an orderly handover of accesses, and we document everything we find so that you never depend on us to understand your own system.',
-  'svcAppsAdmin.faq.hecho-por-otra-agencia.question':
-    'Can you manage an application VortexLM did not build?',
-  'svcAppsAdmin.faq.incidencias.answer':
-    'Continuous operation plans include 24/7 monitoring with automatic alerts. If the system detects an outage we get the alert and act without waiting for you to notice. Critical incidents have a contractually committed first-response time and a direct channel over WhatsApp or Slack.',
-  'svcAppsAdmin.faq.incidencias.question': 'What happens if my application goes down on a weekend?',
-  'svcAppsAdmin.faq.migracion-infraestructura.answer':
-    'Yes. We work with staging deployments, data verification and maintenance windows agreed with you. We have moved projects between hosting, database and email providers while keeping the site online, with 301 redirects in place and no loss of rankings or business data.',
-  'svcAppsAdmin.faq.migracion-infraestructura.question':
-    'Can you migrate my application to another infrastructure with no downtime?',
+    'It includes identity and access management, integrations between platforms, updates and patches, license management, L2/L3 support, documentation and governance. You do not need a dedicated in-house team: we act as your enterprise application operations department.',
+  'svcAppsAdmin.faq.alcance.question':
+    'What exactly does enterprise application management include?',
+  'svcAppsAdmin.faq.hecho-por-otro-proveedor.answer':
+    'Yes. We work on Salesforce, Dynamics 365, Liferay, Sitefinity, AEM, Okta, ServiceNow and other platforms built or implemented by any provider. We start with an assessment and an orderly handover of accesses and documentation.',
+  'svcAppsAdmin.faq.hecho-por-otro-proveedor.question':
+    'Can you manage an application that VortexLM did not build?',
+  'svcAppsAdmin.faq.incidencia-fin-de-semana.answer':
+    'Continuous operation plans include 24/7 monitoring with automatic alerts. If the system detects an outage, we get the alert and act without waiting for you to notice. Critical incidents have a first response time committed by contract.',
+  'svcAppsAdmin.faq.incidencia-fin-de-semana.question':
+    'What happens if a critical application goes down on a weekend?',
+  'svcAppsAdmin.faq.migracion.answer':
+    'Yes. We work with staging, data verification and maintenance windows agreed with you. We have moved platforms between hosting, database and identity providers keeping the service online and without losing business data.',
+  'svcAppsAdmin.faq.migracion.question':
+    'Can you migrate an enterprise application to another infrastructure with no downtime?',
   'svcAppsAdmin.faq.precios.answer':
-    'With a fixed monthly fee based on the complexity of the application, the number of integrations and the level of support you need. Evolutionary improvements and new projects are quoted separately with clear scope and timelines. No hidden costs and no surprise hours at the end of the month.',
-  'svcAppsAdmin.faq.precios.question': 'How is the monthly management fee billed?',
+    'With a fixed monthly fee based on the complexity of the platforms, the number of integrations and the level of support you need. Evolutionary improvements, migrations and new projects are quoted separately with clear scope and timelines.',
+  'svcAppsAdmin.faq.precios.question':
+    'How is the monthly enterprise application management fee billed?',
   'svcAppsAdmin.form.error': 'Sending failed. Please try again or email us at info@vortexlm.com.',
   'svcAppsAdmin.form.sending': 'Sending...',
   'svcAppsAdmin.form.submit': 'Request a management plan',
@@ -5943,52 +5976,62 @@ export const en: Record<UiKey, string> = {
     'Internal dashboards and management software we support and keep connected.',
   'svcAppsAdmin.link.sistemas.label': 'Custom management systems',
   'svcAppsAdmin.meta.description':
-    'Web application management in Caracas: deployment on Vercel and Supabase, preventive maintenance, CRM and CMS integration, performance monitoring and support with committed response times.',
+    'Enterprise application management in Caracas: CRM, ERP, DXP and IAM on Salesforce, Dynamics 365, Liferay, Okta and ServiceNow, with identity governance, integrations, L2/L3 support and planned life cycles.',
   'svcAppsAdmin.meta.title':
-    'Web Application Administrator in Caracas | Deployment, Maintenance and Support | Web and App Development Agency in Caracas',
-  'svcAppsAdmin.platform.cloudflare.name': 'Cloudflare',
-  'svcAppsAdmin.platform.cloudflare.note': 'DNS, CDN, caching and edge protection',
-  'svcAppsAdmin.platform.docker.name': 'Docker and managed servers',
-  'svcAppsAdmin.platform.docker.note': 'Containers, deployments and backups',
-  'svcAppsAdmin.platform.github.name': 'GitHub',
-  'svcAppsAdmin.platform.github.note': 'Repositories, code reviews and releases',
-  'svcAppsAdmin.platform.n8n.name': 'n8n and automations',
-  'svcAppsAdmin.platform.n8n.note': 'Workflows, webhooks and scheduled tasks',
-  'svcAppsAdmin.platform.shopify.name': 'Shopify',
-  'svcAppsAdmin.platform.shopify.note': 'Stores, apps and synchronization with your operation',
-  'svcAppsAdmin.platform.supabase.name': 'Supabase',
-  'svcAppsAdmin.platform.supabase.note': 'PostgreSQL, authentication, storage and realtime',
-  'svcAppsAdmin.platform.vercel.name': 'Vercel',
-  'svcAppsAdmin.platform.vercel.note': 'Hosting and deployments with per-branch previews',
-  'svcAppsAdmin.platform.wordpress.name': 'WordPress',
-  'svcAppsAdmin.platform.wordpress.note': 'Core, plugins, themes and dashboard security',
-  'svcAppsAdmin.stat.plataformas': 'Platforms and services managed',
-  'svcAppsAdmin.stat.proyectos': 'Websites and stores built from scratch',
-  'svcAppsAdmin.stat.respuesta': 'First response to incidents',
-  'svcAppsAdmin.stat.uptime': 'Target uptime in production',
+    'Enterprise Applications Administrator in Caracas | CRM, ERP, IAM and L2/L3 Support | Web and App Development Agency in Caracas',
+  'svcAppsAdmin.platform.aem.name': 'Adobe Experience Manager',
+  'svcAppsAdmin.platform.aem.note': 'DXP for large organizations',
+  'svcAppsAdmin.platform.dynamics365.name': 'Microsoft Dynamics 365',
+  'svcAppsAdmin.platform.dynamics365.note': 'CRM, ERP and the Power Platform ecosystem',
+  'svcAppsAdmin.platform.entra-id.name': 'Microsoft Entra ID',
+  'svcAppsAdmin.platform.entra-id.note': 'Cloud directory and conditional access',
+  'svcAppsAdmin.platform.hubspot.name': 'HubSpot',
+  'svcAppsAdmin.platform.hubspot.note': 'CRM for sales and marketing teams',
+  'svcAppsAdmin.platform.jira-service-management.name': 'Jira Service Management',
+  'svcAppsAdmin.platform.jira-service-management.note': 'Service desk and service management',
+  'svcAppsAdmin.platform.liferay.name': 'Liferay DXP',
+  'svcAppsAdmin.platform.liferay.note':
+    'Corporate portals, intranets and digital experiences',
+  'svcAppsAdmin.platform.okta.name': 'Okta',
+  'svcAppsAdmin.platform.okta.note': 'Identity management and SSO',
+  'svcAppsAdmin.platform.salesforce.name': 'Salesforce',
+  'svcAppsAdmin.platform.salesforce.note':
+    'CRM, Service Cloud, Marketing Cloud and user management',
+  'svcAppsAdmin.platform.servicenow.name': 'ServiceNow',
+  'svcAppsAdmin.platform.servicenow.note': 'ITSM, tickets, changes and incidents',
+  'svcAppsAdmin.platform.sitefinity.name': 'Sitefinity',
+  'svcAppsAdmin.platform.sitefinity.note': 'Enterprise CMS and corporate websites',
+  'svcAppsAdmin.platform.wordpress-vip.name': 'WordPress VIP',
+  'svcAppsAdmin.platform.wordpress-vip.note': 'Enterprise CMS for high-traffic sites',
+  'svcAppsAdmin.platform.zoho.name': 'Zoho CRM',
+  'svcAppsAdmin.platform.zoho.note': 'CRM for small businesses and growing teams',
+  'svcAppsAdmin.stat.identidades': 'Centralized identity and access management',
+  'svcAppsAdmin.stat.plataformas': 'Enterprise platforms managed',
+  'svcAppsAdmin.stat.respuesta': 'First response to L2/L3 incidents',
+  'svcAppsAdmin.stat.uptime': 'Target uptime on critical platforms',
   'svcAppsAdmin.step.diagnostico.description':
-    'We audit accesses, infrastructure and risks, and sign the service level agreement before touching anything.',
+    'We audit accesses, identities, integrations, licenses and risks for each platform. We sign the service level agreement before touching anything.',
   'svcAppsAdmin.step.diagnostico.name': 'Assessment and handover',
   'svcAppsAdmin.step.evolucion.description':
-    'Every month we review performance and backlog with you and plan the improvements with the biggest impact on your operation.',
+    'Every month we review adoption, performance and the roadmap of each platform with you and plan the improvements with the biggest impact on your operation.',
   'svcAppsAdmin.step.evolucion.name': 'Optimization and evolution',
   'svcAppsAdmin.step.operacion.description':
-    'Verified backups, controlled updates, security reviews and resolutions within the agreed time.',
+    'We manage updates, verified backups, security reviews, L2/L3 support and vendor relationships within the agreed times.',
   'svcAppsAdmin.step.operacion.name': 'Continuous operation',
-  'svcAppsAdmin.step.puesta-en-produccion.description':
-    'We set up staging, automate deployments and leave the system monitored with alerts from day one.',
-  'svcAppsAdmin.step.puesta-en-produccion.name': 'Go live',
+  'svcAppsAdmin.step.puesta-en-operacion.description':
+    'We configure SSO, roles and permissions, set up staging, document integrations and leave the system monitored with alerts from day one.',
+  'svcAppsAdmin.step.puesta-en-operacion.name': 'Go-live',
 
   // ── src/components/ui/ServicesDirectory.astro ──
   'svcDirectory.aria': 'Services and technical profiles directory',
   'svcDirectory.badge': 'Services directory',
   'svcDirectory.card.apps.description':
-    'Management, deployment and support for your applications in production: Vercel, Supabase, servers, CRM and CMS, with monitoring and incident resolution.',
-  'svcDirectory.card.apps.point.0': 'Deployments, backups and version control',
-  'svcDirectory.card.apps.point.1': 'CRM and CMS integration and support',
-  'svcDirectory.card.apps.point.2': 'Monitoring, security and response times',
-  'svcDirectory.card.apps.role': 'Application Administrator',
-  'svcDirectory.card.apps.title': 'Web Application Administrator',
+    'Management, integration and support of enterprise applications: Salesforce, Dynamics 365, Liferay, Okta and ServiceNow, with IAM, licensing and L2/L3 support.',
+  'svcDirectory.card.apps.point.0': 'Identities, roles and permissions per application',
+  'svcDirectory.card.apps.point.1': 'CRM, ERP, DXP and service desk integration',
+  'svcDirectory.card.apps.point.2': 'L2/L3 support, licensing and life cycle',
+  'svcDirectory.card.apps.role': 'Enterprise Applications Administrator',
+  'svcDirectory.card.apps.title': 'Enterprise Applications Administrator',
   'svcDirectory.card.cms.description':
     'WordPress, Shopify and custom CMS without page builders: content your team edits without depending on a developer, and performance that does not degrade.',
   'svcDirectory.card.cms.point.0': 'Native Gutenberg blocks and child themes',

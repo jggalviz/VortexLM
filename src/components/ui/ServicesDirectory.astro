@@ -5,8 +5,9 @@
 //
 // Sustituye la antigua lista plana de servicios por un directorio limpio: cada
 // tarjeta es un acceso directo a la subpágina especializada de un perfil técnico
-// (desarrollador full-stack, desarrollador CMS, administrador de aplicaciones web
-// y sistemas a medida). Autocontenido, sin props ni dependencias externas.
+// (desarrollador full-stack, desarrollador CMS, administrador de aplicaciones
+// empresariales y sistemas a medida). Autocontenido, sin props ni dependencias
+// externas.
 //
 // i18n: namespace `svcDirectory.*`. Los textos se marcan con plantilla
 // (`data-i18n={`svcDirectory.card.${slug}.title`}`), de modo que añadir un perfil
@@ -54,15 +55,15 @@ const cards: DirectoryCard[] = [
   {
     slug: 'apps',
     index: '03',
-    href: '/servicios/administrador-aplicaciones-web',
-    role: 'Administrador de Aplicaciones',
-    title: 'Administrador de Aplicaciones Web',
+    href: '/servicios/administrador-aplicaciones-empresariales',
+    role: 'Administrador de Aplicaciones Empresariales',
+    title: 'Administrador de Aplicaciones Empresariales',
     description:
-      'Gestión, despliegue y soporte de tus aplicaciones en producción: Vercel, Supabase, servidores, CRM y CMS, con monitoreo y resolución de incidencias.',
+      'Administración, integración y soporte de aplicaciones empresariales: Salesforce, Dynamics 365, Liferay, Okta y ServiceNow, con IAM, licenciamiento y soporte L2/L3.',
     points: [
-      'Despliegues, backups y control de versiones',
-      'Integración y soporte de CRM y CMS',
-      'Monitoreo, seguridad y tiempos de respuesta',
+      'Identidades, roles y permisos por aplicación',
+      'Integración de CRM, ERP, DXP y mesas de ayuda',
+      'Soporte L2/L3, licenciamiento y ciclo de vida',
     ],
   },
   {

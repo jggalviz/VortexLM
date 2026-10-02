@@ -2,17 +2,21 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 
 /* ───────────────────────────────────────────────────────────────────────────
- *  /servicios/administrador-aplicaciones-web
+ *  /servicios/administrador-aplicaciones-empresariales
  *
- *  Página del perfil "Administrador de Aplicaciones Web" (perfil 03 del
- *  directorio de /servicios). Explica el servicio de gestión, despliegue y
- *  mantenimiento de aplicaciones en producción, la integración y el soporte de
- *  CRM/CMS, el monitoreo de rendimiento y la resolución de incidencias.
+ *  Página del perfil "Administrador de Aplicaciones Empresariales" (perfil 03
+ *  del directorio de /servicios). Explica la administración, el soporte y la
+ *  operación de las aplicaciones corporativas —CRM, ERP, DXP, IAM e ITSM—: el
+ *  ciclo de vida completo (identidades, permisos, integraciones, licenciamiento,
+ *  actualizaciones), el soporte L2/L3 y la relación con proveedores.
+ *
+ *  La URL antigua /servicios/administrador-aplicaciones-web responde con un 301
+ *  a esta página (redirect declarado en astro.config.mjs).
  *
  *  Estructura:
  *    1. Hero con la propuesta de valor y métricas operativas del servicio
- *    2. Capacidades: despliegue, mantenimiento, integraciones CRM/CMS, monitoreo
- *    3. Plataformas y herramientas que administramos
+ *    2. Capacidades: IAM, integraciones, ciclo de vida, soporte L2/L3, gobernanza
+ *    3. Plataformas empresariales que administramos
  *    4. Método de trabajo en cuatro fases
  *    5. FAQ (alimenta el FAQPage de SEO.astro vía BaseLayout)
  *    6. Interlinking interno hacia el resto del sitio
@@ -39,78 +43,99 @@ interface ManagedPlatform {
 
 /** Métricas operativas del servicio — todas verificables con la operación real */
 const heroStats = [
-  { value: '99.9%', label: 'Uptime objetivo en producción', slug: 'uptime' },
-  { value: '≤ 2 h', label: 'Primera respuesta ante incidencias', slug: 'respuesta' },
-  { value: '10+', label: 'Plataformas y servicios gestionados', slug: 'plataformas' },
-  { value: '350+', label: 'Sitios web y tiendas construidos desde cero', slug: 'proyectos' },
+  { value: '99.9%', label: 'Uptime objetivo en plataformas críticas', slug: 'uptime' },
+  { value: '≤ 2 h', label: 'Primera respuesta ante incidentes L2/L3', slug: 'respuesta' },
+  { value: '15+', label: 'Plataformas empresariales gestionadas', slug: 'plataformas' },
+  {
+    value: '100%',
+    label: 'Gestión de identidades y accesos centralizada',
+    slug: 'identidades',
+  },
 ];
 
-/** Capacidades del servicio de administración de aplicaciones web */
+/** Capacidades del servicio de administración de aplicaciones empresariales */
 const capabilities: AdminCapability[] = [
   {
     step: '01',
-    slug: 'despliegue',
-    title: 'Gestión y despliegue de arquitecturas web',
+    slug: 'iam',
+    title: 'Gestión de identidades y accesos (IAM)',
     description:
-      'Ponemos en producción y mantenemos tu infraestructura: Vercel, Supabase, servidores gestionados, DNS, certificados y entornos de staging separados del sitio real.',
+      'Administramos quién puede ver qué dentro de cada aplicación. Configuramos SSO, roles, permisos y políticas de acceso mínimo con Okta, Microsoft Entra ID o el proveedor de identidad corporativo.',
     points: [
-      'Vercel: despliegues, previews por rama y dominios',
-      'Supabase: PostgreSQL, auth, storage y realtime',
-      'DNS, SSL, CDN y servidores gestionados',
-      'Control de versiones con Git y flujo de release',
+      'SSO y autenticación centralizada con Okta o Entra ID',
+      'Gestión de roles y permisos por aplicación y por área',
+      'Aprovisionamiento y desaprovisionamiento de usuarios',
+      'Auditoría de accesos y cumplimiento de políticas internas',
     ],
   },
   {
     step: '02',
-    slug: 'mantenimiento',
-    title: 'Mantenimiento preventivo y continuo',
+    slug: 'integracion',
+    title: 'Integración de CRM, ERP y sistemas corporativos',
     description:
-      'Actualizaciones de núcleo, dependencias y plugins con pruebas previas, copias de seguridad verificadas y ventanas de mantenimiento acordadas contigo.',
+      'Conectamos las aplicaciones entre sí —CRM, ERP, DXP, pagos, mesa de ayuda— y eliminamos la carga manual y los errores de datos duplicados.',
     points: [
-      'Backups automáticos y prueba de restauración',
-      'Actualizaciones de WordPress, npm y dependencias',
-      'Entornos de staging para validar cada cambio',
-      'Informe mensual con cambios y estado del sistema',
+      'CRM: Salesforce, Microsoft Dynamics 365, HubSpot, Zoho',
+      'ERP: Dynamics 365 Business Central, NetSuite, SAP',
+      'DXP: Liferay DXP, Sitefinity, Adobe Experience Manager',
+      'APIs REST, middleware, webhooks y sincronización de datos',
     ],
   },
   {
     step: '03',
-    slug: 'integraciones',
-    title: 'Integración de CRM, CMS y sistemas a medida',
+    slug: 'ciclo-de-vida',
+    title: 'Mantenimiento, actualizaciones y ciclo de vida',
     description:
-      'Conectamos tu web con las herramientas que ya usa tu equipo —CRM, CMS, pagos, ERP— y eliminamos el trabajo manual que nadie quiere seguir haciendo.',
+      'Gestionamos versiones, parches, licenciamiento y roadmap de cada plataforma para que nunca te sorprenda una actualización crítica ni una renovación de contrato.',
     points: [
-      'CRM: HubSpot, Zoho, Salesforce y desarrollos a medida',
-      'CMS: WordPress, Shopify y paneles propios',
-      'APIs REST, webhooks y sincronización de datos',
-      'Automatizaciones y flujos internos sin intervención',
+      'Actualizaciones de versión y parches de seguridad',
+      'Gestión de licencias, renovaciones y relación con proveedores',
+      'Entornos de staging y pruebas antes de cada cambio',
+      'Informe mensual de estado, cambios y riesgos',
     ],
   },
   {
     step: '04',
-    slug: 'monitoreo',
-    title: 'Monitoreo, seguridad e incidencias',
+    slug: 'soporte',
+    title: 'Soporte L2/L3 y gestión de incidencias',
     description:
-      'Vigilamos disponibilidad, rendimiento y seguridad, y resolvemos incidencias con un canal directo y tiempos de respuesta comprometidos por contrato.',
+      'Resolvemos incidencias complejas que el helpdesk inicial no puede atender, con canal directo y tiempos de respuesta comprometidos por contrato.',
     points: [
-      'Monitoreo de uptime, LCP, INP y CLS',
-      'Gestión de accesos, roles y permisos mínimos',
-      'Revisión de dependencias y buenas prácticas',
-      'Soporte prioritario por WhatsApp o Slack',
+      'Soporte L2/L3 sobre aplicaciones empresariales',
+      'Gestión de tickets, cambios e incidentes bajo ITIL',
+      'ServiceNow y Jira Service Management como mesas de ayuda',
+      'Documentación de soluciones y base de conocimiento',
+    ],
+  },
+  {
+    step: '05',
+    slug: 'gobernanza',
+    title: 'Gobernanza y adopción',
+    description:
+      'Aseguramos que la plataforma se use bien: formamos usuarios, revisamos adopción y alineamos la configuración con los procesos reales del negocio.',
+    points: [
+      'Formación y onboarding de usuarios internos',
+      'Revisión de adopción y buenas prácticas de uso',
+      'Gobernanza de datos y cumplimiento normativo',
+      'Alineación entre configuración técnica y procesos de negocio',
     ],
   },
 ];
 
-/** Plataformas y herramientas que administramos (8 servicios en total) */
+/** Plataformas empresariales que administramos (12 entornos en total) */
 const platforms: ManagedPlatform[] = [
-  { slug: 'vercel', name: 'Vercel', note: 'Hosting y despliegues con previews por rama' },
-  { slug: 'supabase', name: 'Supabase', note: 'PostgreSQL, autenticación, storage y realtime' },
-  { slug: 'github', name: 'GitHub', note: 'Repositorios, revisiones de código y releases' },
-  { slug: 'cloudflare', name: 'Cloudflare', note: 'DNS, CDN, caché y protección perimetral' },
-  { slug: 'wordpress', name: 'WordPress', note: 'Núcleo, plugins, temas y seguridad del panel' },
-  { slug: 'shopify', name: 'Shopify', note: 'Tiendas, apps y sincronización con tu operación' },
-  { slug: 'docker', name: 'Docker y servidores gestionados', note: 'Contenedores, despliegues y respaldos' },
-  { slug: 'n8n', name: 'n8n y automatizaciones', note: 'Flujos de trabajo, webhooks y tareas programadas' },
+  { slug: 'salesforce', name: 'Salesforce', note: 'CRM, Service Cloud, Marketing Cloud y gestión de usuarios' },
+  { slug: 'dynamics365', name: 'Microsoft Dynamics 365', note: 'CRM, ERP y ecosistema Power Platform' },
+  { slug: 'liferay', name: 'Liferay DXP', note: 'Portales corporativos, intranets y experiencias digitales' },
+  { slug: 'sitefinity', name: 'Sitefinity', note: 'CMS empresarial y sitios corporativos' },
+  { slug: 'aem', name: 'Adobe Experience Manager', note: 'DXP para grandes organizaciones' },
+  { slug: 'okta', name: 'Okta', note: 'Gestión de identidades y SSO' },
+  { slug: 'entra-id', name: 'Microsoft Entra ID', note: 'Directorio activo en la nube y acceso condicional' },
+  { slug: 'servicenow', name: 'ServiceNow', note: 'ITSM, tickets, cambios e incidentes' },
+  { slug: 'jira-service-management', name: 'Jira Service Management', note: 'Mesa de ayuda y gestión de servicios' },
+  { slug: 'hubspot', name: 'HubSpot', note: 'CRM para equipos de ventas y marketing' },
+  { slug: 'zoho', name: 'Zoho CRM', note: 'CRM para pymes y equipos en crecimiento' },
+  { slug: 'wordpress-vip', name: 'WordPress VIP', note: 'CMS empresarial para sitios de alto tráfico' },
 ];
 
 /** Método de trabajo en cuatro fases */
@@ -119,25 +144,25 @@ const methodSteps = [
     slug: 'diagnostico',
     name: 'Diagnóstico y traspaso',
     description:
-      'Auditamos accesos, infraestructura y riesgos, y firmamos el acuerdo de niveles de servicio antes de tocar nada.',
+      'Auditamos accesos, identidades, integraciones, licencias y riesgos de cada plataforma. Firmamos el acuerdo de niveles de servicio antes de tocar nada.',
   },
   {
-    slug: 'puesta-en-produccion',
-    name: 'Puesta en producción',
+    slug: 'puesta-en-operacion',
+    name: 'Puesta en operación',
     description:
-      'Montamos staging, automatizamos despliegues y dejamos el sistema monitorizado con alertas desde el primer día.',
+      'Configuramos SSO, roles y permisos, montamos staging, documentamos integraciones y dejamos el sistema monitorizado con alertas desde el primer día.',
   },
   {
     slug: 'operacion',
     name: 'Operación continua',
     description:
-      'Backups verificados, actualizaciones controladas, revisiones de seguridad y resoluciones dentro del tiempo acordado.',
+      'Gestionamos actualizaciones, backups verificados, revisiones de seguridad, soporte L2/L3 y relación con proveedores dentro de los tiempos acordados.',
   },
   {
     slug: 'evolucion',
     name: 'Optimización y evolución',
     description:
-      'Cada mes revisamos rendimiento y backlog contigo y planificamos las mejoras que más impacto tienen en tu operación.',
+      'Cada mes revisamos adopción, rendimiento y roadmap de cada plataforma contigo y planificamos las mejoras que más impacto tienen en tu operación.',
   },
 ];
 
@@ -145,33 +170,33 @@ const methodSteps = [
 const faqs = [
   {
     slug: 'alcance',
-    question: '¿Qué incluye exactamente la administración de mis aplicaciones web?',
+    question: '¿Qué incluye exactamente la administración de aplicaciones empresariales?',
     answer:
-      'Incluye la gestión de la infraestructura y de los servicios que tu aplicación necesita: despliegues, dominios, DNS, certificados, copias de seguridad, actualizaciones, monitoreo de disponibilidad y rendimiento, revisiones de seguridad y resolución de incidencias. No hace falta que tengas un departamento técnico propio: nosotros actuamos como tu equipo de operaciones.',
+      'Incluye la gestión de identidades y accesos, integraciones entre plataformas, actualizaciones y parches, gestión de licencias, soporte L2/L3, documentación y gobernanza. No hace falta que tengas un equipo interno dedicado: actuamos como tu área de operaciones de aplicaciones corporativas.',
   },
   {
-    slug: 'hecho-por-otra-agencia',
+    slug: 'hecho-por-otro-proveedor',
     question: '¿Pueden administrar una aplicación que no desarrolló VortexLM?',
     answer:
-      'Sí. Trabajamos sobre aplicaciones en Astro, React, Next.js, WordPress, Shopify y backends propios, desarrolladas por cualquier equipo. Empezamos con un diagnóstico técnico y un traspaso de accesos ordenado, y documentamos todo lo que encontramos para que no dependas de nosotros para entender tu propio sistema.',
+      'Sí. Trabajamos sobre Salesforce, Dynamics 365, Liferay, Sitefinity, AEM, Okta, ServiceNow y otras plataformas desarrolladas o implementadas por cualquier proveedor. Empezamos con un diagnóstico y un traspaso ordenado de accesos y documentación.',
   },
   {
-    slug: 'incidencias',
-    question: '¿Qué pasa si mi aplicación se cae un fin de semana?',
+    slug: 'incidencia-fin-de-semana',
+    question: '¿Qué pasa si una aplicación crítica se cae un fin de semana?',
     answer:
-      'Los planes de operación continua incluyen monitoreo 24/7 con alertas automáticas. Si el sistema detecta una caída, recibimos el aviso y actuamos sin esperar a que lo notes. Los incidentes críticos tienen un tiempo de primera respuesta comprometido por contrato y un canal directo por WhatsApp o Slack.',
+      'Los planes de operación continua incluyen monitoreo 24/7 con alertas automáticas. Si el sistema detecta una caída, recibimos el aviso y actuamos sin esperar a que lo notes. Los incidentes críticos tienen un tiempo de primera respuesta comprometido por contrato.',
   },
   {
-    slug: 'migracion-infraestructura',
-    question: '¿Pueden migrar mi aplicación a otra infraestructura sin tiempo de caída?',
+    slug: 'migracion',
+    question: '¿Pueden migrar una aplicación empresarial a otra infraestructura sin tiempo de caída?',
     answer:
-      'Sí. Trabajamos con despliegues en staging, verificación de datos y ventanas de mantenimiento acordadas contigo. Hemos movido proyectos entre proveedores de hosting, de base de datos y de correo manteniendo el sitio en línea, redirecciones 301 en su sitio y sin perder posicionamiento ni datos de negocio.',
+      'Sí. Trabajamos con staging, verificación de datos y ventanas de mantenimiento acordadas contigo. Hemos movido plataformas entre proveedores de hosting, base de datos e identidad manteniendo el servicio en línea y sin perder datos de negocio.',
   },
   {
     slug: 'precios',
-    question: '¿Cómo se cobra la administración mensual?',
+    question: '¿Cómo se cobra la administración mensual de aplicaciones empresariales?',
     answer:
-      'Con una cuota mensual fija según la complejidad de la aplicación, el número de integraciones y el nivel de soporte que necesites. Las mejoras evolutivas y los proyectos nuevos se cotizan aparte con alcance y plazos claros. Sin costes ocultos ni horas sorpresa al final del mes.',
+      'Con una cuota mensual fija según la complejidad de las plataformas, el número de integraciones y el nivel de soporte que necesites. Las mejoras evolutivas, migraciones y proyectos nuevos se cotizan aparte con alcance y plazos claros.',
   },
 ];
 
@@ -205,7 +230,7 @@ const relatedLinks = [
 
 /** Consulta directa por WhatsApp (mismo número corporativo del sitio) */
 const whatsappHref = `https://wa.me/584228101010?text=${encodeURIComponent(
-  'Hola Vortex, quiero un plan de administración para mis aplicaciones web. He visto el servicio en vortexlm.com y me gustaría recibir un diagnóstico y una propuesta de soporte.'
+  'Hola Vortex, quiero un plan de administración para nuestras aplicaciones empresariales (CRM, ERP, DXP, IAM). He visto el servicio en vortexlm.com y me gustaría recibir un diagnóstico y una propuesta de soporte.'
 )}`;
 
 /* ── Datos estructurados ───────────────────────────────────────────────────
@@ -214,14 +239,15 @@ const whatsappHref = `https://wa.me/584228101010?text=${encodeURIComponent(
  * Los scripts son datos (no código) y van auto-cerrados: el runner de lint
  * exige que no queden etiquetas <script> sin cerrar.
  * ──────────────────────────────────────────────────────────────────────── */
-const appsAdminServiceSchema = {
+const appsEnterpriseServiceSchema = {
   '@context': 'https://schema.org',
   '@type': 'Service',
-  name: 'Administración de Aplicaciones Web',
-  serviceType: 'Administración, despliegue y mantenimiento de aplicaciones web',
-  url: 'https://vortexlm.com/servicios/administrador-aplicaciones-web',
+  name: 'Administración de Aplicaciones Empresariales',
+  serviceType:
+    'Administración, integración y soporte de aplicaciones empresariales (CRM, ERP, DXP, IAM e ITSM)',
+  url: 'https://vortexlm.com/servicios/administrador-aplicaciones-empresariales',
   description:
-    'Administración de aplicaciones web: despliegue en Vercel y Supabase, mantenimiento preventivo, integración y soporte de CRM y CMS, monitoreo de disponibilidad y rendimiento y resolución de incidencias con soporte prioritario.',
+    'Administración de aplicaciones empresariales: gestión de identidades y accesos (Okta, Microsoft Entra ID), integración de CRM, ERP y DXP (Salesforce, Dynamics 365, Liferay, Sitefinity, Adobe Experience Manager), mantenimiento y ciclo de vida, gestión de licencias, soporte L2/L3 (ServiceNow, Jira Service Management) y gobernanza.',
   provider: {
     '@type': 'ProfessionalService',
     name: 'Vortex Logic Microsystems LLC',
@@ -243,26 +269,26 @@ const appsAdminServiceSchema = {
     availability: 'https://schema.org/InStock',
     priceCurrency: 'USD',
     description:
-      'Cuota mensual de administración según complejidad, integraciones y nivel de soporte; mejoras evolutivas cotizadas aparte.',
+      'Cuota mensual de administración según la complejidad de las plataformas, el número de integraciones y el nivel de soporte; mejoras evolutivas y proyectos cotizados aparte.',
   },
   hasOfferCatalog: {
     '@type': 'OfferCatalog',
-    name: 'Planes de administración de aplicaciones web',
+    name: 'Planes de administración de aplicaciones empresariales',
     itemListElement: [
       {
         '@type': 'Offer',
-        name: 'Mantenimiento esencial',
-        description: 'Actualizaciones controladas, copias de seguridad verificadas y monitorización de disponibilidad.',
+        name: 'Operación esencial',
+        description: 'Actualizaciones y parches controlados, copias de seguridad verificadas y monitorización de disponibilidad con alertas.',
       },
       {
         '@type': 'Offer',
         name: 'Operación continua',
-        description: 'Despliegues e integraciones CRM/CMS, revisiones de seguridad y soporte prioritario por WhatsApp o Slack.',
+        description: 'Gobernanza de identidades (SSO, roles y permisos), integraciones CRM/ERP/DXP, revisiones de seguridad y soporte L2/L3 con tiempos comprometidos.',
       },
       {
         '@type': 'Offer',
         name: 'Soporte a medida',
-        description: 'Bolsa de horas para incidencias, mejoras evolutivas y proyectos puntuales de infraestructura.',
+        description: 'Bolsa de horas para incidencias, migraciones, gestión de licencias y proyectos puntuales sobre plataformas corporativas.',
       },
     ],
   },
@@ -270,8 +296,8 @@ const appsAdminServiceSchema = {
 ---
 
 <BaseLayout
-  title="Administrador de Aplicaciones Web en Caracas | Despliegue, Mantenimiento y Soporte"
-  description="Administración de aplicaciones web en Caracas: despliegue en Vercel y Supabase, mantenimiento preventivo, integración de CRM y CMS, monitoreo de rendimiento y soporte con tiempos de respuesta comprometidos."
+  title="Administrador de Aplicaciones Empresariales en Caracas | CRM, ERP, IAM y Soporte L2/L3"
+  description="Administración de aplicaciones empresariales en Caracas: CRM, ERP, DXP e IAM sobre Salesforce, Dynamics 365, Liferay, Okta y ServiceNow, con gobernanza de identidades, integraciones, soporte L2/L3 y ciclos de vida planificados."
   titleKey="svcAppsAdmin.meta.title"
   descriptionKey="svcAppsAdmin.meta.description"
   type="website"
@@ -281,7 +307,7 @@ const appsAdminServiceSchema = {
   <!-- Datos estructurados de la página (Service + catálogo de planes).
        Se emiten dentro del body porque BaseLayout no expone un slot de <head>;
        Google acepta JSON-LD en cualquier punto del documento. -->
-  <script type="application/ld+json" set:html={JSON.stringify(appsAdminServiceSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(appsEnterpriseServiceSchema)} />
 
 <!-- ─── HERO + PROPUESTA DE VALOR ───────────────────────────────── -->
 <section class="relative pt-36 pb-28 overflow-hidden linear-gradient-bg border-b border-[#1f1f24] px-6 md:px-12">
@@ -290,19 +316,19 @@ const appsAdminServiceSchema = {
     <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-white/[0.015] blur-[120px] rounded-full pointer-events-none"></div>
 
     <span class="inline-block px-3 py-1.5 border border-[#1f1f24] rounded-full text-[10px] font-mono uppercase tracking-widest text-[#8a8a93] mb-8" data-i18n="svcAppsAdmin.n01">
-      Administrador de Aplicaciones Web
+      Administrador de Aplicaciones Empresariales
     </span>
 
     <h1 class="text-4xl md:text-7xl font-extralight tracking-tight text-white mb-8 leading-[1.08] max-w-4xl mx-auto opacity-95" data-i18n="svcAppsAdmin.n02">
-      Administrador de aplicaciones web: tus sistemas en producción, gestionados y monitorizados
+      Administrador de aplicaciones empresariales: CRM, ERP y portales corporativos bajo control
     </h1>
 
     <!-- Propuesta de valor del servicio. El texto va en una sola línea de
          origen para que aparezca idéntico en el HTML servido. -->
     <div class="linear-card glow-hover rounded-lg border border-[#1f1f24] bg-[#08080c]/60 px-6 py-7 md:px-10 md:py-9 max-w-4xl mx-auto mb-10 text-left">
       <div class="border-l-2 border-white/20 pl-5 md:pl-7">
-        <span class="text-[10px] font-mono uppercase tracking-widest text-[#8a8a93] block mb-3" data-i18n="svcAppsAdmin.n03">Qué hace un administrador de aplicaciones web</span>
-        <p class="text-base md:text-xl text-white font-light leading-relaxed tracking-tight" data-i18n="svcAppsAdmin.n04">Aplicaciones web conectadas a bases de datos, pasarelas de pago y sistemas de gestión propios, puestas en producción y administradas en serio: despliegues, mantenimiento, integraciones, monitoreo y soporte con tiempos de respuesta comprometidos.</p>
+        <span class="text-[10px] font-mono uppercase tracking-widest text-[#8a8a93] block mb-3" data-i18n="svcAppsAdmin.n03">Qué hace un administrador de aplicaciones empresariales</span>
+        <p class="text-base md:text-xl text-white font-light leading-relaxed tracking-tight" data-i18n="svcAppsAdmin.n04">Gestionamos las plataformas que sostienen tu operación —Salesforce, Dynamics 365, Liferay, Okta, ServiceNow— con gobernanza de identidades, integraciones, soporte L2/L3 y ciclos de vida planificados. Tu equipo se dedica al negocio; nosotros a que las aplicaciones empresariales funcionen como el primer día.</p>
       </div>
     </div>
 
@@ -328,17 +354,13 @@ const appsAdminServiceSchema = {
   </div>
 </section>
 
-<!-- ─── CAPACIDADES: ADMINISTRACIÓN DE APLICACIONES WEB ─────────── -->
+<!-- ─── CAPACIDADES: ADMINISTRACIÓN DE APLICACIONES EMPRESARIALES ── -->
 <section id="capacidades" class="py-24 md:py-32 px-6 md:px-12 bg-black border-b border-[#1f1f24] relative">
   <div class="max-w-[1200px] mx-auto relative z-10">
     <div class="text-center max-w-3xl mx-auto mb-16">
       <span class="text-[10px] font-mono text-[#8a8a93] uppercase tracking-widest block mb-3 font-medium" data-i18n="svcAppsAdmin.n08">Cómo trabajamos</span>
-      <h2 class="text-3xl md:text-5xl font-light text-white tracking-tight mb-6" data-i18n="svcAppsAdmin.n09">Qué incluye la administración de tus aplicaciones web</h2>
-      <p class="text-sm md:text-base text-[#cbd5e1] font-light leading-relaxed" data-i18n="svcAppsAdmin.n10">
-        Una aplicación en producción no se mantiene sola. Cubrimos las cuatro áreas críticas de la
-        operación —despliegue, mantenimiento, integraciones y monitoreo— para que tu equipo se
-        dedique a lo suyo y el sistema siga funcionando como el primer día.
-      </p>
+      <h2 class="text-3xl md:text-5xl font-light text-white tracking-tight mb-6" data-i18n="svcAppsAdmin.n09">Qué incluye la administración de tus aplicaciones empresariales</h2>
+      <p class="text-sm md:text-base text-[#cbd5e1] font-light leading-relaxed" data-i18n="svcAppsAdmin.n10">Una aplicación empresarial no se mantiene sola. Gestionamos las cinco áreas críticas de la operación —identidades, integraciones, mantenimiento, soporte y gobernanza— para que tu equipo se dedique a lo suyo y la plataforma siga alineada con el negocio.</p>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
@@ -364,17 +386,13 @@ const appsAdminServiceSchema = {
   </div>
 </section>
 
-<!-- ─── PLATAFORMAS Y HERRAMIENTAS QUE ADMINISTRAMOS ────────────── -->
+<!-- ─── PLATAFORMAS EMPRESARIALES QUE ADMINISTRAMOS ─────────────── -->
 <section class="py-24 md:py-32 px-6 md:px-12 bg-black border-b border-[#1f1f24] relative">
   <div class="max-w-[1200px] mx-auto relative z-10">
     <div class="text-center max-w-3xl mx-auto mb-16">
       <span class="text-[10px] font-mono text-[#8a8a93] uppercase tracking-widest block mb-3 font-medium" data-i18n="svcAppsAdmin.n11">Plataformas</span>
-      <h2 class="text-3xl md:text-5xl font-light text-white tracking-tight mb-6" data-i18n="svcAppsAdmin.n12">Plataformas y servicios que administramos a diario</h2>
-      <p class="text-sm md:text-base text-[#cbd5e1] font-light leading-relaxed" data-i18n="svcAppsAdmin.n13">
-        No hace falta que tu equipo conozca cada consola, cada panel de facturación o cada cuota de
-        API. Estos son los entornos sobre los que operamos todos los días y con los que tu
-        aplicación probablemente ya cuenta.
-      </p>
+      <h2 class="text-3xl md:text-5xl font-light text-white tracking-tight mb-6" data-i18n="svcAppsAdmin.n12">Plataformas empresariales que administramos a diario</h2>
+      <p class="text-sm md:text-base text-[#cbd5e1] font-light leading-relaxed" data-i18n="svcAppsAdmin.n13">No hace falta que tu equipo conozca cada consola, cada panel de facturación o cada cuota de API. Estos son los entornos corporativos sobre los que operamos todos los días y con los que tu empresa probablemente ya cuenta.</p>
     </div>
 
     <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
@@ -393,7 +411,7 @@ const appsAdminServiceSchema = {
   <div class="max-w-[1200px] mx-auto relative z-10">
     <div class="text-center max-w-2xl mx-auto mb-16">
       <span class="text-[10px] font-mono text-[#8a8a93] uppercase tracking-widest block mb-3 font-medium" data-i18n="svcAppsAdmin.n14">Método</span>
-      <h2 class="text-3xl md:text-4xl font-light text-white tracking-tight" data-i18n="svcAppsAdmin.n15">Cómo pasamos tu aplicación a operación administrada</h2>
+      <h2 class="text-3xl md:text-4xl font-light text-white tracking-tight" data-i18n="svcAppsAdmin.n15">Cómo pasamos tus aplicaciones a operación administrada</h2>
     </div>
 
     <ol class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -413,7 +431,7 @@ const appsAdminServiceSchema = {
   <div class="max-w-[800px] mx-auto relative z-10">
     <div class="text-center max-w-2xl mx-auto mb-16">
       <span class="text-[10px] font-mono text-[#cbd5e1] uppercase tracking-widest block mb-3 font-medium" data-i18n="svcAppsAdmin.n16">FAQ</span>
-      <h2 class="text-3xl md:text-4xl font-light text-white tracking-tight" data-i18n="svcAppsAdmin.n17">Preguntas frecuentes sobre administración de aplicaciones web</h2>
+      <h2 class="text-3xl md:text-4xl font-light text-white tracking-tight" data-i18n="svcAppsAdmin.n17">Preguntas frecuentes sobre administración de aplicaciones empresariales</h2>
     </div>
 
     <div class="space-y-4">
@@ -462,12 +480,10 @@ const appsAdminServiceSchema = {
   <div class="max-w-[600px] mx-auto text-center relative z-10 space-y-8">
     <span class="text-[10px] font-mono text-[#cbd5e1] uppercase tracking-widest block font-medium" data-i18n="svcAppsAdmin.n22">Trabajemos juntos</span>
     <h2 class="text-3xl md:text-5xl font-light text-white tracking-tight leading-tight" data-i18n="svcAppsAdmin.n23">
-      ¿Necesitas administrar tus aplicaciones web?
+      ¿Necesitas administrar tus aplicaciones empresariales?
     </h2>
     <p class="text-sm text-[#cbd5e1] font-light leading-relaxed" data-i18n="svcAppsAdmin.n24">
-      Cuéntanos qué tienes en producción — una web, una tienda, un panel interno o una integración
-      con tu CRM — y recibirás un diagnóstico y un plan de administración con alcance, plazos y
-      presupuesto transparente. Sin compromiso.
+      Cuéntanos qué plataformas tienes en producción —Salesforce, Dynamics, Liferay, Okta, ServiceNow o cualquier otra— y recibirás un diagnóstico y un plan de administración con alcance, plazos y presupuesto transparente. Sin compromiso.
     </p>
 
     <div class="linear-card p-8 rounded-lg border border-[#1f1f24] bg-[#08080c]/40 text-left space-y-6">
@@ -504,12 +520,12 @@ const appsAdminServiceSchema = {
             class="w-full bg-black border border-[#1f1f24] rounded px-4 py-3 text-xs text-white placeholder-neutral-800 focus:outline-none focus:border-white transition-colors min-h-[100px]"
             id="app_message"
             name="message"
-            placeholder="¿Qué aplicación o web quieres administrar? ¿Qué infraestructura usa hoy y con qué CRM o CMS trabaja tu equipo?" data-i18n-placeholder="svcAppsAdmin.n30"
+            placeholder="¿Qué plataformas tienes en producción y qué proveedores de identidad, ERP o CRM usan hoy tus equipos?" data-i18n-placeholder="svcAppsAdmin.n30"
             required
           ></textarea>
         </div>
 
-        <input type="hidden" name="service" value="administrador-aplicaciones-web" />
+        <input type="hidden" name="service" value="administrador-aplicaciones-empresariales" />
 
         <button
           type="button"

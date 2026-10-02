@@ -2676,6 +2676,164 @@ export const es = {
   'svcProgramador.n154': 'e.g. Carlos Pérez',
   'svcProgramador.n155':
     'Cuéntame sobre tu proyecto: tipo de aplicación, stack deseado, plazos, presupuesto estimado, integraciones necesarias...',
+
+  // ── src/pages/servicios/desarrollo-wordpress.astro ──
+  'svcWordpress.n01': 'WordPress Avanzado · Portafolio',
+  'svcWordpress.n02': 'Desarrollo WordPress en Caracas: 350+ sitios web construidos desde cero',
+  'svcWordpress.n03': 'Nuestra trayectoria con WordPress',
+  'svcWordpress.n04':
+    'Con más de 10 años trabajando con CMS, hemos podido hacer más de 350 sitios web desde cero en todos los niveles de complejidad, especializándonos en WordPress avanzado.',
+  'svcWordpress.n05': 'Cotizar mi proyecto WordPress',
+  'svcWordpress.n06': 'Ver los',
+  'svcWordpress.n07': 'proyectos',
+  'svcWordpress.n08': 'Cómo trabajamos',
+  'svcWordpress.n09': 'WordPress avanzado, sin plantillas ni page builders',
+  'svcWordpress.n10':
+    'La diferencia entre un WordPress que se degrada en seis meses y uno que sigue siendo rápido en cinco años está en cómo se construye. Nuestro practice de CMS trabaja con bloques Gutenberg nativos, código propio y una capa de rendimiento medible en cada entrega.',
+  'svcWordpress.n11': 'Portafolio',
+  'svcWordpress.n12': '26 proyectos WordPress en producción, en 7 industrias',
+  'svcWordpress.n13':
+    'Cada dominio es un proyecto real y sigue en línea. Haz clic en cualquiera para visitarlo.',
+  'svcWordpress.n14': 'Índice de industrias del portafolio',
+  'svcWordpress.n15': 'WordPress',
+  'svcWordpress.n16': 'FAQ',
+  'svcWordpress.n17': 'Preguntas frecuentes sobre desarrollo WordPress',
+  'svcWordpress.n18': 'expand_more',
+  'svcWordpress.n19': 'Explora más',
+  'svcWordpress.n20': 'Otros servicios y recursos relacionados',
+  'svcWordpress.n21': 'Ver más',
+  'svcWordpress.n22': 'Trabajemos juntos',
+  'svcWordpress.n23': '¿Tienes un proyecto WordPress pendiente?',
+  'svcWordpress.n24':
+    'Cuéntanos qué necesitas — una web nueva, una migración o un WordPress que dejó de rendir — y recibirás una propuesta con alcance, plazos y presupuesto transparente. Sin compromiso.',
+  'svcWordpress.n25': 'Nombre y Apellido',
+  'svcWordpress.n26': 'Ej. Carlos Mendoza',
+  'svcWordpress.n27': 'Correo Corporativo',
+  'svcWordpress.n28': 'carlos@tuempresa.com',
+  'svcWordpress.n29': 'Cuéntanos sobre tu proyecto WordPress',
+  'svcWordpress.n30':
+    '¿Es una web nueva, una migración o un rediseño? ¿Usas WooCommerce? ¿Tienes plazo o presupuesto estimado?',
+  'svcWordpress.n31': 'Solicitar Propuesta WordPress',
+  'svcWordpress.n32': 'Tus datos están protegidos. Sin spam, garantizado.',
+  'svcWordpress.n33': 'Consulta directa por WhatsApp',
+  'svcWordpress.capability.builders.description':
+    'Construimos con bloques Gutenberg nativos, campos personalizados y código propio. Sin Elementor, Divi ni constructores que arrastren CSS y JavaScript innecesario.',
+  'svcWordpress.capability.builders.point.0': 'Temas y child themes a medida en PHP moderno',
+  'svcWordpress.capability.builders.point.1': 'Bloques y patrones Gutenberg reutilizables',
+  'svcWordpress.capability.builders.point.2':
+    'Campos personalizados y custom post types por sector',
+  'svcWordpress.capability.builders.point.3': 'Cero dependencia de plantillas compradas',
+  'svcWordpress.capability.builders.title': 'WordPress avanzado sin page builders',
+  'svcWordpress.capability.performance.description':
+    'Un WordPress bien construido compite con cualquier framework moderno. Optimizamos consultas, caché y assets hasta dejar la web en verde en PageSpeed.',
+  'svcWordpress.capability.performance.point.0':
+    'Caché de objeto, de página y limpieza de consultas',
+  'svcWordpress.capability.performance.point.1': 'CSS crítico, lazy loading y conversión WebP/AVIF',
+  'svcWordpress.capability.performance.point.2': 'Métricas antes y después de cada entrega',
+  'svcWordpress.capability.performance.point.3': 'Monitoreo continuo de LCP, INP y CLS',
+  'svcWordpress.capability.performance.title': 'Rendimiento y Core Web Vitals',
+  'svcWordpress.capability.seo.description':
+    'Dejas la web con una arquitectura SEO que tus editores pueden mantener sin depender de un desarrollador, y migramos desde tu plataforma actual sin perder posiciones.',
+  'svcWordpress.capability.seo.point.0': 'Migraciones desde Joomla, Wix, Drupal o HTML estático',
+  'svcWordpress.capability.seo.point.1': 'Redirecciones 301 y preservación de rankings',
+  'svcWordpress.capability.seo.point.2': 'Schema.org, sitemap XML, hreflang y robots.txt',
+  'svcWordpress.capability.seo.point.3': 'Estructura de contenidos pensada para posicionar',
+  'svcWordpress.capability.seo.title': 'Contenido, SEO técnico y migraciones',
+  'svcWordpress.capability.woocommerce.description':
+    'E-commerce completo o WordPress como back-end de un front-end ultrarrápido, conectado a la operación real del negocio: pagos, logística, CRM y automatizaciones.',
+  'svcWordpress.capability.woocommerce.point.0': 'WooCommerce: pagos, envíos, stock y variaciones',
+  'svcWordpress.capability.woocommerce.point.1': 'WordPress headless consumido por Astro o Next.js',
+  'svcWordpress.capability.woocommerce.point.2': 'APIs REST, webhooks y sincronización con CRM/ERP',
+  'svcWordpress.capability.woocommerce.point.3': 'Multilenguaje y arquitecturas multisite',
+  'svcWordpress.capability.woocommerce.title': 'WooCommerce, headless e integraciones',
+  'svcWordpress.faq.builders.answer':
+    'Una plantilla o un builder acelera la primera entrega, pero hipoteca todo lo que viene después: código inflado, actualizaciones que rompen el diseño y un SEO técnico difícil de controlar. Nosotros desarrollamos WordPress avanzado con bloques Gutenberg nativos y código propio, de modo que tu equipo puede editar todo el contenido desde el panel y la web sigue siendo rápida y mantenible años después.',
+  'svcWordpress.faq.builders.question':
+    '¿Por qué WordPress y no una plantilla comprada o un page builder?',
+  'svcWordpress.faq.edicion.answer':
+    'Sí, y está pensado para que sea así. Entregamos el panel de WordPress con bloques y patrones preparados para tus secciones, documentación de uso para tu equipo y una sesión de capacitación grabada. No quedas atado a nosotros para publicar contenido nuevo.',
+  'svcWordpress.faq.edicion.question': '¿Puedo seguir editando el contenido yo mismo?',
+  'svcWordpress.faq.migracion.answer':
+    'Sí. Trabajamos con un inventario completo de URLs, mapa de redirecciones 301 y preservación de títulos, meta descripciones, encabezados y datos estructurados. Antes de publicar comparamos rendimiento y posiciones para detectar cualquier caída a tiempo. Hemos migrado proyectos desde Joomla, Wix, Drupal y sitios HTML estáticos sin degradar sus rankings.',
+  'svcWordpress.faq.migracion.question':
+    '¿Puedo migrar mi web actual a WordPress sin perder posicionamiento?',
+  'svcWordpress.faq.movil.answer':
+    'Es uno de nuestros criterios de aceptación. Optimizamos imágenes a WebP/AVIF, aplicamos lazy loading, caché de página y de objetos, y reducimos el JavaScript al mínimo necesario. Precisamente por eso llevamos más de 350 sitios web creados desde cero en todos los niveles de complejidad: sabemos qué cuello de botella aparece en cada tipo de negocio.',
+  'svcWordpress.faq.movil.question': '¿El sitio funcionará bien en móviles con conexiones lentas?',
+  'svcWordpress.faq.soporte.answer':
+    'Todos los proyectos incluyen 3 meses de soporte post-lanzamiento. Después ofrecemos planes mensuales con actualizaciones de core, plugins y temas, copias de seguridad, monitoreo de seguridad y uptime, optimización de rendimiento y soporte prioritario por WhatsApp o Slack.',
+  'svcWordpress.faq.soporte.question': '¿Ofrecen mantenimiento y soporte continuo?',
+  'svcWordpress.form.error': 'Error al enviar. Intenta de nuevo o escríbenos a info@vortexlm.com.',
+  'svcWordpress.form.sending': 'Enviando...',
+  'svcWordpress.form.submit': 'Solicitar Propuesta WordPress',
+  'svcWordpress.form.success': '¡Mensaje enviado con éxito! Te contactaremos pronto.',
+  'svcWordpress.industry.automotriz.summary':
+    'Compraventa y contenido especializado: stock actualizado, fichas de vehículo, financiamiento y consultas directas por WhatsApp.',
+  'svcWordpress.industry.automotriz.title': 'Sector Automotriz',
+  'svcWordpress.industry.corporativo.summary':
+    'Consultoras y proveedores B2B que usan la web como canal comercial: casos de éxito, formularios cualificados y contenido que respalda la propuesta de valor.',
+  'svcWordpress.industry.corporativo.title': 'Servicios Corporativos y Profesionales',
+  'svcWordpress.industry.hogar.summary':
+    'Fabricantes y distribuidores de mobiliario, cerramientos y reformas que necesitan catálogos filtrables, fichas de producto y captación de presupuestos.',
+  'svcWordpress.industry.hogar.title': 'Hogar, Construcción y Decoración',
+  'svcWordpress.industry.hosteleria.summary':
+    'Carta digital, reservas, eventos y galerías gastronómicas con rendimiento alto en móvil: la mayoría de las visitas de hostelería llegan desde el teléfono.',
+  'svcWordpress.industry.hosteleria.title': 'Restaurantes y Hostelería',
+  'svcWordpress.industry.ocio.summary':
+    'Operadores con reserva inmediata: entradas, excursiones, alquiler de embarcaciones y salas de juego con flujos de conversión medibles.',
+  'svcWordpress.industry.ocio.title': 'Ocio, Entretenimiento y Turismo',
+  'svcWordpress.industry.retail.summary':
+    'E-commerce y catálogos con pasarela de pago, gestión de stock y variaciones de producto, optimizados para convertir desde la primera visita.',
+  'svcWordpress.industry.retail.title': 'Comercio Minorista y Tiendas Especializadas (Retail)',
+  'svcWordpress.industry.salud.summary':
+    'Centros que venden confianza antes que servicios: agenda de citas, tratamientos detallados, prueba social y cumplimiento estricto de privacidad.',
+  'svcWordpress.industry.salud.title': 'Salud, Bienestar y Estética',
+  'svcWordpress.link.coste.description':
+    'Desglose real de costes y ROI de invertir en un sitio profesional frente a una plantilla de bajo coste.',
+  'svcWordpress.link.coste.label': '¿Cuánto cuesta una página web en 2026?',
+  'svcWordpress.link.diseno.description':
+    'Metodología completa de diseño UI/UX, wireframes y sistemas de diseño antes de pasar a desarrollo.',
+  'svcWordpress.link.diseno.label': 'Diseño de páginas web en Caracas',
+  'svcWordpress.link.stack.description':
+    'Cuando el proyecto exige máxima velocidad o un front-end headless sobre WordPress, este es el stack que usamos.',
+  'svcWordpress.link.stack.label': 'Stack moderno Astro, React y Next.js',
+  'svcWordpress.link.whiteLabel.description':
+    'Externaliza desarrollo frontend, WordPress y automatizaciones con tu propia marca. NDA y pago por consumo real.',
+  'svcWordpress.link.whiteLabel.label': 'Servicios white label',
+  'svcWordpress.meta.description':
+    'Agencia de desarrollo WordPress avanzado en Caracas: más de 350 sitios web creados desde cero en 7 industrias. Portafolio de 26 proyectos en producción, sin page builders y optimizados para Core Web Vitals.',
+  'svcWordpress.meta.title':
+    'Desarrollo WordPress en Caracas | Portafolio de +350 Sitios Web | Agencia de Desarrollo Web y Apps en Caracas',
+  'svcWordpress.sector.admiral': 'Casinos y Salas de Juego',
+  'svcWordpress.sector.anagomez': 'Peluquería y Estilismo',
+  'svcWordpress.sector.bilox': 'Cerramientos y Sistemas de Protección Solar',
+  'svcWordpress.sector.bureau360': 'Agencia de Marketing Digital',
+  'svcWordpress.sector.carsdiner': 'Restaurante Temático',
+  'svcWordpress.sector.cocimara': 'Diseño de Cocinas y Hogar',
+  'svcWordpress.sector.colchonight': 'Colchones y Productos de Descanso',
+  'svcWordpress.sector.conforcama': 'Colchones y Productos de Descanso',
+  'svcWordpress.sector.formobel': 'Mobiliario',
+  'svcWordpress.sector.gescomauto': 'Compraventa de Vehículos',
+  'svcWordpress.sector.globeservice': 'Servicios Integrales para Empresas',
+  'svcWordpress.sector.granbahia': 'Restaurante',
+  'svcWordpress.sector.hominum': 'Centro de Psicología y Desarrollo Personal',
+  'svcWordpress.sector.hotelonda': 'Hotel',
+  'svcWordpress.sector.infinityjump': 'Parque de Trampolines',
+  'svcWordpress.sector.inspiredbycars': 'Contenido y Productos Automotrices',
+  'svcWordpress.sector.invernadero': 'Restaurante y Eventos',
+  'svcWordpress.sector.khora': 'Mobiliario y Decoración',
+  'svcWordpress.sector.limptex': 'Servicios de Limpieza Corporativa',
+  'svcWordpress.sector.mualbu': 'Mobiliario',
+  'svcWordpress.sector.nautica': 'Venta y Reparación de Embarcaciones',
+  'svcWordpress.sector.primecr': 'Consultoría de Negocios',
+  'svcWordpress.sector.rotulos': 'Rotulación y Señalética',
+  'svcWordpress.sector.sevilla': 'Mobiliario',
+  'svcWordpress.sector.tabarca': 'Excursiones y Turismo Marítimo',
+  'svcWordpress.sector.toldosaban': 'Toldos y Pérgolas',
+  'svcWordpress.stat.cms': 'Años trabajando con CMS',
+  'svcWordpress.stat.industrias': 'Industrias especializadas',
+  'svcWordpress.stat.portafolio': 'Proyectos en este portafolio',
+  'svcWordpress.stat.sitios': 'Sitios web desde cero',
 } as const;
 
 /** Claves válidas del diccionario (derivadas de `es`). */
@@ -5329,6 +5487,164 @@ export const en: Record<UiKey, string> = {
   'svcProgramador.n154': 'e.g. John Smith',
   'svcProgramador.n155':
     'Tell me about your project: application type, desired stack, deadlines, estimated budget, required integrations...',
+
+  // ── src/pages/servicios/desarrollo-wordpress.astro ──
+  'svcWordpress.n01': 'Advanced WordPress · Portfolio',
+  'svcWordpress.n02': 'WordPress development in Caracas: 350+ websites built from scratch',
+  'svcWordpress.n03': 'Our track record with WordPress',
+  'svcWordpress.n04':
+    'With more than 10 years working with CMS platforms, we have built over 350 websites from scratch at every level of complexity, specializing in advanced WordPress.',
+  'svcWordpress.n05': 'Get a quote for my WordPress project',
+  'svcWordpress.n06': 'See the',
+  'svcWordpress.n07': 'projects',
+  'svcWordpress.n08': 'How we work',
+  'svcWordpress.n09': 'Advanced WordPress, without templates or page builders',
+  'svcWordpress.n10':
+    'The difference between a WordPress that degrades in six months and one that is still fast five years later lies in how it is built. Our CMS practice works with native Gutenberg blocks, our own code and a measurable performance layer in every delivery.',
+  'svcWordpress.n11': 'Portfolio',
+  'svcWordpress.n12': '26 WordPress projects in production, across 7 industries',
+  'svcWordpress.n13':
+    'Every domain is a real project and is still online. Click any of them to visit it.',
+  'svcWordpress.n14': 'Portfolio industry index',
+  'svcWordpress.n15': 'WordPress',
+  'svcWordpress.n16': 'FAQ',
+  'svcWordpress.n17': 'Frequently asked questions about WordPress development',
+  'svcWordpress.n18': 'expand_more',
+  'svcWordpress.n19': 'Explore more',
+  'svcWordpress.n20': 'Other related services and resources',
+  'svcWordpress.n21': 'Learn more',
+  'svcWordpress.n22': 'Let us work together',
+  'svcWordpress.n23': 'Do you have a WordPress project pending?',
+  'svcWordpress.n24':
+    'Tell us what you need — a new website, a migration or a WordPress that stopped performing — and you will receive a proposal with a transparent scope, timeline and budget. No commitment.',
+  'svcWordpress.n25': 'First and Last Name',
+  'svcWordpress.n26': 'e.g. John Smith',
+  'svcWordpress.n27': 'Corporate Email',
+  'svcWordpress.n28': 'john@yourcompany.com',
+  'svcWordpress.n29': 'Tell us about your WordPress project',
+  'svcWordpress.n30':
+    'Is it a new website, a migration or a redesign? Do you use WooCommerce? Do you have a deadline or an estimated budget?',
+  'svcWordpress.n31': 'Request a WordPress Proposal',
+  'svcWordpress.n32': 'Your data is protected. No spam, guaranteed.',
+  'svcWordpress.n33': 'Direct enquiry over WhatsApp',
+  'svcWordpress.capability.builders.description':
+    'We build with native Gutenberg blocks, custom fields and our own code. No Elementor, Divi or builders that drag in unnecessary CSS and JavaScript.',
+  'svcWordpress.capability.builders.point.0': 'Custom themes and child themes in modern PHP',
+  'svcWordpress.capability.builders.point.1': 'Reusable Gutenberg blocks and patterns',
+  'svcWordpress.capability.builders.point.2': 'Custom fields and custom post types per sector',
+  'svcWordpress.capability.builders.point.3': 'Zero dependency on purchased templates',
+  'svcWordpress.capability.builders.title': 'Advanced WordPress without page builders',
+  'svcWordpress.capability.performance.description':
+    'A well-built WordPress competes with any modern framework. We optimize queries, caching and assets until the site is green in PageSpeed.',
+  'svcWordpress.capability.performance.point.0': 'Object cache, page cache and query cleanup',
+  'svcWordpress.capability.performance.point.1':
+    'Critical CSS, lazy loading and WebP/AVIF conversion',
+  'svcWordpress.capability.performance.point.2': 'Metrics before and after every delivery',
+  'svcWordpress.capability.performance.point.3': 'Continuous monitoring of LCP, INP and CLS',
+  'svcWordpress.capability.performance.title': 'Performance and Core Web Vitals',
+  'svcWordpress.capability.seo.description':
+    'You get a site whose SEO architecture your editors can maintain without depending on a developer, and we migrate from your current platform without losing rankings.',
+  'svcWordpress.capability.seo.point.0': 'Migrations from Joomla, Wix, Drupal or static HTML',
+  'svcWordpress.capability.seo.point.1': '301 redirects and ranking preservation',
+  'svcWordpress.capability.seo.point.2': 'Schema.org, XML sitemap, hreflang and robots.txt',
+  'svcWordpress.capability.seo.point.3': 'Content structure designed to rank',
+  'svcWordpress.capability.seo.title': 'Content, technical SEO and migrations',
+  'svcWordpress.capability.woocommerce.description':
+    'Full e-commerce or WordPress as the back end of an ultra-fast front end, connected to the real operation of the business: payments, logistics, CRM and automations.',
+  'svcWordpress.capability.woocommerce.point.0':
+    'WooCommerce: payments, shipping, stock and variations',
+  'svcWordpress.capability.woocommerce.point.1': 'Headless WordPress consumed by Astro or Next.js',
+  'svcWordpress.capability.woocommerce.point.2': 'REST APIs, webhooks and CRM/ERP synchronization',
+  'svcWordpress.capability.woocommerce.point.3': 'Multilingual and multisite architectures',
+  'svcWordpress.capability.woocommerce.title': 'WooCommerce, headless and integrations',
+  'svcWordpress.faq.builders.answer':
+    'A template or a builder speeds up the first delivery, but it mortgages everything that comes after: bloated code, updates that break the design and technical SEO that is hard to control. We develop advanced WordPress with native Gutenberg blocks and our own code, so your team can edit all the content from the dashboard and the site stays fast and maintainable years later.',
+  'svcWordpress.faq.builders.question':
+    'Why WordPress and not a purchased template or a page builder?',
+  'svcWordpress.faq.edicion.answer':
+    'Yes, and it is designed to work that way. We hand over the WordPress dashboard with blocks and patterns prepared for your sections, usage documentation for your team and a recorded training session. You are not tied to us to publish new content.',
+  'svcWordpress.faq.edicion.question': 'Can I keep editing the content myself?',
+  'svcWordpress.faq.migracion.answer':
+    'Yes. We work with a complete inventory of URLs, a 301 redirect map and preservation of titles, meta descriptions, headings and structured data. Before publishing we compare performance and rankings to catch any drop in time. We have migrated projects from Joomla, Wix, Drupal and static HTML sites without harming their rankings.',
+  'svcWordpress.faq.migracion.question':
+    'Can I migrate my current site to WordPress without losing rankings?',
+  'svcWordpress.faq.movil.answer':
+    'It is one of our acceptance criteria. We optimize images to WebP/AVIF, apply lazy loading, page and object caching, and reduce JavaScript to the minimum needed. That is precisely why we have built more than 350 websites from scratch at every level of complexity: we know which bottleneck shows up in each type of business.',
+  'svcWordpress.faq.movil.question': 'Will the site work well on mobile with slow connections?',
+  'svcWordpress.faq.soporte.answer':
+    'Every project includes 3 months of post-launch support. After that we offer monthly plans with core, plugin and theme updates, backups, security and uptime monitoring, performance optimization and priority support over WhatsApp or Slack.',
+  'svcWordpress.faq.soporte.question': 'Do you offer ongoing maintenance and support?',
+  'svcWordpress.form.error': 'Error sending. Try again or email us at info@vortexlm.com.',
+  'svcWordpress.form.sending': 'Sending...',
+  'svcWordpress.form.submit': 'Request a WordPress Proposal',
+  'svcWordpress.form.success': 'Message sent successfully! We will contact you soon.',
+  'svcWordpress.industry.automotriz.summary':
+    'Car dealing and specialized content: up-to-date stock, vehicle listings, financing and direct enquiries over WhatsApp.',
+  'svcWordpress.industry.automotriz.title': 'Automotive Sector',
+  'svcWordpress.industry.corporativo.summary':
+    'Consultancies and B2B suppliers that use the web as a commercial channel: success stories, qualified forms and content that backs up the value proposition.',
+  'svcWordpress.industry.corporativo.title': 'Corporate and Professional Services',
+  'svcWordpress.industry.hogar.summary':
+    'Furniture, enclosure and renovation manufacturers and distributors that need filterable catalogs, product sheets and quote capture.',
+  'svcWordpress.industry.hogar.title': 'Home, Construction and Decoration',
+  'svcWordpress.industry.hosteleria.summary':
+    'Digital menus, bookings, events and food galleries with strong mobile performance: most hospitality visits come from a phone.',
+  'svcWordpress.industry.hosteleria.title': 'Restaurants and Hospitality',
+  'svcWordpress.industry.ocio.summary':
+    'Operators with instant booking: tickets, excursions, boat rentals and gaming rooms with measurable conversion flows.',
+  'svcWordpress.industry.ocio.title': 'Leisure, Entertainment and Tourism',
+  'svcWordpress.industry.retail.summary':
+    'E-commerce and catalogs with a payment gateway, stock management and product variations, optimized to convert from the very first visit.',
+  'svcWordpress.industry.retail.title': 'Retail and Specialized Stores',
+  'svcWordpress.industry.salud.summary':
+    'Centers that sell trust before services: appointment booking, detailed treatments, social proof and strict privacy compliance.',
+  'svcWordpress.industry.salud.title': 'Health, Wellness and Beauty',
+  'svcWordpress.link.coste.description':
+    'A real breakdown of costs and the ROI of investing in a professional site instead of a low-cost template.',
+  'svcWordpress.link.coste.label': 'How much does a website cost in 2026?',
+  'svcWordpress.link.diseno.description':
+    'A complete UI/UX design methodology, wireframes and design systems before moving on to development.',
+  'svcWordpress.link.diseno.label': 'Web design in Caracas',
+  'svcWordpress.link.stack.description':
+    'When the project demands maximum speed or a headless front end on top of WordPress, this is the stack we use.',
+  'svcWordpress.link.stack.label': 'Modern Astro, React and Next.js stack',
+  'svcWordpress.link.whiteLabel.description':
+    'Outsource frontend development, WordPress and automations under your own brand. NDA and pay-per-use billing.',
+  'svcWordpress.link.whiteLabel.label': 'White label services',
+  'svcWordpress.meta.description':
+    'Advanced WordPress development agency in Caracas: more than 350 websites built from scratch across 7 industries. A portfolio of 26 projects in production, without page builders and optimized for Core Web Vitals.',
+  'svcWordpress.meta.title':
+    'WordPress Development in Caracas | Portfolio of 350+ Websites | Web and App Development Agency in Caracas',
+  'svcWordpress.sector.admiral': 'Casinos and Gaming Rooms',
+  'svcWordpress.sector.anagomez': 'Hair Salon and Styling',
+  'svcWordpress.sector.bilox': 'Enclosures and Solar Shading Systems',
+  'svcWordpress.sector.bureau360': 'Digital Marketing Agency',
+  'svcWordpress.sector.carsdiner': 'Themed Restaurant',
+  'svcWordpress.sector.cocimara': 'Kitchen and Home Design',
+  'svcWordpress.sector.colchonight': 'Mattresses and Sleep Products',
+  'svcWordpress.sector.conforcama': 'Mattresses and Sleep Products',
+  'svcWordpress.sector.formobel': 'Furniture',
+  'svcWordpress.sector.gescomauto': 'Vehicle Trading',
+  'svcWordpress.sector.globeservice': 'Integrated Business Services',
+  'svcWordpress.sector.granbahia': 'Restaurant',
+  'svcWordpress.sector.hominum': 'Psychology and Personal Growth Center',
+  'svcWordpress.sector.hotelonda': 'Hotel',
+  'svcWordpress.sector.infinityjump': 'Trampoline Park',
+  'svcWordpress.sector.inspiredbycars': 'Automotive Content and Products',
+  'svcWordpress.sector.invernadero': 'Restaurant and Events',
+  'svcWordpress.sector.khora': 'Furniture and Decoration',
+  'svcWordpress.sector.limptex': 'Corporate Cleaning Services',
+  'svcWordpress.sector.mualbu': 'Furniture',
+  'svcWordpress.sector.nautica': 'Boat Sales and Repair',
+  'svcWordpress.sector.primecr': 'Business Consulting',
+  'svcWordpress.sector.rotulos': 'Signage and Wayfinding',
+  'svcWordpress.sector.sevilla': 'Furniture',
+  'svcWordpress.sector.tabarca': 'Excursions and Maritime Tourism',
+  'svcWordpress.sector.toldosaban': 'Awnings and Pergolas',
+  'svcWordpress.stat.cms': 'Years working with CMS',
+  'svcWordpress.stat.industrias': 'Specialized industries',
+  'svcWordpress.stat.portafolio': 'Projects in this portfolio',
+  'svcWordpress.stat.sitios': 'Websites built from scratch',
 };
 
 /** Catálogo completo indexado por locale. */

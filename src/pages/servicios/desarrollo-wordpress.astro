@@ -18,12 +18,16 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 interface PortfolioProject {
   domain: string;
   sector: string;
+  /** Identificador estable que da nombre a la clave i18n del sector */
+  slug: string;
 }
 
 /** Industria / agrupación temática del portafolio */
 interface PortfolioCategory {
   /** Ancla usada por el índice superior del portafolio */
   id: string;
+  /** Identificador estable que da nombre a las claves i18n de la industria */
+  slug: string;
   /** Índice visual del bloque ("01"…"07") */
   index: string;
   title: string;
@@ -35,91 +39,98 @@ interface PortfolioCategory {
 const categories: PortfolioCategory[] = [
   {
     id: 'hogar-construccion-decoracion',
+    slug: 'hogar',
     index: '01',
     title: 'Hogar, Construcción y Decoración',
     summary:
       'Fabricantes y distribuidores de mobiliario, cerramientos y reformas que necesitan catálogos filtrables, fichas de producto y captación de presupuestos.',
     projects: [
-      { domain: 'mualbu.com', sector: 'Mobiliario' },
-      { domain: 'bilox.es', sector: 'Cerramientos y Sistemas de Protección Solar' },
-      { domain: 'toldosaban.com', sector: 'Toldos y Pérgolas' },
-      { domain: 'cocimara.com', sector: 'Diseño de Cocinas y Hogar' },
-      { domain: 'khoraliving.com', sector: 'Mobiliario y Decoración' },
-      { domain: 'mueblessevilla.com', sector: 'Mobiliario' },
-      { domain: 'formobel.es', sector: 'Mobiliario' },
+      { domain: 'mualbu.com', sector: 'Mobiliario', slug: 'mualbu' },
+      { domain: 'bilox.es', sector: 'Cerramientos y Sistemas de Protección Solar', slug: 'bilox' },
+      { domain: 'toldosaban.com', sector: 'Toldos y Pérgolas', slug: 'toldosaban' },
+      { domain: 'cocimara.com', sector: 'Diseño de Cocinas y Hogar', slug: 'cocimara' },
+      { domain: 'khoraliving.com', sector: 'Mobiliario y Decoración', slug: 'khora' },
+      { domain: 'mueblessevilla.com', sector: 'Mobiliario', slug: 'sevilla' },
+      { domain: 'formobel.es', sector: 'Mobiliario', slug: 'formobel' },
     ],
   },
   {
     id: 'servicios-corporativos-profesionales',
+    slug: 'corporativo',
     index: '02',
     title: 'Servicios Corporativos y Profesionales',
     summary:
       'Consultoras y proveedores B2B que usan la web como canal comercial: casos de éxito, formularios cualificados y contenido que respalda la propuesta de valor.',
     projects: [
-      { domain: 'bureau360.dk', sector: 'Agencia de Marketing Digital' },
-      { domain: 'primeconsultingcr.com', sector: 'Consultoría de Negocios' },
-      { domain: 'rotulosmarcos.com', sector: 'Rotulación y Señalética' },
-      { domain: 'globeservice.es', sector: 'Servicios Integrales para Empresas' },
-      { domain: 'limptex.com', sector: 'Servicios de Limpieza Corporativa' },
+      { domain: 'bureau360.dk', sector: 'Agencia de Marketing Digital', slug: 'bureau360' },
+      { domain: 'primeconsultingcr.com', sector: 'Consultoría de Negocios', slug: 'primecr' },
+      { domain: 'rotulosmarcos.com', sector: 'Rotulación y Señalética', slug: 'rotulos' },
+      { domain: 'globeservice.es', sector: 'Servicios Integrales para Empresas', slug: 'globeservice' },
+      { domain: 'limptex.com', sector: 'Servicios de Limpieza Corporativa', slug: 'limptex' },
     ],
   },
   {
     id: 'restaurantes-hosteleria',
+    slug: 'hosteleria',
     index: '03',
     title: 'Restaurantes y Hostelería',
     summary:
       'Carta digital, reservas, eventos y galerías gastronómicas con rendimiento alto en móvil: la mayoría de las visitas de hostelería llegan desde el teléfono.',
     projects: [
-      { domain: 'elinvernaderodelospenotes.es', sector: 'Restaurante y Eventos' },
-      { domain: 'carsdiner.com', sector: 'Restaurante Temático' },
-      { domain: 'hotelonda.com', sector: 'Hotel' },
-      { domain: 'restaurantegranbahia.com', sector: 'Restaurante' },
+      { domain: 'elinvernaderodelospenotes.es', sector: 'Restaurante y Eventos', slug: 'invernadero' },
+      { domain: 'carsdiner.com', sector: 'Restaurante Temático', slug: 'carsdiner' },
+      { domain: 'hotelonda.com', sector: 'Hotel', slug: 'hotelonda' },
+      { domain: 'restaurantegranbahia.com', sector: 'Restaurante', slug: 'granbahia' },
     ],
   },
   {
     id: 'salud-bienestar-estetica',
+    slug: 'salud',
     index: '04',
     title: 'Salud, Bienestar y Estética',
     summary:
       'Centros que venden confianza antes que servicios: agenda de citas, tratamientos detallados, prueba social y cumplimiento estricto de privacidad.',
     projects: [
-      { domain: 'anagomezestilistas.com', sector: 'Peluquería y Estilismo' },
-      { domain: 'centrohominum.org', sector: 'Centro de Psicología y Desarrollo Personal' },
+      { domain: 'anagomezestilistas.com', sector: 'Peluquería y Estilismo', slug: 'anagomez' },
+      { domain: 'centrohominum.org', sector: 'Centro de Psicología y Desarrollo Personal', slug: 'hominum' },
     ],
   },
   {
     id: 'retail-tiendas-especializadas',
+    slug: 'retail',
     index: '05',
     title: 'Comercio Minorista y Tiendas Especializadas (Retail)',
     summary:
       'E-commerce y catálogos con pasarela de pago, gestión de stock y variaciones de producto, optimizados para convertir desde la primera visita.',
     projects: [
-      { domain: 'colchonight.com', sector: 'Colchones y Productos de Descanso' },
-      { domain: 'conforcama.es', sector: 'Colchones y Productos de Descanso' },
+      { domain: 'colchonight.com', sector: 'Colchones y Productos de Descanso', slug: 'colchonight' },
+      { domain: 'conforcama.es', sector: 'Colchones y Productos de Descanso', slug: 'conforcama' },
     ],
   },
   {
     id: 'sector-automotriz',
+    slug: 'automotriz',
     index: '06',
     title: 'Sector Automotriz',
     summary:
       'Compraventa y contenido especializado: stock actualizado, fichas de vehículo, financiamiento y consultas directas por WhatsApp.',
     projects: [
-      { domain: 'gescomauto.com', sector: 'Compraventa de Vehículos' },
-      { domain: 'inspiredbycars.es', sector: 'Contenido y Productos Automotrices' },
+      { domain: 'gescomauto.com', sector: 'Compraventa de Vehículos', slug: 'gescomauto' },
+      { domain: 'inspiredbycars.es', sector: 'Contenido y Productos Automotrices', slug: 'inspiredbycars' },
     ],
   },
   {
     id: 'ocio-entretenimiento-turismo',
+    slug: 'ocio',
     index: '07',
     title: 'Ocio, Entretenimiento y Turismo',
     summary:
       'Operadores con reserva inmediata: entradas, excursiones, alquiler de embarcaciones y salas de juego con flujos de conversión medibles.',
     projects: [
-      { domain: 'casinosadmiral.com', sector: 'Casinos y Salas de Juego' },
-      { domain: 'infinityjump.es', sector: 'Parque de Trampolines' },
-      { domain: 'nauticajimenez.com', sector: 'Venta y Reparación de Embarcaciones' },
-      { domain: 'viajestabarca.com', sector: 'Excursiones y Turismo Marítimo' },
+      { domain: 'casinosadmiral.com', sector: 'Casinos y Salas de Juego', slug: 'admiral' },
+      { domain: 'infinityjump.es', sector: 'Parque de Trampolines', slug: 'infinityjump' },
+      { domain: 'nauticajimenez.com', sector: 'Venta y Reparación de Embarcaciones', slug: 'nautica' },
+      { domain: 'viajestabarca.com', sector: 'Excursiones y Turismo Marítimo', slug: 'tabarca' },
     ],
   },
 ];
@@ -128,16 +139,17 @@ const totalProjects = categories.reduce((total, category) => total + category.pr
 
 /** Métricas del hero — todas verificables con el portafolio listado abajo */
 const heroStats = [
-  { value: '10+', label: 'Años trabajando con CMS' },
-  { value: '350+', label: 'Sitios web desde cero' },
-  { value: String(totalProjects), label: 'Proyectos en este portafolio' },
-  { value: String(categories.length), label: 'Industrias especializadas' },
+  { value: '10+', label: 'Años trabajando con CMS', slug: 'cms' },
+  { value: '350+', label: 'Sitios web desde cero', slug: 'sitios' },
+  { value: String(totalProjects), label: 'Proyectos en este portafolio', slug: 'portafolio' },
+  { value: String(categories.length), label: 'Industrias especializadas', slug: 'industrias' },
 ];
 
 /** Capacidades técnicas del practice de WordPress */
 const capabilities = [
   {
     step: '01',
+    slug: 'builders',
     title: 'WordPress avanzado sin page builders',
     description:
       'Construimos con bloques Gutenberg nativos, campos personalizados y código propio. Sin Elementor, Divi ni constructores que arrastren CSS y JavaScript innecesario.',
@@ -150,6 +162,7 @@ const capabilities = [
   },
   {
     step: '02',
+    slug: 'performance',
     title: 'Rendimiento y Core Web Vitals',
     description:
       'Un WordPress bien construido compite con cualquier framework moderno. Optimizamos consultas, caché y assets hasta dejar la web en verde en PageSpeed.',
@@ -162,6 +175,7 @@ const capabilities = [
   },
   {
     step: '03',
+    slug: 'seo',
     title: 'Contenido, SEO técnico y migraciones',
     description:
       'Dejas la web con una arquitectura SEO que tus editores pueden mantener sin depender de un desarrollador, y migramos desde tu plataforma actual sin perder posiciones.',
@@ -174,6 +188,7 @@ const capabilities = [
   },
   {
     step: '04',
+    slug: 'woocommerce',
     title: 'WooCommerce, headless e integraciones',
     description:
       'E-commerce completo o WordPress como back-end de un front-end ultrarrápido, conectado a la operación real del negocio: pagos, logística, CRM y automatizaciones.',
@@ -190,24 +205,28 @@ const capabilities = [
 const relatedLinks = [
   {
     href: '/servicios',
+    slug: 'whiteLabel',
     label: 'Servicios white label',
     description:
       'Externaliza desarrollo frontend, WordPress y automatizaciones con tu propia marca. NDA y pago por consumo real.',
   },
   {
     href: '/servicios/desarrollo-web-astro-react-nextjs',
+    slug: 'stack',
     label: 'Stack moderno Astro, React y Next.js',
     description:
       'Cuando el proyecto exige máxima velocidad o un front-end headless sobre WordPress, este es el stack que usamos.',
   },
   {
     href: '/servicios/diseno-paginas-web-caracas',
+    slug: 'diseno',
     label: 'Diseño de páginas web en Caracas',
     description:
       'Metodología completa de diseño UI/UX, wireframes y sistemas de diseño antes de pasar a desarrollo.',
   },
   {
     href: '/blog/cuanto-cuesta-pagina-web-profesional-venezuela-2026',
+    slug: 'coste',
     label: '¿Cuánto cuesta una página web en 2026?',
     description:
       'Desglose real de costes y ROI de invertir en un sitio profesional frente a una plantilla de bajo coste.',
@@ -216,26 +235,31 @@ const relatedLinks = [
 
 const faqs = [
   {
+    slug: 'builders',
     question: '¿Por qué WordPress y no una plantilla comprada o un page builder?',
     answer:
       'Una plantilla o un builder acelera la primera entrega, pero hipoteca todo lo que viene después: código inflado, actualizaciones que rompen el diseño y un SEO técnico difícil de controlar. Nosotros desarrollamos WordPress avanzado con bloques Gutenberg nativos y código propio, de modo que tu equipo puede editar todo el contenido desde el panel y la web sigue siendo rápida y mantenible años después.',
   },
   {
+    slug: 'migracion',
     question: '¿Puedo migrar mi web actual a WordPress sin perder posicionamiento?',
     answer:
       'Sí. Trabajamos con un inventario completo de URLs, mapa de redirecciones 301 y preservación de títulos, meta descripciones, encabezados y datos estructurados. Antes de publicar comparamos rendimiento y posiciones para detectar cualquier caída a tiempo. Hemos migrado proyectos desde Joomla, Wix, Drupal y sitios HTML estáticos sin degradar sus rankings.',
   },
   {
+    slug: 'movil',
     question: '¿El sitio funcionará bien en móviles con conexiones lentas?',
     answer:
       'Es uno de nuestros criterios de aceptación. Optimizamos imágenes a WebP/AVIF, aplicamos lazy loading, caché de página y de objetos, y reducimos el JavaScript al mínimo necesario. Precisamente por eso llevamos más de 350 sitios web creados desde cero en todos los niveles de complejidad: sabemos qué cuello de botella aparece en cada tipo de negocio.',
   },
   {
+    slug: 'edicion',
     question: '¿Puedo seguir editando el contenido yo mismo?',
     answer:
       'Sí, y está pensado para que sea así. Entregamos el panel de WordPress con bloques y patrones preparados para tus secciones, documentación de uso para tu equipo y una sesión de capacitación grabada. No quedas atado a nosotros para publicar contenido nuevo.',
   },
   {
+    slug: 'soporte',
     question: '¿Ofrecen mantenimiento y soporte continuo?',
     answer:
       'Todos los proyectos incluyen 3 meses de soporte post-lanzamiento. Después ofrecemos planes mensuales con actualizaciones de core, plugins y temas, copias de seguridad, monitoreo de seguridad y uptime, optimización de rendimiento y soporte prioritario por WhatsApp o Slack.',
@@ -332,6 +356,8 @@ const wordpressPortfolioSchema = {
 <BaseLayout
   title="Desarrollo WordPress en Caracas | Portafolio de +350 Sitios Web"
   description={`Agencia de desarrollo WordPress avanzado en Caracas: más de 350 sitios web creados desde cero en ${categories.length} industrias. Portafolio de ${totalProjects} proyectos en producción, sin page builders y optimizados para Core Web Vitals.`}
+  titleKey="svcWordpress.meta.title"
+  descriptionKey="svcWordpress.meta.description"
   type="website"
   isLocalBusiness={true}
   faqItems={faqs}
@@ -348,11 +374,11 @@ const wordpressPortfolioSchema = {
     <div class="max-w-[1200px] mx-auto text-center relative z-10">
       <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-white/[0.015] blur-[120px] rounded-full pointer-events-none"></div>
 
-      <span class="inline-block px-3 py-1.5 border border-[#1f1f24] rounded-full text-[10px] font-mono uppercase tracking-widest text-[#8a8a93] mb-8">
+      <span class="inline-block px-3 py-1.5 border border-[#1f1f24] rounded-full text-[10px] font-mono uppercase tracking-widest text-[#8a8a93] mb-8" data-i18n="svcWordpress.n01">
         WordPress Avanzado · Portafolio
       </span>
 
-      <h1 class="text-4xl md:text-7xl font-extralight tracking-tight text-white mb-8 leading-[1.08] max-w-4xl mx-auto opacity-95">
+      <h1 class="text-4xl md:text-7xl font-extralight tracking-tight text-white mb-8 leading-[1.08] max-w-4xl mx-auto opacity-95" data-i18n="svcWordpress.n02">
         Desarrollo WordPress en Caracas: 350+ sitios web construidos desde cero
       </h1>
 
@@ -360,8 +386,8 @@ const wordpressPortfolioSchema = {
            origen para que aparezca idéntico en el HTML servido. -->
       <div class="linear-card glow-hover rounded-lg border border-[#1f1f24] bg-[#08080c]/60 px-6 py-7 md:px-10 md:py-9 max-w-4xl mx-auto mb-10 text-left">
         <div class="border-l-2 border-white/20 pl-5 md:pl-7">
-          <span class="text-[10px] font-mono uppercase tracking-widest text-[#8a8a93] block mb-3">Nuestra trayectoria con WordPress</span>
-          <p class="text-base md:text-xl text-white font-light leading-relaxed tracking-tight">Con más de 10 años trabajando con CMS, hemos podido hacer más de 350 sitios web desde cero en todos los niveles de complejidad, especializándonos en WordPress avanzado.</p>
+          <span class="text-[10px] font-mono uppercase tracking-widest text-[#8a8a93] block mb-3" data-i18n="svcWordpress.n03">Nuestra trayectoria con WordPress</span>
+          <p class="text-base md:text-xl text-white font-light leading-relaxed tracking-tight" data-i18n="svcWordpress.n04">Con más de 10 años trabajando con CMS, hemos podido hacer más de 350 sitios web desde cero en todos los niveles de complejidad, especializándonos en WordPress avanzado.</p>
         </div>
       </div>
 
@@ -370,17 +396,18 @@ const wordpressPortfolioSchema = {
         {heroStats.map((stat) => (
           <div class="linear-card glow-hover rounded-lg border border-[#1f1f24] bg-[#08080c]/40 px-4 py-5 text-center">
             <div class="text-2xl md:text-3xl font-light text-white tracking-tight">{stat.value}</div>
-            <div class="text-[10px] font-mono uppercase tracking-wider text-[#8a8a93] mt-2 leading-snug">{stat.label}</div>
+            <div class="text-[10px] font-mono uppercase tracking-wider text-[#8a8a93] mt-2 leading-snug" data-i18n={`svcWordpress.stat.${stat.slug}`}>{stat.label}</div>
           </div>
         ))}
       </div>
 
       <div class="flex flex-col sm:flex-row items-center justify-center gap-6">
-        <a href="#contacto" class="w-full sm:w-auto px-8 py-3 bg-white text-black font-semibold text-xs rounded-full hover:bg-neutral-200 transition-all text-center duration-200 active:scale-95 shadow-[0_0_25px_rgba(255,255,255,0.15)]">
+        <a href="#contacto" class="w-full sm:w-auto px-8 py-3 bg-white text-black font-semibold text-xs rounded-full hover:bg-neutral-200 transition-all text-center duration-200 active:scale-95 shadow-[0_0_25px_rgba(255,255,255,0.15)]" data-i18n="svcWordpress.n05">
           Cotizar mi proyecto WordPress
         </a>
         <a href="#portafolio" class="w-full sm:w-auto px-6 py-3 text-white/90 font-medium text-xs rounded-full hover:text-white flex items-center justify-center gap-1.5 group transition-colors">
-          Ver los {totalProjects} proyectos <span class="group-hover:translate-x-1 transition-transform">➔</span>
+          <span data-i18n="svcWordpress.n06">Ver los</span> {totalProjects} <span data-i18n="svcWordpress.n07">proyectos</span>
+          <span class="group-hover:translate-x-1 transition-transform">➔</span>
         </a>
       </div>
     </div>
@@ -390,9 +417,9 @@ const wordpressPortfolioSchema = {
   <section class="py-24 md:py-32 px-6 md:px-12 bg-black border-b border-[#1f1f24] relative">
     <div class="max-w-[1200px] mx-auto relative z-10">
       <div class="text-center max-w-3xl mx-auto mb-16">
-        <span class="text-[10px] font-mono text-[#8a8a93] uppercase tracking-widest block mb-3 font-medium">Cómo trabajamos</span>
-        <h2 class="text-3xl md:text-5xl font-light text-white tracking-tight mb-6">WordPress avanzado, sin plantillas ni page builders</h2>
-        <p class="text-sm md:text-base text-[#cbd5e1] font-light leading-relaxed">
+        <span class="text-[10px] font-mono text-[#8a8a93] uppercase tracking-widest block mb-3 font-medium" data-i18n="svcWordpress.n08">Cómo trabajamos</span>
+        <h2 class="text-3xl md:text-5xl font-light text-white tracking-tight mb-6" data-i18n="svcWordpress.n09">WordPress avanzado, sin plantillas ni page builders</h2>
+        <p class="text-sm md:text-base text-[#cbd5e1] font-light leading-relaxed" data-i18n="svcWordpress.n10">
           La diferencia entre un WordPress que se degrada en seis meses y uno que sigue siendo rápido
           en cinco años está en cómo se construye. Nuestro practice de CMS trabaja con bloques
           Gutenberg nativos, código propio y una capa de rendimiento medible en cada entrega.
@@ -406,13 +433,13 @@ const wordpressPortfolioSchema = {
               <span class="text-[10px] font-mono text-[#8a8a93] uppercase tracking-widest">{capability.step}</span>
               <span class="glow-line flex-grow" aria-hidden="true"></span>
             </div>
-            <h3 class="text-lg md:text-xl font-light text-white tracking-tight mb-3">{capability.title}</h3>
-            <p class="text-xs text-[#cbd5e1] font-light leading-relaxed mb-5">{capability.description}</p>
+            <h3 class="text-lg md:text-xl font-light text-white tracking-tight mb-3" data-i18n={`svcWordpress.capability.${capability.slug}.title`}>{capability.title}</h3>
+            <p class="text-xs text-[#cbd5e1] font-light leading-relaxed mb-5" data-i18n={`svcWordpress.capability.${capability.slug}.description`}>{capability.description}</p>
             <ul class="space-y-1.5 text-[10px] text-[#cbd5e1] font-mono">
-              {capability.points.map((point) => (
+              {capability.points.map((point, k) => (
                 <li class="flex items-start gap-2">
                   <span class="text-white/70" aria-hidden="true">→</span>
-                  <span>{point}</span>
+                  <span data-i18n={`svcWordpress.capability.${capability.slug}.point.${k}`}>{point}</span>
                 </li>
               ))}
             </ul>
@@ -426,24 +453,28 @@ const wordpressPortfolioSchema = {
   <section id="portafolio" class="py-24 md:py-32 px-6 md:px-12 bg-black border-b border-[#1f1f24] relative">
     <div class="max-w-[1200px] mx-auto relative z-10">
       <div class="text-center max-w-3xl mx-auto mb-14">
-        <span class="text-[10px] font-mono text-[#8a8a93] uppercase tracking-widest block mb-3 font-medium">Portafolio</span>
-        <h2 class="text-3xl md:text-5xl font-light text-white tracking-tight mb-6">
+        <span class="text-[10px] font-mono text-[#8a8a93] uppercase tracking-widest block mb-3 font-medium" data-i18n="svcWordpress.n11">Portafolio</span>
+        <!-- El recuento (26 proyectos / 7 industrias) forma parte del texto de la
+             clave: el cliente reescribe `textContent`, así que el diccionario
+             contiene la cifra final. Si cambia el portafolio, el crawl SSR lo
+             detecta como desalineación. -->
+        <h2 class="text-3xl md:text-5xl font-light text-white tracking-tight mb-6" data-i18n="svcWordpress.n12">
           {totalProjects} proyectos WordPress en producción, en {categories.length} industrias
         </h2>
-        <p class="text-sm md:text-base text-[#cbd5e1] font-light leading-relaxed">
+        <p class="text-sm md:text-base text-[#cbd5e1] font-light leading-relaxed" data-i18n="svcWordpress.n13">
           Cada dominio es un proyecto real y sigue en línea. Haz clic en cualquiera para visitarlo.
         </p>
       </div>
 
       <!-- Índice de industrias (navegación por anclas, sin JavaScript) -->
-      <nav aria-label="Índice de industrias del portafolio" class="flex flex-wrap items-center justify-center gap-2 mb-16">
+      <nav aria-label="Índice de industrias del portafolio" data-i18n-aria-label="svcWordpress.n14" class="flex flex-wrap items-center justify-center gap-2 mb-16">
         {categories.map((category) => (
           <a
             href={`#${category.id}`}
             class="inline-flex items-center gap-2 px-3.5 py-2 rounded-full border border-[#1f1f24] bg-[#08080c]/40 text-[10px] font-mono uppercase tracking-wider text-[#cbd5e1] hover:text-white hover:border-white/20 transition-colors"
           >
             <span class="text-[#8a8a93]">{category.index}</span>
-            {category.title}
+            <span data-i18n={`svcWordpress.industry.${category.slug}.title`}>{category.title}</span>
             <span class="text-[#8a8a93]">{category.projects.length}</span>
           </a>
         ))}
@@ -456,12 +487,12 @@ const wordpressPortfolioSchema = {
               <div class="flex items-start gap-4">
                 <span class="text-[10px] font-mono text-[#8a8a93] pt-2">{category.index}</span>
                 <div>
-                  <h3 class="text-lg md:text-2xl font-light text-white tracking-tight">{category.title}</h3>
-                  <p class="text-xs text-[#cbd5e1] font-light leading-relaxed mt-2 max-w-2xl">{category.summary}</p>
+                  <h3 class="text-lg md:text-2xl font-light text-white tracking-tight" data-i18n={`svcWordpress.industry.${category.slug}.title`}>{category.title}</h3>
+                  <p class="text-xs text-[#cbd5e1] font-light leading-relaxed mt-2 max-w-2xl" data-i18n={`svcWordpress.industry.${category.slug}.summary`}>{category.summary}</p>
                 </div>
               </div>
               <span class="shrink-0 self-start md:self-auto text-[10px] font-mono uppercase tracking-wider text-[#8a8a93] border border-[#1f1f24] rounded-full px-3 py-1.5">
-                {category.projects.length} proyectos
+                {category.projects.length} <span data-i18n="svcWordpress.n07">proyectos</span>
               </span>
             </header>
 
@@ -474,7 +505,7 @@ const wordpressPortfolioSchema = {
                   class="linear-card glow-hover group rounded-lg border border-[#1f1f24] bg-[#08080c]/40 p-5 flex flex-col gap-3 transition-all"
                 >
                   <div class="flex items-center justify-between gap-3">
-                    <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full border border-[#1f1f24] bg-white/[0.02] text-[9px] font-mono uppercase tracking-wider text-[#8a8a93]">
+                    <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full border border-[#1f1f24] bg-white/[0.02] text-[9px] font-mono uppercase tracking-wider text-[#8a8a93]" data-i18n="svcWordpress.n15">
                       WordPress
                     </span>
                     <svg class="w-3.5 h-3.5 text-[#8a8a93]/50 group-hover:text-white group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
@@ -484,7 +515,7 @@ const wordpressPortfolioSchema = {
                   <span class="font-mono text-sm text-white break-all group-hover:underline decoration-[#8a8a93] underline-offset-4">
                     {project.domain}
                   </span>
-                  <span class="mt-auto text-[10px] font-mono uppercase tracking-wider text-[#8a8a93] leading-snug">
+                  <span class="mt-auto text-[10px] font-mono uppercase tracking-wider text-[#8a8a93] leading-snug" data-i18n={`svcWordpress.sector.${project.slug}`}>
                     {project.sector}
                   </span>
                 </a>
@@ -500,19 +531,19 @@ const wordpressPortfolioSchema = {
   <section class="py-24 md:py-32 px-6 md:px-12 bg-black border-b border-[#1f1f24] relative">
     <div class="max-w-[800px] mx-auto relative z-10">
       <div class="text-center max-w-2xl mx-auto mb-16">
-        <span class="text-[10px] font-mono text-[#cbd5e1] uppercase tracking-widest block mb-3 font-medium">FAQ</span>
-        <h2 class="text-3xl md:text-4xl font-light text-white tracking-tight">Preguntas frecuentes sobre desarrollo WordPress</h2>
+        <span class="text-[10px] font-mono text-[#cbd5e1] uppercase tracking-widest block mb-3 font-medium" data-i18n="svcWordpress.n16">FAQ</span>
+        <h2 class="text-3xl md:text-4xl font-light text-white tracking-tight" data-i18n="svcWordpress.n17">Preguntas frecuentes sobre desarrollo WordPress</h2>
       </div>
 
       <div class="space-y-4">
         {faqs.map((faq) => (
           <details class="group linear-card rounded-lg border border-[#1f1f24] bg-[#08080c]/30 overflow-hidden glow-hover transition-all">
             <summary class="flex items-center justify-between gap-4 p-5 cursor-pointer text-sm font-medium text-white/90 hover:text-white transition-colors">
-              {faq.question}
-              <span class="material-symbols-outlined text-sm text-[#cbd5e1]/60 group-open:rotate-180 transition-transform shrink-0">expand_more</span>
+              <span data-i18n={`svcWordpress.faq.${faq.slug}.question`}>{faq.question}</span>
+              <span class="material-symbols-outlined text-sm text-[#cbd5e1]/60 group-open:rotate-180 transition-transform shrink-0" data-i18n="svcWordpress.n18">expand_more</span>
             </summary>
             <div class="px-5 pb-5 text-xs text-[#cbd5e1] leading-relaxed">
-              {faq.answer}
+              <span data-i18n={`svcWordpress.faq.${faq.slug}.answer`}>{faq.answer}</span>
             </div>
           </details>
         ))}
@@ -524,8 +555,8 @@ const wordpressPortfolioSchema = {
   <section class="py-24 md:py-32 px-6 md:px-12 bg-black border-b border-[#1f1f24] relative">
     <div class="max-w-[1200px] mx-auto relative z-10">
       <div class="text-center max-w-2xl mx-auto mb-14">
-        <span class="text-[10px] font-mono text-[#8a8a93] uppercase tracking-widest block mb-3 font-medium">Explora más</span>
-        <h2 class="text-3xl md:text-4xl font-light text-white tracking-tight">Otros servicios y recursos relacionados</h2>
+        <span class="text-[10px] font-mono text-[#8a8a93] uppercase tracking-widest block mb-3 font-medium" data-i18n="svcWordpress.n19">Explora más</span>
+        <h2 class="text-3xl md:text-4xl font-light text-white tracking-tight" data-i18n="svcWordpress.n20">Otros servicios y recursos relacionados</h2>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -535,10 +566,10 @@ const wordpressPortfolioSchema = {
             rel="prefetch"
             class="linear-card glow-hover group rounded-lg border border-[#1f1f24] bg-[#08080c]/40 p-6 flex flex-col transition-all"
           >
-            <h3 class="text-sm font-medium text-white mb-3 tracking-tight">{link.label}</h3>
-            <p class="text-xs text-[#cbd5e1] font-light leading-relaxed mb-6">{link.description}</p>
+            <h3 class="text-sm font-medium text-white mb-3 tracking-tight" data-i18n={`svcWordpress.link.${link.slug}.label`}>{link.label}</h3>
+            <p class="text-xs text-[#cbd5e1] font-light leading-relaxed mb-6" data-i18n={`svcWordpress.link.${link.slug}.description`}>{link.description}</p>
             <div class="mt-auto flex items-center gap-2">
-              <span class="text-[10px] font-mono uppercase tracking-wider text-[#8a8a93] group-hover:text-white transition-colors">Ver más</span>
+              <span class="text-[10px] font-mono uppercase tracking-wider text-[#8a8a93] group-hover:text-white transition-colors" data-i18n="svcWordpress.n21">Ver más</span>
               <svg class="w-3.5 h-3.5 text-[#8a8a93] group-hover:text-white group-hover:translate-x-1 transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
@@ -552,11 +583,11 @@ const wordpressPortfolioSchema = {
   <!-- ─── CTA FINAL: FORMULARIO + WHATSAPP ────────────────────────── -->
   <section id="contacto" class="py-24 md:py-36 px-6 md:px-12 bg-black relative">
     <div class="max-w-[600px] mx-auto text-center relative z-10 space-y-8">
-      <span class="text-[10px] font-mono text-[#cbd5e1] uppercase tracking-widest block font-medium">Trabajemos juntos</span>
-      <h2 class="text-3xl md:text-5xl font-light text-white tracking-tight leading-tight">
+      <span class="text-[10px] font-mono text-[#cbd5e1] uppercase tracking-widest block font-medium" data-i18n="svcWordpress.n22">Trabajemos juntos</span>
+      <h2 class="text-3xl md:text-5xl font-light text-white tracking-tight leading-tight" data-i18n="svcWordpress.n23">
         ¿Tienes un proyecto WordPress pendiente?
       </h2>
-      <p class="text-sm text-[#cbd5e1] font-light leading-relaxed">
+      <p class="text-sm text-[#cbd5e1] font-light leading-relaxed" data-i18n="svcWordpress.n24">
         Cuéntanos qué necesitas — una web nueva, una migración o un WordPress que dejó de rendir —
         y recibirás una propuesta con alcance, plazos y presupuesto transparente. Sin compromiso.
       </p>
@@ -566,36 +597,36 @@ const wordpressPortfolioSchema = {
 
         <form id="contact-form-wordpress" class="space-y-4">
           <div>
-            <label class="block text-[10px] font-mono text-[#cbd5e1] uppercase tracking-wider mb-2 font-medium" for="wp_name">Nombre y Apellido</label>
+            <label class="block text-[10px] font-mono text-[#cbd5e1] uppercase tracking-wider mb-2 font-medium" for="wp_name" data-i18n="svcWordpress.n25">Nombre y Apellido</label>
             <input
               class="w-full bg-black border border-[#1f1f24] rounded px-4 py-3 text-xs text-white placeholder-neutral-800 focus:outline-none focus:border-white transition-colors"
               type="text"
               id="wp_name"
               name="name"
-              placeholder="Ej. Carlos Mendoza"
+              placeholder="Ej. Carlos Mendoza" data-i18n-placeholder="svcWordpress.n26"
               required
             />
           </div>
 
           <div>
-            <label class="block text-[10px] font-mono text-[#cbd5e1] uppercase tracking-wider mb-2 font-medium" for="wp_email">Correo Corporativo</label>
+            <label class="block text-[10px] font-mono text-[#cbd5e1] uppercase tracking-wider mb-2 font-medium" for="wp_email" data-i18n="svcWordpress.n27">Correo Corporativo</label>
             <input
               class="w-full bg-black border border-[#1f1f24] rounded px-4 py-3 text-xs text-white placeholder-neutral-800 focus:outline-none focus:border-white transition-colors"
               type="email"
               id="wp_email"
               name="email"
-              placeholder="carlos@tuempresa.com"
+              placeholder="carlos@tuempresa.com" data-i18n-placeholder="svcWordpress.n28"
               required
             />
           </div>
 
           <div>
-            <label class="block text-[10px] font-mono text-[#cbd5e1] uppercase tracking-wider mb-2 font-medium" for="wp_message">Cuéntanos sobre tu proyecto WordPress</label>
+            <label class="block text-[10px] font-mono text-[#cbd5e1] uppercase tracking-wider mb-2 font-medium" for="wp_message" data-i18n="svcWordpress.n29">Cuéntanos sobre tu proyecto WordPress</label>
             <textarea
               class="w-full bg-black border border-[#1f1f24] rounded px-4 py-3 text-xs text-white placeholder-neutral-800 focus:outline-none focus:border-white transition-colors min-h-[100px]"
               id="wp_message"
               name="message"
-              placeholder="¿Es una web nueva, una migración o un rediseño? ¿Usas WooCommerce? ¿Tienes plazo o presupuesto estimado?"
+              placeholder="¿Es una web nueva, una migración o un rediseño? ¿Usas WooCommerce? ¿Tienes plazo o presupuesto estimado?" data-i18n-placeholder="svcWordpress.n30"
               required
             ></textarea>
           </div>
@@ -608,10 +639,10 @@ const wordpressPortfolioSchema = {
             class="w-full py-3 bg-white text-black font-semibold text-xs rounded hover:bg-neutral-200 transition-colors duration-200"
             onclick="submitFormWordpress()"
           >
-            Solicitar Propuesta WordPress
+            <span data-i18n="svcWordpress.n31">Solicitar Propuesta WordPress</span>
           </button>
 
-          <p class="text-[10px] text-[#737373] text-center mt-4 font-mono">Tus datos están protegidos. Sin spam, garantizado.</p>
+          <p class="text-[10px] text-[#737373] text-center mt-4 font-mono" data-i18n="svcWordpress.n32">Tus datos están protegidos. Sin spam, garantizado.</p>
         </form>
 
         <div class="glow-line" aria-hidden="true"></div>
@@ -626,7 +657,7 @@ const wordpressPortfolioSchema = {
           <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
             <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
           </svg>
-          Consulta directa por WhatsApp
+          <span data-i18n="svcWordpress.n33">Consulta directa por WhatsApp</span>
         </a>
       </div>
     </div>
@@ -639,6 +670,12 @@ const wordpressPortfolioSchema = {
         const form = document.getElementById('contact-form-wordpress');
         const feedback = document.getElementById('form-feedback');
         const btn = form?.querySelector('button[type="button"]');
+        // Mensajes dinámicos en el idioma activo (la carga del motor i18n en
+        // BaseLayout ya inicializó window.vortexI18n antes de cualquier submit).
+        const translate = (key, fallback) => {
+          const i18n = window.vortexI18n;
+          return i18n ? i18n.t(key, fallback) : fallback;
+        };
 
         if (!form || !(form instanceof HTMLFormElement) || !btn) { return; }
         if (!(feedback instanceof HTMLElement)) { return; }
@@ -649,7 +686,7 @@ const wordpressPortfolioSchema = {
         }
 
         btn.disabled = true;
-        btn.textContent = 'Enviando...';
+        btn.textContent = translate('svcWordpress.form.sending', 'Enviando...');
 
         try {
           const res = await fetch('/api/contact', {
@@ -660,7 +697,7 @@ const wordpressPortfolioSchema = {
 
           if (data.success) {
             feedback.className = 'text-sm mt-4 text-green-400';
-            feedback.textContent = '¡Mensaje enviado con éxito! Te contactaremos pronto.';
+            feedback.textContent = translate('svcWordpress.form.success', '¡Mensaje enviado con éxito! Te contactaremos pronto.');
             feedback.classList.remove('hidden');
             form.reset();
           } else {
@@ -668,11 +705,14 @@ const wordpressPortfolioSchema = {
           }
         } catch (err) {
           feedback.className = 'text-sm mt-4 text-red-400';
-          feedback.textContent = 'Error al enviar. Intenta de nuevo o escríbenos a info@vortexlm.com.';
+          feedback.textContent = translate('svcWordpress.form.error', 'Error al enviar. Intenta de nuevo o escríbenos a info@vortexlm.com.');
           feedback.classList.remove('hidden');
         } finally {
           btn.disabled = false;
-          btn.textContent = (btn.getAttribute('data-original-text')) || 'Enviar';
+          btn.textContent = translate(
+            'svcWordpress.form.submit',
+            btn.getAttribute('data-original-text') || 'Solicitar Propuesta WordPress'
+          );
         }
       }
     </script>

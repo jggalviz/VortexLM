@@ -10,6 +10,7 @@ export function ArquitecturaDecisiones() {
       <TarjetaDecision
         numero="01"
         icon={Layers}
+        i18nBase="case.decision.0"
         titulo="Monolito modular en Next.js 16, sin microservicios"
         decision="Una sola aplicación desplegada en Vercel con App Router: Server Components para leer datos, Server Actions para escribirlos y módulos de dominio puros en lugar de servicios separados."
         porque={[
@@ -25,6 +26,7 @@ export function ArquitecturaDecisiones() {
       <TarjetaDecision
         numero="02"
         icon={ShieldCheck}
+        i18nBase="case.decision.1"
         titulo="La seguridad en la base de datos, no solo en el código"
         decision="Postgres con Row Level Security como frontera principal, más funciones SECURITY DEFINER (is_staff, is_tenant_admin, is_super_admin) que resuelven la pertenencia del usuario a una clínica y su rol."
         porque={[
@@ -40,6 +42,7 @@ export function ArquitecturaDecisiones() {
       <TarjetaDecision
         numero="03"
         icon={TrendingUp}
+        i18nBase="case.decision.2"
         titulo="El motor de tasas como sistema resiliente, no como una llamada HTTP"
         decision="Una cascada de cuatro niveles —portal del BCV, APIs alternativas, última tasa persistida y valor de respaldo— que nunca lanza una excepción y siempre informa de dónde salió el número."
         porque={[
@@ -54,6 +57,7 @@ export function ArquitecturaDecisiones() {
           <CodePanel
             ruta="src/lib/bcv.ts"
             nota="La función devuelve tasa + fuente + descripción legible: el nivel del respaldo se conserva hasta la interfaz."
+            notaKey="case.decision.2.note.0"
           >{`export async function getLatestBcvRateDetallada(
   supabase: Client
 ): Promise<BcvRateInfo> {
@@ -74,6 +78,7 @@ export function ArquitecturaDecisiones() {
           <CodePanel
             ruta="vercel.json"
             nota="El Route Handler valida Authorization: Bearer CRON_SECRET y declara maxDuration = 30."
+            notaKey="case.decision.2.note.1"
           >{`{
   "crons": [
     {

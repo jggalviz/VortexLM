@@ -49,6 +49,7 @@ export function AprendizajesSection() {
         indice="04"
         eyebrow="Aprendizajes y escalabilidad"
         icon={GraduationCap}
+        i18nBase="case.apr"
         title="Lo que aprendí y por qué este sistema aguanta crecer"
         description="Construir un producto regulado con una sola persona obliga a elegir dónde vive cada responsabilidad. Estas son las conclusiones que aplicaría al siguiente proyecto, sin maquillar lo que aún queda pendiente."
       />
@@ -65,9 +66,14 @@ export function AprendizajesSection() {
                 className="mt-0.5 size-4 shrink-0 text-teal-700"
                 aria-hidden="true"
               />
-              {aprendizaje.titulo}
+              <span data-i18n={`case.apr.item.${indice}.titulo`}>
+                {aprendizaje.titulo}
+              </span>
             </p>
-            <p className="mt-2.5 text-sm leading-6 text-zinc-600">
+            <p
+              className="mt-2.5 text-sm leading-6 text-zinc-600"
+              data-i18n={`case.apr.item.${indice}.detalle`}
+            >
               {aprendizaje.detalle}
             </p>
           </Panel>
@@ -78,16 +84,16 @@ export function AprendizajesSection() {
         <Panel tone="dark" className="p-6 sm:p-8">
           <p className="flex items-center gap-2 text-sm font-bold text-white">
             <Route className="size-4 text-teal-300" aria-hidden="true" />
-            Cómo escala este diseño
+            <span data-i18n="case.apr.scale.title">Cómo escala este diseño</span>
           </p>
           <ul className="mt-5 space-y-3">
-            {ESCALABILIDAD.map((punto) => (
+            {ESCALABILIDAD.map((punto, i) => (
               <li key={punto} className="flex gap-2.5 text-sm leading-6 text-zinc-300">
                 <span
                   aria-hidden="true"
                   className="mt-2.5 size-1.5 shrink-0 rounded-full bg-teal-400"
                 />
-                {punto}
+                <span data-i18n={`case.apr.scale.${i}`}>{punto}</span>
               </li>
             ))}
           </ul>
@@ -97,16 +103,19 @@ export function AprendizajesSection() {
       <Callout
         icon={Compass}
         titulo="Si volviera a empezar mañana"
+        i18nBase="case.apr.callout"
         className="mt-6"
       >
         <p className="text-sm leading-6">
-          Mantendría el monolito modular y la seguridad en la base de datos,
-          adelantaría las pruebas de los cálculos fiscales al primer sprint —no
-          son código aburrido, son el corazón del producto— y diseñaría el aforo
-          por turno desde el modelo de datos, en lugar de dejarlo como una tarea
-          pendiente bien documentada. El resto del recorrido lo volvería a hacer
-          igual: pocas piezas, cada una en la capa donde el problema es más
-          barato de resolver.
+          <span data-i18n="case.apr.callout.body">
+            Mantendría el monolito modular y la seguridad en la base de datos,
+            adelantaría las pruebas de los cálculos fiscales al primer sprint —no
+            son código aburrido, son el corazón del producto— y diseñaría el aforo
+            por turno desde el modelo de datos, en lugar de dejarlo como una tarea
+            pendiente bien documentada. El resto del recorrido lo volvería a hacer
+            igual: pocas piezas, cada una en la capa donde el problema es más
+            barato de resolver.
+          </span>
         </p>
       </Callout>
     </Section>

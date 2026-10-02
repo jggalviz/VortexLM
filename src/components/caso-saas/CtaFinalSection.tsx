@@ -59,6 +59,7 @@ export function CtaFinalSection() {
             eyebrow="Contacto"
             icon={Mail}
             tone="dark"
+            i18nBase="case.cta"
             title="¿Construimos el próximo producto con este nivel de criterio?"
             description="Estoy disponible para roles full-stack o de backend en equipos de producto, con especial interés en dominios donde la normativa local, los pagos y los datos sensibles son el verdadero problema de ingeniería. El código de Medisys está abierto: revísalo y escríbeme con la pregunta que quieras."
           />
@@ -71,7 +72,7 @@ export function CtaFinalSection() {
               className="inline-flex items-center gap-2 rounded-full bg-teal-400 px-5 py-3 text-sm font-bold text-zinc-950 transition-colors hover:bg-teal-300"
             >
               <GitBranch className="size-4" aria-hidden="true" />
-              Ver el código en GitHub
+              <span data-i18n="case.cta.github">Ver el código en GitHub</span>
               <ArrowUpRight className="size-4" aria-hidden="true" />
             </a>
             <a
@@ -90,17 +91,25 @@ export function CtaFinalSection() {
               className="inline-flex items-center gap-2 rounded-full border border-white/20 px-5 py-3 text-sm font-semibold text-white transition-colors hover:border-teal-400/60 hover:bg-white/5"
             >
               <MessageCircle className="size-4" aria-hidden="true" />
-              WhatsApp
+              <span data-i18n="case.cta.whatsapp">WhatsApp</span>
             </a>
           </div>
 
           <div className="mt-8 flex flex-wrap items-center gap-2">
-            <Chip dark>Respondo personalmente cada mensaje</Chip>
-            <Chip dark>Documentación y código en español e inglés</Chip>
+            <Chip dark>
+              <span data-i18n="case.cta.chip.personal">
+                Respondo personalmente cada mensaje
+              </span>
+            </Chip>
+            <Chip dark>
+              <span data-i18n="case.cta.chip.docs">
+                Documentación y código en español e inglés
+              </span>
+            </Chip>
           </div>
 
           <ul className="mt-10 grid gap-4 sm:grid-cols-2">
-            {APORTES.map((aporte) => {
+            {APORTES.map((aporte, i) => {
               const Icono = aporte.icon
               return (
                 <li
@@ -109,9 +118,14 @@ export function CtaFinalSection() {
                 >
                   <p className="flex items-center gap-2 text-sm font-bold text-white">
                     <Icono className="size-4 text-teal-300" aria-hidden="true" />
-                    {aporte.titulo}
+                    <span data-i18n={`case.cta.aporte.${i}.titulo`}>
+                      {aporte.titulo}
+                    </span>
                   </p>
-                  <p className="mt-2 text-sm leading-6 text-zinc-400">
+                  <p
+                    className="mt-2 text-sm leading-6 text-zinc-400"
+                    data-i18n={`case.cta.aporte.${i}.detalle`}
+                  >
                     {aporte.detalle}
                   </p>
                 </li>
@@ -122,7 +136,10 @@ export function CtaFinalSection() {
 
         <div className="space-y-4">
           <Panel tone="dark">
-            <p className="font-code text-[11px] font-semibold uppercase tracking-[0.2em] text-teal-300">
+            <p
+              className="font-code text-[11px] font-semibold uppercase tracking-[0.2em] text-teal-300"
+              data-i18n="case.cta.routes"
+            >
               Recorridos sugeridos
             </p>
             <ul className="mt-4 space-y-3">
@@ -133,7 +150,9 @@ export function CtaFinalSection() {
                 >
                   <span>
                     <span className="block text-sm font-semibold text-zinc-100">
-                      Reserva una cita en la clínica demo
+                      <span data-i18n="case.cta.route.0">
+                        Reserva una cita en la clínica demo
+                      </span>
                     </span>
                     <span className="mt-0.5 block font-code text-[11px] text-zinc-400">
                       {DEMO_URL.replace("https://", "")}
@@ -154,7 +173,9 @@ export function CtaFinalSection() {
                 >
                   <span>
                     <span className="block text-sm font-semibold text-zinc-100">
-                      Ver la plataforma en producción
+                      <span data-i18n="case.cta.route.1">
+                        Ver la plataforma en producción
+                      </span>
                     </span>
                     <span className="mt-0.5 block font-code text-[11px] text-zinc-400">
                       {SITIO_URL.replace("https://", "")}
@@ -175,7 +196,9 @@ export function CtaFinalSection() {
                 >
                   <span>
                     <span className="block text-sm font-semibold text-zinc-100">
-                      Leer el motor fiscal y el de tasas
+                      <span data-i18n="case.cta.route.2">
+                        Leer el motor fiscal y el de tasas
+                      </span>
                     </span>
                     <span className="mt-0.5 block font-code text-[11px] text-zinc-400">
                       src/lib/billing-ve.ts · src/lib/bcv.ts
@@ -191,10 +214,16 @@ export function CtaFinalSection() {
           </Panel>
 
           <Panel tone="dark">
-            <p className="text-sm font-bold text-white">
+            <p
+              className="text-sm font-bold text-white"
+              data-i18n="case.cta.hard.title"
+            >
               ¿Prefieres empezar por lo difícil?
             </p>
-            <p className="mt-2 text-sm leading-6 text-zinc-400">
+            <p
+              className="mt-2 text-sm leading-6 text-zinc-400"
+              data-i18n="case.cta.hard.body"
+            >
               La sección de retos técnicos explica el bloqueo de 15 minutos, el
               cálculo condicional del IGTF y la matriz de permisos. Si vas a
               evaluar el código, ese es el mejor lugar para empezar a leerlo
@@ -204,7 +233,7 @@ export function CtaFinalSection() {
               href="#retos-tecnicos"
               className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-teal-300 hover:text-teal-200"
             >
-              Ir a los retos técnicos
+              <span data-i18n="case.cta.hard.cta">Ir a los retos técnicos</span>
               <ArrowRight className="size-4" aria-hidden="true" />
             </a>
           </Panel>

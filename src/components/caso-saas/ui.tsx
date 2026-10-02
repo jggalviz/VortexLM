@@ -95,6 +95,7 @@ export function SectionHeading({
   title,
   description,
   icon,
+  i18nBase,
   tone = "light",
   className,
 }: {
@@ -103,16 +104,20 @@ export function SectionHeading({
   title: ReactNode
   description: ReactNode
   icon: LucideIcon
+  /** Prefijo de claves i18n: `<base>.eyebrow | .title | .description`. */
+  i18nBase?: string
   tone?: Tono
   className?: string
 }) {
   const dark = tone === "dark"
+  const key = (suffix: string) => (i18nBase ? `${i18nBase}.${suffix}` : undefined)
   return (
     <div className={cn("max-w-3xl", className)}>
       <IndiceSeccion indice={indice} icon={icon} dark={dark}>
-        {eyebrow}
+        <span data-i18n={key("eyebrow")}>{eyebrow}</span>
       </IndiceSeccion>
       <h2
+        data-i18n={key("title")}
         className={cn(
           "mt-4 text-3xl font-bold tracking-tight sm:text-4xl",
           dark ? "text-white" : "text-zinc-900"
@@ -121,6 +126,7 @@ export function SectionHeading({
         {title}
       </h2>
       <p
+        data-i18n={key("description")}
         className={cn(
           "mt-4 text-base leading-7",
           dark ? "text-zinc-300" : "text-zinc-600"

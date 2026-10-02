@@ -15,10 +15,13 @@ import type { Metrica } from "./constantes"
 
 export function KpiGrid({
   items,
+  i18nBase,
   dark = false,
   className,
 }: {
   items: readonly Metrica[]
+  /** Prefijo de claves i18n: `<base>.<índice>.label | .detalle`. */
+  i18nBase?: string
   dark?: boolean
   className?: string
 }) {
@@ -30,7 +33,7 @@ export function KpiGrid({
         className
       )}
     >
-      {items.map((item) => (
+      {items.map((item, i) => (
         <div
           key={item.label}
           className={cn("p-5", dark ? "bg-zinc-950" : "bg-white")}
@@ -44,6 +47,7 @@ export function KpiGrid({
             {item.valor}
           </dd>
           <dt
+            data-i18n={i18nBase ? `${i18nBase}.${i}.label` : undefined}
             className={cn(
               "mt-1 text-sm font-semibold",
               dark ? "text-zinc-200" : "text-zinc-800"
@@ -52,6 +56,7 @@ export function KpiGrid({
             {item.label}
           </dt>
           <p
+            data-i18n={i18nBase ? `${i18nBase}.${i}.detalle` : undefined}
             className={cn(
               "mt-1 text-xs leading-5",
               dark ? "text-zinc-500" : "text-zinc-500"
@@ -71,12 +76,15 @@ export function KpiGrid({
 export function CodePanel({
   ruta,
   nota,
+  notaKey,
   children,
   className,
 }: {
   /** Ruta del archivo real del repositorio al que pertenece el fragmento. */
   ruta: string
   nota?: string
+  /** Clave i18n de la nota al pie del panel. */
+  notaKey?: string
   children: ReactNode
   className?: string
 }) {
@@ -94,7 +102,10 @@ export function CodePanel({
         <code>{children}</code>
       </pre>
       {nota ? (
-        <p className="border-t border-white/10 bg-zinc-900/40 px-4 py-2.5 text-xs leading-5 text-zinc-400">
+        <p
+          data-i18n={notaKey}
+          className="border-t border-white/10 bg-zinc-900/40 px-4 py-2.5 text-xs leading-5 text-zinc-400"
+        >
           {nota}
         </p>
       ) : null}
@@ -107,12 +118,15 @@ export function CodePanel({
 export function Callout({
   icon: Icon,
   titulo,
+  i18nBase,
   children,
   tone = "teal",
   className,
 }: {
   icon: LucideIcon
   titulo: string
+  /** Prefijo de clave i18n del título: `<base>.titulo`. */
+  i18nBase?: string
   children: ReactNode
   tone?: "teal" | "amber"
   className?: string
@@ -125,7 +139,9 @@ export function Callout({
     <div className={cn("rounded-2xl border p-5", tonos[tone], className)}>
       <p className="flex items-center gap-2 text-sm font-bold">
         <Icon className="size-4" aria-hidden="true" />
-        {titulo}
+        <span data-i18n={i18nBase ? `${i18nBase}.titulo` : undefined}>
+          {titulo}
+        </span>
       </p>
       <div className="mt-2 text-sm leading-6 text-zinc-700">{children}</div>
     </div>
@@ -137,17 +153,20 @@ export function Callout({
 export function ListaChecks({
   items,
   icon: Icon,
+  i18nBase,
   dark = false,
   className,
 }: {
   items: readonly string[]
   icon: LucideIcon
+  /** Prefijo de claves i18n: `<base>.<índice>`. */
+  i18nBase?: string
   dark?: boolean
   className?: string
 }) {
   return (
     <ul className={cn("space-y-2.5", className)}>
-      {items.map((item) => (
+      {items.map((item, i) => (
         <li key={item} className="flex gap-2.5">
           <Icon
             className={cn(
@@ -157,6 +176,7 @@ export function ListaChecks({
             aria-hidden="true"
           />
           <span
+            data-i18n={i18nBase ? `${i18nBase}.${i}` : undefined}
             className={cn(
               "text-sm leading-6",
               dark ? "text-zinc-300" : "text-zinc-600"
@@ -180,9 +200,12 @@ export type Paso = {
 
 export function FlujoPasos({
   pasos,
+  i18nBase,
   className,
 }: {
   pasos: readonly Paso[]
+  /** Prefijo de claves i18n: `<base>.<índice>.titulo | .detalle`. */
+  i18nBase?: string
   className?: string
 }) {
   return (
@@ -200,8 +223,18 @@ export function FlujoPasos({
             </span>
             <Icono className="size-3.5" aria-hidden="true" />
           </div>
-          <p className="mt-3 text-sm font-bold text-zinc-900">{paso.titulo}</p>
-          <p className="mt-1.5 text-sm leading-6 text-zinc-600">{paso.detalle}</p>
+          <p
+            className="mt-3 text-sm font-bold text-zinc-900"
+            data-i18n={i18nBase ? `${i18nBase}.${indice}.titulo` : undefined}
+          >
+            {paso.titulo}
+          </p>
+          <p
+            className="mt-1.5 text-sm leading-6 text-zinc-600"
+            data-i18n={i18nBase ? `${i18nBase}.${indice}.detalle` : undefined}
+          >
+            {paso.detalle}
+          </p>
         </li>
         )
       })}

@@ -16,10 +16,31 @@ import SEO from '../components/seo/SEO.astro';
     <meta name="theme-color" content="#000000" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <SEO title="Crear Cuenta — Portal de Clientes | VortexLM" description="Regístrate en el portal de clientes VortexLM y comienza a gestionar tus proyectos, facturas y vCredits." type="website" />
+
+    <!-- i18n — fija el idioma antes del primer pintado (misma estrategia que
+         BaseLayout y /login). -->
+    <script is:inline>
+      (function () {
+        try {
+          if (window.localStorage.getItem('vortex-lang') !== 'en') return;
+          var root = document.documentElement;
+          root.lang = 'en';
+          root.setAttribute('data-lang', 'en');
+          root.classList.add('i18n-pending');
+          window.setTimeout(function () {
+            root.classList.remove('i18n-pending');
+          }, 1800);
+        } catch (e) {
+          /* almacenamiento no disponible: se mantiene el idioma por defecto */
+        }
+      })();
+    </script>
     <style>
       *,::before,::after{box-sizing:border-box;border-width:0;border-style:solid}
       html{-webkit-text-size-adjust:100%;tab-size:4;font-family:'Inter','system-ui',sans-serif}
       body{margin:0;background:#000;color:#f7f7f8;min-height:100vh;min-height:100dvh;display:flex;align-items:center;justify-content:center}
+      /* Misma red de seguridad anti-FOUC que BaseLayout. */
+      html.i18n-pending [data-i18n]{visibility:hidden}
     </style>
   </head>
   <body>
@@ -35,23 +56,24 @@ import SEO from '../components/seo/SEO.astro';
           </svg>
           <span class="text-lg font-semibold tracking-[0.15em] text-white uppercase">Vortex<span class="font-light text-neutral-300">LM</span></span>
         </a>
-        <p class="text-sm text-neutral-500 font-body-md mt-3">Portal de Clientes B2B</p>
+        <p class="text-sm text-neutral-500 font-body-md mt-3" data-i18n="auth.portal">Portal de Clientes B2B</p>
       </div>
 
       <!-- Registration Card -->
       <div class="bg-[#08080c] border border-[#1f1f24] rounded-xl p-6">
-        <h1 class="text-base font-heading font-semibold text-white mb-1">Crear Cuenta</h1>
-        <p class="text-xs text-neutral-500 font-body-md mb-6">Regístrate para acceder al panel de clientes.</p>
+        <h1 class="text-base font-heading font-semibold text-white mb-1" data-i18n="auth.signup.title">Crear Cuenta</h1>
+        <p class="text-xs text-neutral-500 font-body-md mb-6" data-i18n="auth.signup.subtitle">Regístrate para acceder al panel de clientes.</p>
 
         <form id="registro-form" class="space-y-4">
           <!-- Nombre de la Empresa -->
           <div>
-            <label for="empresa" class="block text-xs text-neutral-400 font-body-md mb-1.5">Nombre de la Empresa</label>
+            <label for="empresa" class="block text-xs text-neutral-400 font-body-md mb-1.5" data-i18n="auth.company">Nombre de la Empresa</label>
             <input
               id="empresa"
               type="text"
               autocomplete="organization"
               placeholder="Ej: Mi Empresa S.A.S."
+              data-i18n-placeholder="auth.companyPlaceholder"
               required
               class="w-full px-4 py-2.5 bg-black border border-[#1f1f24] rounded-lg text-sm text-white placeholder-neutral-600 focus:outline-none focus:border-white/30 transition-colors"
             />
@@ -59,12 +81,13 @@ import SEO from '../components/seo/SEO.astro';
 
           <!-- Correo Electrónico -->
           <div>
-            <label for="email" class="block text-xs text-neutral-400 font-body-md mb-1.5">Correo Electrónico</label>
+            <label for="email" class="block text-xs text-neutral-400 font-body-md mb-1.5" data-i18n="auth.email">Correo Electrónico</label>
             <input
               id="email"
               type="email"
               autocomplete="email"
               placeholder="tu@correo.com"
+              data-i18n-placeholder="auth.emailPlaceholder"
               required
               class="w-full px-4 py-2.5 bg-black border border-[#1f1f24] rounded-lg text-sm text-white placeholder-neutral-600 focus:outline-none focus:border-white/30 transition-colors"
             />
@@ -72,12 +95,13 @@ import SEO from '../components/seo/SEO.astro';
 
           <!-- Contraseña -->
           <div>
-            <label for="password" class="block text-xs text-neutral-400 font-body-md mb-1.5">Contraseña</label>
+            <label for="password" class="block text-xs text-neutral-400 font-body-md mb-1.5" data-i18n="auth.password">Contraseña</label>
             <input
               id="password"
               type="password"
               autocomplete="new-password"
               placeholder="Mínimo 6 caracteres"
+              data-i18n-placeholder="auth.passwordPlaceholder"
               required
               minlength={6}
               class="w-full px-4 py-2.5 bg-black border border-[#1f1f24] rounded-lg text-sm text-white placeholder-neutral-600 focus:outline-none focus:border-white/30 transition-colors"
@@ -86,12 +110,13 @@ import SEO from '../components/seo/SEO.astro';
 
           <!-- Confirmar Contraseña -->
           <div>
-            <label for="password-confirm" class="block text-xs text-neutral-400 font-body-md mb-1.5">Confirmar Contraseña</label>
+            <label for="password-confirm" class="block text-xs text-neutral-400 font-body-md mb-1.5" data-i18n="auth.passwordConfirm">Confirmar Contraseña</label>
             <input
               id="password-confirm"
               type="password"
               autocomplete="new-password"
               placeholder="Repite la contraseña"
+              data-i18n-placeholder="auth.passwordConfirmPlaceholder"
               required
               class="w-full px-4 py-2.5 bg-black border border-[#1f1f24] rounded-lg text-sm text-white placeholder-neutral-600 focus:outline-none focus:border-white/30 transition-colors"
             />
@@ -107,6 +132,7 @@ import SEO from '../components/seo/SEO.astro';
           <button
             type="submit"
             id="registro-submit"
+            data-i18n="auth.signup.submit"
             class="w-full px-5 py-2.5 bg-white text-black text-sm font-medium rounded-lg hover:bg-neutral-200 transition-all duration-200 active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed"
           >
             Crear Cuenta
@@ -114,13 +140,24 @@ import SEO from '../components/seo/SEO.astro';
         </form>
 
         <p class="text-xs text-neutral-600 font-body-md text-center mt-6">
-          ¿Ya tienes cuenta? <a href="/login" class="text-white hover:text-neutral-300 transition-colors">Iniciar Sesión</a>
+          <span data-i18n="auth.haveAccount">¿Ya tienes cuenta?</span>
+          <a href="/login" class="text-white hover:text-neutral-300 transition-colors" data-i18n="auth.signin.link">Iniciar Sesión</a>
         </p>
       </div>
     </div>
 
+    <!-- Motor i18n: aplica el idioma guardado y conecta el selector global. -->
+    <script>
+      import { initI18n } from '../i18n/client';
+      initI18n();
+    </script>
+
     <script type="module">
       import { supabase } from '../lib/supabaseClient';
+
+      // Textos dinámicos del formulario en el idioma activo.
+      const t = (key: string, fallback: string) =>
+        window.vortexI18n ? window.vortexI18n.t(key, fallback) : fallback;
 
       const form = document.getElementById('registro-form');
       const empresaInput = document.getElementById('empresa');
@@ -147,26 +184,26 @@ import SEO from '../components/seo/SEO.astro';
 
         // Client-side validation
         if (!empresa) {
-          errorEl.textContent = 'Por favor, ingresa el nombre de tu empresa.';
+          errorEl.textContent = t('auth.signup.errorCompany', 'Por favor, ingresa el nombre de tu empresa.');
           errorEl.classList.remove('hidden');
           return;
         }
 
         if (password.length < 6) {
-          errorEl.textContent = 'La contraseña debe tener al menos 6 caracteres.';
+          errorEl.textContent = t('auth.signup.errorPasswordShort', 'La contraseña debe tener al menos 6 caracteres.');
           errorEl.classList.remove('hidden');
           return;
         }
 
         if (password !== passwordConfirm) {
-          errorEl.textContent = 'Las contraseñas no coinciden.';
+          errorEl.textContent = t('auth.signup.errorPasswordMismatch', 'Las contraseñas no coinciden.');
           errorEl.classList.remove('hidden');
           return;
         }
 
         // Disable button and show loading state
         submitBtn.disabled = true;
-        submitBtn.textContent = 'Creando cuenta...';
+        submitBtn.textContent = t('auth.signup.loading', 'Creando cuenta...');
 
         try {
           const { data, error } = await supabase.auth.signUp({
@@ -186,10 +223,10 @@ import SEO from '../components/seo/SEO.astro';
           // Check if email confirmation is required
           if (data?.user?.identities && data.user.identities.length === 0) {
             // User already exists
-            errorEl.textContent = 'Este correo electrónico ya está registrado.';
+            errorEl.textContent = t('auth.signup.errorExists', 'Este correo electrónico ya está registrado.');
             errorEl.classList.remove('hidden');
             submitBtn.disabled = false;
-            submitBtn.textContent = 'Crear Cuenta';
+            submitBtn.textContent = t('auth.signup.submit', 'Crear Cuenta');
             return;
           }
 
@@ -198,16 +235,16 @@ import SEO from '../components/seo/SEO.astro';
             window.location.href = '/dashboard';
           } else {
             // Email confirmation required — show success message
-            successEl.textContent = '¡Cuenta creada con éxito! Revisa tu correo electrónico para confirmar tu dirección antes de iniciar sesión.';
+            successEl.textContent = t('auth.signup.success', '¡Cuenta creada con éxito! Revisa tu correo electrónico para confirmar tu dirección antes de iniciar sesión.');
             successEl.classList.remove('hidden');
-            submitBtn.textContent = 'Cuenta Creada ✓';
+            submitBtn.textContent = t('auth.signup.done', 'Cuenta Creada ✓');
             submitBtn.disabled = true;
           }
         } catch (err) {
-          errorEl.textContent = err.message || 'Error al crear la cuenta. Intenta de nuevo.';
+          errorEl.textContent = err.message || t('auth.signup.error', 'Error al crear la cuenta. Intenta de nuevo.');
           errorEl.classList.remove('hidden');
           submitBtn.disabled = false;
-          submitBtn.textContent = 'Crear Cuenta';
+          submitBtn.textContent = t('auth.signup.submit', 'Crear Cuenta');
         }
       });
     </script>

@@ -67,16 +67,25 @@ export function RetoRbac() {
           <KeyRound className="size-5" aria-hidden="true" />
         </span>
         <div>
-          <p className="font-code text-[11px] font-semibold uppercase tracking-[0.18em] text-zinc-500">
+          <p
+            className="font-code text-[11px] font-semibold uppercase tracking-[0.18em] text-zinc-500"
+            data-i18n="case.reto3.kicker"
+          >
             Reto 03 · Seguridad y permisos
           </p>
-          <h3 className="text-xl font-bold tracking-tight text-zinc-900">
+          <h3
+            className="text-xl font-bold tracking-tight text-zinc-900"
+            data-i18n="case.reto3.title"
+          >
             Cinco roles, veintiún permisos y varias sedes
           </h3>
         </div>
       </div>
 
-      <p className="mt-4 max-w-3xl text-sm leading-6 text-zinc-600">
+      <p
+        className="mt-4 max-w-3xl text-sm leading-6 text-zinc-600"
+        data-i18n="case.reto3.intro"
+      >
         En una clínica conviven un administrador, dos recepcionistas, cinco
         médicos, un contador externo y un operador de la plataforma. Todos usan
         el mismo panel y ninguno debe ver ni poder cambiar lo mismo. Ese reparto
@@ -85,15 +94,20 @@ export function RetoRbac() {
       </p>
 
       <div className="mt-6 grid gap-4 lg:grid-cols-3">
-        {CAPAS.map((capa) => {
+        {CAPAS.map((capa, i) => {
           const Icono = capa.icon
           return (
             <Panel key={capa.titulo} tone="muted" className="p-5">
               <p className="flex items-center gap-2 text-sm font-bold text-zinc-900">
                 <Icono className="size-4 text-teal-700" aria-hidden="true" />
-                {capa.titulo}
+                <span data-i18n={`case.reto3.capa.${i}.titulo`}>
+                  {capa.titulo}
+                </span>
               </p>
-              <p className="mt-2.5 text-sm leading-6 text-zinc-600">
+              <p
+                className="mt-2.5 text-sm leading-6 text-zinc-600"
+                data-i18n={`case.reto3.capa.${i}.detalle`}
+              >
                 {capa.detalle}
               </p>
             </Panel>
@@ -104,19 +118,32 @@ export function RetoRbac() {
       <p className="mt-4 flex items-start gap-2.5 rounded-2xl border border-zinc-200 bg-zinc-50 p-4 text-sm leading-6 text-zinc-600">
         <MapPin className="mt-0.5 size-4 shrink-0 text-teal-700" aria-hidden="true" />
         <span>
-          <span className="font-semibold text-zinc-800">Multi-sede:</span> cada
-          persona se asigna a una o varias sedes (tenant_users.sede_ids) y la
-          facturación usa la sede por defecto de la clínica. La lectura de esas
-          asignaciones tolera entornos donde la migración todavía no se aplicó,
-          así que un despliegue parcial no rompe el acceso.
+          <span
+            className="font-semibold text-zinc-800"
+            data-i18n="case.reto3.multisede.label"
+          >
+            Multi-sede:
+          </span>{" "}
+          <span data-i18n="case.reto3.multisede.body">
+            cada persona se asigna a una o varias sedes (tenant_users.sede_ids) y
+            la facturación usa la sede por defecto de la clínica. La lectura de
+            esas asignaciones tolera entornos donde la migración todavía no se
+            aplicó, así que un despliegue parcial no rompe el acceso.
+          </span>
         </span>
       </p>
 
       <div className="mt-6">
-        <p className="text-sm font-bold text-zinc-900">
+        <p
+          className="text-sm font-bold text-zinc-900"
+          data-i18n="case.reto3.matrix.title"
+        >
           Matriz real de permisos por rol
         </p>
-        <p className="mt-2 max-w-3xl text-sm leading-6 text-zinc-600">
+        <p
+          className="mt-2 max-w-3xl text-sm leading-6 text-zinc-600"
+          data-i18n="case.reto3.matrix.body"
+        >
           Esta tabla no está escrita a mano: se calcula con permisosDeRol(), la
           misma función que usan los Server Actions y que define los helpers de
           las políticas RLS. Si el RBAC cambia, esta matriz cambia sola.
@@ -126,12 +153,15 @@ export function RetoRbac() {
           <table className="min-w-[40rem] border-collapse bg-white">
             <thead className="border-b border-zinc-200 bg-zinc-50">
               <tr>
-                <th className={TH_CLASS}>Permiso</th>
+                <th className={TH_CLASS} data-i18n="case.reto3.th.permiso">
+                  Permiso
+                </th>
                 {ROLES_SOPORTADOS.map((rol) => (
                   <th key={rol} className={`${TH_CLASS} text-center`}>
                     <span className="block">{ROL_LABEL[rol]}</span>
                     <span className="mt-0.5 block font-code text-[10px] font-normal text-zinc-400">
-                      {permisosDeRol(rol).length} permisos
+                      {permisosDeRol(rol).length}{" "}
+                      <span data-i18n="case.reto3.permisosSuffix">permisos</span>
                     </span>
                   </th>
                 ))}
@@ -149,11 +179,13 @@ export function RetoRbac() {
                         <CheckCircle2
                           className="mx-auto size-4 text-teal-600"
                           aria-label="Concedido"
+                          data-i18n-aria-label="case.reto3.granted"
                         />
                       ) : (
                         <span
                           className="font-code text-sm text-zinc-300"
                           aria-label="No concedido"
+                          data-i18n-aria-label="case.reto3.notGranted"
                         >
                           ·
                         </span>
@@ -166,7 +198,10 @@ export function RetoRbac() {
           </table>
         </TablaScroll>
 
-        <p className="mt-3 text-xs leading-5 text-zinc-500">
+        <p
+          className="mt-3 text-xs leading-5 text-zinc-500"
+          data-i18n="case.reto3.foot"
+        >
           Los roles de la dimensión clínica (recepcion, especialista, medico,
           contador) se normalizan a uno de los cinco roles soportados, de modo que
           un dato heredado no pueda conceder permisos por accidente.

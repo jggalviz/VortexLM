@@ -331,5 +331,12 @@ const adminEmail = perfil.email || '';
         )}
       </section>
     </main>
+
+    <!-- Motor i18n: el panel de administración comparte la preferencia de idioma
+         del resto del sitio (ver LanguageSelector / src/i18n/client.ts). -->
+    <script>
+      import { initI18n } from '../../../i18n/client';
+      initI18n();
+    </script>
   </body>
 </html>

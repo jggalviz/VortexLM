@@ -63,10 +63,13 @@ export function DecisionesDescartadas() {
           <GitCompareArrows className="size-4" aria-hidden="true" />
         </span>
         <div>
-          <p className="text-base font-bold text-zinc-900">
+          <p
+            className="text-base font-bold text-zinc-900"
+            data-i18n="case.desc.title"
+          >
             Alternativas que evalué y descarté
           </p>
-          <p className="text-sm text-zinc-500">
+          <p className="text-sm text-zinc-500" data-i18n="case.desc.subtitle">
             Documentar lo que no se construyó es parte del diseño.
           </p>
         </div>
@@ -76,19 +79,32 @@ export function DecisionesDescartadas() {
         <table className="min-w-[46rem] border-collapse bg-white">
           <thead className="border-b border-zinc-200 bg-zinc-50">
             <tr>
-              <th className={TH_CLASS}>Alternativa considerada</th>
-              <th className={TH_CLASS}>Por qué no</th>
-              <th className={TH_CLASS}>Qué hice en su lugar</th>
+              <th className={TH_CLASS} data-i18n="case.desc.th.opcion">
+                Alternativa considerada
+              </th>
+              <th className={TH_CLASS} data-i18n="case.desc.th.motivo">
+                Por qué no
+              </th>
+              <th className={TH_CLASS} data-i18n="case.desc.th.elegido">
+                Qué hice en su lugar
+              </th>
             </tr>
           </thead>
           <tbody className="divide-y divide-zinc-100">
-            {ALTERNATIVAS.map((alternativa) => (
+            {ALTERNATIVAS.map((alternativa, i) => (
               <tr key={alternativa.opcion} className="hover:bg-zinc-50/60">
-                <td className={`${TD_CLASS} font-semibold text-zinc-900`}>
+                <td
+                  className={`${TD_CLASS} font-semibold text-zinc-900`}
+                  data-i18n={`case.desc.row.${i}.opcion`}
+                >
                   {alternativa.opcion}
                 </td>
-                <td className={TD_CLASS}>{alternativa.motivo}</td>
-                <td className={TD_CLASS}>{alternativa.elegido}</td>
+                <td className={TD_CLASS} data-i18n={`case.desc.row.${i}.motivo`}>
+                  {alternativa.motivo}
+                </td>
+                <td className={TD_CLASS} data-i18n={`case.desc.row.${i}.elegido`}>
+                  {alternativa.elegido}
+                </td>
               </tr>
             ))}
           </tbody>

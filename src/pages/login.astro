@@ -15,10 +15,32 @@ import SEO from '../components/seo/SEO.astro';
     <meta name="theme-color" content="#000000" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <SEO title="Iniciar Sesión — Portal de Clientes | VortexLM" description="Accede a tu panel de cliente VortexLM para gestionar tus proyectos, facturas y vCredits." type="website" />
+
+    <!-- i18n — fija el idioma antes del primer pintado (misma estrategia que
+         BaseLayout). El servidor siempre renderiza `es`; si la preferencia
+         guardada es `en`, el motor del cliente reescribe los nodos data-i18n. -->
+    <script is:inline>
+      (function () {
+        try {
+          if (window.localStorage.getItem('vortex-lang') !== 'en') return;
+          var root = document.documentElement;
+          root.lang = 'en';
+          root.setAttribute('data-lang', 'en');
+          root.classList.add('i18n-pending');
+          window.setTimeout(function () {
+            root.classList.remove('i18n-pending');
+          }, 1800);
+        } catch (e) {
+          /* almacenamiento no disponible: se mantiene el idioma por defecto */
+        }
+      })();
+    </script>
     <style>
       *,::before,::after{box-sizing:border-box;border-width:0;border-style:solid}
       html{-webkit-text-size-adjust:100%;tab-size:4;font-family:'Inter','system-ui',sans-serif}
       body{margin:0;background:#000;color:#f7f7f8;min-height:100vh;min-height:100dvh;display:flex;align-items:center;justify-content:center}
+      /* Misma red de seguridad anti-FOUC que BaseLayout. */
+      html.i18n-pending [data-i18n]{visibility:hidden}
     </style>
   </head>
   <body>
@@ -34,23 +56,24 @@ import SEO from '../components/seo/SEO.astro';
           </svg>
           <span class="text-lg font-semibold tracking-[0.15em] text-white uppercase">Vortex<span class="font-light text-neutral-300">LM</span></span>
         </a>
-        <p class="text-sm text-neutral-500 font-body-md mt-3">Portal de Clientes B2B</p>
+        <p class="text-sm text-neutral-500 font-body-md mt-3" data-i18n="auth.portal">Portal de Clientes B2B</p>
       </div>
 
       <!-- Login Card -->
       <div class="bg-[#08080c] border border-[#1f1f24] rounded-xl p-6">
-        <h1 class="text-base font-heading font-semibold text-white mb-1">Iniciar Sesión</h1>
-        <p class="text-xs text-neutral-500 font-body-md mb-6">Ingresa con tu correo electrónico registrado.</p>
+        <h1 class="text-base font-heading font-semibold text-white mb-1" data-i18n="auth.signin.title">Iniciar Sesión</h1>
+        <p class="text-xs text-neutral-500 font-body-md mb-6" data-i18n="auth.signin.subtitle">Ingresa con tu correo electrónico registrado.</p>
 
         <form id="login-form" class="space-y-4">
           <!-- Email -->
           <div>
-            <label for="email" class="block text-xs text-neutral-400 font-body-md mb-1.5">Correo electrónico</label>
+            <label for="email" class="block text-xs text-neutral-400 font-body-md mb-1.5" data-i18n="auth.email">Correo electrónico</label>
             <input
               id="email"
               type="email"
               autocomplete="email"
               placeholder="tu@correo.com"
+              data-i18n-placeholder="auth.emailPlaceholder"
               required
               class="w-full px-4 py-2.5 bg-black border border-[#1f1f24] rounded-lg text-sm text-white placeholder-neutral-600 focus:outline-none focus:border-white/30 transition-colors"
             />
@@ -58,7 +81,7 @@ import SEO from '../components/seo/SEO.astro';
 
           <!-- Password -->
           <div>
-            <label for="password" class="block text-xs text-neutral-400 font-body-md mb-1.5">Contraseña</label>
+            <label for="password" class="block text-xs text-neutral-400 font-body-md mb-1.5" data-i18n="auth.password">Contraseña</label>
             <input
               id="password"
               type="password"
@@ -76,6 +99,7 @@ import SEO from '../components/seo/SEO.astro';
           <button
             type="submit"
             id="login-submit"
+            data-i18n="auth.signin.submit"
             class="w-full px-5 py-2.5 bg-white text-black text-sm font-medium rounded-lg hover:bg-neutral-200 transition-all duration-200 active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed"
           >
             Acceder
@@ -83,13 +107,25 @@ import SEO from '../components/seo/SEO.astro';
         </form>
 
         <p class="text-xs text-neutral-600 font-body-md text-center mt-6">
-          ¿No tienes cuenta? <a href="/" class="text-white hover:text-neutral-300 transition-colors">Contáctanos</a>
+          <span data-i18n="auth.noAccount">¿No tienes cuenta?</span>
+          <a href="/" class="text-white hover:text-neutral-300 transition-colors" data-i18n="auth.contactUs">Contáctanos</a>
         </p>
       </div>
     </div>
 
+    <!-- Motor i18n: aplica el idioma guardado y conecta el selector global. -->
+    <script>
+      import { initI18n } from '../i18n/client';
+      initI18n();
+    </script>
+
     <script type="module">
       import { supabase } from '../lib/supabaseClient';
+
+      // Textos dinámicos del formulario en el idioma activo (el motor i18n de
+      // arriba ya inicializó window.vortexI18n antes de que ocurra el submit).
+      const t = (key: string, fallback: string) =>
+        window.vortexI18n ? window.vortexI18n.t(key, fallback) : fallback;
 
       const form = document.getElementById('login-form');
       const emailInput = document.getElementById('email');
@@ -101,7 +137,7 @@ import SEO from '../components/seo/SEO.astro';
         e.preventDefault();
         errorEl.classList.add('hidden');
         submitBtn.disabled = true;
-        submitBtn.textContent = 'Ingresando...';
+        submitBtn.textContent = t('auth.signin.loading', 'Ingresando...');
 
         const email = emailInput.value.trim();
         const password = passwordInput.value;
@@ -119,10 +155,10 @@ import SEO from '../components/seo/SEO.astro';
           // Success — redirect to dashboard
           window.location.href = '/dashboard';
         } catch (err) {
-          errorEl.textContent = err.message || 'Error al iniciar sesión. Verifica tus credenciales.';
+          errorEl.textContent = err.message || t('auth.signin.error', 'Error al iniciar sesión. Verifica tus credenciales.');
           errorEl.classList.remove('hidden');
           submitBtn.disabled = false;
-          submitBtn.textContent = 'Acceder';
+          submitBtn.textContent = t('auth.signin.submit', 'Acceder');
         }
       });
     </script>

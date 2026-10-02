@@ -13,6 +13,7 @@ export function RetosTecnicosSection() {
         indice="03"
         eyebrow="Retos técnicos complejos"
         icon={Wrench}
+        i18nBase="case.retos"
         title="Tres problemas que separan un CRUD de un producto"
         description="Un sistema de citas parece un formulario hasta que dos personas reservan el mismo turno en paralelo; una factura parece una multiplicación hasta que tres normas tienen condiciones de aplicación distintas. Estos son los problemas que resolví, con el código y las decisiones que los sostienen."
       />

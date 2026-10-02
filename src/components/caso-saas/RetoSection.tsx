@@ -55,27 +55,41 @@ export function RetoSection() {
         indice="01"
         eyebrow="El reto"
         icon={AlertTriangle}
+        i18nBase="case.reto"
         title="Un sector que todavía opera con papel, teléfono y Excel"
         description="Medisys no nació como un ejercicio de arquitectura: nació de tres dolores concretos de las clínicas venezolanas. Entenderlos fue lo que definió cada decisión técnica posterior."
       />
 
       <div className="mt-12 grid gap-5 lg:grid-cols-3">
-        {DOLORES.map((dolor) => {
+        {DOLORES.map((dolor, i) => {
           const Icono = dolor.icon
           return (
             <Panel key={dolor.titulo} className="flex flex-col">
               <span className="flex size-10 items-center justify-center rounded-xl bg-zinc-900 text-teal-300">
                 <Icono className="size-5" aria-hidden="true" />
               </span>
-              <h3 className="mt-4 text-base font-bold text-zinc-900">
+              <h3
+                className="mt-4 text-base font-bold text-zinc-900"
+                data-i18n={`case.reto.dolor.${i}.titulo`}
+              >
                 {dolor.titulo}
               </h3>
-              <p className="mt-2.5 text-sm leading-6 text-zinc-600">
+              <p
+                className="mt-2.5 text-sm leading-6 text-zinc-600"
+                data-i18n={`case.reto.dolor.${i}.dolor`}
+              >
                 {dolor.dolor}
               </p>
               <p className="mt-4 border-t border-zinc-100 pt-4 text-sm leading-6 text-zinc-500">
-                <span className="font-semibold text-zinc-700">Impacto: </span>
-                {dolor.impacto}
+                <span
+                  className="font-semibold text-zinc-700"
+                  data-i18n="case.reto.impactoLabel"
+                >
+                  Impacto:{" "}
+                </span>
+                <span data-i18n={`case.reto.dolor.${i}.impacto`}>
+                  {dolor.impacto}
+                </span>
               </p>
             </Panel>
           )
@@ -86,46 +100,71 @@ export function RetoSection() {
         <Panel>
           <p className="flex items-center gap-2 font-code text-[11px] font-semibold uppercase tracking-[0.2em] text-teal-700">
             <ListChecks className="size-4" aria-hidden="true" />
-            Restricciones de diseño
+            <span data-i18n="case.reto.restricciones.title">
+              Restricciones de diseño
+            </span>
           </p>
-          <ListaChecks items={RESTRICCIONES} icon={AlertTriangle} className="mt-5" />
+          <ListaChecks
+            items={RESTRICCIONES}
+            icon={AlertTriangle}
+            i18nBase="case.reto.restriccion"
+            className="mt-5"
+          />
         </Panel>
 
         <div className="space-y-5">
           <Callout
             icon={ClipboardList}
             titulo="De los dolores a los requisitos"
+            i18nBase="case.reto.callout"
           >
             <p>
-              Los tres problemas se tradujeron en cuatro requisitos no
-              negociables que gobiernan todo el sistema:
+              <span data-i18n="case.reto.callout.body">
+                Los tres problemas se tradujeron en cuatro requisitos no
+                negociables que gobiernan todo el sistema:
+              </span>
             </p>
             <ol className="mt-3 space-y-2 text-sm leading-6">
               <li>
-                <span className="font-code text-teal-800">R1</span> Multi-tenant
-                con aislamiento verificable en la base de datos, no solo en el
-                código de la aplicación.
+                <span className="font-code text-teal-800">R1</span>{" "}
+                <span data-i18n="case.reto.callout.r1">
+                  Multi-tenant con aislamiento verificable en la base de datos,
+                  no solo en el código de la aplicación.
+                </span>
               </li>
               <li>
-                <span className="font-code text-teal-800">R2</span> Una tasa
-                oficial confiable, cacheada y con respaldos en cascada.
+                <span className="font-code text-teal-800">R2</span>{" "}
+                <span data-i18n="case.reto.callout.r2">
+                  Una tasa oficial confiable, cacheada y con respaldos en cascada.
+                </span>
               </li>
               <li>
-                <span className="font-code text-teal-800">R3</span> Un motor
-                fiscal determinista, auditable y explicable ante el SENIAT.
+                <span className="font-code text-teal-800">R3</span>{" "}
+                <span data-i18n="case.reto.callout.r3">
+                  Un motor fiscal determinista, auditable y explicable ante el
+                  SENIAT.
+                </span>
               </li>
               <li>
-                <span className="font-code text-teal-800">R4</span> Una interfaz
-                que una recepcionista use sin manual el primer día.
+                <span className="font-code text-teal-800">R4</span>{" "}
+                <span data-i18n="case.reto.callout.r4">
+                  Una interfaz que una recepcionista use sin manual el primer día.
+                </span>
               </li>
             </ol>
           </Callout>
 
           <Panel tone="muted">
-            <p className="text-sm font-bold text-zinc-900">
+            <p
+              className="text-sm font-bold text-zinc-900"
+              data-i18n="case.reto.criterio.title"
+            >
               El criterio que apliqué en todo el proyecto
             </p>
-            <p className="mt-2 text-sm leading-6 text-zinc-600">
+            <p
+              className="mt-2 text-sm leading-6 text-zinc-600"
+              data-i18n="case.reto.criterio.body"
+            >
               Cada requisito se resolvió en la capa donde el problema es más
               barato de resolver: el aislamiento entre clínicas vive en Postgres
               (RLS), la concurrencia vive en el modelo de datos (locks con

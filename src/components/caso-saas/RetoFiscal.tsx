@@ -44,16 +44,25 @@ export function RetoFiscal() {
           <Scale className="size-5" aria-hidden="true" />
         </span>
         <div>
-          <p className="font-code text-[11px] font-semibold uppercase tracking-[0.18em] text-zinc-500">
+          <p
+            className="font-code text-[11px] font-semibold uppercase tracking-[0.18em] text-zinc-500"
+            data-i18n="case.reto2.kicker"
+          >
             Reto 02 · Cumplimiento fiscal
           </p>
-          <h3 className="text-xl font-bold tracking-tight text-zinc-900">
+          <h3
+            className="text-xl font-bold tracking-tight text-zinc-900"
+            data-i18n="case.reto2.title"
+          >
             Una factura que tres normas exigen a la vez
           </h3>
         </div>
       </div>
 
-      <p className="mt-4 max-w-3xl text-sm leading-6 text-zinc-600">
+      <p
+        className="mt-4 max-w-3xl text-sm leading-6 text-zinc-600"
+        data-i18n="case.reto2.intro"
+      >
         La factura venezolana no es un recibo con un porcentaje: es un documento
         con condiciones de aplicación. El IVA depende de si el servicio es
         gravado o exento, el IGTF depende del medio de pago y el desglose debe
@@ -63,15 +72,20 @@ export function RetoFiscal() {
       </p>
 
       <div className="mt-6 grid gap-4 lg:grid-cols-3">
-        {REGLAS.map((regla) => {
+        {REGLAS.map((regla, i) => {
           const Icono = regla.icon
           return (
             <Panel key={regla.titulo} tone="muted" className="p-5">
               <p className="flex items-center gap-2 text-sm font-bold text-zinc-900">
                 <Icono className="size-4 text-teal-700" aria-hidden="true" />
-                {regla.titulo}
+                <span data-i18n={`case.reto2.regla.${i}.titulo`}>
+                  {regla.titulo}
+                </span>
               </p>
-              <p className="mt-2.5 text-sm leading-6 text-zinc-600">
+              <p
+                className="mt-2.5 text-sm leading-6 text-zinc-600"
+                data-i18n={`case.reto2.regla.${i}.detalle`}
+              >
                 {regla.detalle}
               </p>
             </Panel>
@@ -81,10 +95,16 @@ export function RetoFiscal() {
 
       <div className="mt-6 grid gap-6 lg:grid-cols-[1fr_1.15fr] lg:items-start">
         <Panel tone="muted" className="p-5">
-          <p className="text-sm font-bold text-zinc-900">
+          <p
+            className="text-sm font-bold text-zinc-900"
+            data-i18n="case.reto2.rules.title"
+          >
             Reglas por método de cobro
           </p>
-          <p className="mt-2 text-sm leading-6 text-zinc-600">
+          <p
+            className="mt-2 text-sm leading-6 text-zinc-600"
+            data-i18n="case.reto2.rules.body"
+          >
             La condición del impuesto vive junto al método que la causa, no en un
             condicional escondido en la pantalla de cobro.
           </p>
@@ -92,17 +112,26 @@ export function RetoFiscal() {
             <table className="min-w-[30rem] border-collapse bg-white">
               <thead className="border-b border-zinc-200 bg-zinc-50">
                 <tr>
-                  <th className={TH_CLASS}>Método</th>
-                  <th className={TH_CLASS}>Moneda</th>
-                  <th className={TH_CLASS}>IGTF</th>
-                  <th className={TH_CLASS}>Referencia</th>
+                  <th className={TH_CLASS} data-i18n="case.reto2.th.metodo">
+                    Método
+                  </th>
+                  <th className={TH_CLASS} data-i18n="case.reto2.th.moneda">
+                    Moneda
+                  </th>
+                  <th className={TH_CLASS} data-i18n="case.reto2.th.igtf">
+                    IGTF
+                  </th>
+                  <th className={TH_CLASS} data-i18n="case.reto2.th.referencia">
+                    Referencia
+                  </th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-zinc-100">
-                {METODOS.map((metodo) => (
+                {METODOS.map((metodo, i) => (
                   <tr key={metodo.metodo}>
                     <td
                       className={`${TD_CLASS} whitespace-nowrap font-semibold text-zinc-900`}
+                      data-i18n={`case.reto2.fila.${i}.metodo`}
                     >
                       {metodo.metodo}
                     </td>
@@ -110,6 +139,9 @@ export function RetoFiscal() {
                       {metodo.moneda}
                     </td>
                     <td
+                      data-i18n={
+                        metodo.igtf === "No aplica" ? "case.term.noAplica" : undefined
+                      }
                       className={`${TD_CLASS} whitespace-nowrap ${
                         metodo.igtf === "No aplica"
                           ? "text-zinc-500"
@@ -118,7 +150,10 @@ export function RetoFiscal() {
                     >
                       {metodo.igtf}
                     </td>
-                    <td className={`${TD_CLASS} whitespace-nowrap`}>
+                    <td
+                      className={`${TD_CLASS} whitespace-nowrap`}
+                      data-i18n={`case.reto2.fila.${i}.referencia`}
+                    >
                       {metodo.referencia}
                     </td>
                   </tr>
@@ -132,6 +167,7 @@ export function RetoFiscal() {
           <CodePanel
             ruta="src/lib/fiscal-ve.ts"
             nota="Funciones puras: mismos resultados en el servidor, en el navegador y en un script de verificación."
+            notaKey="case.reto2.note.0"
           >{`/** Alícuota general del IVA vigente en Venezuela (16 %). */
 export const IVA_VENEZUELA = 0.16
 
@@ -149,6 +185,7 @@ export function alicuotaIva(taxable: boolean): number {
           <CodePanel
             ruta="src/lib/billing-ve.ts"
             nota="El IGTF no se pregunta en la pantalla de cobro: se deduce del método registrado."
+            notaKey="case.reto2.note.1"
           >{`/** Alícuota del IGTF vigente en Venezuela (3 %). */
 export const ALICUOTA_IGTF = 0.03
 
@@ -185,13 +222,16 @@ export function desglosarCobro(entrada: {
           <Callout
             icon={FileCheck2}
             titulo="El mismo módulo valida los documentos fiscales"
+            i18nBase="case.reto2.callout"
           >
             <p className="text-sm leading-6">
-              RIF (V, E, J, G), cédula y pasaporte se normalizan a un formato
-              canónico antes de tocar la base de datos, y todas las conversiones
-              pasan por un redondeo a dos decimales para que el total que ve el
-              paciente, el que registra caja y el que imprime la factura sean
-              exactamente el mismo número.
+              <span data-i18n="case.reto2.callout.body">
+                RIF (V, E, J, G), cédula y pasaporte se normalizan a un formato
+                canónico antes de tocar la base de datos, y todas las conversiones
+                pasan por un redondeo a dos decimales para que el total que ve el
+                paciente, el que registra caja y el que imprime la factura sean
+                exactamente el mismo número.
+              </span>
             </p>
           </Callout>
         </div>

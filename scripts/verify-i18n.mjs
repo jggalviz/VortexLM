@@ -41,6 +41,87 @@ const DYNAMIC_KEYS = [
   ...[0, 1, 2].flatMap((i) => [`home.project.kpi.${i}.label`, `home.project.kpi.${i}.value`, `home.project.kpi.${i}.hint`]),
   ...[0, 1, 2].flatMap((i) => [`home.project.agenda.${i}.patient`, `home.project.agenda.${i}.status`]),
   ...[0, 1, 2, 3, 4].map((i) => `home.project.tag.${i}`),
+
+  // ── Caso de estudio (`case.*`) ───────────────────────────────────────────
+  // El caso de estudio escribe sus claves con plantillas (`${i}`) o las
+  // transporta como props (`i18nBase`, `notaKey`, `tituloKey`, `labelKey`), así
+  // que no son literales alcanzables por los escáneres de abajo: se declaran
+  // aquí y esta lista es el contrato entre `ui.ts` y los componentes.
+  ...[0, 1, 2, 3].flatMap((i) => [
+    `case.hero.hallazgo.${i}.titulo`,
+    `case.hero.hallazgo.${i}.detalle`,
+  ]),
+  ...[0, 1, 2].map((i) => `case.ficha.link.${i}.titulo`),
+  ...[0, 1, 2, 3, 4, 5].flatMap((i) => [
+    `case.stack.${i}.detalle`,
+    `case.metricas.${i}.label`,
+    `case.metricas.${i}.detalle`,
+    `case.reto.restriccion.${i}`,
+    `case.diagram.capa.${i}.titulo`,
+    `case.diagram.capa.${i}.detalle`,
+    `case.desc.row.${i}.opcion`,
+    `case.desc.row.${i}.motivo`,
+    `case.desc.row.${i}.elegido`,
+    `case.reto2.fila.${i}.metodo`,
+    `case.reto2.fila.${i}.referencia`,
+  ]),
+  ...[0, 1, 2].flatMap((i) => [
+    `case.reto.dolor.${i}.titulo`,
+    `case.reto.dolor.${i}.dolor`,
+    `case.reto.dolor.${i}.impacto`,
+    `case.decision.${i}.titulo`,
+    `case.decision.${i}.decision`,
+    `case.decision.${i}.compromiso`,
+    `case.reto1.paso.${i}.titulo`,
+    `case.reto1.paso.${i}.detalle`,
+    `case.reto2.regla.${i}.titulo`,
+    `case.reto2.regla.${i}.detalle`,
+    `case.reto3.capa.${i}.titulo`,
+    `case.reto3.capa.${i}.detalle`,
+    `case.cta.route.${i}`,
+  ]),
+  ...[0, 1, 2, 3, 4].flatMap((i) => [
+    `case.decision.0.porque.${i}`,
+    `case.decision.1.porque.${i}`,
+    `case.reto1.estado.${i}.estado`,
+    `case.reto1.estado.${i}.significado`,
+    `case.reto1.estado.${i}.efecto`,
+    `case.apr.item.${i}.titulo`,
+    `case.apr.item.${i}.detalle`,
+  ]),
+  ...[0, 1, 2, 3].flatMap((i) => [
+    `case.decision.2.porque.${i}`,
+    `case.cta.aporte.${i}.titulo`,
+    `case.cta.aporte.${i}.detalle`,
+  ]),
+  ...[0, 1, 2, 3, 4].map((i) => `case.apr.scale.${i}`),
+  // Cabeceras resueltas por `i18nBase` en SectionHeading y notas de CodePanel.
+  ...['reto', 'arq', 'retos', 'apr', 'cta'].flatMap((base) => [
+    `case.${base}.eyebrow`,
+    `case.${base}.title`,
+    `case.${base}.description`,
+  ]),
+  'case.arq.map.title',
+  'case.arq.map.detail',
+  'case.reto.callout.title',
+  'case.reto1.callout.title',
+  'case.reto2.callout.title',
+  'case.apr.callout.title',
+  'case.apr.scale.title',
+  'case.decision.2.note.0',
+  'case.decision.2.note.1',
+  'case.reto1.note.0',
+  'case.reto1.note.1',
+  'case.reto2.note.0',
+  'case.reto2.note.1',
+  'case.term.noAplica',
+  ...[
+    'nav.reto',
+    'nav.arquitectura',
+    'nav.retos-tecnicos',
+    'nav.aprendizajes',
+    'nav.contacto',
+  ].map((key) => `case.${key}`),
 ];
 
 const used = new Set(DYNAMIC_KEYS);
@@ -76,6 +157,31 @@ if (missingInEn.length) console.log(`  MISSING in en: ${missingInEn.join(', ')}`
 if (extraInEn.length) console.log(`  EXTRA in en: ${extraInEn.join(', ')}`);
 if (unreferenced.length) console.log(`  sin referencia (reservadas): ${unreferenced.join(', ')}`);
 
-const ok = missingInEs.length === 0 && missingInEn.length === 0 && extraInEn.length === 0;
+// ── Cobertura global del motor ───────────────────────────────────────────
+// El cambio de idioma es un proceso del cliente que recorre el documento, así
+// que funciona en cualquier ruta siempre y cuando la página cargue el motor.
+// Toda página pública debe pasar por un layout con `initI18n()` (BaseLayout /
+// DashboardLayout) o inicializarlo explícitamente; si no, el idioma guardado no
+// se aplicaría al navegar fuera de la portada.
+const ENGINE_REF = /layouts\/(?:BaseLayout|DashboardLayout)\.astro|initI18n\s*\(/;
+const PAGES_DIR = path.join(ROOT, 'src', 'pages');
+// Rutas que no son páginas del sitio (endpoints de API / islas de servidor).
+const NOT_A_PAGE = (rel) => /^src[\\/]pages[\\/](?:api[\\/]|_)/.test(rel);
+
+const pagesWithoutEngine = walk(PAGES_DIR)
+  .filter((file) => file.endsWith('.astro'))
+  .map((file) => path.relative(ROOT, file))
+  .filter((rel) => !NOT_A_PAGE(rel))
+  .filter((rel) => !ENGINE_REF.test(fs.readFileSync(path.join(ROOT, rel), 'utf8')));
+
+if (pagesWithoutEngine.length) {
+  console.log(`  MISSING engine (rutas sin i18n): ${pagesWithoutEngine.join(', ')}`);
+}
+
+const ok =
+  missingInEs.length === 0 &&
+  missingInEn.length === 0 &&
+  extraInEn.length === 0 &&
+  pagesWithoutEngine.length === 0;
 console.log(ok ? 'i18n: OK' : 'i18n: FAILED');
 if (!ok) process.exitCode = 1;

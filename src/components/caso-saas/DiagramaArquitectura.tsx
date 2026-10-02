@@ -73,10 +73,16 @@ export function DiagramaArquitectura() {
   return (
     <div className="rounded-3xl border border-zinc-200 bg-zinc-50 p-5 sm:p-8">
       <div className="flex flex-wrap items-center justify-between gap-3">
-        <p className="font-code text-[11px] font-semibold uppercase tracking-[0.18em] text-zinc-500">
+        <p
+          className="font-code text-[11px] font-semibold uppercase tracking-[0.18em] text-zinc-500"
+          data-i18n="case.diagram.title"
+        >
           Mapa de capas
         </p>
-        <p className="font-code text-[11px] text-zinc-400">
+        <p
+          className="font-code text-[11px] text-zinc-400"
+          data-i18n="case.diagram.subtitle"
+        >
           las dependencias fluyen hacia abajo
         </p>
       </div>
@@ -93,15 +99,22 @@ export function DiagramaArquitectura() {
                   </span>
                   <div className="min-w-0">
                     <p className="font-code text-[10px] tabular-nums text-zinc-400">
-                      NIVEL {capa.nivel}
+                      <span data-i18n="case.diagram.levelPrefix">NIVEL</span>{" "}
+                      {capa.nivel}
                     </p>
-                    <p className="text-sm font-bold text-zinc-900">
+                    <p
+                      className="text-sm font-bold text-zinc-900"
+                      data-i18n={`case.diagram.capa.${indice}.titulo`}
+                    >
                       {capa.titulo}
                     </p>
                   </div>
                 </div>
                 <div className="min-w-0">
-                  <p className="text-sm leading-6 text-zinc-600">
+                  <p
+                    className="text-sm leading-6 text-zinc-600"
+                    data-i18n={`case.diagram.capa.${indice}.detalle`}
+                  >
                     {capa.detalle}
                   </p>
                   <div className="mt-3 flex flex-wrap gap-1.5">
@@ -126,7 +139,10 @@ export function DiagramaArquitectura() {
         })}
       </ol>
 
-      <p className="mt-5 text-xs leading-5 text-zinc-500">
+      <p
+        className="mt-5 text-xs leading-5 text-zinc-500"
+        data-i18n="case.diagram.foot"
+      >
         La dirección importa: la aplicación conoce el dominio y la base de datos,
         el dominio no conoce a la aplicación. Por eso el motor fiscal se puede
         leer y verificar sin levantar el servidor, y por eso un cambio de

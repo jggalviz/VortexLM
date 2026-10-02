@@ -66,25 +66,31 @@ export function HeroSection() {
                 {GITHUB_HANDLE}
               </Chip>
               <Chip dark icon={Timer}>
-                1 desarrollador · full-stack
+                <span data-i18n="case.hero.chip.dev">1 desarrollador · full-stack</span>
               </Chip>
               <Chip dark icon={ShieldCheck}>
-                SaaS multi-tenant en producción
+                <span data-i18n="case.hero.chip.saas">SaaS multi-tenant en producción</span>
               </Chip>
             </div>
 
             <h1 className="mt-6 text-4xl font-bold leading-[1.08] tracking-tight text-white sm:text-5xl">
-              Cómo diseñé y construí{" "}
+              <span data-i18n="case.hero.title">Cómo diseñé y construí</span>{" "}
               <span className="bg-gradient-to-r from-teal-300 via-teal-200 to-emerald-300 bg-clip-text text-transparent">
                 Medisys
               </span>
             </h1>
 
-            <p className="mt-4 text-lg font-semibold text-teal-200 sm:text-xl">
+            <p
+              className="mt-4 text-lg font-semibold text-teal-200 sm:text-xl"
+              data-i18n="case.hero.subtitle"
+            >
               SaaS médico multi-tenant y suite fiscal para Venezuela
             </p>
 
-            <p className="mt-5 max-w-2xl text-base leading-7 text-zinc-300">
+            <p
+              className="mt-5 max-w-2xl text-base leading-7 text-zinc-300"
+              data-i18n="case.hero.intro"
+            >
               Una plataforma que digitaliza la operación completa de una clínica
               —agenda, cobros, expedientes, facturación y contabilidad— en un
               mercado donde la tasa oficial cambia a diario, las pasarelas
@@ -102,41 +108,59 @@ export function HeroSection() {
                 className="inline-flex items-center gap-2 rounded-full bg-teal-400 px-5 py-3 text-sm font-bold text-zinc-950 transition-colors hover:bg-teal-300"
               >
                 <GitBranch className="size-4" aria-hidden="true" />
-                Explorar el código fuente
+                <span data-i18n="case.hero.ctaCode">Explorar el código fuente</span>
                 <ArrowUpRight className="size-4" aria-hidden="true" />
               </a>
               <a
                 href={DEMO_ROUTE}
                 className="inline-flex items-center gap-2 rounded-full border border-white/20 px-5 py-3 text-sm font-semibold text-white transition-colors hover:border-teal-400/60 hover:bg-white/5"
               >
-                Probar la clínica demo
+                <span data-i18n="case.hero.ctaDemo">Probar la clínica demo</span>
                 <ArrowRight className="size-4" aria-hidden="true" />
               </a>
             </div>
 
             <dl className="mt-10 grid gap-5 border-t border-white/10 pt-6 sm:grid-cols-3">
               <div>
-                <dt className="font-code text-[11px] uppercase tracking-[0.2em] text-zinc-500">
+                <dt
+                  className="font-code text-[11px] uppercase tracking-[0.2em] text-zinc-500"
+                  data-i18n="case.hero.rol.label"
+                >
                   Rol
                 </dt>
-                <dd className="mt-1 text-sm text-zinc-300">
+                <dd
+                  className="mt-1 text-sm text-zinc-300"
+                  data-i18n="case.hero.rol.value"
+                >
                   Arquitectura, backend, frontend y datos
                 </dd>
               </div>
               <div>
-                <dt className="font-code text-[11px] uppercase tracking-[0.2em] text-zinc-500">
+                <dt
+                  className="font-code text-[11px] uppercase tracking-[0.2em] text-zinc-500"
+                  data-i18n="case.hero.scope.label"
+                >
                   Alcance
                 </dt>
-                <dd className="mt-1 text-sm text-zinc-300">
+                <dd
+                  className="mt-1 text-sm text-zinc-300"
+                  data-i18n="case.hero.scope.value"
+                >
                   Producto completo: 3 módulos de gestión, portales y Super Admin
                   · 49 rutas
                 </dd>
               </div>
               <div>
-                <dt className="font-code text-[11px] uppercase tracking-[0.2em] text-zinc-500">
+                <dt
+                  className="font-code text-[11px] uppercase tracking-[0.2em] text-zinc-500"
+                  data-i18n="case.hero.constraint.label"
+                >
                   Restricción
                 </dt>
-                <dd className="mt-1 text-sm text-zinc-300">
+                <dd
+                  className="mt-1 text-sm text-zinc-300"
+                  data-i18n="case.hero.constraint.value"
+                >
                   Equipo unipersonal · infraestructura serverless
                 </dd>
               </div>
@@ -145,10 +169,10 @@ export function HeroSection() {
           <FichaTecnicaHero />
         </div>
 
-        <KpiGrid items={METRICAS} dark className="mt-14" />
+        <KpiGrid items={METRICAS} i18nBase="case.metricas" dark className="mt-14" />
 
         <ul className="mt-8 grid gap-4 sm:grid-cols-2">
-          {HALLAZGOS.map((hallazgo) => {
+          {HALLAZGOS.map((hallazgo, i) => {
             const Icono = hallazgo.icon
             return (
               <li
@@ -157,9 +181,14 @@ export function HeroSection() {
               >
                 <p className="flex items-center gap-2 text-sm font-bold text-white">
                   <Icono className="size-4 text-teal-300" aria-hidden="true" />
-                  {hallazgo.titulo}
+                  <span data-i18n={`case.hero.hallazgo.${i}.titulo`}>
+                    {hallazgo.titulo}
+                  </span>
                 </p>
-                <p className="mt-2 text-sm leading-6 text-zinc-400">
+                <p
+                  className="mt-2 text-sm leading-6 text-zinc-400"
+                  data-i18n={`case.hero.hallazgo.${i}.detalle`}
+                >
                   {hallazgo.detalle}
                 </p>
               </li>

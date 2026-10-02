@@ -48,11 +48,11 @@ export const CASO_ESTUDIO_URL = `${COMPANY_URL}${CASO_ESTUDIO_RUTA}`
 /* --------------------------- Navegación --------------------------- */
 
 export const NAV_ANCHORS = [
-  { id: "reto", label: "El reto" },
-  { id: "arquitectura", label: "Arquitectura" },
-  { id: "retos-tecnicos", label: "Retos técnicos" },
-  { id: "aprendizajes", label: "Aprendizajes" },
-  { id: "contacto", label: "Contacto" },
+  { id: "reto", label: "El reto", labelKey: "case.nav.reto" },
+  { id: "arquitectura", label: "Arquitectura", labelKey: "case.nav.arquitectura" },
+  { id: "retos-tecnicos", label: "Retos técnicos", labelKey: "case.nav.retos-tecnicos" },
+  { id: "aprendizajes", label: "Aprendizajes", labelKey: "case.nav.aprendizajes" },
+  { id: "contacto", label: "Contacto", labelKey: "case.nav.contacto" },
 ] as const
 
 /* ------------------------------ Stack ----------------------------- */

@@ -64,7 +64,14 @@ const DATOS_ESTRUCTURADOS = {
 };
 ---
 
-<BaseLayout title={TITULO} description={DESCRIPCION} url={CASO_ESTUDIO_URL} type="article">
+<BaseLayout
+  title={TITULO}
+  description={DESCRIPCION}
+  url={CASO_ESTUDIO_URL}
+  type="article"
+  titleKey="case.meta.title"
+  descriptionKey="case.meta.description"
+>
   <script
     type="application/ld+json"
     set:html={JSON.stringify(DATOS_ESTRUCTURADOS)}></script>
@@ -80,15 +87,23 @@ const DATOS_ESTRUCTURADOS = {
       <div
         class="flex flex-wrap items-center justify-between gap-x-4 gap-y-3 border-b border-white/10 pb-4"
       >
-        <p class="font-code text-[11px] font-semibold uppercase tracking-[0.18em] text-teal-300">
+        <p
+          class="font-code text-[11px] font-semibold uppercase tracking-[0.18em] text-teal-300"
+          data-i18n="case.meta.title"
+        >
           Caso de estudio &middot; Medisys
         </p>
 
-        <nav aria-label="Secciones del caso de estudio" class="flex flex-wrap items-center gap-0.5">
+        <nav
+          aria-label="Secciones del caso de estudio"
+          data-i18n-aria-label="case.page.navLabel"
+          class="flex flex-wrap items-center gap-0.5"
+        >
           {
             NAV_ANCHORS.map((ancla) => (
               <a
                 href={`#${ancla.id}`}
+                data-i18n={ancla.labelKey}
                 class="rounded-full px-3 py-1.5 text-[13px] font-medium text-zinc-400 transition-colors hover:bg-white/5 hover:text-white"
               >
                 {ancla.label}
@@ -104,7 +119,7 @@ const DATOS_ESTRUCTURADOS = {
           class="inline-flex items-center gap-2 rounded-full border border-white/15 px-3.5 py-1.5 text-[13px] font-semibold text-zinc-200 transition-colors hover:border-teal-400/60 hover:text-white"
         >
           <span class="material-symbols-outlined text-[16px]" aria-hidden="true">code</span>
-          Código fuente
+          <span data-i18n="case.page.sourceCode">Código fuente</span>
         </a>
       </div>
     </div>

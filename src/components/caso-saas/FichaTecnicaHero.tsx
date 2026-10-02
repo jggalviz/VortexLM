@@ -54,11 +54,14 @@ export function FichaTecnicaHero() {
   return (
     <aside className="space-y-4">
       <Panel tone="dark">
-        <p className="font-code text-[11px] font-semibold uppercase tracking-[0.2em] text-teal-300">
+        <p
+          className="font-code text-[11px] font-semibold uppercase tracking-[0.2em] text-teal-300"
+          data-i18n="case.ficha.title"
+        >
           Ficha técnica
         </p>
         <ul className="mt-4 space-y-3">
-          {STACK.map((item) => (
+          {STACK.map((item, i) => (
             <li
               key={item.nombre}
               className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 border-b border-white/5 pb-3 last:border-0 last:pb-0"
@@ -66,18 +69,26 @@ export function FichaTecnicaHero() {
               <span className="text-sm font-semibold text-white">
                 {item.nombre}
               </span>
-              <span className="text-xs text-zinc-400">{item.detalle}</span>
+              <span
+                className="text-xs text-zinc-400"
+                data-i18n={`case.stack.${i}.detalle`}
+              >
+                {item.detalle}
+              </span>
             </li>
           ))}
         </ul>
       </Panel>
 
       <Panel tone="dark">
-        <p className="font-code text-[11px] font-semibold uppercase tracking-[0.2em] text-teal-300">
+        <p
+          className="font-code text-[11px] font-semibold uppercase tracking-[0.2em] text-teal-300"
+          data-i18n="case.ficha.links"
+        >
           Enlaces directos
         </p>
         <ul className="mt-4 space-y-2">
-          {ENLACES.map((enlace) => {
+          {ENLACES.map((enlace, i) => {
             const Icono = enlace.icon
             return (
               <li key={enlace.titulo}>
@@ -94,7 +105,10 @@ export function FichaTecnicaHero() {
                       aria-hidden="true"
                     />
                     <span className="min-w-0">
-                      <span className="block text-sm font-semibold text-zinc-100">
+                      <span
+                        className="block text-sm font-semibold text-zinc-100"
+                        data-i18n={`case.ficha.link.${i}.titulo`}
+                      >
                         {enlace.titulo}
                       </span>
                       <span className="block truncate font-code text-[11px] text-zinc-400">

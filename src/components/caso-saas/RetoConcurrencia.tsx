@@ -76,16 +76,25 @@ export function RetoConcurrencia() {
           <Timer className="size-5" aria-hidden="true" />
         </span>
         <div>
-          <p className="font-code text-[11px] font-semibold uppercase tracking-[0.18em] text-zinc-500">
+          <p
+            className="font-code text-[11px] font-semibold uppercase tracking-[0.18em] text-zinc-500"
+            data-i18n="case.reto1.kicker"
+          >
             Reto 01 · Concurrencia
           </p>
-          <h3 className="text-xl font-bold tracking-tight text-zinc-900">
+          <h3
+            className="text-xl font-bold tracking-tight text-zinc-900"
+            data-i18n="case.reto1.title"
+          >
             Que dos pacientes no compren el mismo turno
           </h3>
         </div>
       </div>
 
-      <p className="mt-4 max-w-3xl text-sm leading-6 text-zinc-600">
+      <p
+        className="mt-4 max-w-3xl text-sm leading-6 text-zinc-600"
+        data-i18n="case.reto1.intro"
+      >
         El asistente de reserva es anónimo: cualquiera con el enlace puede tomar
         un turno sin crear cuenta. Eso significa que dos personas pueden estar
         pagando la misma hora en paralelo, y que la primera puede abandonar el
@@ -96,20 +105,26 @@ export function RetoConcurrencia() {
       </p>
 
       <div className="mt-6">
-        <FlujoPasos pasos={FLUJO} />
+        <FlujoPasos pasos={FLUJO} i18nBase="case.reto1.paso" />
       </div>
 
       <div className="mt-6 grid gap-6 lg:grid-cols-[1fr_1.1fr] lg:items-start">
         <Panel tone="muted" className="p-5">
-          <p className="text-sm font-bold text-zinc-900">
+          <p
+            className="text-sm font-bold text-zinc-900"
+            data-i18n="case.reto1.flow.title"
+          >
             Ciclo de vida del bloqueo
           </p>
-          <p className="mt-2 text-sm leading-6 text-zinc-600">
+          <p
+            className="mt-2 text-sm leading-6 text-zinc-600"
+            data-i18n="case.reto1.flow.body"
+          >
             El estado de la cita es el que decide si el turno está ocupado. No hay
             banderas paralelas que puedan quedar desincronizadas.
           </p>
           <ul className="mt-4 space-y-3">
-            {ESTADOS.map((fila) => {
+            {ESTADOS.map((fila, i) => {
               const Icono = fila.icon
               const bloquea = fila.efecto.startsWith("Bloquea")
               return (
@@ -119,10 +134,14 @@ export function RetoConcurrencia() {
                 >
                   <p className="flex flex-wrap items-center gap-2">
                     <Icono className="size-4 text-zinc-400" aria-hidden="true" />
-                    <span className="font-code text-xs font-bold text-zinc-800">
+                    <span
+                      className="font-code text-xs font-bold text-zinc-800"
+                      data-i18n={`case.reto1.estado.${i}.estado`}
+                    >
                       {fila.estado}
                     </span>
                     <span
+                      data-i18n={`case.reto1.estado.${i}.efecto`}
                       className={
                         bloquea
                           ? "rounded-full border border-teal-200 bg-teal-50 px-2 py-0.5 text-[10px] font-semibold text-teal-700"
@@ -132,7 +151,10 @@ export function RetoConcurrencia() {
                       {fila.efecto}
                     </span>
                   </p>
-                  <p className="mt-1.5 text-xs leading-5 text-zinc-500">
+                  <p
+                    className="mt-1.5 text-xs leading-5 text-zinc-500"
+                    data-i18n={`case.reto1.estado.${i}.significado`}
+                  >
                     {fila.significado}
                   </p>
                 </li>
@@ -145,6 +167,7 @@ export function RetoConcurrencia() {
           <CodePanel
             ruta="src/app/actions/booking.ts"
             nota="La cita nace bloqueada: el estado 'pendiente' con fecha de expiración es el propio mecanismo de reserva."
+            notaKey="case.reto1.note.0"
           >{`const expiresAtMs = Date.now() + LOCK_DURATION_MINUTES * 60_000 // 15 min
 const lockExpiraEn = new Date(expiresAtMs).toISOString()
 
@@ -160,6 +183,7 @@ const payloadBase = {
           <CodePanel
             ruta="src/app/actions/booking.ts"
             nota="Disponibilidad y liberación: la segunda operación solo aplica si la cita sigue en 'pendiente' (guarda optimista)."
+            notaKey="case.reto1.note.1"
           >{`// El cupo solo está ocupado si el bloqueo sigue vigente
 if (cita.estado === "pendiente" && cita.lock_expira_en) {
   return new Date(cita.lock_expira_en).getTime() > ahora
@@ -175,16 +199,19 @@ await supabase.from("appointments")
           <Callout
             icon={AlertTriangle}
             titulo="La lección de la migración 0003"
+            i18nBase="case.reto1.callout"
             tone="amber"
           >
             <p className="text-sm leading-6">
-              La primera versión protegía la doble reserva con un índice único
-              sobre la fecha y el turno. Funcionaba hasta que el bloqueo vencía:
-              el índice no sabe medir tiempo, así que los turnos abandonados
-              quedaban muertos para siempre. Eliminar esa restricción fue una
-              decisión incómoda pero correcta: el control pasó al modelo de datos
-              con un estado y una fecha de expiración que sí expresan la regla de
-              negocio.
+              <span data-i18n="case.reto1.callout.body">
+                La primera versión protegía la doble reserva con un índice único
+                sobre la fecha y el turno. Funcionaba hasta que el bloqueo vencía:
+                el índice no sabe medir tiempo, así que los turnos abandonados
+                quedaban muertos para siempre. Eliminar esa restricción fue una
+                decisión incómoda pero correcta: el control pasó al modelo de datos
+                con un estado y una fecha de expiración que sí expresan la regla de
+                negocio.
+              </span>
             </p>
           </Callout>
         </div>

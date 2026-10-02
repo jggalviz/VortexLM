@@ -642,6 +642,382 @@ export const es = {
   'case.cta.hard.body':
     'La sección de retos técnicos explica el bloqueo de 15 minutos, el cálculo condicional del IGTF y la matriz de permisos. Si vas a evaluar el código, ese es el mejor lugar para empezar a leerlo críticamente.',
   'case.cta.hard.cta': 'Ir a los retos técnicos',
+
+  // ── Servicios · Hero (ServicesHero.astro) ─────────────────────────────────
+  'servicesHero.badge': 'Capacidad Técnica',
+  'servicesHero.aria': 'Hero — Capacidades técnicas de desarrollo white label',
+  'servicesHero.title': 'Servicios de desarrollo',
+  'servicesHero.titleAlt': 'white label para tu agencia',
+  'servicesHero.subtitle':
+    'Desde frontend con tecnologías modernas hasta WordPress corporativo y automatizaciones complejas. Todo el desarrollo que necesitas, bajo tu marca.',
+
+  // ── Precios · Hero (PricingHero.astro) ────────────────────────────────────
+  'pricingHero.badge': 'PRECIOS',
+  'pricingHero.aria': 'Planes de precios vCredits',
+  'pricingHero.titleLead': 'Planes flexibles de',
+  'pricingHero.titleTail': 'para tu agencia',
+  'pricingHero.subtitle':
+    'Paga solo por el desarrollo que consumes. Sin contratos fijos, sin compromisos mensuales. Descuentos por volumen a partir de 500 créditos.',
+  'pricingHero.currency': '1 vCredit = $1.05 USD o el cambio del día en euros',
+
+  // ── B2B · Hero (B2BHero.astro) ────────────────────────────────────────────
+  'b2bHero.badge': 'Partner Tecnológico White Label',
+  'b2bHero.aria':
+    'Hero principal — Externaliza desarrollo frontend y WordPress',
+  'b2bHero.title': 'Externaliza desarrollo',
+  'b2bHero.titleLine2': 'frontend y WordPress',
+  'b2bHero.titleLine3': 'con tu propia marca',
+  'b2bHero.subLead':
+    'Sin contratos fijos ni compromisos mensuales. Nuestro modelo de ',
+  'b2bHero.subTail':
+    ' te permite comprar horas de desarrollo en bloque y consumirlas bajo demanda. Tú pones el brief, nosotros entregamos código listo para producción con tu marca — 100% white label, 100% profesional.',
+  'b2bHero.ctaDemo': 'Solicitar una Demo',
+  'b2bHero.ctaHow': 'Ver cómo funciona',
+  'b2bHero.proof': 'Utilizado por agencias digitales en España y Estados Unidos',
+
+  // ── White Label · Concepto (WhiteLabelConcept.astro) ──────────────────────
+  'whiteLabel.badge': 'WHITE LABEL',
+  'whiteLabel.aria': 'White Label — 100% invisible, 100% tu marca',
+  'whiteLabel.titleLead': '100% invisible.',
+  'whiteLabel.titleAlt': '100% tu marca.',
+  'whiteLabel.subtitle':
+    'Trabajamos en segundo plano para que tu agencia luzca como propia ante tus clientes.',
+  'whiteLabel.p1.title': 'Marca Blanca Total',
+  'whiteLabel.p1.desc':
+    'Todos los entregables, comunicaciones y resultados se presentan como si fueran de tu agencia.',
+  'whiteLabel.p1.note': 'Sin menciones a VortexLM.',
+  'whiteLabel.p2.title': 'NDA y Confidencialidad',
+  'whiteLabel.p2.desc':
+    'Firmamos acuerdos de confidencialidad que protegen tu relación con tus clientes.',
+  'whiteLabel.p2.note': 'Tu cartera de clientes es sagrada.',
+  'whiteLabel.p3.title': 'Sin Intermediación',
+  'whiteLabel.p3.descLead':
+    'Nunca contactamos a tus clientes ni nos presentamos como proveedores. La relación comercial es siempre entre',
+  'whiteLabel.p3.descTail': 'tu agencia y tu cliente.',
+  'whiteLabel.seal.text': 'NDA',
+  'whiteLabel.seal.label': 'Acuerdo de Confidencialidad',
+  'whiteLabel.seal.lead': 'Acuerdo de Confidencialidad incluido en',
+  'whiteLabel.seal.strong': 'todos los proyectos',
+  'whiteLabel.seal.note': 'Protegemos tu relación con tus clientes',
+
+  // ── B2B · Explora más (B2BExpandLinks.astro) ──────────────────────────────
+  'expand.badge': 'Explora más',
+  'expand.aria': 'Explora más sobre VortexLM',
+  'expand.title': 'Todo lo que necesitas saber',
+  'expand.subLead': 'Descubre cómo funciona el modelo',
+  'expand.subTail':
+    ', explora nuestros servicios y elige el plan ideal para tu agencia.',
+  'expand.card1.title': '¿Cómo funciona?',
+  'expand.card1.descLead': 'Descubre el proceso completo: desde la compra de',
+  'expand.card1.descTail': 'hasta la entrega de tu proyecto.',
+  'expand.card2.title': 'Servicios',
+  'expand.card2.desc':
+    'Frontend, WordPress, APIs y más. Todo el desarrollo que tu agencia necesita, bajo tu marca.',
+  'expand.card3.title': 'Precios',
+  'expand.card3.descLead': 'Planes flexibles de',
+  'expand.card3.descTail':
+    'adaptados al volumen de tu agencia. Sin sorpresas ni costes ocultos.',
+  'expand.ctaMore': 'Ver más',
+  'expand.footnote': 'Sin compromisos. Explora sin prisas.',
+
+  // ── B2B · Ventajas (B2BBenefits.astro) ────────────────────────────────────
+  'b2bBenefits.badge': 'Ventajas B2B',
+  'b2bBenefits.aria':
+    'Ventajas Corporativas B2B — Facturación, IVA y pagos internacionales',
+  'b2bBenefits.title': 'Infraestructura corporativa para tu agencia',
+  'b2bBenefits.subtitle':
+    'Facturación oficial, exención de IVA y flexibilidad internacional de pagos.',
+  'b2bBenefits.c1.title': 'Facturación Corporativa',
+  'b2bBenefits.c1.desc':
+    'Emitimos facturas oficiales desde Vortex Logic LLC, registrada en EE.UU. Cumplimiento fiscal completo para tu agencia.',
+  'b2bBenefits.c2.title': 'Exención de IVA',
+  'b2bBenefits.c2.desc':
+    '0% IVA para agencias en España bajo el mecanismo europeo de inversión del sujeto pasivo. Sin retenciones ni sobrecostes.',
+  'b2bBenefits.c3.title': 'Pagos Internacionales',
+  'b2bBenefits.c3.desc':
+    'Tarjetas de crédito, transferencias bancarias directas (ACH en EE.UU. y SEPA en Europa) y pasarelas cripto/digitales como Binance Pay.',
+  'b2bBenefits.bonus.badge': 'Bono de Bienvenida',
+  'b2bBenefits.bonus.title': '10 vCredits gratis para tu agencia',
+  'b2bBenefits.bonus.desc':
+    'La activación del bono se realiza solicitándola directamente a través del chat de WhatsApp de nuestra empresa.',
+  'b2bBenefits.bonus.cta': 'Activar 10 vCredits gratis',
+  // ── src/components/ui/TechGrid.astro ──
+  'techGrid.n01': 'Capacidades',
+  'techGrid.n02': 'Tecnologías con las que trabajamos',
+  'techGrid.n03': 'Stack moderno, rendimiento extremo y código limpio.',
+  'techGrid.n04': 'Sin builders pesados, sin atajos.',
+  'techGrid.n05': 'Frontend Engineering de Alto Rendimiento',
+  'techGrid.n06':
+    'Construimos interfaces modernas con Astro, React, Next.js y Tailwind CSS. Optimización nativa para lograr 100/100 en Google PageSpeed, Core Web Vitals perfectos y experiencia de usuario impecable.',
+  'techGrid.n07': 'SSR / SSG / ISR según necesidad',
+  'techGrid.n08': 'Lazy loading nativo',
+  'techGrid.n09': 'Imágenes optimizadas automáticas',
+  'techGrid.n10': 'SEO técnico integrado',
+  'techGrid.n11': 'WordPress Corporativo sin Bloat',
+  'techGrid.n12':
+    'Desarrollo limpio a medida mediante bloques nativos o código personalizado. Excluimos estrictamente builders pesados (Elementor, Divi, WPBakery) para asegurar velocidad atómica, SEO limpio y facilidad de mantenimiento.',
+  'techGrid.n13': 'Bloques Gutenberg nativos',
+  'techGrid.n14': 'Sin page builders',
+  'techGrid.n15': 'WooCommerce headless',
+  'techGrid.n16': 'Rendimiento 95+ PageSpeed',
+  'techGrid.n17': 'Automatizaciones e Integración de Datos',
+  'techGrid.n18':
+    'Conexión avanzada de Webhooks, APIs personalizadas, flujos comerciales automáticos, pasarelas de pago y manipulación eficiente de bases de datos. Transformamos procesos manuales en pipelines automatizados.',
+  'techGrid.n19': 'APIs RESTful y GraphQL',
+  'techGrid.n20': 'Webhooks en tiempo real',
+  'techGrid.n21': 'Pasarelas de pago (Stripe, PayPal)',
+  'techGrid.n22': 'ETL y scraping eficiente',
+  'techGrid.n23': 'Capacidades — Tecnologías con las que trabajamos',
+
+  // ── src/components/ui/PriceCards.astro ──
+  'priceCards.n01': 'PAQUETES',
+  'priceCards.n02': 'Elige tu pack de',
+  'priceCards.n03': 'Compra créditos y consúmelos cuando necesites. El saldo no caduca.',
+  'priceCards.n04': '$1.05/crédito',
+  'priceCards.n05': 'Ideal para tareas puntuales o landings rápidas.',
+  'priceCards.n06': 'Recomendado',
+  'priceCards.n07': '$0.9975/crédito',
+  'priceCards.n08': '5% de descuento',
+  'priceCards.n09': 'El favorito de agencias en crecimiento. Ahorro real.',
+  'priceCards.n10': '$0.945/crédito',
+  'priceCards.n11': '10% de descuento',
+  'priceCards.n12': 'Para agencias con alto volumen de proyectos.',
+  'priceCards.n13': 'Paquetes de vCredits — Starter, Growth y Scale',
+
+  // ── src/components/ui/MultipliersTable.astro ──
+  'multipliers.n01': 'TARIFAS POR HORA',
+  'multipliers.n02': 'Multiplicadores de',
+  'multipliers.n03': 'consumo',
+  'multipliers.n04': 'Cada servicio tiene un coste en vCredits por hora. Así de transparente.',
+  'multipliers.n05': 'Servicio',
+  'multipliers.n06': 'vCredits/h',
+  'multipliers.n07': 'Precio final/h',
+  'multipliers.n08': 'Desarrollo Avanzado',
+  'multipliers.n09': '(Astro, React, Next.js, APIs)',
+  'multipliers.n10': '15 vCredits',
+  'multipliers.n11': 'Soporte & WPO',
+  'multipliers.n12': '(WordPress, WooCommerce)',
+  'multipliers.n13': '12 vCredits',
+  'multipliers.n14': 'Analítica Avanzada e Infraestructura',
+  'multipliers.n15': '(GA4, GTM)',
+  'multipliers.n16': 'Gestión de Campañas',
+  'multipliers.n17': '(Google/Meta Ads)',
+  'multipliers.n18': 'y Diseño de Landings',
+  'multipliers.n19': '10 vCredits',
+  'multipliers.n20': 'Edición de Video Corto para Anuncios',
+  'multipliers.n21': '(Reels/TikTok)',
+  'multipliers.n22': '8 vCredits',
+  'multipliers.n23': 'Diseño de Creativos y Banners Estáticos',
+  'multipliers.n24': '6 vCredits',
+  'multipliers.n25': 'Los vCredits se descuentan por minuto real de desarrollo. Sin redondeos.',
+  'multipliers.n26': 'Tarifas por hora — Multiplicadores de consumo',
+
+  // ── src/components/ui/PricingFAQ.astro ──
+  'pricingFaq.n01': 'Preguntas frecuentes sobre precios',
+  'pricingFaq.n02': 'Todo lo que necesitas saber sobre nuestro sistema de vCredits y facturación.',
+  'pricingFaq.n03': '¿Qué son exactamente los vCredits?',
+  'pricingFaq.n04':
+    'Los vCredits son nuestra moneda interna de intercambio. 1 vCredit equivale a $1.00 USD neto de desarrollo. Al comprar, pagas $1.05 USD por crédito para cubrir de forma transparente la comisión internacional de Stripe, garantizando que tu saldo rinda al 100% en tus tareas.',
+  'pricingFaq.n05': '¿Los vCredits tienen fecha de caducidad?',
+  'pricingFaq.n06':
+    'No. Los vCredits no caducan. Puedes comprarlos y utilizarlos cuando los necesites, sin presión por consumirlos en un plazo determinado. Ideal para agencias con demanda variable.',
+  'pricingFaq.n07': '¿Cómo se factura? ¿Tienen IVA?',
+  'pricingFaq.n08':
+    'Emitimos facturas oficiales desde Vortex Logic LLC, registrada en EE.UU. Para agencias en España, aplicamos el 0% de IVA bajo el mecanismo europeo de inversión del sujeto pasivo (reverse charge). Consúltanos si necesitas más detalles fiscales.',
+  'pricingFaq.n09': '¿Puedo combinar métodos de pago?',
+  'pricingFaq.n10':
+    'Sí. Aceptamos tarjetas de crédito, transferencias bancarias directas (ACH en EE.UU. y SEPA en Europa) y pasarelas cripto/digitales como Binance Pay. Puedes usar el método que mejor se adapte a tu flujo de caja.',
+  'pricingFaq.n11': '¿Qué pasa si no uso todos los vCredits del pack?',
+  'pricingFaq.n12':
+    'El saldo restante se mantiene en tu cuenta hasta que decidas usarlo. No hay penalizaciones por no consumir. Además, si necesitas más créditos, puedes recargar en cualquier momento con el pack que prefieras.',
+  'pricingFaq.n13': '¿El bono de bienvenida de 10 vCredits tiene condiciones?',
+  'pricingFaq.n14':
+    'Solo necesitas agendar una llamada corta de activación con nuestro equipo para conocer tus necesidades y validar que somos el partner adecuado para tu agencia. Una vez activado, los 10 vCredits están disponibles para testear cualquier servicio sin compromiso.',
+  'pricingFaq.n15': 'Preguntas frecuentes sobre precios — vCredits y facturación',
+
+  // ── src/components/ui/VCreditsExplanation.astro ──
+  'vCreditsExpl.n01': 'EL MODELO',
+  'vCreditsExpl.n02': '¿Qué es un',
+  'vCreditsExpl.n03': 'vCredit',
+  'vCreditsExpl.n04':
+    'Unidad de medida transparente que equipara tiempo de desarrollo especializado con inversión predecible.',
+  'vCreditsExpl.n05': '1 hora de desarrollo',
+  'vCreditsExpl.n06': 'especializado',
+  'vCreditsExpl.n07': 'Frontend',
+  'vCreditsExpl.n08': 'APIs',
+  'vCreditsExpl.n09': 'Revisiones',
+  'vCreditsExpl.n10':
+    'Cada vCredit representa una hora de trabajo de nuestro equipo multidisciplinario. Sin markup, sin sorpresas. Lo que ves es lo que pagas.',
+  'vCreditsExpl.n11': 'Sin contratos fijos',
+  'vCreditsExpl.n12':
+    'No hay retenedores mensuales ni permanencias. Compra vCredits cuando quieras y úsalos a tu ritmo. Tú controlas el gasto.',
+  'vCreditsExpl.n13': 'Saldo sin caducidad',
+  'vCreditsExpl.n14':
+    'Tus vCredits no expiran. Acumula saldo, úsalo cuando surja la necesidad. Ideal para agencias que manejan cargas de trabajo variables.',
+  'vCreditsExpl.n15': 'Consumo en tiempo real',
+  'vCreditsExpl.n16':
+    'Cada hora de trabajo se descuenta al instante de tu saldo. Recibe notificaciones y mantén control total desde tu dashboard.',
+  'vCreditsExpl.n17': 'Transparencia total. Sin markup. Sin sorpresas.',
+  'vCreditsExpl.n18': 'Qué es un vCredit — Unidad de medida transparente',
+
+  // ── src/components/ui/ClientDashboardPreview.astro ──
+  'dashPreview.n01': 'EL PORTAL',
+  'dashPreview.n02': 'Tu Dashboard de',
+  'dashPreview.n03': 'Cliente',
+  'dashPreview.n04':
+    'Gestiona proyectos, revisa consumos y controla servicios desde un solo lugar.',
+  'dashPreview.n05': 'En tiempo real.',
+  'dashPreview.n06': 'VortexLM Dashboard',
+  'dashPreview.n07': 'Mi Portal',
+  'dashPreview.n08': 'Dashboard',
+  'dashPreview.n09': 'Proyectos',
+  'dashPreview.n10': 'Facturación',
+  'dashPreview.n11': 'Configuración',
+  'dashPreview.n12': 'Vortex Agency',
+  'dashPreview.n13': 'Plan Pro',
+  'dashPreview.n14': 'Bienvenido de vuelta',
+  'dashPreview.n15': 'Aquí está el resumen de tu actividad',
+  'dashPreview.n16': 'vCredits disponibles',
+  'dashPreview.n17': 'Asignación de Tareas',
+  'dashPreview.n18': '4 activas',
+  'dashPreview.n19': 'Rediseño landing page — Cliente A',
+  'dashPreview.n20': 'En progreso',
+  'dashPreview.n21': 'vence en 3d',
+  'dashPreview.n22': 'Integración API pasarela de pago',
+  'dashPreview.n23': 'Pendiente',
+  'dashPreview.n24': 'vence en 7d',
+  'dashPreview.n25': 'Optimización SEO blog',
+  'dashPreview.n26': 'Completado',
+  'dashPreview.n27': 'entregado',
+  'dashPreview.n28': 'Migración WordPress — Cliente B',
+  'dashPreview.n29': 'vence en 5d',
+  'dashPreview.n30': 'Historial de Consumos',
+  'dashPreview.n31': 'últimos 30 días',
+  'dashPreview.n32': 'Fecha',
+  'dashPreview.n33': 'Proyecto',
+  'dashPreview.n34': 'Horas',
+  'dashPreview.n35': '15 May',
+  'dashPreview.n36': 'Rediseño Cliente A',
+  'dashPreview.n37': '12 May',
+  'dashPreview.n38': 'API Pasarela Pago',
+  'dashPreview.n39': '10 May',
+  'dashPreview.n40': 'SEO Blog',
+  'dashPreview.n41': '8 May',
+  'dashPreview.n42': 'WP Migración B',
+  'dashPreview.n43': 'Ver historial completo',
+  'dashPreview.n44': 'Toggles en Tiempo Real',
+  'dashPreview.n45': 'En vivo',
+  'dashPreview.n46': 'Frontend Development',
+  'dashPreview.n47': 'React, Astro, Tailwind',
+  'dashPreview.n48': 'Mantenimiento y soporte',
+  'dashPreview.n49': 'APIs y Automatización',
+  'dashPreview.n50': 'Integraciones personalizadas',
+  'dashPreview.n51': 'Tu Dashboard de Cliente — Portal de gestión en tiempo real',
+  'dashPreview.n52': 'Navegación del dashboard',
+
+  // ── src/components/ui/TransparencyTracking.astro ──
+  'transparency.n01': 'Transparencia',
+  'transparency.n02': 'Total',
+  'transparency.n03': 'Cada minuto de desarrollo está registrado y visible.',
+  'transparency.n04': 'Sin sorpresas en tu factura.',
+  'transparency.n05': 'Tiempo Real',
+  'transparency.n06':
+    'Cada tarea registra el tiempo exacto de desarrollo. Consulta el progreso en vivo desde tu dashboard.',
+  'transparency.n07': 'Progreso actual',
+  'transparency.n08': '2.4h / 5h estimadas',
+  'transparency.n09': 'Iniciado',
+  'transparency.n10': 'Completado',
+  'transparency.n11': 'Seguimiento activo',
+  'transparency.n12': 'Desglose por Tarea',
+  'transparency.n13':
+    'Visualiza el coste de cada tarea individual: horas invertidas, vCredits consumidos y desarrollador asignado.',
+  'transparency.n14': 'Tarea',
+  'transparency.n15': 'Horas',
+  'transparency.n16': 'Header responsive',
+  'transparency.n17': '3.2h',
+  'transparency.n18': 'API integración',
+  'transparency.n19': '5.8h',
+  'transparency.n20': 'SEO optimización',
+  'transparency.n21': '2.1h',
+  'transparency.n22': '11.1h',
+  'transparency.n23': 'Notificaciones Automáticas',
+  'transparency.n24':
+    'Recibe alertas cuando un proyecto completa un hito o cuando el saldo de vCredits está próximo a agotarse.',
+  'transparency.n25': 'Hito completado',
+  'transparency.n26': 'Dashboard — Fase 1 finalizada',
+  'transparency.n27': 'Hace 2 min',
+  'transparency.n28': 'Saldo bajo',
+  'transparency.n29': 'Quedan 12 vCredits disponibles',
+  'transparency.n30': 'Hace 15 min',
+  'transparency.n31': 'Nueva tarea asignada',
+  'transparency.n32': '"Footer responsive" — Frontend',
+  'transparency.n33': 'Hace 1 h',
+  'transparency.n34': 'Control total. Sin incertidumbre. Resultados medibles.',
+  'transparency.n35': 'Transparencia Total — Sistema de seguimiento por tarea',
+
+  // ── src/components/ui/B2BPainPoints.astro ──
+  'b2bPain.n01': 'Dolor vs Solución',
+  'b2bPain.n02': 'El problema de contratar desarrollo',
+  'b2bPain.n03': 'vs. externalizar con VortexLM',
+  'b2bPain.n04': 'Comparamos el modelo tradicional de contratación con nuestro sistema de',
+  'b2bPain.n05': 'para que veas exactamente qué cambia.',
+  'b2bPain.n06': 'El modelo tradicional',
+  'b2bPain.n07': 'Costes fijos elevados',
+  'b2bPain.n08':
+    'Contratar desarrolladores full-time implica salarios, prestaciones, herramientas, seguros y espacio de trabajo. Un costo mensual fijo alto, incluso cuando no hay carga de trabajo.',
+  'b2bPain.n09': 'Cuellos de botella en capacidad',
+  'b2bPain.n10':
+    'Tu equipo interno tiene capacidad limitada. Cuando llegan proyectos grandes o fechas ajustadas, no puedes escalar rápido. Contratar más personal toma meses.',
+  'b2bPain.n11': 'Sin control de calidad ni marca blanca',
+  'b2bPain.n12':
+    'Externalizar con agencias tradicionales significa perder identidad de marca. El código llega sin estándares, sin documentación, y el cliente final sabe que no fue hecho por tu equipo.',
+  'b2bPain.n13': 'Con VortexLM',
+  'b2bPain.n14': 'Pago por consumo real',
+  'b2bPain.n15': 'Solo pagas por los',
+  'b2bPain.n16':
+    'que consumes. Sin retenedor mensual, sin compromiso. Compra bloques de horas y úsalos cuando los necesites. El control financiero está en tus manos.',
+  'b2bPain.n17': 'Escalabilidad inmediata',
+  'b2bPain.n18':
+    'Asigna tareas desde tu dashboard y nuestro equipo las ejecuta. ¿Necesitas 3 desarrolladores para un proyecto urgente? Listo en 24 horas. ¿Bajas la carga? Simplemente consumes menos vCredits.',
+  'b2bPain.n19': 'Entregas con tu marca',
+  'b2bPain.n20':
+    '100% white label. Todo el código se entrega con tu marca, sin referencias a VortexLM. Incluimos NDA, control de calidad automatizado y documentación completa. Tu cliente final nunca sabrá que externalizaste.',
+  'b2bPain.n21': 'Sin riesgos. Sin compromisos. Solo resultados.',
+  'b2bPain.n22': 'Dolor vs Solución — Por qué externalizar con VortexLM',
+
+  // ── src/components/ui/B2BModel.astro ──
+  'b2bModel.n01': 'El Modelo Vortex',
+  'b2bModel.n02': 'Cómo funcionan los',
+  'b2bModel.n03': 'Tres pasos simples para externalizar desarrollo web con total flexibilidad.',
+  'b2bModel.n04': 'Sin contratos, sin compromisos mensuales.',
+  'b2bModel.n05': 'Paso 1',
+  'b2bModel.n06': 'Paso 2',
+  'b2bModel.n07': 'Paso 3',
+  'b2bModel.n08': 'Compra de vCredits',
+  'b2bModel.n09': 'Adquiere paquetes de',
+  'b2bModel.n10': 'sin contratos fijos. Elige el volumen que mejor se adapte a tu demanda mensual.',
+  'b2bModel.n11': 'Asignación de tareas',
+  'b2bModel.n12':
+    'Publica tus proyectos en el dashboard. Describe el alcance, prioridad y tecnologías (',
+  'b2bModel.n13': 'Frontend, WordPress, APIs',
+  'b2bModel.n14': 'Consumo en tiempo real',
+  'b2bModel.n15':
+    'Activamos a tu equipo dedicado. Cada hora de desarrollo se descuenta de tu saldo de',
+  'b2bModel.n16': 'en tiempo real.',
+  'b2bModel.n17': 'Compra. Asigna. Escala. Sin fricción.',
+  'b2bModel.n18': 'El Modelo Vortex — Cómo funcionan los vCredits',
+  'b2bModel.n02b': 'vCredits',
+
+  // ── src/components/ui/ContactForm.astro ──
+  'contactForm.n01': 'Nombre Completo',
+  'contactForm.n02': 'Correo Corporativo',
+  'contactForm.n03': 'Servicio de Interés',
+  'contactForm.n04': 'Selecciona un servicio',
+  'contactForm.n05': 'Diseño y Desarrollo Web',
+  'contactForm.n06': 'Desarrollo de App Móvil',
+  'contactForm.n07': 'Software a Medida',
+  'contactForm.n08': 'Tus datos están protegidos. Sin spam, garantizado.',
+  'contactForm.n09': 'Ej. Carlos Mendoza',
 } as const;
 
 /** Claves válidas del diccionario (derivadas de `es`). */
@@ -1271,6 +1647,382 @@ export const en: Record<UiKey, string> = {
   'case.cta.hard.body':
     'The technical challenges section explains the 15-minute lock, the conditional IGTF calculation and the permission matrix. If you are going to evaluate the code, that is the best place to start reading it critically.',
   'case.cta.hard.cta': 'Go to the technical challenges',
+
+  // ── Services · Hero (ServicesHero.astro) ──────────────────────────────────
+  'servicesHero.badge': 'Technical Capability',
+  'servicesHero.aria': 'Hero — White label development technical capabilities',
+  'servicesHero.title': 'Development services',
+  'servicesHero.titleAlt': 'white label for your agency',
+  'servicesHero.subtitle':
+    'From frontend with modern technologies to corporate WordPress and complex automations. All the development you need, under your brand.',
+
+  // ── Pricing · Hero (PricingHero.astro) ────────────────────────────────────
+  'pricingHero.badge': 'PRICING',
+  'pricingHero.aria': 'vCredits pricing plans',
+  'pricingHero.titleLead': 'Flexible',
+  'pricingHero.titleTail': 'plans for your agency',
+  'pricingHero.subtitle':
+    'Pay only for the development you consume. No fixed contracts, no monthly commitments. Volume discounts from 500 credits.',
+  'pricingHero.currency': '1 vCredit = $1.05 USD, or the day’s exchange rate in euros',
+
+  // ── B2B · Hero (B2BHero.astro) ────────────────────────────────────────────
+  'b2bHero.badge': 'White Label Technology Partner',
+  'b2bHero.aria':
+    'Main hero — Outsource frontend and WordPress development',
+  'b2bHero.title': 'Outsource development',
+  'b2bHero.titleLine2': 'frontend and WordPress',
+  'b2bHero.titleLine3': 'under your own brand',
+  'b2bHero.subLead':
+    'No fixed contracts or monthly commitments. Our ',
+  'b2bHero.subTail':
+    ' model lets you buy development hours in blocks and consume them on demand. You bring the brief, we deliver production-ready code under your brand — 100% white label, 100% professional.',
+  'b2bHero.ctaDemo': 'Request a Demo',
+  'b2bHero.ctaHow': 'See how it works',
+  'b2bHero.proof': 'Used by digital agencies in Spain and the United States',
+  // ── White Label · Concept (WhiteLabelConcept.astro) ───────────────────────
+  'whiteLabel.badge': 'WHITE LABEL',
+  'whiteLabel.aria': 'White Label — 100% invisible, 100% your brand',
+  'whiteLabel.titleLead': '100% invisible.',
+  'whiteLabel.titleAlt': '100% your brand.',
+  'whiteLabel.subtitle':
+    'We work in the background so your agency looks like the author in front of your clients.',
+  'whiteLabel.p1.title': 'Total White Label',
+  'whiteLabel.p1.desc':
+    'Every deliverable, communication and result is presented as if it came from your agency.',
+  'whiteLabel.p1.note': 'No mentions of VortexLM.',
+  'whiteLabel.p2.title': 'NDA and Confidentiality',
+  'whiteLabel.p2.desc':
+    'We sign confidentiality agreements that protect your relationship with your clients.',
+  'whiteLabel.p2.note': 'Your client roster is sacred.',
+  'whiteLabel.p3.title': 'No Intermediation',
+  'whiteLabel.p3.descLead':
+    'We never contact your clients or present ourselves as a vendor. The commercial relationship is always between',
+  'whiteLabel.p3.descTail': 'your agency and your client.',
+  'whiteLabel.seal.text': 'NDA',
+  'whiteLabel.seal.label': 'Confidentiality Agreement',
+  'whiteLabel.seal.lead': 'Confidentiality Agreement included in',
+  'whiteLabel.seal.strong': 'every project',
+  'whiteLabel.seal.note': 'We protect your relationship with your clients',
+
+  // ── B2B · Explore more (B2BExpandLinks.astro) ─────────────────────────────
+  'expand.badge': 'Explore more',
+  'expand.aria': 'Explore more about VortexLM',
+  'expand.title': 'Everything you need to know',
+  'expand.subLead': 'Discover how our',
+  'expand.subTail':
+    ' model works, explore our services and pick the ideal plan for your agency.',
+  'expand.card1.title': 'How does it work?',
+  'expand.card1.descLead': 'See the full process: from buying',
+  'expand.card1.descTail': 'to the delivery of your project.',
+  'expand.card2.title': 'Services',
+  'expand.card2.desc':
+    'Frontend, WordPress, APIs and more. All the development your agency needs, under your brand.',
+  'expand.card3.title': 'Pricing',
+  'expand.card3.descLead': 'Flexible',
+  'expand.card3.descTail':
+    'plans sized to your agency’s volume. No surprises, no hidden costs.',
+  'expand.ctaMore': 'See more',
+  'expand.footnote': 'No commitments. Explore at your own pace.',
+
+  // ── B2B · Benefits (B2BBenefits.astro) ────────────────────────────────────
+  'b2bBenefits.badge': 'B2B Advantages',
+  'b2bBenefits.aria':
+    'Corporate B2B advantages — Billing, VAT and international payments',
+  'b2bBenefits.title': 'Corporate infrastructure for your agency',
+  'b2bBenefits.subtitle':
+    'Official invoicing, VAT exemption and international payment flexibility.',
+  'b2bBenefits.c1.title': 'Corporate Billing',
+  'b2bBenefits.c1.desc':
+    'We issue official invoices from Vortex Logic LLC, registered in the US. Full tax compliance for your agency.',
+  'b2bBenefits.c2.title': 'VAT Exemption',
+  'b2bBenefits.c2.desc':
+    '0% VAT for agencies in Spain under the European reverse charge mechanism. No withholdings, no extra costs.',
+  'b2bBenefits.c3.title': 'International Payments',
+  'b2bBenefits.c3.desc':
+    'Credit cards, direct bank transfers (ACH in the US, SEPA in Europe) and crypto/digital gateways such as Binance Pay.',
+  'b2bBenefits.bonus.badge': 'Welcome Bonus',
+  'b2bBenefits.bonus.title': '10 free vCredits for your agency',
+  'b2bBenefits.bonus.desc':
+    'The bonus is activated by requesting it directly through our company WhatsApp chat.',
+  'b2bBenefits.bonus.cta': 'Activate 10 free vCredits',
+
+  // ── src/components/ui/TechGrid.astro ──
+  'techGrid.n01': 'Capabilities',
+  'techGrid.n02': 'Technologies we work with',
+  'techGrid.n03': 'Modern stack, extreme performance and clean code.',
+  'techGrid.n04': 'No heavy builders, no shortcuts.',
+  'techGrid.n05': 'High-Performance Frontend Engineering',
+  'techGrid.n06':
+    'We build modern interfaces with Astro, React, Next.js and Tailwind CSS. Native optimization to reach 100/100 on Google PageSpeed, perfect Core Web Vitals and a flawless user experience.',
+  'techGrid.n07': 'SSR / SSG / ISR as needed',
+  'techGrid.n08': 'Native lazy loading',
+  'techGrid.n09': 'Automatic optimized images',
+  'techGrid.n10': 'Built-in technical SEO',
+  'techGrid.n11': 'Corporate WordPress without Bloat',
+  'techGrid.n12':
+    'Clean custom development through native blocks or custom code. We strictly exclude heavy builders (Elementor, Divi, WPBakery) to guarantee atomic speed, clean SEO and easy maintenance.',
+  'techGrid.n13': 'Native Gutenberg blocks',
+  'techGrid.n14': 'No page builders',
+  'techGrid.n15': 'Headless WooCommerce',
+  'techGrid.n16': '95+ PageSpeed performance',
+  'techGrid.n17': 'Automations and Data Integration',
+  'techGrid.n18':
+    'Advanced Webhooks, custom APIs, automated business flows, payment gateways and efficient database handling. We turn manual processes into automated pipelines.',
+  'techGrid.n19': 'RESTful and GraphQL APIs',
+  'techGrid.n20': 'Real-time webhooks',
+  'techGrid.n21': 'Payment gateways (Stripe, PayPal)',
+  'techGrid.n22': 'Efficient ETL and scraping',
+  'techGrid.n23': 'Capabilities — Technologies we work with',
+
+  // ── src/components/ui/PriceCards.astro ──
+  'priceCards.n01': 'PACKAGES',
+  'priceCards.n02': 'Choose the number of',
+  'priceCards.n03': 'Buy credits and use them whenever you need. The balance never expires.',
+  'priceCards.n04': '$1.05/credit',
+  'priceCards.n05': 'Ideal for one-off tasks or quick landing pages.',
+  'priceCards.n06': 'Recommended',
+  'priceCards.n07': '$0.9975/credit',
+  'priceCards.n08': '5% discount',
+  'priceCards.n09': 'The favourite of growing agencies. Real savings.',
+  'priceCards.n10': '$0.945/credit',
+  'priceCards.n11': '10% discount',
+  'priceCards.n12': 'For agencies with a high volume of projects.',
+  'priceCards.n13': 'vCredits packages — Starter, Growth and Scale',
+
+  // ── src/components/ui/MultipliersTable.astro ──
+  'multipliers.n01': 'HOURLY RATES',
+  'multipliers.n02': 'Consumption',
+  'multipliers.n03': 'multipliers',
+  'multipliers.n04': 'Every service has an hourly cost in vCredits. That transparent.',
+  'multipliers.n05': 'Service',
+  'multipliers.n06': 'vCredits/h',
+  'multipliers.n07': 'Final price/h',
+  'multipliers.n08': 'Advanced Development',
+  'multipliers.n09': '(Astro, React, Next.js, APIs)',
+  'multipliers.n10': '15 vCredits',
+  'multipliers.n11': 'Support & WPO',
+  'multipliers.n12': '(WordPress, WooCommerce)',
+  'multipliers.n13': '12 vCredits',
+  'multipliers.n14': 'Advanced Analytics and Infrastructure',
+  'multipliers.n15': '(GA4, GTM)',
+  'multipliers.n16': 'Campaign Management',
+  'multipliers.n17': '(Google/Meta Ads)',
+  'multipliers.n18': 'and Landing Design',
+  'multipliers.n19': '10 vCredits',
+  'multipliers.n20': 'Short Video Editing for Ads',
+  'multipliers.n21': '(Reels/TikTok)',
+  'multipliers.n22': '8 vCredits',
+  'multipliers.n23': 'Creative and Static Banner Design',
+  'multipliers.n24': '6 vCredits',
+  'multipliers.n25': 'vCredits are deducted by actual development minute. No rounding.',
+  'multipliers.n26': 'Hourly rates — Consumption multipliers',
+
+  // ── src/components/ui/PricingFAQ.astro ──
+  'pricingFaq.n01': 'Pricing FAQ',
+  'pricingFaq.n02': 'Everything you need to know about our vCredits and billing system.',
+  'pricingFaq.n03': 'What exactly are vCredits?',
+  'pricingFaq.n04':
+    'vCredits are our internal exchange currency. 1 vCredit equals $1.00 USD net of development. When you buy, you pay $1.05 USD per credit to transparently cover the international Stripe fee, guaranteeing that your balance delivers 100% on your tasks.',
+  'pricingFaq.n05': 'Do vCredits expire?',
+  'pricingFaq.n06':
+    'No. vCredits never expire. You can buy them and use them whenever you need, with no pressure to spend them within a deadline. Ideal for agencies with variable demand.',
+  'pricingFaq.n07': 'How is it invoiced? Is VAT applied?',
+  'pricingFaq.n08':
+    'We issue official invoices from Vortex Logic LLC, registered in the US. For agencies in Spain, we apply 0% VAT under the European reverse charge mechanism. Ask us if you need more tax details.',
+  'pricingFaq.n09': 'Can I combine payment methods?',
+  'pricingFaq.n10':
+    'Yes. We accept credit cards, direct bank transfers (ACH in the US and SEPA in Europe) and crypto/digital gateways such as Binance Pay. You can use whichever method best fits your cash flow.',
+  'pricingFaq.n11': 'What if I don\'t use all the vCredits in the pack?',
+  'pricingFaq.n12':
+    'The remaining balance stays in your account until you decide to use it. There are no penalties for not spending it. And if you need more credits, you can top up at any time with the pack you prefer.',
+  'pricingFaq.n13': 'Does the 10 vCredits welcome bonus have any conditions?',
+  'pricingFaq.n14':
+    'You only need to book a short activation call with our team so we can learn about your needs and confirm we are the right partner for your agency. Once activated, the 10 vCredits are available to test any service with no commitment.',
+  'pricingFaq.n15': 'Pricing FAQ — vCredits and billing',
+
+  // ── src/components/ui/VCreditsExplanation.astro ──
+  'vCreditsExpl.n01': 'THE MODEL',
+  'vCreditsExpl.n02': 'What is a',
+  'vCreditsExpl.n03': 'vCredit',
+  'vCreditsExpl.n04':
+    'A transparent unit of measure that equates specialised development time with predictable investment.',
+  'vCreditsExpl.n05': '1 hour of',
+  'vCreditsExpl.n06': 'specialised development',
+  'vCreditsExpl.n07': 'Frontend',
+  'vCreditsExpl.n08': 'APIs',
+  'vCreditsExpl.n09': 'Revisions',
+  'vCreditsExpl.n10':
+    'Each vCredit represents one hour of work from our multidisciplinary team. No markup, no surprises. What you see is what you pay.',
+  'vCreditsExpl.n11': 'No fixed contracts',
+  'vCreditsExpl.n12':
+    'There are no monthly retainers or lock-ins. Buy vCredits whenever you want and use them at your own pace. You control the spend.',
+  'vCreditsExpl.n13': 'Balance with no expiry',
+  'vCreditsExpl.n14':
+    'Your vCredits never expire. Build up balance and use it when the need arises. Ideal for agencies handling variable workloads.',
+  'vCreditsExpl.n15': 'Real-time consumption',
+  'vCreditsExpl.n16':
+    'Every hour of work is deducted from your balance instantly. Get notifications and keep full control from your dashboard.',
+  'vCreditsExpl.n17': 'Total transparency. No markup. No surprises.',
+  'vCreditsExpl.n18': 'What is a vCredit — A transparent unit of measure',
+
+  // ── src/components/ui/ClientDashboardPreview.astro ──
+  'dashPreview.n01': 'THE PORTAL',
+  'dashPreview.n02': 'Your Client',
+  'dashPreview.n03': 'Dashboard',
+  'dashPreview.n04':
+    'Manage projects, review consumption and control services from a single place.',
+  'dashPreview.n05': 'In real time.',
+  'dashPreview.n06': 'VortexLM Dashboard',
+  'dashPreview.n07': 'My Portal',
+  'dashPreview.n08': 'Dashboard',
+  'dashPreview.n09': 'Projects',
+  'dashPreview.n10': 'Billing',
+  'dashPreview.n11': 'Settings',
+  'dashPreview.n12': 'Vortex Agency',
+  'dashPreview.n13': 'Pro Plan',
+  'dashPreview.n14': 'Welcome back',
+  'dashPreview.n15': 'Here is your activity summary',
+  'dashPreview.n16': 'vCredits available',
+  'dashPreview.n17': 'Task Assignment',
+  'dashPreview.n18': '4 active',
+  'dashPreview.n19': 'Landing page redesign — Client A',
+  'dashPreview.n20': 'In progress',
+  'dashPreview.n21': 'due in 3d',
+  'dashPreview.n22': 'Payment gateway API integration',
+  'dashPreview.n23': 'Pending',
+  'dashPreview.n24': 'due in 7d',
+  'dashPreview.n25': 'Blog SEO optimization',
+  'dashPreview.n26': 'Completed',
+  'dashPreview.n27': 'delivered',
+  'dashPreview.n28': 'WordPress migration — Client B',
+  'dashPreview.n29': 'due in 5d',
+  'dashPreview.n30': 'Consumption History',
+  'dashPreview.n31': 'last 30 days',
+  'dashPreview.n32': 'Date',
+  'dashPreview.n33': 'Project',
+  'dashPreview.n34': 'Hours',
+  'dashPreview.n35': '15 May',
+  'dashPreview.n36': 'Client A Redesign',
+  'dashPreview.n37': '12 May',
+  'dashPreview.n38': 'Payment Gateway API',
+  'dashPreview.n39': '10 May',
+  'dashPreview.n40': 'SEO Blog',
+  'dashPreview.n41': '8 May',
+  'dashPreview.n42': 'WP Migration B',
+  'dashPreview.n43': 'View full history',
+  'dashPreview.n44': 'Real-Time Toggles',
+  'dashPreview.n45': 'Live',
+  'dashPreview.n46': 'Frontend Development',
+  'dashPreview.n47': 'React, Astro, Tailwind',
+  'dashPreview.n48': 'Maintenance and support',
+  'dashPreview.n49': 'APIs and Automation',
+  'dashPreview.n50': 'Custom integrations',
+  'dashPreview.n51': 'Your Client Dashboard — Real-time management portal',
+  'dashPreview.n52': 'Dashboard navigation',
+
+  // ── src/components/ui/TransparencyTracking.astro ──
+  'transparency.n01': 'Transparency',
+  'transparency.n02': 'Total',
+  'transparency.n03': 'Every minute of development is logged and visible.',
+  'transparency.n04': 'No surprises on your invoice.',
+  'transparency.n05': 'Real Time',
+  'transparency.n06':
+    'Each task logs the exact development time. Check live progress from your dashboard.',
+  'transparency.n07': 'Current progress',
+  'transparency.n08': '2.4h / 5h estimated',
+  'transparency.n09': 'Started',
+  'transparency.n10': 'Completed',
+  'transparency.n11': 'Active tracking',
+  'transparency.n12': 'Task Breakdown',
+  'transparency.n13':
+    'See the cost of each individual task: hours invested, vCredits consumed and assigned developer.',
+  'transparency.n14': 'Task',
+  'transparency.n15': 'Hours',
+  'transparency.n16': 'Responsive header',
+  'transparency.n17': '3.2h',
+  'transparency.n18': 'API integration',
+  'transparency.n19': '5.8h',
+  'transparency.n20': 'SEO optimization',
+  'transparency.n21': '2.1h',
+  'transparency.n22': '11.1h',
+  'transparency.n23': 'Automatic Notifications',
+  'transparency.n24':
+    'Get alerts when a project hits a milestone or when the vCredits balance is about to run out.',
+  'transparency.n25': 'Milestone completed',
+  'transparency.n26': 'Dashboard — Phase 1 finished',
+  'transparency.n27': '2 min ago',
+  'transparency.n28': 'Low balance',
+  'transparency.n29': '12 vCredits remaining',
+  'transparency.n30': '15 min ago',
+  'transparency.n31': 'New task assigned',
+  'transparency.n32': '"Responsive footer" — Frontend',
+  'transparency.n33': '1 h ago',
+  'transparency.n34': 'Full control. No uncertainty. Measurable results.',
+  'transparency.n35': 'Total Transparency — Per-task tracking system',
+
+  // ── src/components/ui/B2BPainPoints.astro ──
+  'b2bPain.n01': 'Pain vs Solution',
+  'b2bPain.n02': 'The problem with hiring developers',
+  'b2bPain.n03': 'vs. outsourcing with VortexLM',
+  'b2bPain.n04': 'We compare the traditional hiring model with our system of',
+  'b2bPain.n05': 'so you can see exactly what changes.',
+  'b2bPain.n06': 'The traditional model',
+  'b2bPain.n07': 'High fixed costs',
+  'b2bPain.n08':
+    'Hiring full-time developers means salaries, benefits, tools, insurance and workspace. A high fixed monthly cost, even when there is no workload.',
+  'b2bPain.n09': 'Capacity bottlenecks',
+  'b2bPain.n10':
+    'Your in-house team has limited capacity. When big projects or tight deadlines arrive, you cannot scale fast. Hiring more staff takes months.',
+  'b2bPain.n11': 'No quality control or white label',
+  'b2bPain.n12':
+    'Outsourcing to traditional agencies means losing brand identity. The code arrives without standards, without documentation, and the end client knows it was not built by your team.',
+  'b2bPain.n13': 'With VortexLM',
+  'b2bPain.n14': 'Pay for real consumption',
+  'b2bPain.n15': 'You only pay for the',
+  'b2bPain.n16':
+    'you consume. No monthly retainer, no commitment. Buy blocks of hours and use them when you need them. Financial control is in your hands.',
+  'b2bPain.n17': 'Immediate scalability',
+  'b2bPain.n18':
+    'Assign tasks from your dashboard and our team executes them. Need 3 developers for an urgent project? Ready in 24 hours. Lowering the load? Simply consume fewer vCredits.',
+  'b2bPain.n19': 'Deliveries under your brand',
+  'b2bPain.n20':
+    '100% white label. All the code is delivered under your brand, with no references to VortexLM. We include NDAs, automated quality control and complete documentation. Your end client will never know you outsourced.',
+  'b2bPain.n21': 'No risks. No commitments. Just results.',
+  'b2bPain.n22': 'Pain vs Solution — Why outsource with VortexLM',
+
+  // ── src/components/ui/B2BModel.astro ──
+  'b2bModel.n01': 'The Vortex Model',
+  'b2bModel.n02': 'How',
+  'b2bModel.n03': 'Three simple steps to outsource web development with total flexibility.',
+  'b2bModel.n04': 'No contracts, no monthly commitments.',
+  'b2bModel.n05': 'Step 1',
+  'b2bModel.n06': 'Step 2',
+  'b2bModel.n07': 'Step 3',
+  'b2bModel.n08': 'Buying vCredits',
+  'b2bModel.n09': 'Buy packages of',
+  'b2bModel.n10': 'with no fixed contracts. Choose the volume that best fits your monthly demand.',
+  'b2bModel.n11': 'Task assignment',
+  'b2bModel.n12':
+    'Publish your projects on the dashboard. Describe the scope, priority and technologies (',
+  'b2bModel.n13': 'Frontend, WordPress, APIs',
+  'b2bModel.n14': 'Real-time consumption',
+  'b2bModel.n15':
+    'We activate your dedicated team. Every development hour is deducted from your balance of',
+  'b2bModel.n16': 'in real time.',
+  'b2bModel.n17': 'Buy. Assign. Scale. No friction.',
+  'b2bModel.n18': 'The Vortex Model — How vCredits work',
+  'b2bModel.n02b': 'vCredits work',
+
+  // ── src/components/ui/ContactForm.astro ──
+  'contactForm.n01': 'Full Name',
+  'contactForm.n02': 'Corporate Email',
+  'contactForm.n03': 'Service of Interest',
+  'contactForm.n04': 'Select a service',
+  'contactForm.n05': 'Web Design and Development',
+  'contactForm.n06': 'Mobile App Development',
+  'contactForm.n07': 'Custom Software',
+  'contactForm.n08': 'Your data is protected. No spam, guaranteed.',
+  'contactForm.n09': 'E.g. John Carter',
 };
 
 /** Catálogo completo indexado por locale. */
@@ -1283,6 +2035,3 @@ export const UI: Record<Locale, Record<UiKey, string>> = { es, en };
 export function getDictionary(locale: Locale): Record<UiKey, string> {
   return UI[locale] ?? UI.es;
 }
-
-
-

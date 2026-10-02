@@ -113,6 +113,11 @@ function translateDocument(locale: Locale): void {
     if (value !== null) node.setAttribute('aria-label', value);
   });
 
+  document.querySelectorAll<HTMLElement>('[data-i18n-alt]').forEach((node) => {
+    const value = valueFor(node.getAttribute('data-i18n-alt'));
+    if (value !== null) node.setAttribute('alt', value);
+  });
+
   // <title> de la pestaña y <meta name="description"> (si la página los declara).
   const titleValue = valueFor(document.documentElement.getAttribute('data-i18n-doc-title'));
   if (titleValue !== null) document.title = titleValue;
@@ -125,6 +130,7 @@ function translateDocument(locale: Locale): void {
     if (descriptionValue !== null) descriptionMeta.setAttribute('content', descriptionValue);
   }
 }
+
 /** Refleja el idioma activo en la bandera, el código y la opción marcada. */
 function syncSelectors(locale: Locale): void {
   const meta = LOCALE_META[locale];

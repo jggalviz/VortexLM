@@ -17,19 +17,19 @@ const {
 <div id="form-feedback" class="text-sm mt-4 hidden"></div>
 <form id="contact-form-reusable" class="space-y-4">
   <div>
-    <label for="name" class="block text-sm font-medium text-slate-300 mb-1">Nombre Completo</label>
+    <label for="name" class="block text-sm font-medium text-slate-300 mb-1"><span data-i18n="contactForm.n01">Nombre Completo</span></label>
     <input 
       type="text" 
       id="name" 
       name="name" 
       required 
       class={`w-full px-4 py-3 border rounded-lg text-white focus:outline-none focus:ring-1 transition-all duration-200 ${inputBgClass} ${inputBorderClass}`}
-      placeholder="Ej. Carlos Mendoza"
+      placeholder="Ej. Carlos Mendoza" data-i18n-placeholder="contactForm.n09"
     />
   </div>
   
   <div>
-    <label for="email" class="block text-sm font-medium text-slate-300 mb-1">Correo Corporativo</label>
+    <label for="email" class="block text-sm font-medium text-slate-300 mb-1"><span data-i18n="contactForm.n02">Correo Corporativo</span></label>
     <input 
       type="email" 
       id="email" 
@@ -41,17 +41,17 @@ const {
   </div>
 
   <div>
-    <label for="service" class="block text-sm font-medium text-slate-300 mb-1">Servicio de Interés</label>
+    <label for="service" class="block text-sm font-medium text-slate-300 mb-1"><span data-i18n="contactForm.n03">Servicio de Interés</span></label>
     <select 
       id="service" 
       name="service" 
       required
       class={`w-full px-4 py-3 border rounded-lg text-white focus:outline-none focus:ring-1 transition-all duration-200 appearance-none ${inputBgClass} ${inputBorderClass}`}
     >
-      <option value="" disabled selected>Selecciona un servicio</option>
-      <option value="desarrollo-web">Diseño y Desarrollo Web</option>
-      <option value="app-movil">Desarrollo de App Móvil</option>
-      <option value="software">Software a Medida</option>
+      <option value="" disabled selected><span data-i18n="contactForm.n04">Selecciona un servicio</span></option>
+      <option value="desarrollo-web"><span data-i18n="contactForm.n05">Diseño y Desarrollo Web</span></option>
+      <option value="app-movil"><span data-i18n="contactForm.n06">Desarrollo de App Móvil</span></option>
+      <option value="software"><span data-i18n="contactForm.n07">Software a Medida</span></option>
     </select>
   </div>
 
@@ -65,7 +65,7 @@ const {
   </button>
   
   <p class="text-xs text-slate-300 text-center mt-4">
-    Tus datos están protegidos. Sin spam, garantizado.
+    <span data-i18n="contactForm.n08">Tus datos están protegidos. Sin spam, garantizado.</span>
   </p>
 </form>
 

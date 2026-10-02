@@ -125,13 +125,17 @@ const DYNAMIC_KEYS = [
 ];
 
 const used = new Set(DYNAMIC_KEYS);
+// Prefijos de claves construidas con plantilla (`data-i18n={`ns.${i}.x`}`) que no
+// existen en el diccionario: indica que el nombre de la clave y el del
+// componente se han desincronizado.
+const badTemplatePrefixes = new Set();
 const sources = walk(path.join(ROOT, 'src')).filter(
   (file) => /\.(astro|tsx|ts)$/.test(file) && !file.includes(path.join('i18n', ''))
 );
 
 for (const file of sources) {
   const source = fs.readFileSync(file, 'utf8');
-  for (const match of source.matchAll(/data-i18n(?:-placeholder|-title|-aria-label|-doc-title|-meta-description)?="([^"]+)"/g)) {
+  for (const match of source.matchAll(/data-i18n(?:-placeholder|-title|-aria-label|-alt|-doc-title|-meta-description)?="([^"]+)"/g)) {
     used.add(match[1]);
   }
   for (const match of source.matchAll(/(?:[^A-Za-z0-9_$.]|^)(?:t|translate)\(\s*'([^']+)'/g)) {
@@ -143,6 +147,21 @@ for (const file of sources) {
   // Props de layout que transportan claves (no van en atributos data-i18n*).
   for (const match of source.matchAll(/(?:titleKey|descriptionKey)="([^"]+)"/g)) {
     used.add(match[1]);
+  }
+  // Claves escritas como plantilla JS (`data-i18n={`…`}`): si la plantilla es
+  // estática se valida como un literal; si incluye `${…}` basta con que exista
+  // alguna clave con ese prefijo, que es el contrato entre componente y ui.ts.
+  for (const match of source.matchAll(/data-i18n(?:-[a-z-]+)?=\{`([^`]+)`\}/g)) {
+    const template = match[1];
+    const dynamicAt = template.indexOf('${');
+    if (dynamicAt === -1) {
+      used.add(template);
+      continue;
+    }
+    const prefix = template.slice(0, dynamicAt);
+    if (![...esKeys].some((key) => key.startsWith(prefix))) {
+      badTemplatePrefixes.add(`${prefix}* (${path.relative(ROOT, file)})`);
+    }
   }
 }
 
@@ -156,6 +175,9 @@ if (missingInEs.length) console.log(`  MISSING in es: ${missingInEs.join(', ')}`
 if (missingInEn.length) console.log(`  MISSING in en: ${missingInEn.join(', ')}`);
 if (extraInEn.length) console.log(`  EXTRA in en: ${extraInEn.join(', ')}`);
 if (unreferenced.length) console.log(`  sin referencia (reservadas): ${unreferenced.join(', ')}`);
+if (badTemplatePrefixes.size) {
+  console.log(`  plantilla sin claves en es: ${[...badTemplatePrefixes].join(', ')}`);
+}
 
 // ── Cobertura global del motor ───────────────────────────────────────────
 // El cambio de idioma es un proceso del cliente que recorre el documento, así
@@ -182,6 +204,7 @@ const ok =
   missingInEs.length === 0 &&
   missingInEn.length === 0 &&
   extraInEn.length === 0 &&
+  badTemplatePrefixes.size === 0 &&
   pagesWithoutEngine.length === 0;
 console.log(ok ? 'i18n: OK' : 'i18n: FAILED');
 if (!ok) process.exitCode = 1;

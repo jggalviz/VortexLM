@@ -125,7 +125,7 @@ export function Callout({
 }: {
   icon: LucideIcon
   titulo: string
-  /** Prefijo de clave i18n del título: `<base>.titulo`. */
+  /** Prefijo de clave i18n del título: `<base>.title`. */
   i18nBase?: string
   children: ReactNode
   tone?: "teal" | "amber"
@@ -139,7 +139,7 @@ export function Callout({
     <div className={cn("rounded-2xl border p-5", tonos[tone], className)}>
       <p className="flex items-center gap-2 text-sm font-bold">
         <Icon className="size-4" aria-hidden="true" />
-        <span data-i18n={i18nBase ? `${i18nBase}.titulo` : undefined}>
+        <span data-i18n={i18nBase ? `${i18nBase}.title` : undefined}>
           {titulo}
         </span>
       </p>

@@ -4,7 +4,7 @@
 // Self-contained component, no props, no external dependencies
 ---
 
-<section aria-label="Planes de precios vCredits">
+<section aria-label="Planes de precios vCredits" data-i18n-aria-label="pricingHero.aria">
   <div class="relative">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-32">
 
@@ -12,23 +12,23 @@
       <div class="flex justify-center mb-6">
         <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-linear-border bg-linear-charcoal/50 backdrop-blur-sm text-xs font-label-md tracking-wider uppercase text-linear-muted">
           <span class="w-1.5 h-1.5 rounded-full bg-linear-accent"></span>
-          PRECIOS
+          <span data-i18n="pricingHero.badge">PRECIOS</span>
         </span>
       </div>
 
       <!-- Heading -->
       <h1 class="text-center font-heading text-[clamp(2rem,5vw,4rem)] font-light tracking-tight text-white leading-[1.1] max-w-4xl mx-auto">
-        Planes flexibles de <span class="text-linear-accent">vCredits</span> para tu agencia
+        <span data-i18n="pricingHero.titleLead">Planes flexibles de</span> <span class="text-linear-accent">vCredits</span> <span data-i18n="pricingHero.titleTail">para tu agencia</span>
       </h1>
 
       <!-- Subheading -->
-      <p class="text-center text-neutral-400 font-body-md text-lg max-w-2xl mx-auto mt-6">
+      <p class="text-center text-neutral-400 font-body-md text-lg max-w-2xl mx-auto mt-6" data-i18n="pricingHero.subtitle">
         Paga solo por el desarrollo que consumes. Sin contratos fijos, sin compromisos mensuales. Descuentos por volumen a partir de 500 créditos.
       </p>
 
       <!-- Currency info badge -->
       <div class="flex justify-center mt-8">
-        <span class="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-linear-border bg-linear-charcoal/30 text-sm font-label-md text-linear-muted mx-auto">
+        <span class="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-linear-border bg-linear-charcoal/30 text-sm font-label-md text-linear-muted mx-auto" data-i18n="pricingHero.currency">
           1 vCredit = $1.05 USD o el cambio del día en euros
         </span>
       </div>

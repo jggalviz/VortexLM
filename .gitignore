@@ -16,3 +16,7 @@ dist/
 
 .vercel
 # nota: `.env` y `.env.*` de arriba ya cubren todas las variantes locales
+
+# artefactos temporales de mantenimiento (specs y diccionarios de i18n,
+# logs de lint/verify/build). No se versionan.
+.tmp/

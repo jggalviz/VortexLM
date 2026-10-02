@@ -13,7 +13,7 @@ const { isLanding = false } = Astro.props;
 // Doing so would make the entire Navbar (and thus every page) dependent on Supabase
 // being reachable during SSR. If Supabase is unreachable, the page would fail to render.
 // Instead, we always render the logged-out state from the server, and a lightweight
-// client-side script (<script> below) reads the Supabase session cookie directly
+// client-side script (see the script tag below) reads the Supabase session cookie directly
 // from the browser and updates the button text/link/href accordingly.
 // This is more robust: the Navbar always renders, and the correct auth state appears
 // immediately after the page loads in the browser.

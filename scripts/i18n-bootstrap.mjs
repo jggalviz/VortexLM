@@ -72,8 +72,17 @@ const fixMojibake = (text) => {
 const ENTITIES = {
   amp: '&', lt: '<', gt: '>', quot: '"', apos: "'", nbsp: ' ', mdash: '—',
   ndash: '–', hellip: '…', laquo: '«', raquo: '»', lsquo: '‘', rsquo: '’',
-  ldquo: '“', rdquo: '”', times: '×', middot: '·', deg: '°', euro: '€',
-  hellip_: '…', bull: '•', copy: '©', reg: '®', trade: '™',
+  ldquo: '“', rdquo: '”', times: '×', middot: '·', deg: '°', euro: '€', bull: '•', copy: '©', reg: '®', trade: '™',
+  // Letras acentuadas y símbolos frecuentes (ES/PT/FR). Los valores deben ser
+  // texto plano: el motor del cliente escribe con textContent, no innerHTML.
+  aacute: 'á', eacute: 'é', iacute: 'í', oacute: 'ó', uacute: 'ú', uuml: 'ü',
+  ntilde: 'ñ', Aacute: 'Á', Eacute: 'É', Iacute: 'Í', Oacute: 'Ó', Uacute: 'Ú',
+  Uuml: 'Ü', Ntilde: 'Ñ', agrave: 'à', egrave: 'è', igrave: 'ì', ograve: 'ò',
+  ugrave: 'ù', ccedil: 'ç', Ccedil: 'Ç', auml: 'ä', ouml: 'ö', aelig: 'æ',
+  oelig: 'œ', szlig: 'ß', aring: 'å', oslash: 'ø', Aring: 'Å', Oslash: 'Ø',
+  iexcl: '¡', iquest: '¿', sect: '§', para: '¶', ordm: 'º', ordf: 'ª',
+  sup2: '²', sup3: '³', frac12: '½', frac14: '¼', frac34: '¾',
+  prime: '′', Prime: '″', larr: '←', rarr: '→', harr: '↔', darr: '↓', uarr: '↑',
 };
 const decodeEntities = (text) =>
   text.replace(/&(#x?[0-9a-fA-F]+|[a-zA-Z]+);/g, (whole, code) => {
@@ -107,7 +116,6 @@ function ignoredRanges(src) {
     /<script[\s\S]*?<\/script>/gi,
     /<svg[\s\S]*?<\/svg>/gi,
     /<title[\s\S]*?<\/title>/gi,
-    /<textarea[\s\S]*?<\/textarea>/gi,
     /<pre[\s\S]*?<\/pre>/gi,
     /<code[\s\S]*?<\/code>/gi,
   ];
@@ -145,6 +153,9 @@ function expressionRanges(src) {
 }
 
 const inRanges = (ranges, index) => ranges.some(([from, to]) => index >= from && index < to);
+
+/** ¿El tramo [from, to) solapa algún rango protegido (ignorado o expresión)? */
+const overlaps = (ranges, from, to) => ranges.some(([a, b]) => a < to && b > from);
 
 const VOID_TAGS = new Set([
   'area', 'base', 'br', 'col', 'embed', 'hr', 'img', 'input', 'link', 'meta',
@@ -206,15 +217,16 @@ function scanFile(file, ns) {
     const rawText = src.slice(textIndex, tagStart);
     cursor = tagEnd;
 
-    const tagIgnored = inRanges(ignore, tagStart) || inRanges(expr, tagStart);
-    if (tagIgnored) continue;
-
     const wiredAbove = stack.some((entry) => entry.wired);
+    // El nodo de texto se evalúa SIEMPRE: `tagIgnored` sólo debe saltar el
+    // procesamiento de la etiqueta siguiente (o de su rango ignorado), nunca el
+    // texto que la precede. Sin esto se perdían, por ejemplo, el texto de un
+    // botón o de un CTA seguido de un icono `<svg>`.
     if (
       rawText.trim() &&
       !wiredAbove &&
-      !inRanges(ignore, textIndex) &&
-      !inRanges(expr, textIndex) &&
+      !overlaps(ignore, textIndex, tagStart) &&
+      !overlaps(expr, textIndex, tagStart) &&
       translatable(rawText)
     ) {
       texts.push({
@@ -225,14 +237,18 @@ function scanFile(file, ns) {
       });
     }
 
+    const tagIgnored = inRanges(ignore, tagStart) || inRanges(expr, tagStart);
+    if (tagIgnored) continue;
+
     if (/^<\//.test(tag)) {
       const name = tag.match(/^<\/\s*([a-zA-Z0-9:-]+)/)?.[1]?.toLowerCase();
       while (stack.length && stack.at(-1).name !== name) stack.pop();
       stack.pop();
     } else {
-      const name = tag.match(/^<\s*([a-zA-Z0-9:-]+)/)?.[1]?.toLowerCase() ?? '';
+      const rawName = tag.match(/^<\s*([a-zA-Z0-9:-]+)/)?.[1] ?? '';
+      const name = rawName.toLowerCase();
       const selfClosing = /\/>$/.test(tag) || VOID_TAGS.has(name);
-      const wired = /\sdata-i18n(-[a-z-]+)?[=\s]/.test(tag);
+      const wired = /\sdata-i18n[=\s]/.test(tag);
       if (!selfClosing) stack.push({ name, wired });
       const marks = {
         'aria-label': 'data-i18n-aria-label',
@@ -240,12 +256,19 @@ function scanFile(file, ns) {
         alt: 'data-i18n-alt',
         title: 'data-i18n-title',
       };
-      const attrRe = /(aria-label|placeholder|alt|title)="([^"]*)"/g;
+      // El límite inicial evita confundir props que terminan igual
+      // (`subtitle=`, `data-placeholder=`, `x-alt=`) con el atributo real.
+      const attrRe = /(?<![A-Za-z0-9-])(aria-label|placeholder|alt|title)="([^"]*)"/g;
       let am;
       while ((am = attrRe.exec(tag)) !== null) {
         const attrString = am[0];
         const attrName = am[1];
         const value = am[2];
+        // `title` sólo es un tooltip real en etiquetas HTML. En componentes Astro
+        // (`<BaseLayout title=…>`, `<HeroService title=…>`, `<ServiceCard title=…>`)
+        // es una prop de copy: se traduce pasándole su clave (`titleKey`) en lugar
+        // de añadir un `data-i18n-title` que el componente descartaría.
+        if (attrName === 'title' && /^[A-Z]/.test(rawName)) continue;
         if (tag.includes(marks[attrName])) continue;
         if (!translatable(value)) continue;
         const at = tagStart + am.index;

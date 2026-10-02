@@ -20,27 +20,27 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
       <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-white/[0.015] blur-[120px] rounded-full pointer-events-none"></div>
 
       <h1 class="text-4xl md:text-7xl font-extralight tracking-tight text-white mb-8 leading-[1.08] max-w-4xl mx-auto opacity-95">
-        Desarrollo Web en Caracas: Ingeniería de Software a Medida
+        <span data-i18n="svcDevCaracas.n01">Desarrollo Web en Caracas: Ingeniería de Software a Medida</span>
       </h1>
 
       <p class="text-base md:text-lg text-[#cbd5e1] font-light mb-12 max-w-3xl mx-auto leading-relaxed">
-        Creamos aplicaciones web progresivas, integraciones de API robustas y plataformas 
+        <span data-i18n="svcDevCaracas.n02">Creamos aplicaciones web progresivas, integraciones de API robustas y plataformas 
         headless que escalan con tu negocio. Astro, React, Next.js y Supabase — 
-        el stack definitivo para empresas que exigen rendimiento.
+        el stack definitivo para empresas que exigen rendimiento.</span>
       </p>
 
       <div class="flex flex-col sm:flex-row items-center justify-center gap-6 mb-20">
         <a href="#contacto" class="w-full sm:w-auto px-8 py-3 bg-white text-black font-semibold text-xs rounded-full hover:bg-neutral-200 transition-all text-center duration-200 active:scale-95 shadow-[0_0_25px_rgba(255,255,255,0.15)]">
-          Cotizar Solución Técnica
+          <span data-i18n="svcDevCaracas.n03">Cotizar Solución Técnica</span>
         </a>
         <a href="#soluciones" class="w-full sm:w-auto px-6 py-3 text-white/90 font-medium text-xs rounded-full hover:text-white flex items-center justify-center gap-1.5 group transition-colors">
-          Ver soluciones <span class="group-hover:translate-x-1 transition-transform">➔</span>
+          <span data-i18n="svcDevCaracas.n04">Ver soluciones</span> <span class="group-hover:translate-x-1 transition-transform">➔</span>
         </a>
       </div>
 
       <!-- Mockup de consola/API visual -->
       <div class="relative max-w-5xl mx-auto">
-        <div class="linear-card rounded-lg overflow-hidden border border-[#2e2e34] shadow-[0_50px_100px_-20px_rgba(0,0,0,0.98)]" role="img" aria-label="Consola de API RESTful con código TypeScript - Desarrollo web en Caracas">
+        <div class="linear-card rounded-lg overflow-hidden border border-[#2e2e34] shadow-[0_50px_100px_-20px_rgba(0,0,0,0.98)]" role="img" aria-label="Consola de API RESTful con código TypeScript - Desarrollo web en Caracas" data-i18n-aria-label="svcDevCaracas.n159">
           <div class="bg-[#08080c] px-4 py-3.5 flex items-center justify-between border-b border-[#1f1f24]">
             <div class="flex items-center gap-2">
               <span class="w-2.5 h-2.5 rounded-full bg-[#ff5f56]/50"></span>
@@ -48,8 +48,8 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
               <span class="w-2.5 h-2.5 rounded-full bg-[#27c93f]/50"></span>
             </div>
             <div class="text-[10px] font-mono text-[#cbd5e1]/40 flex items-center gap-1.5">
-              <span class="material-symbols-outlined text-[10px]">terminal</span>
-              vortex-api-server // build:production
+              <span class="material-symbols-outlined text-[10px]"><span data-i18n="svcDevCaracas.n05">terminal</span></span>
+              <span data-i18n="svcDevCaracas.n06">vortex-api-server // build:production</span>
             </div>
             <div class="w-12"></div>
           </div>
@@ -60,58 +60,58 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
               <div class="flex items-center gap-3 text-[10px] text-[#cbd5e1]/60 border-b border-[#1f1f24] pb-3 mb-4">
                 <span class="flex items-center gap-1.5">
                   <span class="w-1.5 h-1.5 rounded-full bg-cyan-500"></span>
-                  api/endpoints.ts
+                  <span data-i18n="svcDevCaracas.n07">api/endpoints.ts</span>
                 </span>
                 <span class="flex items-center gap-1.5">
                   <span class="w-1.5 h-1.5 rounded-full bg-purple-500"></span>
-                  components/
+                  <span data-i18n="svcDevCaracas.n08">components/</span>
                 </span>
                 <span class="flex items-center gap-1.5">
                   <span class="w-1.5 h-1.5 rounded-full bg-green-500"></span>
-                  db/schema.ts
+                  <span data-i18n="svcDevCaracas.n09">db/schema.ts</span>
                 </span>
               </div>
 
               <div class="space-y-1.5">
-                <div><span class="text-purple-400">import</span> { <span class="text-yellow-200">supabase</span> } <span class="text-purple-400">from</span> <span class="text-green-300">'../db/client'</span>;</div>
-                <div><span class="text-purple-400">import</span> { <span class="text-yellow-200">defineEndpoint</span> } <span class="text-purple-400">from</span> <span class="text-green-300">'@vortex/api'</span>;</div>
-                <div class="text-[#cbd5e1]/40">// Endpoint RESTful con validación y rate-limiting</div>
+                <div><span class="text-purple-400"><span data-i18n="svcDevCaracas.n10">import</span></span> { <span class="text-yellow-200"><span data-i18n="svcDevCaracas.n21">supabase</span></span> } <span class="text-purple-400"><span data-i18n="svcDevCaracas.n11">from</span></span> <span class="text-green-300"><span data-i18n="svcDevCaracas.n12">'../db/client'</span></span>;</div>
+                <div><span class="text-purple-400"><span data-i18n="svcDevCaracas.n10">import</span></span> { <span class="text-yellow-200">defineEndpoint</span> } <span class="text-purple-400"><span data-i18n="svcDevCaracas.n11">from</span></span> <span class="text-green-300"><span data-i18n="svcDevCaracas.n13">'@vortex/api'</span></span>;</div>
+                <div class="text-[#cbd5e1]/40"><span data-i18n="svcDevCaracas.n14">// Endpoint RESTful con validación y rate-limiting</span></div>
                 <br />
-                <div><span class="text-blue-400">export const</span> <span class="text-yellow-200">GET</span> = defineEndpoint(<span class="text-purple-400">async</span> (&#123; req, res &#125;) <span class="text-purple-400">=></span> &#123;</div>
-                <div class="pl-4"><span class="text-blue-400">const</span> { <span class="text-yellow-200">data</span> } = <span class="text-purple-400">await</span> <span class="text-yellow-200">supabase</span></div>
-                <div class="pl-8">.<span class="text-yellow-200">from</span>(<span class="text-green-300">'clientes'</span>)</div>
-                <div class="pl-8">.<span class="text-yellow-200">select</span>(<span class="text-green-300">'*'</span>)</div>
-                <div class="pl-8">.<span class="text-yellow-200">limit</span>(<span class="text-yellow-400">100</span>);</div>
+                <div><span class="text-blue-400"><span data-i18n="svcDevCaracas.n15">export const</span></span> <span class="text-yellow-200">GET</span> <span data-i18n="svcDevCaracas.n16">= defineEndpoint(</span><span class="text-purple-400"><span data-i18n="svcDevCaracas.n17">async</span></span> <span data-i18n="svcDevCaracas.n18">(&#123; req, res &#125;)</span> <span class="text-purple-400">=></span> &#123;</div>
+                <div class="pl-4"><span class="text-blue-400"><span data-i18n="svcDevCaracas.n19">const</span></span> { <span class="text-yellow-200">data</span> } = <span class="text-purple-400"><span data-i18n="svcDevCaracas.n20">await</span></span> <span class="text-yellow-200"><span data-i18n="svcDevCaracas.n21">supabase</span></span></div>
+                <div class="pl-8">.<span class="text-yellow-200"><span data-i18n="svcDevCaracas.n11">from</span></span>(<span class="text-green-300"><span data-i18n="svcDevCaracas.n22">'clientes'</span></span>)</div>
+                <div class="pl-8">.<span class="text-yellow-200"><span data-i18n="svcDevCaracas.n23">select</span></span>(<span class="text-green-300">'*'</span>)</div>
+                <div class="pl-8">.<span class="text-yellow-200"><span data-i18n="svcDevCaracas.n24">limit</span></span>(<span class="text-yellow-400">100</span>);</div>
                 <br />
-                <div class="pl-4"><span class="text-purple-400">return</span> res</div>
-                <div class="pl-8">.<span class="text-yellow-200">status</span>(<span class="text-yellow-400">200</span>)</div>
-                <div class="pl-8">.<span class="text-yellow-200">json</span>(&#123; data, meta: &#123; cached: <span class="text-blue-400">true</span>, latency: <span class="text-yellow-400">12ms</span> &#125;&#125;);</div>
+                <div class="pl-4"><span class="text-purple-400"><span data-i18n="svcDevCaracas.n25">return</span></span> <span data-i18n="svcDevCaracas.n26">res</span></div>
+                <div class="pl-8">.<span class="text-yellow-200"><span data-i18n="svcDevCaracas.n27">status</span></span>(<span class="text-yellow-400">200</span>)</div>
+                <div class="pl-8">.<span class="text-yellow-200"><span data-i18n="svcDevCaracas.n28">json</span></span><span data-i18n="svcDevCaracas.n29">(&#123; data, meta: &#123; cached:</span> <span class="text-blue-400"><span data-i18n="svcDevCaracas.n30">true</span></span><span data-i18n="svcDevCaracas.n31">, latency:</span> <span class="text-yellow-400"><span data-i18n="svcDevCaracas.n32">12ms</span></span> &#125;&#125;);</div>
                 <div>});</div>
               </div>
             </div>
 
             <!-- Panel derecho: logs de respuesta API -->
             <div class="col-span-1 md:col-span-4 p-6 bg-[#050507]/30 font-mono text-[10px]">
-              <div class="text-[9px] uppercase tracking-wider text-[#cbd5e1]/40 mb-4 font-semibold">Response Log</div>
+              <div class="text-[9px] uppercase tracking-wider text-[#cbd5e1]/40 mb-4 font-semibold"><span data-i18n="svcDevCaracas.n33">Response Log</span></div>
               <div class="space-y-2">
                 <div class="p-2 border border-[#1f1f24] rounded bg-black/40">
-                  <div class="text-green-400">200 OK</div>
-                  <div class="text-[#cbd5e1]/60">GET /api/clientes</div>
-                  <div class="text-[#cbd5e1]/40 text-[9px]">12ms · 1420 rows</div>
+                  <div class="text-green-400"><span data-i18n="svcDevCaracas.n34">200 OK</span></div>
+                  <div class="text-[#cbd5e1]/60"><span data-i18n="svcDevCaracas.n35">GET /api/clientes</span></div>
+                  <div class="text-[#cbd5e1]/40 text-[9px]"><span data-i18n="svcDevCaracas.n36">12ms · 1420 rows</span></div>
                 </div>
                 <div class="p-2 border border-[#1f1f24] rounded bg-black/40">
-                  <div class="text-green-400">201 Created</div>
-                  <div class="text-[#cbd5e1]/60">POST /api/contacto</div>
-                  <div class="text-[#cbd5e1]/40 text-[9px]">8ms · payload 2.4KB</div>
+                  <div class="text-green-400"><span data-i18n="svcDevCaracas.n37">201 Created</span></div>
+                  <div class="text-[#cbd5e1]/60"><span data-i18n="svcDevCaracas.n38">POST /api/contacto</span></div>
+                  <div class="text-[#cbd5e1]/40 text-[9px]"><span data-i18n="svcDevCaracas.n39">8ms · payload 2.4KB</span></div>
                 </div>
                 <div class="p-2 border border-[#1f1f24] rounded bg-black/40">
-                  <div class="text-yellow-400">304 Not Modified</div>
-                  <div class="text-[#cbd5e1]/60">GET /api/productos</div>
-                  <div class="text-[#cbd5e1]/40 text-[9px]">2ms · cached</div>
+                  <div class="text-yellow-400"><span data-i18n="svcDevCaracas.n40">304 Not Modified</span></div>
+                  <div class="text-[#cbd5e1]/60"><span data-i18n="svcDevCaracas.n41">GET /api/productos</span></div>
+                  <div class="text-[#cbd5e1]/40 text-[9px]"><span data-i18n="svcDevCaracas.n42">2ms · cached</span></div>
                 </div>
                 <div class="border-t border-[#1f1f24]/50 pt-2 mt-2">
-                  <div class="text-[#cbd5e1]/40">Uptime: 99.99%</div>
-                  <div class="text-green-500">SSL · WAF · Rate Limited</div>
+                  <div class="text-[#cbd5e1]/40"><span data-i18n="svcDevCaracas.n43">Uptime: 99.99%</span></div>
+                  <div class="text-green-500"><span data-i18n="svcDevCaracas.n44">SSL · WAF · Rate Limited</span></div>
                 </div>
               </div>
             </div>
@@ -125,9 +125,9 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
   <section id="soluciones" class="py-36 px-6 md:px-12 bg-black relative border-b border-[#1f1f24]">
     <div class="max-w-[1200px] mx-auto relative z-10">
       <div class="max-w-4xl mb-24">
-        <span class="text-[10px] font-mono text-[#cbd5e1] uppercase tracking-widest block mb-3 font-medium">Soluciones Avanzadas</span>
+        <span class="text-[10px] font-mono text-[#cbd5e1] uppercase tracking-widest block mb-3 font-medium"><span data-i18n="svcDevCaracas.n45">Soluciones Avanzadas</span></span>
         <h2 class="text-2xl md:text-4xl font-light text-white tracking-tight leading-snug">
-          Arquitectura de software moderna para empresas que necesitan más que un sitio web.
+          <span data-i18n="svcDevCaracas.n46">Arquitectura de software moderna para empresas que necesitan más que un sitio web.</span>
         </h2>
       </div>
 
@@ -146,16 +146,16 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
             </svg>
           </div>
           <div>
-            <h3 class="text-sm font-medium text-white mb-2.5">Progressive Web Apps (PWA)</h3>
+            <h3 class="text-sm font-medium text-white mb-2.5"><span data-i18n="svcDevCaracas.n47">Progressive Web Apps (PWA)</span></h3>
             <p class="text-xs text-[#cbd5e1] leading-relaxed">
-              Transformamos tu web en una experiencia de aplicación nativa con service workers, 
+              <span data-i18n="svcDevCaracas.n48">Transformamos tu web en una experiencia de aplicación nativa con service workers, 
               caché offline, notificaciones push y carga instantánea. Tus usuarios en Caracas 
-              acceden a tu plataforma incluso sin conexión a internet.
+              acceden a tu plataforma incluso sin conexión a internet.</span>
             </p>
             <ul class="space-y-1 mt-3 text-[10px] text-[#cbd5e1] font-mono">
-              <li class="flex items-center gap-1.5"><span class="text-green-400">→</span> Instalable en home screen</li>
-              <li class="flex items-center gap-1.5"><span class="text-green-400">→</span> Sincronización en segundo plano</li>
-              <li class="flex items-center gap-1.5"><span class="text-green-400">→</span> 90% menos datos que app nativa</li>
+              <li class="flex items-center gap-1.5"><span class="text-green-400">→</span> <span data-i18n="svcDevCaracas.n49">Instalable en home screen</span></li>
+              <li class="flex items-center gap-1.5"><span class="text-green-400">→</span> <span data-i18n="svcDevCaracas.n50">Sincronización en segundo plano</span></li>
+              <li class="flex items-center gap-1.5"><span class="text-green-400">→</span> <span data-i18n="svcDevCaracas.n51">90% menos datos que app nativa</span></li>
             </ul>
           </div>
         </div>
@@ -176,16 +176,16 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
             </svg>
           </div>
           <div>
-            <h3 class="text-sm font-medium text-white mb-2.5">Integraciones de API y CRMs</h3>
+            <h3 class="text-sm font-medium text-white mb-2.5"><span data-i18n="svcDevCaracas.n52">Integraciones de API y CRMs</span></h3>
             <p class="text-xs text-[#cbd5e1] leading-relaxed">
-              Conectamos tu web con los sistemas que ya usas: CRMs como Salesforce o HubSpot, 
+              <span data-i18n="svcDevCaracas.n53">Conectamos tu web con los sistemas que ya usas: CRMs como Salesforce o HubSpot, 
               pasarelas de pago, ERP contable, sistemas de inventario y cualquier API REST 
-              o GraphQL. Flujos automatizados que eliminan procesos manuales.
+              o GraphQL. Flujos automatizados que eliminan procesos manuales.</span>
             </p>
             <ul class="space-y-1 mt-3 text-[10px] text-[#cbd5e1] font-mono">
-              <li class="flex items-center gap-1.5"><span class="text-green-400">→</span> Webhooks en tiempo real</li>
-              <li class="flex items-center gap-1.5"><span class="text-green-400">→</span> Autenticación OAuth 2.0 / JWT</li>
-              <li class="flex items-center gap-1.5"><span class="text-green-400">→</span> Documentación Swagger/OpenAPI</li>
+              <li class="flex items-center gap-1.5"><span class="text-green-400">→</span> <span data-i18n="svcDevCaracas.n54">Webhooks en tiempo real</span></li>
+              <li class="flex items-center gap-1.5"><span class="text-green-400">→</span> <span data-i18n="svcDevCaracas.n55">Autenticación OAuth 2.0 / JWT</span></li>
+              <li class="flex items-center gap-1.5"><span class="text-green-400">→</span> <span data-i18n="svcDevCaracas.n56">Documentación Swagger/OpenAPI</span></li>
             </ul>
           </div>
         </div>
@@ -204,16 +204,16 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
             </svg>
           </div>
           <div>
-            <h3 class="text-sm font-medium text-white mb-2.5">Bases de Datos Headless</h3>
+            <h3 class="text-sm font-medium text-white mb-2.5"><span data-i18n="svcDevCaracas.n57">Bases de Datos Headless</span></h3>
             <p class="text-xs text-[#cbd5e1] leading-relaxed">
-              Arquitectura desacoplada con Supabase (PostgreSQL), Airtable o MongoDB. 
+              <span data-i18n="svcDevCaracas.n58">Arquitectura desacoplada con Supabase (PostgreSQL), Airtable o MongoDB. 
               Tu equipo accede y edita los datos desde un panel amigable mientras el frontend 
-              consume la información via API. Escalabilidad horizontal sin límites.
+              consume la información via API. Escalabilidad horizontal sin límites.</span>
             </p>
             <ul class="space-y-1 mt-3 text-[10px] text-[#cbd5e1] font-mono">
-              <li class="flex items-center gap-1.5"><span class="text-green-400">→</span> Realtime subscriptions (WebSockets)</li>
-              <li class="flex items-center gap-1.5"><span class="text-green-400">→</span> Row Level Security integrado</li>
-              <li class="flex items-center gap-1.5"><span class="text-green-400">→</span> Migraciones automatizadas</li>
+              <li class="flex items-center gap-1.5"><span class="text-green-400">→</span> <span data-i18n="svcDevCaracas.n59">Realtime subscriptions (WebSockets)</span></li>
+              <li class="flex items-center gap-1.5"><span class="text-green-400">→</span> <span data-i18n="svcDevCaracas.n60">Row Level Security integrado</span></li>
+              <li class="flex items-center gap-1.5"><span class="text-green-400">→</span> <span data-i18n="svcDevCaracas.n61">Migraciones automatizadas</span></li>
             </ul>
           </div>
         </div>
@@ -228,32 +228,32 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
       <!-- Bloque: Stack Técnico -->
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
         <div class="lg:col-span-5 space-y-5">
-          <span class="text-[10px] font-mono text-[#cbd5e1] uppercase tracking-widest block font-medium">Stack Técnico</span>
+          <span class="text-[10px] font-mono text-[#cbd5e1] uppercase tracking-widest block font-medium"><span data-i18n="svcDevCaracas.n62">Stack Técnico</span></span>
           <h2 class="text-2xl md:text-4xl font-light text-white tracking-tight leading-tight">
-            El stack que usan las startups más innovadoras del mundo.
+            <span data-i18n="svcDevCaracas.n63">El stack que usan las startups más innovadoras del mundo.</span>
           </h2>
           <p class="text-sm text-[#cbd5e1] font-light leading-relaxed">
-            Astro para velocidad extrema, React para interactividad, Supabase como backend 
+            <span data-i18n="svcDevCaracas.n64">Astro para velocidad extrema, React para interactividad, Supabase como backend 
             escalable y Vercel para despliegues globales. Cada tecnología es seleccionada 
             por su rendimiento, seguridad y ecosistema. No usamos código legacy ni dependencias 
-            innecesarias.
+            innecesarias.</span>
           </p>
           <ul class="space-y-2 text-xs text-[#cbd5e1] font-light">
             <li class="flex items-center gap-2">
-              <span class="material-symbols-outlined text-sm text-green-400">check_circle</span>
-              Astro + React Islands Architecture
+              <span class="material-symbols-outlined text-sm text-green-400"><span data-i18n="svcDevCaracas.n65">check_circle</span></span>
+              <span data-i18n="svcDevCaracas.n66">Astro + React Islands Architecture</span>
             </li>
             <li class="flex items-center gap-2">
-              <span class="material-symbols-outlined text-sm text-green-400">check_circle</span>
-              TypeScript estricto en toda la codebase
+              <span class="material-symbols-outlined text-sm text-green-400"><span data-i18n="svcDevCaracas.n65">check_circle</span></span>
+              <span data-i18n="svcDevCaracas.n67">TypeScript estricto en toda la codebase</span>
             </li>
             <li class="flex items-center gap-2">
-              <span class="material-symbols-outlined text-sm text-green-400">check_circle</span>
-              Testing automatizado (Vitest + Playwright)
+              <span class="material-symbols-outlined text-sm text-green-400"><span data-i18n="svcDevCaracas.n65">check_circle</span></span>
+              <span data-i18n="svcDevCaracas.n68">Testing automatizado (Vitest + Playwright)</span>
             </li>
             <li class="flex items-center gap-2">
-              <span class="material-symbols-outlined text-sm text-green-400">check_circle</span>
-              CI/CD con deploys automáticos desde GitHub
+              <span class="material-symbols-outlined text-sm text-green-400"><span data-i18n="svcDevCaracas.n65">check_circle</span></span>
+              <span data-i18n="svcDevCaracas.n69">CI/CD con deploys automáticos desde GitHub</span>
             </li>
           </ul>
         </div>
@@ -261,40 +261,40 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         <div class="lg:col-span-7">
           <div class="linear-card rounded-lg border border-[#1f1f24] overflow-hidden bg-[#08080c]/50 p-8 shadow-2xl relative">
             <div class="absolute inset-0 font-mono text-[8px] text-[#1f1f24] p-6 select-none overflow-hidden leading-relaxed pointer-events-none opacity-20">
-              // Arquitectura<br />
-              client → CDN → Edge<br />
+              <span data-i18n="svcDevCaracas.n70">// Arquitectura</span><br />
+              <span data-i18n="svcDevCaracas.n71">client → CDN → Edge</span><br />
               ↓<br />
-              Astro SSR + API Routes<br />
+              <span data-i18n="svcDevCaracas.n72">Astro SSR + API Routes</span><br />
               ↓<br />
-              Supabase PostgreSQL<br />
+              <span data-i18n="svcDevCaracas.n73">Supabase PostgreSQL</span><br />
               ↓<br />
-              WebSocket Realtime
+              <span data-i18n="svcDevCaracas.n74">WebSocket Realtime</span>
             </div>
 
             <div class="flex items-center justify-between border-b border-[#1f1f24] pb-4 mb-6 relative z-10">
               <span class="text-[10px] font-mono text-[#cbd5e1] flex items-center gap-1.5">
                 <span class="w-1.5 h-1.5 rounded-full bg-cyan-500"></span>
-                architecture // vortex-stack
+                <span data-i18n="svcDevCaracas.n75">architecture // vortex-stack</span>
               </span>
-              <span class="text-[9px] text-[#cbd5e1]/40 font-mono">Producción</span>
+              <span class="text-[9px] text-[#cbd5e1]/40 font-mono"><span data-i18n="svcDevCaracas.n76">Producción</span></span>
             </div>
 
             <div class="grid grid-cols-2 gap-4 relative z-10">
               <div class="p-4 border border-[#1f1f24] rounded bg-black/40">
-                <span class="text-[10px] font-mono text-cyan-400 block mb-1">Frontend</span>
-                <span class="text-xs text-white/90">Astro + React + Tailwind</span>
+                <span class="text-[10px] font-mono text-cyan-400 block mb-1"><span data-i18n="svcDevCaracas.n77">Frontend</span></span>
+                <span class="text-xs text-white/90"><span data-i18n="svcDevCaracas.n78">Astro + React + Tailwind</span></span>
               </div>
               <div class="p-4 border border-[#1f1f24] rounded bg-black/40">
-                <span class="text-[10px] font-mono text-cyan-400 block mb-1">Backend</span>
-                <span class="text-xs text-white/90">Supabase + API Routes</span>
+                <span class="text-[10px] font-mono text-cyan-400 block mb-1"><span data-i18n="svcDevCaracas.n79">Backend</span></span>
+                <span class="text-xs text-white/90"><span data-i18n="svcDevCaracas.n80">Supabase + API Routes</span></span>
               </div>
               <div class="p-4 border border-[#1f1f24] rounded bg-black/40">
-                <span class="text-[10px] font-mono text-cyan-400 block mb-1">Despliegue</span>
-                <span class="text-xs text-white/90">Vercel Edge Network</span>
+                <span class="text-[10px] font-mono text-cyan-400 block mb-1"><span data-i18n="svcDevCaracas.n81">Despliegue</span></span>
+                <span class="text-xs text-white/90"><span data-i18n="svcDevCaracas.n82">Vercel Edge Network</span></span>
               </div>
               <div class="p-4 border border-[#1f1f24] rounded bg-black/40">
-                <span class="text-[10px] font-mono text-cyan-400 block mb-1">Base de Datos</span>
-                <span class="text-xs text-white/90">PostgreSQL / Airtable</span>
+                <span class="text-[10px] font-mono text-cyan-400 block mb-1"><span data-i18n="svcDevCaracas.n83">Base de Datos</span></span>
+                <span class="text-xs text-white/90"><span data-i18n="svcDevCaracas.n84">PostgreSQL / Airtable</span></span>
               </div>
             </div>
           </div>
@@ -308,9 +308,9 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
             <div class="flex items-center justify-between border-b border-[#1f1f24] pb-4 mb-4">
               <span class="text-[10px] font-mono text-[#cbd5e1] flex items-center gap-1.5">
                 <span class="w-1.5 h-1.5 rounded-full bg-purple-500"></span>
-                data-flow // api-pipeline
+                <span data-i18n="svcDevCaracas.n85">data-flow // api-pipeline</span>
               </span>
-              <span class="text-[9px] text-[#cbd5e1]/40 font-mono">WebSocket Realtime</span>
+              <span class="text-[9px] text-[#cbd5e1]/40 font-mono"><span data-i18n="svcDevCaracas.n74">WebSocket Realtime</span></span>
             </div>
 
             <!-- Diagrama de flujo de datos visual -->
@@ -319,29 +319,29 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
                 <!-- Cliente -->
                 <div class="flex flex-col items-center gap-1">
                   <div class="w-12 h-12 border border-[#1f1f24] rounded-lg bg-black/60 flex items-center justify-center">
-                    <span class="material-symbols-outlined text-sm text-white/80">devices</span>
+                    <span class="material-symbols-outlined text-sm text-white/80"><span data-i18n="svcDevCaracas.n86">devices</span></span>
                   </div>
-                  <span class="text-[8px] font-mono text-[#cbd5e1]/60">Cliente</span>
+                  <span class="text-[8px] font-mono text-[#cbd5e1]/60"><span data-i18n="svcDevCaracas.n87">Cliente</span></span>
                 </div>
                 <div class="flex-1 h-px bg-gradient-to-r from-[#1f1f24] to-cyan-500/30 relative">
-                  <span class="absolute -top-3 left-1/2 -translate-x-1/2 text-[7px] font-mono text-[#cbd5e1]/30">HTTPS</span>
+                  <span class="absolute -top-3 left-1/2 -translate-x-1/2 text-[7px] font-mono text-[#cbd5e1]/30"><span data-i18n="svcDevCaracas.n88">HTTPS</span></span>
                 </div>
                 <!-- CDN -->
                 <div class="flex flex-col items-center gap-1">
                   <div class="w-12 h-12 border border-[#1f1f24] rounded-lg bg-black/60 flex items-center justify-center">
-                    <span class="material-symbols-outlined text-sm text-cyan-400">cloud</span>
+                    <span class="material-symbols-outlined text-sm text-cyan-400"><span data-i18n="svcDevCaracas.n89">cloud</span></span>
                   </div>
-                  <span class="text-[8px] font-mono text-[#cbd5e1]/60">Edge CDN</span>
+                  <span class="text-[8px] font-mono text-[#cbd5e1]/60"><span data-i18n="svcDevCaracas.n90">Edge CDN</span></span>
                 </div>
                 <div class="flex-1 h-px bg-gradient-to-r from-cyan-500/30 to-purple-500/30 relative">
-                  <span class="absolute -top-3 left-1/2 -translate-x-1/2 text-[7px] font-mono text-[#cbd5e1]/30">~12ms</span>
+                  <span class="absolute -top-3 left-1/2 -translate-x-1/2 text-[7px] font-mono text-[#cbd5e1]/30"><span data-i18n="svcDevCaracas.n91">~12ms</span></span>
                 </div>
                 <!-- API Server -->
                 <div class="flex flex-col items-center gap-1">
                   <div class="w-12 h-12 border border-[#1f1f24] rounded-lg bg-black/60 flex items-center justify-center">
-                    <span class="material-symbols-outlined text-sm text-purple-400">dns</span>
+                    <span class="material-symbols-outlined text-sm text-purple-400"><span data-i18n="svcDevCaracas.n92">dns</span></span>
                   </div>
-                  <span class="text-[8px] font-mono text-[#cbd5e1]/60">API Server</span>
+                  <span class="text-[8px] font-mono text-[#cbd5e1]/60"><span data-i18n="svcDevCaracas.n93">API Server</span></span>
                 </div>
                 <div class="flex-1 h-px bg-gradient-to-r from-purple-500/30 to-green-500/30 relative">
                   <span class="absolute -top-3 left-1/2 -translate-x-1/2 text-[7px] font-mono text-[#cbd5e1]/30">SQL</span>
@@ -349,47 +349,47 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
                 <!-- Database -->
                 <div class="flex flex-col items-center gap-1">
                   <div class="w-12 h-12 border border-[#1f1f24] rounded-lg bg-black/60 flex items-center justify-center">
-                    <span class="material-symbols-outlined text-sm text-green-400">database</span>
+                    <span class="material-symbols-outlined text-sm text-green-400"><span data-i18n="svcDevCaracas.n94">database</span></span>
                   </div>
-                  <span class="text-[8px] font-mono text-[#cbd5e1]/60">PostgreSQL</span>
+                  <span class="text-[8px] font-mono text-[#cbd5e1]/60"><span data-i18n="svcDevCaracas.n95">PostgreSQL</span></span>
                 </div>
               </div>
 
               <!-- Línea de tiempo debajo -->
               <div class="mt-6 border-t border-[#1f1f24]/50 pt-3 flex justify-between text-[8px] font-mono text-[#cbd5e1]/40">
-                <span>Request</span>
-                <span>Cache</span>
-                <span>Process</span>
-                <span>Query</span>
-                <span>Response</span>
+                <span><span data-i18n="svcDevCaracas.n96">Request</span></span>
+                <span><span data-i18n="svcDevCaracas.n97">Cache</span></span>
+                <span><span data-i18n="svcDevCaracas.n98">Process</span></span>
+                <span><span data-i18n="svcDevCaracas.n99">Query</span></span>
+                <span><span data-i18n="svcDevCaracas.n100">Response</span></span>
               </div>
             </div>
           </div>
         </div>
 
         <div class="lg:col-span-5 space-y-5 order-1 lg:order-2">
-          <span class="text-[10px] font-mono text-[#cbd5e1] uppercase tracking-widest block font-medium">Arquitectura de Datos</span>
+          <span class="text-[10px] font-mono text-[#cbd5e1] uppercase tracking-widest block font-medium"><span data-i18n="svcDevCaracas.n101">Arquitectura de Datos</span></span>
           <h2 class="text-2xl md:text-4xl font-light text-white tracking-tight leading-tight">
-            Flujo de datos en tiempo real. Sin cuellos de botella.
+            <span data-i18n="svcDevCaracas.n102">Flujo de datos en tiempo real. Sin cuellos de botella.</span>
           </h2>
           <p class="text-sm text-[#cbd5e1] font-light leading-relaxed">
-            Diseñamos sistemas donde los datos viajan del cliente a la base de datos 
+            <span data-i18n="svcDevCaracas.n103">Diseñamos sistemas donde los datos viajan del cliente a la base de datos 
             y viceversa en milisegundos. WebSockets para actualizaciones en vivo, 
             caché inteligente en el edge y consultas optimizadas con índices 
-            personalizados. Tu equipo siempre ve la información más reciente.
+            personalizados. Tu equipo siempre ve la información más reciente.</span>
           </p>
           <ul class="space-y-2 text-xs text-[#cbd5e1] font-light">
             <li class="flex items-center gap-2">
-              <span class="material-symbols-outlined text-sm text-green-400">check_circle</span>
-              Subscripciones Realtime con Supabase
+              <span class="material-symbols-outlined text-sm text-green-400"><span data-i18n="svcDevCaracas.n65">check_circle</span></span>
+              <span data-i18n="svcDevCaracas.n104">Subscripciones Realtime con Supabase</span>
             </li>
             <li class="flex items-center gap-2">
-              <span class="material-symbols-outlined text-sm text-green-400">check_circle</span>
-              Caché distribuido en Vercel Edge
+              <span class="material-symbols-outlined text-sm text-green-400"><span data-i18n="svcDevCaracas.n65">check_circle</span></span>
+              <span data-i18n="svcDevCaracas.n105">Caché distribuido en Vercel Edge</span>
             </li>
             <li class="flex items-center gap-2">
-              <span class="material-symbols-outlined text-sm text-green-400">check_circle</span>
-              Rate limiting y DDoS protection
+              <span class="material-symbols-outlined text-sm text-green-400"><span data-i18n="svcDevCaracas.n65">check_circle</span></span>
+              <span data-i18n="svcDevCaracas.n106">Rate limiting y DDoS protection</span>
             </li>
           </ul>
         </div>
@@ -401,31 +401,31 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
   <section class="py-36 px-6 md:px-12 bg-black relative border-b border-[#1f1f24]">
     <div class="max-w-[1200px] mx-auto relative z-10">
       <div class="text-center max-w-2xl mx-auto mb-20">
-        <span class="text-[10px] font-mono text-[#cbd5e1] uppercase tracking-widest block mb-3 font-semibold">Infraestructura Técnica</span>
-        <h2 class="text-3xl md:text-5xl font-light text-white tracking-tight">Seguridad, monitoreo y escalabilidad enterprise</h2>
+        <span class="text-[10px] font-mono text-[#cbd5e1] uppercase tracking-widest block mb-3 font-semibold"><span data-i18n="svcDevCaracas.n107">Infraestructura Técnica</span></span>
+        <h2 class="text-3xl md:text-5xl font-light text-white tracking-tight"><span data-i18n="svcDevCaracas.n108">Seguridad, monitoreo y escalabilidad enterprise</span></h2>
       </div>
 
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 mb-16">
         <div class="linear-card rounded-lg border border-[#1f1f24] bg-[#08080c]/40 p-8 flex flex-col justify-between min-h-[320px] glow-hover transition-all">
           <div class="space-y-4">
-            <span class="text-[10px] font-mono text-[#cbd5e1] uppercase tracking-widest block font-medium">Seguridad</span>
-            <h3 class="text-xl md:text-2xl font-light text-white tracking-tight">Protección en múltiples capas</h3>
+            <span class="text-[10px] font-mono text-[#cbd5e1] uppercase tracking-widest block font-medium"><span data-i18n="svcDevCaracas.n109">Seguridad</span></span>
+            <h3 class="text-xl md:text-2xl font-light text-white tracking-tight"><span data-i18n="svcDevCaracas.n110">Protección en múltiples capas</span></h3>
             <p class="text-xs text-[#cbd5e1] leading-relaxed max-w-md">
-              SSL automatizado, Web Application Firewall, rate limiting, autenticación JWT 
+              <span data-i18n="svcDevCaracas.n111">SSL automatizado, Web Application Firewall, rate limiting, autenticación JWT 
               y Row Level Security en base de datos. Cada proyecto incluye auditoría de 
-              vulnerabilidades antes de pasar a producción.
+              vulnerabilidades antes de pasar a producción.</span>
             </p>
           </div>
         </div>
 
         <div class="linear-card rounded-lg border border-[#1f1f24] bg-[#08080c]/40 p-8 flex flex-col justify-between min-h-[320px] glow-hover transition-all">
           <div class="space-y-4">
-            <span class="text-[10px] font-mono text-[#cbd5e1] uppercase tracking-widest block font-medium">Monitoreo</span>
-            <h3 class="text-xl md:text-2xl font-light text-white tracking-tight">Observabilidad 24/7</h3>
+            <span class="text-[10px] font-mono text-[#cbd5e1] uppercase tracking-widest block font-medium"><span data-i18n="svcDevCaracas.n112">Monitoreo</span></span>
+            <h3 class="text-xl md:text-2xl font-light text-white tracking-tight"><span data-i18n="svcDevCaracas.n113">Observabilidad 24/7</span></h3>
             <p class="text-xs text-[#cbd5e1] leading-relaxed max-w-md">
-              Dashboards en tiempo real con métricas de rendimiento, errores, uso de API 
+              <span data-i18n="svcDevCaracas.n114">Dashboards en tiempo real con métricas de rendimiento, errores, uso de API 
               y tiempo de respuesta. Alertas automáticas si algo se desvía de los 
-              parámetros normales.
+              parámetros normales.</span>
             </p>
           </div>
         </div>
@@ -434,18 +434,18 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
       <!-- Consola de deploy y métricas -->
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
         <div class="linear-card bg-black p-4 rounded border border-[#1f1f24] font-mono text-[10px] text-[#94a3b8]/80 space-y-1.5 h-[140px] overflow-y-auto">
-          <div class="text-[#94a3b8]/40">> npm run deploy --production</div>
-          <div class="text-white">[VORTEX CI/CD] Running test suite...</div>
-          <div class="text-green-500">✔ 42 tests passed (2.1s)</div>
-          <div class="text-green-500">✔ Build optimized · 98 Lighthouse</div>
-          <div class="text-[#94a3b8]/60">> Deploying to 100+ edge regions...</div>
-          <div class="text-green-500">✔ Deployment complete · v2.4.1</div>
+          <div class="text-[#94a3b8]/40"><span data-i18n="svcDevCaracas.n115">> npm run deploy --production</span></div>
+          <div class="text-white"><span data-i18n="svcDevCaracas.n116">[VORTEX CI/CD] Running test suite...</span></div>
+          <div class="text-green-500"><span data-i18n="svcDevCaracas.n117">✔ 42 tests passed (2.1s)</span></div>
+          <div class="text-green-500"><span data-i18n="svcDevCaracas.n118">✔ Build optimized · 98 Lighthouse</span></div>
+          <div class="text-[#94a3b8]/60"><span data-i18n="svcDevCaracas.n119">> Deploying to 100+ edge regions...</span></div>
+          <div class="text-green-500"><span data-i18n="svcDevCaracas.n120">✔ Deployment complete · v2.4.1</span></div>
         </div>
 
         <div class="linear-card bg-black p-4 rounded border border-[#1f1f24] h-[140px] flex flex-col justify-between">
           <div class="flex justify-between items-center text-[9px] font-mono text-[#cbd5e1]/40 border-b border-[#1f1f24]/50 pb-2">
-            <span>API Response Times (p50)</span>
-            <span class="text-green-400 font-bold font-mono">18ms avg</span>
+            <span><span data-i18n="svcDevCaracas.n121">API Response Times (p50)</span></span>
+            <span class="text-green-400 font-bold font-mono"><span data-i18n="svcDevCaracas.n122">18ms avg</span></span>
           </div>
           <div class="flex items-end justify-between h-[70px] px-4 pt-1">
             <div class="w-4 bg-[#1f1f24] rounded-t-sm h-[25px] relative overflow-hidden flex items-end">
@@ -465,7 +465,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
             </div>
           </div>
           <div class="border-t border-[#1f1f24]/50 pt-2 text-[9px] font-mono text-[#cbd5e1]/40 text-right">
-            p50: 18ms · p95: 42ms · p99: 120ms
+            <span data-i18n="svcDevCaracas.n123">p50: 18ms · p95: 42ms · p99: 120ms</span>
           </div>
         </div>
       </div>
@@ -476,83 +476,83 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
   <section class="py-36 px-6 md:px-12 bg-black relative border-b border-[#1f1f24]">
     <div class="max-w-[800px] mx-auto relative z-10">
       <div class="text-center max-w-2xl mx-auto mb-16">
-        <span class="text-[10px] font-mono text-[#cbd5e1] uppercase tracking-widest block mb-3 font-medium">FAQ Técnica</span>
-        <h2 class="text-3xl md:text-4xl font-light text-white tracking-tight">Preguntas frecuentes sobre desarrollo</h2>
+        <span class="text-[10px] font-mono text-[#cbd5e1] uppercase tracking-widest block mb-3 font-medium"><span data-i18n="svcDevCaracas.n124">FAQ Técnica</span></span>
+        <h2 class="text-3xl md:text-4xl font-light text-white tracking-tight"><span data-i18n="svcDevCaracas.n125">Preguntas frecuentes sobre desarrollo</span></h2>
       </div>
 
       <div class="space-y-4">
         <details class="group linear-card rounded-lg border border-[#1f1f24] bg-[#08080c]/30 overflow-hidden glow-hover transition-all">
           <summary class="flex items-center justify-between p-5 cursor-pointer text-sm font-medium text-white/90 hover:text-white transition-colors">
-            ¿Qué tecnologías usan para desarrollo web?
-            <span class="material-symbols-outlined text-sm text-[#cbd5e1]/60 group-open:rotate-180 transition-transform">expand_more</span>
+            <span data-i18n="svcDevCaracas.n126">¿Qué tecnologías usan para desarrollo web?</span>
+            <span class="material-symbols-outlined text-sm text-[#cbd5e1]/60 group-open:rotate-180 transition-transform"><span data-i18n="svcDevCaracas.n127">expand_more</span></span>
           </summary>
           <div class="px-5 pb-5 text-xs text-[#cbd5e1] leading-relaxed">
-            Nuestro stack principal es <strong class="text-white">Astro + React + TypeScript</strong> para el frontend, 
-            <strong class="text-white">Supabase (PostgreSQL)</strong> como base de datos y backend, y 
-            <strong class="text-white">Vercel</strong> para despliegue global. Para proyectos que requieren 
-            renderizado del lado del servidor usamos <strong class="text-white">Next.js</strong>. 
+            <span data-i18n="svcDevCaracas.n128">Nuestro stack principal es</span> <strong class="text-white"><span data-i18n="svcDevCaracas.n129">Astro + React + TypeScript</span></strong> <span data-i18n="svcDevCaracas.n130">para el frontend,</span> 
+            <strong class="text-white"><span data-i18n="svcDevCaracas.n131">Supabase (PostgreSQL)</span></strong> <span data-i18n="svcDevCaracas.n132">como base de datos y backend, y</span> 
+            <strong class="text-white">Vercel</strong> <span data-i18n="svcDevCaracas.n133">para despliegue global. Para proyectos que requieren 
+            renderizado del lado del servidor usamos</span> <strong class="text-white">Next.js</strong><span data-i18n="svcDevCaracas.n134">. 
             También integramos WebSockets para funcionalidades en tiempo real, colas de trabajo 
             con Redis cuando se necesita procesamiento asíncrono, y almacenamiento de archivos 
-            en CDN con optimización automática de imágenes.
+            en CDN con optimización automática de imágenes.</span>
           </div>
         </details>
 
         <details class="group linear-card rounded-lg border border-[#1f1f24] bg-[#08080c]/30 overflow-hidden glow-hover transition-all">
           <summary class="flex items-center justify-between p-5 cursor-pointer text-sm font-medium text-white/90 hover:text-white transition-colors">
-            ¿Cómo manejan los datos y la seguridad?
-            <span class="material-symbols-outlined text-sm text-[#cbd5e1]/60 group-open:rotate-180 transition-transform">expand_more</span>
+            <span data-i18n="svcDevCaracas.n135">¿Cómo manejan los datos y la seguridad?</span>
+            <span class="material-symbols-outlined text-sm text-[#cbd5e1]/60 group-open:rotate-180 transition-transform"><span data-i18n="svcDevCaracas.n127">expand_more</span></span>
           </summary>
           <div class="px-5 pb-5 text-xs text-[#cbd5e1] leading-relaxed">
-            Implementamos <strong class="text-white">Row Level Security (RLS)</strong> directamente en PostgreSQL — 
-            cada usuario solo ve los datos que le corresponden. La autenticación se maneja con 
-            <strong class="text-white">JWT + OAuth 2.0</strong> (Google, GitHub, email). Todas las conexiones 
+            <span data-i18n="svcDevCaracas.n136">Implementamos</span> <strong class="text-white"><span data-i18n="svcDevCaracas.n137">Row Level Security (RLS)</span></strong> <span data-i18n="svcDevCaracas.n138">directamente en PostgreSQL — 
+            cada usuario solo ve los datos que le corresponden. La autenticación se maneja con</span> 
+            <strong class="text-white"><span data-i18n="svcDevCaracas.n139">JWT + OAuth 2.0</span></strong> <span data-i18n="svcDevCaracas.n140">(Google, GitHub, email). Todas las conexiones 
             viajan por HTTPS con SSL automatizado. Además, aplicamos rate limiting, validación 
-            de datos en el servidor y auditoría de seguridad automatizada antes de cada deploy.
+            de datos en el servidor y auditoría de seguridad automatizada antes de cada deploy.</span>
           </div>
         </details>
 
         <details class="group linear-card rounded-lg border border-[#1f1f24] bg-[#08080c]/30 overflow-hidden glow-hover transition-all">
           <summary class="flex items-center justify-between p-5 cursor-pointer text-sm font-medium text-white/90 hover:text-white transition-colors">
-            ¿Se puede integrar con mi CRM o sistema actual?
-            <span class="material-symbols-outlined text-sm text-[#cbd5e1]/60 group-open:rotate-180 transition-transform">expand_more</span>
+            <span data-i18n="svcDevCaracas.n141">¿Se puede integrar con mi CRM o sistema actual?</span>
+            <span class="material-symbols-outlined text-sm text-[#cbd5e1]/60 group-open:rotate-180 transition-transform"><span data-i18n="svcDevCaracas.n127">expand_more</span></span>
           </summary>
           <div class="px-5 pb-5 text-xs text-[#cbd5e1] leading-relaxed">
-            Sí. Diseñamos integraciones personalizadas con cualquier sistema que exponga una API 
-            REST o GraphQL. Hemos conectado plataformas con <strong class="text-white">Salesforce, HubSpot, 
-            SAP, sistemas contables venezolanos (Seniat, IVA)</strong>, pasarelas de pago como 
+            <span data-i18n="svcDevCaracas.n142">Sí. Diseñamos integraciones personalizadas con cualquier sistema que exponga una API 
+            REST o GraphQL. Hemos conectado plataformas con</span> <strong class="text-white"><span data-i18n="svcDevCaracas.n143">Salesforce, HubSpot, 
+            SAP, sistemas contables venezolanos (Seniat, IVA)</span></strong><span data-i18n="svcDevCaracas.n144">, pasarelas de pago como 
             PayPal, Stripe y MercadoPago, y servicios de email como SendGrid y Resend. 
-            También podemos construir webhooks bidireccionales para sincronización en tiempo real.
+            También podemos construir webhooks bidireccionales para sincronización en tiempo real.</span>
           </div>
         </details>
 
         <details class="group linear-card rounded-lg border border-[#1f1f24] bg-[#08080c]/30 overflow-hidden glow-hover transition-all">
           <summary class="flex items-center justify-between p-5 cursor-pointer text-sm font-medium text-white/90 hover:text-white transition-colors">
-            ¿Qué ventajas tiene una PWA frente a una app nativa?
-            <span class="material-symbols-outlined text-sm text-[#cbd5e1]/60 group-open:rotate-180 transition-transform">expand_more</span>
+            <span data-i18n="svcDevCaracas.n145">¿Qué ventajas tiene una PWA frente a una app nativa?</span>
+            <span class="material-symbols-outlined text-sm text-[#cbd5e1]/60 group-open:rotate-180 transition-transform"><span data-i18n="svcDevCaracas.n127">expand_more</span></span>
           </summary>
           <div class="px-5 pb-5 text-xs text-[#cbd5e1] leading-relaxed">
-            Las PWAs ofrecen <strong class="text-white">90% menos costo de desarrollo</strong> que una app nativa, 
+            <span data-i18n="svcDevCaracas.n146">Las PWAs ofrecen</span> <strong class="text-white"><span data-i18n="svcDevCaracas.n147">90% menos costo de desarrollo</span></strong> <span data-i18n="svcDevCaracas.n148">que una app nativa, 
             se actualizan instantáneamente (sin pasar por app stores), funcionan offline con 
             service workers, pesan menos de 5MB y se instalan directamente desde el navegador. 
             Para la mayoría de casos de uso empresarial —catálogos, paneles de administración, 
             plataformas de servicio— una PWA supera el rendimiento y la experiencia de una app 
             nativa. Si necesitas acceso profundo al hardware del dispositivo (bluetooth, 
-            sensores específicos), evaluamos una app nativa o híbrida.
+            sensores específicos), evaluamos una app nativa o híbrida.</span>
           </div>
         </details>
 
         <details class="group linear-card rounded-lg border border-[#1f1f24] bg-[#08080c]/30 overflow-hidden glow-hover transition-all">
           <summary class="flex items-center justify-between p-5 cursor-pointer text-sm font-medium text-white/90 hover:text-white transition-colors">
-            ¿Ofrecen mantenimiento y soporte post-lanzamiento?
-            <span class="material-symbols-outlined text-sm text-[#cbd5e1]/60 group-open:rotate-180 transition-transform">expand_more</span>
+            <span data-i18n="svcDevCaracas.n149">¿Ofrecen mantenimiento y soporte post-lanzamiento?</span>
+            <span class="material-symbols-outlined text-sm text-[#cbd5e1]/60 group-open:rotate-180 transition-transform"><span data-i18n="svcDevCaracas.n127">expand_more</span></span>
           </summary>
           <div class="px-5 pb-5 text-xs text-[#cbd5e1] leading-relaxed">
-            Sí. Todos nuestros proyectos incluyen <strong class="text-white">3 meses de soporte técnico</strong> 
-            post-lanzamiento para ajustes y estabilización. Después ofrecemos planes de 
+            <span data-i18n="svcDevCaracas.n150">Sí. Todos nuestros proyectos incluyen</span> <strong class="text-white"><span data-i18n="svcDevCaracas.n151">3 meses de soporte técnico</span></strong> 
+            <span data-i18n="svcDevCaracas.n152">post-lanzamiento para ajustes y estabilización. Después ofrecemos planes de 
             mantenimiento mensual que cubren: actualizaciones de dependencias, monitoreo 24/7, 
             backups de base de datos, optimización de rendimiento y soporte prioritario 
             por Slack/WhatsApp. También podemos agregar nuevas funcionalidades bajo demanda 
-            con presupuestos por sprint.
+            con presupuestos por sprint.</span>
           </div>
         </details>
       </div>
@@ -562,33 +562,33 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
   <!-- ─── CONTACTO ────────────────────────────────────────────────── -->
   <section id="contacto" class="py-36 px-6 md:px-12 bg-black relative">
     <div class="max-w-[600px] mx-auto text-center relative z-10 space-y-8">
-      <span class="text-[10px] font-mono text-[#cbd5e1] uppercase tracking-widest block font-medium">Inicia tu proyecto</span>
+      <span class="text-[10px] font-mono text-[#cbd5e1] uppercase tracking-widest block font-medium"><span data-i18n="svcDevCaracas.n153">Inicia tu proyecto</span></span>
       <h2 class="text-3xl md:text-5xl font-light text-white tracking-tight leading-tight">
-        ¿Tienes un proyecto técnico en mente?
+        <span data-i18n="svcDevCaracas.n154">¿Tienes un proyecto técnico en mente?</span>
       </h2>
       <p class="text-sm text-[#cbd5e1] font-light leading-relaxed">
-        Cuéntanos los detalles técnicos de tu proyecto y te propondremos la arquitectura 
+        <span data-i18n="svcDevCaracas.n155">Cuéntanos los detalles técnicos de tu proyecto y te propondremos la arquitectura 
         ideal. Respondemos en menos de 24 horas con una propuesta clara y presupuesto 
-        transparente.
+        transparente.</span>
       </p>
 
       <div class="linear-card p-8 rounded-lg border border-[#1f1f24] bg-[#08080c]/40 text-left space-y-6">
         <div id="form-feedback" class="text-sm mt-4 hidden"></div>
         <form id="contact-form-dev" class="space-y-4">
           <div>
-            <label class="block text-[10px] font-mono text-[#cbd5e1] uppercase tracking-wider mb-2 font-medium" for="fullname">Nombre y Apellido</label>
+            <label class="block text-[10px] font-mono text-[#cbd5e1] uppercase tracking-wider mb-2 font-medium" for="fullname"><span data-i18n="svcDevCaracas.n156">Nombre y Apellido</span></label>
             <input
               class="w-full bg-black border border-[#1f1f24] rounded px-4 py-3 text-xs text-white placeholder-neutral-800 focus:outline-none focus:border-white transition-colors"
               type="text"
               id="fullname"
               name="name"
-              placeholder="e.g. Carlos Pérez"
+              placeholder="e.g. Carlos Pérez" data-i18n-placeholder="svcDevCaracas.n160"
               required
             />
           </div>
 
           <div>
-            <label class="block text-[10px] font-mono text-[#cbd5e1] uppercase tracking-wider mb-2 font-medium" for="corp_email">Correo Corporativo</label>
+            <label class="block text-[10px] font-mono text-[#cbd5e1] uppercase tracking-wider mb-2 font-medium" for="corp_email"><span data-i18n="svcDevCaracas.n157">Correo Corporativo</span></label>
             <input
               class="w-full bg-black border border-[#1f1f24] rounded px-4 py-3 text-xs text-white placeholder-neutral-800 focus:outline-none focus:border-white transition-colors"
               type="email"
@@ -600,12 +600,12 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
           </div>
 
           <div>
-            <label class="block text-[10px] font-mono text-[#cbd5e1] uppercase tracking-wider mb-2 font-medium" for="project_details">Descripción técnica del proyecto</label>
+            <label class="block text-[10px] font-mono text-[#cbd5e1] uppercase tracking-wider mb-2 font-medium" for="project_details"><span data-i18n="svcDevCaracas.n158">Descripción técnica del proyecto</span></label>
             <textarea
               class="w-full bg-black border border-[#1f1f24] rounded px-4 py-3 text-xs text-white placeholder-neutral-800 focus:outline-none focus:border-white transition-colors min-h-[100px]"
               id="project_details"
               name="message"
-              placeholder="¿Qué necesitas desarrollar? ¿Qué tecnologías prefieres? ¿Tienes integraciones con otros sistemas? Cuéntanos todo lo técnico."
+              placeholder="¿Qué necesitas desarrollar? ¿Qué tecnologías prefieres? ¿Tienes integraciones con otros sistemas? Cuéntanos todo lo técnico." data-i18n-placeholder="svcDevCaracas.n161"
               required
             ></textarea>
           </div>
@@ -618,7 +618,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
             class="w-full py-3 bg-white text-black font-semibold text-xs rounded hover:bg-neutral-200 transition-colors duration-200"
             onclick="submitFormDev()"
           >
-            Cotizar Solución Técnica
+            <span data-i18n="svcDevCaracas.n03">Cotizar Solución Técnica</span>
           </button>
         </form>
       </div>

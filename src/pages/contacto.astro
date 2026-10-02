@@ -5,6 +5,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 <BaseLayout
   title="Contacta con Nuestros Especialistas en Software y Web | Vortex"
   description="¿Tienes una idea o proyecto en mente? Contacta con los especialistas en software y desarrollo web de Vortex. Diseñamos sistemas escalables y páginas web de alto rendimiento."
+  titleKey="contactoPage.meta.title"
+  descriptionKey="contactoPage.meta.description"
 >
   <!-- SPLIT-SCREEN CONTACT SECTION -->
   <section class="min-h-dvh py-36 px-6 md:px-12 bg-black border-b border-[#1f1f24]">
@@ -14,20 +16,20 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <div class="relative z-10">
         <div class="absolute top-0 left-0 w-[400px] h-[400px] bg-white/[0.015] blur-[120px] rounded-full pointer-events-none -z-10"></div>
         
-        <p class="font-mono text-[10px] uppercase tracking-widest text-[#cbd5e1] mb-6">CONTACTO</p>
+        <p class="font-mono text-[10px] uppercase tracking-widest text-[#cbd5e1] mb-6"><span data-i18n="contactoPage.n01">CONTACTO</span></p>
         
         <h1 class="font-extralight text-4xl md:text-5xl lg:text-6xl tracking-tight text-white mb-6">
-          Hablemos de tu próximo proyecto tecnológico.
+          <span data-i18n="contactoPage.n02">Hablemos de tu próximo proyecto tecnológico.</span>
         </h1>
         
         <p class="font-light text-[#cbd5e1] text-lg leading-relaxed max-w-xl mb-12">
-          Estamos listos para escuchar tu idea, resolver tus dudas y convertir tu visión en una solución digital robusta y escalable.
+          <span data-i18n="contactoPage.n03">Estamos listos para escuchar tu idea, resolver tus dudas y convertir tu visión en una solución digital robusta y escalable.</span>
         </p>
         
         <!-- Contact Info Block (text only, NO icons) -->
         <div class="space-y-6">
           <div>
-            <p class="font-mono text-[10px] uppercase tracking-widest text-[#cbd5e1] mb-1">EMAIL</p>
+            <p class="font-mono text-[10px] uppercase tracking-widest text-[#cbd5e1] mb-1"><span data-i18n="contactoPage.n04">EMAIL</span></p>
             <a href="mailto:info@vortexlm.com" class="font-light text-white text-lg hover:text-[#cbd5e1] transition-colors">info@vortexlm.com</a>
           </div>
           <a href="https://wa.me/584228101010" target="_blank" rel="noopener noreferrer" class="flex items-start gap-3 group">
@@ -37,17 +39,17 @@ import BaseLayout from '../layouts/BaseLayout.astro';
               <path d="M9 13a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1H9z" />
             </svg>
             <div class="flex flex-col">
-              <span class="text-[10px] uppercase tracking-widest text-neutral-500 font-mono">WHATSAPP</span>
+              <span class="text-[10px] uppercase tracking-widest text-neutral-500 font-mono"><span data-i18n="contactoPage.n05">WHATSAPP</span></span>
               <span class="text-sm text-neutral-300 group-hover:text-white transition-colors duration-200">+58 422-8101010</span>
             </div>
           </a>
           <div>
-            <p class="font-mono text-[10px] uppercase tracking-widest text-[#cbd5e1] mb-1">UBICACIÓN</p>
-            <p class="font-light text-white text-lg">Caracas, Venezuela</p>
+            <p class="font-mono text-[10px] uppercase tracking-widest text-[#cbd5e1] mb-1"><span data-i18n="contactoPage.n06">UBICACIÓN</span></p>
+            <p class="font-light text-white text-lg"><span data-i18n="contactoPage.n07">Caracas, Venezuela</span></p>
           </div>
           <div>
-            <p class="font-mono text-[10px] uppercase tracking-widest text-[#cbd5e1] mb-1">HORARIO</p>
-            <p class="font-light text-white text-lg">Lun — Vie, 9:00 AM — 6:00 PM (AST, UTC-4)</p>
+            <p class="font-mono text-[10px] uppercase tracking-widest text-[#cbd5e1] mb-1"><span data-i18n="contactoPage.n08">HORARIO</span></p>
+            <p class="font-light text-white text-lg"><span data-i18n="contactoPage.n09">Lun — Vie, 9:00 AM — 6:00 PM (AST, UTC-4)</span></p>
           </div>
         </div>
       </div>
@@ -55,25 +57,31 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <!-- RIGHT COLUMN: Contact Form -->
       <div class="w-full">
         <div class="linear-card p-8 rounded-lg border border-[#1f1f24] bg-[#08080c]/40">
+          <!-- Mensajes dinámicos del formulario: el script inline (que no puede
+               importar módulos) lee aquí el texto ya traducido por el motor. -->
+          <span id="i18n-form-submit" class="hidden" data-i18n="contactoPage.form.submit">Enviar mensaje</span>
+          <span id="i18n-form-sending" class="hidden" data-i18n="contactoPage.form.sending">Enviando...</span>
+          <span id="i18n-form-success" class="hidden" data-i18n="contactoPage.form.success">¡Mensaje enviado con éxito! Te contactaremos pronto.</span>
+          <span id="i18n-form-error" class="hidden" data-i18n="contactoPage.form.error">Error al enviar. Intenta de nuevo o escríbenos a info@vortexlm.com.</span>
           <div id="form-feedback" class="text-sm mt-4 hidden"></div>
           <form id="contact-form-contacto" class="space-y-5">
             <!-- Name / Company -->
             <div>
-              <label class="block font-mono text-[10px] uppercase tracking-widest text-[#cbd5e1] mb-2" for="name">Nombre / Empresa</label>
+              <label class="block font-mono text-[10px] uppercase tracking-widest text-[#cbd5e1] mb-2" for="name"><span data-i18n="contactoPage.n10">Nombre / Empresa</span></label>
               <input
                 type="text"
                 id="name"
                 name="name"
                 autocomplete="name"
                 required
-                placeholder="Ej. Carlos Mendoza / Vortex C.A."
+                placeholder="Ej. Carlos Mendoza / Vortex C.A." data-i18n-placeholder="contactoPage.n19"
                 class="bg-black border border-[#1f1f24] rounded-lg px-4 py-3 w-full text-white placeholder-[#737373] outline-none focus:border-[#444] transition-all"
               />
             </div>
             
             <!-- Email -->
             <div>
-              <label class="block font-mono text-[10px] uppercase tracking-widest text-[#cbd5e1] mb-2" for="email">Correo Electrónico</label>
+              <label class="block font-mono text-[10px] uppercase tracking-widest text-[#cbd5e1] mb-2" for="email"><span data-i18n="contactoPage.n11">Correo Electrónico</span></label>
               <input
                 type="email"
                 id="email"
@@ -87,7 +95,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             
             <!-- Servicio de Interés -->
             <div>
-              <label class="block font-mono text-[10px] uppercase tracking-widest text-[#cbd5e1] mb-2" for="service">Servicio de Interés</label>
+              <label class="block font-mono text-[10px] uppercase tracking-widest text-[#cbd5e1] mb-2" for="service"><span data-i18n="contactoPage.n12">Servicio de Interés</span></label>
               <div class="relative">
                 <select
                   id="service"
@@ -95,11 +103,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                   required
                   class="bg-black border border-[#1f1f24] rounded-lg px-4 py-3 w-full text-white placeholder-[#737373] outline-none focus:border-[#444] transition-all appearance-none cursor-pointer"
                 >
-                  <option value="" disabled selected class="text-[#737373]">Selecciona un servicio</option>
-                  <option value="desarrollo-web" class="text-white">Desarrollo de Web App</option>
-                  <option value="pagina-corporativa" class="text-white">Página Web Corporativa</option>
-                  <option value="marca-blanca" class="text-white">Marca Blanca para Agencias</option>
-                  <option value="optimizacion" class="text-white">Optimización / Consultoría</option>
+                  <option value="" disabled selected class="text-[#737373]" data-i18n="contactoPage.n13">Selecciona un servicio</option>
+                  <option value="desarrollo-web" class="text-white" data-i18n="contactoPage.n14">Desarrollo de Web App</option>
+                  <option value="pagina-corporativa" class="text-white" data-i18n="contactoPage.n15">Página Web Corporativa</option>
+                  <option value="marca-blanca" class="text-white" data-i18n="contactoPage.n16">Marca Blanca para Agencias</option>
+                  <option value="optimizacion" class="text-white" data-i18n="contactoPage.n17">Optimización / Consultoría</option>
                 </select>
                 <svg class="absolute right-3 top-1/2 -translate-y-1/2 w-3 h-3 text-[#737373] pointer-events-none" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
@@ -109,13 +117,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             
             <!-- Mensaje -->
             <div>
-              <label class="block font-mono text-[10px] uppercase tracking-widest text-[#cbd5e1] mb-2" for="message">Mensaje</label>
+              <label class="block font-mono text-[10px] uppercase tracking-widest text-[#cbd5e1] mb-2" for="message"><span data-i18n="contactoPage.n18">Mensaje</span></label>
               <textarea
                 id="message"
                 name="message"
                 rows="5"
                 required
-                placeholder="Cuéntanos sobre tu proyecto, ideas o consultas..."
+                placeholder="Cuéntanos sobre tu proyecto, ideas o consultas..." data-i18n-placeholder="contactoPage.n20"
                 class="bg-black border border-[#1f1f24] rounded-lg px-4 py-3 w-full text-white placeholder-[#737373] outline-none focus:border-[#444] transition-all resize-none"
               ></textarea>
             </div>
@@ -127,7 +135,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
               class="bg-white text-black font-semibold text-xs rounded-full hover:bg-neutral-200 transition-all px-6 py-3 w-full flex items-center justify-center gap-2"
               onclick="submitFormContacto()"
             >
-              Enviar mensaje
+              <span data-i18n="contactoPage.form.submit">Enviar mensaje</span>
               <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <line x1="5" y1="12" x2="19" y2="12"/>
                 <polyline points="12 5 19 12 12 19"/>
@@ -138,6 +146,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       </div>
 
       <script is:inline>
+        /** Texto ya traducido por el motor i18n, con respaldo en español. */
+        function txt(id, fallback) {
+          const node = document.getElementById(id);
+          const value = node && node.textContent ? node.textContent.trim() : '';
+          return value || fallback;
+        }
+
         async function submitFormContacto() {
           const form = document.getElementById('contact-form-contacto');
           const feedback = document.getElementById('form-feedback');
@@ -149,7 +164,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           }
           
           btn.disabled = true;
-          btn.textContent = 'Enviando...';
+          btn.textContent = txt('i18n-form-sending', 'Enviando...');
           
           try {
             const res = await fetch('/api/contact', {
@@ -160,7 +175,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             
             if (data.success) {
               feedback.className = 'text-sm mt-4 text-green-400';
-              feedback.textContent = '¡Mensaje enviado con éxito! Te contactaremos pronto.';
+              feedback.textContent = txt(
+                'i18n-form-success',
+                '¡Mensaje enviado con éxito! Te contactaremos pronto.'
+              );
               feedback.classList.remove('hidden');
               form.reset();
             } else {
@@ -168,11 +186,17 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             }
           } catch (err) {
             feedback.className = 'text-sm mt-4 text-red-400';
-            feedback.textContent = 'Error al enviar. Intenta de nuevo o escríbenos a info@vortexlm.com.';
+            feedback.textContent = txt(
+              'i18n-form-error',
+              'Error al enviar. Intenta de nuevo o escríbenos a info@vortexlm.com.'
+            );
             feedback.classList.remove('hidden');
           } finally {
             btn.disabled = false;
-            btn.textContent = btn.getAttribute('data-original-text') || 'Enviar';
+            btn.textContent = txt(
+              'i18n-form-submit',
+              btn.getAttribute('data-original-text') || 'Enviar mensaje'
+            );
           }
         }
       </script>

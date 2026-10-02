@@ -14,37 +14,48 @@ const faqs = [
 <BaseLayout 
   title="Sistemas a Medida y Software de Gestión | VortexLM"
   description="Desarrollo de software empresarial en Caracas. Automatización de inventarios, sistemas de facturación y ERP a la medida de tu industria."
+  titleKey="svcSistemas.meta.title"
+  descriptionKey="svcSistemas.meta.description"
 >
   <HeroService 
     title="Sistemas a Medida y"
     highlight="Software de Gestión"
     subtitle="Libera a tu equipo del trabajo manual. Automatiza operaciones, integra inventarios y escala tu productividad con herramientas corporativas exclusivas."
+    titleKey="svcSistemas.hero.title"
+    highlightKey="svcSistemas.hero.highlight"
+    subtitleKey="svcSistemas.hero.subtitle"
   />
 
   <section class="py-24 px-4 md:px-8 max-w-7xl mx-auto">
     <div class="text-center mb-16">
-      <h2 class="text-3xl md:text-5xl font-black text-white mb-6">Desarrollo de Software Empresarial Caracas</h2>
-      <p class="text-slate-400 max-w-2xl mx-auto text-lg">En un entorno multi-moneda complejo, depender de hojas de cálculo genéricas es un riesgo enorme. Diseñamos arquitectura en la nube para control total.</p>
+      <h2 class="text-3xl md:text-5xl font-black text-white mb-6"><span data-i18n="svcSistemas.n01">Desarrollo de Software Empresarial Caracas</span></h2>
+      <p class="text-slate-400 max-w-2xl mx-auto text-lg"><span data-i18n="svcSistemas.n02">En un entorno multi-moneda complejo, depender de hojas de cálculo genéricas es un riesgo enorme. Diseñamos arquitectura en la nube para control total.</span></p>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
       <ServiceCard 
         title="Automatización de Inventarios" 
         description="Control en tiempo real de múltiples almacenes, sincronización de sucursales e integraciones con hardware de punto de venta."
+        titleKey="svcSistemas.card1.title"
+        descriptionKey="svcSistemas.card1.description"
       />
       <ServiceCard 
         title="Sistemas ERP y CRM a Medida" 
         description="Construimos plataformas que centralizan recursos humanos, finanzas y atención al cliente en un único ecosistema cifrado."
+        titleKey="svcSistemas.card2.title"
+        descriptionKey="svcSistemas.card2.description"
       />
       <ServiceCard 
         title="Dashboards y Analítica" 
         description="Toma decisiones con datos precisos. Generación de reportes instantáneos sobre rentabilidad, ventas y métricas clave."
+        titleKey="svcSistemas.card3.title"
+        descriptionKey="svcSistemas.card3.description"
       />
     </div>
 
     <div class="mt-16 text-center">
       <a href="/blog/sistemas-inventario-facturacion-venezuela" class="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 font-medium transition-colors">
-        Leer Caso: Automatización de inventario multi-moneda en Venezuela 
+        <span data-i18n="svcSistemas.n03">Leer Caso: Automatización de inventario multi-moneda en Venezuela</span> 
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" /></svg>
       </a>
     </div>
@@ -52,15 +63,15 @@ const faqs = [
 
   <section class="py-24 px-4 md:px-8 bg-slate-900/30 border-y border-slate-800">
     <div class="max-w-3xl mx-auto">
-      <h2 class="text-3xl md:text-4xl font-black text-white text-center mb-4">Preguntas Frecuentes</h2>
-      <p class="text-slate-400 text-center mb-8">Descubre cómo un software propio puede multiplicar el rendimiento de tu empresa.</p>
+      <h2 class="text-3xl md:text-4xl font-black text-white text-center mb-4"><span data-i18n="svcSistemas.n04">Preguntas Frecuentes</span></h2>
+      <p class="text-slate-400 text-center mb-8"><span data-i18n="svcSistemas.n05">Descubre cómo un software propio puede multiplicar el rendimiento de tu empresa.</span></p>
       <FAQSchema faqs={faqs} />
     </div>
   </section>
 
   <section class="py-24 px-4 md:px-8 max-w-4xl mx-auto text-center" id="contacto">
-    <h2 class="text-4xl font-black text-white mb-6">Auditoría de Procesos</h2>
-    <p class="text-slate-400 mb-10 text-lg">Cuéntanos cómo funciona tu empresa actualmente y te propondremos la arquitectura ideal.</p>
+    <h2 class="text-4xl font-black text-white mb-6"><span data-i18n="svcSistemas.n06">Auditoría de Procesos</span></h2>
+    <p class="text-slate-400 mb-10 text-lg"><span data-i18n="svcSistemas.n07">Cuéntanos cómo funciona tu empresa actualmente y te propondremos la arquitectura ideal.</span></p>
     
     <div class="bg-slate-900 border border-slate-800 p-8 md:p-12 rounded-3xl text-left shadow-2xl relative overflow-hidden">
       <div class="absolute top-0 right-0 w-64 h-64 bg-indigo-600/10 rounded-full blur-[80px]"></div>

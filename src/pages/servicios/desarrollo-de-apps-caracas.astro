@@ -14,37 +14,48 @@ const faqs = [
 <BaseLayout 
   title="Desarrollo de Apps Móviles en Venezuela | iOS & Android"
   description="Desarrollo de aplicaciones móviles nativas de alto rendimiento. Posiciona tu marca en los bolsillos de Caracas con VortexLM."
+  titleKey="svcAppsMv.meta.title"
+  descriptionKey="svcAppsMv.meta.description"
 >
   <HeroService 
     title="Desarrollo de Apps Móviles en"
     highlight="Venezuela"
     subtitle="Aplicaciones corporativas, e-commerce y startups. Llevamos tu modelo de negocio directo a los bolsillos de tus clientes con rendimiento nativo inigualable."
+    titleKey="svcAppsMv.hero.title"
+    highlightKey="svcAppsMv.hero.highlight"
+    subtitleKey="svcAppsMv.hero.subtitle"
   />
 
   <section class="py-24 px-4 md:px-8 max-w-7xl mx-auto">
     <div class="text-center mb-16">
-      <h2 class="text-3xl md:text-5xl font-black text-white mb-6">Desarrollo de Apps en Chacao y Gran Caracas</h2>
-      <p class="text-slate-400 max-w-2xl mx-auto text-lg">En un mercado dominado por el móvil, tener presencia en las tiendas de aplicaciones ya no es un lujo, es la frontera que separa a los líderes del resto.</p>
+      <h2 class="text-3xl md:text-5xl font-black text-white mb-6"><span data-i18n="svcAppsMv.n01">Desarrollo de Apps en Chacao y Gran Caracas</span></h2>
+      <p class="text-slate-400 max-w-2xl mx-auto text-lg"><span data-i18n="svcAppsMv.n02">En un mercado dominado por el móvil, tener presencia en las tiendas de aplicaciones ya no es un lujo, es la frontera que separa a los líderes del resto.</span></p>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
       <ServiceCard 
         title="Experiencia Nativa (iOS/Android)" 
         description="Rendimiento impecable aprovechando todo el hardware del dispositivo. 60fps constantes para una experiencia premium."
+        titleKey="svcAppsMv.card1.title"
+        descriptionKey="svcAppsMv.card1.description"
       />
       <ServiceCard 
         title="Integración Local (Pagos)" 
         description="Conectamos tu app con pasarelas de pago y billeteras digitales relevantes para la economía multi-moneda de Venezuela."
+        titleKey="svcAppsMv.card2.title"
+        descriptionKey="svcAppsMv.card2.description"
       />
       <ServiceCard 
         title="Creación de aplicaciones corporativas" 
         description="Sistemas robustos de Delivery, e-commerce, gestión interna o fintech diseñados desde cero con seguridad bancaria."
+        titleKey="svcAppsMv.card3.title"
+        descriptionKey="svcAppsMv.card3.description"
       />
     </div>
 
     <div class="mt-16 text-center">
       <a href="/blog/por-que-tu-empresa-caracas-necesita-app-movil-2026" class="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 font-medium transition-colors">
-        Leer Artículo: Por qué necesitas una app móvil en 2026 
+        <span data-i18n="svcAppsMv.n03">Leer Artículo: Por qué necesitas una app móvil en 2026</span> 
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" /></svg>
       </a>
     </div>
@@ -52,15 +63,15 @@ const faqs = [
 
   <section class="py-24 px-4 md:px-8 bg-slate-900/30 border-y border-slate-800">
     <div class="max-w-3xl mx-auto">
-      <h2 class="text-3xl md:text-4xl font-black text-white text-center mb-4">Preguntas Frecuentes</h2>
-      <p class="text-slate-400 text-center mb-8">Aclaramos el panorama de la creación de aplicaciones en Venezuela.</p>
+      <h2 class="text-3xl md:text-4xl font-black text-white text-center mb-4"><span data-i18n="svcAppsMv.n04">Preguntas Frecuentes</span></h2>
+      <p class="text-slate-400 text-center mb-8"><span data-i18n="svcAppsMv.n05">Aclaramos el panorama de la creación de aplicaciones en Venezuela.</span></p>
       <FAQSchema faqs={faqs} />
     </div>
   </section>
 
   <section class="py-24 px-4 md:px-8 max-w-4xl mx-auto text-center" id="contacto">
-    <h2 class="text-4xl font-black text-white mb-6">Transforma tu idea en código</h2>
-    <p class="text-slate-400 mb-10 text-lg">Contacta a nuestros ingenieros y arquitectos de software para recibir viabilidad técnica.</p>
+    <h2 class="text-4xl font-black text-white mb-6"><span data-i18n="svcAppsMv.n06">Transforma tu idea en código</span></h2>
+    <p class="text-slate-400 mb-10 text-lg"><span data-i18n="svcAppsMv.n07">Contacta a nuestros ingenieros y arquitectos de software para recibir viabilidad técnica.</span></p>
     
     <div class="bg-slate-900 border border-slate-800 p-8 md:p-12 rounded-3xl text-left shadow-2xl relative overflow-hidden">
       <div class="absolute bottom-0 left-0 w-64 h-64 bg-cyan-600/10 rounded-full blur-[80px]"></div>

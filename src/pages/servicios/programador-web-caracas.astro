@@ -20,27 +20,27 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
       <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-white/[0.015] blur-[120px] rounded-full pointer-events-none"></div>
 
       <h1 class="text-4xl md:text-7xl font-extralight tracking-tight text-white mb-8 leading-[1.08] max-w-4xl mx-auto opacity-95">
-        Programador Web en Caracas: Desarrollo Full-Stack Senior y Código de Alto Rendimiento
+        <span data-i18n="svcProgramador.n01">Programador Web en Caracas: Desarrollo Full-Stack Senior y Código de Alto Rendimiento</span>
       </h1>
 
       <p class="text-base md:text-lg text-[#cbd5e1] font-light mb-12 max-w-3xl mx-auto leading-relaxed">
-        Desarrollador full-stack senior especializado en Astro, React, Next.js, Node.js y Supabase. 
+        <span data-i18n="svcProgramador.n02">Desarrollador full-stack senior especializado en Astro, React, Next.js, Node.js y Supabase. 
         Escribo código limpio, optimizado y escalable. Trabajo con agencias como marca blanca 
-        y directamente con empresas que necesitan ingeniería web de alto nivel en Caracas.
+        y directamente con empresas que necesitan ingeniería web de alto nivel en Caracas.</span>
       </p>
 
       <div class="flex flex-col sm:flex-row items-center justify-center gap-6 mb-20">
         <a href="#contacto" class="w-full sm:w-auto px-8 py-3 bg-white text-black font-semibold text-xs rounded-full hover:bg-neutral-200 transition-all text-center duration-200 active:scale-95 shadow-[0_0_25px_rgba(255,255,255,0.15)]">
-          Contratar Desarrollador Senior
+          <span data-i18n="svcProgramador.n03">Contratar Desarrollador Senior</span>
         </a>
         <a href="#stack" class="w-full sm:w-auto px-6 py-3 text-white/90 font-medium text-xs rounded-full hover:text-white flex items-center justify-center gap-1.5 group transition-colors">
-          Ver stack técnico <span class="group-hover:translate-x-1 transition-transform">➔</span>
+          <span data-i18n="svcProgramador.n04">Ver stack técnico</span> <span class="group-hover:translate-x-1 transition-transform">➔</span>
         </a>
       </div>
 
       <!-- Mockup de terminal Git workflow -->
       <div class="relative max-w-5xl mx-auto">
-        <div class="linear-card rounded-lg overflow-hidden border border-[#2e2e34] shadow-[0_50px_100px_-20px_rgba(0,0,0,0.98)]" role="img" aria-label="Flujo de trabajo Git con terminal de commits y tests - Programador web senior en Caracas">
+        <div class="linear-card rounded-lg overflow-hidden border border-[#2e2e34] shadow-[0_50px_100px_-20px_rgba(0,0,0,0.98)]" role="img" aria-label="Flujo de trabajo Git con terminal de commits y tests - Programador web senior en Caracas" data-i18n-aria-label="svcProgramador.n153">
           <div class="bg-[#08080c] px-4 py-3.5 flex items-center justify-between border-b border-[#1f1f24]">
             <div class="flex items-center gap-2">
               <span class="w-2.5 h-2.5 rounded-full bg-[#ff5f56]/50"></span>
@@ -48,8 +48,8 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
               <span class="w-2.5 h-2.5 rounded-full bg-[#27c93f]/50"></span>
             </div>
             <div class="text-[10px] font-mono text-[#cbd5e1]/40 flex items-center gap-1.5">
-              <span class="material-symbols-outlined text-[10px]">terminal</span>
-              vortex-dev // git:main
+              <span class="material-symbols-outlined text-[10px]"><span data-i18n="svcProgramador.n05">terminal</span></span>
+              <span data-i18n="svcProgramador.n06">vortex-dev // git:main</span>
             </div>
             <div class="w-12"></div>
           </div>
@@ -60,61 +60,61 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
               <div class="flex items-center gap-3 text-[10px] text-[#cbd5e1]/60 border-b border-[#1f1f24] pb-3 mb-4">
                 <span class="flex items-center gap-1.5">
                   <span class="w-1.5 h-1.5 rounded-full bg-green-500"></span>
-                  git log --oneline
+                  <span data-i18n="svcProgramador.n07">git log --oneline</span>
                 </span>
                 <span class="flex items-center gap-1.5">
                   <span class="w-1.5 h-1.5 rounded-full bg-cyan-500"></span>
-                  main
+                  <span data-i18n="svcProgramador.n08">main</span>
                 </span>
               </div>
 
               <div class="space-y-2">
-                <div class="text-green-400">$ git push origin main</div>
-                <div class="text-white">Enumerating objects: 42, done.</div>
-                <div class="text-white">Counting objects: 100% (42/42), done.</div>
+                <div class="text-green-400"><span data-i18n="svcProgramador.n09">$ git push origin main</span></div>
+                <div class="text-white"><span data-i18n="svcProgramador.n10">Enumerating objects: 42, done.</span></div>
+                <div class="text-white"><span data-i18n="svcProgramador.n11">Counting objects: 100% (42/42), done.</span></div>
                 <br />
-                <div class="text-green-400">$ npm run test</div>
-                <div class="text-white">[VORTEX CI/CD] Running test suite...</div>
-                <div class="text-green-500">✔ 48 tests passed (2.3s)</div>
-                <div class="text-green-500">✔ Coverage: 96%</div>
+                <div class="text-green-400"><span data-i18n="svcProgramador.n12">$ npm run test</span></div>
+                <div class="text-white"><span data-i18n="svcProgramador.n13">[VORTEX CI/CD] Running test suite...</span></div>
+                <div class="text-green-500"><span data-i18n="svcProgramador.n14">✔ 48 tests passed (2.3s)</span></div>
+                <div class="text-green-500"><span data-i18n="svcProgramador.n15">✔ Coverage: 96%</span></div>
                 <br />
-                <div class="text-green-400">$ npm run build</div>
-                <div class="text-white">[1/4] Resolving dependencies...</div>
-                <div class="text-white">[2/4] TypeScript compilation...</div>
-                <div class="text-green-500">✔ No type errors found</div>
-                <div class="text-green-500">✔ Build optimized · 98 Lighthouse</div>
+                <div class="text-green-400"><span data-i18n="svcProgramador.n16">$ npm run build</span></div>
+                <div class="text-white"><span data-i18n="svcProgramador.n17">[1/4] Resolving dependencies...</span></div>
+                <div class="text-white"><span data-i18n="svcProgramador.n18">[2/4] TypeScript compilation...</span></div>
+                <div class="text-green-500"><span data-i18n="svcProgramador.n19">✔ No type errors found</span></div>
+                <div class="text-green-500"><span data-i18n="svcProgramador.n20">✔ Build optimized · 98 Lighthouse</span></div>
                 <br />
                 <div class="flex items-center gap-2">
-                  <span class="text-cyan-400">feature/auth</span>
-                  <span class="text-[#cbd5e1]/60">3e8f2a1</span>
-                  <span class="text-white">Implement JWT + RLS security layer</span>
+                  <span class="text-cyan-400"><span data-i18n="svcProgramador.n21">feature/auth</span></span>
+                  <span class="text-[#cbd5e1]/60"><span data-i18n="svcProgramador.n22">3e8f2a1</span></span>
+                  <span class="text-white"><span data-i18n="svcProgramador.n23">Implement JWT + RLS security layer</span></span>
                 </div>
                 <div class="flex items-center gap-2">
-                  <span class="text-cyan-400">main</span>
-                  <span class="text-[#cbd5e1]/60">a7c3d9e</span>
-                  <span class="text-white">Merge pull request #42</span>
+                  <span class="text-cyan-400"><span data-i18n="svcProgramador.n08">main</span></span>
+                  <span class="text-[#cbd5e1]/60"><span data-i18n="svcProgramador.n24">a7c3d9e</span></span>
+                  <span class="text-white"><span data-i18n="svcProgramador.n25">Merge pull request #42</span></span>
                 </div>
                 <div class="text-[#cbd5e1]/40 mt-2">
-                  <span class="text-green-500">●</span> main · up-to-date · deploy ready
+                  <span class="text-green-500">●</span> <span data-i18n="svcProgramador.n26">main · up-to-date · deploy ready</span>
                 </div>
               </div>
             </div>
 
             <!-- Panel derecho: stats del desarrollador -->
             <div class="col-span-1 md:col-span-4 p-6 bg-[#050507]/30 font-mono text-[10px]">
-              <div class="text-[9px] uppercase tracking-wider text-[#cbd5e1]/40 mb-4 font-semibold">Developer Stats</div>
+              <div class="text-[9px] uppercase tracking-wider text-[#cbd5e1]/40 mb-4 font-semibold"><span data-i18n="svcProgramador.n27">Developer Stats</span></div>
               <div class="space-y-3">
                 <div class="p-2 border border-[#1f1f24] rounded bg-black/40">
                   <div class="text-green-400">+4,200</div>
-                  <div class="text-[#cbd5e1]/60 text-[9px]">Commits en producción</div>
+                  <div class="text-[#cbd5e1]/60 text-[9px]"><span data-i18n="svcProgramador.n28">Commits en producción</span></div>
                 </div>
                 <div class="p-2 border border-[#1f1f24] rounded bg-black/40">
                   <div class="text-green-400">15+</div>
-                  <div class="text-[#cbd5e1]/60 text-[9px]">Proyectos entregados</div>
+                  <div class="text-[#cbd5e1]/60 text-[9px]"><span data-i18n="svcProgramador.n29">Proyectos entregados</span></div>
                 </div>
                 <div class="p-2 border border-[#1f1f24] rounded bg-black/40">
-                  <div class="text-green-400">2.3s</div>
-                  <div class="text-[#cbd5e1]/60 text-[9px]">Test suite promedio</div>
+                  <div class="text-green-400"><span data-i18n="svcProgramador.n30">2.3s</span></div>
+                  <div class="text-[#cbd5e1]/60 text-[9px]"><span data-i18n="svcProgramador.n31">Test suite promedio</span></div>
                 </div>
                 <div class="border-t border-[#1f1f24]/50 pt-2 space-y-1">
                   <div class="flex justify-between">
@@ -122,12 +122,12 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
                     <span class="text-white">100%</span>
                   </div>
                   <div class="flex justify-between">
-                    <span class="text-[#cbd5e1]/60">Coverage</span>
+                    <span class="text-[#cbd5e1]/60"><span data-i18n="svcProgramador.n32">Coverage</span></span>
                     <span class="text-green-400">96%</span>
                   </div>
                   <div class="flex justify-between">
-                    <span class="text-[#cbd5e1]/60">Code quality</span>
-                    <span class="text-green-400">A+</span>
+                    <span class="text-[#cbd5e1]/60"><span data-i18n="svcProgramador.n33">Code quality</span></span>
+                    <span class="text-green-400"><span data-i18n="svcProgramador.n34">A+</span></span>
                   </div>
                 </div>
               </div>
@@ -142,10 +142,10 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
   <section id="stack" class="py-36 px-6 md:px-12 bg-black relative border-b border-[#1f1f24]">
     <div class="max-w-[1200px] mx-auto relative z-10">
       <div class="max-w-4xl mb-24">
-        <span class="text-[10px] font-mono text-[#cbd5e1] uppercase tracking-widest block mb-3 font-medium">Stack Técnico</span>
+        <span class="text-[10px] font-mono text-[#cbd5e1] uppercase tracking-widest block mb-3 font-medium"><span data-i18n="svcProgramador.n35">Stack Técnico</span></span>
         <h2 class="text-2xl md:text-4xl font-light text-white tracking-tight leading-snug">
-          Frontend avanzado, backend sólido y automatización con AI. 
-          Todo el stack moderno en un solo programador.
+          <span data-i18n="svcProgramador.n36">Frontend avanzado, backend sólido y automatización con AI. 
+          Todo el stack moderno en un solo programador.</span>
         </h2>
       </div>
 
@@ -164,17 +164,17 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
             </svg>
           </div>
           <div>
-            <h3 class="text-sm font-medium text-white mb-2.5">Frontend Avanzado</h3>
+            <h3 class="text-sm font-medium text-white mb-2.5"><span data-i18n="svcProgramador.n37">Frontend Avanzado</span></h3>
             <p class="text-xs text-[#cbd5e1] leading-relaxed">
-              Astro, React 19, Next.js 15, TypeScript estricto, Tailwind CSS, 
+              <span data-i18n="svcProgramador.n38">Astro, React 19, Next.js 15, TypeScript estricto, Tailwind CSS, 
               Framer Motion, React Query, Zustand. Arquitectura de componentes 
               atómicos, Server Components, streaming SSR y optimización de 
-              Core Web Vitals al máximo.
+              Core Web Vitals al máximo.</span>
             </p>
             <ul class="space-y-1 mt-3 text-[10px] text-[#cbd5e1] font-mono">
-              <li class="flex items-center gap-1.5"><span class="text-green-400">→</span> Islands Architecture</li>
-              <li class="flex items-center gap-1.5"><span class="text-green-400">→</span> Server Components / RSC</li>
-              <li class="flex items-center gap-1.5"><span class="text-green-400">→</span> Optimización Lighthouse 100</li>
+              <li class="flex items-center gap-1.5"><span class="text-green-400">→</span> <span data-i18n="svcProgramador.n39">Islands Architecture</span></li>
+              <li class="flex items-center gap-1.5"><span class="text-green-400">→</span> <span data-i18n="svcProgramador.n40">Server Components / RSC</span></li>
+              <li class="flex items-center gap-1.5"><span class="text-green-400">→</span> <span data-i18n="svcProgramador.n41">Optimización Lighthouse 100</span></li>
             </ul>
           </div>
         </div>
@@ -192,16 +192,16 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
             </svg>
           </div>
           <div>
-            <h3 class="text-sm font-medium text-white mb-2.5">Backend y Bases de Datos</h3>
+            <h3 class="text-sm font-medium text-white mb-2.5"><span data-i18n="svcProgramador.n42">Backend y Bases de Datos</span></h3>
             <p class="text-xs text-[#cbd5e1] leading-relaxed">
-              Node.js, Supabase (PostgreSQL), API Routes en Astro/Next.js, 
+              <span data-i18n="svcProgramador.n43">Node.js, Supabase (PostgreSQL), API Routes en Astro/Next.js, 
               Prisma ORM, Drizzle, Redis, WebSockets, autenticación JWT/OAuth, 
-              Row Level Security, migraciones automatizadas y Realtime subscriptions.
+              Row Level Security, migraciones automatizadas y Realtime subscriptions.</span>
             </p>
             <ul class="space-y-1 mt-3 text-[10px] text-[#cbd5e1] font-mono">
-              <li class="flex items-center gap-1.5"><span class="text-green-400">→</span> REST + GraphQL APIs</li>
-              <li class="flex items-center gap-1.5"><span class="text-green-400">→</span> WebSockets en tiempo real</li>
-              <li class="flex items-center gap-1.5"><span class="text-green-400">→</span> Row Level Security (RLS)</li>
+              <li class="flex items-center gap-1.5"><span class="text-green-400">→</span> <span data-i18n="svcProgramador.n44">REST + GraphQL APIs</span></li>
+              <li class="flex items-center gap-1.5"><span class="text-green-400">→</span> <span data-i18n="svcProgramador.n45">WebSockets en tiempo real</span></li>
+              <li class="flex items-center gap-1.5"><span class="text-green-400">→</span> <span data-i18n="svcProgramador.n46">Row Level Security (RLS)</span></li>
             </ul>
           </div>
         </div>
@@ -220,17 +220,17 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
             </svg>
           </div>
           <div>
-            <h3 class="text-sm font-medium text-white mb-2.5">Automatización y AI</h3>
+            <h3 class="text-sm font-medium text-white mb-2.5"><span data-i18n="svcProgramador.n47">Automatización y AI</span></h3>
             <p class="text-xs text-[#cbd5e1] leading-relaxed">
-              CI/CD con GitHub Actions, testing automatizado (Vitest, Playwright), 
+              <span data-i18n="svcProgramador.n48">CI/CD con GitHub Actions, testing automatizado (Vitest, Playwright), 
               despliegues continuos a Vercel, integración de herramientas AI 
               (Cursor, Claude, GPT) para acelerar el desarrollo sin sacrificar 
-              calidad. Infraestructura como código.
+              calidad. Infraestructura como código.</span>
             </p>
             <ul class="space-y-1 mt-3 text-[10px] text-[#cbd5e1] font-mono">
-              <li class="flex items-center gap-1.5"><span class="text-green-400">→</span> CI/CD + Deploy automatizado</li>
-              <li class="flex items-center gap-1.5"><span class="text-green-400">→</span> Testing (Vitest + Playwright)</li>
-              <li class="flex items-center gap-1.5"><span class="text-green-400">→</span> AI-assisted development</li>
+              <li class="flex items-center gap-1.5"><span class="text-green-400">→</span> <span data-i18n="svcProgramador.n49">CI/CD + Deploy automatizado</span></li>
+              <li class="flex items-center gap-1.5"><span class="text-green-400">→</span> <span data-i18n="svcProgramador.n50">Testing (Vitest + Playwright)</span></li>
+              <li class="flex items-center gap-1.5"><span class="text-green-400">→</span> <span data-i18n="svcProgramador.n51">AI-assisted development</span></li>
             </ul>
           </div>
         </div>
@@ -243,28 +243,28 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     <div class="max-w-[1200px] mx-auto relative z-10">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
         <div class="lg:col-span-5 space-y-5">
-          <span class="text-[10px] font-mono text-purple-400 uppercase tracking-widest block font-medium">Marca Blanca</span>
+          <span class="text-[10px] font-mono text-purple-400 uppercase tracking-widest block font-medium"><span data-i18n="svcProgramador.n52">Marca Blanca</span></span>
           <h2 class="text-2xl md:text-4xl font-light text-white tracking-tight leading-tight">
-            Agencias: amplía tu capacidad de entrega sin contratar empleados fijos.
+            <span data-i18n="svcProgramador.n53">Agencias: amplía tu capacidad de entrega sin contratar empleados fijos.</span>
           </h2>
           <p class="text-sm text-[#cbd5e1] font-light leading-relaxed">
-            Trabajo como desarrollador marca blanca para agencias de diseño web, 
+            <span data-i18n="svcProgramador.n54">Trabajo como desarrollador marca blanca para agencias de diseño web, 
             marketing digital y consultorías tecnológicas en Caracas y toda Venezuela. 
             Tú vendes el proyecto, yo construyo la solución. Todo el código se entrega 
-            bajo tu marca, con la calidad y velocidad que tus clientes esperan.
+            bajo tu marca, con la calidad y velocidad que tus clientes esperan.</span>
           </p>
           <ul class="space-y-2 text-xs text-[#cbd5e1] font-light">
             <li class="flex items-center gap-2">
-              <span class="material-symbols-outlined text-sm text-purple-400">check_circle</span>
-              Código entregado bajo tu marca y repositorio
+              <span class="material-symbols-outlined text-sm text-purple-400"><span data-i18n="svcProgramador.n55">check_circle</span></span>
+              <span data-i18n="svcProgramador.n56">Código entregado bajo tu marca y repositorio</span>
             </li>
             <li class="flex items-center gap-2">
-              <span class="material-symbols-outlined text-sm text-purple-400">check_circle</span>
-              Comunicación directa sin intermediarios técnicos
+              <span class="material-symbols-outlined text-sm text-purple-400"><span data-i18n="svcProgramador.n55">check_circle</span></span>
+              <span data-i18n="svcProgramador.n57">Comunicación directa sin intermediarios técnicos</span>
             </li>
             <li class="flex items-center gap-2">
-              <span class="material-symbols-outlined text-sm text-purple-400">check_circle</span>
-              Escala tu capacidad según demanda sin riesgo laboral
+              <span class="material-symbols-outlined text-sm text-purple-400"><span data-i18n="svcProgramador.n55">check_circle</span></span>
+              <span data-i18n="svcProgramador.n58">Escala tu capacidad según demanda sin riesgo laboral</span>
             </li>
           </ul>
         </div>
@@ -272,43 +272,43 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         <div class="lg:col-span-7">
           <div class="linear-card rounded-lg border border-[#1f1f24] overflow-hidden bg-[#08080c]/50 p-8 shadow-2xl relative">
             <div class="absolute inset-0 font-mono text-[8px] text-[#1f1f24] p-6 select-none overflow-hidden leading-relaxed pointer-events-none opacity-20">
-              white-label-agreement<br />
-              - Tú vendes, yo construyo<br />
-              - Código 100% transferido<br />
-              - Sin branding de Vortex<br />
-              - Repositorio cliente final<br />
-              - Soporte post-entrega
+              <span data-i18n="svcProgramador.n59">white-label-agreement</span><br />
+              <span data-i18n="svcProgramador.n60">- Tú vendes, yo construyo</span><br />
+              <span data-i18n="svcProgramador.n61">- Código 100% transferido</span><br />
+              <span data-i18n="svcProgramador.n62">- Sin branding de Vortex</span><br />
+              <span data-i18n="svcProgramador.n63">- Repositorio cliente final</span><br />
+              <span data-i18n="svcProgramador.n64">- Soporte post-entrega</span>
             </div>
 
             <div class="flex items-center justify-between border-b border-[#1f1f24] pb-4 mb-6 relative z-10">
               <span class="text-[10px] font-mono text-[#cbd5e1] flex items-center gap-1.5">
                 <span class="w-1.5 h-1.5 rounded-full bg-purple-500"></span>
-                white-label // agency-partner
+                <span data-i18n="svcProgramador.n65">white-label // agency-partner</span>
               </span>
-              <span class="text-[9px] text-[#cbd5e1]/40 font-mono">Modelo B2B</span>
+              <span class="text-[9px] text-[#cbd5e1]/40 font-mono"><span data-i18n="svcProgramador.n66">Modelo B2B</span></span>
             </div>
 
             <!-- Grid de beneficios marca blanca -->
             <div class="grid grid-cols-2 gap-4 relative z-10">
               <div class="p-4 border border-[#1f1f24] rounded bg-black/40">
-                <span class="text-[10px] font-mono text-purple-400 block mb-1">Código Fuente</span>
-                <span class="text-xs text-white/90">100% transferido</span>
-                <span class="text-[10px] text-[#cbd5e1]/60 block">Sin dependencias ocultas</span>
+                <span class="text-[10px] font-mono text-purple-400 block mb-1"><span data-i18n="svcProgramador.n67">Código Fuente</span></span>
+                <span class="text-xs text-white/90"><span data-i18n="svcProgramador.n68">100% transferido</span></span>
+                <span class="text-[10px] text-[#cbd5e1]/60 block"><span data-i18n="svcProgramador.n69">Sin dependencias ocultas</span></span>
               </div>
               <div class="p-4 border border-[#1f1f24] rounded bg-black/40">
-                <span class="text-[10px] font-mono text-purple-400 block mb-1">Marca</span>
-                <span class="text-xs text-white/90">Tuya al 100%</span>
-                <span class="text-[10px] text-[#cbd5e1]/60 block">Sin créditos ni logos</span>
+                <span class="text-[10px] font-mono text-purple-400 block mb-1"><span data-i18n="svcProgramador.n70">Marca</span></span>
+                <span class="text-xs text-white/90"><span data-i18n="svcProgramador.n71">Tuya al 100%</span></span>
+                <span class="text-[10px] text-[#cbd5e1]/60 block"><span data-i18n="svcProgramador.n72">Sin créditos ni logos</span></span>
               </div>
               <div class="p-4 border border-[#1f1f24] rounded bg-black/40">
-                <span class="text-[10px] font-mono text-purple-400 block mb-1">Repositorio</span>
-                <span class="text-xs text-white/90">GitHub/GitLab tuyo</span>
-                <span class="text-[10px] text-[#cbd5e1]/60 block">Commits con tu cuenta</span>
+                <span class="text-[10px] font-mono text-purple-400 block mb-1"><span data-i18n="svcProgramador.n73">Repositorio</span></span>
+                <span class="text-xs text-white/90"><span data-i18n="svcProgramador.n74">GitHub/GitLab tuyo</span></span>
+                <span class="text-[10px] text-[#cbd5e1]/60 block"><span data-i18n="svcProgramador.n75">Commits con tu cuenta</span></span>
               </div>
               <div class="p-4 border border-[#1f1f24] rounded bg-black/40">
-                <span class="text-[10px] font-mono text-purple-400 block mb-1">Soporte</span>
-                <span class="text-xs text-white/90">Post-entrega</span>
-                <span class="text-[10px] text-[#cbd5e1]/60 block">3 meses incluido</span>
+                <span class="text-[10px] font-mono text-purple-400 block mb-1"><span data-i18n="svcProgramador.n76">Soporte</span></span>
+                <span class="text-xs text-white/90"><span data-i18n="svcProgramador.n77">Post-entrega</span></span>
+                <span class="text-[10px] text-[#cbd5e1]/60 block"><span data-i18n="svcProgramador.n78">3 meses incluido</span></span>
               </div>
             </div>
           </div>
@@ -321,44 +321,44 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
   <section class="py-36 px-6 md:px-12 bg-black border-b border-[#1f1f24] relative">
     <div class="max-w-[1200px] mx-auto relative z-10">
       <div class="text-center max-w-2xl mx-auto mb-20">
-        <span class="text-[10px] font-mono text-[#cbd5e1] uppercase tracking-widest block mb-3 font-medium">Metodología de Trabajo</span>
-        <h2 class="text-3xl md:text-5xl font-light text-white tracking-tight">Código limpio, entregas rápidas, comunicación directa</h2>
+        <span class="text-[10px] font-mono text-[#cbd5e1] uppercase tracking-widest block mb-3 font-medium"><span data-i18n="svcProgramador.n79">Metodología de Trabajo</span></span>
+        <h2 class="text-3xl md:text-5xl font-light text-white tracking-tight"><span data-i18n="svcProgramador.n80">Código limpio, entregas rápidas, comunicación directa</span></h2>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         <div class="linear-card rounded-lg border border-[#1f1f24] bg-[#08080c]/40 p-6 glow-hover transition-all">
           <div class="text-2xl font-light text-purple-400 mb-3">01</div>
-          <h3 class="text-sm font-medium text-white mb-2">Requisitos y Plan</h3>
+          <h3 class="text-sm font-medium text-white mb-2"><span data-i18n="svcProgramador.n81">Requisitos y Plan</span></h3>
           <p class="text-[10px] text-[#cbd5e1] leading-relaxed">
-            Definimos alcance, tecnologías, timeline y entregables. Te doy una 
-            estimación precisa con desglose de horas y costo.
+            <span data-i18n="svcProgramador.n82">Definimos alcance, tecnologías, timeline y entregables. Te doy una 
+            estimación precisa con desglose de horas y costo.</span>
           </p>
         </div>
 
         <div class="linear-card rounded-lg border border-[#1f1f24] bg-[#08080c]/40 p-6 glow-hover transition-all">
           <div class="text-2xl font-light text-cyan-400 mb-3">02</div>
-          <h3 class="text-sm font-medium text-white mb-2">Desarrollo Iterativo</h3>
+          <h3 class="text-sm font-medium text-white mb-2"><span data-i18n="svcProgramador.n83">Desarrollo Iterativo</span></h3>
           <p class="text-[10px] text-[#cbd5e1] leading-relaxed">
-            Commits diarios, ramas por feature, PRs con code review. Ves el avance 
-            en tiempo real en tu repositorio de GitHub/GitLab.
+            <span data-i18n="svcProgramador.n84">Commits diarios, ramas por feature, PRs con code review. Ves el avance 
+            en tiempo real en tu repositorio de GitHub/GitLab.</span>
           </p>
         </div>
 
         <div class="linear-card rounded-lg border border-[#1f1f24] bg-[#08080c]/40 p-6 glow-hover transition-all">
           <div class="text-2xl font-light text-green-400 mb-3">03</div>
-          <h3 class="text-sm font-medium text-white mb-2">Testing y QA</h3>
+          <h3 class="text-sm font-medium text-white mb-2"><span data-i18n="svcProgramador.n85">Testing y QA</span></h3>
           <p class="text-[10px] text-[#cbd5e1] leading-relaxed">
-            Suite de tests automatizados (unitarios, integración, e2e), 
-            linting estricto y auditoría de seguridad antes de cada deploy.
+            <span data-i18n="svcProgramador.n86">Suite de tests automatizados (unitarios, integración, e2e), 
+            linting estricto y auditoría de seguridad antes de cada deploy.</span>
           </p>
         </div>
 
         <div class="linear-card rounded-lg border border-[#1f1f24] bg-[#08080c]/40 p-6 glow-hover transition-all">
           <div class="text-2xl font-light text-orange-400 mb-3">04</div>
-          <h3 class="text-sm font-medium text-white mb-2">Entrega y Soporte</h3>
+          <h3 class="text-sm font-medium text-white mb-2"><span data-i18n="svcProgramador.n87">Entrega y Soporte</span></h3>
           <p class="text-[10px] text-[#cbd5e1] leading-relaxed">
-            Código fuente completo, documentación técnica y 3 meses de soporte 
-            post-entrega para ajustes y estabilización.
+            <span data-i18n="svcProgramador.n88">Código fuente completo, documentación técnica y 3 meses de soporte 
+            post-entrega para ajustes y estabilización.</span>
           </p>
         </div>
       </div>
@@ -369,58 +369,58 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
   <section class="py-36 px-6 md:px-12 bg-black border-b border-[#1f1f24] relative">
     <div class="max-w-[1200px] mx-auto relative z-10">
       <div class="text-center max-w-3xl mx-auto mb-16">
-        <span class="text-[10px] font-mono text-[#cbd5e1] uppercase tracking-widest block mb-3 font-medium">Herramientas Diarias</span>
-        <h2 class="text-3xl md:text-5xl font-light text-white tracking-tight">El arsenal técnico de un programador senior</h2>
+        <span class="text-[10px] font-mono text-[#cbd5e1] uppercase tracking-widest block mb-3 font-medium"><span data-i18n="svcProgramador.n89">Herramientas Diarias</span></span>
+        <h2 class="text-3xl md:text-5xl font-light text-white tracking-tight"><span data-i18n="svcProgramador.n90">El arsenal técnico de un programador senior</span></h2>
       </div>
 
       <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 max-w-5xl mx-auto">
         <div class="linear-card p-3 rounded border border-[#1f1f24] text-center glow-hover transition-all">
-          <span class="material-symbols-outlined text-lg text-cyan-400">code</span>
-          <div class="text-[10px] font-mono text-white mt-1">VS Code</div>
+          <span class="material-symbols-outlined text-lg text-cyan-400"><span data-i18n="svcProgramador.n91">code</span></span>
+          <div class="text-[10px] font-mono text-white mt-1"><span data-i18n="svcProgramador.n92">VS Code</span></div>
         </div>
         <div class="linear-card p-3 rounded border border-[#1f1f24] text-center glow-hover transition-all">
-          <span class="material-symbols-outlined text-lg text-purple-400">account_tree</span>
-          <div class="text-[10px] font-mono text-white mt-1">Git/GitHub</div>
+          <span class="material-symbols-outlined text-lg text-purple-400"><span data-i18n="svcProgramador.n93">account_tree</span></span>
+          <div class="text-[10px] font-mono text-white mt-1"><span data-i18n="svcProgramador.n94">Git/GitHub</span></div>
         </div>
         <div class="linear-card p-3 rounded border border-[#1f1f24] text-center glow-hover transition-all">
-          <span class="material-symbols-outlined text-lg text-green-400">play_circle</span>
-          <div class="text-[10px] font-mono text-white mt-1">Vitest</div>
+          <span class="material-symbols-outlined text-lg text-green-400"><span data-i18n="svcProgramador.n95">play_circle</span></span>
+          <div class="text-[10px] font-mono text-white mt-1"><span data-i18n="svcProgramador.n96">Vitest</span></div>
         </div>
         <div class="linear-card p-3 rounded border border-[#1f1f24] text-center glow-hover transition-all">
-          <span class="material-symbols-outlined text-lg text-orange-400">deployed_code</span>
+          <span class="material-symbols-outlined text-lg text-orange-400"><span data-i18n="svcProgramador.n97">deployed_code</span></span>
           <div class="text-[10px] font-mono text-white mt-1">Vercel</div>
         </div>
         <div class="linear-card p-3 rounded border border-[#1f1f24] text-center glow-hover transition-all">
-          <span class="material-symbols-outlined text-lg text-pink-400">database</span>
-          <div class="text-[10px] font-mono text-white mt-1">Supabase</div>
+          <span class="material-symbols-outlined text-lg text-pink-400"><span data-i18n="svcProgramador.n98">database</span></span>
+          <div class="text-[10px] font-mono text-white mt-1"><span data-i18n="svcProgramador.n99">Supabase</span></div>
         </div>
         <div class="linear-card p-3 rounded border border-[#1f1f24] text-center glow-hover transition-all">
-          <span class="material-symbols-outlined text-lg text-yellow-400">psychology</span>
-          <div class="text-[10px] font-mono text-white mt-1">Cursor AI</div>
+          <span class="material-symbols-outlined text-lg text-yellow-400"><span data-i18n="svcProgramador.n100">psychology</span></span>
+          <div class="text-[10px] font-mono text-white mt-1"><span data-i18n="svcProgramador.n101">Cursor AI</span></div>
         </div>
         <div class="linear-card p-3 rounded border border-[#1f1f24] text-center glow-hover transition-all">
-          <span class="material-symbols-outlined text-lg text-cyan-400">test_tube</span>
-          <div class="text-[10px] font-mono text-white mt-1">Playwright</div>
+          <span class="material-symbols-outlined text-lg text-cyan-400"><span data-i18n="svcProgramador.n102">test_tube</span></span>
+          <div class="text-[10px] font-mono text-white mt-1"><span data-i18n="svcProgramador.n103">Playwright</span></div>
         </div>
         <div class="linear-card p-3 rounded border border-[#1f1f24] text-center glow-hover transition-all">
-          <span class="material-symbols-outlined text-lg text-purple-400">dns</span>
-          <div class="text-[10px] font-mono text-white mt-1">Docker</div>
+          <span class="material-symbols-outlined text-lg text-purple-400"><span data-i18n="svcProgramador.n104">dns</span></span>
+          <div class="text-[10px] font-mono text-white mt-1"><span data-i18n="svcProgramador.n105">Docker</span></div>
         </div>
         <div class="linear-card p-3 rounded border border-[#1f1f24] text-center glow-hover transition-all">
-          <span class="material-symbols-outlined text-lg text-green-400">webhook</span>
-          <div class="text-[10px] font-mono text-white mt-1">WebSockets</div>
+          <span class="material-symbols-outlined text-lg text-green-400"><span data-i18n="svcProgramador.n106">webhook</span></span>
+          <div class="text-[10px] font-mono text-white mt-1"><span data-i18n="svcProgramador.n107">WebSockets</span></div>
         </div>
         <div class="linear-card p-3 rounded border border-[#1f1f24] text-center glow-hover transition-all">
-          <span class="material-symbols-outlined text-lg text-orange-400">terminal</span>
+          <span class="material-symbols-outlined text-lg text-orange-400"><span data-i18n="svcProgramador.n05">terminal</span></span>
           <div class="text-[10px] font-mono text-white mt-1">Node.js</div>
         </div>
         <div class="linear-card p-3 rounded border border-[#1f1f24] text-center glow-hover transition-all">
-          <span class="material-symbols-outlined text-lg text-pink-400">frame</span>
-          <div class="text-[10px] font-mono text-white mt-1">Figma API</div>
+          <span class="material-symbols-outlined text-lg text-pink-400"><span data-i18n="svcProgramador.n108">frame</span></span>
+          <div class="text-[10px] font-mono text-white mt-1"><span data-i18n="svcProgramador.n109">Figma API</span></div>
         </div>
         <div class="linear-card p-3 rounded border border-[#1f1f24] text-center glow-hover transition-all">
-          <span class="material-symbols-outlined text-lg text-yellow-400">cloud</span>
-          <div class="text-[10px] font-mono text-white mt-1">CI/CD</div>
+          <span class="material-symbols-outlined text-lg text-yellow-400"><span data-i18n="svcProgramador.n110">cloud</span></span>
+          <div class="text-[10px] font-mono text-white mt-1"><span data-i18n="svcProgramador.n111">CI/CD</span></div>
         </div>
       </div>
     </div>
@@ -430,89 +430,89 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
   <section class="py-36 px-6 md:px-12 bg-black relative border-b border-[#1f1f24]">
     <div class="max-w-[800px] mx-auto relative z-10">
       <div class="text-center max-w-2xl mx-auto mb-16">
-        <span class="text-[10px] font-mono text-[#cbd5e1] uppercase tracking-widest block mb-3 font-medium">FAQ Técnica</span>
-        <h2 class="text-3xl md:text-4xl font-light text-white tracking-tight">Preguntas sobre contratación y desarrollo</h2>
+        <span class="text-[10px] font-mono text-[#cbd5e1] uppercase tracking-widest block mb-3 font-medium"><span data-i18n="svcProgramador.n112">FAQ Técnica</span></span>
+        <h2 class="text-3xl md:text-4xl font-light text-white tracking-tight"><span data-i18n="svcProgramador.n113">Preguntas sobre contratación y desarrollo</span></h2>
       </div>
 
       <div class="space-y-4">
         <details class="group linear-card rounded-lg border border-[#1f1f24] bg-[#08080c]/30 overflow-hidden glow-hover transition-all">
           <summary class="flex items-center justify-between p-5 cursor-pointer text-sm font-medium text-white/90 hover:text-white transition-colors">
-            ¿Cuántos años de experiencia tienes y en qué tecnologías?
-            <span class="material-symbols-outlined text-sm text-[#cbd5e1]/60 group-open:rotate-180 transition-transform">expand_more</span>
+            <span data-i18n="svcProgramador.n114">¿Cuántos años de experiencia tienes y en qué tecnologías?</span>
+            <span class="material-symbols-outlined text-sm text-[#cbd5e1]/60 group-open:rotate-180 transition-transform"><span data-i18n="svcProgramador.n115">expand_more</span></span>
           </summary>
           <div class="px-5 pb-5 text-xs text-[#cbd5e1] leading-relaxed">
-            Tengo experiencia comprobable construyendo aplicaciones web profesionales 
-            con el stack moderno: <strong class="text-white">Astro, React, Next.js, TypeScript, 
-            Node.js, Supabase (PostgreSQL) y Tailwind CSS</strong>. Domino arquitectura 
+            <span data-i18n="svcProgramador.n116">Tengo experiencia comprobable construyendo aplicaciones web profesionales 
+            con el stack moderno:</span> <strong class="text-white"><span data-i18n="svcProgramador.n117">Astro, React, Next.js, TypeScript, 
+            Node.js, Supabase (PostgreSQL) y Tailwind CSS</span></strong><span data-i18n="svcProgramador.n118">. Domino arquitectura 
             Jamstack, Server Components, APIs REST/GraphQL, WebSockets, autenticación 
             JWT/OAuth, Row Level Security, CI/CD, testing automatizado y despliegues 
             en Vercel. Cada proyecto que entrego pasa por pruebas de rendimiento, 
-            seguridad y accesibilidad antes de salir a producción.
+            seguridad y accesibilidad antes de salir a producción.</span>
           </div>
         </details>
 
         <details class="group linear-card rounded-lg border border-[#1f1f24] bg-[#08080c]/30 overflow-hidden glow-hover transition-all">
           <summary class="flex items-center justify-between p-5 cursor-pointer text-sm font-medium text-white/90 hover:text-white transition-colors">
-            ¿Trabajas como marca blanca para otras agencias?
-            <span class="material-symbols-outlined text-sm text-[#cbd5e1]/60 group-open:rotate-180 transition-transform">expand_more</span>
+            <span data-i18n="svcProgramador.n119">¿Trabajas como marca blanca para otras agencias?</span>
+            <span class="material-symbols-outlined text-sm text-[#cbd5e1]/60 group-open:rotate-180 transition-transform"><span data-i18n="svcProgramador.n115">expand_more</span></span>
           </summary>
           <div class="px-5 pb-5 text-xs text-[#cbd5e1] leading-relaxed">
-            Sí, es uno de mis servicios principales. Si tienes una agencia de diseño web, 
-            marketing digital o consultoría tecnológica, puedes <strong class="text-white">vender mis servicios 
-            como si fueran tuyos</strong>. Todo el código se entrega bajo tu marca, en tu 
+            <span data-i18n="svcProgramador.n120">Sí, es uno de mis servicios principales. Si tienes una agencia de diseño web, 
+            marketing digital o consultoría tecnológica, puedes</span> <strong class="text-white"><span data-i18n="svcProgramador.n121">vender mis servicios 
+            como si fueran tuyos</span></strong><span data-i18n="svcProgramador.n122">. Todo el código se entrega bajo tu marca, en tu 
             repositorio de GitHub/GitLab, sin ningún logo o referencia a Vortex. 
             Tú mantienes la relación con el cliente final, yo me encargo de la 
             ingeniería. Es la forma más eficiente de escalar tu capacidad de entrega 
-            sin contratar empleados fijos.
+            sin contratar empleados fijos.</span>
           </div>
         </details>
 
         <details class="group linear-card rounded-lg border border-[#1f1f24] bg-[#08080c]/30 overflow-hidden glow-hover transition-all">
           <summary class="flex items-center justify-between p-5 cursor-pointer text-sm font-medium text-white/90 hover:text-white transition-colors">
-            ¿Qué metodologías y herramientas usas para programar?
-            <span class="material-symbols-outlined text-sm text-[#cbd5e1]/60 group-open:rotate-180 transition-transform">expand_more</span>
+            <span data-i18n="svcProgramador.n123">¿Qué metodologías y herramientas usas para programar?</span>
+            <span class="material-symbols-outlined text-sm text-[#cbd5e1]/60 group-open:rotate-180 transition-transform"><span data-i18n="svcProgramador.n115">expand_more</span></span>
           </summary>
           <div class="px-5 pb-5 text-xs text-[#cbd5e1] leading-relaxed">
-            Uso <strong class="text-white">Git Flow</strong> con ramas por feature y Pull Requests 
-            con code review. Desarrollo en <strong class="text-white">VS Code + Cursor</strong> con 
-            TypeScript estricto, ESLint y Prettier. Tests automatizados con 
-            <strong class="text-white">Vitest</strong> (unitarios) y <strong class="text-white">Playwright</strong> (e2e). 
-            CI/CD con <strong class="text-white">GitHub Actions</strong> que ejecuta tests, linting 
-            y build en cada push. Despliegues automáticos a <strong class="text-white">Vercel</strong> 
-            con preview URLs por cada PR. Documentación técnica en el propio 
-            código (JSDoc) y README por proyecto.
+            <span data-i18n="svcProgramador.n124">Uso</span> <strong class="text-white"><span data-i18n="svcProgramador.n125">Git Flow</span></strong> <span data-i18n="svcProgramador.n126">con ramas por feature y Pull Requests 
+            con code review. Desarrollo en</span> <strong class="text-white"><span data-i18n="svcProgramador.n127">VS Code + Cursor</span></strong> <span data-i18n="svcProgramador.n128">con 
+            TypeScript estricto, ESLint y Prettier. Tests automatizados con</span> 
+            <strong class="text-white"><span data-i18n="svcProgramador.n96">Vitest</span></strong> <span data-i18n="svcProgramador.n129">(unitarios) y</span> <strong class="text-white"><span data-i18n="svcProgramador.n103">Playwright</span></strong> <span data-i18n="svcProgramador.n130">(e2e). 
+            CI/CD con</span> <strong class="text-white"><span data-i18n="svcProgramador.n131">GitHub Actions</span></strong> <span data-i18n="svcProgramador.n132">que ejecuta tests, linting 
+            y build en cada push. Despliegues automáticos a</span> <strong class="text-white">Vercel</strong> 
+            <span data-i18n="svcProgramador.n133">con preview URLs por cada PR. Documentación técnica en el propio 
+            código (JSDoc) y README por proyecto.</span>
           </div>
         </details>
 
         <details class="group linear-card rounded-lg border border-[#1f1f24] bg-[#08080c]/30 overflow-hidden glow-hover transition-all">
           <summary class="flex items-center justify-between p-5 cursor-pointer text-sm font-medium text-white/90 hover:text-white transition-colors">
-            ¿Cómo se maneja el soporte y la entrega del código?
-            <span class="material-symbols-outlined text-sm text-[#cbd5e1]/60 group-open:rotate-180 transition-transform">expand_more</span>
+            <span data-i18n="svcProgramador.n134">¿Cómo se maneja el soporte y la entrega del código?</span>
+            <span class="material-symbols-outlined text-sm text-[#cbd5e1]/60 group-open:rotate-180 transition-transform"><span data-i18n="svcProgramador.n115">expand_more</span></span>
           </summary>
           <div class="px-5 pb-5 text-xs text-[#cbd5e1] leading-relaxed">
-            El código se entrega completo a través de <strong class="text-white">GitHub o GitLab</strong> 
-            (en tu repositorio si trabajamos marca blanca). Incluye: historial de 
+            <span data-i18n="svcProgramador.n135">El código se entrega completo a través de</span> <strong class="text-white"><span data-i18n="svcProgramador.n136">GitHub o GitLab</span></strong> 
+            <span data-i18n="svcProgramador.n137">(en tu repositorio si trabajamos marca blanca). Incluye: historial de 
             commits, documentación técnica, instrucciones de deploy y variables de 
-            entorno. Para el soporte post-entrega, tienes <strong class="text-white">3 meses incluidos</strong> 
-            para ajustes, correcciones y preguntas técnicas. La comunicación es por 
+            entorno. Para el soporte post-entrega, tienes</span> <strong class="text-white"><span data-i18n="svcProgramador.n138">3 meses incluidos</span></strong> 
+            <span data-i18n="svcProgramador.n139">para ajustes, correcciones y preguntas técnicas. La comunicación es por 
             Slack o WhatsApp con respuestas garantizadas en menos de 24 horas 
-            hábiles.
+            hábiles.</span>
           </div>
         </details>
 
         <details class="group linear-card rounded-lg border border-[#1f1f24] bg-[#08080c]/30 overflow-hidden glow-hover transition-all">
           <summary class="flex items-center justify-between p-5 cursor-pointer text-sm font-medium text-white/90 hover:text-white transition-colors">
-            ¿Manejas integraciones de APIs complejas y WebSockets?
-            <span class="material-symbols-outlined text-sm text-[#cbd5e1]/60 group-open:rotate-180 transition-transform">expand_more</span>
+            <span data-i18n="svcProgramador.n140">¿Manejas integraciones de APIs complejas y WebSockets?</span>
+            <span class="material-symbols-outlined text-sm text-[#cbd5e1]/60 group-open:rotate-180 transition-transform"><span data-i18n="svcProgramador.n115">expand_more</span></span>
           </summary>
           <div class="px-5 pb-5 text-xs text-[#cbd5e1] leading-relaxed">
-            Sí. He integrado sistemas con <strong class="text-white">Salesforce, HubSpot, pasarelas de pago 
-            (Stripe, PayPal, MercadoPago)</strong>, APIs de delivery (MRW, Zoom), 
+            <span data-i18n="svcProgramador.n141">Sí. He integrado sistemas con</span> <strong class="text-white"><span data-i18n="svcProgramador.n142">Salesforce, HubSpot, pasarelas de pago 
+            (Stripe, PayPal, MercadoPago)</span></strong><span data-i18n="svcProgramador.n143">, APIs de delivery (MRW, Zoom), 
             servicios de email (SendGrid, Resend), autenticación OAuth (Google, 
-            GitHub), y sistemas contables venezolanos. Para tiempo real implemento 
-            <strong class="text-white">WebSockets con Supabase Realtime</strong> o Socket.io, 
+            GitHub), y sistemas contables venezolanos. Para tiempo real implemento</span> 
+            <strong class="text-white"><span data-i18n="svcProgramador.n144">WebSockets con Supabase Realtime</span></strong> <span data-i18n="svcProgramador.n145">o Socket.io, 
             ideal para notificaciones en vivo, chats, dashboards de monitoreo 
-            y sincronización de datos multi-usuario.
+            y sincronización de datos multi-usuario.</span>
           </div>
         </details>
       </div>
@@ -522,33 +522,33 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
   <!-- ─── CONTACTO ────────────────────────────────────────────────── -->
   <section id="contacto" class="py-36 px-6 md:px-12 bg-black relative">
     <div class="max-w-[600px] mx-auto text-center relative z-10 space-y-8">
-      <span class="text-[10px] font-mono text-[#cbd5e1] uppercase tracking-widest block font-medium">Contratación</span>
+      <span class="text-[10px] font-mono text-[#cbd5e1] uppercase tracking-widest block font-medium"><span data-i18n="svcProgramador.n146">Contratación</span></span>
       <h2 class="text-3xl md:text-5xl font-light text-white tracking-tight leading-tight">
-        ¿Necesitas un programador senior para tu proyecto?
+        <span data-i18n="svcProgramador.n147">¿Necesitas un programador senior para tu proyecto?</span>
       </h2>
       <p class="text-sm text-[#cbd5e1] font-light leading-relaxed">
-        Cuéntame los detalles técnicos de tu proyecto y te responderé con una propuesta 
+        <span data-i18n="svcProgramador.n148">Cuéntame los detalles técnicos de tu proyecto y te responderé con una propuesta 
         clara: alcance, tecnologías, timeline y presupuesto. Sin rodeos ni 
-        intermediarios — hablas directamente con el desarrollador.
+        intermediarios — hablas directamente con el desarrollador.</span>
       </p>
 
       <div class="linear-card p-8 rounded-lg border border-[#1f1f24] bg-[#08080c]/40 text-left space-y-6">
         <div id="form-feedback" class="text-sm mt-4 hidden"></div>
         <form id="contact-form-dev-senior" class="space-y-4">
           <div>
-            <label class="block text-[10px] font-mono text-[#cbd5e1] uppercase tracking-wider mb-2 font-medium" for="fullname">Nombre y Apellido</label>
+            <label class="block text-[10px] font-mono text-[#cbd5e1] uppercase tracking-wider mb-2 font-medium" for="fullname"><span data-i18n="svcProgramador.n149">Nombre y Apellido</span></label>
             <input
               class="w-full bg-black border border-[#1f1f24] rounded px-4 py-3 text-xs text-white placeholder-neutral-800 focus:outline-none focus:border-white transition-colors"
               type="text"
               id="fullname"
               name="name"
-              placeholder="e.g. Carlos Pérez"
+              placeholder="e.g. Carlos Pérez" data-i18n-placeholder="svcProgramador.n154"
               required
             />
           </div>
 
           <div>
-            <label class="block text-[10px] font-mono text-[#cbd5e1] uppercase tracking-wider mb-2 font-medium" for="corp_email">Correo Corporativo</label>
+            <label class="block text-[10px] font-mono text-[#cbd5e1] uppercase tracking-wider mb-2 font-medium" for="corp_email"><span data-i18n="svcProgramador.n150">Correo Corporativo</span></label>
             <input
               class="w-full bg-black border border-[#1f1f24] rounded px-4 py-3 text-xs text-white placeholder-neutral-800 focus:outline-none focus:border-white transition-colors"
               type="email"
@@ -560,12 +560,12 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
           </div>
 
           <div>
-            <label class="block text-[10px] font-mono text-[#cbd5e1] uppercase tracking-wider mb-2 font-medium" for="project_details">Descripción técnica del proyecto</label>
+            <label class="block text-[10px] font-mono text-[#cbd5e1] uppercase tracking-wider mb-2 font-medium" for="project_details"><span data-i18n="svcProgramador.n151">Descripción técnica del proyecto</span></label>
             <textarea
               class="w-full bg-black border border-[#1f1f24] rounded px-4 py-3 text-xs text-white placeholder-neutral-800 focus:outline-none focus:border-white transition-colors min-h-[100px]"
               id="project_details"
               name="message"
-              placeholder="Cuéntame sobre tu proyecto: tipo de aplicación, stack deseado, plazos, presupuesto estimado, integraciones necesarias..."
+              placeholder="Cuéntame sobre tu proyecto: tipo de aplicación, stack deseado, plazos, presupuesto estimado, integraciones necesarias..." data-i18n-placeholder="svcProgramador.n155"
               required
             ></textarea>
           </div>
@@ -578,7 +578,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
             class="w-full py-3 bg-white text-black font-semibold text-xs rounded hover:bg-neutral-200 transition-colors duration-200"
             onclick="submitFormSenior()"
           >
-            Agendar Consultoría Técnica
+            <span data-i18n="svcProgramador.n152">Agendar Consultoría Técnica</span>
           </button>
         </form>
       </div>

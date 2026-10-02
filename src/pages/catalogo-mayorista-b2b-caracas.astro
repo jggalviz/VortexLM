@@ -9,6 +9,8 @@ const isLanding = true;
 <BaseLayout
   title="Catálogo Mayorista B2B | Automatiza tus Ventas al por Mayor"
   description="Automatiza tus ventas al mayor con un catálogo web ultra rápido. Ideal para distribuidoras, importadoras y ventas de repuestos en Caracas."
+  titleKey="catalogoB2B.meta.title"
+  descriptionKey="catalogoB2B.meta.description"
   isLanding={isLanding}
 >
   <!-- ===== 1. HERO SECTION ===== -->
@@ -27,18 +29,18 @@ const isLanding = true;
       <!-- Cintillo superior -->
       <div class="mb-8">
         <span class="inline-block text-[10px] font-mono text-[#cbd5e1] uppercase tracking-widest font-medium bg-[#08080c]/60 px-4 py-2 rounded-full border border-[#1f1f24]">
-          SOLUCIONES DIGITALES B2B PARA DISTRIBUIDORAS
+          <span data-i18n="catalogoB2B.n01">SOLUCIONES DIGITALES B2B PARA DISTRIBUIDORAS</span>
         </span>
       </div>
       
       <!-- Título Principal H1 -->
       <h1 class="text-4xl md:text-7xl font-extralight tracking-tight text-white mb-8 leading-[1.08] max-w-4xl mx-auto opacity-95">
-        Automatiza tus Ventas al Mayor con un Catálogo Web Ultra Rápido
+        <span data-i18n="catalogoB2B.n02">Automatiza tus Ventas al Mayor con un Catálogo Web Ultra Rápido</span>
       </h1>
       
       <!-- Subtítulo -->
       <p class="text-base md:text-lg text-[#cbd5e1] font-light mb-12 max-w-3xl mx-auto leading-relaxed">
-        Elimina los PDFs pesados y las notas de voz eternas. Permite que tus clientes corporativos y tiendas aliadas consulten tu stock en tiempo real y armen sus pedidos en segundos, optimizado para las conexiones móviles de Caracas.
+        <span data-i18n="catalogoB2B.n03">Elimina los PDFs pesados y las notas de voz eternas. Permite que tus clientes corporativos y tiendas aliadas consulten tu stock en tiempo real y armen sus pedidos en segundos, optimizado para las conexiones móviles de Caracas.</span>
       </p>
       
       <!-- CTA Button -->
@@ -47,13 +49,13 @@ const isLanding = true;
           href="#contacto"
           class="w-full sm:w-auto px-8 py-3 bg-white text-black font-semibold text-xs rounded-full hover:bg-neutral-200 transition-all duration-200 active:scale-95 shadow-[0_0_25px_rgba(255,255,255,0.15)] text-center"
         >
-          Digitalizar mi Catálogo
+          <span data-i18n="catalogoB2B.n04">Digitalizar mi Catálogo</span>
         </a>
         <a
           href="#solucion"
           class="w-full sm:w-auto px-6 py-3 text-white/90 font-medium text-xs rounded-full hover:text-white flex items-center justify-center gap-1.5 group transition-colors"
         >
-          Ver solución <span class="group-hover:translate-x-1 transition-transform">➔</span>
+          <span data-i18n="catalogoB2B.n05">Ver solución</span> <span class="group-hover:translate-x-1 transition-transform">➔</span>
         </a>
       </div>
     </div>
@@ -63,7 +65,7 @@ const isLanding = true;
   <section class="py-36 px-6 md:px-12 bg-black relative border-b border-[#1f1f24]">
     <div class="max-w-[1200px] mx-auto relative z-10">
       <h2 class="text-2xl md:text-4xl font-light text-white tracking-tight leading-snug text-center mb-24">
-        ¿Sigue tu distribuidora levantando pedidos de forma manual?
+        <span data-i18n="catalogoB2B.n06">¿Sigue tu distribuidora levantando pedidos de forma manual?</span>
       </h2>
       
       <div class="grid md:grid-cols-3 gap-8 lg:gap-12">
@@ -74,9 +76,9 @@ const isLanding = true;
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
             </svg>
           </div>
-          <h3 class="text-sm font-medium text-white mb-2.5">PDFs obsoletos</h3>
+          <h3 class="text-sm font-medium text-white mb-2.5"><span data-i18n="catalogoB2B.n07">PDFs obsoletos</span></h3>
           <p class="text-xs text-[#cbd5e1] leading-relaxed">
-            Mandas un catálogo digital en la mañana y al mediodía ya cambió el stock o el precio.
+            <span data-i18n="catalogoB2B.n08">Mandas un catálogo digital en la mañana y al mediodía ya cambió el stock o el precio.</span>
           </p>
         </div>
         
@@ -87,9 +89,9 @@ const isLanding = true;
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
             </svg>
           </div>
-          <h3 class="text-sm font-medium text-white mb-2.5">Caos en WhatsApp</h3>
+          <h3 class="text-sm font-medium text-white mb-2.5"><span data-i18n="catalogoB2B.n09">Caos en WhatsApp</span></h3>
           <p class="text-xs text-[#cbd5e1] leading-relaxed">
-            Horas perdidas transcribiendo códigos de repuestos o SKUs mal dictados.
+            <span data-i18n="catalogoB2B.n10">Horas perdidas transcribiendo códigos de repuestos o SKUs mal dictados.</span>
           </p>
         </div>
         
@@ -100,9 +102,9 @@ const isLanding = true;
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
             </svg>
           </div>
-          <h3 class="text-sm font-medium text-white mb-2.5">Páginas lentas</h3>
+          <h3 class="text-sm font-medium text-white mb-2.5"><span data-i18n="catalogoB2B.n11">Páginas lentas</span></h3>
           <p class="text-xs text-[#cbd5e1] leading-relaxed">
-            Sitios web pesados que no abren en la calle con datos móviles locales, espantando a los compradores.
+            <span data-i18n="catalogoB2B.n12">Sitios web pesados que no abren en la calle con datos móviles locales, espantando a los compradores.</span>
           </p>
         </div>
       </div>
@@ -113,7 +115,7 @@ const isLanding = true;
   <section id="solucion" class="py-36 px-6 md:px-12 bg-black relative border-b border-[#1f1f24]">
     <div class="max-w-[1200px] mx-auto relative z-10">
       <h2 class="text-2xl md:text-4xl font-light text-white tracking-tight leading-snug text-center mb-24">
-        Tu inventario y tus pedidos bajo control en una sola plataforma
+        <span data-i18n="catalogoB2B.n13">Tu inventario y tus pedidos bajo control en una sola plataforma</span>
       </h2>
       
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
@@ -121,7 +123,7 @@ const isLanding = true;
         <div>
           <Image
             src={dashboardMockup}
-            alt="Dashboard del Sistema Administrativo SaaS - Vortex LM"
+            alt="Dashboard del Sistema Administrativo SaaS - Vortex LM" data-i18n-alt="catalogoB2B.n48"
             format="webp"
             quality={85}
             class="rounded-lg border border-[#1f1f24] shadow-[0_0_50px_rgba(0,0,0,0.8)] w-full h-auto object-cover"
@@ -139,8 +141,8 @@ const isLanding = true;
               </svg>
             </div>
             <div>
-              <h3 class="text-sm font-medium text-white mb-1">Carga Récord en Datos Móviles</h3>
-              <p class="text-xs text-[#cbd5e1] leading-relaxed">Programado en Astro para garantizar carga instantánea en zonas industriales (La Yaguara, Boleíta, Los Ruices).</p>
+              <h3 class="text-sm font-medium text-white mb-1"><span data-i18n="catalogoB2B.n14">Carga Récord en Datos Móviles</span></h3>
+              <p class="text-xs text-[#cbd5e1] leading-relaxed"><span data-i18n="catalogoB2B.n15">Programado en Astro para garantizar carga instantánea en zonas industriales (La Yaguara, Boleíta, Los Ruices).</span></p>
             </div>
           </div>
           
@@ -152,8 +154,8 @@ const isLanding = true;
               </svg>
             </div>
             <div>
-              <h3 class="text-sm font-medium text-white mb-1">Buscador Inteligente de Piezas</h3>
-              <p class="text-xs text-[#cbd5e1] leading-relaxed">Búsqueda exacta por número de parte, código de barra, SKU o marca.</p>
+              <h3 class="text-sm font-medium text-white mb-1"><span data-i18n="catalogoB2B.n16">Buscador Inteligente de Piezas</span></h3>
+              <p class="text-xs text-[#cbd5e1] leading-relaxed"><span data-i18n="catalogoB2B.n17">Búsqueda exacta por número de parte, código de barra, SKU o marca.</span></p>
             </div>
           </div>
           
@@ -165,8 +167,8 @@ const isLanding = true;
               </svg>
             </div>
             <div>
-              <h3 class="text-sm font-medium text-white mb-1">Carrito a WhatsApp o Admin</h3>
-              <p class="text-xs text-[#cbd5e1] leading-relaxed">Pedidos masivos desglosados directo al equipo de ventas o al panel interno.</p>
+              <h3 class="text-sm font-medium text-white mb-1"><span data-i18n="catalogoB2B.n18">Carrito a WhatsApp o Admin</span></h3>
+              <p class="text-xs text-[#cbd5e1] leading-relaxed"><span data-i18n="catalogoB2B.n19">Pedidos masivos desglosados directo al equipo de ventas o al panel interno.</span></p>
             </div>
           </div>
           
@@ -178,8 +180,8 @@ const isLanding = true;
               </svg>
             </div>
             <div>
-              <h3 class="text-sm font-medium text-white mb-1">Métodos de Pago Flexibles</h3>
-              <p class="text-xs text-[#cbd5e1] leading-relaxed">Toggles manuales para Zelle, Pago Móvil, Binance o transferencias en el checkout.</p>
+              <h3 class="text-sm font-medium text-white mb-1"><span data-i18n="catalogoB2B.n20">Métodos de Pago Flexibles</span></h3>
+              <p class="text-xs text-[#cbd5e1] leading-relaxed"><span data-i18n="catalogoB2B.n21">Toggles manuales para Zelle, Pago Móvil, Binance o transferencias en el checkout.</span></p>
             </div>
           </div>
           
@@ -191,8 +193,8 @@ const isLanding = true;
               </svg>
             </div>
             <div>
-              <h3 class="text-sm font-medium text-white mb-1">Portal de Cliente en Vortex LM</h3>
-              <p class="text-xs text-[#cbd5e1] leading-relaxed">Acceso privado para monitorear el avance del proyecto, soporte, facturación y datos técnicos de su cuenta las 24 horas.</p>
+              <h3 class="text-sm font-medium text-white mb-1"><span data-i18n="catalogoB2B.n22">Portal de Cliente en Vortex LM</span></h3>
+              <p class="text-xs text-[#cbd5e1] leading-relaxed"><span data-i18n="catalogoB2B.n23">Acceso privado para monitorear el avance del proyecto, soporte, facturación y datos técnicos de su cuenta las 24 horas.</span></p>
             </div>
           </div>
         </div>
@@ -204,12 +206,12 @@ const isLanding = true;
   <section class="py-36 px-6 md:px-12 bg-black relative border-b border-[#1f1f24]">
     <div class="max-w-[1200px] mx-auto relative z-10">
       <div class="text-center max-w-2xl mx-auto mb-20">
-        <span class="text-[10px] font-mono text-[#cbd5e1] uppercase tracking-widest block mb-3 font-semibold">Inversión</span>
+        <span class="text-[10px] font-mono text-[#cbd5e1] uppercase tracking-widest block mb-3 font-semibold"><span data-i18n="catalogoB2B.n24">Inversión</span></span>
         <h2 class="text-3xl md:text-5xl font-light text-white tracking-tight">
-          Inversión transparente, sin sorpresas
+          <span data-i18n="catalogoB2B.n25">Inversión transparente, sin sorpresas</span>
         </h2>
         <p class="text-sm text-[#cbd5e1] font-light leading-relaxed mt-4 max-w-xl mx-auto">
-          Despliegue robusto utilizando infraestructura serverless de alta gama (Vercel + Supabase) para garantizar cero caídas.
+          <span data-i18n="catalogoB2B.n26">Despliegue robusto utilizando infraestructura serverless de alta gama (Vercel + Supabase) para garantizar cero caídas.</span>
         </p>
       </div>
       
@@ -218,15 +220,15 @@ const isLanding = true;
           <!-- Badge "Más Popular" -->
           <div class="absolute -top-3 left-1/2 -translate-x-1/2">
             <span class="text-[10px] font-mono text-[#cbd5e1] uppercase tracking-widest bg-[#08080c] border border-[#1f1f24] text-white text-xs font-medium px-4 py-1 rounded-full">
-              PLAN ÚNICO
+              <span data-i18n="catalogoB2B.n27">PLAN ÚNICO</span>
             </span>
           </div>
           
           <div class="mt-4">
-            <h3 class="text-sm font-medium text-white mb-2">Desarrollo de Catálogo Mayorista B2B</h3>
+            <h3 class="text-sm font-medium text-white mb-2"><span data-i18n="catalogoB2B.n28">Desarrollo de Catálogo Mayorista B2B</span></h3>
             <div class="mb-6">
-              <span class="text-4xl font-light text-white tracking-tight">Desde $850 USD</span>
-              <p class="text-xs text-[#cbd5e1] font-light mt-1">Pago fraccionado: 50% inicial / 50% contra entrega</p>
+              <span class="text-4xl font-light text-white tracking-tight"><span data-i18n="catalogoB2B.n29">Desde $850 USD</span></span>
+              <p class="text-xs text-[#cbd5e1] font-light mt-1"><span data-i18n="catalogoB2B.n30">Pago fraccionado: 50% inicial / 50% contra entrega</span></p>
             </div>
             
             <ul class="space-y-3 mb-8">
@@ -234,46 +236,46 @@ const isLanding = true;
                 <svg class="w-4 h-4 text-[#cbd5e1] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                 </svg>
-                Base de datos Supabase integrada
+                <span data-i18n="catalogoB2B.n31">Base de datos Supabase integrada</span>
               </li>
               <li class="flex items-start gap-3 text-xs text-[#cbd5e1]">
                 <svg class="w-4 h-4 text-[#cbd5e1] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                 </svg>
-                Front-end en Vercel
+                <span data-i18n="catalogoB2B.n32">Front-end en Vercel</span>
               </li>
               <li class="flex items-start gap-3 text-xs text-[#cbd5e1]">
                 <svg class="w-4 h-4 text-[#cbd5e1] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                 </svg>
-                Buscador indexado
+                <span data-i18n="catalogoB2B.n33">Buscador indexado</span>
               </li>
               <li class="flex items-start gap-3 text-xs text-[#cbd5e1]">
                 <svg class="w-4 h-4 text-[#cbd5e1] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                 </svg>
-                Carrito automatizado
+                <span data-i18n="catalogoB2B.n34">Carrito automatizado</span>
               </li>
               <li class="flex items-start gap-3 text-xs text-[#cbd5e1]">
                 <svg class="w-4 h-4 text-[#cbd5e1] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                 </svg>
-                Soporte multi-moneda
+                <span data-i18n="catalogoB2B.n35">Soporte multi-moneda</span>
               </li>
               <li class="flex items-start gap-3 text-xs text-[#cbd5e1]">
                 <svg class="w-4 h-4 text-[#cbd5e1] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                 </svg>
-                Acceso privado al Portal de Cliente en vortexlm.com
+                <span data-i18n="catalogoB2B.n36">Acceso privado al Portal de Cliente en vortexlm.com</span>
               </li>
             </ul>
             
             <div class="border-t border-[#1f1f24] pt-6">
-              <p class="text-xs font-medium text-[#cbd5e1] mb-2">Mantenimiento mensual:</p>
+              <p class="text-xs font-medium text-[#cbd5e1] mb-2"><span data-i18n="catalogoB2B.n37">Mantenimiento mensual:</span></p>
               <p class="text-xs text-[#cbd5e1] font-light">
-                <span class="text-white font-medium">$80 USD/mes</span>
+                <span class="text-white font-medium"><span data-i18n="catalogoB2B.n38">$80 USD/mes</span></span>
               </p>
-              <p class="text-[10px] text-[#cbd5e1]/40 mt-1">Incluye optimización de Supabase, monitoreo en Vercel y soporte prioritario ante cambios de API.</p>
+              <p class="text-[10px] text-[#cbd5e1]/40 mt-1"><span data-i18n="catalogoB2B.n39">Incluye optimización de Supabase, monitoreo en Vercel y soporte prioritario ante cambios de API.</span></p>
             </div>
           </div>
         </div>
@@ -284,49 +286,49 @@ const isLanding = true;
   <!-- ===== 5. FORMULARIO DE CIERRE ===== -->
   <section id="contacto" class="py-36 px-6 md:px-12 bg-black relative">
     <div class="max-w-[600px] mx-auto text-center relative z-10 space-y-8">
-      <span class="text-[10px] font-mono text-[#cbd5e1] uppercase tracking-widest block font-medium">Inicia hoy</span>
+      <span class="text-[10px] font-mono text-[#cbd5e1] uppercase tracking-widest block font-medium"><span data-i18n="catalogoB2B.n40">Inicia hoy</span></span>
       <h2 class="text-3xl md:text-5xl font-light text-white tracking-tight leading-tight">
-        Moderniza la logística de tus ventas hoy mismo
+        <span data-i18n="catalogoB2B.n41">Moderniza la logística de tus ventas hoy mismo</span>
       </h2>
       <p class="text-sm text-[#cbd5e1] font-light leading-relaxed">
-        Agenda una sesión técnica de 15 minutos y te mostramos cómo adaptar nuestro sistema a tu modelo de negocio.
+        <span data-i18n="catalogoB2B.n42">Agenda una sesión técnica de 15 minutos y te mostramos cómo adaptar nuestro sistema a tu modelo de negocio.</span>
       </p>
       
       <div class="linear-card p-8 rounded-lg border border-[#1f1f24] bg-[#08080c]/40 text-left space-y-6">
         <form id="contact-form-b2b" class="space-y-4" action="/api/contact" method="POST">
           <div>
-            <label for="nombre" class="block text-[10px] font-mono text-[#cbd5e1] uppercase tracking-wider mb-2 font-medium">Nombre del Contacto</label>
+            <label for="nombre" class="block text-[10px] font-mono text-[#cbd5e1] uppercase tracking-wider mb-2 font-medium"><span data-i18n="catalogoB2B.n43">Nombre del Contacto</span></label>
             <input type="text" id="nombre" name="name" required
               class="w-full bg-black border border-[#1f1f24] rounded px-4 py-3 text-xs text-white placeholder-neutral-800 focus:outline-none focus:border-white transition-colors"
-              placeholder="Tu nombre completo">
+              placeholder="Tu nombre completo" data-i18n-placeholder="catalogoB2B.n49">
           </div>
           
           <div>
-            <label for="empresa" class="block text-[10px] font-mono text-[#cbd5e1] uppercase tracking-wider mb-2 font-medium">Nombre de la Distribuidora / Importadora</label>
+            <label for="empresa" class="block text-[10px] font-mono text-[#cbd5e1] uppercase tracking-wider mb-2 font-medium"><span data-i18n="catalogoB2B.n44">Nombre de la Distribuidora / Importadora</span></label>
             <input type="text" id="empresa" name="empresa" required
               class="w-full bg-black border border-[#1f1f24] rounded px-4 py-3 text-xs text-white placeholder-neutral-800 focus:outline-none focus:border-white transition-colors"
-              placeholder="Nombre de tu empresa">
+              placeholder="Nombre de tu empresa" data-i18n-placeholder="catalogoB2B.n50">
           </div>
           
           <div>
-            <label for="whatsapp" class="block text-[10px] font-mono text-[#cbd5e1] uppercase tracking-wider mb-2 font-medium">WhatsApp de Contacto</label>
+            <label for="whatsapp" class="block text-[10px] font-mono text-[#cbd5e1] uppercase tracking-wider mb-2 font-medium"><span data-i18n="catalogoB2B.n45">WhatsApp de Contacto</span></label>
             <input type="tel" id="whatsapp" name="whatsapp" required
               class="w-full bg-black border border-[#1f1f24] rounded px-4 py-3 text-xs text-white placeholder-neutral-800 focus:outline-none focus:border-white transition-colors"
               placeholder="+58 412 123 4567">
           </div>
           
           <div>
-            <label for="productos" class="block text-[10px] font-mono text-[#cbd5e1] uppercase tracking-wider mb-2 font-medium">¿Qué tipo de productos distribuyes?</label>
+            <label for="productos" class="block text-[10px] font-mono text-[#cbd5e1] uppercase tracking-wider mb-2 font-medium"><span data-i18n="catalogoB2B.n46">¿Qué tipo de productos distribuyes?</span></label>
             <textarea id="productos" name="message" rows="3" required
               class="w-full bg-black border border-[#1f1f24] rounded px-4 py-3 text-xs text-white placeholder-neutral-800 focus:outline-none focus:border-white transition-colors min-h-[100px] resize-none"
-              placeholder="Ej: Repuestos automotrices, equipos industriales, ferretería..."></textarea>
+              placeholder="Ej: Repuestos automotrices, equipos industriales, ferretería..." data-i18n-placeholder="catalogoB2B.n51"></textarea>
           </div>
 
           <input type="hidden" name="service" value="catalogo-mayorista-b2b-caracas" />
           
           <button type="submit"
             class="w-full py-3 bg-white text-black font-semibold text-xs rounded hover:bg-neutral-200 transition-colors duration-200">
-            Solicitar Demo de Catálogo B2B
+            <span data-i18n="catalogoB2B.n47">Solicitar Demo de Catálogo B2B</span>
           </button>
 
           <p id="form-status-b2b" class="text-sm text-center hidden"></p>

@@ -144,8 +144,9 @@ for (const file of sources) {
   for (const match of source.matchAll(/keyFor\('([^']+)'\)/g)) {
     used.add(`home.project.${match[1]}`);
   }
-  // Props de layout que transportan claves (no van en atributos data-i18n*).
-  for (const match of source.matchAll(/(?:titleKey|descriptionKey)="([^"]+)"/g)) {
+  // Props que transportan claves a componentes (no van en atributos data-i18n*):
+  // `titleKey`, `descriptionKey`, `highlightKey`, `subtitleKey`, `labelKey`…
+  for (const match of source.matchAll(/(?:[A-Za-z]*[Kk]ey)="([^"]+)"/g)) {
     used.add(match[1]);
   }
   // Claves escritas como plantilla JS (`data-i18n={`…`}`): si la plantilla es
@@ -159,9 +160,13 @@ for (const file of sources) {
       continue;
     }
     const prefix = template.slice(0, dynamicAt);
-    if (![...esKeys].some((key) => key.startsWith(prefix))) {
+    const covered = [...esKeys].filter((key) => key.startsWith(prefix));
+    if (!covered.length) {
       badTemplatePrefixes.add(`${prefix}* (${path.relative(ROOT, file)})`);
+      continue;
     }
+    // La plantilla cubre todas las claves con ese prefijo (p. ej. `blogPost.<slug>.title`).
+    for (const key of covered) used.add(key);
   }
 }
 

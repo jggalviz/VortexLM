@@ -27,12 +27,15 @@ export const es = {
   'nav.stack': 'Stack Moderno',
   'nav.portfolio': 'Portafolio',
   'nav.portfolioTitle': 'Portafolio de sitios web WordPress',
-  'nav.apps': 'Apps y Soporte',
   'nav.contact': 'Contacto',
   'nav.ctaTeam': 'Contacta con nuestro equipo',
   'nav.login': 'Iniciar Sesión',
   'nav.dashboard': 'Ir a mi Escritorio',
   'nav.letsTalk': 'Hablemos',
+  // Submenú desplegable de "Servicios" (mismo panel en escritorio y móvil):
+  // enlace general al índice y perfiles técnicos del directorio de /servicios.
+  'nav.servicesIndex': 'Índice de Servicios',
+  'nav.servicesMenuAria': 'Menú de servicios y perfiles técnicos',
 
   // ── Selector de idioma ────────────────────────────────────────────────────
   'lang.ariaLabel': 'Cambiar idioma',
@@ -3034,12 +3037,15 @@ export const en: Record<UiKey, string> = {
   'nav.stack': 'Modern Stack',
   'nav.portfolio': 'Portfolio',
   'nav.portfolioTitle': 'WordPress website portfolio',
-  'nav.apps': 'Apps and Support',
   'nav.contact': 'Contact',
   'nav.ctaTeam': 'Talk to our team',
   'nav.login': 'Sign In',
   'nav.dashboard': 'Go to my Dashboard',
   'nav.letsTalk': 'Let’s talk',
+  // "Services" dropdown (same panel on desktop and mobile): general link to
+  // the index plus the technical profiles of the /servicios directory.
+  'nav.servicesIndex': 'Services Directory',
+  'nav.servicesMenuAria': 'Services and technical profiles menu',
 
   // ── Language selector ─────────────────────────────────────────────────────
   'lang.ariaLabel': 'Change language',
